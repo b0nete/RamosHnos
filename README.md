@@ -1,6 +1,6 @@
 Soderia Ramos Hnos.
 ==========
-Trabajo Final.;
+Trabajo Final.
 Institución Cervantes.
  
 Integrantes.
