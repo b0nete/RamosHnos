@@ -1,2 +1,11 @@
 c:\users\b0nete\documents\visual studio 2012\Projects\RamosHnos\RamosHnos\bin\Debug\RamosHnos.exe.config
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\bin\Debug\RamosHnos.exe.config
+C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\bin\Debug\RamosHnos.exe.config
+C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\bin\Debug\RamosHnos.exe
+C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\bin\Debug\RamosHnos.pdb
+C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.csprojResolveAssemblyReference.cache
+C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Properties.Resources.resources
+C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.csproj.GenerateResource.Cache
+C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.exe
+C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.pdb
+C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.fprov.resources
