@@ -1,6 +1,6 @@
 ﻿namespace RamosHnos
 {
-    partial class fprov
+    partial class formProveedor
     {
         /// <summary>
         /// Variable del diseñador requerida.
@@ -265,15 +265,15 @@
             this.Column4.HeaderText = "Dirección";
             this.Column4.Name = "Column4";
             // 
-            // fprov
+            // formProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(475, 622);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "fprov";
-            this.Text = "REGISTRAR PROVEEDOR";
+            this.Name = "formProveedor";
+            this.Text = "Registrar Proveedor";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

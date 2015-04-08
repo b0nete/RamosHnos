@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RamosHnos
 {
-    public partial class fprov : Form
+    public partial class formProveedor : Form
     {
-        public fprov()
+        public formProveedor()
         {
             InitializeComponent();
         }

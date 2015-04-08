@@ -16,7 +16,7 @@ namespace RamosHnos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fprov());
+            Application.Run(new formListado());
         }
     }
 }
