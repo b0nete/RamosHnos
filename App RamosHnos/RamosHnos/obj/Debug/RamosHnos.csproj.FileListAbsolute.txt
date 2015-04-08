@@ -19,3 +19,4 @@ C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\Ram
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formProveedor.resources
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formCliente.resources
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formListado.resources
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formAddTel.resources

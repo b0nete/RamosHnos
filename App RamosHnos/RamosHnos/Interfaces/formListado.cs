@@ -25,8 +25,7 @@ namespace RamosHnos
             dgvListado.DataSource = null;
             db.LlenarDGVDoc();
             dgvListado.DataSource = db.ds.Tables["tipodocumento"].DefaultView;
-        }
-
-        
+            db.Desconectar();
+        }        
     }
 }

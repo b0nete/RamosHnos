@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace RamosHnos
 {
-    class Class1
+    class Cliente
     {
+
     }
 }

@@ -64,8 +64,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="connectDB.cs" />
+    <Compile Include="Clases\Cliente.cs" />
+    <Compile Include="Clases\connectDB.cs" />
+    <Compile Include="Interfaces\formAddTel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formAddTel.Designer.cs">
+      <DependentUpon>formAddTel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\formListado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,8 +90,11 @@
     <Compile Include="Interfaces\regProveedor.Designer.cs">
       <DependentUpon>regProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Clases\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Interfaces\formAddTel.resx">
+      <DependentUpon>formAddTel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\formListado.resx">
       <DependentUpon>formListado.cs</DependentUpon>
     </EmbeddedResource>
