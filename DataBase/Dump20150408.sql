@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `ramosdb` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `ramosdb`;
 -- MySQL dump 10.13  Distrib 5.6.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: ramosdb
@@ -44,8 +42,37 @@ CREATE TABLE `clientes` (
 
 LOCK TABLES `clientes` WRITE;
 /*!40000 ALTER TABLE `clientes` DISABLE KEYS */;
-INSERT INTO `clientes` VALUES (4,4,'37826588','Edgardo','Izquierdo',2,1),(5,4,'37826577','Juan','Palotes',2,1),(6,5,'27575296','Pepe','Argento',5,2),(7,NULL,'234234',NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `clientes` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `telefonos`
+--
+
+DROP TABLE IF EXISTS `telefonos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `telefonos` (
+  `idTelefono` int(11) NOT NULL,
+  `Cliente` int(11) NOT NULL,
+  `TipoTel` int(11) NOT NULL,
+  `caracteristica` varchar(6) NOT NULL,
+  `numTel` varchar(12) NOT NULL,
+  PRIMARY KEY (`idTelefono`),
+  KEY `FK_idCliente_idCliente_idx` (`Cliente`),
+  KEY `FK_tipoTel_idTipoTel_idx` (`TipoTel`),
+  CONSTRAINT `FK_idCliente_idCliente` FOREIGN KEY (`Cliente`) REFERENCES `clientes` (`idCliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_tipoTel_idTipoTel` FOREIGN KEY (`TipoTel`) REFERENCES `tipotelefono` (`idTipoTel`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `telefonos`
+--
+
+LOCK TABLES `telefonos` WRITE;
+/*!40000 ALTER TABLE `telefonos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `telefonos` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -59,7 +86,7 @@ CREATE TABLE `tipodocumento` (
   `idTipoDoc` int(11) NOT NULL AUTO_INCREMENT,
   `tipoDoc` varchar(10) NOT NULL,
   PRIMARY KEY (`idTipoDoc`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,8 +95,31 @@ CREATE TABLE `tipodocumento` (
 
 LOCK TABLES `tipodocumento` WRITE;
 /*!40000 ALTER TABLE `tipodocumento` DISABLE KEYS */;
-INSERT INTO `tipodocumento` VALUES (4,'DNI'),(5,'LE'),(6,'LC');
+INSERT INTO `tipodocumento` VALUES (7,'DNI'),(8,'LC'),(9,'LE');
 /*!40000 ALTER TABLE `tipodocumento` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tipotelefono`
+--
+
+DROP TABLE IF EXISTS `tipotelefono`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tipotelefono` (
+  `idTipoTel` int(11) NOT NULL AUTO_INCREMENT,
+  `tipoTel` varchar(10) NOT NULL,
+  PRIMARY KEY (`idTipoTel`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tipotelefono`
+--
+
+LOCK TABLES `tipotelefono` WRITE;
+/*!40000 ALTER TABLE `tipotelefono` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tipotelefono` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -89,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-04-08 14:30:10
+-- Dump completed on 2015-04-08 19:36:05
