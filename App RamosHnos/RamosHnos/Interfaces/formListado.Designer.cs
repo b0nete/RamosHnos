@@ -48,7 +48,6 @@
             this.Controls.Add(this.dgvListado);
             this.Name = "formListado";
             this.Text = "formListado";
-            this.Load += new System.EventHandler(this.formListado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).EndInit();
             this.ResumeLayout(false);
 

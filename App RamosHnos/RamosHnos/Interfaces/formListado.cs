@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using connectTest;
+using connectDB;
 
 namespace RamosHnos
 {
@@ -18,14 +18,6 @@ namespace RamosHnos
             InitializeComponent();
         }
 
-        private void formListado_Load(object sender, EventArgs e)
-        {
-            connectDB db = new connectDB();
-            db.Conectar();
-            dgvListado.DataSource = null;
-            db.LlenarDGVDoc();
-            dgvListado.DataSource = db.ds.Tables["tipodocumento"].DefaultView;
-            db.Desconectar();
-        }        
+        
     }
 }

@@ -7,7 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using connectTest;
+using MySql.Data;
+using MySql.Data.MySqlClient;
+using connectDB;
+
 
 namespace RamosHnos
 {
@@ -16,16 +19,27 @@ namespace RamosHnos
         public formCliente()
         {
             InitializeComponent();
+
         }
+
+
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                connectDB db = new connectDB();
-                db.Conectar();
-                db.insertCliente(txtnumDoc.Text);
-                db.Desconectar();
+                Cliente newcliente = new Cliente();
+                newcliente._tipoDoc = txtTipoDoc.ValueMember;
+                newcliente._numDoc = txtnumDoc.Text;
+                newcliente._nombre = txtNombre.Text;
+                newcliente._apellido = txtApellido.Text;
+                newcliente._cuil = txtcuil.Text;
+                newcliente._email = txtEmail.Text;
+                
+                newcliente.CnxDB();
+                newcliente.insertCliente(newcliente._nombre, newcliente._apellido);
+                newcliente.DcnxDB();
                 this.Close();
             }
             catch
@@ -45,6 +59,16 @@ namespace RamosHnos
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTipoDni_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

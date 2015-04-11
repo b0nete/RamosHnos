@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace RamosHnos
 {
     public partial class formAddTel : Form
@@ -15,6 +17,12 @@ namespace RamosHnos
         public formAddTel()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cliente db = new Cliente();
+            db.CnxDB();            
         }
     }
 }
