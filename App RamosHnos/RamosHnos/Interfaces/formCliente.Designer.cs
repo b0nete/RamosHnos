@@ -39,7 +39,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.txtTipoDoc = new System.Windows.Forms.ComboBox();
+            this.cbTipoDoc = new System.Windows.Forms.ComboBox();
             this.txtnumDoc = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -87,7 +87,7 @@
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.txtTipoDoc);
+            this.groupBox1.Controls.Add(this.cbTipoDoc);
             this.groupBox1.Controls.Add(this.txtnumDoc);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtEmail);
@@ -207,14 +207,14 @@
             this.btnSearch.TabIndex = 40;
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // txtTipoDoc
+            // cbTipoDoc
             // 
-            this.txtTipoDoc.FormattingEnabled = true;
-            this.txtTipoDoc.Location = new System.Drawing.Point(123, 88);
-            this.txtTipoDoc.Name = "txtTipoDoc";
-            this.txtTipoDoc.Size = new System.Drawing.Size(74, 21);
-            this.txtTipoDoc.TabIndex = 39;
-            this.txtTipoDoc.SelectedIndexChanged += new System.EventHandler(this.txtTipoDni_SelectedIndexChanged);
+            this.cbTipoDoc.FormattingEnabled = true;
+            this.cbTipoDoc.Location = new System.Drawing.Point(123, 88);
+            this.cbTipoDoc.Name = "cbTipoDoc";
+            this.cbTipoDoc.Size = new System.Drawing.Size(74, 21);
+            this.cbTipoDoc.TabIndex = 39;
+            this.cbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.txtTipoDni_SelectedIndexChanged);
             // 
             // txtnumDoc
             // 
@@ -583,7 +583,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox txtTipoDoc;
+        private System.Windows.Forms.ComboBox cbTipoDoc;
         private System.Windows.Forms.TextBox txtnumDoc;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button2;

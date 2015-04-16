@@ -37,6 +37,7 @@ namespace RamosHnos
 
         static MySqlCommand sqlcmd = new MySqlCommand();
         static MySqlDataAdapter sqlda = new MySqlDataAdapter();
+        //static MySqlDataReader sqldr = new MySqlDataReader();
         public DataSet ds = new DataSet();
 
 
@@ -70,7 +71,7 @@ namespace RamosHnos
             sqlcmd.ExecuteNonQuery();
         }
 
-        public void LlenarDGVDoc()
+        public void tipoDocDGV()
         {
             try
             {
@@ -80,7 +81,31 @@ namespace RamosHnos
                 sqlcmd.Connection = sqlcnx;
                 sqlda.SelectCommand = sqlcmd;
                 sqlda.Fill(ds, "tipodocumento");
-                sqlcnx.Close();
+                //sqlcnx.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void cargarTipoDoc(ComboBox cb)
+        {
+            try
+            {
+                MySqlDataReader sqldr;
+                //MySqlCommand sqlcmd2;
+                //MySqlConnection sqlcnx2 = new MySqlConnection();
+                //MySqlDataReader sqldr = new MySqlDataReader();
+                sqlcnx = new MySqlConnection(cadenaConexion);
+                sqlcnx.Open();
+                sqlcmd = new MySqlCommand("SELECT * FROM tipoDocumento", sqlcnx);
+                sqldr = sqlcmd.ExecuteReader();
+                while (sqldr.Read())
+                {
+                    cb.Items.Add(sqldr["tipoDoc"].ToString());                   
+                }
+                sqldr.Close();
             }
             catch (Exception ex)
             {

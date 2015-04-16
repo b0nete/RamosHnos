@@ -20,6 +20,18 @@ namespace RamosHnos
         {
             InitializeComponent();
 
+            Cliente cli = new Cliente();
+            cli.cargarTipoDoc(cbTipoDoc);
+
+
+            //connectDB db = new connectDB();
+            //db.Conectar();
+            //dgvListado.DataSource = null;
+            //db.LlenarDGVDoc();
+            //dgvListado.DataSource = db.ds.Tables["tipodocumento"].DefaultView;
+
+
+
         }
 
 
@@ -36,7 +48,7 @@ namespace RamosHnos
                 newcliente._apellido = txtApellido.Text;
                 newcliente._cuil = txtcuil.Text;
                 newcliente._email = txtEmail.Text;
-                
+               
                 newcliente.CnxDB();
                 newcliente.insertCliente(newcliente._nombre, newcliente._apellido);
                 newcliente.DcnxDB();
