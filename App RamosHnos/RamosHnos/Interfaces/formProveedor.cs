@@ -36,5 +36,11 @@ namespace RamosHnos
         {
 
         }
+
+        private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        
+        }
     }
 }

@@ -51,6 +51,7 @@
     </StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -66,6 +67,18 @@
   <ItemGroup>
     <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Clases\connectDB.cs" />
+    <Compile Include="Interfaces\formAddInsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formAddInsumo.Designer.cs">
+      <DependentUpon>formAddInsumo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\formAddTelProv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formAddTelProv.Designer.cs">
+      <DependentUpon>formAddTelProv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\formAddTel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +97,12 @@
     <Compile Include="Interfaces\formCliente.Designer.cs">
       <DependentUpon>formCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\formListarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formListarProveedor.Designer.cs">
+      <DependentUpon>formListarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\formProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,7 +110,19 @@
       <DependentUpon>formProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Program.cs" />
+    <Compile Include="Interfaces\InicioRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\InicioRM.Designer.cs">
+      <DependentUpon>InicioRM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Interfaces\formAddInsumo.resx">
+      <DependentUpon>formAddInsumo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formAddTelProv.resx">
+      <DependentUpon>formAddTelProv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\formAddTel.resx">
       <DependentUpon>formAddTel.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,8 +132,14 @@
     <EmbeddedResource Include="Interfaces\formCliente.resx">
       <DependentUpon>formCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\formListarProveedor.resx">
+      <DependentUpon>formListarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\formProveedor.resx">
       <DependentUpon>formProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaces\InicioRM.resx">
+      <DependentUpon>InicioRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -112,7 +149,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <Fakes Include="Fakes\MySql.Data.fakes" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -145,6 +184,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sin título.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
