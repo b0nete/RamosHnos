@@ -16,7 +16,7 @@ namespace RamosHnos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formCliente());
+            Application.Run(new InicioRM());
         }
     }
 }

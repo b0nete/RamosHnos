@@ -1,4 +1,4 @@
-﻿namespace RamosHnos.Interfaces
+﻿namespace RamosHnos
 {
     partial class InicioRM
     {
@@ -31,10 +31,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,9 +45,9 @@
             this.verInsumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editarInsumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,21 +83,12 @@
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
-            // proveedoresToolStripMenuItem
-            // 
-            this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarProveedorToolStripMenuItem,
-            this.editarProveedorToolStripMenuItem,
-            this.verProveedorToolStripMenuItem});
-            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
-            this.proveedoresToolStripMenuItem.Text = "Proveedores";
-            // 
             // agregarClienteToolStripMenuItem
             // 
             this.agregarClienteToolStripMenuItem.Name = "agregarClienteToolStripMenuItem";
             this.agregarClienteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.agregarClienteToolStripMenuItem.Text = "Agregar Cliente";
+            this.agregarClienteToolStripMenuItem.Click += new System.EventHandler(this.agregarClienteToolStripMenuItem_Click);
             // 
             // editarClienteToolStripMenuItem
             // 
@@ -110,6 +101,16 @@
             this.verClienteToolStripMenuItem.Name = "verClienteToolStripMenuItem";
             this.verClienteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.verClienteToolStripMenuItem.Text = "Ver Cliente";
+            // 
+            // proveedoresToolStripMenuItem
+            // 
+            this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarProveedorToolStripMenuItem,
+            this.editarProveedorToolStripMenuItem,
+            this.verProveedorToolStripMenuItem});
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.proveedoresToolStripMenuItem.Text = "Proveedores";
             // 
             // agregarProveedorToolStripMenuItem
             // 
@@ -140,7 +141,7 @@
             // ingresarGastoToolStripMenuItem
             // 
             this.ingresarGastoToolStripMenuItem.Name = "ingresarGastoToolStripMenuItem";
-            this.ingresarGastoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ingresarGastoToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.ingresarGastoToolStripMenuItem.Text = "Ingresar Gasto";
             // 
             // insumosToolStripMenuItem
@@ -180,12 +181,6 @@
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
-            this.salirToolStripMenuItem.Text = "Salir";
-            // 
             // agregarUsuarioToolStripMenuItem
             // 
             this.agregarUsuarioToolStripMenuItem.Name = "agregarUsuarioToolStripMenuItem";
@@ -198,6 +193,12 @@
             this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.verUsuariosToolStripMenuItem.Text = "Ver Usuarios";
             // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.salirToolStripMenuItem.Text = "Salir";
+            // 
             // InicioRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,6 +209,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "InicioRM";
             this.Text = "InicioRM";
+            this.Load += new System.EventHandler(this.InicioRM_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

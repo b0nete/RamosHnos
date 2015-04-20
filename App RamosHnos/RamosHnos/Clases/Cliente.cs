@@ -89,7 +89,7 @@ namespace RamosHnos
             }
         }
 
-        public void cargarTipoDoc(ComboBox cb)
+        public void cargarTipoDoc2(ComboBox cb)
         {
             try
             {
@@ -111,7 +111,32 @@ namespace RamosHnos
             {
                 MessageBox.Show(ex.ToString());
             }
-        }    
+        }
+
+        public void cargarTipoDoc(ComboBox cb)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                using (MySqlConnection conn = new MySqlConnection(cadenaConexion))
+                {
+                    string query = "SELECT * FROM tipoDocumento";  
+
+                    ﻿﻿MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
+                }
+                cb.DisplayMember = "TipoDoc";
+                cb.ValueMember = "idTipoDoc";
+                cb.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }  
+
 
         //--
     }    

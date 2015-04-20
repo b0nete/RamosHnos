@@ -22,6 +22,8 @@ namespace RamosHnos
 
             Cliente cli = new Cliente();
             cli.cargarTipoDoc(cbTipoDoc);
+            //Cliente cli = new Cliente();
+            //cli.cargarTipoDoc(cbTipoDoc);
 
 
             //connectDB db = new connectDB();
