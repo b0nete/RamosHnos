@@ -44,7 +44,7 @@ namespace RamosHnos
             try
             {
                 Cliente newcliente = new Cliente();
-                //newcliente._tipoDoc = cbTipoDoc.ValueMember;
+                newcliente._tipoDoc = Convert.ToInt32(cbTipoDoc.SelectedValue);
                 newcliente._numDoc = txtnumDoc.Text;
                 newcliente._nombre = txtNombre.Text;
                 newcliente._apellido = txtApellido.Text;
@@ -52,7 +52,7 @@ namespace RamosHnos
                 newcliente._email = txtEmail.Text;
                
                 newcliente.CnxDB();
-                newcliente.insertCliente(newcliente._nombre, newcliente._apellido);
+                newcliente.insertCliente(newcliente._tipoDoc, newcliente._numDoc, newcliente._nombre, newcliente._apellido, newcliente._cuil, newcliente._email);
                 newcliente.DcnxDB();
                 this.Close();
             }
@@ -88,6 +88,11 @@ namespace RamosHnos
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcuil_TextChanged(object sender, EventArgs e)
         {
 
         }

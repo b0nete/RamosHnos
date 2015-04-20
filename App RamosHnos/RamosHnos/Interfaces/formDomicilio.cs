@@ -8,24 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
-
 namespace RamosHnos
 {
-    public partial class formAddTel : Form
+    public partial class formDomicilio : Form
     {
-        public formAddTel()
+        public formDomicilio()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Cliente db = new Cliente();
-            db.CnxDB();            
-        }
-
-        private void formAddTel_Load(object sender, EventArgs e)
+        private void formDomicilio_Load(object sender, EventArgs e)
         {
 
         }

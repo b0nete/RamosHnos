@@ -197,9 +197,11 @@
             // 
             this.txtcuil.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtcuil.Location = new System.Drawing.Point(123, 115);
+            this.txtcuil.MaxLength = 11;
             this.txtcuil.Name = "txtcuil";
             this.txtcuil.Size = new System.Drawing.Size(164, 21);
             this.txtcuil.TabIndex = 43;
+            this.txtcuil.TextChanged += new System.EventHandler(this.txtcuil_TextChanged);
             // 
             // label14
             // 
