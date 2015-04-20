@@ -1,0 +1,8 @@
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\Fakes\msd\b\MySql.Data.Fakes.xml
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\Fakes\msd\b\MySql.Data.Fakes.dll
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\Fakes\msd\b\MySql.Data.Fakes.pdb
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\Fakes\msd\b\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\Fakes\msd\b\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\Fakes\msd\o\f.csprojResolveAssemblyReference.cache
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\Fakes\msd\o\MySql.Data.Fakes.dll
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\Fakes\msd\o\MySql.Data.Fakes.pdb

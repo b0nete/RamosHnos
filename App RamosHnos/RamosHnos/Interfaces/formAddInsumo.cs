@@ -26,5 +26,10 @@ namespace RamosHnos.Interfaces
         {
 
         }
+
+        private void formAddInsumo_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

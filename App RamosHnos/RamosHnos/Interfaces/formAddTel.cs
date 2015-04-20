@@ -24,5 +24,10 @@ namespace RamosHnos
             Cliente db = new Cliente();
             db.CnxDB();            
         }
+
+        private void formAddTel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

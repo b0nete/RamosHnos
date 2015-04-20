@@ -67,17 +67,17 @@
   <ItemGroup>
     <Compile Include="Clases\Cliente.cs" />
     <Compile Include="Clases\connectDB.cs" />
+    <Compile Include="Interfaces\formAddProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaces\formAddProducto.Designer.cs">
+      <DependentUpon>formAddProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\formAddInsumo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaces\formAddInsumo.Designer.cs">
       <DependentUpon>formAddInsumo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaces\formAddTelProv.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\formAddTelProv.Designer.cs">
-      <DependentUpon>formAddTelProv.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\formAddTel.cs">
       <SubType>Form</SubType>
@@ -97,12 +97,6 @@
     <Compile Include="Interfaces\formCliente.Designer.cs">
       <DependentUpon>formCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\formListarProveedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaces\formListarProveedor.Designer.cs">
-      <DependentUpon>formListarProveedor.cs</DependentUpon>
-    </Compile>
     <Compile Include="Interfaces\formProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,11 +111,11 @@
       <DependentUpon>InicioRM.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Interfaces\formAddProducto.resx">
+      <DependentUpon>formAddProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\formAddInsumo.resx">
       <DependentUpon>formAddInsumo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\formAddTelProv.resx">
-      <DependentUpon>formAddTelProv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\formAddTel.resx">
       <DependentUpon>formAddTel.cs</DependentUpon>
@@ -131,9 +125,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\formCliente.resx">
       <DependentUpon>formCliente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\formListarProveedor.resx">
-      <DependentUpon>formListarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaces\formProveedor.resx">
       <DependentUpon>formProveedor.cs</DependentUpon>
