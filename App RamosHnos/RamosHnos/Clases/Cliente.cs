@@ -65,7 +65,7 @@ namespace RamosHnos
 
         public void insertCliente(string nombre, string apellido) //Guardar cliente en la DB.
         {
-            string SQLtxt = "INSERT INTO Clientes (tipoDoc, numDoc, nombre, apellido, cuil, email) VALUES ('" + _tipoDoc + "','" + _numDoc + "', '" + _nombre + "', '" + _apellido + "', '" + _cuil + "', '" + _email + "');";
+            string SQLtxt = "INSERT INTO Clientes as C, Domicilios as D (C.tipoDoc, C.numDoc, C.nombre, C.apellido, C.cuil, C.email, D.Provincia, D.Calle, D.Numero, D.Piso, D.Dpto, D.CP) VALUES ('" + _tipoDoc + "','" + _numDoc + "', '" + _nombre + "', '" + _apellido + "', '" + _cuil + "', '" + _email + "');";
             sqlcmd.CommandText = SQLtxt;
             sqlcmd.Connection = sqlcnx;
             sqlcmd.ExecuteNonQuery();
@@ -103,7 +103,7 @@ namespace RamosHnos
                 sqldr = sqlcmd.ExecuteReader();
                 while (sqldr.Read())
                 {
-                    cb.Items.Add(sqldr["tipoDoc"].ToString());                   
+                    cb.Items.Add(sqldr["tipoDoc"].ToString());                 
                 }
                 sqldr.Close();
             }

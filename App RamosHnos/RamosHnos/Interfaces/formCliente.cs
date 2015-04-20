@@ -42,7 +42,7 @@ namespace RamosHnos
             try
             {
                 Cliente newcliente = new Cliente();
-                //newcliente._tipoDoc = txtTipoDoc.ValueMember;
+                //newcliente._tipoDoc = cbTipoDoc.ValueMember;
                 newcliente._numDoc = txtnumDoc.Text;
                 newcliente._nombre = txtNombre.Text;
                 newcliente._apellido = txtApellido.Text;

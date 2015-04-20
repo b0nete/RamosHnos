@@ -110,6 +110,7 @@
     <Compile Include="Interfaces\InicioRM.Designer.cs">
       <DependentUpon>InicioRM.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Interfaces\formAddProducto.resx">
       <DependentUpon>formAddProducto.cs</DependentUpon>
