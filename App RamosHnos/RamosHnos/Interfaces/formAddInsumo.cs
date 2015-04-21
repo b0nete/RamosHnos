@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RamosHnos.Interfaces
+namespace RamosHnos
 {
     public partial class formAddInsumo : Form
     {

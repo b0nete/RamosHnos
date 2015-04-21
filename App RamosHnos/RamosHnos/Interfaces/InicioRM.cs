@@ -27,5 +27,10 @@ namespace RamosHnos
             formCliente frm = new formCliente();
             frm.Show();
         }
+
+        private void editarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

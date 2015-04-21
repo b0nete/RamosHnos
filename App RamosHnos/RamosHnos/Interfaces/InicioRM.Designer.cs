@@ -95,6 +95,7 @@
             this.editarClienteToolStripMenuItem.Name = "editarClienteToolStripMenuItem";
             this.editarClienteToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.editarClienteToolStripMenuItem.Text = "Editar Cliente";
+            this.editarClienteToolStripMenuItem.Click += new System.EventHandler(this.editarClienteToolStripMenuItem_Click);
             // 
             // verClienteToolStripMenuItem
             // 

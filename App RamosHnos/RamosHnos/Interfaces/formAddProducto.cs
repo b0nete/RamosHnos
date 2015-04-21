@@ -21,5 +21,10 @@ namespace RamosHnos
         {
 
         }
+
+        private void formAddProducto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
