@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
-using connectDB;
+using RamosHnos.Capas.Entidades;
+using RamosHnos.Capas.Negocio;
 
 
 namespace RamosHnos
@@ -22,9 +23,6 @@ namespace RamosHnos
 
             Cliente cli = new Cliente();
             cli.cargarTipoDoc(cbTipoDoc);
-            //Cliente cli = new Cliente();
-            //cli.cargarTipoDoc(cbTipoDoc);
-
 
             //connectDB db = new connectDB();
             //db.Conectar();
@@ -35,31 +33,27 @@ namespace RamosHnos
 
 
         }
-
-
         
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+                                   
+            ClienteEntity cliente = new ClienteEntity()
             {
-                Cliente newcliente = new Cliente();
-                newcliente._tipoDoc = Convert.ToInt32(cbTipoDoc.SelectedValue);
-                newcliente._numDoc = txtnumDoc.Text;
-                newcliente._nombre = txtNombre.Text;
-                newcliente._apellido = txtApellido.Text;
-                newcliente._cuil = txtcuil.Text;
-                newcliente._email = txtEmail.Text;
-               
-                newcliente.CnxDB();
-                newcliente.insertCliente(newcliente._tipoDoc, newcliente._numDoc, newcliente._nombre, newcliente._apellido, newcliente._cuil, newcliente._email);
-                newcliente.DcnxDB();
-                this.Close();
-            }
-            catch
-            {
-                MessageBox.Show("ERROR");
-            }
+                tipoDoc = Convert.ToInt32(cbTipoDoc.SelectedValue),
+                numDoc = txtnumDoc.Text,
+                nombre = txtNombre.Text,
+                apellido = txtApellido.Text,
+                cuil = txtcuil.Text,
+                email = txtEmail.Text                   
+            };
+
+            ClienteB clazcliente = new ClienteB();
+            clazcliente.CnxDB();
+                       
+            ClienteB.InsertCliente(cliente);            
+            //this.DialogResult = DialogResult.OK;
+            //this.Close();
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -98,3 +92,4 @@ namespace RamosHnos
         }
     }
 }
+

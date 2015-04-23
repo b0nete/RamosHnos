@@ -65,81 +65,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clases\Cliente.cs" />
-    <Compile Include="Clases\connectDB.cs" />
-    <Compile Include="Interfaces\formDomicilio.cs">
+    <Compile Include="Capas\Datos\ClienteDAL.cs" />
+    <Compile Include="Capas\Entidades\ClienteEntity.cs" />
+    <Compile Include="Capas\Negocio\Cliente2.cs" />
+    <Compile Include="Capas\Negocio\ClienteB.cs" />
+    <Compile Include="Capas\Negocio\connectDB.cs" />
+    <Compile Include="Capas\Interfaces\formDomicilio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\formDomicilio.Designer.cs">
+    <Compile Include="Capas\Interfaces\formDomicilio.Designer.cs">
       <DependentUpon>formDomicilio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\formAddProducto.cs">
+    <Compile Include="Capas\Interfaces\formAddProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\formAddProducto.Designer.cs">
+    <Compile Include="Capas\Interfaces\formAddProducto.Designer.cs">
       <DependentUpon>formAddProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\formAddInsumo.cs">
+    <Compile Include="Capas\Interfaces\formAddInsumo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\formAddInsumo.Designer.cs">
+    <Compile Include="Capas\Interfaces\formAddInsumo.Designer.cs">
       <DependentUpon>formAddInsumo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\formTelefono.cs">
+    <Compile Include="Capas\Interfaces\formTelefono.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\formTelefono.Designer.cs">
+    <Compile Include="Capas\Interfaces\formTelefono.Designer.cs">
       <DependentUpon>formTelefono.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\formListado.cs">
+    <Compile Include="Capas\Interfaces\formListado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\formListado.Designer.cs">
+    <Compile Include="Capas\Interfaces\formListado.Designer.cs">
       <DependentUpon>formListado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\formCliente.cs">
+    <Compile Include="Capas\Interfaces\formCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\formCliente.Designer.cs">
+    <Compile Include="Capas\Interfaces\formCliente.Designer.cs">
       <DependentUpon>formCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\formProveedor.cs">
+    <Compile Include="Capas\Interfaces\formProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\formProveedor.Designer.cs">
+    <Compile Include="Capas\Interfaces\formProveedor.Designer.cs">
       <DependentUpon>formProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clases\Program.cs" />
-    <Compile Include="Interfaces\InicioRM.cs">
+    <Compile Include="Capas\Negocio\Program.cs" />
+    <Compile Include="Capas\Interfaces\InicioRM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaces\InicioRM.Designer.cs">
+    <Compile Include="Capas\Interfaces\InicioRM.Designer.cs">
       <DependentUpon>InicioRM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clases\Producto.cs" />
+    <Compile Include="Capas\Negocio\Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Interfaces\formAddProducto.resx">
+    <EmbeddedResource Include="Capas\Interfaces\formAddProducto.resx">
       <DependentUpon>formAddProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\formAddInsumo.resx">
+    <EmbeddedResource Include="Capas\Interfaces\formAddInsumo.resx">
       <DependentUpon>formAddInsumo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\formTelefono.resx">
+    <EmbeddedResource Include="Capas\Interfaces\formTelefono.resx">
       <DependentUpon>formTelefono.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\formDomicilio.resx">
+    <EmbeddedResource Include="Capas\Interfaces\formDomicilio.resx">
       <DependentUpon>formDomicilio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\formListado.resx">
+    <EmbeddedResource Include="Capas\Interfaces\formListado.resx">
       <DependentUpon>formListado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\formCliente.resx">
+    <EmbeddedResource Include="Capas\Interfaces\formCliente.resx">
       <DependentUpon>formCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\formProveedor.resx">
+    <EmbeddedResource Include="Capas\Interfaces\formProveedor.resx">
       <DependentUpon>formProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaces\InicioRM.resx">
+    <EmbeddedResource Include="Capas\Interfaces\InicioRM.resx">
       <DependentUpon>InicioRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -189,6 +192,7 @@
   <ItemGroup>
     <None Include="Resources\Sin título.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
