@@ -8,11 +8,11 @@ using MySql.Data.MySqlClient;
 using System.Data;
 using System.Windows;
 using System.Windows.Forms;
-using connectDB;
+
 
 namespace RamosHnos
 {    
-    class Cliente
+    class Cliente2
     {
         //--
         // Atributos

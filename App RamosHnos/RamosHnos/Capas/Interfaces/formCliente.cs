@@ -21,8 +21,7 @@ namespace RamosHnos
         {
             InitializeComponent();
 
-            Cliente cli = new Cliente();
-            cli.cargarTipoDoc(cbTipoDoc);
+            ClienteB.CargarTipoDoc(cbTipoDoc);
 
             //connectDB db = new connectDB();
             //db.Conectar();
@@ -48,9 +47,7 @@ namespace RamosHnos
                 email = txtEmail.Text                   
             };
 
-            ClienteB clazcliente = new ClienteB();
-            clazcliente.CnxDB();
-                       
+                                   
             ClienteB.InsertCliente(cliente);            
             //this.DialogResult = DialogResult.OK;
             //this.Close();
@@ -89,6 +86,23 @@ namespace RamosHnos
         private void txtcuil_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            formDomicilio frmdom = new formDomicilio();
+            frmdom.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            formTelefono frmtel = new formTelefono();
+            frmtel.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

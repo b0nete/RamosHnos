@@ -21,8 +21,7 @@ namespace RamosHnos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Cliente db = new Cliente();
-            db.CnxDB();            
+                        
         }
 
         private void formAddTel_Load(object sender, EventArgs e)

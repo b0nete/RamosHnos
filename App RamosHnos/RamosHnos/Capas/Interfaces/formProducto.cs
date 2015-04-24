@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace RamosHnos
 {
-    public partial class formAddProducto : Form
+    public partial class formProducto : Form
     {
-        public formAddProducto()
+        public formProducto()
         {
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void formAddProducto_Load(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
