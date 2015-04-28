@@ -11,7 +11,7 @@ using System.Data;
 
 namespace RamosHnos.Capas.Datos
 {
-    public class ClienteDAL
+    public class MySQLDAL
     {
         // Conexión
         public static MySqlConnection sqlcnx = new MySqlConnection();

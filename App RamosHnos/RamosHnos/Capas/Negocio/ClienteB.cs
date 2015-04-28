@@ -28,11 +28,11 @@ namespace RamosHnos.Capas.Negocio
         {
             try
             {
-                ClienteDAL.CnxDB();
+                MySQLDAL.CnxDB();
                 string query = @"INSERT INTO Clientes (tipoDoc, numDoc, nombre, apellido, cuil, email) 
                                  VALUES (@tipoDoc, @numdoc, @nombre, @apellido, @cuil, @email);
                                  SELECT LAST_INSERT_ID()";
-                MySqlCommand cmd = new MySqlCommand(query, ClienteDAL.sqlcnx);
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
                 cmd.CommandText = query;
 
                 cmd.Parameters.AddWithValue("@tipoDoc", cliente.tipoDoc);
@@ -47,12 +47,12 @@ namespace RamosHnos.Capas.Negocio
                 
 
                 MessageBox.Show("Cliente Guardado!");
-                ClienteDAL.DcnxDB();                
+                MySQLDAL.DcnxDB();                
                 return cliente;                
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error:"+ ex);
+                MessageBox.Show("Error: "+ ex);
                 throw;
             }
         }
@@ -62,11 +62,11 @@ namespace RamosHnos.Capas.Negocio
             try
             {
                 DataTable dt = new DataTable();
-                ClienteDAL.CnxDB();               
+                MySQLDAL.CnxDB();               
                 {
                     string query = "SELECT * FROM tipoDocumento";  
 
-                    ﻿﻿MySqlCommand cmd = new MySqlCommand(query, ClienteDAL.sqlcnx);
+                    ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 
                       MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                       da.Fill(dt);
@@ -74,7 +74,7 @@ namespace RamosHnos.Capas.Negocio
                 cb.DisplayMember = "TipoDoc";
                 cb.ValueMember = "idTipoDoc";
                 cb.DataSource = dt;
-                ClienteDAL.DcnxDB();
+                MySQLDAL.DcnxDB();
             }
             catch (Exception ex)
             {

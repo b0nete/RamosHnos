@@ -65,7 +65,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Capas\Datos\ClienteDAL.cs" />
+    <Compile Include="Capas\Datos\MySQLDAL.cs" />
     <Compile Include="Capas\Entidades\ClienteEntity.cs" />
     <Compile Include="Capas\Entidades\TelefonoEntity.cs" />
     <Compile Include="Capas\Negocio\Cliente2.cs" />
@@ -120,6 +120,7 @@
     <Compile Include="Capas\Interfaces\formProducto.Designer.cs">
       <DependentUpon>formProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Negocio\TelefonoB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Capas\Interfaces\formAddInsumo.resx">
       <DependentUpon>formAddInsumo.cs</DependentUpon>
