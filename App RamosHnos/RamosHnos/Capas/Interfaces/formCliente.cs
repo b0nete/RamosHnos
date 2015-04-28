@@ -48,7 +48,10 @@ namespace RamosHnos
             };
 
                                    
-            ClienteB.InsertCliente(cliente);            
+            ClienteB.InsertCliente(cliente);
+
+            int idCli = cliente.idCliente;
+            txtIDcliente.Text = Convert.ToString(idCli);
             //this.DialogResult = DialogResult.OK;
             //this.Close();
         }
@@ -98,11 +101,21 @@ namespace RamosHnos
         {
             formTelefono frmtel = new formTelefono();
             frmtel.Show();
+
+            frmtel.txtIDcliente.Text = txtIDcliente.Text;
+
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtIDcliente_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

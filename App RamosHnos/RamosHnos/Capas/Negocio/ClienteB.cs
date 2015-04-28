@@ -31,7 +31,7 @@ namespace RamosHnos.Capas.Negocio
                 ClienteDAL.CnxDB();
                 string query = @"INSERT INTO Clientes (tipoDoc, numDoc, nombre, apellido, cuil, email) 
                                  VALUES (@tipoDoc, @numdoc, @nombre, @apellido, @cuil, @email);
-                                 SELECT SCOPE_IDENTITY()";
+                                 SELECT LAST_INSERT_ID()";
                 MySqlCommand cmd = new MySqlCommand(query, ClienteDAL.sqlcnx);
                 cmd.CommandText = query;
 
@@ -44,9 +44,10 @@ namespace RamosHnos.Capas.Negocio
                  
                 cmd.ExecuteNonQuery();
                 cliente.idCliente = Convert.ToInt32(cmd.ExecuteScalar());
+                
 
                 MessageBox.Show("Cliente Guardado!");
-                ClienteDAL.DcnxDB();
+                ClienteDAL.DcnxDB();                
                 return cliente;                
             }
             catch (Exception ex)
@@ -81,26 +82,26 @@ namespace RamosHnos.Capas.Negocio
             }
         }  
 
-        public static ClienteEntity ObtenerID(int idCliente)
-        {
-            try
-            {                
-                ClienteEntity cliente = null;
-                ClienteDAL.CnxDB();
+        //public static ClienteEntity ObtenerID(int idCliente)
+        //{
+        //    try
+        //    {                
+        //        ClienteEntity cliente = null;
+        //        ClienteDAL.CnxDB();
 
-                string query = "SELECT * FROM Clientes WHERE idCliente = @idCliente";
+        //        string query = "SELECT * FROM Clientes WHERE idCliente = @idCliente";
 
-                MySqlCommand cmd = new MySqlCommand(query, ClienteDAL.sqlcnx);
-                cmd.Parameters.AddWithValue("@idCliente", idCliente);
+        //        MySqlCommand cmd = new MySqlCommand(query, ClienteDAL.sqlcnx);
+        //        cmd.Parameters.AddWithValue("@idCliente", idCliente);
 
-                MySqlDataReader dr = new MySqlDataReader();
+        //        MySqlDataReader dr = new MySqlDataReader();
 
-                return idCliente;
-            }
-            catch
-            {
-            }
-        }
+        //        return idCliente;
+        //    }
+        //    catch
+        //    {
+        //    }
+        //}
 
 
 

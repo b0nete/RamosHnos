@@ -32,15 +32,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtIDcliente = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +83,16 @@
             this.label4.Text = "Tipo";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // button5
+            // 
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
+            this.button5.Location = new System.Drawing.Point(567, 14);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(28, 28);
+            this.button5.TabIndex = 42;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(385, 19);
@@ -120,13 +131,6 @@
             this.label2.Text = "Característica";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(199, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(220, 20);
-            this.textBox1.TabIndex = 44;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -154,24 +158,34 @@
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // label8
             // 
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(567, 14);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(28, 28);
-            this.button5.TabIndex = 42;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(203, 16);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.TabIndex = 65;
+            this.label8.Text = "ID Cliente";
+            // 
+            // txtIDcliente
+            // 
+            this.txtIDcliente.Enabled = false;
+            this.txtIDcliente.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDcliente.Location = new System.Drawing.Point(262, 12);
+            this.txtIDcliente.Name = "txtIDcliente";
+            this.txtIDcliente.Size = new System.Drawing.Size(129, 21);
+            this.txtIDcliente.TabIndex = 64;
             // 
             // formTelefono
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 293);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtIDcliente);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Name = "formTelefono";
@@ -196,8 +210,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox txtIDcliente;
     }
 }

@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Capas\Datos\ClienteDAL.cs" />
     <Compile Include="Capas\Entidades\ClienteEntity.cs" />
+    <Compile Include="Capas\Entidades\TelefonoEntity.cs" />
     <Compile Include="Capas\Negocio\Cliente2.cs" />
     <Compile Include="Capas\Negocio\ClienteB.cs" />
     <Compile Include="Capas\Interfaces\formDomicilio.cs">
