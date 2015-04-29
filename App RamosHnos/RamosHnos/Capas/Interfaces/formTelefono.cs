@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHnos.Capas.Negocio;
+using RamosHnos.Capas.Entidades;
 
 
 
@@ -43,7 +44,16 @@ namespace RamosHnos
 
         private void button5_Click(object sender, EventArgs e)
         {
+            TelefonoEntity telefono = new TelefonoEntity();
+            {
+                telefono.cliente = Convert.ToInt32(txtIDcliente.Text);
+                telefono.tipoTel = Convert.ToInt32(cbTipoTel.SelectedValue);
+                telefono.caracteristica = txtCaracteristica.Text;
+                telefono.numTel = txtNumTel.Text;
+            }
 
+            TelefonoB.InsertTelefono(telefono);
+            TelefonoB.CargarTelefono(dataGridView1);
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -62,6 +72,11 @@ namespace RamosHnos
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

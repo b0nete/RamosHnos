@@ -33,9 +33,9 @@
             this.cbTipoTel = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNumTel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCaracteristica = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
@@ -51,9 +51,9 @@
             this.groupBox1.Controls.Add(this.cbTipoTel);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtNumTel);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtCaracteristica);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 38);
@@ -62,6 +62,7 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Telefono";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cbTipoTel
             // 
@@ -93,13 +94,13 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // textBox3
+            // txtNumTel
             // 
-            this.textBox3.Location = new System.Drawing.Point(385, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(176, 20);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtNumTel.Location = new System.Drawing.Point(385, 19);
+            this.txtNumTel.Name = "txtNumTel";
+            this.txtNumTel.Size = new System.Drawing.Size(176, 20);
+            this.txtNumTel.TabIndex = 5;
+            this.txtNumTel.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label3
             // 
@@ -112,13 +113,13 @@
             this.label3.Text = "Numero";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBox2
+            // txtCaracteristica
             // 
-            this.textBox2.Location = new System.Drawing.Point(221, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(101, 20);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtCaracteristica.Location = new System.Drawing.Point(221, 19);
+            this.txtCaracteristica.Name = "txtCaracteristica";
+            this.txtCaracteristica.Size = new System.Drawing.Size(101, 20);
+            this.txtCaracteristica.TabIndex = 3;
+            this.txtCaracteristica.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label2
             // 
@@ -202,9 +203,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNumTel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtCaracteristica;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridView dataGridView1;

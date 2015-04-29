@@ -25,13 +25,12 @@ namespace RamosHnos.Capas.Negocio
             {
                 MySQLDAL.CnxDB();
 
-                string query = @"INSERT INTO telefonos (idTelefono, cliente, tipoTel, caracteristica, numTel) 
-                                 VALUES (@idTelefono, @cliente, @tipoTel, @caracteristica, @numTel);
+                string query = @"INSERT INTO telefonos (cliente, tipoTel, caracteristica, numTel) 
+                                 VALUES (@cliente, @tipoTel, @caracteristica, @numTel);
                                  SELECT LAST_INSERT_ID()";
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
                 cmd.CommandText = query;
-
-                cmd.Parameters.AddWithValue("@idTelefono", telefono.idTelefono);
+                                
                 cmd.Parameters.AddWithValue("@cliente", telefono.cliente);
                 cmd.Parameters.AddWithValue("@tipoTel", telefono.tipoTel);
                 cmd.Parameters.AddWithValue("@caracteristica", telefono.caracteristica);
@@ -52,6 +51,7 @@ namespace RamosHnos.Capas.Negocio
             }                       
         }
 
+        
         public static void CargarTipoTel(ComboBox cb)
         {
             try
