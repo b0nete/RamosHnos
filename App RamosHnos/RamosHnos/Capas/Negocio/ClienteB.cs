@@ -63,14 +63,14 @@ namespace RamosHnos.Capas.Negocio
             {
                 DataTable dt = new DataTable();
                 MySQLDAL.CnxDB();               
-                {
-                    string query = "SELECT * FROM tipoDocumento";  
+                
+                string query = "SELECT * FROM tipoDocumento";  
 
-                    ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+                ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 
-                      MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                      da.Fill(dt);
-                }
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                
                 cb.DisplayMember = "TipoDoc";
                 cb.ValueMember = "idTipoDoc";
                 cb.DataSource = dt;

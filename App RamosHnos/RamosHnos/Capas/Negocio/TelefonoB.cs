@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 using MySql.Data.MySqlClient;
 using RamosHnos;
 using RamosHnos.Capas.Datos;
@@ -50,6 +51,64 @@ namespace RamosHnos.Capas.Negocio
                 throw;
             }                       
         }
+
+        public static void CargarTipoTel(ComboBox cb)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQLDAL.CnxDB();
+
+                string query = "SELECT * FROM tipotelefono";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                cb.DisplayMember = "tipotel";
+                cb.ValueMember = "idtipotel";
+                cb.DataSource = dt;
+                MySQLDAL.DcnxDB();                
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR: " + ex);
+            }
+        }
+
+        public static void CargarTelefono(DataGridView dgv)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQLDAL.CnxDB();
+                               
+
+                string query = @"SELECT T.idTelefono, T.cliente, T.tipoTel, T.caracteristica, T.numTel
+                                 FROM Telefonos T INNER JOIN tipotelefono TT
+                                 ON T.tipoTel = TT.idTipoTel";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+                               
+                dgv.DataSource = dt;
+                                
+                MySQLDAL.DcnxDB();
+            }
+
+            catch
+            {
+            }
+        }
+
+        
+ 
+
+
 
         
     }

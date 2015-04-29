@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RamosHnos.Capas.Negocio;
 
 
 
@@ -26,7 +27,8 @@ namespace RamosHnos
 
         private void formAddTel_Load(object sender, EventArgs e)
         {
-
+            TelefonoB.CargarTipoTel(cbTipoTel);
+            TelefonoB.CargarTelefono(dataGridView1);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
