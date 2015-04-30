@@ -36,7 +36,7 @@ namespace RamosHnos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@caracteristica", telefono.caracteristica);
                 cmd.Parameters.AddWithValue("@numTel", telefono.numTel);
 
-                cmd.ExecuteNonQuery();
+                //cmd.ExecuteNonQuery();
                 telefono.idTelefono = Convert.ToInt32(cmd.ExecuteScalar());
 
                 MessageBox.Show("Telefono Guardado!");
@@ -84,15 +84,16 @@ namespace RamosHnos.Capas.Negocio
             {
                 DataTable dt = new DataTable();
                 MySQLDAL.CnxDB();
-                               
 
-                string query = @"SELECT T.idTelefono, T.cliente, T.tipoTel, T.caracteristica, T.numTel
-                                 FROM Telefonos T INNER JOIN tipotelefono TT
-                                 ON T.tipoTel = TT.idTipoTel";
 
+                string query = @"SELECT C.idCliente, T.tipoTel, CONCAT (T.caracteristica, T.numtel) Telefono
+                                 FROM Clientes C INNER JOIN Telefonos T ON C.idCliente = T.Cliente
+                                 WHERE idCliente = @idCliente";
+
+                
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
+                                
                 da.Fill(dt);
                                
                 dgv.DataSource = dt;

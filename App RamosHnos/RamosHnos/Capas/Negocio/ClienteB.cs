@@ -11,29 +11,26 @@ using RamosHnos.Capas.Entidades;
 using RamosHnos.Capas.Datos;
 
 
-
-
-
-
-
 namespace RamosHnos.Capas.Negocio
 {
     class ClienteB
     {
 
        // -------------------------------------
-       //Métodos
+       // Métodos
 
         public static ClienteEntity InsertCliente(ClienteEntity cliente)            
         {
             try
             {
                 MySQLDAL.CnxDB();
+                
                 string query = @"INSERT INTO Clientes (tipoDoc, numDoc, nombre, apellido, cuil, email) 
                                  VALUES (@tipoDoc, @numdoc, @nombre, @apellido, @cuil, @email);
                                  SELECT LAST_INSERT_ID()";
+
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
-                cmd.CommandText = query;
+                //cmd.CommandText = query;
 
                 cmd.Parameters.AddWithValue("@tipoDoc", cliente.tipoDoc);
                 cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
@@ -41,15 +38,17 @@ namespace RamosHnos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@apellido", cliente.apellido);
                 cmd.Parameters.AddWithValue("@cuil", cliente.cuil);
                 cmd.Parameters.AddWithValue("@email", cliente.email);
-                 
-                cmd.ExecuteNonQuery();
+
+                
+                //cmd.ExecuteNonQuery();
                 cliente.idCliente = Convert.ToInt32(cmd.ExecuteScalar());
                 
-
                 MessageBox.Show("Cliente Guardado!");
-                MySQLDAL.DcnxDB();                
-                return cliente;                
+                MySQLDAL.DcnxDB();
+                
+                return cliente;
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Error: "+ ex);

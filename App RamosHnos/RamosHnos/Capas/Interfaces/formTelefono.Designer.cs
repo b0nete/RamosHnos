@@ -37,13 +37,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtCaracteristica = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvTelefonos = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtIDcliente = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefonos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -132,13 +132,13 @@
             this.label2.Text = "Característica";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // dataGridView1
+            // dgvTelefonos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 96);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(613, 151);
-            this.dataGridView1.TabIndex = 3;
+            this.dgvTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTelefonos.Location = new System.Drawing.Point(12, 96);
+            this.dgvTelefonos.Name = "dgvTelefonos";
+            this.dgvTelefonos.Size = new System.Drawing.Size(613, 151);
+            this.dgvTelefonos.TabIndex = 3;
             // 
             // button1
             // 
@@ -187,14 +187,14 @@
             this.Controls.Add(this.txtIDcliente);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvTelefonos);
             this.Controls.Add(this.groupBox1);
             this.Name = "formTelefono";
             this.Text = "Agregar Teléfono";
             this.Load += new System.EventHandler(this.formAddTel_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefonos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,7 +208,7 @@
         private System.Windows.Forms.TextBox txtCaracteristica;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvTelefonos;
         private System.Windows.Forms.ComboBox cbTipoTel;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;

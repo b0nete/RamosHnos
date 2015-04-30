@@ -23,13 +23,13 @@ namespace RamosHnos
 
         private void button1_Click(object sender, EventArgs e)
         {
-                        
+
         }
 
         private void formAddTel_Load(object sender, EventArgs e)
         {
             TelefonoB.CargarTipoTel(cbTipoTel);
-            TelefonoB.CargarTelefono(dataGridView1);
+            TelefonoB.CargarTelefono(dgvTelefonos);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,16 +44,17 @@ namespace RamosHnos
 
         private void button5_Click(object sender, EventArgs e)
         {
-            TelefonoEntity telefono = new TelefonoEntity();
+            TelefonoEntity telefono = new TelefonoEntity()
             {
-                telefono.cliente = Convert.ToInt32(txtIDcliente.Text);
-                telefono.tipoTel = Convert.ToInt32(cbTipoTel.SelectedValue);
-                telefono.caracteristica = txtCaracteristica.Text;
-                telefono.numTel = txtNumTel.Text;
-            }
+                cliente = Convert.ToInt32(txtIDcliente.Text),
+                tipoTel = Convert.ToInt32(cbTipoTel.SelectedValue),
+                caracteristica = txtCaracteristica.Text,
+                numTel = txtNumTel.Text
+            };
+
 
             TelefonoB.InsertTelefono(telefono);
-            TelefonoB.CargarTelefono(dataGridView1);
+            TelefonoB.CargarTelefono(dgvTelefonos);
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

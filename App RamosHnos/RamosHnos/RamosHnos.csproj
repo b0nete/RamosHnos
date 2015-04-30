@@ -76,11 +76,11 @@
     <Compile Include="Capas\Interfaces\formDomicilio.Designer.cs">
       <DependentUpon>formDomicilio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Capas\Interfaces\formAddInsumo.cs">
+    <Compile Include="Capas\Interfaces\formInsumo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Capas\Interfaces\formAddInsumo.Designer.cs">
-      <DependentUpon>formAddInsumo.cs</DependentUpon>
+    <Compile Include="Capas\Interfaces\formInsumo.Designer.cs">
+      <DependentUpon>formInsumo.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Interfaces\formTelefono.cs">
       <SubType>Form</SubType>
@@ -122,8 +122,8 @@
     </Compile>
     <Compile Include="Capas\Negocio\TelefonoB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Capas\Interfaces\formAddInsumo.resx">
-      <DependentUpon>formAddInsumo.cs</DependentUpon>
+    <EmbeddedResource Include="Capas\Interfaces\formInsumo.resx">
+      <DependentUpon>formInsumo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formProducto.resx">
       <DependentUpon>formProducto.cs</DependentUpon>

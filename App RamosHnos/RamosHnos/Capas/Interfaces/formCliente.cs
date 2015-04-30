@@ -28,33 +28,10 @@ namespace RamosHnos
             //dgvListado.DataSource = null;
             //db.LlenarDGVDoc();
             //dgvListado.DataSource = db.ds.Tables["tipodocumento"].DefaultView;
-
-
-
         }
         
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-                                   
-            ClienteEntity cliente = new ClienteEntity()
-            {
-                tipoDoc = Convert.ToInt32(cbTipoDoc.SelectedValue),
-                numDoc = txtnumDoc.Text,
-                nombre = txtNombre.Text,
-                apellido = txtApellido.Text,
-                cuil = txtcuil.Text,
-                email = txtEmail.Text                   
-            };
 
-                                   
-            ClienteB.InsertCliente(cliente);
-
-            int idCli = cliente.idCliente;
-            txtIDcliente.Text = Convert.ToString(idCli);
-            //this.DialogResult = DialogResult.OK;
-            //this.Close();
-        }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
@@ -99,13 +76,12 @@ namespace RamosHnos
 
         private void button4_Click(object sender, EventArgs e)
         {
+            button1_Click(sender, e);
+
             formTelefono frmtel = new formTelefono();
             frmtel.Show();
 
             frmtel.txtIDcliente.Text = txtIDcliente.Text;
-
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -116,6 +92,27 @@ namespace RamosHnos
         private void txtIDcliente_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ClienteEntity cliente = new ClienteEntity()
+            {
+                tipoDoc = Convert.ToInt32(cbTipoDoc.SelectedValue),
+                numDoc = txtnumDoc.Text,
+                nombre = txtNombre.Text,
+                apellido = txtApellido.Text,
+                cuil = txtcuil.Text,
+                email = txtEmail.Text
+            };
+
+
+            ClienteB.InsertCliente(cliente);
+
+            int idCli = cliente.idCliente;
+            txtIDcliente.Text = Convert.ToString(idCli);
+            //this.DialogResult = DialogResult.OK;
+            //this.Close();
         }
     }
 }

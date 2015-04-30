@@ -29,12 +29,11 @@ namespace RamosHnos.Capas.Datos
 
 
         
-        //Métodos
+        // Métodos
         public static void CnxDB() //Conectar con la DB.
         {
             try
-            {
-                
+            {                
                 sqlcnx.ConnectionString = cadenaConexion;
                 sqlcnx.Open();
                 //MessageBox.Show("Conexion Exitosa");

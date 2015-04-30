@@ -69,5 +69,5 @@ C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\Ram
 C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.InicioRM.resources
 C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
 C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\bin\Debug\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
-C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formAddInsumo.resources
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formProducto.resources
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formInsumo.resources

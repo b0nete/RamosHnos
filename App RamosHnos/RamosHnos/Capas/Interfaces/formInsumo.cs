@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RamosHnos
 {
-    public partial class formAddInsumo : Form
+    public partial class formInsumo : Form
     {
-        public formAddInsumo()
+        public formInsumo()
         {
             InitializeComponent();
         }
