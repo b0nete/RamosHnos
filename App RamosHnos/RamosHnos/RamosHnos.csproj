@@ -107,12 +107,6 @@
       <DependentUpon>formProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Negocio\Program.cs" />
-    <Compile Include="Capas\Interfaces\InicioRM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\InicioRM.Designer.cs">
-      <DependentUpon>InicioRM.cs</DependentUpon>
-    </Compile>
     <Compile Include="Capas\Negocio\Producto.cs" />
     <Compile Include="Capas\Interfaces\formProducto.cs">
       <SubType>Form</SubType>
@@ -121,12 +115,45 @@
       <DependentUpon>formProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Negocio\TelefonoB.cs" />
+    <Compile Include="Capas\Interfaces\formRegistrarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formRegistrarEmpleado.Designer.cs">
+      <DependentUpon>formRegistrarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formRegistrarCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formRegistrarCargo.Designer.cs">
+      <DependentUpon>formRegistrarCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formGenerarComprobante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formGenerarComprobante.Designer.cs">
+      <DependentUpon>formGenerarComprobante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formCrearPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formCrearPedido.Designer.cs">
+      <DependentUpon>formCrearPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Capas\Interfaces\formInsumo.resx">
       <DependentUpon>formInsumo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formProducto.resx">
       <DependentUpon>formProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formRegistrarCargo.resx">
+      <DependentUpon>formRegistrarCargo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formTelefono.resx">
       <DependentUpon>formTelefono.cs</DependentUpon>
@@ -143,8 +170,17 @@
     <EmbeddedResource Include="Capas\Interfaces\formProveedor.resx">
       <DependentUpon>formProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Interfaces\InicioRM.resx">
-      <DependentUpon>InicioRM.cs</DependentUpon>
+    <EmbeddedResource Include="Capas\Interfaces\formRegistrarEmpleado.resx">
+      <DependentUpon>formRegistrarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formGenerarComprobante.resx">
+      <DependentUpon>formGenerarComprobante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formCrearPedido.resx">
+      <DependentUpon>formCrearPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -193,7 +229,9 @@
   <ItemGroup>
     <None Include="Resources\Sin título.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Calendario.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

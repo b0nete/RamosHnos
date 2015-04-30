@@ -66,6 +66,7 @@
             // 
             // cbTipoTel
             // 
+            this.cbTipoTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbTipoTel.FormattingEnabled = true;
             this.cbTipoTel.Location = new System.Drawing.Point(57, 19);
             this.cbTipoTel.Name = "cbTipoTel";
@@ -76,7 +77,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label4.Location = new System.Drawing.Point(23, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
@@ -96,6 +97,7 @@
             // 
             // txtNumTel
             // 
+            this.txtNumTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtNumTel.Location = new System.Drawing.Point(385, 19);
             this.txtNumTel.Name = "txtNumTel";
             this.txtNumTel.Size = new System.Drawing.Size(176, 20);
@@ -105,7 +107,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label3.Location = new System.Drawing.Point(335, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
@@ -115,6 +117,7 @@
             // 
             // txtCaracteristica
             // 
+            this.txtCaracteristica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtCaracteristica.Location = new System.Drawing.Point(221, 19);
             this.txtCaracteristica.Name = "txtCaracteristica";
             this.txtCaracteristica.Size = new System.Drawing.Size(101, 20);
@@ -124,7 +127,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label2.Location = new System.Drawing.Point(142, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);

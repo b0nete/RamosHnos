@@ -63,9 +63,9 @@ namespace RamosHnos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Sin_título {
+        internal static System.Drawing.Bitmap Calendario {
             get {
-                object obj = ResourceManager.GetObject("Sin título", resourceCulture);
+                object obj = ResourceManager.GetObject("Calendario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
