@@ -79,7 +79,31 @@ namespace RamosHnos.Capas.Negocio
             {
                 MessageBox.Show(ex.ToString());
             }
-        }  
+        }
+
+        public static void ExisteDNI(ClienteEntity cliente)
+        {
+            try
+            {
+                MySQLDAL.CnxDB();
+
+                string query = @"SELECT *
+                                 FROM Clientes
+                                 WHERE DNI = @DNI";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+                MySQLDAL.DcnxDB();
+            }
+
+            catch
+            {
+            }
+        }
+
 
         //public static ClienteEntity ObtenerID(int idCliente)
         //{

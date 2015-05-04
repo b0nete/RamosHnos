@@ -66,6 +66,7 @@
             // 
             // cbTipoTel
             // 
+            this.cbTipoTel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbTipoTel.FormattingEnabled = true;
             this.cbTipoTel.Location = new System.Drawing.Point(57, 19);

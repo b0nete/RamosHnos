@@ -78,7 +78,7 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
-        public static void CargarTelefono(DataGridView dgv)
+        public static void CargarTelefono(DataGridView dgv, TelefonoEntity telefono)
         {
             try
             {
@@ -88,10 +88,13 @@ namespace RamosHnos.Capas.Negocio
 
                 string query = @"SELECT C.idCliente, T.tipoTel, CONCAT (T.caracteristica, T.numtel) Telefono
                                  FROM Clientes C INNER JOIN Telefonos T ON C.idCliente = T.Cliente
-                                 WHERE idCliente = @idCliente";
+                                 WHERE idCliente = @cliente";
 
                 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@cliente", telefono.cliente);
+
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                                 
                 da.Fill(dt);
