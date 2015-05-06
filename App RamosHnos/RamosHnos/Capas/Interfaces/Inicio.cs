@@ -83,5 +83,11 @@ namespace RamosHnos
 
             frm.Show();
         }
+
+        private void agregarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formProducto frm = new formProducto();
+            frm.Show();
+        }
     }
 }

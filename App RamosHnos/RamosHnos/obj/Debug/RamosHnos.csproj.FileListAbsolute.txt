@@ -119,3 +119,4 @@ C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\Ram
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Inicio.resources
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formGenerarComprobante.resources
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formCrearPedido.resources
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formTipoProducto.resources

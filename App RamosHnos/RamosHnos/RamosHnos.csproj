@@ -67,8 +67,18 @@
   <ItemGroup>
     <Compile Include="Capas\Datos\MySQLDAL.cs" />
     <Compile Include="Capas\Entidades\ClienteEntity.cs" />
+    <Compile Include="Capas\Entidades\InsumoEntity.cs" />
+    <Compile Include="Capas\Entidades\PedidoEntity.cs" />
+    <Compile Include="Capas\Entidades\ProductoEntity.cs" />
+    <Compile Include="Capas\Entidades\ProveedorEntity.cs" />
     <Compile Include="Capas\Entidades\TelefonoEntity.cs" />
-    <Compile Include="Capas\Negocio\Cliente2.cs" />
+    <Compile Include="Capas\Entidades\TipoProductoEntity.cs" />
+    <Compile Include="Capas\Interfaces\formTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formTipoProducto.Designer.cs">
+      <DependentUpon>formTipoProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Negocio\ClienteB.cs" />
     <Compile Include="Capas\Interfaces\formDomicilio.cs">
       <SubType>Form</SubType>
@@ -106,14 +116,15 @@
     <Compile Include="Capas\Interfaces\formProveedor.Designer.cs">
       <DependentUpon>formProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Negocio\ProductoB.cs" />
     <Compile Include="Capas\Negocio\Program.cs" />
-    <Compile Include="Capas\Negocio\Producto.cs" />
     <Compile Include="Capas\Interfaces\formProducto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Capas\Interfaces\formProducto.Designer.cs">
       <DependentUpon>formProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Negocio\ProveedorB.cs" />
     <Compile Include="Capas\Negocio\TelefonoB.cs" />
     <Compile Include="Capas\Interfaces\formRegistrarEmpleado.cs">
       <SubType>Form</SubType>
@@ -145,6 +156,7 @@
     <Compile Include="Capas\Interfaces\formCrearPedido.Designer.cs">
       <DependentUpon>formCrearPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Negocio\tipoProductoB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Capas\Interfaces\formInsumo.resx">
       <DependentUpon>formInsumo.cs</DependentUpon>
@@ -172,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formRegistrarEmpleado.resx">
       <DependentUpon>formRegistrarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formTipoProducto.resx">
+      <DependentUpon>formTipoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
