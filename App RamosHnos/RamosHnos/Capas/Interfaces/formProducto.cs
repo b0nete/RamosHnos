@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RamosHnos.Capas.Interfaces;
 
 namespace RamosHnos
 {
@@ -21,12 +20,6 @@ namespace RamosHnos
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            formTipoProducto frm = new formTipoProducto();
-            frm.Show();
         }
     }
 }

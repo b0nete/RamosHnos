@@ -75,7 +75,9 @@ namespace RamosHnos
         }
 
         private void button4_Click(object sender, EventArgs e)
-        {            
+        {
+            button1_Click(sender, e);
+
             formTelefono frmtel = new formTelefono();
             frmtel.Show();
 

@@ -230,7 +230,7 @@
             // 
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(261, 28);
+            this.btnSearch.Location = new System.Drawing.Point(379, 55);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(26, 26);
             this.btnSearch.TabIndex = 40;
@@ -238,7 +238,6 @@
             // 
             // cbTipoDoc
             // 
-            this.cbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbTipoDoc.FormattingEnabled = true;
             this.cbTipoDoc.Location = new System.Drawing.Point(123, 112);
