@@ -103,28 +103,7 @@ namespace RamosHnos.Capas.Negocio
             {
             }
         }
-
-
-        //public static ClienteEntity ObtenerID(int idCliente)
-        //{
-        //    try
-        //    {                
-        //        ClienteEntity cliente = null;
-        //        ClienteDAL.CnxDB();
-
-        //        string query = "SELECT * FROM Clientes WHERE idCliente = @idCliente";
-
-        //        MySqlCommand cmd = new MySqlCommand(query, ClienteDAL.sqlcnx);
-        //        cmd.Parameters.AddWithValue("@idCliente", idCliente);
-
-        //        MySqlDataReader dr = new MySqlDataReader();
-
-        //        return idCliente;
-        //    }
-        //    catch
-        //    {
-        //    }
-        //}
+        
 
 
 

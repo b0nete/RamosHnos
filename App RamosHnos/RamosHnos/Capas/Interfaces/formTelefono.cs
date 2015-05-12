@@ -29,7 +29,16 @@ namespace RamosHnos
         private void formAddTel_Load(object sender, EventArgs e)
         {
             TelefonoB.CargarTipoTel(cbTipoTel);
-            TelefonoB.CargarTelefono(dgvTelefonos);
+
+            TelefonoEntity telefono = new TelefonoEntity()
+            {
+                cliente = Convert.ToInt32(txtIDcliente.Text),
+                tipoTel = Convert.ToInt32(cbTipoTel.SelectedValue),
+                caracteristica = txtCaracteristica.Text,
+                numTel = txtNumTel.Text
+            };
+
+            TelefonoB.CargarTelefono(dgvTelefonos, telefono);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,7 +63,7 @@ namespace RamosHnos
 
 
             TelefonoB.InsertTelefono(telefono);
-            TelefonoB.CargarTelefono(dgvTelefonos);
+            TelefonoB.CargarTelefono(dgvTelefonos, telefono);
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

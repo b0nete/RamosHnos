@@ -11,6 +11,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using RamosHnos.Capas.Entidades;
 using RamosHnos.Capas.Negocio;
+using RamosHnos.Capas.Interfaces;
 
 
 namespace RamosHnos
@@ -113,6 +114,12 @@ namespace RamosHnos
             txtIDcliente.Text = Convert.ToString(idCli);
             //this.DialogResult = DialogResult.OK;
             //this.Close();
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            formDoc frm = new formDoc();
+            frm.Show();
         }
     }
 }
