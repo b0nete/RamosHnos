@@ -20,15 +20,7 @@ namespace RamosHnos
     {
         public formCliente()
         {
-            InitializeComponent();
-
-            ClienteB.CargarTipoDoc(cbTipoDoc);
-
-            //connectDB db = new connectDB();
-            //db.Conectar();
-            //dgvListado.DataSource = null;
-            //db.LlenarDGVDoc();
-            //dgvListado.DataSource = db.ds.Tables["tipodocumento"].DefaultView;
+            InitializeComponent();  
         }
         
 
@@ -41,6 +33,16 @@ namespace RamosHnos
 
         private void formCliente_Load(object sender, EventArgs e)
         {
+            TipoDocB.CargarTipoDoc(cbTipoDoc);
+
+            DataTable dt = TipoDocB.ExisteTipoDoc();
+            if (dt.Rows.Count == 0)
+            {
+                MessageBox.Show("Cargue los Documentos a Utilizar");
+                formDoc frm = new formDoc();
+                frm.Show();
+                this.Close();
+            }
 
         }
 
@@ -120,6 +122,17 @@ namespace RamosHnos
         {
             formDoc frm = new formDoc();
             frm.Show();
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            
+            string txtinDNI = Microsoft.VisualBasic.Interaction.InputBox("Ingrese DNI", "DNI");
+
+            ClienteEntity cliente = new ClienteEntity
+            {
+                idCliente = Convert.ToInt32(txtinDNI),
+            };
         }
     }
 }

@@ -52,6 +52,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -170,7 +171,7 @@
       <DependentUpon>formCrearPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Negocio\TipoDocB.cs" />
-    <Compile Include="Capas\Negocio\tipoProductoB.cs" />
+    <Compile Include="Capas\Negocio\TipoProductoB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Capas\Interfaces\formDoc.resx">
       <DependentUpon>formDoc.cs</DependentUpon>

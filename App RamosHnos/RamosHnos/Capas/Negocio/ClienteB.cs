@@ -56,31 +56,7 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
-        public static void CargarTipoDoc(ComboBox cb)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                MySQLDAL.CnxDB();               
-                
-                string query = "SELECT * FROM tipoDocumento";  
-
-                ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
-
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
-                
-                cb.DisplayMember = "TipoDoc";
-                cb.ValueMember = "idTipoDoc";
-                cb.DataSource = dt;
-                MySQLDAL.DcnxDB();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
+        
         public static void ExisteDNI(ClienteEntity cliente)
         {
             try
@@ -103,7 +79,46 @@ namespace RamosHnos.Capas.Negocio
             {
             }
         }
-        
+
+        public static ClienteEntity BuscarCliente(ClienteEntity cliente)
+        {
+            try
+            {
+                MySQLDAL.CnxDB();
+
+                string query = "SELECT * FROM Clientes WHERE DNI = @DNI";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@DNI", cliente.numDoc);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                DataRow row = dt.Rows[0];
+
+                cliente.idCliente = Convert.ToInt32(row["idCliente"]);
+
+
+                //string idCliente = Convert.ToInt32(dt.Rows["idCliente"]);
+
+
+
+                MySQLDAL.DcnxDB();
+                return cliente;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+
+    
 
 
 

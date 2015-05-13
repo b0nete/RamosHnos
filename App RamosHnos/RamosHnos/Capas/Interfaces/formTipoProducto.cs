@@ -28,7 +28,7 @@ namespace RamosHnos.Capas.Interfaces
                 estado = cbEstado.Checked,               
             };
 
-            tipoProductoB.InsertTipoProducto(tipoProducto);
+            TipoProductoB.InsertTipoProducto(tipoProducto);
         }
     }
 }

@@ -20,7 +20,7 @@ namespace RamosHnos
         private void agregarClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formCliente frm = new formCliente();
-            frm.Show ();
+            frm.Show();
 
         }
 

@@ -10,7 +10,7 @@ using RamosHnos.Capas.Datos;
 
 namespace RamosHnos.Capas.Negocio
 {
-    class tipoProductoB
+    class TipoProductoB
     {
 
         public static TipoProductoEntity InsertTipoProducto(TipoProductoEntity tipoproducto)
@@ -41,7 +41,7 @@ namespace RamosHnos.Capas.Negocio
                 MessageBox.Show("Error: "+ ex);
                 throw;
             }
-        }
+        }       
 
     }
 }

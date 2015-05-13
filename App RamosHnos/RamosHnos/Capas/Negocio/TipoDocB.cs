@@ -39,6 +39,7 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
+        
         public static void LlenarDGV (DataGridView dgv)
         {
             try
@@ -65,5 +66,60 @@ namespace RamosHnos.Capas.Negocio
                 throw;
             }
         }
+
+
+        public static void CargarTipoDoc(ComboBox cb)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQLDAL.CnxDB();
+
+                string query = "SELECT * FROM tipoDocumento";  
+
+                ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+
+                cb.DisplayMember = "TipoDoc";
+                cb.ValueMember = "idTipoDoc";
+                cb.DataSource = dt;
+           
+                MySQLDAL.DcnxDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public static DataTable ExisteTipoDoc()
+        {
+            try
+            {
+                MySQLDAL.CnxDB();
+                DataTable dt = new DataTable();
+
+                string query = "SELECT * FROM tipoDocumento";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                
+                MySQLDAL.DcnxDB();
+                return dt;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }            
+        }
+
+
+
+        
     }
 }

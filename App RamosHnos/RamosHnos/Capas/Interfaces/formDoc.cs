@@ -16,8 +16,7 @@ namespace RamosHnos.Capas.Interfaces
     {
         public formDoc()
         {
-            InitializeComponent();
-            TipoDocB.LlenarDGV(dgvTipoDoc);
+            InitializeComponent();            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,6 +38,19 @@ namespace RamosHnos.Capas.Interfaces
         private void txtTipoDoc_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void formDoc_Load(object sender, EventArgs e)
+        {
+            TipoDocB.LlenarDGV(dgvTipoDoc);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            formCliente frm = new formCliente();
+            frm.Show();
+
+            this.Close();
         }
 
 
