@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formDomicilio));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -54,8 +56,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +91,32 @@
             this.groupBox2.TabIndex = 38;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Domicilio";
+            // 
+            // label2
+            // 
+            this.label2.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.ForeColor = System.Drawing.Color.Red;
+            this.label2.Location = new System.Drawing.Point(324, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(11, 13);
+            this.label2.TabIndex = 60;
+            this.label2.Text = "*";
+            // 
+            // label1
+            // 
+            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(38, 79);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 13);
+            this.label1.TabIndex = 59;
+            this.label1.Text = "*";
             // 
             // button5
             // 
@@ -334,32 +360,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(613, 188);
             this.dataGridView1.TabIndex = 55;
             // 
-            // label1
-            // 
-            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(38, 79);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(11, 13);
-            this.label1.TabIndex = 59;
-            this.label1.Text = "*";
-            // 
-            // label2
-            // 
-            this.label2.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(324, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(11, 13);
-            this.label2.TabIndex = 60;
-            this.label2.Text = "*";
-            // 
             // formDomicilio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,7 +371,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "formDomicilio";
-            this.Text = "formDomicilio";
+            this.Text = "Registrar Domicilio";
             this.Load += new System.EventHandler(this.formDomicilio_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

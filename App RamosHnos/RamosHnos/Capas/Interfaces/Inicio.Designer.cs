@@ -52,7 +52,6 @@
             this.agregarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +69,7 @@
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(968, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(915, 24);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,20 +93,20 @@
             // agregarClienteToolStripMenuItem
             // 
             this.agregarClienteToolStripMenuItem.Name = "agregarClienteToolStripMenuItem";
-            this.agregarClienteToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.agregarClienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.agregarClienteToolStripMenuItem.Text = "Agregar Cliente";
             this.agregarClienteToolStripMenuItem.Click += new System.EventHandler(this.agregarClienteToolStripMenuItem_Click);
             // 
             // editarClienteToolStripMenuItem
             // 
             this.editarClienteToolStripMenuItem.Name = "editarClienteToolStripMenuItem";
-            this.editarClienteToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.editarClienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.editarClienteToolStripMenuItem.Text = "Editar Cliente";
             // 
             // verClienteToolStripMenuItem
             // 
             this.verClienteToolStripMenuItem.Name = "verClienteToolStripMenuItem";
-            this.verClienteToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.verClienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.verClienteToolStripMenuItem.Text = "Ver Cliente";
             this.verClienteToolStripMenuItem.Click += new System.EventHandler(this.verClienteToolStripMenuItem_Click);
             // 
@@ -175,8 +174,8 @@
             this.cajaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ingresarGastoToolStripMenuItem});
             this.cajaToolStripMenuItem.Name = "cajaToolStripMenuItem";
-            this.cajaToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.cajaToolStripMenuItem.Text = "Caja";
+            this.cajaToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.cajaToolStripMenuItem.Text = "Arqueo de Caja";
             // 
             // ingresarGastoToolStripMenuItem
             // 
@@ -245,28 +244,17 @@
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Wide Latin", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(108, 233);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(724, 65);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "RAMOS HNOS";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(968, 484);
-            this.Controls.Add(this.label1);
+            this.BackgroundImage = global::RamosHnos.Properties.Resources.Sifon_Buenos_Aires;
+            this.ClientSize = new System.Drawing.Size(915, 507);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Inicio";
             this.Text = "Inicio";
+            this.Load += new System.EventHandler(this.Inicio_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -296,7 +284,6 @@
         private System.Windows.Forms.ToolStripMenuItem agregarUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem agregarProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarProductoToolStripMenuItem;

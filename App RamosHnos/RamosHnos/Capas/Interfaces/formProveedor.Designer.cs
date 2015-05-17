@@ -144,7 +144,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(29, 83);
+            this.label6.Location = new System.Drawing.Point(47, 84);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(11, 13);
             this.label6.TabIndex = 46;
@@ -243,11 +243,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.Location = new System.Drawing.Point(47, 83);
+            this.label1.Location = new System.Drawing.Point(60, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(32, 13);
             this.label1.TabIndex = 28;
-            this.label1.Text = "Cuil/Cuit";
+            this.label1.Text = "CUIT";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBox5
             // 

@@ -32,10 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -44,7 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,6 +57,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -69,12 +66,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.button6);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.comboBox1);
@@ -83,7 +78,6 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
@@ -109,29 +103,11 @@
             this.label6.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label6.Location = new System.Drawing.Point(14, 56);
+            this.label6.Location = new System.Drawing.Point(24, 56);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 13);
+            this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 59;
-            this.label6.Text = "Descripción";
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(253, 106);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 58;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox1.Location = new System.Drawing.Point(83, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 20);
-            this.textBox1.TabIndex = 57;
+            this.label6.Text = "Producto";
             // 
             // button6
             // 
@@ -143,22 +119,11 @@
             this.button6.Text = "Agregar";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // label5
-            // 
-            this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label5.Location = new System.Drawing.Point(33, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
-            this.label5.TabIndex = 56;
-            this.label5.Text = "Nombre";
-            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(254, 75);
+            this.button2.Location = new System.Drawing.Point(255, 48);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(28, 28);
             this.button2.TabIndex = 55;
@@ -168,7 +133,7 @@
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(84, 79);
+            this.comboBox2.Location = new System.Drawing.Point(83, 24);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(164, 21);
             this.comboBox2.TabIndex = 54;
@@ -197,7 +162,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.checkBox1.Location = new System.Drawing.Point(126, 171);
+            this.checkBox1.Location = new System.Drawing.Point(127, 150);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(15, 14);
             this.checkBox1.TabIndex = 50;
@@ -207,7 +172,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.Location = new System.Drawing.Point(80, 171);
+            this.label1.Location = new System.Drawing.Point(81, 150);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 49;
@@ -220,7 +185,7 @@
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(27, 141);
+            this.label16.Location = new System.Drawing.Point(6, 83);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(11, 13);
             this.label16.TabIndex = 45;
@@ -233,26 +198,16 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(37, 82);
+            this.label15.Location = new System.Drawing.Point(36, 27);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(11, 13);
             this.label15.TabIndex = 44;
             this.label15.Text = "*";
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.Location = new System.Drawing.Point(254, 23);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(28, 28);
-            this.btnSearch.TabIndex = 40;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
             // txtApellido
             // 
             this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtApellido.Location = new System.Drawing.Point(83, 137);
+            this.txtApellido.Location = new System.Drawing.Point(83, 79);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(164, 20);
             this.txtApellido.TabIndex = 29;
@@ -261,18 +216,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(40, 141);
+            this.label2.Location = new System.Drawing.Point(16, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 28;
-            this.label2.Text = "Costo";
+            this.label2.Text = "Descripción";
             // 
             // label4
             // 
             this.label4.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(49, 83);
+            this.label4.Location = new System.Drawing.Point(48, 28);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 26;
@@ -307,7 +262,7 @@
             this.groupBox2.Size = new System.Drawing.Size(405, 226);
             this.groupBox2.TabIndex = 54;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Productos Agregados";
+            this.groupBox2.Text = "Listado de productos";
             // 
             // dataGridView1
             // 
@@ -418,6 +373,19 @@
             this.label12.TabIndex = 44;
             this.label12.Text = "*";
             // 
+            // label5
+            // 
+            this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(16, 56);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(11, 13);
+            this.label5.TabIndex = 61;
+            this.label5.Text = "*";
+            // 
             // formProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,7 +398,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "formProducto";
-            this.Text = "formProducto";
+            this.Text = "Registrar Producto";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -444,8 +412,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -454,11 +420,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
@@ -475,5 +439,6 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label5;
     }
 }

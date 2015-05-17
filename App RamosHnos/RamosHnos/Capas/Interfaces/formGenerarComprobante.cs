@@ -34,7 +34,7 @@ namespace RamosHnos
 
         private void formRegistrarPedido_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
