@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCliente));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbCliente = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtIDcliente = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnTelefono = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,42 +56,42 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.gbCliente.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gbCliente
             // 
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtIDcliente);
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.txtcuil);
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.cbTipoDoc);
-            this.groupBox1.Controls.Add(this.txtnumDoc);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtEmail);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtApellido);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(498, 269);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Información Cliente";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.gbCliente.Controls.Add(this.label8);
+            this.gbCliente.Controls.Add(this.txtIDcliente);
+            this.gbCliente.Controls.Add(this.btnTelefono);
+            this.gbCliente.Controls.Add(this.button3);
+            this.gbCliente.Controls.Add(this.label7);
+            this.gbCliente.Controls.Add(this.label3);
+            this.gbCliente.Controls.Add(this.label18);
+            this.gbCliente.Controls.Add(this.label17);
+            this.gbCliente.Controls.Add(this.label16);
+            this.gbCliente.Controls.Add(this.label15);
+            this.gbCliente.Controls.Add(this.txtcuil);
+            this.gbCliente.Controls.Add(this.label14);
+            this.gbCliente.Controls.Add(this.btnSearch);
+            this.gbCliente.Controls.Add(this.cbTipoDoc);
+            this.gbCliente.Controls.Add(this.txtnumDoc);
+            this.gbCliente.Controls.Add(this.label6);
+            this.gbCliente.Controls.Add(this.txtEmail);
+            this.gbCliente.Controls.Add(this.label5);
+            this.gbCliente.Controls.Add(this.txtApellido);
+            this.gbCliente.Controls.Add(this.label1);
+            this.gbCliente.Controls.Add(this.txtNombre);
+            this.gbCliente.Controls.Add(this.label4);
+            this.gbCliente.Controls.Add(this.label2);
+            this.gbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbCliente.Location = new System.Drawing.Point(12, 12);
+            this.gbCliente.Name = "gbCliente";
+            this.gbCliente.Size = new System.Drawing.Size(498, 269);
+            this.gbCliente.TabIndex = 21;
+            this.gbCliente.TabStop = false;
+            this.gbCliente.Text = "Información Cliente";
+            this.gbCliente.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // label8
             // 
@@ -113,17 +113,17 @@
             this.txtIDcliente.TabIndex = 62;
             this.txtIDcliente.TextChanged += new System.EventHandler(this.txtIDcliente_TextChanged);
             // 
-            // button4
+            // btnTelefono
             // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(123, 218);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(28, 28);
-            this.button4.TabIndex = 61;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnTelefono.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTelefono.BackgroundImage")));
+            this.btnTelefono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnTelefono.Location = new System.Drawing.Point(123, 218);
+            this.btnTelefono.Name = "btnTelefono";
+            this.btnTelefono.Size = new System.Drawing.Size(28, 28);
+            this.btnTelefono.TabIndex = 61;
+            this.btnTelefono.UseVisualStyleBackColor = true;
+            this.btnTelefono.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -239,6 +239,7 @@
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 40;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cbTipoDoc
             // 
@@ -375,23 +376,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 328);
+            this.ClientSize = new System.Drawing.Size(522, 320);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbCliente);
             this.Controls.Add(this.button1);
             this.Name = "formCliente";
             this.Text = "Registrar Cliente";
             this.Load += new System.EventHandler(this.formCliente_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbCliente.ResumeLayout(false);
+            this.gbCliente.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbCliente;
         private System.Windows.Forms.ComboBox cbTipoDoc;
         private System.Windows.Forms.TextBox txtnumDoc;
         private System.Windows.Forms.Label label6;
@@ -413,7 +414,7 @@
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtIDcliente;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnTelefono;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnEdit;

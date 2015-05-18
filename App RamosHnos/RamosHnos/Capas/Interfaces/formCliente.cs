@@ -12,6 +12,7 @@ using MySql.Data.MySqlClient;
 using RamosHnos.Capas.Entidades;
 using RamosHnos.Capas.Negocio;
 using RamosHnos.Capas.Interfaces;
+using RamosHnos.Libs;
 
 
 namespace RamosHnos
@@ -79,12 +80,18 @@ namespace RamosHnos
 
         private void button4_Click(object sender, EventArgs e)
         {
-            button1_Click(sender, e);
+            if (txtIDcliente.Text == "")
+            {
+                MessageBox.Show("Asigne el cliente a cargar Teléfono");
+            }
+            else
+            {
+                formTelefono frmtel = new formTelefono();
+                frmtel.Show();
 
-            formTelefono frmtel = new formTelefono();
-            frmtel.Show();
-
-            frmtel.txtIDcliente.Text = txtIDcliente.Text;
+                frmtel.txtIDcliente.Text = txtIDcliente.Text;
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -106,7 +113,7 @@ namespace RamosHnos
                 nombre = txtNombre.Text,
                 apellido = txtApellido.Text,
                 cuil = txtcuil.Text,
-                email = txtEmail.Text
+                email = txtEmail.Text                
             };
 
 
@@ -114,8 +121,8 @@ namespace RamosHnos
 
             int idCli = cliente.idCliente;
             txtIDcliente.Text = Convert.ToString(idCli);
-            //this.DialogResult = DialogResult.OK;
-            //this.Close();
+
+            Libs.ClearControlsLibs.ClearAll(this, gbCliente);
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -126,14 +133,29 @@ namespace RamosHnos
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            
-            string txtinDNI = Microsoft.VisualBasic.Interaction.InputBox("Ingrese DNI", "DNI");
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+            string txtinDNI = "";
+            InputBoxLib.InputBox("Ingrese DNI", "DNI", ref txtinDNI);
 
             ClienteEntity cliente = new ClienteEntity
             {
-                idCliente = Convert.ToInt32(txtinDNI),
+                numDoc = txtinDNI
             };
-        }
+
+            ClienteB.BuscarCliente(cliente);
+
+            txtIDcliente.Text = Convert.ToString(cliente.idCliente);
+            txtnumDoc.Text = cliente.numDoc;
+            txtNombre.Text = cliente.nombre;
+            txtApellido.Text = cliente.apellido;
+            txtcuil.Text = cliente.cuil;
+            txtEmail.Text = cliente.email;
+        }        
     }
 }
 

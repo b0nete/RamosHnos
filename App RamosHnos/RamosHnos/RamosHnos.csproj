@@ -52,7 +52,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -75,94 +74,11 @@
     <Compile Include="Capas\Entidades\TelefonoEntity.cs" />
     <Compile Include="Capas\Entidades\TipoDocEntity.cs" />
     <Compile Include="Capas\Entidades\TipoProductoEntity.cs" />
-    <Compile Include="Capas\Interfaces\formDoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formDoc.Designer.cs">
-      <DependentUpon>formDoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formRubro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formRubro.Designer.cs">
-      <DependentUpon>formRubro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formTipoProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formTipoProducto.Designer.cs">
-      <DependentUpon>formTipoProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Capas\Negocio\ClienteB.cs" />
-    <Compile Include="Capas\Interfaces\formDomicilio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formDomicilio.Designer.cs">
-      <DependentUpon>formDomicilio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formInsumo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formInsumo.Designer.cs">
-      <DependentUpon>formInsumo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formTelefono.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formTelefono.Designer.cs">
-      <DependentUpon>formTelefono.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formListado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formListado.Designer.cs">
-      <DependentUpon>formListado.cs</DependentUpon>
-    </Compile>
     <Compile Include="Capas\Interfaces\formCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Capas\Interfaces\formCliente.Designer.cs">
       <DependentUpon>formCliente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formProveedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formProveedor.Designer.cs">
-      <DependentUpon>formProveedor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Capas\Negocio\ProductoB.cs" />
-    <Compile Include="Capas\Negocio\Program.cs" />
-    <Compile Include="Capas\Interfaces\formProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formProducto.Designer.cs">
-      <DependentUpon>formProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Capas\Negocio\ProveedorB.cs" />
-    <Compile Include="Capas\Negocio\TelefonoB.cs" />
-    <Compile Include="Capas\Interfaces\formRegistrarEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formRegistrarEmpleado.Designer.cs">
-      <DependentUpon>formRegistrarEmpleado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formRegistrarCargo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formRegistrarCargo.Designer.cs">
-      <DependentUpon>formRegistrarCargo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Capas\Interfaces\Inicio.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\Inicio.Designer.cs">
-      <DependentUpon>Inicio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formGenerarComprobante.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formGenerarComprobante.Designer.cs">
-      <DependentUpon>formGenerarComprobante.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Interfaces\formCrearPedido.cs">
       <SubType>Form</SubType>
@@ -170,50 +86,135 @@
     <Compile Include="Capas\Interfaces\formCrearPedido.Designer.cs">
       <DependentUpon>formCrearPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaces\formDoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formDoc.Designer.cs">
+      <DependentUpon>formDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formDomicilio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formDomicilio.Designer.cs">
+      <DependentUpon>formDomicilio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formGenerarComprobante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formGenerarComprobante.Designer.cs">
+      <DependentUpon>formGenerarComprobante.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formInsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formInsumo.Designer.cs">
+      <DependentUpon>formInsumo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formListado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formListado.Designer.cs">
+      <DependentUpon>formListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formProducto.Designer.cs">
+      <DependentUpon>formProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formProveedor.Designer.cs">
+      <DependentUpon>formProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formRegistrarCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formRegistrarCargo.Designer.cs">
+      <DependentUpon>formRegistrarCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formRegistrarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formRegistrarEmpleado.Designer.cs">
+      <DependentUpon>formRegistrarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formRubro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formRubro.Designer.cs">
+      <DependentUpon>formRubro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formTelefono.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formTelefono.Designer.cs">
+      <DependentUpon>formTelefono.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formTipoProducto.Designer.cs">
+      <DependentUpon>formTipoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaces\Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Negocio\ClienteB.cs" />
+    <Compile Include="Capas\Negocio\ProductoB.cs" />
+    <Compile Include="Capas\Negocio\Program.cs" />
+    <Compile Include="Capas\Negocio\ProveedorB.cs" />
+    <Compile Include="Capas\Negocio\TelefonoB.cs" />
     <Compile Include="Capas\Negocio\TipoDocB.cs" />
     <Compile Include="Capas\Negocio\TipoProductoB.cs" />
+    <Compile Include="Libs\ClearControlsLibs.cs" />
+    <Compile Include="Libs\InputBoxLib.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Capas\Interfaces\formCliente.resx">
+      <DependentUpon>formCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formCrearPedido.resx">
+      <DependentUpon>formCrearPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formDoc.resx">
       <DependentUpon>formDoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Interfaces\formInsumo.resx">
-      <DependentUpon>formInsumo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Interfaces\formProducto.resx">
-      <DependentUpon>formProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Interfaces\formRegistrarCargo.resx">
-      <DependentUpon>formRegistrarCargo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Interfaces\formTelefono.resx">
-      <DependentUpon>formTelefono.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formDomicilio.resx">
       <DependentUpon>formDomicilio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formGenerarComprobante.resx">
+      <DependentUpon>formGenerarComprobante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formInsumo.resx">
+      <DependentUpon>formInsumo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formListado.resx">
       <DependentUpon>formListado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Interfaces\formCliente.resx">
-      <DependentUpon>formCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Capas\Interfaces\formProducto.resx">
+      <DependentUpon>formProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formProveedor.resx">
       <DependentUpon>formProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formRegistrarCargo.resx">
+      <DependentUpon>formRegistrarCargo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formRegistrarEmpleado.resx">
       <DependentUpon>formRegistrarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formTelefono.resx">
+      <DependentUpon>formTelefono.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formTipoProducto.resx">
       <DependentUpon>formTipoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Interfaces\formGenerarComprobante.resx">
-      <DependentUpon>formGenerarComprobante.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Interfaces\formCrearPedido.resx">
-      <DependentUpon>formCrearPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

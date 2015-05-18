@@ -9,6 +9,7 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 using RamosHnos.Capas.Entidades;
 using RamosHnos.Capas.Datos;
+using RamosHnos.Capas.Interfaces;
 
 
 namespace RamosHnos.Capas.Negocio
@@ -86,11 +87,11 @@ namespace RamosHnos.Capas.Negocio
             {
                 MySQLDAL.CnxDB();
 
-                string query = "SELECT * FROM Clientes WHERE DNI = @DNI";
+                string query = "SELECT * FROM Clientes WHERE numDoc = @numDoc";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@DNI", cliente.numDoc);
+                cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
 
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -100,11 +101,13 @@ namespace RamosHnos.Capas.Negocio
                 DataRow row = dt.Rows[0];
 
                 cliente.idCliente = Convert.ToInt32(row["idCliente"]);
-
+                cliente.tipoDoc = Convert.ToInt32(row["tipoDoc"]);
+                cliente.nombre = Convert.ToString(row["nombre"]);
+                cliente.apellido = Convert.ToString(row["apellido"]);
+                cliente.cuil = Convert.ToString(row["cuil"]);
+                cliente.email = Convert.ToString(row["email"]);
 
                 //string idCliente = Convert.ToInt32(dt.Rows["idCliente"]);
-
-
 
                 MySQLDAL.DcnxDB();
                 return cliente;
@@ -116,6 +119,18 @@ namespace RamosHnos.Capas.Negocio
                 throw;
             }
         }
+
+        //public static ClienteEntity LimpiarCampos(ClienteEntity cliente)
+        //{
+        //    ClienteEntity cliente = new ClienteEntity()
+        //    {
+                
+        //    }
+
+        //}
+
+
+
 
 
     
