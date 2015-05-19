@@ -74,15 +74,25 @@ namespace RamosHnos
 
         private void button3_Click(object sender, EventArgs e)
         {
-            formDomicilio frmdom = new formDomicilio();
-            frmdom.Show();
+            if (txtIDcliente.Text == "")
+            {
+                MessageBox.Show("Asigne el cliente a cargar un Domicilio");
+            }
+            else
+            {
+                formDomicilio frmdom = new formDomicilio();
+                frmdom.Show();
+
+                frmdom.txtCliente.Text = txtIDcliente.Text;
+            }
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             if (txtIDcliente.Text == "")
             {
-                MessageBox.Show("Asigne el cliente a cargar Teléfono");
+                MessageBox.Show("Asigne el cliente a cargar un Teléfono");
             }
             else
             {
@@ -138,7 +148,6 @@ namespace RamosHnos
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
             string txtinDNI = "";
             InputBoxLib.InputBox("Ingrese DNI", "DNI", ref txtinDNI);
 

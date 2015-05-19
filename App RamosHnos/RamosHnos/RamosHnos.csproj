@@ -67,13 +67,17 @@
   <ItemGroup>
     <Compile Include="Capas\Datos\MySQLDAL.cs" />
     <Compile Include="Capas\Entidades\ClienteEntity.cs" />
+    <Compile Include="Capas\Entidades\DomicilioEntity.cs" />
     <Compile Include="Capas\Entidades\InsumoEntity.cs" />
+    <Compile Include="Capas\Entidades\LocalidadEntity.cs" />
     <Compile Include="Capas\Entidades\PedidoEntity.cs" />
     <Compile Include="Capas\Entidades\ProductoEntity.cs" />
     <Compile Include="Capas\Entidades\ProveedorEntity.cs" />
+    <Compile Include="Capas\Entidades\ProvinciaEntity.cs" />
     <Compile Include="Capas\Entidades\TelefonoEntity.cs" />
     <Compile Include="Capas\Entidades\TipoDocEntity.cs" />
     <Compile Include="Capas\Entidades\TipoProductoEntity.cs" />
+    <Compile Include="Capas\Entidades\TipoTelEntity.cs" />
     <Compile Include="Capas\Interfaces\formCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +132,12 @@
     <Compile Include="Capas\Interfaces\formProveedor.Designer.cs">
       <DependentUpon>formProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaces\formProvincia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formProvincia.Designer.cs">
+      <DependentUpon>formProvincia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaces\formRegistrarCargo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +168,12 @@
     <Compile Include="Capas\Interfaces\formTipoProducto.Designer.cs">
       <DependentUpon>formTipoProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaces\formTipoTel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formTipoTel.Designer.cs">
+      <DependentUpon>formTipoTel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaces\Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,9 +181,11 @@
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Negocio\ClienteB.cs" />
+    <Compile Include="Capas\Negocio\DomicilioB.cs" />
     <Compile Include="Capas\Negocio\ProductoB.cs" />
     <Compile Include="Capas\Negocio\Program.cs" />
     <Compile Include="Capas\Negocio\ProveedorB.cs" />
+    <Compile Include="Capas\Negocio\ProvinciaB.cs" />
     <Compile Include="Capas\Negocio\TelefonoB.cs" />
     <Compile Include="Capas\Negocio\TipoDocB.cs" />
     <Compile Include="Capas\Negocio\TipoProductoB.cs" />
@@ -201,6 +219,9 @@
     <EmbeddedResource Include="Capas\Interfaces\formProveedor.resx">
       <DependentUpon>formProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formProvincia.resx">
+      <DependentUpon>formProvincia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formRegistrarCargo.resx">
       <DependentUpon>formRegistrarCargo.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formTipoProducto.resx">
       <DependentUpon>formTipoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formTipoTel.resx">
+      <DependentUpon>formTipoTel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>

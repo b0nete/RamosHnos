@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHnos.Capas.Negocio;
 using RamosHnos.Capas.Entidades;
+using RamosHnos.Capas.Interfaces;
 
 
 
@@ -30,15 +31,14 @@ namespace RamosHnos
         {
             TelefonoB.CargarTipoTel(cbTipoTel);
 
-            TelefonoEntity telefono = new TelefonoEntity()
+            DataTable dt = TelefonoB.ExisteTipoTel();
+            if (dt.Rows.Count == 0)
             {
-                cliente = Convert.ToInt32(txtIDcliente.Text),
-                tipoTel = Convert.ToInt32(cbTipoTel.SelectedValue),
-                caracteristica = txtCaracteristica.Text,
-                numTel = txtNumTel.Text
-            };
-
-            TelefonoB.CargarTelefono(dgvTelefonos, telefono);
+                MessageBox.Show("Cargue los Tipos de Telefono a utilizar");
+                formTipoTel frm = new formTipoTel();
+                frm.Show();
+                this.Close();
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

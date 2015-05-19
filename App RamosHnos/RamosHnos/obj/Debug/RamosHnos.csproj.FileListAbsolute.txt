@@ -106,3 +106,5 @@ C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\Ram
 C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formGenerarComprobante.resources
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formDoc.resources
 C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formDoc.resources
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formProvincia.resources
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formTipoTel.resources

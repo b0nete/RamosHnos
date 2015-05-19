@@ -51,6 +51,34 @@ namespace RamosHnos.Capas.Negocio
             }                       
         }
 
+        public static TipoTelEntity InsertTipoTel(TipoTelEntity tipotel)
+        {
+            try
+            {
+                MySQLDAL.CnxDB();
+                string query = @"INSERT INTO TipoTelefono (tipoTel, estado)
+                                 VALUES (@tipotel, @estado);
+                                 SELECT LAST_INSERT_ID();";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@tipoTel", tipotel.tipoTel);
+                cmd.Parameters.AddWithValue("@estado", tipotel.estado);
+
+                tipotel.idTipoTel = Convert.ToInt32(cmd.ExecuteScalar());
+
+                MySQLDAL.DcnxDB();
+                MessageBox.Show("Tipo Telefono Guardado!");
+                return tipotel;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         
         public static void CargarTipoTel(ComboBox cb)
         {
@@ -59,7 +87,7 @@ namespace RamosHnos.Capas.Negocio
                 DataTable dt = new DataTable();
                 MySQLDAL.CnxDB();
 
-                string query = "SELECT * FROM tipotelefono";
+                string query = "SELECT * FROM tipotelefono WHERE estado = '1'";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -104,12 +132,63 @@ namespace RamosHnos.Capas.Negocio
                 MySQLDAL.DcnxDB();
             }
 
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex);
+                throw;
             }
         }
 
-        
+        public static DataTable ExisteTipoTel()
+        {
+            try
+            {
+                MySQLDAL.CnxDB();
+                DataTable dt = new DataTable();
+
+                string query = "SELECT * FROM tipoTelefono";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+
+                MySQLDAL.DcnxDB();
+                return dt;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void LlenarDGV(DataGridView dgv)
+        {
+            try
+            {
+                MySQLDAL.CnxDB();
+                DataTable dt = new DataTable();
+
+                string query = @"SELECT * FROM tipoTelefono";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                dgv.DataSource = dt;
+
+                MySQLDAL.DcnxDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
  
 
 
