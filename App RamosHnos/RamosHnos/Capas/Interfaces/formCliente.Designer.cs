@@ -56,11 +56,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.gbCliente.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbCliente
             // 
+            this.gbCliente.Controls.Add(this.button2);
             this.gbCliente.Controls.Add(this.label8);
             this.gbCliente.Controls.Add(this.txtIDcliente);
             this.gbCliente.Controls.Add(this.btnTelefono);
@@ -164,7 +166,7 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(224, 115);
+            this.label18.Location = new System.Drawing.Point(248, 115);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(11, 13);
             this.label18.TabIndex = 47;
@@ -234,7 +236,7 @@
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSearch.Location = new System.Drawing.Point(426, 107);
+            this.btnSearch.Location = new System.Drawing.Point(450, 107);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 40;
@@ -255,7 +257,7 @@
             // txtnumDoc
             // 
             this.txtnumDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtnumDoc.Location = new System.Drawing.Point(258, 112);
+            this.txtnumDoc.Location = new System.Drawing.Point(282, 112);
             this.txtnumDoc.Name = "txtnumDoc";
             this.txtnumDoc.Size = new System.Drawing.Size(162, 20);
             this.txtnumDoc.TabIndex = 38;
@@ -265,7 +267,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label6.Location = new System.Drawing.Point(232, 115);
+            this.label6.Location = new System.Drawing.Point(256, 115);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(19, 13);
             this.label6.TabIndex = 37;
@@ -372,6 +374,17 @@
             this.btnDel.TabIndex = 72;
             this.btnDel.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(203, 108);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(28, 28);
+            this.button2.TabIndex = 64;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,5 +432,6 @@
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button button2;
     }
 }

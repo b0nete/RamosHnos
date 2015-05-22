@@ -31,17 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formTipoTel));
             this.dgvTipoTel = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbTipoTel = new System.Windows.Forms.CheckBox();
+            this.Estado = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.txtIDTipoDoc = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTipoTel = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.Estado = new System.Windows.Forms.Label();
-            this.cbTipoTel = new System.Windows.Forms.CheckBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTipoTel)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +58,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cbTipoTel);
             this.groupBox1.Controls.Add(this.Estado);
             this.groupBox1.Controls.Add(this.btnEdit);
@@ -73,6 +76,60 @@
             this.groupBox1.TabIndex = 72;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo Telefono";
+            // 
+            // cbTipoTel
+            // 
+            this.cbTipoTel.AutoSize = true;
+            this.cbTipoTel.Location = new System.Drawing.Point(135, 81);
+            this.cbTipoTel.Name = "cbTipoTel";
+            this.cbTipoTel.Size = new System.Drawing.Size(15, 14);
+            this.cbTipoTel.TabIndex = 73;
+            this.cbTipoTel.UseVisualStyleBackColor = true;
+            // 
+            // Estado
+            // 
+            this.Estado.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.Estado.AutoSize = true;
+            this.Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.Estado.Location = new System.Drawing.Point(96, 81);
+            this.Estado.Name = "Estado";
+            this.Estado.Size = new System.Drawing.Size(40, 13);
+            this.Estado.TabIndex = 72;
+            this.Estado.Text = "Estado";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnEdit.Location = new System.Drawing.Point(440, 88);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(28, 28);
+            this.btnEdit.TabIndex = 71;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
+            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDel.Location = new System.Drawing.Point(474, 88);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(28, 28);
+            this.btnDel.TabIndex = 70;
+            this.btnDel.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAdd.Location = new System.Drawing.Point(406, 88);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(28, 28);
+            this.btnAdd.TabIndex = 69;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtIDTipoDoc
             // 
@@ -125,78 +182,44 @@
             this.label15.TabIndex = 66;
             this.label15.Text = "*";
             // 
-            // btnSave
+            // button2
             // 
-            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(486, 343);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(28, 28);
-            this.btnSave.TabIndex = 74;
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(364, 343);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 74;
+            this.button2.Text = "Aceptar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // btnEdit
+            // button3
             // 
-            this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
-            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnEdit.Location = new System.Drawing.Point(440, 88);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(28, 28);
-            this.btnEdit.TabIndex = 71;
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(445, 343);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 75;
+            this.button3.Text = "Cancelar";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // btnDel
+            // label1
             // 
-            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
-            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDel.Location = new System.Drawing.Point(474, 88);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(28, 28);
-            this.btnDel.TabIndex = 70;
-            this.btnDel.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAdd.Location = new System.Drawing.Point(406, 88);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(28, 28);
-            this.btnAdd.TabIndex = 69;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // Estado
-            // 
-            this.Estado.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.Estado.AutoSize = true;
-            this.Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.Estado.Location = new System.Drawing.Point(96, 80);
-            this.Estado.Name = "Estado";
-            this.Estado.Size = new System.Drawing.Size(40, 13);
-            this.Estado.TabIndex = 72;
-            this.Estado.Text = "Estado";
-            // 
-            // cbTipoTel
-            // 
-            this.cbTipoTel.AutoSize = true;
-            this.cbTipoTel.Location = new System.Drawing.Point(135, 80);
-            this.cbTipoTel.Name = "cbTipoTel";
-            this.cbTipoTel.Size = new System.Drawing.Size(15, 14);
-            this.cbTipoTel.TabIndex = 73;
-            this.cbTipoTel.UseVisualStyleBackColor = true;
+            this.label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label1.ForeColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(89, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 13);
+            this.label1.TabIndex = 75;
+            this.label1.Text = "*";
             // 
             // formTipoTel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(532, 378);
-            this.Controls.Add(this.btnSave);
+            this.ClientSize = new System.Drawing.Size(532, 369);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.dgvTipoTel);
             this.Controls.Add(this.groupBox1);
             this.Name = "formTipoTel";
@@ -211,7 +234,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView dgvTipoTel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnEdit;
@@ -224,6 +246,9 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.CheckBox cbTipoTel;
         private System.Windows.Forms.Label Estado;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
 
     }
 }

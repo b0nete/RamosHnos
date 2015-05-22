@@ -166,19 +166,19 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(203, 16);
+            this.label8.Location = new System.Drawing.Point(202, 16);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 13);
+            this.label8.Size = new System.Drawing.Size(39, 13);
             this.label8.TabIndex = 65;
-            this.label8.Text = "ID Cliente";
+            this.label8.Text = "Cliente";
             // 
             // txtIDcliente
             // 
             this.txtIDcliente.Enabled = false;
             this.txtIDcliente.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDcliente.Location = new System.Drawing.Point(262, 12);
+            this.txtIDcliente.Location = new System.Drawing.Point(247, 12);
             this.txtIDcliente.Name = "txtIDcliente";
-            this.txtIDcliente.Size = new System.Drawing.Size(129, 21);
+            this.txtIDcliente.Size = new System.Drawing.Size(177, 21);
             this.txtIDcliente.TabIndex = 64;
             // 
             // formTelefono
