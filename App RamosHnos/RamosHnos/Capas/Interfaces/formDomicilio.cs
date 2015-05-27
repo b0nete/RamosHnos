@@ -22,7 +22,8 @@ namespace RamosHnos
 
         private void formDomicilio_Load(object sender, EventArgs e)
         {
-            
+            ProvinciaB.CargarProvincia(cbProvincia);
+            LocalidadB.CargarLocalidad(cbLocalidad);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -33,7 +34,13 @@ namespace RamosHnos
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            formLocalidad frm = new formLocalidad();
+            frm.Show();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

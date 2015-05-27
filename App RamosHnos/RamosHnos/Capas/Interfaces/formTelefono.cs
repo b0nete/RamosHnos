@@ -30,7 +30,7 @@ namespace RamosHnos
         private void formAddTel_Load(object sender, EventArgs e)
         {
             TelefonoB.CargarTipoTel(cbTipoTel);
-
+            
             DataTable dt = TelefonoB.ExisteTipoTel();
             if (dt.Rows.Count == 0)
             {
@@ -38,7 +38,7 @@ namespace RamosHnos
                 formTipoTel frm = new formTipoTel();
                 frm.Show();
                 this.Close();
-            }
+            }            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

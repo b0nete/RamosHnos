@@ -120,6 +120,12 @@
     <Compile Include="Capas\Interfaces\formListado.Designer.cs">
       <DependentUpon>formListado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaces\formLocalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formLocalidad.Designer.cs">
+      <DependentUpon>formLocalidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaces\formProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +188,7 @@
     </Compile>
     <Compile Include="Capas\Negocio\ClienteB.cs" />
     <Compile Include="Capas\Negocio\DomicilioB.cs" />
+    <Compile Include="Capas\Negocio\LocalidadB.cs" />
     <Compile Include="Capas\Negocio\ProductoB.cs" />
     <Compile Include="Capas\Negocio\Program.cs" />
     <Compile Include="Capas\Negocio\ProveedorB.cs" />
@@ -212,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formListado.resx">
       <DependentUpon>formListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formLocalidad.resx">
+      <DependentUpon>formLocalidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formProducto.resx">
       <DependentUpon>formProducto.cs</DependentUpon>

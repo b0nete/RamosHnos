@@ -3,36 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using RamosHnos.Capas.Datos;
 using RamosHnos.Capas.Entidades;
 
+
 namespace RamosHnos.Capas.Negocio
 {
-    class ProvinciaB
+    class LocalidadB
     {
-
-        public static ProvinciaEntity InsertProvincia(ProvinciaEntity provincia)
+        public static LocalidadEntity InsertLocalidad(LocalidadEntity localidad)
         {
             try
             {
                 MySQLDAL.CnxDB();
 
-                string query = @"INSERT INTO Provincias (provincia, estado)
-                                 VALUES (@provincia, @estado);
+                string query = @"INSERT INTO Localidades (idProvincia, localidad, estado)
+                                 VALUES (@idProvincia, @localidad, @estado);
                                  SELECT LAST_INSERT_ID()";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("provincia", provincia.provincia);
-                cmd.Parameters.AddWithValue("estado", provincia.estado);
+                cmd.Parameters.AddWithValue("idProvincia", localidad.provincia);
+                cmd.Parameters.AddWithValue("localidad", localidad.localidad);
+                cmd.Parameters.AddWithValue("estado", localidad.estado);
 
-                provincia.idProvincia = Convert.ToInt32(cmd.ExecuteScalar());
+                localidad.idLocalidad = Convert.ToInt32(cmd.ExecuteScalar());
 
                 MySQLDAL.DcnxDB();
-                return provincia;
+                return localidad;
             }
 
             catch (Exception ex)
@@ -42,22 +43,22 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
-        public static void CargarProvincia(ComboBox cb)
+        public static void CargarLocalidad(ComboBox cb)
         {
             try
             {
                 DataTable dt = new DataTable();
                 MySQLDAL.CnxDB();
 
-                string query = "SELECT * FROM Provincias";  
+                string query = "SELECT * FROM Localidades";  
 
                 ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 
                   MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                   da.Fill(dt);
 
-                  cb.DisplayMember = "provincia";
-                  cb.ValueMember = "idProvincia";
+                  cb.DisplayMember = "localidad";
+                  cb.ValueMember = "idlocalidad";
                   cb.DataSource = dt;
 
                   MySQLDAL.DcnxDB();
@@ -68,14 +69,14 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
-        public static void LlenarDGV(DataGridView dgv)
+            public static void LlenarDGV(DataGridView dgv)
         {
             try
             {
                 MySQLDAL.CnxDB();
                 DataTable dt = new DataTable();
 
-                string query = @"SELECT * FROM Provincias";
+                string query = @"SELECT * FROM Localidades";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 
@@ -94,6 +95,6 @@ namespace RamosHnos.Capas.Negocio
                 throw;
             }
         }
-
+        
     }
 }

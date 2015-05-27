@@ -31,6 +31,14 @@ namespace RamosHnos.Capas.Interfaces
                 provincia = txtProvincia.Text,
                 estado = cbEstado.Checked
             };
+
+            ProvinciaB.InsertProvincia(provincia);
+            ProvinciaB.LlenarDGV(dgvProvincias);
+        }
+
+        private void formProvincia_Load(object sender, EventArgs e)
+        {
+            ProvinciaB.LlenarDGV(dgvProvincias);
         }
     }
 }

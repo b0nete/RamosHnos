@@ -112,6 +112,7 @@
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 77;
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 
