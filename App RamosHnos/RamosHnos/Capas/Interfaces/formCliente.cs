@@ -147,9 +147,18 @@ namespace RamosHnos
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
-        {
+        {            
             string txtinDNI = "";
-            InputBoxLib.InputBox("Ingrese DNI", "DNI", ref txtinDNI);
+            txtinDNI = txtnumDoc.Text;            
+
+            if (txtnumDoc.Text == "")
+            {
+                DialogResult result = InputBoxLib.InputBox("Ingrese DNI", "DNI", ref txtinDNI);
+                if (result == DialogResult.Cancel)
+                {
+                    return;
+                }                                   
+            }            
 
             ClienteEntity cliente = new ClienteEntity
             {

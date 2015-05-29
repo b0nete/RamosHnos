@@ -23,7 +23,13 @@ namespace RamosHnos
         private void formDomicilio_Load(object sender, EventArgs e)
         {
             ProvinciaB.CargarProvincia(cbProvincia);
-            LocalidadB.CargarLocalidad(cbLocalidad);
+
+            LocalidadEntity localidad = new LocalidadEntity()
+            {
+                provincia = Convert.ToInt32(cbProvincia.SelectedValue)
+            };
+
+            LocalidadB.CargarLocalidad(cbLocalidad, localidad);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -41,6 +47,26 @@ namespace RamosHnos
         private void btnSave_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbProvincia_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LocalidadEntity localidad = new LocalidadEntity()
+            {
+                provincia = Convert.ToInt32(cbProvincia.SelectedValue)
+            };
+
+            LocalidadB.CargarLocalidad(cbLocalidad, localidad);
+        }
+
+        private void cbProvincia_SelectedValueChanged(object sender, EventArgs e)
+        {
+            LocalidadEntity localidad = new LocalidadEntity()
+            {
+                provincia = Convert.ToInt32(cbProvincia.SelectedValue)
+            };
+
+            LocalidadB.CargarLocalidad(cbLocalidad, localidad);
         }
     }
 }

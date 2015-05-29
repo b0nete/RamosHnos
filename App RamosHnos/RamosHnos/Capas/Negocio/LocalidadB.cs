@@ -43,16 +43,18 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
-        public static void CargarLocalidad(ComboBox cb)
+        public static void CargarLocalidad(ComboBox cb, LocalidadEntity localidad)
         {
             try
             {
                 DataTable dt = new DataTable();
                 MySQLDAL.CnxDB();
 
-                string query = "SELECT * FROM Localidades";  
+                string query = "SELECT * FROM Localidades WHERE idProvincia = @idProvincia";  
 
                 ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("idProvincia", localidad.provincia);
 
                   MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                   da.Fill(dt);

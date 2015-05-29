@@ -46,6 +46,6 @@ namespace RamosHnos.Libs
             DialogResult dialogResult = form.ShowDialog();
             value = textBox.Text;
             return dialogResult;
-        }
+        }          
     }
 }
