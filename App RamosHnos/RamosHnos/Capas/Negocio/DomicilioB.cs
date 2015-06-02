@@ -60,14 +60,51 @@ namespace RamosHnos.Capas.Negocio
                 MySQLDAL.CnxDB();
 
 
-                string query = @"SELECT C.idCliente, T.tipoTel, CONCAT (T.caracteristica, T.numtel) Telefono
-                                 FROM Clientes C INNER JOIN Telefonos T ON C.idCliente = T.Cliente
-                                 WHERE idCliente = @cliente";
+                string query = @"SELECT P.Provincia, L.Localidad, D.Calle, D.Numero, D.Piso, D.Dpto, D.CP
+                                 FROM Domicilios D 
+                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
+                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
+                                 WHERE Cliente = @cliente";
 
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@cliente", domicilio.cliente);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                dgv.DataSource = dt;
+
+                MySQLDAL.DcnxDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void CargarDomicilio2(DataGridView dgv, string cliente)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQLDAL.CnxDB();
+
+
+                string query = @"SELECT P.Provincia, L.Localidad, D.Calle, D.Numero, D.Piso, D.Dpto, D.CP
+                                 FROM Domicilios D 
+                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
+                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
+                                 WHERE Cliente = @cliente";
+
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@cliente", cliente);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 

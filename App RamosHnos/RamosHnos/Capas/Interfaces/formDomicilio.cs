@@ -22,14 +22,19 @@ namespace RamosHnos
 
         private void formDomicilio_Load(object sender, EventArgs e)
         {
+            //Cargar Provincia
             ProvinciaB.CargarProvincia(cbProvincia);
 
+            //Cargar Localidad
             LocalidadEntity localidad = new LocalidadEntity()
             {
                 provincia = Convert.ToInt32(cbProvincia.SelectedValue)
             };
+            LocalidadB.CargarLocalidad(cbLocalidad, localidad); 
 
-            LocalidadB.CargarLocalidad(cbLocalidad, localidad);
+            //Cargar Cliente
+            string cliente = txtCliente.Text;
+            DomicilioB.CargarDomicilio2(dgvDomicilio, cliente);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -46,7 +51,22 @@ namespace RamosHnos
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            DomicilioEntity domicilio = new DomicilioEntity()
+            {
+                cliente = Convert.ToInt32(txtCliente.Text),
+                provincia = Convert.ToInt32(cbProvincia.SelectedValue),
+                localidad = Convert.ToInt32(cbLocalidad.SelectedValue),
+                calle = txtCalle.Text,
+                numero = txtnumCalle.Text,
+                piso = txtPiso.Text,
+                dpto = txtDpto.Text,
+                CP = txtCP.Text
+            };
 
+            DomicilioB.InsertDomicilio(domicilio);
+            DomicilioB.CargarDomicilio(dgvDomicilio, domicilio);
+            
+  
         }
 
         private void cbProvincia_SelectedIndexChanged(object sender, EventArgs e)
@@ -67,6 +87,13 @@ namespace RamosHnos
             };
 
             LocalidadB.CargarLocalidad(cbLocalidad, localidad);
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            //Cargar Cliente
+            string cliente = txtCliente.Text;
+            DomicilioB.CargarDomicilio2(dgvDomicilio, cliente);
         }
     }
 }

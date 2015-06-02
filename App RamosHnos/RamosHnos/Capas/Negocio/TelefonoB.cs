@@ -139,6 +139,41 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
+        public static void MostrarTelefono(DataGridView dgv, string telefono)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQLDAL.CnxDB();
+
+
+                string query = @"SELECT TT.TipoTel, CONCAT (T.caracteristica, T.numtel) Telefono
+                                 FROM Telefonos T
+                                 INNER JOIN TipoTelefono TT ON TT.idTipoTel = T.TipoTel
+                                 INNER JOIN Clientes C ON C.idCliente = T.cliente
+                                 WHERE C.idCliente = @cliente";
+
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@cliente", telefono);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                dgv.DataSource = dt;
+
+                MySQLDAL.DcnxDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static DataTable ExisteTipoTel()
         {
             try

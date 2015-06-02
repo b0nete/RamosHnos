@@ -29,8 +29,10 @@ namespace RamosHnos
 
         private void formAddTel_Load(object sender, EventArgs e)
         {
+            //Mostrar Tipos de Telefonos
             TelefonoB.CargarTipoTel(cbTipoTel);
-            
+
+            //Cargar Tipos de Telefonos si no existen            
             DataTable dt = TelefonoB.ExisteTipoTel();
             if (dt.Rows.Count == 0)
             {
@@ -39,6 +41,10 @@ namespace RamosHnos
                 frm.Show();
                 this.Close();
             }            
+
+            //Cargar Telefono
+            string telefono = txtIDcliente.Text;
+            TelefonoB.MostrarTelefono(dgvTelefonos, telefono);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

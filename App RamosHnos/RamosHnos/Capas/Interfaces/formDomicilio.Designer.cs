@@ -59,10 +59,10 @@
             this.txtCliente = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDomicilio = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDomicilio)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -124,6 +124,7 @@
             this.btnEdit.Size = new System.Drawing.Size(28, 28);
             this.btnEdit.TabIndex = 76;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDel
             // 
@@ -415,13 +416,13 @@
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvDomicilio
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 193);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(613, 188);
-            this.dataGridView1.TabIndex = 55;
+            this.dgvDomicilio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDomicilio.Location = new System.Drawing.Point(12, 193);
+            this.dgvDomicilio.Name = "dgvDomicilio";
+            this.dgvDomicilio.Size = new System.Drawing.Size(613, 188);
+            this.dgvDomicilio.TabIndex = 55;
             // 
             // label3
             // 
@@ -442,7 +443,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDomicilio);
             this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.groupBox2);
             this.Name = "formDomicilio";
@@ -450,7 +451,7 @@
             this.Load += new System.EventHandler(this.formDomicilio_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDomicilio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,7 +481,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDomicilio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txtCliente;

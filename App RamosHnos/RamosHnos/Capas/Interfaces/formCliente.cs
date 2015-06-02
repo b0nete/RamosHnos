@@ -79,11 +79,10 @@ namespace RamosHnos
                 MessageBox.Show("Asigne el cliente a cargar un Domicilio");
             }
             else
-            {
+            {                
                 formDomicilio frmdom = new formDomicilio();
-                frmdom.Show();
-
                 frmdom.txtCliente.Text = txtIDcliente.Text;
+                frmdom.Show();                                
             }
             
         }
@@ -97,9 +96,8 @@ namespace RamosHnos
             else
             {
                 formTelefono frmtel = new formTelefono();
-                frmtel.Show();
-
                 frmtel.txtIDcliente.Text = txtIDcliente.Text;
+                frmtel.Show();               
             }
             
         }
