@@ -56,11 +56,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtCalle = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.txtIDCliente = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvDomicilio = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDomicilio)).BeginInit();
             this.SuspendLayout();
@@ -390,13 +391,14 @@
             this.label7.TabIndex = 28;
             this.label7.Text = "Calle";
             // 
-            // txtCliente
+            // txtIDCliente
             // 
-            this.txtCliente.Enabled = false;
-            this.txtCliente.Location = new System.Drawing.Point(202, 14);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(220, 20);
-            this.txtCliente.TabIndex = 54;
+            this.txtIDCliente.Enabled = false;
+            this.txtIDCliente.Location = new System.Drawing.Point(515, 10);
+            this.txtIDCliente.Name = "txtIDCliente";
+            this.txtIDCliente.Size = new System.Drawing.Size(110, 20);
+            this.txtIDCliente.TabIndex = 54;
+            this.txtIDCliente.Visible = false;
             // 
             // button2
             // 
@@ -435,16 +437,25 @@
             this.label3.TabIndex = 58;
             this.label3.Text = "Cliente";
             // 
+            // txtNombre
+            // 
+            this.txtNombre.Enabled = false;
+            this.txtNombre.Location = new System.Drawing.Point(202, 12);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(210, 20);
+            this.txtNombre.TabIndex = 59;
+            // 
             // formDomicilio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 413);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvDomicilio);
-            this.Controls.Add(this.txtCliente);
+            this.Controls.Add(this.txtIDCliente);
             this.Controls.Add(this.groupBox2);
             this.Name = "formDomicilio";
             this.Text = "Registrar Domicilio";
@@ -484,12 +495,13 @@
         private System.Windows.Forms.DataGridView dgvDomicilio;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox txtCliente;
+        public System.Windows.Forms.TextBox txtIDCliente;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtNombre;
     }
 }

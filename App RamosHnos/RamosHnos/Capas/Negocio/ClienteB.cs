@@ -76,8 +76,10 @@ namespace RamosHnos.Capas.Negocio
                 MySQLDAL.DcnxDB();
             }
 
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex);
+                throw;
             }
         }
 
@@ -120,14 +122,65 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
-        //public static ClienteEntity LimpiarCampos(ClienteEntity cliente)
-        //{
-        //    ClienteEntity cliente = new ClienteEntity()
-        //    {
-                
-        //    }
+        public static void BuscarClienteID(string cliente)
+        {
+            try
+            {
+                MySQLDAL.CnxDB();
+                DataTable dt = new DataTable();
 
-        //}
+                string query = @"SELECT CONCAT (nombre,' ',apellido) FROM Clientes WHERE idCliente = @cliente)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("cliente", cliente);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+                MySQLDAL.DcnxDB();                    
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static ClienteEntity EditCliente(ClienteEntity cliente)
+        {
+            try
+            {
+                MySQLDAL.CnxDB();
+
+                string query = @"UPDATE Clientes
+                                 SET tipodoc = @tipoDoc, numdoc = @numDoc, nombre = @nombre, apellido = @apellido, cuil =  @cuil, email = @email
+                                 WHERE idCliente = @idCliente";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idCliente", cliente.idCliente);
+                cmd.Parameters.AddWithValue("@tipoDoc", cliente.tipoDoc);
+                cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
+                cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
+                cmd.Parameters.AddWithValue("@apellido", cliente.apellido);
+                cmd.Parameters.AddWithValue("@cuil", cliente.cuil);
+                cmd.Parameters.AddWithValue("@email", cliente.email);
+                
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Cliente Actualizado");
+                return cliente;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
 
 
 

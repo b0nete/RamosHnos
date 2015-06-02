@@ -42,6 +42,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtIDcliente = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefonos)).BeginInit();
             this.SuspendLayout();
@@ -166,7 +167,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(202, 16);
+            this.label8.Location = new System.Drawing.Point(178, 16);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(39, 13);
             this.label8.TabIndex = 65;
@@ -176,16 +177,27 @@
             // 
             this.txtIDcliente.Enabled = false;
             this.txtIDcliente.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDcliente.Location = new System.Drawing.Point(247, 12);
+            this.txtIDcliente.Location = new System.Drawing.Point(524, 10);
             this.txtIDcliente.Name = "txtIDcliente";
-            this.txtIDcliente.Size = new System.Drawing.Size(177, 21);
+            this.txtIDcliente.Size = new System.Drawing.Size(101, 21);
             this.txtIDcliente.TabIndex = 64;
+            this.txtIDcliente.Visible = false;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Enabled = false;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(223, 10);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(229, 20);
+            this.txtNombre.TabIndex = 66;
             // 
             // formTelefono
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(637, 293);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtIDcliente);
             this.Controls.Add(this.button2);
@@ -218,5 +230,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtIDcliente;
+        public System.Windows.Forms.TextBox txtNombre;
     }
 }

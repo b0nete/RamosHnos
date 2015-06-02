@@ -33,7 +33,7 @@ namespace RamosHnos
             LocalidadB.CargarLocalidad(cbLocalidad, localidad); 
 
             //Cargar Cliente
-            string cliente = txtCliente.Text;
+            string cliente = txtIDCliente.Text;
             DomicilioB.CargarDomicilio2(dgvDomicilio, cliente);
         }
 
@@ -53,7 +53,7 @@ namespace RamosHnos
         {
             DomicilioEntity domicilio = new DomicilioEntity()
             {
-                cliente = Convert.ToInt32(txtCliente.Text),
+                cliente = Convert.ToInt32(txtIDCliente.Text),
                 provincia = Convert.ToInt32(cbProvincia.SelectedValue),
                 localidad = Convert.ToInt32(cbLocalidad.SelectedValue),
                 calle = txtCalle.Text,
@@ -92,7 +92,7 @@ namespace RamosHnos
         private void btnEdit_Click(object sender, EventArgs e)
         {
             //Cargar Cliente
-            string cliente = txtCliente.Text;
+            string cliente = txtIDCliente.Text;
             DomicilioB.CargarDomicilio2(dgvDomicilio, cliente);
         }
     }

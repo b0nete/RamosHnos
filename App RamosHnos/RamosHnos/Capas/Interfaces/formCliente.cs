@@ -81,7 +81,8 @@ namespace RamosHnos
             else
             {                
                 formDomicilio frmdom = new formDomicilio();
-                frmdom.txtCliente.Text = txtIDcliente.Text;
+                frmdom.txtIDCliente.Text = txtIDcliente.Text;
+                frmdom.txtNombre.Text = txtNombre.Text + ' ' + txtApellido.Text + ' ' + '-' + ' ' + txtIDcliente.Text;   
                 frmdom.Show();                                
             }
             
@@ -97,6 +98,7 @@ namespace RamosHnos
             {
                 formTelefono frmtel = new formTelefono();
                 frmtel.txtIDcliente.Text = txtIDcliente.Text;
+                frmtel.txtNombre.Text = txtNombre.Text + ' ' + txtApellido.Text +' '+'-'+' '+ txtIDcliente.Text;            
                 frmtel.Show();               
             }
             
@@ -140,8 +142,26 @@ namespace RamosHnos
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
-        {
+        {            
+            //cbTipoDoc.Enabled = true;
+            //txtnumDoc.Enabled = true;
+            //txtNombre.Enabled = true;
+            //txtApellido.Enabled = true;
+            //txtcuil.Enabled = true;
+            //txtEmail.Enabled = true;
 
+            ClienteEntity cliente = new ClienteEntity()
+            {
+                idCliente = Convert.ToInt32(txtIDcliente.Text),
+                tipoDoc = Convert.ToInt32(cbTipoDoc.SelectedValue),
+                numDoc = txtnumDoc.Text,
+                nombre = txtNombre.Text,
+                apellido = txtApellido.Text,
+                cuil = txtcuil.Text,
+                email = txtEmail.Text
+            };
+
+            ClienteB.EditCliente(cliente);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -171,6 +191,14 @@ namespace RamosHnos
             txtApellido.Text = cliente.apellido;
             txtcuil.Text = cliente.cuil;
             txtEmail.Text = cliente.email;
+
+            //txtIDcliente.Enabled = false;
+            //cbTipoDoc.Enabled = false;
+            //txtnumDoc.Enabled = false;
+            //txtNombre.Enabled = false;
+            //txtApellido.Enabled = false;
+            //txtcuil.Enabled = false;
+            //txtEmail.Enabled = false;
         }        
     }
 }
