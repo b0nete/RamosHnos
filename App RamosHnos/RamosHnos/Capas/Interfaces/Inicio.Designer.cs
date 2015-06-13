@@ -53,7 +53,6 @@
             this.verUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -248,21 +247,9 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(712, 73);
+            this.monthCalendar1.Location = new System.Drawing.Point(678, 33);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 23;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(757, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 25);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Agenda";
             // 
             // Inicio
             // 
@@ -271,7 +258,6 @@
             this.BackColor = System.Drawing.Color.Lavender;
             this.BackgroundImage = global::RamosHnos.Properties.Resources.Sifon_Buenos_Aires;
             this.ClientSize = new System.Drawing.Size(915, 507);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Inicio";
@@ -311,6 +297,5 @@
         private System.Windows.Forms.ToolStripMenuItem editarProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verProductosToolStripMenuItem;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Label label1;
     }
 }

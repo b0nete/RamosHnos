@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formListado));
             this.dgvListado = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,11 +42,23 @@
             this.dgvListado.Size = new System.Drawing.Size(815, 325);
             this.dgvListado.TabIndex = 0;
             // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button4.Location = new System.Drawing.Point(799, 343);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(28, 28);
+            this.button4.TabIndex = 82;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // formListado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(839, 350);
+            this.ClientSize = new System.Drawing.Size(839, 380);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.dgvListado);
             this.Name = "formListado";
             this.Text = "formListado";
@@ -56,5 +70,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvListado;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace RamosHnos.Capas.Interfaces
 {
-    public partial class formProducto : Form
+    public partial class formRubroProveedores : Form
     {
-        public formProducto()
+        public formRubroProveedores()
         {
             InitializeComponent();
+        }
+
+        private void formRubroProveedores_Load(object sender, EventArgs e)
+        {
+            formRubro frm = new formRubro();
+            frm.Show();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -24,9 +30,7 @@ namespace RamosHnos.Capas.Interfaces
 
         private void button4_Click(object sender, EventArgs e)
         {
-            formProductoList frm = new formProductoList();
-            frm.Show();
-            
+
         }
     }
 }

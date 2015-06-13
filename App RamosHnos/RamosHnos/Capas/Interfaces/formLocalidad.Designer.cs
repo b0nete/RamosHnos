@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLocalidad));
-            this.trnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.dgvLocalidad = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbProvincia = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,29 +44,10 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbProvincia = new System.Windows.Forms.ComboBox();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalidad)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // trnCancelar
-            // 
-            this.trnCancelar.Location = new System.Drawing.Point(423, 319);
-            this.trnCancelar.Name = "trnCancelar";
-            this.trnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.trnCancelar.TabIndex = 7;
-            this.trnCancelar.Text = "Cancelar";
-            this.trnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnAceptar
-            // 
-            this.btnAceptar.Location = new System.Drawing.Point(342, 319);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 6;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
             // 
             // dgvLocalidad
             // 
@@ -97,6 +78,25 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Provincia";
+            // 
+            // cbProvincia
+            // 
+            this.cbProvincia.FormattingEnabled = true;
+            this.cbProvincia.Location = new System.Drawing.Point(84, 53);
+            this.cbProvincia.Name = "cbProvincia";
+            this.cbProvincia.Size = new System.Drawing.Size(148, 21);
+            this.cbProvincia.TabIndex = 90;
+            // 
+            // label3
+            // 
+            this.label3.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(34, 56);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.TabIndex = 89;
+            this.label3.Text = "Provincia";
             // 
             // cbEstado
             // 
@@ -219,32 +219,23 @@
             this.btnEdit.TabIndex = 79;
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // button4
             // 
-            this.label3.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(34, 56);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
-            this.label3.TabIndex = 89;
-            this.label3.Text = "Provincia";
-            // 
-            // cbProvincia
-            // 
-            this.cbProvincia.FormattingEnabled = true;
-            this.cbProvincia.Location = new System.Drawing.Point(84, 53);
-            this.cbProvincia.Name = "cbProvincia";
-            this.cbProvincia.Size = new System.Drawing.Size(148, 21);
-            this.cbProvincia.TabIndex = 90;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button4.Location = new System.Drawing.Point(475, 321);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(28, 28);
+            this.button4.TabIndex = 82;
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // formLocalidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 345);
-            this.Controls.Add(this.trnCancelar);
-            this.Controls.Add(this.btnAceptar);
+            this.ClientSize = new System.Drawing.Size(516, 354);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.dgvLocalidad);
             this.Controls.Add(this.groupBox1);
             this.Name = "formLocalidad";
@@ -259,8 +250,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button trnCancelar;
-        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.DataGridView dgvLocalidad;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
@@ -276,5 +265,6 @@
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.ComboBox cbProvincia;
+        private System.Windows.Forms.Button button4;
     }
 }

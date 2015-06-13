@@ -15,8 +15,6 @@ C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\bin\Debug\Ram
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.csprojResolveAssemblyReference.cache
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Properties.Resources.resources
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.csproj.GenerateResource.Cache
-C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formProveedor.resources
-C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formCliente.resources
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formListado.resources
 C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formListado.resources
 C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formCliente.resources
@@ -48,8 +46,6 @@ C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\Ram
 C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formDomicilio.resources
 C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\bin\Debug\Microsoft.QualityTools.Testing.Fakes.dll
 C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\bin\Debug\es\Microsoft.QualityTools.Testing.Fakes.resources.dll
-C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formProducto.resources
-C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formInsumo.resources
 C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formInsumo.resources
 C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formProducto.resources
 C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.formRegistrarEmpleado.resources
@@ -109,3 +105,10 @@ C:\Users\Matias\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\Ram
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formProvincia.resources
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formTipoTel.resources
 C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formLocalidad.resources
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formRubro.resources
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formRubroProveedores.resources
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formCliente.resources
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formProductoList.resources
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formProveedor.resources
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formProducto.resources
+C:\Users\b0nete\Documents\GitHub\RamosHnos\App RamosHnos\RamosHnos\obj\Debug\RamosHnos.Capas.Interfaces.formInsumo.resources

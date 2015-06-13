@@ -42,8 +42,7 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.dgvProvincias = new System.Windows.Forms.DataGridView();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.trnCancelar = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvincias)).BeginInit();
             this.SuspendLayout();
@@ -196,31 +195,23 @@
             this.dgvProvincias.Size = new System.Drawing.Size(491, 172);
             this.dgvProvincias.TabIndex = 1;
             // 
-            // btnAceptar
+            // button4
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(342, 319);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 2;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            // 
-            // trnCancelar
-            // 
-            this.trnCancelar.Location = new System.Drawing.Point(423, 319);
-            this.trnCancelar.Name = "trnCancelar";
-            this.trnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.trnCancelar.TabIndex = 3;
-            this.trnCancelar.Text = "Cancelar";
-            this.trnCancelar.UseVisualStyleBackColor = true;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button4.Location = new System.Drawing.Point(475, 320);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(28, 28);
+            this.button4.TabIndex = 82;
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // formProvincia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 354);
-            this.Controls.Add(this.trnCancelar);
-            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.dgvProvincias);
             this.Controls.Add(this.groupBox1);
             this.Name = "formProvincia";
@@ -248,7 +239,6 @@
         private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Button trnCancelar;
+        private System.Windows.Forms.Button button4;
     }
 }

@@ -15,7 +15,7 @@ using RamosHnos.Capas.Interfaces;
 using RamosHnos.Libs;
 
 
-namespace RamosHnos
+namespace RamosHnos.Capas.Interfaces
 {
     public partial class formCliente : Form
     {

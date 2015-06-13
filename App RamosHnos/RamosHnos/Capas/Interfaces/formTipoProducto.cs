@@ -24,8 +24,8 @@ namespace RamosHnos.Capas.Interfaces
             
             TipoProductoEntity tipoProducto = new TipoProductoEntity()
             {
-                tipoProducto = txtTipoProd.Text,
-                estado = cbEstado.Checked,               
+                //tipoProducto = txtTipoProd.Text,
+                //estado = cbEstado.Checked,               
             };
 
             TipoProductoB.InsertTipoProducto(tipoProducto);

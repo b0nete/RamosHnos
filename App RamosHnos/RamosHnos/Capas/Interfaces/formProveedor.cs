@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RamosHnos
+namespace RamosHnos.Capas.Interfaces
 {
     public partial class formProveedor : Form
     {
@@ -46,6 +46,12 @@ namespace RamosHnos
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            formRubro frm = new formRubro();
+            frm.Show();
         }
     }
 }
