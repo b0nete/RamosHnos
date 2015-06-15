@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RamosHnos.Capas.Entidades;
+using RamosHnos.Capas.Negocio;
 
 namespace RamosHnos.Capas.Interfaces
 {
@@ -50,7 +52,31 @@ namespace RamosHnos.Capas.Interfaces
 
         private void button2_Click(object sender, EventArgs e)
         {
-            formRubro frm = new formRubro();
+            formRubroProveedores frm = new formRubroProveedores();
+            frm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ProveedorEntity proveedor = new ProveedorEntity()
+            {
+                razonSocial = txtrazonSocial.Text,
+                cuit = txtCUIT.Text,
+                email = txtEmail.Text
+            };
+
+            ProveedorB.InsertProveedor(proveedor);
+        }
+
+        private void btnDomicilio_Click(object sender, EventArgs e)
+        {
+            formDomicilio frm = new formDomicilio();
+            frm.Show();
+        }
+
+        private void btnTelefono_Click(object sender, EventArgs e)
+        {
+            formTelefono frm = new formTelefono();
             frm.Show();
         }
     }

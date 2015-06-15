@@ -26,8 +26,8 @@ namespace RamosHnos.Capas.Negocio
             {
                 MySQLDAL.CnxDB();
                 
-                string query = @"INSERT INTO Clientes (tipoDoc, numDoc, nombre, apellido, cuil, email) 
-                                 VALUES (@tipoDoc, @numdoc, @nombre, @apellido, @cuil, @email);
+                string query = @"INSERT INTO Clientes (rol, tipoDoc, numDoc, nombre, apellido, cuil, email) 
+                                 VALUES ('1', @tipoDoc, @numdoc, @nombre, @apellido, @cuil, @email);
                                  SELECT LAST_INSERT_ID()";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
@@ -171,6 +171,35 @@ namespace RamosHnos.Capas.Negocio
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Cliente Actualizado");
+                return cliente;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static ClienteEntity DeleteCliente(ClienteEntity cliente)
+        {
+            try
+            {
+                MySQLDAL.CnxDB();
+
+                string query = @"DELETE FROM Clientes
+                                 WHERE idCliente = @idCliente";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+                //cmd.CommandText = query;
+
+                cmd.Parameters.AddWithValue("@idCliente", cliente.idCliente);
+
+                cmd.ExecuteNonQuery();
+                
+                MessageBox.Show("Cliente Guardado!");
+                MySQLDAL.DcnxDB();
+
                 return cliente;
             }
 

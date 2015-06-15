@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace RamosHnos.Capas.Entidades
 {
-    public class TipoDocEntity
+    class RolEntity
     {
-
-        // Atributos
-        public int idtipoDoc { get; set; }
-        public string tipoDoc { get; set; }
+        public int idRol { get; set; }
+        public string rol { get; set; }
         public bool estado { get; set; }
     }
 }

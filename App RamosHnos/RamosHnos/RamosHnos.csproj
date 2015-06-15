@@ -74,6 +74,7 @@
     <Compile Include="Capas\Entidades\ProductoEntity.cs" />
     <Compile Include="Capas\Entidades\ProveedorEntity.cs" />
     <Compile Include="Capas\Entidades\ProvinciaEntity.cs" />
+    <Compile Include="Capas\Entidades\RolEntity.cs" />
     <Compile Include="Capas\Entidades\TelefonoEntity.cs" />
     <Compile Include="Capas\Entidades\TipoDocEntity.cs" />
     <Compile Include="Capas\Entidades\TipoProductoEntity.cs" />
@@ -162,6 +163,12 @@
     <Compile Include="Capas\Interfaces\formRegistrarEmpleado.Designer.cs">
       <DependentUpon>formRegistrarEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaces\formRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formRol.Designer.cs">
+      <DependentUpon>formRol.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaces\formRubro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +212,7 @@
     <Compile Include="Capas\Negocio\Program.cs" />
     <Compile Include="Capas\Negocio\ProveedorB.cs" />
     <Compile Include="Capas\Negocio\ProvinciaB.cs" />
+    <Compile Include="Capas\Negocio\RolB.cs" />
     <Compile Include="Capas\Negocio\TelefonoB.cs" />
     <Compile Include="Capas\Negocio\TipoDocB.cs" />
     <Compile Include="Capas\Negocio\TipoProductoB.cs" />
@@ -252,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formRegistrarEmpleado.resx">
       <DependentUpon>formRegistrarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formRol.resx">
+      <DependentUpon>formRol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formRubro.resx">
       <DependentUpon>formRubro.cs</DependentUpon>

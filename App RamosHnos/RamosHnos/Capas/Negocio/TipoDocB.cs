@@ -19,12 +19,13 @@ namespace RamosHnos.Capas.Negocio
             try
             {
                 MySQLDAL.CnxDB();
-                string query = @"INSERT INTO TipoDocumento (tipoDoc)
-                                 VALUES (@tipoDoc);
+                string query = @"INSERT INTO TipoDocumento (tipoDoc, estado)
+                                 VALUES (@tipoDoc, @estado);
                                  SELECT LAST_INSERT_ID();";
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@tipoDoc", tipodoc.tipoDoc);
+                cmd.Parameters.AddWithValue("@estado", tipodoc.estado);
 
                 tipodoc.idtipoDoc=Convert.ToInt32(cmd.ExecuteScalar());                
                 MySQLDAL.DcnxDB();
@@ -47,7 +48,7 @@ namespace RamosHnos.Capas.Negocio
                 MySQLDAL.CnxDB();
                 DataTable dt = new DataTable();
                 
-                string query = @"SELECT * FROM tipoDocumento";
+                string query = @"SELECT tipoDoc, estado FROM tipoDocumento";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 

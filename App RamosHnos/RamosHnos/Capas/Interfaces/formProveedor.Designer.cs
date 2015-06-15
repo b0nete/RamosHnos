@@ -37,42 +37,42 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtcuil = new System.Windows.Forms.TextBox();
+            this.txtCUIT = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtnumDoc = new System.Windows.Forms.TextBox();
+            this.txtrazonSocial = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.btnRubro = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnTelefono = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnDomicilio = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.gbCliente.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbCliente
             // 
             this.gbCliente.Controls.Add(this.btnEdit);
-            this.gbCliente.Controls.Add(this.button2);
+            this.gbCliente.Controls.Add(this.btnRubro);
             this.gbCliente.Controls.Add(this.btnDel);
-            this.gbCliente.Controls.Add(this.button1);
+            this.gbCliente.Controls.Add(this.btnSave);
             this.gbCliente.Controls.Add(this.label1);
             this.gbCliente.Controls.Add(this.label8);
             this.gbCliente.Controls.Add(this.txtIDcliente);
             this.gbCliente.Controls.Add(this.btnTelefono);
-            this.gbCliente.Controls.Add(this.button3);
+            this.gbCliente.Controls.Add(this.btnDomicilio);
             this.gbCliente.Controls.Add(this.label7);
             this.gbCliente.Controls.Add(this.label3);
             this.gbCliente.Controls.Add(this.label18);
             this.gbCliente.Controls.Add(this.label16);
-            this.gbCliente.Controls.Add(this.txtcuil);
+            this.gbCliente.Controls.Add(this.txtCUIT);
             this.gbCliente.Controls.Add(this.label14);
             this.gbCliente.Controls.Add(this.btnSearch);
-            this.gbCliente.Controls.Add(this.txtnumDoc);
+            this.gbCliente.Controls.Add(this.txtrazonSocial);
             this.gbCliente.Controls.Add(this.label6);
             this.gbCliente.Controls.Add(this.txtEmail);
             this.gbCliente.Controls.Add(this.label5);
@@ -161,14 +161,14 @@
             this.label16.TabIndex = 45;
             this.label16.Text = "*";
             // 
-            // txtcuil
+            // txtCUIT
             // 
-            this.txtcuil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtcuil.Location = new System.Drawing.Point(121, 46);
-            this.txtcuil.MaxLength = 11;
-            this.txtcuil.Name = "txtcuil";
-            this.txtcuil.Size = new System.Drawing.Size(164, 20);
-            this.txtcuil.TabIndex = 43;
+            this.txtCUIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtCUIT.Location = new System.Drawing.Point(121, 46);
+            this.txtCUIT.MaxLength = 11;
+            this.txtCUIT.Name = "txtCUIT";
+            this.txtCUIT.Size = new System.Drawing.Size(164, 20);
+            this.txtCUIT.TabIndex = 43;
             // 
             // label14
             // 
@@ -180,13 +180,13 @@
             this.label14.TabIndex = 42;
             this.label14.Text = "CUIT";
             // 
-            // txtnumDoc
+            // txtrazonSocial
             // 
-            this.txtnumDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtnumDoc.Location = new System.Drawing.Point(121, 72);
-            this.txtnumDoc.Name = "txtnumDoc";
-            this.txtnumDoc.Size = new System.Drawing.Size(162, 20);
-            this.txtnumDoc.TabIndex = 38;
+            this.txtrazonSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtrazonSocial.Location = new System.Drawing.Point(121, 72);
+            this.txtrazonSocial.Name = "txtrazonSocial";
+            this.txtrazonSocial.Size = new System.Drawing.Size(162, 20);
+            this.txtrazonSocial.TabIndex = 38;
             // 
             // label6
             // 
@@ -216,6 +216,17 @@
             this.label5.TabIndex = 30;
             this.label5.Text = "Email";
             // 
+            // btnClose
+            // 
+            this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnClose.Location = new System.Drawing.Point(479, 287);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(28, 28);
+            this.btnClose.TabIndex = 82;
+            this.btnClose.UseVisualStyleBackColor = true;
+            // 
             // btnEdit
             // 
             this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
@@ -226,6 +237,18 @@
             this.btnEdit.Size = new System.Drawing.Size(28, 28);
             this.btnEdit.TabIndex = 76;
             this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnRubro
+            // 
+            this.btnRubro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRubro.BackgroundImage")));
+            this.btnRubro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRubro.Location = new System.Drawing.Point(121, 123);
+            this.btnRubro.Name = "btnRubro";
+            this.btnRubro.Size = new System.Drawing.Size(28, 28);
+            this.btnRubro.TabIndex = 66;
+            this.btnRubro.UseVisualStyleBackColor = true;
+            this.btnRubro.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnDel
             // 
@@ -238,28 +261,17 @@
             this.btnDel.TabIndex = 75;
             this.btnDel.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(396, 235);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 28);
-            this.button1.TabIndex = 74;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(121, 123);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 28);
-            this.button2.TabIndex = 66;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(396, 235);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(28, 28);
+            this.btnSave.TabIndex = 74;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnTelefono
             // 
@@ -271,17 +283,19 @@
             this.btnTelefono.Size = new System.Drawing.Size(28, 28);
             this.btnTelefono.TabIndex = 61;
             this.btnTelefono.UseVisualStyleBackColor = true;
+            this.btnTelefono.Click += new System.EventHandler(this.btnTelefono_Click);
             // 
-            // button3
+            // btnDomicilio
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button3.Location = new System.Drawing.Point(121, 150);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 60;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDomicilio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDomicilio.BackgroundImage")));
+            this.btnDomicilio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDomicilio.Location = new System.Drawing.Point(121, 150);
+            this.btnDomicilio.Name = "btnDomicilio";
+            this.btnDomicilio.Size = new System.Drawing.Size(28, 28);
+            this.btnDomicilio.TabIndex = 60;
+            this.btnDomicilio.UseVisualStyleBackColor = true;
+            this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
             // 
             // btnSearch
             // 
@@ -294,23 +308,12 @@
             this.btnSearch.TabIndex = 40;
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(479, 287);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(28, 28);
-            this.button4.TabIndex = 82;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // formProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(522, 322);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.gbCliente);
             this.Name = "formProveedor";
             this.Text = "Registrar Proveedor";
@@ -327,24 +330,24 @@
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtIDcliente;
         private System.Windows.Forms.Button btnTelefono;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnDomicilio;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtcuil;
+        private System.Windows.Forms.TextBox txtCUIT;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtnumDoc;
+        private System.Windows.Forms.TextBox txtrazonSocial;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnRubro;
+        private System.Windows.Forms.Button btnClose;
 
     }
 }

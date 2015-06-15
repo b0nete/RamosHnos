@@ -23,7 +23,9 @@ namespace RamosHnos.Capas.Interfaces
         {
             TipoDocEntity tipodoc = new TipoDocEntity()
             {
-                tipoDoc = txtTipoDoc.Text
+                tipoDoc = txtTipoDoc.Text,
+                estado = cbEstado.Checked
+                
             };
 
             TipoDocB.InsertTipoDoc(tipodoc);
@@ -50,6 +52,11 @@ namespace RamosHnos.Capas.Interfaces
             formCliente frm = new formCliente();
             frm.Show();
 
+            this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
             this.Close();
         }
 

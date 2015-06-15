@@ -30,7 +30,8 @@ namespace RamosHnos.Capas.Interfaces
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            formRubro frm = new formRubro();
+            frm.Show();
         }
     }
 }

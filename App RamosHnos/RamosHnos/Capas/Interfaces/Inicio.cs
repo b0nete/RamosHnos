@@ -101,5 +101,11 @@ namespace RamosHnos
         {
 
         }
+
+        private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formRol frm = new formRol();
+            frm.Show();
+        }
     }
 }

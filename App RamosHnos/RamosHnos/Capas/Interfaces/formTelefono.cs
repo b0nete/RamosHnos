@@ -29,6 +29,8 @@ namespace RamosHnos
 
         private void formAddTel_Load(object sender, EventArgs e)
         {
+            //Mostrar Roles
+            RolB.MostrarRolesCB(cbRoles);
             //Mostrar Tipos de Telefonos
             TelefonoB.CargarTipoTel(cbTipoTel);
 
@@ -54,11 +56,6 @@ namespace RamosHnos
 
         private void label4_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
             TelefonoEntity telefono = new TelefonoEntity()
             {
                 cliente = Convert.ToInt32(txtIDcliente.Text),
@@ -69,7 +66,13 @@ namespace RamosHnos
 
 
             TelefonoB.InsertTelefono(telefono);
-            TelefonoB.CargarTelefono(dgvTelefonos, telefono);
+            string tel = txtIDcliente.Text;
+            TelefonoB.MostrarTelefono(dgvTelefonos, tel);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -95,6 +98,23 @@ namespace RamosHnos
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            TelefonoEntity telefono = new TelefonoEntity()
+            {
+                cliente = Convert.ToInt32(txtIDcliente.Text),
+                tipoTel = Convert.ToInt32(cbTipoTel.SelectedValue),
+                caracteristica = txtCaracteristica.Text,
+                numTel = txtNumTel.Text
+            };
+
+
+            TelefonoB.InsertTelefono(telefono);
+
+            string tel = txtIDcliente.Text;
+            TelefonoB.MostrarTelefono(dgvTelefonos, tel);
         }
     }
 }

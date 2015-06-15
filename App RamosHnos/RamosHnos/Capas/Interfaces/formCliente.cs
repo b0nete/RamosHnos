@@ -116,23 +116,31 @@ namespace RamosHnos.Capas.Interfaces
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ClienteEntity cliente = new ClienteEntity()
+            if (txtnumDoc.Text == string.Empty)
             {
-                tipoDoc = Convert.ToInt32(cbTipoDoc.SelectedValue),
-                numDoc = txtnumDoc.Text,
-                nombre = txtNombre.Text,
-                apellido = txtApellido.Text,
-                cuil = txtcuil.Text,
-                email = txtEmail.Text                
-            };
+                MessageBox.Show("Ingrese datos del cliente");
+                return;
+            }
+            else
+            {
+                ClienteEntity cliente = new ClienteEntity()
+                {
+                    tipoDoc = Convert.ToInt32(cbTipoDoc.SelectedValue),
+                    numDoc = txtnumDoc.Text,
+                    nombre = txtNombre.Text,
+                    apellido = txtApellido.Text,
+                    cuil = txtcuil.Text,
+                    email = txtEmail.Text
+                };
 
 
-            ClienteB.InsertCliente(cliente);
+                ClienteB.InsertCliente(cliente);
 
-            int idCli = cliente.idCliente;
-            txtIDcliente.Text = Convert.ToString(idCli);
+                int idCli = cliente.idCliente;
+                txtIDcliente.Text = Convert.ToString(idCli);
 
-            Libs.ClearControlsLibs.ClearAll(this, gbCliente);
+                Libs.ClearControlsLibs.ClearAll(this, gbCliente);
+            }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -150,18 +158,25 @@ namespace RamosHnos.Capas.Interfaces
             //txtcuil.Enabled = true;
             //txtEmail.Enabled = true;
 
-            ClienteEntity cliente = new ClienteEntity()
+            if (txtnumDoc.Text == string.Empty)
             {
-                idCliente = Convert.ToInt32(txtIDcliente.Text),
-                tipoDoc = Convert.ToInt32(cbTipoDoc.SelectedValue),
-                numDoc = txtnumDoc.Text,
-                nombre = txtNombre.Text,
-                apellido = txtApellido.Text,
-                cuil = txtcuil.Text,
-                email = txtEmail.Text
-            };
+                return;
+            }
+            else
+            {
+                ClienteEntity cliente = new ClienteEntity()
+                {
+                    idCliente = Convert.ToInt32(txtIDcliente.Text),
+                    tipoDoc = Convert.ToInt32(cbTipoDoc.SelectedValue),
+                    numDoc = txtnumDoc.Text,
+                    nombre = txtNombre.Text,
+                    apellido = txtApellido.Text,
+                    cuil = txtcuil.Text,
+                    email = txtEmail.Text
+                };
 
-            ClienteB.EditCliente(cliente);
+                ClienteB.EditCliente(cliente);
+            }    
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -199,6 +214,34 @@ namespace RamosHnos.Capas.Interfaces
             //txtApellido.Enabled = false;
             //txtcuil.Enabled = false;
             //txtEmail.Enabled = false;
+        }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+            formDoc frm = new formDoc();
+            frm.Show();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (txtnumDoc.Text == string.Empty)
+            {
+                return;
+            }
+            else
+            {
+                ClienteEntity cliente = new ClienteEntity()
+                {
+                    idCliente = Convert.ToInt32(txtIDcliente.Text)
+                };
+
+                ClienteB.DeleteCliente(cliente);
+            }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }        
     }
 }
