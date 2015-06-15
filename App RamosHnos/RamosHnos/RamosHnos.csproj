@@ -151,6 +151,12 @@
     <Compile Include="Capas\Interfaces\formProvincia.Designer.cs">
       <DependentUpon>formProvincia.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaces\formIngresarCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formIngresarCargo.Designer.cs">
+      <DependentUpon>formIngresarCargo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaces\formRegistrarCargo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formProvincia.resx">
       <DependentUpon>formProvincia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formIngresarCargo.resx">
+      <DependentUpon>formIngresarCargo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formRegistrarCargo.resx">
       <DependentUpon>formRegistrarCargo.cs</DependentUpon>
