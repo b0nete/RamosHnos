@@ -81,9 +81,13 @@ namespace RamosHnos.Capas.Interfaces
             else
             {                
                 formDomicilio frmdom = new formDomicilio();
-                frmdom.txtIDCliente.Text = txtIDcliente.Text;
+                frmdom.txtID.Text = txtIDcliente.Text;
                 frmdom.txtNombre.Text = txtNombre.Text + ' ' + txtApellido.Text + ' ' + '-' + ' ' + txtIDcliente.Text;   
-                frmdom.Show();                                
+                frmdom.Show();
+
+                //Cargar Cliente
+                string persona = txtIDcliente.Text;
+                ClienteB.CargarDomicilioCliente(frmdom.dgvDomicilio, persona);
             }
             
         }
@@ -96,10 +100,17 @@ namespace RamosHnos.Capas.Interfaces
             }
             else
             {
-                formTelefono frmtel = new formTelefono();
-                frmtel.txtIDcliente.Text = txtIDcliente.Text;
-                frmtel.txtNombre.Text = txtNombre.Text + ' ' + txtApellido.Text +' '+'-'+' '+ txtIDcliente.Text;            
-                frmtel.Show();               
+                formTelefono frmtel = new formTelefono();                
+                frmtel.txtID.Text = txtIDcliente.Text;
+                frmtel.txtNombre.Text = txtNombre.Text + ' ' + txtApellido.Text +' '+'-'+' '+ txtIDcliente.Text;
+
+                frmtel.Show();
+
+                //string telefono = txtIDcliente.Text;
+                //TelefonoB.MostrarTelefono(frmtel.dgvTelefonos, telefono);
+
+                //Seleccionar Cliente de CB.
+                frmtel.cbRoles.SelectedIndex = 0;
             }
             
         }

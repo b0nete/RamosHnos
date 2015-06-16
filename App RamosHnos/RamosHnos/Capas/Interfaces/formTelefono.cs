@@ -28,7 +28,7 @@ namespace RamosHnos
         }
 
         private void formAddTel_Load(object sender, EventArgs e)
-        {
+        {            
             //Mostrar Roles
             RolB.MostrarRolesCB(cbRoles);
             //Mostrar Tipos de Telefonos
@@ -42,11 +42,8 @@ namespace RamosHnos
                 formTipoTel frm = new formTipoTel();
                 frm.Show();
                 this.Close();
-            }            
-
-            //Cargar Telefono
-            string telefono = txtIDcliente.Text;
-            TelefonoB.MostrarTelefono(dgvTelefonos, telefono);
+            }        
+            
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,7 +55,7 @@ namespace RamosHnos
         {
             TelefonoEntity telefono = new TelefonoEntity()
             {
-                cliente = Convert.ToInt32(txtIDcliente.Text),
+                idPersona = Convert.ToInt32(txtID.Text),
                 tipoTel = Convert.ToInt32(cbTipoTel.SelectedValue),
                 caracteristica = txtCaracteristica.Text,
                 numTel = txtNumTel.Text
@@ -66,7 +63,7 @@ namespace RamosHnos
 
 
             TelefonoB.InsertTelefono(telefono);
-            string tel = txtIDcliente.Text;
+            string tel = txtID.Text;
             TelefonoB.MostrarTelefono(dgvTelefonos, tel);
         }
 
@@ -104,7 +101,8 @@ namespace RamosHnos
         {
             TelefonoEntity telefono = new TelefonoEntity()
             {
-                cliente = Convert.ToInt32(txtIDcliente.Text),
+                rol = Convert.ToInt32(cbRoles.SelectedValue),
+                idPersona = Convert.ToInt32(txtID.Text),
                 tipoTel = Convert.ToInt32(cbTipoTel.SelectedValue),
                 caracteristica = txtCaracteristica.Text,
                 numTel = txtNumTel.Text
@@ -113,8 +111,19 @@ namespace RamosHnos
 
             TelefonoB.InsertTelefono(telefono);
 
-            string tel = txtIDcliente.Text;
+            string tel = txtID.Text;
             TelefonoB.MostrarTelefono(dgvTelefonos, tel);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            formTipoTel frm = new formTipoTel();
+            frm.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

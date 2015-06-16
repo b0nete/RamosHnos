@@ -21,14 +21,15 @@ namespace RamosHnos.Capas.Negocio
             {
                 MySQLDAL.CnxDB();
 
-                string query = @"INSERT INTO domicilios (cliente, provincia, localidad, calle, numero, piso, dpto, CP) 
-                                 VALUES (@cliente, @provincia, @localidad, @calle, @numero, @piso, @dpto, @CP);
+                string query = @"INSERT INTO domicilios (rol, idPersona, provincia, localidad, calle, numero, piso, dpto, CP) 
+                                 VALUES (@rol, @idPersona, @provincia, @localidad, @calle, @numero, @piso, @dpto, @CP);
                                  SELECT LAST_INSERT_ID()";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
                 cmd.CommandText = query;
 
-                cmd.Parameters.AddWithValue("@cliente", domicilio.cliente);
+                cmd.Parameters.AddWithValue("@rol", domicilio.rol);
+                cmd.Parameters.AddWithValue("@idPersona", domicilio.idPersona);
                 cmd.Parameters.AddWithValue("@provincia", domicilio.provincia);
                 cmd.Parameters.AddWithValue("@localidad", domicilio.localidad);
                 cmd.Parameters.AddWithValue("@calle", domicilio.calle);
@@ -50,77 +51,8 @@ namespace RamosHnos.Capas.Negocio
                 MessageBox.Show("Error: " + ex);
                 throw;
             }
-        }
-
-        public static void CargarDomicilio(DataGridView dgv, DomicilioEntity domicilio)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                MySQLDAL.CnxDB();
-
-
-                string query = @"SELECT P.Provincia, L.Localidad, D.Calle, D.Numero, D.Piso, D.Dpto, D.CP
-                                 FROM Domicilios D 
-                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
-                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
-                                 WHERE Cliente = @cliente";
-
-
-                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
-
-                cmd.Parameters.AddWithValue("@cliente", domicilio.cliente);
-
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
-                da.Fill(dt);
-
-                dgv.DataSource = dt;
-
-                MySQLDAL.DcnxDB();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex);
-                throw;
-            }
-        }
-
-        public static void CargarDomicilio2(DataGridView dgv, string cliente)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                MySQLDAL.CnxDB();
-
-
-                string query = @"SELECT P.Provincia, L.Localidad, D.Calle, D.Numero, D.Piso, D.Dpto, D.CP
-                                 FROM Domicilios D 
-                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
-                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
-                                 WHERE Cliente = @cliente";
-
-
-                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
-
-                cmd.Parameters.AddWithValue("@cliente", cliente);
-
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
-                da.Fill(dt);
-
-                dgv.DataSource = dt;
-
-                MySQLDAL.DcnxDB();
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex);
-                throw;
-            }
-        }
+        }               
+        
         
     }
 }

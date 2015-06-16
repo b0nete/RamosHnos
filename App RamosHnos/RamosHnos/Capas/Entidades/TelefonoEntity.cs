@@ -15,7 +15,8 @@ namespace RamosHnos.Capas.Entidades
 
         // Atributos        
         public int idTelefono { get; set; }
-        public int cliente { get; set; }
+        public int rol { get; set; }
+        public int idPersona { get; set; }
         public int tipoTel { get; set; }
         public string caracteristica { get; set; }
         public string numTel { get; set; }         

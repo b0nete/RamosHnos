@@ -45,6 +45,8 @@ namespace RamosHnos.Capas.Interfaces
         private void formDoc_Load(object sender, EventArgs e)
         {
             TipoDocB.LlenarDGV(dgvTipoDoc);
+
+            cbEstado.Checked = true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

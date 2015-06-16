@@ -25,13 +25,14 @@ namespace RamosHnos.Capas.Negocio
             {
                 MySQLDAL.CnxDB();
 
-                string query = @"INSERT INTO telefonos (cliente, tipoTel, caracteristica, numTel) 
-                                 VALUES (@cliente, @tipoTel, @caracteristica, @numTel);
+                string query = @"INSERT INTO telefonos (rol, idPersona, tipoTel, caracteristica, numTel) 
+                                 VALUES (@rol, @idPersona, @tipoTel, @caracteristica, @numTel);
                                  SELECT LAST_INSERT_ID()";
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
                 cmd.CommandText = query;
-                                
-                cmd.Parameters.AddWithValue("@cliente", telefono.cliente);
+
+                cmd.Parameters.AddWithValue("@rol", telefono.rol);
+                cmd.Parameters.AddWithValue("@idPersona", telefono.idPersona);
                 cmd.Parameters.AddWithValue("@tipoTel", telefono.tipoTel);
                 cmd.Parameters.AddWithValue("@caracteristica", telefono.caracteristica);
                 cmd.Parameters.AddWithValue("@numTel", telefono.numTel);
@@ -116,12 +117,12 @@ namespace RamosHnos.Capas.Negocio
 
                 string query = @"SELECT C.idCliente, T.tipoTel, CONCAT (T.caracteristica, T.numtel) Telefono
                                  FROM Clientes C INNER JOIN Telefonos T ON C.idCliente = T.Cliente
-                                 WHERE idCliente = @cliente";
+                                 WHERE T.rol = '1' AND idPersona = @idPersona";
 
                 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@cliente", telefono.cliente);
+                cmd.Parameters.AddWithValue("@idPersona", telefono.idPersona);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                                 
@@ -139,7 +140,7 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
-        public static void MostrarTelefono(DataGridView dgv, string telefono)
+        public static void MostrarTelefono(DataGridView dgv, string persona)
         {
             try
             {
@@ -150,13 +151,13 @@ namespace RamosHnos.Capas.Negocio
                 string query = @"SELECT TT.TipoTel, CONCAT (T.caracteristica, T.numtel) Telefono
                                  FROM Telefonos T
                                  INNER JOIN TipoTelefono TT ON TT.idTipoTel = T.TipoTel
-                                 INNER JOIN Clientes C ON C.idCliente = T.cliente
-                                 WHERE C.idCliente = @cliente";
+                                 INNER JOIN Clientes C ON C.idCliente = T.idPersona
+                                 WHERE C.idCliente = @idPersona";
 
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@cliente", telefono);
+                cmd.Parameters.AddWithValue("@idPersona", persona);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 

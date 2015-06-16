@@ -122,6 +122,76 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
+        public static void CargarDomicilio(DataGridView dgv, DomicilioEntity domicilio)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQLDAL.CnxDB();
+
+
+                string query = @"SELECT P.Provincia, L.Localidad, D.Calle, D.Numero, D.Piso, D.Dpto, D.CP
+                                 FROM Domicilios D 
+                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
+                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
+                                 WHERE D.rol = '1' AND idPersona = @idPersona";
+
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idPersona", domicilio.idPersona);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                dgv.DataSource = dt;
+
+                MySQLDAL.DcnxDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void CargarDomicilioCliente(DataGridView dgv, string persona)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQLDAL.CnxDB();
+
+
+                string query = @"SELECT P.Provincia, L.Localidad, D.Calle, D.Numero, D.Piso, D.Dpto, D.CP
+                                 FROM Domicilios D 
+                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
+                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
+                                 WHERE D.rol = '1' AND idPersona = @idPersona";
+
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idPersona", persona);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                dgv.DataSource = dt;
+
+                MySQLDAL.DcnxDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static void BuscarClienteID(string cliente)
         {
             try

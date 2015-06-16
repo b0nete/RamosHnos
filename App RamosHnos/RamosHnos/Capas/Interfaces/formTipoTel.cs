@@ -21,7 +21,8 @@ namespace RamosHnos.Capas.Interfaces
 
         private void formTipoTel_Load(object sender, EventArgs e)
         {
-
+            cbTipoTel.Checked = true;
+            TelefonoB.LlenarDGV(dgvTipoTel);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -34,6 +35,11 @@ namespace RamosHnos.Capas.Interfaces
 
             TelefonoB.InsertTipoTel(tipotel);
             TelefonoB.LlenarDGV(dgvTipoTel);            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -39,6 +39,13 @@ namespace RamosHnos.Capas.Interfaces
         private void formProvincia_Load(object sender, EventArgs e)
         {
             ProvinciaB.LlenarDGV(dgvProvincias);
+            cbEstado.Checked = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            formDomicilio frm = new formDomicilio();            
         }
     }
 }

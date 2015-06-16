@@ -30,11 +30,10 @@ namespace RamosHnos
             {
                 provincia = Convert.ToInt32(cbProvincia.SelectedValue)
             };
-            LocalidadB.CargarLocalidad(cbLocalidad, localidad); 
+            LocalidadB.CargarLocalidad(cbLocalidad, localidad);
 
-            //Cargar Cliente
-            string cliente = txtIDCliente.Text;
-            DomicilioB.CargarDomicilio2(dgvDomicilio, cliente);
+            //Mostrar Roles
+            RolB.MostrarRolesCB(cbRoles);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -53,7 +52,8 @@ namespace RamosHnos
         {
             DomicilioEntity domicilio = new DomicilioEntity()
             {
-                cliente = Convert.ToInt32(txtIDCliente.Text),
+                rol = Convert.ToInt32(cbRoles.SelectedValue),
+                idPersona = Convert.ToInt32(txtID.Text),
                 provincia = Convert.ToInt32(cbProvincia.SelectedValue),
                 localidad = Convert.ToInt32(cbLocalidad.SelectedValue),
                 calle = txtCalle.Text,
@@ -64,13 +64,13 @@ namespace RamosHnos
             };
 
             DomicilioB.InsertDomicilio(domicilio);
-            DomicilioB.CargarDomicilio(dgvDomicilio, domicilio);
+            ClienteB.CargarDomicilio(dgvDomicilio, domicilio);
             
   
         }
 
         private void cbProvincia_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {            
             LocalidadEntity localidad = new LocalidadEntity()
             {
                 provincia = Convert.ToInt32(cbProvincia.SelectedValue)
@@ -78,22 +78,27 @@ namespace RamosHnos
 
             LocalidadB.CargarLocalidad(cbLocalidad, localidad);
         }
-
+                
         private void cbProvincia_SelectedValueChanged(object sender, EventArgs e)
         {
-            LocalidadEntity localidad = new LocalidadEntity()
-            {
-                provincia = Convert.ToInt32(cbProvincia.SelectedValue)
-            };
+            //LocalidadEntity localidad = new LocalidadEntity()
+            //{
+            //    provincia = Convert.ToInt32(cbProvincia.SelectedValue)
+            //};
 
-            LocalidadB.CargarLocalidad(cbLocalidad, localidad);
+            //LocalidadB.CargarLocalidad(cbLocalidad, localidad);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             //Cargar Cliente
-            string cliente = txtIDCliente.Text;
-            DomicilioB.CargarDomicilio2(dgvDomicilio, cliente);
+            string cliente = txtID.Text;
+            ClienteB.CargarDomicilioCliente(dgvDomicilio, cliente);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

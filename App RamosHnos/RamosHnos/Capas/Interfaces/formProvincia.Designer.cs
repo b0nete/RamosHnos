@@ -205,6 +205,7 @@
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 82;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // formProvincia
             // 
@@ -227,7 +228,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView dgvProvincias;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
@@ -240,5 +240,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button4;
+        public System.Windows.Forms.DataGridView dgvProvincias;
     }
 }

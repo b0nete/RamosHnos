@@ -38,16 +38,18 @@
             this.txtCaracteristica = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvTelefonos = new System.Windows.Forms.DataGridView();
-            this.txtIDcliente = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.cbRoles = new System.Windows.Forms.ComboBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefonos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.cbTipoTel);
             this.groupBox1.Controls.Add(this.label4);
@@ -80,7 +82,7 @@
             // 
             this.cbTipoTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbTipoTel.FormattingEnabled = true;
-            this.cbTipoTel.Location = new System.Drawing.Point(57, 19);
+            this.cbTipoTel.Location = new System.Drawing.Point(40, 19);
             this.cbTipoTel.Name = "cbTipoTel";
             this.cbTipoTel.Size = new System.Drawing.Size(79, 21);
             this.cbTipoTel.TabIndex = 46;
@@ -90,7 +92,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(23, 22);
+            this.label4.Location = new System.Drawing.Point(14, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 45;
@@ -100,9 +102,9 @@
             // txtNumTel
             // 
             this.txtNumTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtNumTel.Location = new System.Drawing.Point(385, 19);
+            this.txtNumTel.Location = new System.Drawing.Point(402, 19);
             this.txtNumTel.Name = "txtNumTel";
-            this.txtNumTel.Size = new System.Drawing.Size(176, 20);
+            this.txtNumTel.Size = new System.Drawing.Size(159, 20);
             this.txtNumTel.TabIndex = 5;
             this.txtNumTel.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -110,7 +112,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(335, 22);
+            this.label3.Location = new System.Drawing.Point(360, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 4;
@@ -120,9 +122,9 @@
             // txtCaracteristica
             // 
             this.txtCaracteristica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtCaracteristica.Location = new System.Drawing.Point(228, 19);
+            this.txtCaracteristica.Location = new System.Drawing.Point(245, 19);
             this.txtCaracteristica.Name = "txtCaracteristica";
-            this.txtCaracteristica.Size = new System.Drawing.Size(101, 20);
+            this.txtCaracteristica.Size = new System.Drawing.Size(91, 20);
             this.txtCaracteristica.TabIndex = 3;
             this.txtCaracteristica.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -130,7 +132,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(149, 22);
+            this.label2.Location = new System.Drawing.Point(174, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 2;
@@ -145,15 +147,15 @@
             this.dgvTelefonos.Size = new System.Drawing.Size(613, 151);
             this.dgvTelefonos.TabIndex = 3;
             // 
-            // txtIDcliente
+            // txtID
             // 
-            this.txtIDcliente.Enabled = false;
-            this.txtIDcliente.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDcliente.Location = new System.Drawing.Point(12, 257);
-            this.txtIDcliente.Name = "txtIDcliente";
-            this.txtIDcliente.Size = new System.Drawing.Size(101, 21);
-            this.txtIDcliente.TabIndex = 64;
-            this.txtIDcliente.Visible = false;
+            this.txtID.Enabled = false;
+            this.txtID.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(12, 257);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(101, 21);
+            this.txtID.TabIndex = 64;
+            this.txtID.Visible = false;
             // 
             // txtNombre
             // 
@@ -174,6 +176,7 @@
             this.button1.Size = new System.Drawing.Size(28, 28);
             this.button1.TabIndex = 72;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // cbRoles
             // 
@@ -183,6 +186,18 @@
             this.cbRoles.Size = new System.Drawing.Size(121, 21);
             this.cbRoles.TabIndex = 73;
             // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(125, 14);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(28, 28);
+            this.button3.TabIndex = 68;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // formTelefono
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,7 +206,7 @@
             this.Controls.Add(this.cbRoles);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.txtIDcliente);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.dgvTelefonos);
             this.Controls.Add(this.groupBox1);
             this.Name = "formTelefono";
@@ -212,13 +227,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtCaracteristica;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvTelefonos;
         private System.Windows.Forms.ComboBox cbTipoTel;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox txtIDcliente;
+        public System.Windows.Forms.TextBox txtID;
         public System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cbRoles;
+        public System.Windows.Forms.ComboBox cbRoles;
+        public System.Windows.Forms.DataGridView dgvTelefonos;
+        private System.Windows.Forms.Button button3;
     }
 }

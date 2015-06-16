@@ -11,6 +11,8 @@ namespace RamosHnos.Capas.Entidades
         // Atributos
 
         public int idDomicilio { get; set; }
+        public int rol { get; set; }
+        public int idPersona { get; set; }
         public int cliente { get; set; }
         public int provincia { get; set; }
         public int localidad { get; set; }

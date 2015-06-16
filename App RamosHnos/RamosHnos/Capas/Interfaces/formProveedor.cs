@@ -41,8 +41,8 @@ namespace RamosHnos.Capas.Interfaces
 
         private void inicioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-        
+
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -66,18 +66,44 @@ namespace RamosHnos.Capas.Interfaces
             };
 
             ProveedorB.InsertProveedor(proveedor);
+            txtIDproveedor.Text = Convert.ToString(proveedor.idProveedor);
         }
 
         private void btnDomicilio_Click(object sender, EventArgs e)
         {
-            formDomicilio frm = new formDomicilio();
-            frm.Show();
+            if (txtIDproveedor.Text == "")
+            {
+                MessageBox.Show("Asigne el proveedor a cargar un Domicilio");
+            }
+            else
+            {
+                formDomicilio frmdom = new formDomicilio();
+                frmdom.txtID.Text = txtIDproveedor.Text;
+                frmdom.txtNombre.Text = txtrazonSocial.Text + ' ' + '-' + ' ' + txtIDproveedor.Text;
+                frmdom.Show();
+
+                //Cargar Cliente
+                string cliente = txtIDproveedor.Text;
+                ClienteB.CargarDomicilioCliente(frmdom.dgvDomicilio, cliente);
+            }
         }
 
         private void btnTelefono_Click(object sender, EventArgs e)
         {
-            formTelefono frm = new formTelefono();
-            frm.Show();
+            if (txtIDproveedor.Text == "")
+            {
+                MessageBox.Show("Asigne el proveedor a cargar un Teléfono");
+            }
+            else
+            {
+                formTelefono frmtel = new formTelefono();
+                frmtel.txtID.Text = txtIDproveedor.Text;
+                frmtel.txtNombre.Text = txtrazonSocial.Text + ' ' + '-' + ' ' + txtIDproveedor.Text;
+                frmtel.Show();
+
+                //Seleccionar Cliente de CB.
+                frmtel.cbRoles.SelectedIndex = 1;
+            }
         }
     }
 }

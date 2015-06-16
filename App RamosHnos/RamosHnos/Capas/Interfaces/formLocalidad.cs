@@ -28,6 +28,7 @@ namespace RamosHnos.Capas.Interfaces
         {
             ProvinciaB.CargarProvincia(cbProvincia);
             LocalidadB.LlenarDGV(dgvLocalidad);
+            cbEstado.Checked = true;
            
         }
 
@@ -42,6 +43,19 @@ namespace RamosHnos.Capas.Interfaces
             
             LocalidadB.InsertLocalidad(localidad);
             LocalidadB.LlenarDGV(dgvLocalidad);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            formDomicilio frm = new formDomicilio();
+            
+            //Cargar Localidad
+            LocalidadEntity localidad = new LocalidadEntity()
+            {
+                provincia = Convert.ToInt32(cbProvincia.SelectedValue)
+            };
+            LocalidadB.CargarLocalidad(frm.cbLocalidad, localidad);
         }
     }
 }
