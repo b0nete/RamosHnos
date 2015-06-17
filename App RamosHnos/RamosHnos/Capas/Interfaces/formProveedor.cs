@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHnos.Capas.Entidades;
 using RamosHnos.Capas.Negocio;
+using RamosHnos.Libs;
 
 namespace RamosHnos.Capas.Interfaces
 {
@@ -83,8 +84,12 @@ namespace RamosHnos.Capas.Interfaces
                 frmdom.Show();
 
                 //Cargar Cliente
-                string cliente = txtIDproveedor.Text;
-                ClienteB.CargarDomicilioCliente(frmdom.dgvDomicilio, cliente);
+                string persona = txtIDproveedor.Text;
+                ProveedorB.CargarDomicilioProveedor(frmdom.dgvDomicilio, persona);
+
+                frmdom.cbRoles.SelectedIndex = 1;
+                frmdom.dgvDomicilio.Columns["idProvincia"].Visible = false;
+                frmdom.dgvDomicilio.Columns["idLocalidad"].Visible = false;
             }
         }
 
@@ -104,6 +109,61 @@ namespace RamosHnos.Capas.Interfaces
                 //Seleccionar Cliente de CB.
                 frmtel.cbRoles.SelectedIndex = 1;
             }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string txtinCUIT = "";
+            txtinCUIT = txtCUIT.Text;
+
+            if (txtCUIT.Text == "")
+            {
+                DialogResult result = InputBoxLib.InputBox("CUIT", "Ingrese CUIT", ref txtinCUIT);
+                if (result == DialogResult.Cancel)
+                {
+                    return;
+                }
+            }
+
+            ProveedorEntity proveedor = new ProveedorEntity
+            {
+                cuit = txtinCUIT
+            };
+
+            ProveedorB.BuscarProveedor(proveedor);
+
+            txtIDproveedor.Text = Convert.ToString(proveedor.idProveedor);
+            txtCUIT.Text = proveedor.cuit;
+            txtrazonSocial.Text = proveedor.razonSocial;
+            txtEmail.Text = proveedor.email;
+
+
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (txtCUIT.Text == string.Empty)
+            {
+                return;
+            }
+            else
+            {
+                ProveedorEntity proveedor = new ProveedorEntity()
+                {
+                    idProveedor = Convert.ToInt32(txtIDproveedor.Text),
+                    cuit = txtCUIT.Text,
+                    razonSocial = txtrazonSocial.Text,
+                    email = txtEmail.Text
+                };
+
+                ProveedorB.EditProveedor(proveedor);
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

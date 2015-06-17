@@ -94,6 +94,7 @@
             this.btnEdit.Size = new System.Drawing.Size(28, 28);
             this.btnEdit.TabIndex = 76;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnRubro
             // 
@@ -159,6 +160,7 @@
             this.txtIDproveedor.Name = "txtIDproveedor";
             this.txtIDproveedor.Size = new System.Drawing.Size(129, 20);
             this.txtIDproveedor.TabIndex = 62;
+            this.txtIDproveedor.Visible = false;
             // 
             // btnTelefono
             // 
@@ -259,6 +261,7 @@
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 40;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtrazonSocial
             // 
@@ -306,6 +309,7 @@
             this.btnClose.Size = new System.Drawing.Size(28, 28);
             this.btnClose.TabIndex = 82;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // formProveedor
             // 

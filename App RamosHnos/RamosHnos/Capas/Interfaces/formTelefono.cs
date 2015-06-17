@@ -34,6 +34,9 @@ namespace RamosHnos
             //Mostrar Tipos de Telefonos
             TelefonoB.CargarTipoTel(cbTipoTel);
 
+            string tel = txtID.Text;
+            TelefonoB.MostrarTelefono(dgvTelefonos, tel);
+
             //Cargar Tipos de Telefonos si no existen            
             DataTable dt = TelefonoB.ExisteTipoTel();
             if (dt.Rows.Count == 0)

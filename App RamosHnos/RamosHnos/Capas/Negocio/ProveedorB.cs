@@ -54,7 +54,7 @@ namespace RamosHnos.Capas.Negocio
                 MySQLDAL.CnxDB();
 
                 string query = @"UPDATE Proveedores
-                                 SET razonSocial = @razonSocial, cuit = @cuit, email = @email
+                                 SET cuit = @cuit, razonSocial = @razonSocial, email = @email
                                  WHERE idProveedor = @idProveedor";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
@@ -63,7 +63,8 @@ namespace RamosHnos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@razonSocial", proveedor.razonSocial);
                 cmd.Parameters.AddWithValue("@cuit", proveedor.cuit);
                 cmd.Parameters.AddWithValue("@email", proveedor.email);
-                
+
+
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Proveedor Actualizado");
@@ -77,6 +78,7 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
+                
         public static ProveedorEntity DeleteProveedor(ProveedorEntity proveedor)
         {
             try
@@ -140,5 +142,78 @@ namespace RamosHnos.Capas.Negocio
                 throw;
             }
         }
+
+        public static ProveedorEntity BuscarProveedor(ProveedorEntity proveedor)
+        {
+            try
+            {
+                MySQLDAL.CnxDB();
+
+                string query = "SELECT * FROM PRoveedores WHERE CUIT = @CUIT";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@CUIT", proveedor.cuit);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                DataRow row = dt.Rows[0];
+
+                proveedor.idProveedor = Convert.ToInt32(row["idProveedor"]);
+                proveedor.cuit = Convert.ToString(row["CUIT"]);
+                proveedor.razonSocial = Convert.ToString(row["razonSocial"]);
+                proveedor.email = Convert.ToString(row["email"]);
+
+                //string idCliente = Convert.ToInt32(dt.Rows["idCliente"]);
+
+                MySQLDAL.DcnxDB();
+                return proveedor;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void CargarDomicilioProveedor(DataGridView dgv, string persona)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQLDAL.CnxDB();
+
+
+                string query = @"SELECT P.Provincia, P.idProvincia, L.Localidad, L.idLocalidad, D.Calle, D.Numero, D.Piso, D.Dpto, D.CP
+                                 FROM Domicilios D 
+                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
+                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
+                                 WHERE D.rol = '2' AND idPersona = @idPersona";
+
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idPersona", persona);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                dgv.DataSource = dt;
+
+                MySQLDAL.DcnxDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
     }
 }

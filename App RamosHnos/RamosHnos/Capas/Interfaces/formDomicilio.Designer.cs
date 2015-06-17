@@ -58,7 +58,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.dgvDomicilio = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.cbRoles = new System.Windows.Forms.ComboBox();
@@ -329,7 +328,9 @@
             this.cbProvincia.Name = "cbProvincia";
             this.cbProvincia.Size = new System.Drawing.Size(196, 21);
             this.cbProvincia.TabIndex = 36;
+            this.cbProvincia.DropDown += new System.EventHandler(this.cbProvincia_DropDown);
             this.cbProvincia.SelectedIndexChanged += new System.EventHandler(this.cbProvincia_SelectedIndexChanged);
+            this.cbProvincia.SelectionChangeCommitted += new System.EventHandler(this.cbProvincia_SelecionChangeCommitted);
             // 
             // label9
             // 
@@ -402,22 +403,16 @@
             // 
             // dgvDomicilio
             // 
+            this.dgvDomicilio.AllowUserToAddRows = false;
+            this.dgvDomicilio.AllowUserToDeleteRows = false;
             this.dgvDomicilio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDomicilio.Location = new System.Drawing.Point(12, 193);
             this.dgvDomicilio.Name = "dgvDomicilio";
+            this.dgvDomicilio.ReadOnly = true;
             this.dgvDomicilio.Size = new System.Drawing.Size(613, 188);
             this.dgvDomicilio.TabIndex = 55;
-            // 
-            // label3
-            // 
-            this.label3.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(157, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 13);
-            this.label3.TabIndex = 58;
-            this.label3.Text = "Cliente";
+            this.dgvDomicilio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDomicilio_CellContentClick);
+            this.dgvDomicilio.SelectionChanged += new System.EventHandler(this.dgvDomicilio_SelectionChanged);
             // 
             // txtNombre
             // 
@@ -446,6 +441,7 @@
             this.cbRoles.Name = "cbRoles";
             this.cbRoles.Size = new System.Drawing.Size(121, 21);
             this.cbRoles.TabIndex = 74;
+            this.cbRoles.Visible = false;
             // 
             // formDomicilio
             // 
@@ -455,7 +451,6 @@
             this.Controls.Add(this.cbRoles);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvDomicilio);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.groupBox2);
@@ -498,7 +493,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.DataGridView dgvDomicilio;

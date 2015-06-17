@@ -88,6 +88,8 @@ namespace RamosHnos.Capas.Interfaces
                 //Cargar Cliente
                 string persona = txtIDcliente.Text;
                 ClienteB.CargarDomicilioCliente(frmdom.dgvDomicilio, persona);
+                frmdom.dgvDomicilio.Columns["idProvincia"].Visible = false;
+                frmdom.dgvDomicilio.Columns["idLocalidad"].Visible = false;
             }
             
         }
@@ -237,6 +239,7 @@ namespace RamosHnos.Capas.Interfaces
         {
             if (txtnumDoc.Text == string.Empty)
             {
+                MessageBox.Show("Ingrese Numero de Documento del Cliente a Eliminar");
                 return;
             }
             else

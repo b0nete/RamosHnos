@@ -51,8 +51,7 @@ namespace RamosHnos.Capas.Negocio
                 MessageBox.Show("Error: " + ex);
                 throw;
             }
-        }               
-        
+        }
         
     }
 }
