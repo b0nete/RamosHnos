@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Capas\Datos\MySQLDAL.cs" />
     <Compile Include="Capas\Entidades\ClienteEntity.cs" />
+    <Compile Include="Capas\Entidades\CostoInsumoEntity.cs" />
     <Compile Include="Capas\Entidades\DomicilioEntity.cs" />
     <Compile Include="Capas\Entidades\InsumoEntity.cs" />
     <Compile Include="Capas\Entidades\LocalidadEntity.cs" />
@@ -75,6 +76,7 @@
     <Compile Include="Capas\Entidades\ProveedorEntity.cs" />
     <Compile Include="Capas\Entidades\ProvinciaEntity.cs" />
     <Compile Include="Capas\Entidades\RolEntity.cs" />
+    <Compile Include="Capas\Entidades\RubroEntity.cs" />
     <Compile Include="Capas\Entidades\TelefonoEntity.cs" />
     <Compile Include="Capas\Entidades\TipoDocEntity.cs" />
     <Compile Include="Capas\Entidades\TipoProductoEntity.cs" />
@@ -219,12 +221,14 @@
     </Compile>
     <Compile Include="Capas\Negocio\ClienteB.cs" />
     <Compile Include="Capas\Negocio\DomicilioB.cs" />
+    <Compile Include="Capas\Negocio\InsumoB.cs" />
     <Compile Include="Capas\Negocio\LocalidadB.cs" />
     <Compile Include="Capas\Negocio\ProductoB.cs" />
     <Compile Include="Capas\Negocio\Program.cs" />
     <Compile Include="Capas\Negocio\ProveedorB.cs" />
     <Compile Include="Capas\Negocio\ProvinciaB.cs" />
     <Compile Include="Capas\Negocio\RolB.cs" />
+    <Compile Include="Capas\Negocio\RubroB.cs" />
     <Compile Include="Capas\Negocio\TelefonoB.cs" />
     <Compile Include="Capas\Negocio\TipoDocB.cs" />
     <Compile Include="Capas\Negocio\TipoProductoB.cs" />

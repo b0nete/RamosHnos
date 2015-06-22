@@ -178,5 +178,17 @@ namespace RamosHnos
                 txtCP.Text = row.Cells["CP"].Value.ToString();
             }
         }
+
+        private void cbLocalidad_DropDown(object sender, EventArgs e)
+        {
+            LocalidadEntity localidad = new LocalidadEntity()
+            {
+                provincia = Convert.ToInt32(cbProvincia.SelectedValue)
+            };
+
+            LocalidadB.CargarLocalidad(cbLocalidad, localidad);
+        }
+
+
     }
 }

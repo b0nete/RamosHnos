@@ -19,6 +19,8 @@ namespace RamosHnos.Capas.Interfaces
 {
     public partial class formCliente : Form
     {
+        string sexoString;
+
         public formCliente()
         {
             InitializeComponent();  
@@ -41,8 +43,17 @@ namespace RamosHnos.Capas.Interfaces
             {
                 MessageBox.Show("Cargue los Documentos a Utilizar");
                 formDoc frm = new formDoc();
-                frm.Show();
-                this.Close();
+                frm.Show();                
+            }
+
+            // RadioButton.
+            rbMas.Checked = true;
+
+            txtcuil.Mask = @"2\0-########-#";
+
+            if (rbMas.Checked == true)
+            {
+                sexoString = "M";
             }
 
         }
@@ -59,7 +70,7 @@ namespace RamosHnos.Capas.Interfaces
 
         private void txtTipoDni_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -69,7 +80,8 @@ namespace RamosHnos.Capas.Interfaces
 
         private void txtcuil_TextChanged(object sender, EventArgs e)
         {
-
+            string textoFinal = "AB-";
+            textoFinal += txtcuil.Text; 
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -88,8 +100,16 @@ namespace RamosHnos.Capas.Interfaces
                 //Cargar Cliente
                 string persona = txtIDcliente.Text;
                 ClienteB.CargarDomicilioCliente(frmdom.dgvDomicilio, persona);
-                frmdom.dgvDomicilio.Columns["idProvincia"].Visible = false;
-                frmdom.dgvDomicilio.Columns["idLocalidad"].Visible = false;
+
+                if (frmdom.dgvDomicilio == null)
+                {
+                    return;
+                }
+                else
+                {
+                    frmdom.dgvDomicilio.Columns["idProvincia"].Visible = false;
+                    frmdom.dgvDomicilio.Columns["idLocalidad"].Visible = false;
+                }                
             }
             
         }
@@ -129,9 +149,10 @@ namespace RamosHnos.Capas.Interfaces
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (txtnumDoc.Text == string.Empty)
+            //Validación de Campos.   
+            if (txtnumDoc.Text == string.Empty || txtNombre.Text == string.Empty || txtApellido.Text == string.Empty)
             {
-                MessageBox.Show("Ingrese datos del cliente");
+                MessageBox.Show("Datos necesarios incompletos.");
                 return;
             }
             else
@@ -140,6 +161,7 @@ namespace RamosHnos.Capas.Interfaces
                 {
                     tipoDoc = Convert.ToInt32(cbTipoDoc.SelectedValue),
                     numDoc = txtnumDoc.Text,
+                    sexo = sexoString,
                     nombre = txtNombre.Text,
                     apellido = txtApellido.Text,
                     cuil = txtcuil.Text,
@@ -148,11 +170,10 @@ namespace RamosHnos.Capas.Interfaces
 
 
                 ClienteB.InsertCliente(cliente);
+                
+                txtIDcliente.Text = Convert.ToString(cliente.idCliente);
 
-                int idCli = cliente.idCliente;
-                txtIDcliente.Text = Convert.ToString(idCli);
-
-                Libs.ClearControlsLibs.ClearAll(this, gbCliente);
+                //Libs.ClearControlsLibs.ClearAll(this, gbCliente);
             }
         }
 
@@ -188,7 +209,7 @@ namespace RamosHnos.Capas.Interfaces
                     email = txtEmail.Text
                 };
 
-                ClienteB.EditCliente(cliente);
+                ClienteB.EditCliente(cliente);                
             }    
         }
 
@@ -249,14 +270,69 @@ namespace RamosHnos.Capas.Interfaces
                     idCliente = Convert.ToInt32(txtIDcliente.Text)
                 };
 
-                ClienteB.DeleteCliente(cliente);
+                ClienteB.DisableCliente(cliente);
             }
         }
 
         private void button4_Click_1(object sender, EventArgs e)
         {
             this.Close();
-        }        
+        }
+
+        private void txtcuil_MaskChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtcuil_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            //if (rbMas.Checked == true)
+            //{
+            //    txtcuil.Text = "20-########-#";
+            //}
+            //else if (rbFem.Checked == true)
+            //{
+            //    txtcuil.Text = "23-########-#";
+            //}
+        }
+
+        private void rbMas_CheckedChanged(object sender, EventArgs e)
+        {
+            txtcuil.Mask = @"2\0-########-#";
+
+            if (rbMas.Checked == true)
+            {
+                sexoString = "M";
+            }
+        }
+
+        private void rbFem_CheckedChanged(object sender, EventArgs e)
+        {
+            txtcuil.Mask = @"23-########-#";
+            
+            if (rbFem.Checked == true)
+            {
+                sexoString = "F";
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            formListado frm = new formListado();
+            frm.Show();
+
+            ClienteB.ListarClientes(frm.dgvListado);
+        }
+
+        private void cbTipoDoc_DropDown(object sender, EventArgs e)
+        {
+            TipoDocB.CargarTipoDoc(cbTipoDoc);
+        }
+
+
+
+
+  
     }
 }
 

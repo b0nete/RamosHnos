@@ -318,6 +318,7 @@
             this.cbLocalidad.Name = "cbLocalidad";
             this.cbLocalidad.Size = new System.Drawing.Size(196, 21);
             this.cbLocalidad.TabIndex = 37;
+            this.cbLocalidad.DropDown += new System.EventHandler(this.cbLocalidad_DropDown);
             // 
             // cbProvincia
             // 

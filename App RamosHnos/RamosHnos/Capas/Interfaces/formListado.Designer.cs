@@ -52,6 +52,7 @@
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 82;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // formListado
             // 
@@ -69,7 +70,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvListado;
         private System.Windows.Forms.Button button4;
+        public System.Windows.Forms.DataGridView dgvListado;
     }
 }

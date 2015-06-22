@@ -16,6 +16,7 @@ namespace RamosHnos.Capas.Entidades
         public string nombre { get; set; }
         public string apellido { get; set; }
         public string cuil { get; set; }
-        public string email { get; set; }        
+        public string email { get; set; }
+        public bool estado { get; set; }
     }
 }

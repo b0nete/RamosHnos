@@ -67,6 +67,7 @@ namespace RamosHnos.Capas.Interfaces
             };
 
             ProveedorB.InsertProveedor(proveedor);
+
             txtIDproveedor.Text = Convert.ToString(proveedor.idProveedor);
         }
 
@@ -88,8 +89,16 @@ namespace RamosHnos.Capas.Interfaces
                 ProveedorB.CargarDomicilioProveedor(frmdom.dgvDomicilio, persona);
 
                 frmdom.cbRoles.SelectedIndex = 1;
-                frmdom.dgvDomicilio.Columns["idProvincia"].Visible = false;
-                frmdom.dgvDomicilio.Columns["idLocalidad"].Visible = false;
+
+                if (frmdom.dgvDomicilio == null)
+                {
+                    return;
+                }
+                else
+                {
+                    frmdom.dgvDomicilio.Columns["idProvincia"].Visible = false;
+                    frmdom.dgvDomicilio.Columns["idLocalidad"].Visible = false;
+                }  
             }
         }
 

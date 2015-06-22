@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCliente));
             this.gbCliente = new System.Windows.Forms.GroupBox();
+            this.txtcuil = new System.Windows.Forms.MaskedTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.btnDel = new System.Windows.Forms.Button();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbFem = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbMas = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtcuil = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.cbTipoDoc = new System.Windows.Forms.ComboBox();
@@ -63,18 +63,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.gbCliente.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbCliente
             // 
+            this.gbCliente.Controls.Add(this.txtcuil);
             this.gbCliente.Controls.Add(this.label13);
             this.gbCliente.Controls.Add(this.btnEdit);
             this.gbCliente.Controls.Add(this.label10);
             this.gbCliente.Controls.Add(this.btnDel);
-            this.gbCliente.Controls.Add(this.radioButton2);
+            this.gbCliente.Controls.Add(this.rbFem);
             this.gbCliente.Controls.Add(this.button1);
-            this.gbCliente.Controls.Add(this.radioButton1);
+            this.gbCliente.Controls.Add(this.rbMas);
             this.gbCliente.Controls.Add(this.label9);
             this.gbCliente.Controls.Add(this.button2);
             this.gbCliente.Controls.Add(this.label8);
@@ -87,7 +89,6 @@
             this.gbCliente.Controls.Add(this.label17);
             this.gbCliente.Controls.Add(this.label16);
             this.gbCliente.Controls.Add(this.label15);
-            this.gbCliente.Controls.Add(this.txtcuil);
             this.gbCliente.Controls.Add(this.label14);
             this.gbCliente.Controls.Add(this.btnSearch);
             this.gbCliente.Controls.Add(this.cbTipoDoc);
@@ -108,6 +109,17 @@
             this.gbCliente.TabStop = false;
             this.gbCliente.Text = "Información Cliente";
             this.gbCliente.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtcuil
+            // 
+            this.txtcuil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcuil.Location = new System.Drawing.Point(121, 87);
+            this.txtcuil.Mask = "00-00000000-0";
+            this.txtcuil.Name = "txtcuil";
+            this.txtcuil.Size = new System.Drawing.Size(178, 20);
+            this.txtcuil.TabIndex = 74;
+            this.txtcuil.MaskChanged += new System.EventHandler(this.txtcuil_MaskChanged);
+            this.txtcuil.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtcuil_MaskInputRejected);
             // 
             // label13
             // 
@@ -159,16 +171,17 @@
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
-            // radioButton2
+            // rbFem
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(220, 63);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(79, 17);
-            this.radioButton2.TabIndex = 67;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Femenino";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbFem.AutoSize = true;
+            this.rbFem.Location = new System.Drawing.Point(220, 63);
+            this.rbFem.Name = "rbFem";
+            this.rbFem.Size = new System.Drawing.Size(79, 17);
+            this.rbFem.TabIndex = 67;
+            this.rbFem.TabStop = true;
+            this.rbFem.Text = "Femenino";
+            this.rbFem.UseVisualStyleBackColor = true;
+            this.rbFem.CheckedChanged += new System.EventHandler(this.rbFem_CheckedChanged);
             // 
             // button1
             // 
@@ -182,16 +195,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // radioButton1
+            // rbMas
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(121, 63);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(82, 17);
-            this.radioButton1.TabIndex = 66;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Masculino";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbMas.AutoSize = true;
+            this.rbMas.Location = new System.Drawing.Point(121, 63);
+            this.rbMas.Name = "rbMas";
+            this.rbMas.Size = new System.Drawing.Size(82, 17);
+            this.rbMas.TabIndex = 66;
+            this.rbMas.Text = "Masculino";
+            this.rbMas.UseVisualStyleBackColor = true;
+            this.rbMas.CheckedChanged += new System.EventHandler(this.rbMas_CheckedChanged);
             // 
             // label9
             // 
@@ -333,16 +346,6 @@
             this.label15.TabIndex = 44;
             this.label15.Text = "*";
             // 
-            // txtcuil
-            // 
-            this.txtcuil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtcuil.Location = new System.Drawing.Point(121, 87);
-            this.txtcuil.MaxLength = 11;
-            this.txtcuil.Name = "txtcuil";
-            this.txtcuil.Size = new System.Drawing.Size(164, 20);
-            this.txtcuil.TabIndex = 43;
-            this.txtcuil.TextChanged += new System.EventHandler(this.txtcuil_TextChanged);
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -374,6 +377,7 @@
             this.cbTipoDoc.Name = "cbTipoDoc";
             this.cbTipoDoc.Size = new System.Drawing.Size(74, 21);
             this.cbTipoDoc.TabIndex = 39;
+            this.cbTipoDoc.DropDown += new System.EventHandler(this.cbTipoDoc_DropDown);
             this.cbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.txtTipoDni_SelectedIndexChanged);
             // 
             // txtnumDoc
@@ -473,11 +477,24 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(445, 287);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(28, 28);
+            this.button5.TabIndex = 75;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(522, 320);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.gbCliente);
             this.Name = "formCliente";
@@ -503,7 +520,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtcuil;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label18;
@@ -519,11 +535,13 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbFem;
+        private System.Windows.Forms.RadioButton rbMas;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.MaskedTextBox txtcuil;
+        private System.Windows.Forms.Button button5;
     }
 }

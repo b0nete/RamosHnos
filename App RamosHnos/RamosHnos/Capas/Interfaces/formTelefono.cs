@@ -31,6 +31,7 @@ namespace RamosHnos
         {            
             //Mostrar Roles
             RolB.MostrarRolesCB(cbRoles);
+
             //Mostrar Tipos de Telefonos
             TelefonoB.CargarTipoTel(cbTipoTel);
 
@@ -44,7 +45,6 @@ namespace RamosHnos
                 MessageBox.Show("Cargue los Tipos de Telefono a utilizar");
                 formTipoTel frm = new formTipoTel();
                 frm.Show();
-                this.Close();
             }        
             
         }
