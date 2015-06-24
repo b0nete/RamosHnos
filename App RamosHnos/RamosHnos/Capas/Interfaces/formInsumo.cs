@@ -95,12 +95,12 @@ namespace RamosHnos.Capas.Interfaces
 
         private void txtCosto_TextChanged(object sender, EventArgs e)
         {
-            double temp = 0;
+            //double temp = 0;
 
-            if (double.TryParse(txtCosto.Text, out temp))
-            {
-                txtCosto.Text = temp.ToString("N2");
-            }
+            //if (double.TryParse(txtCosto.Text, out temp))
+            //{
+            //    txtCosto.Text = temp.ToString("N2");
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -164,17 +164,31 @@ namespace RamosHnos.Capas.Interfaces
 
         private void txtCosto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //double temp = 0;
+            if (e.KeyChar == '.')
+            {
+                e.KeyChar = ',';
+            }
 
-            //if (double.TryParse(txtCosto.Text, out temp))
+            //if (!(char.IsDigit(e.KeyChar) || e.KeyChar == '.'))
             //{
-            //    txtCosto.Text = temp.ToString("N2");
+            //    e.Handled = true;
             //}
+
         }
 
         private void cbProveedor_DropDown(object sender, EventArgs e)
         {
             ProveedorB.MostrarProveedor(cbProveedor);
+        }
+
+        private void txtCosto_Validated(object sender, EventArgs e)
+        {
+                double d;
+                if (double.TryParse(txtCosto.Text, out d))
+                {
+                    d = Math.Round(d, 2);
+                    txtCosto.Text = d.ToString();
+                }
         }
     }
 }
