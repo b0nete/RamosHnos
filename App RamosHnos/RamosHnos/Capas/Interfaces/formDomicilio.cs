@@ -189,6 +189,26 @@ namespace RamosHnos
             LocalidadB.CargarLocalidad(cbLocalidad, localidad);
         }
 
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

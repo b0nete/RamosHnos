@@ -69,6 +69,12 @@
     <Compile Include="Capas\Entidades\ClienteEntity.cs" />
     <Compile Include="Capas\Entidades\CostoInsumoEntity.cs" />
     <Compile Include="Capas\Entidades\DomicilioEntity.cs" />
+    <Compile Include="Capas\Interfaces\formCostoInsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formCostoInsumo.Designer.cs">
+      <DependentUpon>formCostoInsumo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Entidades\InsumoEntity.cs" />
     <Compile Include="Capas\Entidades\LocalidadEntity.cs" />
     <Compile Include="Capas\Entidades\PedidoEntity.cs" />
@@ -235,6 +241,9 @@
     <Compile Include="Libs\ClearControlsLibs.cs" />
     <Compile Include="Libs\InputBoxLib.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Capas\Interfaces\formCostoInsumo.resx">
+      <DependentUpon>formCostoInsumo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formCliente.resx">
       <DependentUpon>formCliente.cs</DependentUpon>
     </EmbeddedResource>
