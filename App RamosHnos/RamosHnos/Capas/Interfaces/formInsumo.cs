@@ -161,6 +161,21 @@ namespace RamosHnos.Capas.Interfaces
         {
 
         }
+
+        private void txtCosto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //double temp = 0;
+
+            //if (double.TryParse(txtCosto.Text, out temp))
+            //{
+            //    txtCosto.Text = temp.ToString("N2");
+            //}
+        }
+
+        private void cbProveedor_DropDown(object sender, EventArgs e)
+        {
+            ProveedorB.MostrarProveedor(cbProveedor);
+        }
     }
 }
 

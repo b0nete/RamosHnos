@@ -59,16 +59,25 @@ namespace RamosHnos.Capas.Interfaces
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ProveedorEntity proveedor = new ProveedorEntity()
+            //Validación de Campos.   
+            if (txtCUIT.Text == string.Empty || txtrazonSocial.Text == string.Empty || txtEmail.Text == string.Empty)
             {
-                razonSocial = txtrazonSocial.Text,
-                cuit = txtCUIT.Text,
-                email = txtEmail.Text
-            };
+                MessageBox.Show("Datos necesarios incompletos.");
+                return;
+            }
+            else
+            {
+                ProveedorEntity proveedor = new ProveedorEntity()
+                {
+                    razonSocial = txtrazonSocial.Text,
+                    cuit = txtCUIT.Text,
+                    email = txtEmail.Text
+                };
 
-            ProveedorB.InsertProveedor(proveedor);
+                ProveedorB.InsertProveedor(proveedor);
 
-            txtIDproveedor.Text = Convert.ToString(proveedor.idProveedor);
+                txtIDproveedor.Text = Convert.ToString(proveedor.idProveedor);
+            }
         }
 
         private void btnDomicilio_Click(object sender, EventArgs e)
@@ -115,8 +124,11 @@ namespace RamosHnos.Capas.Interfaces
                 frmtel.txtNombre.Text = txtrazonSocial.Text + ' ' + '-' + ' ' + txtIDproveedor.Text;
                 frmtel.Show();
 
-                //Seleccionar Cliente de CB.
+                //Seleccionar Proveedor de CB.
                 frmtel.cbRoles.SelectedIndex = 1;
+                int rol = Convert.ToInt32(frmtel.cbRoles.SelectedValue);
+                string telefono = frmtel.txtID.Text;
+                ProveedorB.MostrarTelefonoProveedor(frmtel.dgvTelefonos, rol, telefono);
             }
         }
 
@@ -125,7 +137,7 @@ namespace RamosHnos.Capas.Interfaces
             string txtinCUIT = "";
             txtinCUIT = txtCUIT.Text;
 
-            if (txtCUIT.Text == "")
+            if (txtCUIT.Text == "##-########-#")
             {
                 DialogResult result = InputBoxLib.InputBox("CUIT", "Ingrese CUIT", ref txtinCUIT);
                 if (result == DialogResult.Cancel)

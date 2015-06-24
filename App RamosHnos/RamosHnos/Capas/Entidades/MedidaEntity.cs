@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace RamosHnos.Capas.Entidades
 {
-    public class TipoProductoEntity
+    class MedidaEntity
     {
-        public int idTipoProducto { get; set; }
-        public string tipoProducto { get; set; }
+        public int idMedida { get; set; }
+        public double medida { get; set; }
         public bool estado { get; set; }
     }
 }

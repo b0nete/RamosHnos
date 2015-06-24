@@ -133,6 +133,9 @@ namespace RamosHnos.Capas.Interfaces
 
                 //Seleccionar Cliente de CB.
                 frmtel.cbRoles.SelectedIndex = 0;
+                int rol = Convert.ToInt32(frmtel.cbRoles.SelectedValue);
+                string telefono = frmtel.txtID.Text;
+                TelefonoB.MostrarTelefono(frmtel.dgvTelefonos, rol, telefono);
             }
             
         }
@@ -238,16 +241,9 @@ namespace RamosHnos.Capas.Interfaces
             txtnumDoc.Text = cliente.numDoc;
             txtNombre.Text = cliente.nombre;
             txtApellido.Text = cliente.apellido;
+            txtcuil.Mask = "00-00000000-0";
             txtcuil.Text = cliente.cuil;
             txtEmail.Text = cliente.email;
-
-            //txtIDcliente.Enabled = false;
-            //cbTipoDoc.Enabled = false;
-            //txtnumDoc.Enabled = false;
-            //txtNombre.Enabled = false;
-            //txtApellido.Enabled = false;
-            //txtcuil.Enabled = false;
-            //txtEmail.Enabled = false;
         }
 
         private void button2_Click_2(object sender, EventArgs e)

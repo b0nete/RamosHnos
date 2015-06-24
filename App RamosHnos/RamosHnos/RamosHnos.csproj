@@ -69,6 +69,7 @@
     <Compile Include="Capas\Entidades\ClienteEntity.cs" />
     <Compile Include="Capas\Entidades\CostoInsumoEntity.cs" />
     <Compile Include="Capas\Entidades\DomicilioEntity.cs" />
+    <Compile Include="Capas\Entidades\MedidaEntity.cs" />
     <Compile Include="Capas\Interfaces\formCostoInsumo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,17 +136,17 @@
     <Compile Include="Capas\Interfaces\formLocalidad.Designer.cs">
       <DependentUpon>formLocalidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaces\formMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaces\formMedida.Designer.cs">
+      <DependentUpon>formMedida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaces\formProducto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Capas\Interfaces\formProducto.Designer.cs">
       <DependentUpon>formProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formProductoList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaces\formProductoList.Designer.cs">
-      <DependentUpon>formProductoList.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Interfaces\formProveedor.cs">
       <SubType>Form</SubType>
@@ -268,11 +269,11 @@
     <EmbeddedResource Include="Capas\Interfaces\formLocalidad.resx">
       <DependentUpon>formLocalidad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaces\formMedida.resx">
+      <DependentUpon>formMedida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formProducto.resx">
       <DependentUpon>formProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Interfaces\formProductoList.resx">
-      <DependentUpon>formProductoList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formProveedor.resx">
       <DependentUpon>formProveedor.cs</DependentUpon>

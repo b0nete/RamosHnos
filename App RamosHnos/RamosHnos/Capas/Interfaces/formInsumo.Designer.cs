@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formInsumo));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cbProveedor = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -63,9 +66,6 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.label18 = new System.Windows.Forms.Label();
-            this.cbProveedor = new System.Windows.Forms.ComboBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumos)).BeginInit();
             this.SuspendLayout();
@@ -114,6 +114,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Descripción Insumo";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label18
+            // 
+            this.label18.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label18.ForeColor = System.Drawing.Color.Red;
+            this.label18.Location = new System.Drawing.Point(50, 55);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(11, 13);
+            this.label18.TabIndex = 104;
+            this.label18.Text = "*";
+            // 
+            // cbProveedor
+            // 
+            this.cbProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbProveedor.FormattingEnabled = true;
+            this.cbProveedor.Location = new System.Drawing.Point(117, 52);
+            this.cbProveedor.Name = "cbProveedor";
+            this.cbProveedor.Size = new System.Drawing.Size(200, 21);
+            this.cbProveedor.TabIndex = 103;
+            this.cbProveedor.DropDown += new System.EventHandler(this.cbProveedor_DropDown);
+            this.cbProveedor.SelectedIndexChanged += new System.EventHandler(this.cbProveedor_SelectedIndexChanged);
+            // 
+            // label19
+            // 
+            this.label19.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label19.Location = new System.Drawing.Point(57, 55);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(56, 13);
+            this.label19.TabIndex = 102;
+            this.label19.Text = "Proveedor";
             // 
             // label14
             // 
@@ -376,6 +411,7 @@
             this.txtCosto.Size = new System.Drawing.Size(200, 20);
             this.txtCosto.TabIndex = 29;
             this.txtCosto.TextChanged += new System.EventHandler(this.txtCosto_TextChanged);
+            this.txtCosto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCosto_KeyPress);
             // 
             // label2
             // 
@@ -480,40 +516,6 @@
             this.button5.TabIndex = 75;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // label18
-            // 
-            this.label18.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(50, 55);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(11, 13);
-            this.label18.TabIndex = 104;
-            this.label18.Text = "*";
-            // 
-            // cbProveedor
-            // 
-            this.cbProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbProveedor.FormattingEnabled = true;
-            this.cbProveedor.Location = new System.Drawing.Point(117, 52);
-            this.cbProveedor.Name = "cbProveedor";
-            this.cbProveedor.Size = new System.Drawing.Size(200, 21);
-            this.cbProveedor.TabIndex = 103;
-            this.cbProveedor.SelectedIndexChanged += new System.EventHandler(this.cbProveedor_SelectedIndexChanged);
-            // 
-            // label19
-            // 
-            this.label19.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label19.Location = new System.Drawing.Point(57, 55);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(56, 13);
-            this.label19.TabIndex = 102;
-            this.label19.Text = "Proveedor";
             // 
             // formInsumo
             // 

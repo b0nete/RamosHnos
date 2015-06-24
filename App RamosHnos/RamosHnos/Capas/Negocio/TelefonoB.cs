@@ -140,7 +140,9 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
-        public static void MostrarTelefono(DataGridView dgv, string persona)
+
+
+        public static void MostrarTelefono(DataGridView dgv, int rol, string persona)
         {
             try
             {
@@ -148,7 +150,7 @@ namespace RamosHnos.Capas.Negocio
                 MySQLDAL.CnxDB();
 
 
-                string query = @"SELECT TT.TipoTel, CONCAT (T.caracteristica, T.numtel) Telefono
+                string query = @"SELECT TT.TipoTel, CONCAT (T.caracteristica, '-', T.numtel) Telefono
                                  FROM Telefonos T
                                  INNER JOIN TipoTelefono TT ON TT.idTipoTel = T.TipoTel
                                  INNER JOIN Clientes C ON C.idCliente = T.idPersona

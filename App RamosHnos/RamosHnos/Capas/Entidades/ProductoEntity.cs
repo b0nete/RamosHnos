@@ -8,14 +8,13 @@ namespace RamosHnos.Capas.Entidades
 {
     public class ProductoEntity
     {
-        public ProductoEntity()
-        {
-        }
-
         public int idProducto { get; set; }
-        public string nombreProducto { get; set; }
         public int tipoProducto { get; set; }
-        public int medida { get; set; }
+        public string producto { get; set; }
+        public double medida { get; set; }
+        public string descripcion { get; set; }
+        public DateTime fechaVencimiento { get; set; }
+        public int stockMin { get; set; }
         public string estado { get; set; }
     }
 }

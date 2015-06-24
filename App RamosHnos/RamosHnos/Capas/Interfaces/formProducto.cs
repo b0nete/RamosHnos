@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RamosHnos.Capas.Negocio;
+using RamosHnos.Capas.Entidades;
 
 namespace RamosHnos.Capas.Interfaces
 {
@@ -24,9 +26,35 @@ namespace RamosHnos.Capas.Interfaces
 
         private void button4_Click(object sender, EventArgs e)
         {
-            formProductoList frm = new formProductoList();
-            frm.Show();
+
             
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            formTipoProducto frm = new formTipoProducto();
+            frm.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            formMedida frm = new formMedida();
+            frm.Show();
+        }
+
+        private void cbTipoProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbTipoProducto_DropDown(object sender, EventArgs e)
+        {
+            ProductoB.MostrarTipoProducto(cbTipoProducto);
+        }
+
+        private void formProducto_Load(object sender, EventArgs e)
+        {
+            ProductoB.MostrarTipoProducto(cbTipoProducto);
         }
     }
 }

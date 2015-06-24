@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace RamosHnos.Capas.Interfaces
 {
-    public partial class formProductoList : Form
+    public partial class formMedida : Form
     {
-        public formProductoList()
+        public formMedida()
         {
             InitializeComponent();
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void txtNumTel_TextChanged(object sender, EventArgs e)
         {
+            double temp = 0;
 
-        }
-
-        private void formProductoList_Load(object sender, EventArgs e)
-        {
-
+            if (double.TryParse(txtMedida.Text, out temp))
+            {
+                txtMedida.Text = temp.ToString("N2");
+            }
         }
     }
 }

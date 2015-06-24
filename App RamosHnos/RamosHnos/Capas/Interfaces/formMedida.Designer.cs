@@ -1,6 +1,6 @@
 ﻿namespace RamosHnos.Capas.Interfaces
 {
-    partial class formTipoProducto
+    partial class formMedida
     {
         /// <summary>
         /// Required designer variable.
@@ -28,47 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formTipoProducto));
-            this.dgvTipoProducto = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMedida));
+            this.dgvTelefonos = new System.Windows.Forms.DataGridView();
             this.Rubro = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.cbEstado = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtTipoProducto = new System.Windows.Forms.TextBox();
+            this.txtMedida = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefonos)).BeginInit();
             this.Rubro.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvTipoProducto
+            // dgvTelefonos
             // 
-            this.dgvTipoProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTipoProducto.Location = new System.Drawing.Point(12, 70);
-            this.dgvTipoProducto.Name = "dgvTipoProducto";
-            this.dgvTipoProducto.Size = new System.Drawing.Size(437, 183);
-            this.dgvTipoProducto.TabIndex = 72;
+            this.dgvTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTelefonos.Location = new System.Drawing.Point(12, 70);
+            this.dgvTelefonos.Name = "dgvTelefonos";
+            this.dgvTelefonos.Size = new System.Drawing.Size(437, 183);
+            this.dgvTelefonos.TabIndex = 86;
             // 
             // Rubro
             // 
             this.Rubro.Controls.Add(this.label2);
             this.Rubro.Controls.Add(this.label8);
-            this.Rubro.Controls.Add(this.cbEstado);
+            this.Rubro.Controls.Add(this.checkBox1);
             this.Rubro.Controls.Add(this.label1);
             this.Rubro.Controls.Add(this.btnEdit);
             this.Rubro.Controls.Add(this.btnDel);
             this.Rubro.Controls.Add(this.button3);
-            this.Rubro.Controls.Add(this.txtTipoProducto);
+            this.Rubro.Controls.Add(this.txtMedida);
             this.Rubro.Controls.Add(this.label3);
             this.Rubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Rubro.Location = new System.Drawing.Point(12, 12);
             this.Rubro.Name = "Rubro";
             this.Rubro.Size = new System.Drawing.Size(437, 52);
-            this.Rubro.TabIndex = 71;
+            this.Rubro.TabIndex = 85;
             this.Rubro.TabStop = false;
             this.Rubro.Text = "Tipo Producto";
             // 
@@ -98,17 +98,17 @@
             this.label8.TabIndex = 81;
             this.label8.Text = "*";
             // 
-            // cbEstado
+            // checkBox1
             // 
-            this.cbEstado.AutoSize = true;
-            this.cbEstado.Checked = true;
-            this.cbEstado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbEstado.Location = new System.Drawing.Point(273, 22);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(15, 14);
-            this.cbEstado.TabIndex = 80;
-            this.cbEstado.UseVisualStyleBackColor = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.checkBox1.Location = new System.Drawing.Point(273, 22);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 80;
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -120,13 +120,14 @@
             this.label1.TabIndex = 79;
             this.label1.Text = "Estado";
             // 
-            // txtTipoProducto
+            // txtMedida
             // 
-            this.txtTipoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtTipoProducto.Location = new System.Drawing.Point(65, 19);
-            this.txtTipoProducto.Name = "txtTipoProducto";
-            this.txtTipoProducto.Size = new System.Drawing.Size(139, 20);
-            this.txtTipoProducto.TabIndex = 5;
+            this.txtMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtMedida.Location = new System.Drawing.Point(65, 19);
+            this.txtMedida.Name = "txtMedida";
+            this.txtMedida.Size = new System.Drawing.Size(139, 20);
+            this.txtMedida.TabIndex = 5;
+            this.txtMedida.TextChanged += new System.EventHandler(this.txtNumTel_TextChanged);
             // 
             // label3
             // 
@@ -134,9 +135,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label3.Location = new System.Drawing.Point(21, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
+            this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Nombre";
+            this.label3.Text = "Medida";
             // 
             // button4
             // 
@@ -146,9 +147,8 @@
             this.button4.Location = new System.Drawing.Point(421, 259);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
-            this.button4.TabIndex = 84;
+            this.button4.TabIndex = 87;
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnEdit
             // 
@@ -182,19 +182,18 @@
             this.button3.Size = new System.Drawing.Size(28, 28);
             this.button3.TabIndex = 74;
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // formTipoProducto
+            // formMedida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 293);
+            this.ClientSize = new System.Drawing.Size(461, 294);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.dgvTipoProducto);
+            this.Controls.Add(this.dgvTelefonos);
             this.Controls.Add(this.Rubro);
-            this.Name = "formTipoProducto";
-            this.Text = "Tipo Producto";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTipoProducto)).EndInit();
+            this.Name = "formMedida";
+            this.Text = "formMedida";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefonos)).EndInit();
             this.Rubro.ResumeLayout(false);
             this.Rubro.PerformLayout();
             this.ResumeLayout(false);
@@ -203,19 +202,17 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvTipoProducto;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridView dgvTelefonos;
         private System.Windows.Forms.GroupBox Rubro;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox txtTipoProducto;
+        private System.Windows.Forms.TextBox txtMedida;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox cbEstado;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button4;
-
-
     }
 }

@@ -35,8 +35,9 @@ namespace RamosHnos
             //Mostrar Tipos de Telefonos
             TelefonoB.CargarTipoTel(cbTipoTel);
 
-            string tel = txtID.Text;
-            TelefonoB.MostrarTelefono(dgvTelefonos, tel);
+            int rol = Convert.ToInt32(cbRoles.SelectedValue);
+            string telefono = txtID.Text;
+            TelefonoB.MostrarTelefono(dgvTelefonos, rol, telefono);
 
             //Cargar Tipos de Telefonos si no existen            
             DataTable dt = TelefonoB.ExisteTipoTel();
@@ -66,8 +67,10 @@ namespace RamosHnos
 
 
             TelefonoB.InsertTelefono(telefono);
+
+            int rol = Convert.ToInt32(cbRoles.SelectedValue);
             string tel = txtID.Text;
-            TelefonoB.MostrarTelefono(dgvTelefonos, tel);
+            TelefonoB.MostrarTelefono(dgvTelefonos, rol, tel);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -115,7 +118,15 @@ namespace RamosHnos
             TelefonoB.InsertTelefono(telefono);
 
             string tel = txtID.Text;
-            TelefonoB.MostrarTelefono(dgvTelefonos, tel);
+            int rol = Convert.ToInt32(cbRoles.SelectedValue);
+            if (rol == 1)
+            {
+                ClienteB.MostrarTelefonoCliente(dgvTelefonos, rol, tel);
+            }
+            else
+            {
+                ProveedorB.MostrarTelefonoProveedor(dgvTelefonos, rol, tel);
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -127,6 +138,12 @@ namespace RamosHnos
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbTipoTel_DropDown(object sender, EventArgs e)
+        {
+            //Mostrar Tipos de Telefonos
+            TelefonoB.CargarTipoTel(cbTipoTel);
         }
     }
 }

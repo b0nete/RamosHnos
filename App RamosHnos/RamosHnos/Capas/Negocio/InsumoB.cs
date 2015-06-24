@@ -98,7 +98,7 @@ namespace RamosHnos.Capas.Negocio
                                      FROM Insumos I
                                      INNER JOIN Proveedores P ON P.idProveedor = I.Proveedor
                                      INNER JOIN Rubros R ON R.idRubro = I.Rubro
-                                     INNER JOIN CostoInsumos CI ON CI.Insumo = I.idInsumo";
+                                     INNER JOIN CostoInsumos CI ON CI.Insumo = I.idInsumo;";
 
                     MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 

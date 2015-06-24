@@ -108,7 +108,7 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
-        public static void MostrarTelefono(DataGridView dgv, string telefono)
+        public static void MostrarTelefonoProveedor(DataGridView dgv, int rol, string telefono)
         {
             try
             {
@@ -116,15 +116,16 @@ namespace RamosHnos.Capas.Negocio
                 MySQLDAL.CnxDB();
 
 
-                string query = @"SELECT TT.TipoTel, CONCAT (T.caracteristica, T.numtel) Telefono
+                string query = @"SELECT TT.TipoTel, CONCAT (T.caracteristica,'-', T.numtel) Telefono
                                  FROM Telefonos T
                                  INNER JOIN TipoTelefono TT ON TT.idTipoTel = T.TipoTel
                                  INNER JOIN Proveedores P ON P.idProveedor = T.idPersona
-                                 WHERE R.idRol = '2', P.idPersona = @idPersona";
+                                 WHERE T.rol = @rol and T.idPersona = @idPersona";
 
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 
+                cmd.Parameters.AddWithValue("@rol", rol);
                 cmd.Parameters.AddWithValue("@idPersona", telefono);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -149,7 +150,7 @@ namespace RamosHnos.Capas.Negocio
             {
                 MySQLDAL.CnxDB();
 
-                string query = "SELECT * FROM PRoveedores WHERE CUIT = @CUIT";
+                string query = "SELECT * FROM Proveedores WHERE CUIT = @CUIT";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 
@@ -240,5 +241,7 @@ namespace RamosHnos.Capas.Negocio
                 MessageBox.Show(ex.ToString());
             }
         }
+
+
     }
 }

@@ -43,7 +43,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtCUIT = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtrazonSocial = new System.Windows.Forms.TextBox();
@@ -51,11 +50,14 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.txtCUIT = new System.Windows.Forms.MaskedTextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.gbCliente.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbCliente
             // 
+            this.gbCliente.Controls.Add(this.txtCUIT);
             this.gbCliente.Controls.Add(this.btnEdit);
             this.gbCliente.Controls.Add(this.btnRubro);
             this.gbCliente.Controls.Add(this.btnDel);
@@ -69,7 +71,6 @@
             this.gbCliente.Controls.Add(this.label3);
             this.gbCliente.Controls.Add(this.label18);
             this.gbCliente.Controls.Add(this.label16);
-            this.gbCliente.Controls.Add(this.txtCUIT);
             this.gbCliente.Controls.Add(this.label14);
             this.gbCliente.Controls.Add(this.btnSearch);
             this.gbCliente.Controls.Add(this.txtrazonSocial);
@@ -232,15 +233,6 @@
             this.label16.TabIndex = 45;
             this.label16.Text = "*";
             // 
-            // txtCUIT
-            // 
-            this.txtCUIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtCUIT.Location = new System.Drawing.Point(121, 46);
-            this.txtCUIT.MaxLength = 11;
-            this.txtCUIT.Name = "txtCUIT";
-            this.txtCUIT.Size = new System.Drawing.Size(164, 20);
-            this.txtCUIT.TabIndex = 43;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -304,18 +296,39 @@
             this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnClose.Location = new System.Drawing.Point(479, 287);
+            this.btnClose.Location = new System.Drawing.Point(476, 287);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(28, 28);
             this.btnClose.TabIndex = 82;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // txtCUIT
+            // 
+            this.txtCUIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCUIT.Location = new System.Drawing.Point(122, 46);
+            this.txtCUIT.Mask = "00-00000000-0";
+            this.txtCUIT.Name = "txtCUIT";
+            this.txtCUIT.Size = new System.Drawing.Size(163, 20);
+            this.txtCUIT.TabIndex = 83;
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(442, 287);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(28, 28);
+            this.button5.TabIndex = 84;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // formProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(522, 322);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.gbCliente);
             this.Name = "formProveedor";
@@ -338,7 +351,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtCUIT;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtrazonSocial;
@@ -351,6 +363,8 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnRubro;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.MaskedTextBox txtCUIT;
+        private System.Windows.Forms.Button button5;
 
     }
 }

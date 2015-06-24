@@ -30,5 +30,22 @@ namespace RamosHnos.Capas.Interfaces
 
             TipoProductoB.InsertTipoProducto(tipoProducto);
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            TipoProductoEntity tproducto = new TipoProductoEntity()
+            {
+                tipoProducto = txtTipoProducto.Text,
+                estado = cbEstado.Checked
+            };
+
+            ProductoB.InsertTipoProducto(tproducto);
+            ProductoB.MostrarTipoProducto(dgvTipoProducto);
+        }
     }
 }
