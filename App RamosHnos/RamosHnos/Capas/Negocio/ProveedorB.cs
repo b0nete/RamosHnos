@@ -215,5 +215,30 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
+        public static void MostrarProveedor(ComboBox cb)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQLDAL.CnxDB();
+
+                string query = "SELECT * FROM Proveedores";  
+
+                ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+                
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+
+                cb.DisplayMember = "razonSocial";
+                cb.ValueMember = "idProveedor";
+                cb.DataSource = dt;
+
+                MySQLDAL.DcnxDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

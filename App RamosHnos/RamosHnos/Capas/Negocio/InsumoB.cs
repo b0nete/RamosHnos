@@ -19,8 +19,8 @@ namespace RamosHnos.Capas.Negocio
             {
                 MySQLDAL.CnxDB();
 
-                string query = @"INSERT INTO Insumos (rubro, marca, insumo, descripcion, stockMin, estado) 
-                                 VALUES (@rubro, @marca, @insumo, @descripcion, @stockMin, @estado);
+                string query = @"INSERT INTO Insumos (rubro, proveedor, marca, insumo, descripcion, stockMin, estado) 
+                                 VALUES (@rubro, @proveedor, @marca, @insumo, @descripcion, @stockMin, @estado);
                                  SELECT LAST_INSERT_ID()";
 
 
@@ -28,6 +28,7 @@ namespace RamosHnos.Capas.Negocio
                 //cmd.CommandText = query;
 
                 cmd.Parameters.AddWithValue("@rubro", insumo.rubro);
+                cmd.Parameters.AddWithValue("@proveedor", insumo.proveedor);
                 cmd.Parameters.AddWithValue("@marca", insumo.marca);
                 cmd.Parameters.AddWithValue("@insumo", insumo.insumo);
                 cmd.Parameters.AddWithValue("@descripcion", insumo.descripcion);
@@ -58,8 +59,8 @@ namespace RamosHnos.Capas.Negocio
             {
                 MySQLDAL.CnxDB();
 
-                string query = @"INSERT INTO CostoInsumos (insumo, costo, fechaActualizacion, estado) 
-                                 VALUES (@insumo, @costo, @fechaActualizacion, @estado);
+                string query = @"INSERT INTO CostoInsumos (insumo, costo, fechaActualizacion) 
+                                 VALUES (@insumo, @costo, @fechaActualizacion);
                                  SELECT LAST_INSERT_ID()";
 
 
@@ -69,7 +70,6 @@ namespace RamosHnos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@insumo", cinsumo.insumo );
                 cmd.Parameters.AddWithValue("@costo", cinsumo.costo);
                 cmd.Parameters.AddWithValue("@fechaActualizacion", cinsumo.fechaActualizacion);
-                cmd.Parameters.AddWithValue("@estado", cinsumo.estado);
 
                 cmd.ExecuteNonQuery();
                 //insumo.idInsumo = Convert.ToInt32(cmd.ExecuteScalar());
@@ -93,9 +93,12 @@ namespace RamosHnos.Capas.Negocio
                 {
                     DataTable dt = new DataTable();
                     MySQLDAL.CnxDB();
-                    
-                    string query = @"SELECT *
-                                     FROM Insumos";
+
+                    string query = @"SELECT I.idInsumo, P.razonSocial, R.Rubro, I.Marca, I.Insumo, I.Descripcion, I.StockMin,                                        CI.FechaActualizacion, CI.Costo
+                                     FROM Insumos I
+                                     INNER JOIN Proveedores P ON P.idProveedor = I.Proveedor
+                                     INNER JOIN Rubros R ON R.idRubro = I.Rubro
+                                     INNER JOIN CostoInsumos CI ON CI.Insumo = I.idInsumo";
 
                     MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 
@@ -103,6 +106,38 @@ namespace RamosHnos.Capas.Negocio
 
                     da.Fill(dt);
                                         
+                    dgv.DataSource = dt;
+
+                    MySQLDAL.DcnxDB();
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex);
+                    throw;
+                }
+            }
+
+            public static void MostrarCostoInsumo(DataGridView dgv, string insumo)
+            {
+                try
+                {
+                    DataTable dt = new DataTable();
+                    MySQLDAL.CnxDB();
+
+                    string query = @"SELECT *
+                                     FROM CostoInsumos 
+                                     WHERE Insumo = @Insumo
+                                     ORDER BY idCostoInsumo DESC";
+
+                    MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                    cmd.Parameters.AddWithValue("@Insumo", insumo);
+
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
                     dgv.DataSource = dt;
 
                     MySQLDAL.DcnxDB();
