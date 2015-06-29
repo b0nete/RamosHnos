@@ -153,7 +153,7 @@ namespace RamosHnos.Capas.Interfaces
         private void button1_Click(object sender, EventArgs e)
         {
             //Validación de Campos.   
-            if (txtnumDoc.Text == string.Empty || txtNombre.Text == string.Empty || txtApellido.Text == string.Empty)
+            if (txtnumDoc.Text == string.Empty || txtNombre.Text == string.Empty || txtApellido.Text == string.Empty || txtcuil.Text == string.Empty)
             {
                 MessageBox.Show("Datos necesarios incompletos.");
                 return;
@@ -172,7 +172,8 @@ namespace RamosHnos.Capas.Interfaces
                 };
 
 
-                ClienteB.InsertCliente(cliente);
+                //ClienteB.InsertCliente(cliente);
+                ClienteB.SaveCliente(cliente);
                 
                 txtIDcliente.Text = Convert.ToString(cliente.idCliente);
 
@@ -212,7 +213,7 @@ namespace RamosHnos.Capas.Interfaces
                     email = txtEmail.Text
                 };
 
-                ClienteB.EditCliente(cliente);                
+                ClienteB.UpdateCliente(cliente);                
             }    
         }
 
@@ -282,6 +283,7 @@ namespace RamosHnos.Capas.Interfaces
 
         private void txtcuil_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
+
             //if (rbMas.Checked == true)
             //{
             //    txtcuil.Text = "20-########-#";

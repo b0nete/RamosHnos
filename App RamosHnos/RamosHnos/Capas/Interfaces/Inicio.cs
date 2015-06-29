@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RamosHnos.Capas.Interfaces;
 
-namespace RamosHnos
+
+namespace RamosHnos.Capas.Interfaces
 {
     public partial class Inicio : Form
     {
@@ -39,7 +39,7 @@ namespace RamosHnos
 
         private void agregarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formRegistrarEmpleado frm = new formRegistrarEmpleado();
+            formUsuario frm = new formUsuario();
             frm.Show();
         }
 

@@ -105,7 +105,7 @@
             this.gbCliente.Location = new System.Drawing.Point(12, 12);
             this.gbCliente.Name = "gbCliente";
             this.gbCliente.Size = new System.Drawing.Size(498, 269);
-            this.gbCliente.TabIndex = 21;
+            this.gbCliente.TabIndex = 2;
             this.gbCliente.TabStop = false;
             this.gbCliente.Text = "Información Cliente";
             this.gbCliente.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -117,7 +117,8 @@
             this.txtcuil.Mask = "00-00000000-0";
             this.txtcuil.Name = "txtcuil";
             this.txtcuil.Size = new System.Drawing.Size(178, 20);
-            this.txtcuil.TabIndex = 74;
+            this.txtcuil.TabIndex = 6;
+            this.txtcuil.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtcuil.MaskChanged += new System.EventHandler(this.txtcuil_MaskChanged);
             this.txtcuil.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtcuil_MaskInputRejected);
             // 
@@ -131,7 +132,7 @@
             this.label13.Location = new System.Drawing.Point(76, 65);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(11, 13);
-            this.label13.TabIndex = 71;
+            this.label13.TabIndex = 17;
             this.label13.Text = "*";
             // 
             // btnEdit
@@ -142,7 +143,7 @@
             this.btnEdit.Location = new System.Drawing.Point(430, 235);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(28, 28);
-            this.btnEdit.TabIndex = 73;
+            this.btnEdit.TabIndex = 13;
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
@@ -156,7 +157,7 @@
             this.label10.Location = new System.Drawing.Point(67, 145);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(11, 13);
-            this.label10.TabIndex = 68;
+            this.label10.TabIndex = 23;
             this.label10.Text = "*";
             // 
             // btnDel
@@ -167,7 +168,7 @@
             this.btnDel.Location = new System.Drawing.Point(464, 235);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(28, 28);
-            this.btnDel.TabIndex = 72;
+            this.btnDel.TabIndex = 14;
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
@@ -177,7 +178,7 @@
             this.rbFem.Location = new System.Drawing.Point(220, 63);
             this.rbFem.Name = "rbFem";
             this.rbFem.Size = new System.Drawing.Size(79, 17);
-            this.rbFem.TabIndex = 67;
+            this.rbFem.TabIndex = 5;
             this.rbFem.TabStop = true;
             this.rbFem.Text = "Femenino";
             this.rbFem.UseVisualStyleBackColor = true;
@@ -191,7 +192,7 @@
             this.button1.Location = new System.Drawing.Point(396, 235);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 28);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 12;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -201,7 +202,7 @@
             this.rbMas.Location = new System.Drawing.Point(121, 63);
             this.rbMas.Name = "rbMas";
             this.rbMas.Size = new System.Drawing.Size(82, 17);
-            this.rbMas.TabIndex = 66;
+            this.rbMas.TabIndex = 4;
             this.rbMas.Text = "Masculino";
             this.rbMas.UseVisualStyleBackColor = true;
             this.rbMas.CheckedChanged += new System.EventHandler(this.rbMas_CheckedChanged);
@@ -213,7 +214,7 @@
             this.label9.Location = new System.Drawing.Point(84, 65);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(31, 13);
-            this.label9.TabIndex = 65;
+            this.label9.TabIndex = 18;
             this.label9.Text = "Sexo";
             // 
             // button2
@@ -224,7 +225,7 @@
             this.button2.Location = new System.Drawing.Point(201, 30);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(28, 28);
-            this.button2.TabIndex = 64;
+            this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_2);
             // 
@@ -235,7 +236,7 @@
             this.label8.Location = new System.Drawing.Point(307, 13);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 13);
-            this.label8.TabIndex = 63;
+            this.label8.TabIndex = 30;
             this.label8.Text = "ID Cliente";
             this.label8.Visible = false;
             // 
@@ -246,7 +247,7 @@
             this.txtIDcliente.Location = new System.Drawing.Point(366, 9);
             this.txtIDcliente.Name = "txtIDcliente";
             this.txtIDcliente.Size = new System.Drawing.Size(129, 20);
-            this.txtIDcliente.TabIndex = 62;
+            this.txtIDcliente.TabIndex = 31;
             this.txtIDcliente.Visible = false;
             this.txtIDcliente.TextChanged += new System.EventHandler(this.txtIDcliente_TextChanged);
             // 
@@ -258,7 +259,7 @@
             this.btnTelefono.Location = new System.Drawing.Point(121, 220);
             this.btnTelefono.Name = "btnTelefono";
             this.btnTelefono.Size = new System.Drawing.Size(28, 28);
-            this.btnTelefono.TabIndex = 61;
+            this.btnTelefono.TabIndex = 11;
             this.btnTelefono.UseVisualStyleBackColor = true;
             this.btnTelefono.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -270,7 +271,7 @@
             this.button3.Location = new System.Drawing.Point(121, 193);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 60;
+            this.button3.TabIndex = 10;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -281,7 +282,7 @@
             this.label7.Location = new System.Drawing.Point(69, 227);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
-            this.label7.TabIndex = 59;
+            this.label7.TabIndex = 27;
             this.label7.Text = "Telefono";
             // 
             // label3
@@ -291,7 +292,7 @@
             this.label3.Location = new System.Drawing.Point(69, 200);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
-            this.label3.TabIndex = 58;
+            this.label3.TabIndex = 26;
             this.label3.Text = "Domicilio";
             // 
             // label18
@@ -304,7 +305,7 @@
             this.label18.Location = new System.Drawing.Point(246, 37);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(11, 13);
-            this.label18.TabIndex = 47;
+            this.label18.TabIndex = 28;
             this.label18.Text = "*";
             // 
             // label17
@@ -317,7 +318,7 @@
             this.label17.Location = new System.Drawing.Point(24, 36);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(12, 15);
-            this.label17.TabIndex = 46;
+            this.label17.TabIndex = 15;
             this.label17.Text = "*";
             // 
             // label16
@@ -330,7 +331,7 @@
             this.label16.Location = new System.Drawing.Point(76, 90);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(11, 13);
-            this.label16.TabIndex = 45;
+            this.label16.TabIndex = 19;
             this.label16.Text = "*";
             // 
             // label15
@@ -343,7 +344,7 @@
             this.label15.Location = new System.Drawing.Point(66, 118);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(11, 13);
-            this.label15.TabIndex = 44;
+            this.label15.TabIndex = 21;
             this.label15.Text = "*";
             // 
             // label14
@@ -353,7 +354,7 @@
             this.label14.Location = new System.Drawing.Point(84, 90);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(31, 13);
-            this.label14.TabIndex = 42;
+            this.label14.TabIndex = 20;
             this.label14.Text = "CUIL";
             // 
             // btnSearch
@@ -364,7 +365,7 @@
             this.btnSearch.Location = new System.Drawing.Point(448, 29);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
-            this.btnSearch.TabIndex = 40;
+            this.btnSearch.TabIndex = 3;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -376,7 +377,7 @@
             this.cbTipoDoc.Location = new System.Drawing.Point(121, 34);
             this.cbTipoDoc.Name = "cbTipoDoc";
             this.cbTipoDoc.Size = new System.Drawing.Size(74, 21);
-            this.cbTipoDoc.TabIndex = 39;
+            this.cbTipoDoc.TabIndex = 0;
             this.cbTipoDoc.DropDown += new System.EventHandler(this.cbTipoDoc_DropDown);
             this.cbTipoDoc.SelectedIndexChanged += new System.EventHandler(this.txtTipoDni_SelectedIndexChanged);
             // 
@@ -386,7 +387,7 @@
             this.txtnumDoc.Location = new System.Drawing.Point(280, 34);
             this.txtnumDoc.Name = "txtnumDoc";
             this.txtnumDoc.Size = new System.Drawing.Size(162, 20);
-            this.txtnumDoc.TabIndex = 38;
+            this.txtnumDoc.TabIndex = 2;
             this.txtnumDoc.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label6
@@ -396,7 +397,7 @@
             this.label6.Location = new System.Drawing.Point(254, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(19, 13);
-            this.label6.TabIndex = 37;
+            this.label6.TabIndex = 29;
             this.label6.Text = "Nº";
             // 
             // txtEmail
@@ -405,7 +406,7 @@
             this.txtEmail.Location = new System.Drawing.Point(121, 168);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(164, 20);
-            this.txtEmail.TabIndex = 31;
+            this.txtEmail.TabIndex = 9;
             // 
             // label5
             // 
@@ -414,7 +415,7 @@
             this.label5.Location = new System.Drawing.Point(86, 172);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
-            this.label5.TabIndex = 30;
+            this.label5.TabIndex = 25;
             this.label5.Text = "Email";
             // 
             // txtApellido
@@ -423,7 +424,7 @@
             this.txtApellido.Location = new System.Drawing.Point(121, 115);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(250, 20);
-            this.txtApellido.TabIndex = 29;
+            this.txtApellido.TabIndex = 7;
             // 
             // label1
             // 
@@ -432,7 +433,7 @@
             this.label1.Location = new System.Drawing.Point(74, 119);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 28;
+            this.label1.TabIndex = 22;
             this.label1.Text = "Apellido";
             // 
             // txtNombre
@@ -441,7 +442,7 @@
             this.txtNombre.Location = new System.Drawing.Point(121, 141);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(250, 20);
-            this.txtNombre.TabIndex = 27;
+            this.txtNombre.TabIndex = 8;
             this.txtNombre.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label4
@@ -452,7 +453,7 @@
             this.label4.Location = new System.Drawing.Point(74, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
-            this.label4.TabIndex = 26;
+            this.label4.TabIndex = 24;
             this.label4.Text = "Nombre";
             // 
             // label2
@@ -462,7 +463,7 @@
             this.label2.Location = new System.Drawing.Point(32, 38);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 13);
-            this.label2.TabIndex = 17;
+            this.label2.TabIndex = 16;
             this.label2.Text = "Documento Tipo";
             // 
             // button4
@@ -473,7 +474,7 @@
             this.button4.Location = new System.Drawing.Point(476, 287);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
-            this.button4.TabIndex = 74;
+            this.button4.TabIndex = 1;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click_1);
             // 
@@ -485,7 +486,7 @@
             this.button5.Location = new System.Drawing.Point(442, 287);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(28, 28);
-            this.button5.TabIndex = 75;
+            this.button5.TabIndex = 0;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 

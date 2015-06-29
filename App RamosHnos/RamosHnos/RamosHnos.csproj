@@ -11,6 +11,7 @@
     <AssemblyName>RamosHnos</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publicar\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,7 +24,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -70,6 +70,7 @@
     <Compile Include="Capas\Entidades\CostoInsumoEntity.cs" />
     <Compile Include="Capas\Entidades\DomicilioEntity.cs" />
     <Compile Include="Capas\Entidades\MedidaEntity.cs" />
+    <Compile Include="Capas\Entidades\UsuarioEntity.cs" />
     <Compile Include="Capas\Interfaces\formCostoInsumo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,11 +173,11 @@
     <Compile Include="Capas\Interfaces\formRegistrarCargo.Designer.cs">
       <DependentUpon>formRegistrarCargo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Capas\Interfaces\formRegistrarEmpleado.cs">
+    <Compile Include="Capas\Interfaces\formUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Capas\Interfaces\formRegistrarEmpleado.Designer.cs">
-      <DependentUpon>formRegistrarEmpleado.cs</DependentUpon>
+    <Compile Include="Capas\Interfaces\formUsuario.Designer.cs">
+      <DependentUpon>formUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Interfaces\formRol.cs">
       <SubType>Form</SubType>
@@ -239,6 +240,7 @@
     <Compile Include="Capas\Negocio\TelefonoB.cs" />
     <Compile Include="Capas\Negocio\TipoDocB.cs" />
     <Compile Include="Capas\Negocio\TipoProductoB.cs" />
+    <Compile Include="Capas\Negocio\UsuarioB.cs" />
     <Compile Include="Libs\ClearControlsLibs.cs" />
     <Compile Include="Libs\InputBoxLib.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -287,8 +289,8 @@
     <EmbeddedResource Include="Capas\Interfaces\formRegistrarCargo.resx">
       <DependentUpon>formRegistrarCargo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Interfaces\formRegistrarEmpleado.resx">
-      <DependentUpon>formRegistrarEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="Capas\Interfaces\formUsuario.resx">
+      <DependentUpon>formUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaces\formRol.resx">
       <DependentUpon>formRol.cs</DependentUpon>

@@ -1,4 +1,4 @@
-﻿namespace RamosHnos
+﻿namespace RamosHnos.Capas.Interfaces
 {
     partial class Inicio
     {

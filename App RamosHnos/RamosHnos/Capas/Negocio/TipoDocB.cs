@@ -83,15 +83,16 @@ namespace RamosHnos.Capas.Negocio
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 da.Fill(dt);
 
+                cb.DataSource = dt;
                 cb.DisplayMember = "TipoDoc";
                 cb.ValueMember = "idTipoDoc";
-                cb.DataSource = dt;
+                
            
                 MySQLDAL.DcnxDB();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show("ERROR" + ex);
             }
         }
 

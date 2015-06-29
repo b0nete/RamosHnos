@@ -157,9 +157,6 @@ namespace RamosHnos.Capas.Interfaces
             txtCUIT.Text = proveedor.cuit;
             txtrazonSocial.Text = proveedor.razonSocial;
             txtEmail.Text = proveedor.email;
-
-
-
         }
 
         private void btnEdit_Click(object sender, EventArgs e)

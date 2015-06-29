@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProveedor));
             this.gbCliente = new System.Windows.Forms.GroupBox();
+            this.txtCUIT = new System.Windows.Forms.MaskedTextBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnRubro = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.txtCUIT = new System.Windows.Forms.MaskedTextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.gbCliente.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +84,16 @@
             this.gbCliente.TabIndex = 22;
             this.gbCliente.TabStop = false;
             this.gbCliente.Text = "Información Proveedor";
+            // 
+            // txtCUIT
+            // 
+            this.txtCUIT.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtCUIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCUIT.Location = new System.Drawing.Point(122, 46);
+            this.txtCUIT.Mask = "00-00000000-0";
+            this.txtCUIT.Name = "txtCUIT";
+            this.txtCUIT.Size = new System.Drawing.Size(163, 20);
+            this.txtCUIT.TabIndex = 83;
             // 
             // btnEdit
             // 
@@ -302,15 +312,6 @@
             this.btnClose.TabIndex = 82;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // txtCUIT
-            // 
-            this.txtCUIT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCUIT.Location = new System.Drawing.Point(122, 46);
-            this.txtCUIT.Mask = "00-00000000-0";
-            this.txtCUIT.Name = "txtCUIT";
-            this.txtCUIT.Size = new System.Drawing.Size(163, 20);
-            this.txtCUIT.TabIndex = 83;
             // 
             // button5
             // 

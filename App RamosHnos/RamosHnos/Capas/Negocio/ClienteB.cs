@@ -20,35 +20,97 @@ namespace RamosHnos.Capas.Negocio
        // -------------------------------------
        // Métodos
 
+        public static bool ExisteCliente(ClienteEntity cliente)
+        {
+            MySQLDAL.CnxDB();            
+
+            string query = @"SELECT COUNT(*) FROM Clientes
+                             WHERE numDoc = @mumDoc";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+            cmd.Parameters.AddWithValue("@mumDoc", cliente.numDoc);
+
+            int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (resultado == 0)
+                return false;
+            else
+            {
+                DialogResult result = MessageBox.Show("El cliente existe, desea actualizar sus datos?", "Cliente existente", MessageBoxButtons.OKCancel);
+                //MessageBox.Show("El cliente ya existe!");
+                if (result == DialogResult.OK)
+                {
+                    return true;
+                }
+                return true;
+            }
+        }
+
+        public static ClienteEntity UpdateCliente(ClienteEntity cliente)
+        {
+            try
+            {
+                MySQLDAL.CnxDB();
+
+                string query = @"UPDATE Clientes
+                                 SET tipodoc = @tipoDoc, numdoc = @numDoc, nombre = @nombre, apellido =                                           @apellido, cuil =  @cuil, email = @email
+                                 WHERE idCliente = @idCliente";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idCliente", cliente.idCliente);
+                cmd.Parameters.AddWithValue("@tipoDoc", cliente.tipoDoc);
+                cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
+                cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
+                cmd.Parameters.AddWithValue("@apellido", cliente.apellido);
+                cmd.Parameters.AddWithValue("@cuil", cliente.cuil);
+                cmd.Parameters.AddWithValue("@email", cliente.email);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Cliente Modificado!");
+                return cliente;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+
         public static ClienteEntity InsertCliente(ClienteEntity cliente)            
         {
             try
             {
                 MySQLDAL.CnxDB();
 
-                string query = @"INSERT INTO Clientes (rol, tipoDoc, numDoc, sexo, nombre, apellido, cuil, email, estado) 
+                
+                    string query = @"INSERT INTO Clientes (rol, tipoDoc, numDoc, sexo, nombre, apellido, cuil, email, estado) 
                                  VALUES ('1', @tipoDoc, @numdoc, @sexo, @nombre, @apellido, @cuil, @email, '1');
                                  SELECT LAST_INSERT_ID()";
 
-                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
-                //cmd.CommandText = query;
+                    MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+                    //cmd.CommandText = query;
 
-                cmd.Parameters.AddWithValue("@tipoDoc", cliente.tipoDoc);
-                cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
-                cmd.Parameters.AddWithValue("@sexo", cliente.sexo);
-                cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
-                cmd.Parameters.AddWithValue("@apellido", cliente.apellido);
-                cmd.Parameters.AddWithValue("@cuil", cliente.cuil);
-                cmd.Parameters.AddWithValue("@email", cliente.email);
+                    cmd.Parameters.AddWithValue("@tipoDoc", cliente.tipoDoc);
+                    cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
+                    cmd.Parameters.AddWithValue("@sexo", cliente.sexo);
+                    cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
+                    cmd.Parameters.AddWithValue("@apellido", cliente.apellido);
+                    cmd.Parameters.AddWithValue("@cuil", cliente.cuil);
+                    cmd.Parameters.AddWithValue("@email", cliente.email);
 
+
+                    //cmd.ExecuteNonQuery();
+                    cliente.idCliente = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    MessageBox.Show("Cliente Guardado!");
+                    MySQLDAL.DcnxDB();
+
+                    return cliente;
                 
-                //cmd.ExecuteNonQuery();
-                cliente.idCliente = Convert.ToInt32(cmd.ExecuteScalar());
-                
-                MessageBox.Show("Cliente Guardado!");
-                MySQLDAL.DcnxDB();
-                
-                return cliente;
             }
 
             catch (Exception ex)
@@ -56,6 +118,22 @@ namespace RamosHnos.Capas.Negocio
                 MessageBox.Show("Error: "+ ex);
                 throw;
             }
+        }
+
+        public static ClienteEntity SaveCliente(ClienteEntity cliente)
+        {
+            MySQLDAL.CnxDB();
+            
+                //
+                // Graba datos empleado
+                //
+            if (ExisteCliente(cliente))
+                UpdateCliente(cliente);
+            else
+                InsertCliente(cliente);
+            
+            return cliente;
+
         }
 
         
@@ -184,38 +262,7 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
-        public static ClienteEntity EditCliente(ClienteEntity cliente)
-        {
-            try
-            {
-                MySQLDAL.CnxDB();
-
-                string query = @"UPDATE Clientes
-                                 SET tipodoc = @tipoDoc, numdoc = @numDoc, nombre = @nombre, apellido = @apellido, cuil =  @cuil, email = @email
-                                 WHERE idCliente = @idCliente";
-
-                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
-
-                cmd.Parameters.AddWithValue("@idCliente", cliente.idCliente);
-                cmd.Parameters.AddWithValue("@tipoDoc", cliente.tipoDoc);
-                cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
-                cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
-                cmd.Parameters.AddWithValue("@apellido", cliente.apellido);
-                cmd.Parameters.AddWithValue("@cuil", cliente.cuil);
-                cmd.Parameters.AddWithValue("@email", cliente.email);
-                
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Cliente Modificado!");
-                return cliente;
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex);
-                throw;
-            }
-        }
+        
 
         public static ClienteEntity DisableCliente(ClienteEntity cliente)
         {
@@ -253,9 +300,11 @@ namespace RamosHnos.Capas.Negocio
             {
                 MySQLDAL.CnxDB();
                 DataTable dt = new DataTable();
-                
 
-                string query = "SELECT * FROM Clientes";
+
+                string query = @"SELECT C.idCliente 'ID Cliente', TD.TipoDoc 'Tipo Documento', C.numDoc 'Numero Documento', C.Sexo, C.Nombre, C.Apellido, C.CUIL, C.Email
+                                 FROM Clientes C
+                                 INNER JOIN TipoDocumento TD ON C.tipoDoc = TD.idTipoDoc";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
