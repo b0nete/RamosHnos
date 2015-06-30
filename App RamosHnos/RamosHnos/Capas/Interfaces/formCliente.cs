@@ -153,7 +153,7 @@ namespace RamosHnos.Capas.Interfaces
         private void button1_Click(object sender, EventArgs e)
         {
             //Validación de Campos.   
-            if (txtnumDoc.Text == string.Empty || txtNombre.Text == string.Empty || txtApellido.Text == string.Empty || txtcuil.Text == string.Empty)
+            if (txtnumDoc.Text == string.Empty || txtNombre.Text == string.Empty || txtApellido.Text == string.Empty || txtcuil.MaskFull == false)
             {
                 MessageBox.Show("Datos necesarios incompletos.");
                 return;
@@ -168,12 +168,32 @@ namespace RamosHnos.Capas.Interfaces
                     nombre = txtNombre.Text,
                     apellido = txtApellido.Text,
                     cuil = txtcuil.Text,
-                    email = txtEmail.Text
+                    email = txtEmail.Text,
+                    estado = cbEstado.Checked
                 };
 
 
-                //ClienteB.InsertCliente(cliente);
-                ClienteB.SaveCliente(cliente);
+                if (ClienteB.ExisteCliente(cliente) == true)
+                {
+                    DialogResult result = MessageBox.Show("El cliente existe, desea actualizarlo con los datos ingresados?", "Cliente existente", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
+                    {
+                        ClienteB.UpdateCliente(cliente);
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else if (ClienteB.ExisteCliente(cliente) == false)
+                {
+                    ClienteB.InsertCliente(cliente);
+                }
+
+                
+                
+
+
                 
                 txtIDcliente.Text = Convert.ToString(cliente.idCliente);
 
@@ -196,8 +216,9 @@ namespace RamosHnos.Capas.Interfaces
             //txtcuil.Enabled = true;
             //txtEmail.Enabled = true;
 
-            if (txtnumDoc.Text == string.Empty)
+            if (txtnumDoc.Text == string.Empty || txtNombre.Text == string.Empty || txtApellido.Text == string.Empty || txtcuil.MaskFull == false)
             {
+                MessageBox.Show("Datos necesarios incompletos.");
                 return;
             }
             else
@@ -207,10 +228,12 @@ namespace RamosHnos.Capas.Interfaces
                     idCliente = Convert.ToInt32(txtIDcliente.Text),
                     tipoDoc = Convert.ToInt32(cbTipoDoc.SelectedValue),
                     numDoc = txtnumDoc.Text,
+                    sexo = sexoString,
                     nombre = txtNombre.Text,
                     apellido = txtApellido.Text,
                     cuil = txtcuil.Text,
-                    email = txtEmail.Text
+                    email = txtEmail.Text,
+                    estado = cbEstado.Checked
                 };
 
                 ClienteB.UpdateCliente(cliente);                
@@ -239,12 +262,19 @@ namespace RamosHnos.Capas.Interfaces
             ClienteB.BuscarCliente(cliente);
 
             txtIDcliente.Text = Convert.ToString(cliente.idCliente);
+            cbTipoDoc.SelectedValue = cliente.tipoDoc;
             txtnumDoc.Text = cliente.numDoc;
+
+            if (cliente.sexo == "M")
+                rbMas.Checked = true;
+            else
+                rbFem.Checked = true;
+
             txtNombre.Text = cliente.nombre;
             txtApellido.Text = cliente.apellido;
-            txtcuil.Mask = "00-00000000-0";
             txtcuil.Text = cliente.cuil;
             txtEmail.Text = cliente.email;
+            cbEstado.Checked = cliente.estado;
         }
 
         private void button2_Click_2(object sender, EventArgs e)

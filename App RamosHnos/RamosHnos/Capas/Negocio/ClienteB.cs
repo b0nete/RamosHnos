@@ -35,15 +35,7 @@ namespace RamosHnos.Capas.Negocio
             if (resultado == 0)
                 return false;
             else
-            {
-                DialogResult result = MessageBox.Show("El cliente existe, desea actualizar sus datos?", "Cliente existente", MessageBoxButtons.OKCancel);
-                //MessageBox.Show("El cliente ya existe!");
-                if (result == DialogResult.OK)
-                {
-                    return true;
-                }
                 return true;
-            }
         }
 
         public static ClienteEntity UpdateCliente(ClienteEntity cliente)
@@ -53,18 +45,20 @@ namespace RamosHnos.Capas.Negocio
                 MySQLDAL.CnxDB();
 
                 string query = @"UPDATE Clientes
-                                 SET tipodoc = @tipoDoc, numdoc = @numDoc, nombre = @nombre, apellido =                                           @apellido, cuil =  @cuil, email = @email
-                                 WHERE idCliente = @idCliente";
+                                 SET tipodoc = @tipoDoc, numdoc = @numDoc, sexo = @sexo, nombre = @nombre, apellido = @apellido, cuil =  @cuil, email = @email, estado = @estado
+                                 WHERE numDoc = @numDoc";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@idCliente", cliente.idCliente);
                 cmd.Parameters.AddWithValue("@tipoDoc", cliente.tipoDoc);
                 cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
+                cmd.Parameters.AddWithValue("@sexo", cliente.sexo);
                 cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
                 cmd.Parameters.AddWithValue("@apellido", cliente.apellido);
                 cmd.Parameters.AddWithValue("@cuil", cliente.cuil);
                 cmd.Parameters.AddWithValue("@email", cliente.email);
+                cmd.Parameters.AddWithValue("@estado", cliente.estado);
 
                 cmd.ExecuteNonQuery();
 
@@ -101,6 +95,7 @@ namespace RamosHnos.Capas.Negocio
                     cmd.Parameters.AddWithValue("@apellido", cliente.apellido);
                     cmd.Parameters.AddWithValue("@cuil", cliente.cuil);
                     cmd.Parameters.AddWithValue("@email", cliente.email);
+                    cmd.Parameters.AddWithValue("@estado", cliente.estado);                
 
 
                     //cmd.ExecuteNonQuery();
@@ -118,22 +113,6 @@ namespace RamosHnos.Capas.Negocio
                 MessageBox.Show("Error: "+ ex);
                 throw;
             }
-        }
-
-        public static ClienteEntity SaveCliente(ClienteEntity cliente)
-        {
-            MySQLDAL.CnxDB();
-            
-                //
-                // Graba datos empleado
-                //
-            if (ExisteCliente(cliente))
-                UpdateCliente(cliente);
-            else
-                InsertCliente(cliente);
-            
-            return cliente;
-
         }
 
         
@@ -174,23 +153,31 @@ namespace RamosHnos.Capas.Negocio
 
                 cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
 
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {                    
+                    MessageBox.Show("El Cliente no existe!");                    
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-                da.Fill(dt);
+                    da.Fill(dt);
 
-                DataRow row = dt.Rows[0];
+                    DataRow row = dt.Rows[0];
 
-                cliente.idCliente = Convert.ToInt32(row["idCliente"]);
-                cliente.tipoDoc = Convert.ToInt32(row["tipoDoc"]);
-                cliente.nombre = Convert.ToString(row["nombre"]);
-                cliente.apellido = Convert.ToString(row["apellido"]);
-                cliente.cuil = Convert.ToString(row["cuil"]);
-                cliente.email = Convert.ToString(row["email"]);
+                    cliente.idCliente = Convert.ToInt32(row["idCliente"]);
+                    cliente.tipoDoc = Convert.ToInt32(row["tipoDoc"]);
+                    cliente.sexo = Convert.ToString(row["sexo"]);
+                    cliente.nombre = Convert.ToString(row["nombre"]);
+                    cliente.apellido = Convert.ToString(row["apellido"]);
+                    cliente.cuil = Convert.ToString(row["cuil"]);
+                    cliente.email = Convert.ToString(row["email"]);
+                    cliente.estado = Convert.ToBoolean(row["estado"]);
 
-                //string idCliente = Convert.ToInt32(dt.Rows["idCliente"]);
-
-                MySQLDAL.DcnxDB();
+                    MySQLDAL.DcnxDB();                    
+                }
                 return cliente;
             }
 

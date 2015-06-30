@@ -137,13 +137,10 @@ namespace RamosHnos.Capas.Interfaces
             string txtinCUIT = "";
             txtinCUIT = txtCUIT.Text;
 
-            if (txtCUIT.Text == "##-########-#")
+            if (txtCUIT.MaskFull == false)
             {
-                DialogResult result = InputBoxLib.InputBox("CUIT", "Ingrese CUIT", ref txtinCUIT);
-                if (result == DialogResult.Cancel)
-                {
-                    return;
-                }
+                MessageBox.Show("Ingrese el CUIT del Proveedor");
+                return;
             }
 
             ProveedorEntity proveedor = new ProveedorEntity
