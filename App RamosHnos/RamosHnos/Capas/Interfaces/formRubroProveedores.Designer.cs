@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formRubroProveedores));
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtIDCliente = new System.Windows.Forms.TextBox();
@@ -38,26 +37,10 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.dgvRubroProveedor = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRubroProveedor)).BeginInit();
             this.SuspendLayout();
-            // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "asd",
-            "asd",
-            "asd",
-            "asd",
-            "asd",
-            "asd",
-            "adas",
-            "d"});
-            this.checkedListBox1.Location = new System.Drawing.Point(11, 19);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(522, 184);
-            this.checkedListBox1.TabIndex = 0;
             // 
             // txtNombre
             // 
@@ -99,10 +82,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkedListBox1);
+            this.groupBox1.Controls.Add(this.dgvRubroProveedor);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(613, 217);
@@ -145,6 +128,15 @@
             this.button1.TabIndex = 82;
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // dgvRubroProveedor
+            // 
+            this.dgvRubroProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRubroProveedor.Location = new System.Drawing.Point(6, 19);
+            this.dgvRubroProveedor.Name = "dgvRubroProveedor";
+            this.dgvRubroProveedor.Size = new System.Drawing.Size(522, 192);
+            this.dgvRubroProveedor.TabIndex = 77;
+            this.dgvRubroProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRubroProveedor_CellContentClick);
+            // 
             // formRubroProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,6 +153,7 @@
             this.Load += new System.EventHandler(this.formRubroProveedores_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRubroProveedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,7 +161,6 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
         public System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox txtIDCliente;
@@ -177,5 +169,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvRubroProveedor;
     }
 }

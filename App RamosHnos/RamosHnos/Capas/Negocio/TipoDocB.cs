@@ -48,7 +48,7 @@ namespace RamosHnos.Capas.Negocio
                 MySQLDAL.CnxDB();
                 DataTable dt = new DataTable();
                 
-                string query = @"SELECT tipoDoc, estado FROM tipoDocumento";
+                string query = @"SELECT tipoDoc 'Tipo Documento', Estado FROM tipoDocumento";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
 

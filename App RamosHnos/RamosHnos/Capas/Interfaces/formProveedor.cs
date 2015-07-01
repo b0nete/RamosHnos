@@ -60,7 +60,7 @@ namespace RamosHnos.Capas.Interfaces
         private void button1_Click(object sender, EventArgs e)
         {
             //Validación de Campos.   
-            if (txtCUIT.Text == string.Empty || txtrazonSocial.Text == string.Empty || txtEmail.Text == string.Empty)
+            if (txtCUIT.MaskFull == false || txtrazonSocial.Text == string.Empty || txtEmail.Text == string.Empty)
             {
                 MessageBox.Show("Datos necesarios incompletos.");
                 return;
@@ -71,11 +71,26 @@ namespace RamosHnos.Capas.Interfaces
                 {
                     razonSocial = txtrazonSocial.Text,
                     cuit = txtCUIT.Text,
-                    email = txtEmail.Text
+                    email = txtEmail.Text,
+                    estado = cbEstado.Checked
                 };
 
-                ProveedorB.InsertProveedor(proveedor);
-
+                if (ProveedorB.ExisteProveedor(proveedor) == true)
+                {
+                    DialogResult result = MessageBox.Show("El proveedor existe, desea actualizarlo con los datos ingresados?", "Cliente existente", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
+                    {
+                        ProveedorB.UpdateProveedor(proveedor);
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else if (ProveedorB.ExisteProveedor(proveedor) == false)
+                {
+                    ProveedorB.InsertProveedor(proveedor);
+                }                
                 txtIDproveedor.Text = Convert.ToString(proveedor.idProveedor);
             }
         }
@@ -154,6 +169,7 @@ namespace RamosHnos.Capas.Interfaces
             txtCUIT.Text = proveedor.cuit;
             txtrazonSocial.Text = proveedor.razonSocial;
             txtEmail.Text = proveedor.email;
+            cbEstado.Checked = proveedor.estado;
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -172,7 +188,7 @@ namespace RamosHnos.Capas.Interfaces
                     email = txtEmail.Text
                 };
 
-                ProveedorB.EditProveedor(proveedor);
+                ProveedorB.UpdateProveedor(proveedor);
             }
         }
 
@@ -180,5 +196,38 @@ namespace RamosHnos.Capas.Interfaces
         {
             this.Close();
         }
+
+        private void gbCliente_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            formListado frm = new formListado();
+            frm.Show();
+
+            ProveedorB.ListarProveedores(frm.dgvListado);
+        }
+
+        private void txtCUIT_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (txtCUIT.MaskFull == false)
+            {
+                MessageBox.Show("Ingrese CUIT del Proveedor a desabilitar");
+                return;
+            }
+            else
+            {
+                string proveedor = txtIDproveedor.Text;
+                ProveedorB.DisableProveedor(proveedor, cbEstado);
+            }
+        }
+        }
     }
-}
+

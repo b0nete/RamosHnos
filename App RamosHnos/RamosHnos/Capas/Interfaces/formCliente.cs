@@ -101,7 +101,7 @@ namespace RamosHnos.Capas.Interfaces
                 string persona = txtIDcliente.Text;
                 ClienteB.CargarDomicilioCliente(frmdom.dgvDomicilio, persona);
 
-                if (frmdom.dgvDomicilio == null)
+                if (frmdom.dgvDomicilio.ColumnCount == 0)
                 {
                     return;
                 }
@@ -189,12 +189,6 @@ namespace RamosHnos.Capas.Interfaces
                 {
                     ClienteB.InsertCliente(cliente);
                 }
-
-                
-                
-
-
-                
                 txtIDcliente.Text = Convert.ToString(cliente.idCliente);
 
                 //Libs.ClearControlsLibs.ClearAll(this, gbCliente);
@@ -297,7 +291,7 @@ namespace RamosHnos.Capas.Interfaces
                     idCliente = Convert.ToInt32(txtIDcliente.Text)
                 };
 
-                ClienteB.DisableCliente(cliente);
+                ClienteB.DisableCliente(cliente, cbEstado);
             }
         }
 
@@ -355,6 +349,11 @@ namespace RamosHnos.Capas.Interfaces
         private void cbTipoDoc_DropDown(object sender, EventArgs e)
         {
             TipoDocB.CargarTipoDoc(cbTipoDoc);
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 

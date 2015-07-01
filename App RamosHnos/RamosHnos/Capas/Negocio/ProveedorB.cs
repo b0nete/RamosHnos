@@ -13,6 +13,55 @@ namespace RamosHnos.Capas.Negocio
 {
     class ProveedorB
     {
+        public static bool ExisteProveedor(ProveedorEntity proveedor)
+        {
+            MySQLDAL.CnxDB();
+
+            string query = @"SELECT COUNT(*) FROM Proveedores
+                             WHERE cuit = @cuit";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+            cmd.Parameters.AddWithValue("@cuit", proveedor.cuit);
+
+            int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (resultado == 0)
+                return false;
+            else
+                return true;
+        }
+
+        public static ProveedorEntity UpdateProveedor(ProveedorEntity proveedor)
+        {
+            try
+            {
+                MySQLDAL.CnxDB();
+
+                string query = @"UPDATE Proveedores
+                                 SET cuit = @cuit, razonSocial = @razonSocial, email = @email, estado = @estado
+                                 WHERE idProveedor = @idProveedor";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idProveedor", proveedor.idProveedor);
+                cmd.Parameters.AddWithValue("@razonSocial", proveedor.razonSocial);
+                cmd.Parameters.AddWithValue("@cuit", proveedor.cuit);
+                cmd.Parameters.AddWithValue("@email", proveedor.email);
+                cmd.Parameters.AddWithValue("@estado", proveedor.estado);
+
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Proveedor Actualizado!");
+                return proveedor;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
 
         public static ProveedorEntity InsertProveedor(ProveedorEntity proveedor)
         {
@@ -20,8 +69,8 @@ namespace RamosHnos.Capas.Negocio
             {
                 MySQLDAL.CnxDB();
 
-                string query = @"INSERT INTO Proveedores (rol ,razonSocial, cuit, email) 
-                                 VALUES ('2', @razonSocial, @cuit, @email);
+                string query = @"INSERT INTO Proveedores (rol ,razonSocial, cuit, email, estado) 
+                                 VALUES ('2', @razonSocial, @cuit, @email, @estado);
                                  SELECT LAST_INSERT_ID()";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
@@ -30,6 +79,7 @@ namespace RamosHnos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@razonSocial", proveedor.razonSocial);
                 cmd.Parameters.AddWithValue("@CUIT", proveedor.cuit);
                 cmd.Parameters.AddWithValue("@email", proveedor.email);
+                cmd.Parameters.AddWithValue("@estado", proveedor.estado);
 
                 //cmd.ExecuteNonQuery();
                 proveedor.idProveedor = Convert.ToInt32(cmd.ExecuteScalar());
@@ -47,58 +97,28 @@ namespace RamosHnos.Capas.Negocio
             }
         }
 
-        public static ProveedorEntity EditProveedor(ProveedorEntity proveedor)
+
+
+        public static void DisableProveedor(string proveedor, CheckBox cb)
         {
             try
             {
                 MySQLDAL.CnxDB();
 
                 string query = @"UPDATE Proveedores
-                                 SET cuit = @cuit, razonSocial = @razonSocial, email = @email
-                                 WHERE idProveedor = @idProveedor";
-
-                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
-
-                cmd.Parameters.AddWithValue("@idProveedor", proveedor.idProveedor);
-                cmd.Parameters.AddWithValue("@razonSocial", proveedor.razonSocial);
-                cmd.Parameters.AddWithValue("@cuit", proveedor.cuit);
-                cmd.Parameters.AddWithValue("@email", proveedor.email);
-
-
-                cmd.ExecuteNonQuery();
-
-                MessageBox.Show("Proveedor Actualizado");
-                return proveedor;
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex);
-                throw;
-            }
-        }
-
-                
-        public static ProveedorEntity DeleteProveedor(ProveedorEntity proveedor)
-        {
-            try
-            {
-                MySQLDAL.CnxDB();
-
-                string query = @"DELETE FROM Proveedores
+                                 SET estado = '0'
                                  WHERE idProveedor = @idProveedor";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
                 //cmd.CommandText = query;
 
-                cmd.Parameters.AddWithValue("@idProveedor", proveedor.idProveedor);
+                cmd.Parameters.AddWithValue("@idProveedor", proveedor);
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Proveedor Eliminado!");
+                MessageBox.Show("Proveedor Desabilitado!");
+                cb.Checked = false;
                 MySQLDAL.DcnxDB();
-
-                return proveedor;
             }
 
             catch (Exception ex)
@@ -156,19 +176,29 @@ namespace RamosHnos.Capas.Negocio
 
                 cmd.Parameters.AddWithValue("@CUIT", proveedor.cuit);
 
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("El Proveedor no existe!");
+                }
+                else
+                {
 
-                da.Fill(dt);
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-                DataRow row = dt.Rows[0];
+                    da.Fill(dt);
 
-                proveedor.idProveedor = Convert.ToInt32(row["idProveedor"]);
-                proveedor.cuit = Convert.ToString(row["CUIT"]);
-                proveedor.razonSocial = Convert.ToString(row["razonSocial"]);
-                proveedor.email = Convert.ToString(row["email"]);
+                    DataRow row = dt.Rows[0];
 
-                //string idCliente = Convert.ToInt32(dt.Rows["idCliente"]);
+                    proveedor.idProveedor = Convert.ToInt32(row["idProveedor"]);
+                    proveedor.cuit = Convert.ToString(row["CUIT"]);
+                    proveedor.razonSocial = Convert.ToString(row["razonSocial"]);
+                    proveedor.email = Convert.ToString(row["email"]);
+                    proveedor.estado = Convert.ToBoolean(row["estado"]);
+
+                    //string idCliente = Convert.ToInt32(dt.Rows["idCliente"]);
+                }
 
                 MySQLDAL.DcnxDB();
                 return proveedor;
@@ -239,6 +269,35 @@ namespace RamosHnos.Capas.Negocio
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public static void ListarProveedores(DataGridView dgv)
+        {
+            try
+            {
+                MySQLDAL.CnxDB();
+                DataTable dt = new DataTable();
+
+
+                string query = @"SELECT P.idProveedor 'ID Proveedor', P.razonSocial 'Razon Social', P.CUIT, P.Email, P.Estado
+                                 FROM Proveedores P";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQLDAL.sqlcnx);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                dgv.DataSource = dt;
+
+                cmd.ExecuteNonQuery();
+                MySQLDAL.DcnxDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
             }
         }
 

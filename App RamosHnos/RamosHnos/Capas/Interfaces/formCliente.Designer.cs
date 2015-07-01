@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCliente));
             this.gbCliente = new System.Windows.Forms.GroupBox();
+            this.cbEstado = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtcuil = new System.Windows.Forms.MaskedTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -64,8 +66,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cbEstado = new System.Windows.Forms.CheckBox();
             this.gbCliente.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,6 +113,27 @@
             this.gbCliente.TabStop = false;
             this.gbCliente.Text = "Información Cliente";
             this.gbCliente.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cbEstado
+            // 
+            this.cbEstado.AutoSize = true;
+            this.cbEstado.Checked = true;
+            this.cbEstado.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEstado.Location = new System.Drawing.Point(121, 255);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(15, 14);
+            this.cbEstado.TabIndex = 33;
+            this.cbEstado.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label11.Location = new System.Drawing.Point(78, 255);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "Estado";
             // 
             // txtcuil
             // 
@@ -411,6 +432,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(164, 20);
             this.txtEmail.TabIndex = 9;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // label5
             // 
@@ -493,27 +515,6 @@
             this.button5.TabIndex = 0;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label11.Location = new System.Drawing.Point(78, 255);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 13);
-            this.label11.TabIndex = 32;
-            this.label11.Text = "Estado";
-            // 
-            // cbEstado
-            // 
-            this.cbEstado.AutoSize = true;
-            this.cbEstado.Checked = true;
-            this.cbEstado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbEstado.Location = new System.Drawing.Point(121, 255);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(15, 14);
-            this.cbEstado.TabIndex = 33;
-            this.cbEstado.UseVisualStyleBackColor = true;
             // 
             // formCliente
             // 

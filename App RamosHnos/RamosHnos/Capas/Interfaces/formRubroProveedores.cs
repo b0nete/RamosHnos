@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RamosHnos.Capas.Negocio;
 
 namespace RamosHnos.Capas.Interfaces
 {
@@ -19,8 +20,8 @@ namespace RamosHnos.Capas.Interfaces
 
         private void formRubroProveedores_Load(object sender, EventArgs e)
         {
-            formRubro frm = new formRubro();
-            frm.Show();
+            dgvRubroProveedor.AutoGenerateColumns = false; 
+            dgvRubroProveedor.DataSource = RubroB.ObtenerRubros(dgvRubroProveedor);
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -32,6 +33,16 @@ namespace RamosHnos.Capas.Interfaces
         {
             formRubro frm = new formRubro();
             frm.Show();
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvRubroProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

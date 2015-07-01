@@ -62,7 +62,7 @@ namespace RamosHnos.Capas.Negocio
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Cliente Modificado!");
+                MessageBox.Show("Cliente Actualizado!");
                 return cliente;
             }
 
@@ -251,7 +251,7 @@ namespace RamosHnos.Capas.Negocio
 
         
 
-        public static ClienteEntity DisableCliente(ClienteEntity cliente)
+        public static ClienteEntity DisableCliente(ClienteEntity cliente, CheckBox cb)
         {
             try
             {
@@ -269,6 +269,7 @@ namespace RamosHnos.Capas.Negocio
                 cmd.ExecuteNonQuery();
                 
                 MessageBox.Show("Cliente Desabilitado!");
+                cb.Checked = false;
                 MySQLDAL.DcnxDB();
 
                 return cliente;

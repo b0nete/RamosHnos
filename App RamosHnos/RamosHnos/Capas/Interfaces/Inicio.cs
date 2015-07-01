@@ -107,5 +107,11 @@ namespace RamosHnos.Capas.Interfaces
             formRol frm = new formRol();
             frm.Show();
         }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Test frm = new Test();
+            frm.Show();
+        }
     }
 }

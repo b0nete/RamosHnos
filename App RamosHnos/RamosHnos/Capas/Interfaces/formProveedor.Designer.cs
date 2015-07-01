@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProveedor));
             this.gbCliente = new System.Windows.Forms.GroupBox();
+            this.cbEstado = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtCUIT = new System.Windows.Forms.MaskedTextBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnRubro = new System.Windows.Forms.Button();
@@ -57,6 +59,8 @@
             // 
             // gbCliente
             // 
+            this.gbCliente.Controls.Add(this.cbEstado);
+            this.gbCliente.Controls.Add(this.label11);
             this.gbCliente.Controls.Add(this.txtCUIT);
             this.gbCliente.Controls.Add(this.btnEdit);
             this.gbCliente.Controls.Add(this.btnRubro);
@@ -84,6 +88,29 @@
             this.gbCliente.TabIndex = 22;
             this.gbCliente.TabStop = false;
             this.gbCliente.Text = "Información Proveedor";
+            this.gbCliente.Enter += new System.EventHandler(this.gbCliente_Enter);
+            // 
+            // cbEstado
+            // 
+            this.cbEstado.AutoSize = true;
+            this.cbEstado.Checked = true;
+            this.cbEstado.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEstado.Enabled = false;
+            this.cbEstado.Location = new System.Drawing.Point(122, 211);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(15, 14);
+            this.cbEstado.TabIndex = 86;
+            this.cbEstado.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label11.Location = new System.Drawing.Point(76, 211);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.TabIndex = 85;
+            this.label11.Text = "Estado";
             // 
             // txtCUIT
             // 
@@ -93,6 +120,7 @@
             this.txtCUIT.Name = "txtCUIT";
             this.txtCUIT.Size = new System.Drawing.Size(163, 20);
             this.txtCUIT.TabIndex = 83;
+            this.txtCUIT.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtCUIT_MaskInputRejected);
             // 
             // btnEdit
             // 
@@ -128,6 +156,7 @@
             this.btnDel.Size = new System.Drawing.Size(28, 28);
             this.btnDel.TabIndex = 75;
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnSave
             // 
@@ -145,7 +174,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.Location = new System.Drawing.Point(79, 131);
+            this.label1.Location = new System.Drawing.Point(80, 131);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 64;
@@ -200,7 +229,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label7.Location = new System.Drawing.Point(69, 184);
+            this.label7.Location = new System.Drawing.Point(68, 185);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 59;
@@ -210,7 +239,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(69, 157);
+            this.label3.Location = new System.Drawing.Point(67, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 58;
@@ -223,7 +252,7 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(43, 75);
+            this.label18.Location = new System.Drawing.Point(39, 75);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(11, 13);
             this.label18.TabIndex = 47;
@@ -276,7 +305,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label6.Location = new System.Drawing.Point(51, 75);
+            this.label6.Location = new System.Drawing.Point(47, 75);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(70, 13);
             this.label6.TabIndex = 37;
@@ -294,7 +323,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label5.Location = new System.Drawing.Point(86, 101);
+            this.label5.Location = new System.Drawing.Point(84, 101);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 30;
@@ -322,6 +351,7 @@
             this.button5.Size = new System.Drawing.Size(28, 28);
             this.button5.TabIndex = 84;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // formProveedor
             // 
@@ -365,6 +395,8 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.MaskedTextBox txtCUIT;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.CheckBox cbEstado;
+        private System.Windows.Forms.Label label11;
 
     }
 }

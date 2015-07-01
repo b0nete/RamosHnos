@@ -17,6 +17,7 @@ namespace RamosHnos.Capas.Entidades
        public string razonSocial { get; set; }
        public string cuit { get; set; }
        public string email { get; set; }
+       public bool estado { get; set; }
 
 
 
