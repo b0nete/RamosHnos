@@ -29,39 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMedida));
-            this.dgvTelefonos = new System.Windows.Forms.DataGridView();
+            this.dgvMedida = new System.Windows.Forms.DataGridView();
             this.Rubro = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbEstado = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnguardar = new System.Windows.Forms.Button();
             this.txtMedida = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefonos)).BeginInit();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtIdMedida = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedida)).BeginInit();
             this.Rubro.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvTelefonos
+            // dgvMedida
             // 
-            this.dgvTelefonos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTelefonos.Location = new System.Drawing.Point(12, 70);
-            this.dgvTelefonos.Name = "dgvTelefonos";
-            this.dgvTelefonos.Size = new System.Drawing.Size(437, 183);
-            this.dgvTelefonos.TabIndex = 86;
+            this.dgvMedida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedida.Location = new System.Drawing.Point(12, 70);
+            this.dgvMedida.Name = "dgvMedida";
+            this.dgvMedida.Size = new System.Drawing.Size(437, 183);
+            this.dgvMedida.TabIndex = 86;
             // 
             // Rubro
             // 
             this.Rubro.Controls.Add(this.label2);
             this.Rubro.Controls.Add(this.label8);
-            this.Rubro.Controls.Add(this.checkBox1);
+            this.Rubro.Controls.Add(this.cbEstado);
             this.Rubro.Controls.Add(this.label1);
             this.Rubro.Controls.Add(this.btnEdit);
             this.Rubro.Controls.Add(this.btnDel);
-            this.Rubro.Controls.Add(this.button3);
+            this.Rubro.Controls.Add(this.btnguardar);
             this.Rubro.Controls.Add(this.txtMedida);
             this.Rubro.Controls.Add(this.label3);
             this.Rubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,17 +101,17 @@
             this.label8.TabIndex = 81;
             this.label8.Text = "*";
             // 
-            // checkBox1
+            // cbEstado
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.checkBox1.Location = new System.Drawing.Point(273, 22);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 80;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbEstado.AutoSize = true;
+            this.cbEstado.Checked = true;
+            this.cbEstado.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbEstado.Location = new System.Drawing.Point(273, 22);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(15, 14);
+            this.cbEstado.TabIndex = 80;
+            this.cbEstado.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -119,6 +122,40 @@
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 79;
             this.label1.Text = "Estado";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnEdit.Location = new System.Drawing.Point(368, 14);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(28, 28);
+            this.btnEdit.TabIndex = 76;
+            this.btnEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
+            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDel.Location = new System.Drawing.Point(402, 14);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(28, 28);
+            this.btnDel.TabIndex = 75;
+            this.btnDel.UseVisualStyleBackColor = true;
+            // 
+            // btnguardar
+            // 
+            this.btnguardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnguardar.BackgroundImage")));
+            this.btnguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.Location = new System.Drawing.Point(334, 14);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Size = new System.Drawing.Size(28, 28);
+            this.btnguardar.TabIndex = 74;
+            this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.button3_Click);
             // 
             // txtMedida
             // 
@@ -150,69 +187,74 @@
             this.button4.TabIndex = 87;
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // btnEdit
+            // label4
             // 
-            this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
-            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnEdit.Location = new System.Drawing.Point(368, 14);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(28, 28);
-            this.btnEdit.TabIndex = 76;
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.label4.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(25, 269);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(11, 13);
+            this.label4.TabIndex = 85;
+            this.label4.Text = "*";
             // 
-            // btnDel
+            // txtIdMedida
             // 
-            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
-            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDel.Location = new System.Drawing.Point(402, 14);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(28, 28);
-            this.btnDel.TabIndex = 75;
-            this.btnDel.UseVisualStyleBackColor = true;
+            this.txtIdMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtIdMedida.Location = new System.Drawing.Point(89, 267);
+            this.txtIdMedida.Name = "txtIdMedida";
+            this.txtIdMedida.Size = new System.Drawing.Size(139, 20);
+            this.txtIdMedida.TabIndex = 84;
             // 
-            // button3
+            // label5
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(334, 14);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 74;
-            this.button3.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label5.Location = new System.Drawing.Point(33, 270);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.TabIndex = 83;
+            this.label5.Text = "idMedida";
             // 
             // formMedida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(461, 294);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.dgvTelefonos);
+            this.Controls.Add(this.txtIdMedida);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.dgvMedida);
             this.Controls.Add(this.Rubro);
             this.Name = "formMedida";
             this.Text = "formMedida";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefonos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedida)).EndInit();
             this.Rubro.ResumeLayout(false);
             this.Rubro.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dgvTelefonos;
+        private System.Windows.Forms.DataGridView dgvMedida;
         private System.Windows.Forms.GroupBox Rubro;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.TextBox txtMedida;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtIdMedida;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -231,6 +231,7 @@
     <Compile Include="Capas\Negocio\DomicilioB.cs" />
     <Compile Include="Capas\Negocio\InsumoB.cs" />
     <Compile Include="Capas\Negocio\LocalidadB.cs" />
+    <Compile Include="Capas\Negocio\MedidaB.cs" />
     <Compile Include="Capas\Negocio\ProductoB.cs" />
     <Compile Include="Capas\Negocio\Program.cs" />
     <Compile Include="Capas\Negocio\ProveedorB.cs" />

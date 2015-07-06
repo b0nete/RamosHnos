@@ -15,6 +15,6 @@ namespace RamosHnos.Capas.Entidades
         public string descripcion { get; set; }
         public DateTime fechaVencimiento { get; set; }
         public int stockMin { get; set; }
-        public string estado { get; set; }
+        public bool estado { get; set; }
     }
 }

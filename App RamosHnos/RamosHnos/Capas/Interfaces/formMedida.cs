@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RamosHnos.Capas.Negocio;
+using RamosHnos.Capas.Entidades;
 
 namespace RamosHnos.Capas.Interfaces
 {
@@ -26,5 +28,18 @@ namespace RamosHnos.Capas.Interfaces
                 txtMedida.Text = temp.ToString("N2");
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MedidaEntity medida = new MedidaEntity()
+            {
+                medida = Convert.ToDouble(txtMedida.Text),
+                estado = cbEstado.Checked
+            };
+             MedidaB.InsertMedida(medida);
+             MedidaB.MostrarMedidaDGV(dgvMedida);
+        }
+                    
+        }
     }
-}
+

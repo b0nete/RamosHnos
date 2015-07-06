@@ -56,5 +56,19 @@ namespace RamosHnos.Capas.Interfaces
         {
             ProductoB.MostrarTipoProducto(cbTipoProducto);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ProductoEntity producto = new ProductoEntity()
+            {
+                tipoProducto = Convert.ToInt32(cbTipoProducto.SelectedValue),
+                producto = txtProducto.Text,
+                medida = Convert.ToInt32(cbMedida.SelectedValue),
+                descripcion= txtDescripcion.Text,
+                stockMin = Convert.ToInt32(txtStockMin.Text),
+                fechaVencimiento = dtpFechaAct.MaxDate,
+                estado = cbEstado.Checked
+            };
+        }
     }
 }
