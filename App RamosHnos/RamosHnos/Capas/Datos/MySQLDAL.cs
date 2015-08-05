@@ -28,7 +28,7 @@ namespace RamosHnos.Capas.Datos
         static string cadenaConexion = server + db + usuario + pw;
 
 
-        
+
         // Métodos
         public static void CnxDB() //Conectar con la DB.
         {
@@ -41,7 +41,7 @@ namespace RamosHnos.Capas.Datos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la Conexíon: "+ ex);
+                MessageBox.Show("Error en la Conexíon: " + ex);
                 throw;
             }
         }

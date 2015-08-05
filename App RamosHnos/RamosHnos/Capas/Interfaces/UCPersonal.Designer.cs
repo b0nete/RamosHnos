@@ -30,6 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCCliente));
             this.gbCliente = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtcuil = new System.Windows.Forms.MaskedTextBox();
@@ -64,14 +72,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.gbCliente.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,14 +119,87 @@
             this.gbCliente.Controls.Add(this.txtNombre);
             this.gbCliente.Controls.Add(this.label4);
             this.gbCliente.Controls.Add(this.label2);
+            this.gbCliente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCliente.Location = new System.Drawing.Point(14, 12);
+            this.gbCliente.Location = new System.Drawing.Point(0, 0);
             this.gbCliente.Name = "gbCliente";
-            this.gbCliente.Size = new System.Drawing.Size(772, 385);
+            this.gbCliente.Size = new System.Drawing.Size(800, 600);
             this.gbCliente.TabIndex = 3;
             this.gbCliente.TabStop = false;
             this.gbCliente.Text = "Información Personal";
             this.gbCliente.Enter += new System.EventHandler(this.gbCliente_Enter);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox4.Location = new System.Drawing.Point(135, 351);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(164, 20);
+            this.textBox4.TabIndex = 40;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label21.Location = new System.Drawing.Point(70, 354);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(101, 13);
+            this.label21.TabIndex = 41;
+            this.label21.Text = "Horario de Atención";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox3.Location = new System.Drawing.Point(150, 325);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(164, 20);
+            this.textBox3.TabIndex = 38;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label20.Location = new System.Drawing.Point(70, 328);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(74, 13);
+            this.label20.TabIndex = 39;
+            this.label20.Text = "Condicion IVA";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox2.Location = new System.Drawing.Point(135, 302);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(164, 20);
+            this.textBox2.TabIndex = 36;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label19.Location = new System.Drawing.Point(70, 305);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(62, 13);
+            this.label19.TabIndex = 37;
+            this.label19.Text = "Estado Civil";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox1.Location = new System.Drawing.Point(135, 276);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(164, 20);
+            this.textBox1.TabIndex = 34;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label12.Location = new System.Drawing.Point(74, 279);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 13);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "Fecha Alta";
             // 
             // cbEstado
             // 
@@ -177,7 +250,7 @@
             this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnEdit.Location = new System.Drawing.Point(703, 310);
+            this.btnEdit.Location = new System.Drawing.Point(732, 566);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(28, 28);
             this.btnEdit.TabIndex = 13;
@@ -201,7 +274,7 @@
             this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
             this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDel.Location = new System.Drawing.Point(737, 310);
+            this.btnDel.Location = new System.Drawing.Point(766, 566);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(28, 28);
             this.btnDel.TabIndex = 14;
@@ -223,7 +296,7 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(669, 310);
+            this.button1.Location = new System.Drawing.Point(698, 566);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 28);
             this.button1.TabIndex = 12;
@@ -265,7 +338,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label8.Location = new System.Drawing.Point(576, -2);
+            this.label8.Location = new System.Drawing.Point(576, 4);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 13);
             this.label8.TabIndex = 30;
@@ -276,7 +349,7 @@
             // 
             this.txtIDcliente.Enabled = false;
             this.txtIDcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtIDcliente.Location = new System.Drawing.Point(635, -6);
+            this.txtIDcliente.Location = new System.Drawing.Point(635, 0);
             this.txtIDcliente.Name = "txtIDcliente";
             this.txtIDcliente.Size = new System.Drawing.Size(129, 20);
             this.txtIDcliente.TabIndex = 31;
@@ -491,78 +564,6 @@
             this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 16;
             this.label2.Text = "Documento Tipo";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox1.Location = new System.Drawing.Point(135, 276);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 20);
-            this.textBox1.TabIndex = 34;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label12.Location = new System.Drawing.Point(74, 279);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(58, 13);
-            this.label12.TabIndex = 35;
-            this.label12.Text = "Fecha Alta";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox2.Location = new System.Drawing.Point(135, 302);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 20);
-            this.textBox2.TabIndex = 36;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label19.Location = new System.Drawing.Point(70, 305);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(62, 13);
-            this.label19.TabIndex = 37;
-            this.label19.Text = "Estado Civil";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox3.Location = new System.Drawing.Point(150, 325);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(164, 20);
-            this.textBox3.TabIndex = 38;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label20.Location = new System.Drawing.Point(70, 328);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(74, 13);
-            this.label20.TabIndex = 39;
-            this.label20.Text = "Condicion IVA";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox4.Location = new System.Drawing.Point(135, 351);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(164, 20);
-            this.textBox4.TabIndex = 40;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label21.Location = new System.Drawing.Point(70, 354);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(101, 13);
-            this.label21.TabIndex = 41;
-            this.label21.Text = "Horario de Atención";
             // 
             // UCCliente
             // 
