@@ -1,0 +1,16 @@
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\bin\Debug\RamosHermanos.exe.config
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.csprojResolveAssemblyReference.cache
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.Capas.Interfaz.Main.resources
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.Properties.Resources.resources
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.csproj.GenerateResource.Cache
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\bin\Debug\RamosHermanos.exe
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\bin\Debug\RamosHermanos.pdb
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.exe
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.pdb
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.Capas.Interfaz.formCliente.resources
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.Capas.Interfaz.formContacto.resources
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.Capas.Interfaz.formDomicilio.resources
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.Capas.Interfaz.formInsumos.resources
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.Capas.Interfaz.formProducto.resources
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.Capas.Interfaz.formProveedor.resources
+C:\Users\b0nete\Documents\GitHub\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.Capas.Interfaz.formRepartos.resources
