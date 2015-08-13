@@ -12,9 +12,9 @@ using RamosHermanos.Capas.Datos;
 
 namespace RamosHermanos.Capas.Negocio
 {
-    class TipoDocB
+    class tipoDocB
     {
-        public static TipoDocEntity InsertTipoDoc(TipoDocEntity tipodoc)
+        public static tipoDocEntity InsertTipoDoc(tipoDocEntity tipodoc)
         {
             try
             {

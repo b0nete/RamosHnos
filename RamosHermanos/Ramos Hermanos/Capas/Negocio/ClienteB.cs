@@ -40,21 +40,22 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query = @"UPDATE Clientes
-                                 SET tipodoc = @tipoDoc, numdoc = @numDoc, sexo = @sexo, nombre = @nombre, apellido = @apellido, cuil =  @cuil, email = @email, estado = @estado
+                                 SET fechaalta = @fechaAlta, tipodoc = @tipoDoc, numdoc = @numDoc, sexo = @sexo, cuil =  @cuil, nombre = @nombre, apellido = @apellido, estadoCivil = @estadoCivil, condicionIVA = @condicionIVA, tipoCliente = @tipoCliente, estado = @estado
                                  WHERE numDoc = @numDoc";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@idCliente", cliente.idCliente);
+                cmd.Parameters.AddWithValue("@fechaAlta", cliente.fechaAlta);
                 cmd.Parameters.AddWithValue("@tipoDoc", cliente.tipoDoc);
                 cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
                 cmd.Parameters.AddWithValue("@sexo", cliente.sexo);
-                cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
-                cmd.Parameters.AddWithValue("@apellido", cliente.apellido);
                 cmd.Parameters.AddWithValue("@cuil", cliente.cuil);
+                cmd.Parameters.AddWithValue("@apellido", cliente.apellido);
+                cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
+                cmd.Parameters.AddWithValue("@estadoCivil", cliente.estadoCivil);
+                cmd.Parameters.AddWithValue("@condicionIVA", cliente.condicionIVA);
+                cmd.Parameters.AddWithValue("@tipoCliente", cliente.tipoCliente);
                 cmd.Parameters.AddWithValue("@estado", cliente.estado);
-
-        
 
                 cmd.ExecuteNonQuery();
 
@@ -70,7 +71,7 @@ namespace RamosHermanos.Capas.Negocio
         }
 
 
-        public static ClienteEntity InsertCliente(ClienteEntity cliente)
+        public static ClienteEntity InsertCliente(ClienteEntity cliente, TextBox txt)
         {
             try
             {
@@ -96,8 +97,9 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@estado", cliente.estado);
 
                 cliente.idCliente = Convert.ToInt32(cmd.ExecuteScalar());
+                txt.Text = Convert.ToString(cliente.idCliente);
 
-                MessageBox.Show("Cliente Guardado!");
+                MessageBox.Show(Convert.ToString(cliente.idCliente));
                 MySQL.DisconnectDB();
 
                 return cliente;
@@ -135,13 +137,17 @@ namespace RamosHermanos.Capas.Negocio
                     da.Fill(dt);
 
                     DataRow row = dt.Rows[0];
-
+                    
                     cliente.idCliente = Convert.ToInt32(row["idCliente"]);
+                    cliente.fechaAlta = Convert.ToDateTime(row["fechaAlta"]);
                     cliente.tipoDoc = Convert.ToInt32(row["tipoDoc"]);
                     cliente.sexo = Convert.ToString(row["sexo"]);
-                    cliente.nombre = Convert.ToString(row["nombre"]);
-                    cliente.apellido = Convert.ToString(row["apellido"]);
                     cliente.cuil = Convert.ToString(row["cuil"]);
+                    cliente.apellido = Convert.ToString(row["apellido"]);
+                    cliente.nombre = Convert.ToString(row["nombre"]);
+                    cliente.estadoCivil = Convert.ToString(row["estadoCivil"]);
+                    cliente.condicionIVA = Convert.ToString(row["condicionIVA"]);
+                    cliente.tipoCliente = Convert.ToInt32(row["tipoCliente"]);  
                     cliente.estado = Convert.ToBoolean(row["estado"]);
 
                     MySQL.DisconnectDB();
@@ -155,5 +161,7 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+      
     }
 }

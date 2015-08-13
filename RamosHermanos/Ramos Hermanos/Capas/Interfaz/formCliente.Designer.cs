@@ -31,7 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCliente));
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtnumDoc = new System.Windows.Forms.TextBox();
@@ -53,7 +55,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -78,8 +79,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnDomicilio = new System.Windows.Forms.Button();
+            this.btnEmail = new System.Windows.Forms.Button();
             this.btnTelefono = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -89,23 +90,23 @@
             this.label7 = new System.Windows.Forms.Label();
             this.gbVisita = new System.Windows.Forms.GroupBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.cbLunes = new System.Windows.Forms.CheckBox();
+            this.cbMartes = new System.Windows.Forms.CheckBox();
+            this.cbMiercoles = new System.Windows.Forms.CheckBox();
+            this.cbJueves = new System.Windows.Forms.CheckBox();
+            this.cbDomingo = new System.Windows.Forms.CheckBox();
+            this.cbViernes = new System.Windows.Forms.CheckBox();
+            this.cbSabado = new System.Windows.Forms.CheckBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtDom = new System.Windows.Forms.TextBox();
+            this.txtSab = new System.Windows.Forms.TextBox();
+            this.txtVie = new System.Windows.Forms.TextBox();
+            this.txtJue = new System.Windows.Forms.TextBox();
+            this.txtMie = new System.Windows.Forms.TextBox();
+            this.txtMar = new System.Windows.Forms.TextBox();
+            this.txtLun = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpB = new System.Windows.Forms.DateTimePicker();
             this.dtpA = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -117,6 +118,7 @@
             this.tabListado = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabMovimientos = new System.Windows.Forms.TabPage();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -148,6 +150,7 @@
             // 
             // tabInformacion
             // 
+            this.tabInformacion.Controls.Add(this.comboBox1);
             this.tabInformacion.Controls.Add(this.groupBox6);
             this.tabInformacion.Controls.Add(this.groupBox5);
             this.tabInformacion.Controls.Add(this.groupBox2);
@@ -164,8 +167,17 @@
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(244, 503);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 64;
+            // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.label18);
             this.groupBox6.Controls.Add(this.btnSearch);
             this.groupBox6.Controls.Add(this.txtnumDoc);
@@ -187,7 +199,6 @@
             this.groupBox6.Controls.Add(this.label13);
             this.groupBox6.Controls.Add(this.label10);
             this.groupBox6.Controls.Add(this.label9);
-            this.groupBox6.Controls.Add(this.button2);
             this.groupBox6.Controls.Add(this.label17);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.label15);
@@ -205,6 +216,18 @@
             this.groupBox6.TabIndex = 68;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion Personal";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(463, 312);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 28);
+            this.button1.TabIndex = 91;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label18
             // 
@@ -229,6 +252,7 @@
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 88;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtnumDoc
             // 
@@ -447,17 +471,6 @@
             this.label9.TabIndex = 67;
             this.label9.Text = "Sexo";
             // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(463, 90);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 28);
-            this.button2.TabIndex = 58;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // label17
             // 
             this.label17.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
@@ -586,6 +599,7 @@
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.Size = new System.Drawing.Size(174, 20);
             this.txtSaldo.TabIndex = 62;
+            this.txtSaldo.Text = "00,00";
             // 
             // label29
             // 
@@ -606,6 +620,8 @@
             this.txtCreditoMax.Size = new System.Drawing.Size(174, 20);
             this.txtCreditoMax.TabIndex = 60;
             this.txtCreditoMax.Text = "50,00";
+            this.txtCreditoMax.TextChanged += new System.EventHandler(this.txtCreditoMax_TextChanged);
+            this.txtCreditoMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCreditoMax_KeyPress);
             // 
             // label28
             // 
@@ -709,8 +725,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button7);
+            this.groupBox1.Controls.Add(this.btnDomicilio);
+            this.groupBox1.Controls.Add(this.btnEmail);
             this.groupBox1.Controls.Add(this.btnTelefono);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label5);
@@ -726,27 +742,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contacto";
             // 
-            // button3
+            // btnDomicilio
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button3.Location = new System.Drawing.Point(463, 55);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 56;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDomicilio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDomicilio.BackgroundImage")));
+            this.btnDomicilio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDomicilio.Location = new System.Drawing.Point(463, 55);
+            this.btnDomicilio.Name = "btnDomicilio";
+            this.btnDomicilio.Size = new System.Drawing.Size(28, 28);
+            this.btnDomicilio.TabIndex = 56;
+            this.btnDomicilio.UseVisualStyleBackColor = true;
+            this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
             // 
-            // button7
+            // btnEmail
             // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button7.Location = new System.Drawing.Point(463, 27);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(28, 28);
-            this.button7.TabIndex = 58;
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEmail.BackgroundImage")));
+            this.btnEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnEmail.Location = new System.Drawing.Point(463, 27);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(28, 28);
+            this.btnEmail.TabIndex = 58;
+            this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
             // btnTelefono
             // 
@@ -758,6 +776,7 @@
             this.btnTelefono.Size = new System.Drawing.Size(28, 28);
             this.btnTelefono.TabIndex = 57;
             this.btnTelefono.UseVisualStyleBackColor = true;
+            this.btnTelefono.Click += new System.EventHandler(this.btnTelefono_Click_1);
             // 
             // textBox1
             // 
@@ -818,7 +837,7 @@
             this.gbVisita.Controls.Add(this.groupBox7);
             this.gbVisita.Controls.Add(this.groupBox8);
             this.gbVisita.Controls.Add(this.label30);
-            this.gbVisita.Controls.Add(this.dateTimePicker2);
+            this.gbVisita.Controls.Add(this.dtpB);
             this.gbVisita.Controls.Add(this.dtpA);
             this.gbVisita.Controls.Add(this.label21);
             this.gbVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -831,106 +850,114 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.checkBox1);
-            this.groupBox7.Controls.Add(this.checkBox2);
-            this.groupBox7.Controls.Add(this.checkBox3);
-            this.groupBox7.Controls.Add(this.checkBox4);
-            this.groupBox7.Controls.Add(this.checkBox5);
-            this.groupBox7.Controls.Add(this.checkBox6);
-            this.groupBox7.Controls.Add(this.checkBox7);
+            this.groupBox7.Controls.Add(this.cbLunes);
+            this.groupBox7.Controls.Add(this.cbMartes);
+            this.groupBox7.Controls.Add(this.cbMiercoles);
+            this.groupBox7.Controls.Add(this.cbJueves);
+            this.groupBox7.Controls.Add(this.cbDomingo);
+            this.groupBox7.Controls.Add(this.cbViernes);
+            this.groupBox7.Controls.Add(this.cbSabado);
             this.groupBox7.Location = new System.Drawing.Point(3, 16);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(126, 180);
             this.groupBox7.TabIndex = 62;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Día";
+            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
             // 
-            // checkBox1
+            // cbLunes
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(24, 18);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(55, 17);
-            this.checkBox1.TabIndex = 59;
-            this.checkBox1.Text = "Lunes";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbLunes.AutoSize = true;
+            this.cbLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLunes.Location = new System.Drawing.Point(24, 18);
+            this.cbLunes.Name = "cbLunes";
+            this.cbLunes.Size = new System.Drawing.Size(55, 17);
+            this.cbLunes.TabIndex = 59;
+            this.cbLunes.Text = "Lunes";
+            this.cbLunes.UseVisualStyleBackColor = true;
+            this.cbLunes.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
             // 
-            // checkBox2
+            // cbMartes
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(24, 41);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(58, 17);
-            this.checkBox2.TabIndex = 60;
-            this.checkBox2.Text = "Martes";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbMartes.AutoSize = true;
+            this.cbMartes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMartes.Location = new System.Drawing.Point(24, 41);
+            this.cbMartes.Name = "cbMartes";
+            this.cbMartes.Size = new System.Drawing.Size(58, 17);
+            this.cbMartes.TabIndex = 60;
+            this.cbMartes.Text = "Martes";
+            this.cbMartes.UseVisualStyleBackColor = true;
+            this.cbMartes.CheckedChanged += new System.EventHandler(this.cbMartes_CheckedChanged);
             // 
-            // checkBox3
+            // cbMiercoles
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(24, 64);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(71, 17);
-            this.checkBox3.TabIndex = 61;
-            this.checkBox3.Text = "Miercoles";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.cbMiercoles.AutoSize = true;
+            this.cbMiercoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMiercoles.Location = new System.Drawing.Point(24, 64);
+            this.cbMiercoles.Name = "cbMiercoles";
+            this.cbMiercoles.Size = new System.Drawing.Size(71, 17);
+            this.cbMiercoles.TabIndex = 61;
+            this.cbMiercoles.Text = "Miercoles";
+            this.cbMiercoles.UseVisualStyleBackColor = true;
+            this.cbMiercoles.CheckedChanged += new System.EventHandler(this.cbMiercoles_CheckedChanged);
             // 
-            // checkBox4
+            // cbJueves
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(24, 87);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(60, 17);
-            this.checkBox4.TabIndex = 62;
-            this.checkBox4.Text = "Jueves";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.cbJueves.AutoSize = true;
+            this.cbJueves.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbJueves.Location = new System.Drawing.Point(24, 87);
+            this.cbJueves.Name = "cbJueves";
+            this.cbJueves.Size = new System.Drawing.Size(60, 17);
+            this.cbJueves.TabIndex = 62;
+            this.cbJueves.Text = "Jueves";
+            this.cbJueves.UseVisualStyleBackColor = true;
+            this.cbJueves.CheckedChanged += new System.EventHandler(this.cbJueves_CheckedChanged);
             // 
-            // checkBox5
+            // cbDomingo
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.Location = new System.Drawing.Point(24, 156);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(68, 17);
-            this.checkBox5.TabIndex = 65;
-            this.checkBox5.Text = "Domingo";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.cbDomingo.AutoSize = true;
+            this.cbDomingo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDomingo.Location = new System.Drawing.Point(24, 156);
+            this.cbDomingo.Name = "cbDomingo";
+            this.cbDomingo.Size = new System.Drawing.Size(68, 17);
+            this.cbDomingo.TabIndex = 65;
+            this.cbDomingo.Text = "Domingo";
+            this.cbDomingo.UseVisualStyleBackColor = true;
+            this.cbDomingo.CheckedChanged += new System.EventHandler(this.cbDomingo_CheckedChanged);
             // 
-            // checkBox6
+            // cbViernes
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(24, 110);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(61, 17);
-            this.checkBox6.TabIndex = 63;
-            this.checkBox6.Text = "Viernes";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.cbViernes.AutoSize = true;
+            this.cbViernes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbViernes.Location = new System.Drawing.Point(24, 110);
+            this.cbViernes.Name = "cbViernes";
+            this.cbViernes.Size = new System.Drawing.Size(61, 17);
+            this.cbViernes.TabIndex = 63;
+            this.cbViernes.Text = "Viernes";
+            this.cbViernes.UseVisualStyleBackColor = true;
+            this.cbViernes.CheckedChanged += new System.EventHandler(this.cbViernes_CheckedChanged);
             // 
-            // checkBox7
+            // cbSabado
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox7.Location = new System.Drawing.Point(24, 133);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(63, 17);
-            this.checkBox7.TabIndex = 64;
-            this.checkBox7.Text = "Sabado";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.cbSabado.AutoSize = true;
+            this.cbSabado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSabado.Location = new System.Drawing.Point(24, 133);
+            this.cbSabado.Name = "cbSabado";
+            this.cbSabado.Size = new System.Drawing.Size(63, 17);
+            this.cbSabado.TabIndex = 64;
+            this.cbSabado.Text = "Sabado";
+            this.cbSabado.UseVisualStyleBackColor = true;
+            this.cbSabado.CheckedChanged += new System.EventHandler(this.cbSabado_CheckedChanged);
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.textBox10);
-            this.groupBox8.Controls.Add(this.textBox9);
-            this.groupBox8.Controls.Add(this.textBox8);
-            this.groupBox8.Controls.Add(this.textBox7);
-            this.groupBox8.Controls.Add(this.textBox6);
-            this.groupBox8.Controls.Add(this.textBox5);
-            this.groupBox8.Controls.Add(this.textBox4);
+            this.groupBox8.Controls.Add(this.txtDom);
+            this.groupBox8.Controls.Add(this.txtSab);
+            this.groupBox8.Controls.Add(this.txtVie);
+            this.groupBox8.Controls.Add(this.txtJue);
+            this.groupBox8.Controls.Add(this.txtMie);
+            this.groupBox8.Controls.Add(this.txtMar);
+            this.groupBox8.Controls.Add(this.txtLun);
             this.groupBox8.Location = new System.Drawing.Point(136, 16);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(126, 178);
@@ -938,68 +965,69 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Nº de Orden";
             // 
-            // textBox10
+            // txtDom
             // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox10.Location = new System.Drawing.Point(41, 154);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(47, 20);
-            this.textBox10.TabIndex = 97;
+            this.txtDom.Enabled = false;
+            this.txtDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtDom.Location = new System.Drawing.Point(41, 154);
+            this.txtDom.Name = "txtDom";
+            this.txtDom.Size = new System.Drawing.Size(47, 20);
+            this.txtDom.TabIndex = 97;
             // 
-            // textBox9
+            // txtSab
             // 
-            this.textBox9.Enabled = false;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox9.Location = new System.Drawing.Point(41, 131);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(47, 20);
-            this.textBox9.TabIndex = 96;
+            this.txtSab.Enabled = false;
+            this.txtSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtSab.Location = new System.Drawing.Point(41, 131);
+            this.txtSab.Name = "txtSab";
+            this.txtSab.Size = new System.Drawing.Size(47, 20);
+            this.txtSab.TabIndex = 96;
             // 
-            // textBox8
+            // txtVie
             // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox8.Location = new System.Drawing.Point(41, 108);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(47, 20);
-            this.textBox8.TabIndex = 95;
+            this.txtVie.Enabled = false;
+            this.txtVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtVie.Location = new System.Drawing.Point(41, 108);
+            this.txtVie.Name = "txtVie";
+            this.txtVie.Size = new System.Drawing.Size(47, 20);
+            this.txtVie.TabIndex = 95;
             // 
-            // textBox7
+            // txtJue
             // 
-            this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox7.Location = new System.Drawing.Point(41, 85);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(47, 20);
-            this.textBox7.TabIndex = 94;
+            this.txtJue.Enabled = false;
+            this.txtJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtJue.Location = new System.Drawing.Point(41, 85);
+            this.txtJue.Name = "txtJue";
+            this.txtJue.Size = new System.Drawing.Size(47, 20);
+            this.txtJue.TabIndex = 94;
             // 
-            // textBox6
+            // txtMie
             // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox6.Location = new System.Drawing.Point(41, 62);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(47, 20);
-            this.textBox6.TabIndex = 93;
+            this.txtMie.Enabled = false;
+            this.txtMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtMie.Location = new System.Drawing.Point(41, 62);
+            this.txtMie.Name = "txtMie";
+            this.txtMie.Size = new System.Drawing.Size(47, 20);
+            this.txtMie.TabIndex = 93;
             // 
-            // textBox5
+            // txtMar
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox5.Location = new System.Drawing.Point(41, 39);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(47, 20);
-            this.textBox5.TabIndex = 92;
+            this.txtMar.Enabled = false;
+            this.txtMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtMar.Location = new System.Drawing.Point(41, 39);
+            this.txtMar.Name = "txtMar";
+            this.txtMar.Size = new System.Drawing.Size(47, 20);
+            this.txtMar.TabIndex = 92;
             // 
-            // textBox4
+            // txtLun
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox4.Location = new System.Drawing.Point(41, 16);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(47, 20);
-            this.textBox4.TabIndex = 91;
+            this.txtLun.Enabled = false;
+            this.txtLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtLun.Location = new System.Drawing.Point(41, 16);
+            this.txtLun.Name = "txtLun";
+            this.txtLun.Size = new System.Drawing.Size(47, 20);
+            this.txtLun.TabIndex = 91;
+            this.txtLun.TextChanged += new System.EventHandler(this.txtLun_TextChanged);
             // 
             // label30
             // 
@@ -1011,17 +1039,17 @@
             this.label30.TabIndex = 61;
             this.label30.Text = "A";
             // 
-            // dateTimePicker2
+            // dtpB
             // 
-            this.dateTimePicker2.CustomFormat = "HH:mm";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(147, 213);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.ShowUpDown = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(60, 20);
-            this.dateTimePicker2.TabIndex = 60;
-            this.dateTimePicker2.Value = new System.DateTime(2015, 8, 4, 16, 0, 0, 0);
+            this.dtpB.CustomFormat = "HH:mm";
+            this.dtpB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpB.Location = new System.Drawing.Point(147, 213);
+            this.dtpB.Name = "dtpB";
+            this.dtpB.ShowUpDown = true;
+            this.dtpB.Size = new System.Drawing.Size(60, 20);
+            this.dtpB.TabIndex = 60;
+            this.dtpB.Value = new System.DateTime(2015, 8, 4, 16, 0, 0, 0);
             // 
             // dtpA
             // 
@@ -1066,6 +1094,7 @@
             this.button5.Size = new System.Drawing.Size(28, 28);
             this.button5.TabIndex = 63;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // btnSave
             // 
@@ -1199,7 +1228,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
@@ -1224,8 +1252,8 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnDomicilio;
+        private System.Windows.Forms.Button btnEmail;
         private System.Windows.Forms.Button btnTelefono;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
@@ -1235,27 +1263,30 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox gbVisita;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox cbLunes;
+        private System.Windows.Forms.CheckBox cbMartes;
+        private System.Windows.Forms.CheckBox cbMiercoles;
+        private System.Windows.Forms.CheckBox cbJueves;
+        private System.Windows.Forms.CheckBox cbDomingo;
+        private System.Windows.Forms.CheckBox cbViernes;
+        private System.Windows.Forms.CheckBox cbSabado;
         private System.Windows.Forms.GroupBox groupBox8;
-        public System.Windows.Forms.TextBox textBox10;
-        public System.Windows.Forms.TextBox textBox9;
-        public System.Windows.Forms.TextBox textBox8;
-        public System.Windows.Forms.TextBox textBox7;
-        public System.Windows.Forms.TextBox textBox6;
-        public System.Windows.Forms.TextBox textBox5;
-        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox txtDom;
+        public System.Windows.Forms.TextBox txtSab;
+        public System.Windows.Forms.TextBox txtVie;
+        public System.Windows.Forms.TextBox txtJue;
+        public System.Windows.Forms.TextBox txtMie;
+        public System.Windows.Forms.TextBox txtMar;
+        public System.Windows.Forms.TextBox txtLun;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpB;
         private System.Windows.Forms.DateTimePicker dtpA;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }

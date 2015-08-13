@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RamosHermanos.Capas.Entidades
 {
-    public class TipoDocEntity
+    public class tipoDocEntity
     {
 
         // Atributos
