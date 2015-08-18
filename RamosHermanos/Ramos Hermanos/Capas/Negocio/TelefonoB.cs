@@ -1,0 +1,84 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Datos;
+
+namespace RamosHermanos.Capas.Negocio
+{
+    class TelefonoB
+    {
+        public static TelefonoEntity InsertTelefono(TelefonoEntity telefono)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"INSERT INTO Telefonos (rol, idPersona, tipoTel, caracteristica, numtel, estado)
+                                 VALUES (@rol, @idPersona, @tipoTel, @caracteristica, @numTel, @estado);
+                                 SELECT LAST_INSERT_ID();";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@rol", telefono.rol);
+                cmd.Parameters.AddWithValue("@idPersona", telefono.idPersona);
+                cmd.Parameters.AddWithValue("@tipoTel", telefono.tipoTel);
+                cmd.Parameters.AddWithValue("@caracteristica", telefono.caracteristica);
+                cmd.Parameters.AddWithValue("@numTel", telefono.numTel);
+                cmd.Parameters.AddWithValue("@estado", telefono.estado);
+
+                cmd.ExecuteNonQuery();
+
+                MySQL.DisconnectDB();
+
+                return telefono;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void CargarDGV(DataGridView dgv, ComboBox cbROL, TextBox txtID)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = "SELECT * FROM Telefonos WHERE rol = @rol and idPersona = @idPersona";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@rol", cbROL.SelectedValue);
+                cmd.Parameters.AddWithValue("@idPersona", txtID.Text);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idTelefono"]),
+                    Convert.ToString(dr["tipoTel"]),
+                    Convert.ToString(dr["caracteristica"]) +"-"+ Convert.ToString(dr["numTel"]),
+                    Convert.ToBoolean(dr["estado"]));
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+    }
+}

@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace RamosHermanos.Capas.Entidades
 {
-    class RolEntity
+    class EmailEntity
     {
-        public int idRol { get; set; }
-        public string rol { get; set; }
+        public int idEmail { get; set; }
+        public int rol { get; set; }
+        public int idPersona { get; set; }
+        public string email { get; set; }
         public bool estado { get; set; }
     }
 }

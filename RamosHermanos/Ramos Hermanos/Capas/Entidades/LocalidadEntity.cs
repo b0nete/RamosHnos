@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RamosHnos.Capas.Entidades
+namespace RamosHermanos.Capas.Entidades
 {
     class LocalidadEntity
     {
-
         public int idLocalidad { get; set; }
         public int provincia { get; set; }
         public string localidad { get; set; }

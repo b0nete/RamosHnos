@@ -47,10 +47,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Capas\Datos\MySQL.cs" />
+    <Compile Include="Capas\Entidades\BarriosEntity.cs" />
     <Compile Include="Capas\Entidades\ClienteEntity.cs" />
+    <Compile Include="Capas\Entidades\DomicilioEntity.cs" />
+    <Compile Include="Capas\Entidades\EmailEntity.cs" />
+    <Compile Include="Capas\Entidades\LocalidadEntity.cs" />
+    <Compile Include="Capas\Entidades\ProvinciaEntity.cs" />
+    <Compile Include="Capas\Entidades\RolEntity.cs" />
     <Compile Include="Capas\Entidades\SaldoEntity.cs" />
+    <Compile Include="Capas\Entidades\TelefonoEntity.cs" />
     <Compile Include="Capas\Entidades\tipoClienteEntity.cs" />
     <Compile Include="Capas\Entidades\tipoDocEntity.cs" />
+    <Compile Include="Capas\Entidades\tipoTelEntity.cs" />
     <Compile Include="Capas\Entidades\VisitaEntity.cs" />
     <Compile Include="Capas\Interfaz\formCliente.cs">
       <SubType>Form</SubType>
@@ -94,6 +102,12 @@
     <Compile Include="Capas\Interfaz\formRepartos.Designer.cs">
       <DependentUpon>formRepartos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaz\formRoles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\formRoles.Designer.cs">
+      <DependentUpon>formRoles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\formtipoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,9 +121,15 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Negocio\ClienteB.cs" />
+    <Compile Include="Capas\Negocio\EmailB.cs" />
+    <Compile Include="Capas\Negocio\LocalidadB.cs" />
+    <Compile Include="Capas\Negocio\ProvinciaB.cs" />
+    <Compile Include="Capas\Negocio\RolB.cs" />
     <Compile Include="Capas\Negocio\SaldoB.cs" />
+    <Compile Include="Capas\Negocio\TelefonoB.cs" />
     <Compile Include="Capas\Negocio\tipoClienteB.cs" />
     <Compile Include="Capas\Negocio\tipoDocB.cs" />
+    <Compile Include="Capas\Negocio\tipoTelB.cs" />
     <Compile Include="Capas\Negocio\VisitaB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formRepartos.resx">
       <DependentUpon>formRepartos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\formRoles.resx">
+      <DependentUpon>formRoles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formtipoCliente.resx">
       <DependentUpon>formtipoCliente.cs</DependentUpon>

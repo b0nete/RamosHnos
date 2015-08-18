@@ -31,17 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formContacto));
             this.tabContacto = new System.Windows.Forms.TabControl();
             this.tabDomicilios = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.cbRoles = new System.Windows.Forms.ComboBox();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtNombreDom = new System.Windows.Forms.TextBox();
             this.dgvDomicilio = new System.Windows.Forms.DataGridView();
-            this.txtID = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDpto = new System.Windows.Forms.TextBox();
@@ -71,47 +66,51 @@
             this.txtCalle = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tabTelefonos = new System.Windows.Forms.TabPage();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnSaveTel = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnDelTel = new System.Windows.Forms.Button();
+            this.txtNombreTel = new System.Windows.Forms.TextBox();
+            this.dgvTelefono = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtNumTel = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cbTipoTel = new System.Windows.Forms.ComboBox();
             this.txtCaracteristica = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.tabEmails = new System.Windows.Forms.TabPage();
+            this.lblRolTel = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.btnSaveEmail = new System.Windows.Forms.Button();
+            this.btnDelEmail = new System.Windows.Forms.Button();
+            this.cbRolALL = new System.Windows.Forms.ComboBox();
             this.button11 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtNombreEmail = new System.Windows.Forms.TextBox();
+            this.dgvEmail = new System.Windows.Forms.DataGridView();
+            this.colIDEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.txtIDALL = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.cbEstadoEmail = new System.Windows.Forms.CheckBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.cbEstadoTel = new System.Windows.Forms.CheckBox();
+            this.colIDTipoTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipoTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoTel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabContacto.SuspendLayout();
             this.tabDomicilios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDomicilio)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.tabTelefonos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefono)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabEmails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmail)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,17 +128,12 @@
             // 
             // tabDomicilios
             // 
-            this.tabDomicilios.Controls.Add(this.label14);
-            this.tabDomicilios.Controls.Add(this.label6);
             this.tabDomicilios.Controls.Add(this.label5);
             this.tabDomicilios.Controls.Add(this.btnSave);
-            this.tabDomicilios.Controls.Add(this.cbRoles);
-            this.tabDomicilios.Controls.Add(this.btnEdit);
             this.tabDomicilios.Controls.Add(this.button1);
             this.tabDomicilios.Controls.Add(this.btnDel);
-            this.tabDomicilios.Controls.Add(this.txtNombre);
+            this.tabDomicilios.Controls.Add(this.txtNombreDom);
             this.tabDomicilios.Controls.Add(this.dgvDomicilio);
-            this.tabDomicilios.Controls.Add(this.txtID);
             this.tabDomicilios.Controls.Add(this.groupBox2);
             this.tabDomicilios.Location = new System.Drawing.Point(4, 22);
             this.tabDomicilios.Name = "tabDomicilios";
@@ -149,36 +143,12 @@
             this.tabDomicilios.Text = "Domicilios";
             this.tabDomicilios.UseVisualStyleBackColor = true;
             // 
-            // label14
-            // 
-            this.label14.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label14.Location = new System.Drawing.Point(19, 510);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(23, 13);
-            this.label14.TabIndex = 93;
-            this.label14.Text = "Rol";
-            this.label14.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label6.Location = new System.Drawing.Point(635, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(18, 13);
-            this.label6.TabIndex = 92;
-            this.label6.Text = "ID";
-            this.label6.Visible = false;
-            // 
             // label5
             // 
             this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label5.Location = new System.Drawing.Point(127, 9);
+            this.label5.Location = new System.Drawing.Point(112, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 13);
             this.label5.TabIndex = 82;
@@ -191,31 +161,11 @@
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(672, 176);
+            this.btnSave.Location = new System.Drawing.Point(706, 176);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 87;
             this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // cbRoles
-            // 
-            this.cbRoles.FormattingEnabled = true;
-            this.cbRoles.Location = new System.Drawing.Point(42, 507);
-            this.cbRoles.Name = "cbRoles";
-            this.cbRoles.Size = new System.Drawing.Size(147, 21);
-            this.cbRoles.TabIndex = 91;
-            this.cbRoles.Visible = false;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
-            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnEdit.Location = new System.Drawing.Point(706, 176);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(28, 28);
-            this.btnEdit.TabIndex = 85;
-            this.btnEdit.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -239,13 +189,13 @@
             this.btnDel.TabIndex = 83;
             this.btnDel.UseVisualStyleBackColor = true;
             // 
-            // txtNombre
+            // txtNombreDom
             // 
-            this.txtNombre.Enabled = false;
-            this.txtNombre.Location = new System.Drawing.Point(170, 6);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(412, 20);
-            this.txtNombre.TabIndex = 89;
+            this.txtNombreDom.Enabled = false;
+            this.txtNombreDom.Location = new System.Drawing.Point(156, 6);
+            this.txtNombreDom.Name = "txtNombreDom";
+            this.txtNombreDom.Size = new System.Drawing.Size(412, 20);
+            this.txtNombreDom.TabIndex = 89;
             // 
             // dgvDomicilio
             // 
@@ -257,15 +207,6 @@
             this.dgvDomicilio.ReadOnly = true;
             this.dgvDomicilio.Size = new System.Drawing.Size(760, 291);
             this.dgvDomicilio.TabIndex = 88;
-            // 
-            // txtID
-            // 
-            this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(652, 6);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(110, 20);
-            this.txtID.TabIndex = 86;
-            this.txtID.Visible = false;
             // 
             // groupBox2
             // 
@@ -601,17 +542,12 @@
             // 
             // tabTelefonos
             // 
-            this.tabTelefonos.Controls.Add(this.label25);
-            this.tabTelefonos.Controls.Add(this.label15);
             this.tabTelefonos.Controls.Add(this.label16);
-            this.tabTelefonos.Controls.Add(this.button3);
-            this.tabTelefonos.Controls.Add(this.comboBox2);
-            this.tabTelefonos.Controls.Add(this.button6);
+            this.tabTelefonos.Controls.Add(this.btnSaveTel);
             this.tabTelefonos.Controls.Add(this.button7);
-            this.tabTelefonos.Controls.Add(this.button8);
-            this.tabTelefonos.Controls.Add(this.textBox1);
-            this.tabTelefonos.Controls.Add(this.dataGridView1);
-            this.tabTelefonos.Controls.Add(this.textBox2);
+            this.tabTelefonos.Controls.Add(this.btnDelTel);
+            this.tabTelefonos.Controls.Add(this.txtNombreTel);
+            this.tabTelefonos.Controls.Add(this.dgvTelefono);
             this.tabTelefonos.Controls.Add(this.groupBox1);
             this.tabTelefonos.Location = new System.Drawing.Point(4, 22);
             this.tabTelefonos.Name = "tabTelefonos";
@@ -620,30 +556,6 @@
             this.tabTelefonos.TabIndex = 1;
             this.tabTelefonos.Text = "Telefonos";
             this.tabTelefonos.UseVisualStyleBackColor = true;
-            // 
-            // label25
-            // 
-            this.label25.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label25.Location = new System.Drawing.Point(15, 509);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(23, 13);
-            this.label25.TabIndex = 104;
-            this.label25.Text = "Rol";
-            this.label25.Visible = false;
-            // 
-            // label15
-            // 
-            this.label15.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label15.Location = new System.Drawing.Point(621, 9);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(18, 13);
-            this.label15.TabIndex = 103;
-            this.label15.Text = "ID";
-            this.label15.Visible = false;
             // 
             // label16
             // 
@@ -657,37 +569,18 @@
             this.label16.Text = "Nombre";
             this.label16.Visible = false;
             // 
-            // button3
+            // btnSaveTel
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(672, 98);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 98;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(38, 506);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(147, 21);
-            this.comboBox2.TabIndex = 102;
-            this.comboBox2.Visible = false;
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button6.Location = new System.Drawing.Point(706, 98);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(28, 28);
-            this.button6.TabIndex = 96;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSaveTel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveTel.BackgroundImage")));
+            this.btnSaveTel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSaveTel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveTel.Location = new System.Drawing.Point(706, 98);
+            this.btnSaveTel.Name = "btnSaveTel";
+            this.btnSaveTel.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveTel.TabIndex = 98;
+            this.btnSaveTel.UseVisualStyleBackColor = true;
+            this.btnSaveTel.Click += new System.EventHandler(this.button3_Click);
             // 
             // button7
             // 
@@ -699,52 +592,50 @@
             this.button7.Size = new System.Drawing.Size(28, 28);
             this.button7.TabIndex = 101;
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button8
+            // btnDelTel
             // 
-            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button8.Location = new System.Drawing.Point(740, 98);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(28, 28);
-            this.button8.TabIndex = 94;
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnDelTel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelTel.BackgroundImage")));
+            this.btnDelTel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDelTel.Location = new System.Drawing.Point(740, 98);
+            this.btnDelTel.Name = "btnDelTel";
+            this.btnDelTel.Size = new System.Drawing.Size(28, 28);
+            this.btnDelTel.TabIndex = 94;
+            this.btnDelTel.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtNombreTel
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(156, 6);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(412, 20);
-            this.textBox1.TabIndex = 100;
+            this.txtNombreTel.Enabled = false;
+            this.txtNombreTel.Location = new System.Drawing.Point(156, 6);
+            this.txtNombreTel.Name = "txtNombreTel";
+            this.txtNombreTel.Size = new System.Drawing.Size(412, 20);
+            this.txtNombreTel.TabIndex = 100;
             // 
-            // dataGridView1
+            // dgvTelefono
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 132);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(760, 364);
-            this.dataGridView1.TabIndex = 99;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(638, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(110, 20);
-            this.textBox2.TabIndex = 97;
-            this.textBox2.Visible = false;
+            this.dgvTelefono.AllowUserToAddRows = false;
+            this.dgvTelefono.AllowUserToDeleteRows = false;
+            this.dgvTelefono.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTelefono.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDTipoTel,
+            this.colTipoTel,
+            this.colTelefono,
+            this.colEstadoTel});
+            this.dgvTelefono.Location = new System.Drawing.Point(8, 132);
+            this.dgvTelefono.Name = "dgvTelefono";
+            this.dgvTelefono.ReadOnly = true;
+            this.dgvTelefono.Size = new System.Drawing.Size(760, 364);
+            this.dgvTelefono.TabIndex = 99;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbEstadoTel);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.txtNumTel);
             this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.cbTipoTel);
             this.groupBox1.Controls.Add(this.txtCaracteristica);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -769,47 +660,44 @@
             // txtNumTel
             // 
             this.txtNumTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtNumTel.Location = new System.Drawing.Point(508, 22);
+            this.txtNumTel.Location = new System.Drawing.Point(422, 22);
             this.txtNumTel.Name = "txtNumTel";
-            this.txtNumTel.Size = new System.Drawing.Size(230, 20);
+            this.txtNumTel.Size = new System.Drawing.Size(219, 20);
             this.txtNumTel.TabIndex = 107;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label18.Location = new System.Drawing.Point(466, 25);
+            this.label18.Location = new System.Drawing.Point(380, 25);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(44, 13);
             this.label18.TabIndex = 106;
             this.label18.Text = "Numero";
             // 
-            // comboBox3
+            // cbTipoTel
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "FIJO",
-            "CELULAR"});
-            this.comboBox3.Location = new System.Drawing.Point(90, 22);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(143, 21);
-            this.comboBox3.TabIndex = 36;
+            this.cbTipoTel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbTipoTel.FormattingEnabled = true;
+            this.cbTipoTel.Location = new System.Drawing.Point(90, 22);
+            this.cbTipoTel.Name = "cbTipoTel";
+            this.cbTipoTel.Size = new System.Drawing.Size(111, 21);
+            this.cbTipoTel.TabIndex = 36;
             // 
             // txtCaracteristica
             // 
             this.txtCaracteristica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtCaracteristica.Location = new System.Drawing.Point(351, 22);
+            this.txtCaracteristica.Location = new System.Drawing.Point(281, 22);
             this.txtCaracteristica.Name = "txtCaracteristica";
-            this.txtCaracteristica.Size = new System.Drawing.Size(91, 20);
+            this.txtCaracteristica.Size = new System.Drawing.Size(78, 20);
             this.txtCaracteristica.TabIndex = 105;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label20.Location = new System.Drawing.Point(280, 25);
+            this.label20.Location = new System.Drawing.Point(210, 25);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(73, 13);
             this.label20.TabIndex = 104;
@@ -817,13 +705,16 @@
             // 
             // tabEmails
             // 
+            this.tabEmails.Controls.Add(this.lblRolTel);
             this.tabEmails.Controls.Add(this.label26);
             this.tabEmails.Controls.Add(this.label27);
-            this.tabEmails.Controls.Add(this.comboBox4);
+            this.tabEmails.Controls.Add(this.btnSaveEmail);
+            this.tabEmails.Controls.Add(this.btnDelEmail);
+            this.tabEmails.Controls.Add(this.cbRolALL);
             this.tabEmails.Controls.Add(this.button11);
-            this.tabEmails.Controls.Add(this.textBox3);
-            this.tabEmails.Controls.Add(this.dataGridView2);
-            this.tabEmails.Controls.Add(this.textBox4);
+            this.tabEmails.Controls.Add(this.txtNombreEmail);
+            this.tabEmails.Controls.Add(this.dgvEmail);
+            this.tabEmails.Controls.Add(this.txtIDALL);
             this.tabEmails.Controls.Add(this.groupBox3);
             this.tabEmails.Location = new System.Drawing.Point(4, 22);
             this.tabEmails.Name = "tabEmails";
@@ -832,6 +723,18 @@
             this.tabEmails.TabIndex = 2;
             this.tabEmails.Text = "Emails";
             this.tabEmails.UseVisualStyleBackColor = true;
+            // 
+            // lblRolTel
+            // 
+            this.lblRolTel.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.lblRolTel.AutoSize = true;
+            this.lblRolTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblRolTel.Location = new System.Drawing.Point(8, 510);
+            this.lblRolTel.Name = "lblRolTel";
+            this.lblRolTel.Size = new System.Drawing.Size(23, 13);
+            this.lblRolTel.TabIndex = 115;
+            this.lblRolTel.Text = "Rol";
+            this.lblRolTel.Visible = false;
             // 
             // label26
             // 
@@ -857,14 +760,39 @@
             this.label27.Text = "Nombre";
             this.label27.Visible = false;
             // 
-            // comboBox4
+            // btnSaveEmail
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(37, 507);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(147, 21);
-            this.comboBox4.TabIndex = 113;
-            this.comboBox4.Visible = false;
+            this.btnSaveEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveEmail.BackgroundImage")));
+            this.btnSaveEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSaveEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveEmail.Location = new System.Drawing.Point(705, 99);
+            this.btnSaveEmail.Name = "btnSaveEmail";
+            this.btnSaveEmail.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveEmail.TabIndex = 109;
+            this.btnSaveEmail.UseVisualStyleBackColor = true;
+            this.btnSaveEmail.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // btnDelEmail
+            // 
+            this.btnDelEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelEmail.BackgroundImage")));
+            this.btnDelEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDelEmail.Location = new System.Drawing.Point(739, 99);
+            this.btnDelEmail.Name = "btnDelEmail";
+            this.btnDelEmail.Size = new System.Drawing.Size(28, 28);
+            this.btnDelEmail.TabIndex = 105;
+            this.btnDelEmail.UseVisualStyleBackColor = true;
+            // 
+            // cbRolALL
+            // 
+            this.cbRolALL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRolALL.FormattingEnabled = true;
+            this.cbRolALL.Location = new System.Drawing.Point(37, 507);
+            this.cbRolALL.Name = "cbRolALL";
+            this.cbRolALL.Size = new System.Drawing.Size(147, 21);
+            this.cbRolALL.TabIndex = 113;
+            this.cbRolALL.Visible = false;
             // 
             // button11
             // 
@@ -877,41 +805,62 @@
             this.button11.TabIndex = 112;
             this.button11.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // txtNombreEmail
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(155, 7);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(412, 20);
-            this.textBox3.TabIndex = 111;
+            this.txtNombreEmail.Enabled = false;
+            this.txtNombreEmail.Location = new System.Drawing.Point(156, 6);
+            this.txtNombreEmail.Name = "txtNombreEmail";
+            this.txtNombreEmail.Size = new System.Drawing.Size(412, 20);
+            this.txtNombreEmail.TabIndex = 111;
             // 
-            // dataGridView2
+            // dgvEmail
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(7, 99);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(760, 398);
-            this.dataGridView2.TabIndex = 110;
+            this.dgvEmail.AllowUserToAddRows = false;
+            this.dgvEmail.AllowUserToDeleteRows = false;
+            this.dgvEmail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDEmail,
+            this.colEmail,
+            this.colEstado});
+            this.dgvEmail.Location = new System.Drawing.Point(7, 133);
+            this.dgvEmail.Name = "dgvEmail";
+            this.dgvEmail.ReadOnly = true;
+            this.dgvEmail.Size = new System.Drawing.Size(760, 364);
+            this.dgvEmail.TabIndex = 110;
             // 
-            // textBox4
+            // colIDEmail
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(637, 7);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(110, 20);
-            this.textBox4.TabIndex = 108;
-            this.textBox4.Visible = false;
+            this.colIDEmail.HeaderText = "ID Email";
+            this.colIDEmail.Name = "colIDEmail";
+            this.colIDEmail.ReadOnly = true;
+            this.colIDEmail.Visible = false;
+            // 
+            // colEmail
+            // 
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            // 
+            // colEstado
+            // 
+            this.colEstado.HeaderText = "Estado";
+            this.colEstado.Name = "colEstado";
+            this.colEstado.ReadOnly = true;
+            // 
+            // txtIDALL
+            // 
+            this.txtIDALL.Enabled = false;
+            this.txtIDALL.Location = new System.Drawing.Point(637, 7);
+            this.txtIDALL.Name = "txtIDALL";
+            this.txtIDALL.Size = new System.Drawing.Size(110, 20);
+            this.txtIDALL.TabIndex = 108;
+            this.txtIDALL.Visible = false;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.cbEstadoEmail);
+            this.groupBox3.Controls.Add(this.txtEmail);
             this.groupBox3.Controls.Add(this.label29);
-            this.groupBox3.Controls.Add(this.button9);
-            this.groupBox3.Controls.Add(this.button12);
-            this.groupBox3.Controls.Add(this.button10);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(9, 33);
             this.groupBox3.Name = "groupBox3";
@@ -920,13 +869,24 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Telefono";
             // 
-            // textBox5
+            // cbEstadoEmail
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox5.Location = new System.Drawing.Point(63, 23);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(566, 20);
-            this.textBox5.TabIndex = 107;
+            this.cbEstadoEmail.AutoSize = true;
+            this.cbEstadoEmail.Checked = true;
+            this.cbEstadoEmail.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEstadoEmail.Location = new System.Drawing.Point(654, 26);
+            this.cbEstadoEmail.Name = "cbEstadoEmail";
+            this.cbEstadoEmail.Size = new System.Drawing.Size(15, 14);
+            this.cbEstadoEmail.TabIndex = 108;
+            this.cbEstadoEmail.UseVisualStyleBackColor = true;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtEmail.Location = new System.Drawing.Point(63, 23);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(566, 20);
+            this.txtEmail.TabIndex = 107;
             // 
             // label29
             // 
@@ -938,39 +898,41 @@
             this.label29.TabIndex = 106;
             this.label29.Text = "Email";
             // 
-            // button9
+            // cbEstadoTel
             // 
-            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(642, 18);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(28, 28);
-            this.button9.TabIndex = 109;
-            this.button9.UseVisualStyleBackColor = true;
+            this.cbEstadoTel.AutoSize = true;
+            this.cbEstadoTel.Checked = true;
+            this.cbEstadoTel.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEstadoTel.Location = new System.Drawing.Point(663, 25);
+            this.cbEstadoTel.Name = "cbEstadoTel";
+            this.cbEstadoTel.Size = new System.Drawing.Size(15, 14);
+            this.cbEstadoTel.TabIndex = 109;
+            this.cbEstadoTel.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // colIDTipoTel
             // 
-            this.button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button12.BackgroundImage")));
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button12.Location = new System.Drawing.Point(710, 18);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(28, 28);
-            this.button12.TabIndex = 105;
-            this.button12.UseVisualStyleBackColor = true;
+            this.colIDTipoTel.HeaderText = "Tipo Telefono";
+            this.colIDTipoTel.Name = "colIDTipoTel";
+            this.colIDTipoTel.ReadOnly = true;
+            this.colIDTipoTel.Visible = false;
             // 
-            // button10
+            // colTipoTel
             // 
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button10.Location = new System.Drawing.Point(676, 18);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(28, 28);
-            this.button10.TabIndex = 107;
-            this.button10.UseVisualStyleBackColor = true;
+            this.colTipoTel.HeaderText = "Tipo Telefono";
+            this.colTipoTel.Name = "colTipoTel";
+            this.colTipoTel.ReadOnly = true;
+            // 
+            // colTelefono
+            // 
+            this.colTelefono.HeaderText = "Telefono";
+            this.colTelefono.Name = "colTelefono";
+            this.colTelefono.ReadOnly = true;
+            // 
+            // colEstadoTel
+            // 
+            this.colEstadoTel.HeaderText = "Estado";
+            this.colEstadoTel.Name = "colEstadoTel";
+            this.colEstadoTel.ReadOnly = true;
             // 
             // formContacto
             // 
@@ -989,12 +951,12 @@
             this.groupBox2.PerformLayout();
             this.tabTelefonos.ResumeLayout(false);
             this.tabTelefonos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefono)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabEmails.ResumeLayout(false);
             this.tabEmails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmail)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -1006,16 +968,12 @@
         private System.Windows.Forms.TabPage tabDomicilios;
         private System.Windows.Forms.TabPage tabTelefonos;
         private System.Windows.Forms.TabPage tabEmails;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSave;
-        public System.Windows.Forms.ComboBox cbRoles;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnDel;
-        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtNombreDom;
         public System.Windows.Forms.DataGridView dgvDomicilio;
-        public System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDpto;
@@ -1044,38 +1002,41 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCalle;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button3;
-        public System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnSaveTel;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.DataGridView dataGridView1;
-        public System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnDelTel;
+        public System.Windows.Forms.TextBox txtNombreTel;
+        public System.Windows.Forms.DataGridView dgvTelefono;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtNumTel;
         private System.Windows.Forms.Label label18;
-        public System.Windows.Forms.ComboBox comboBox3;
+        public System.Windows.Forms.ComboBox cbTipoTel;
         private System.Windows.Forms.TextBox txtCaracteristica;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
-        public System.Windows.Forms.ComboBox comboBox4;
+        public System.Windows.Forms.ComboBox cbRolALL;
         private System.Windows.Forms.Button button11;
-        public System.Windows.Forms.TextBox textBox3;
-        public System.Windows.Forms.DataGridView dataGridView2;
-        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox txtNombreEmail;
+        public System.Windows.Forms.DataGridView dgvEmail;
+        public System.Windows.Forms.TextBox txtIDALL;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnSaveEmail;
+        private System.Windows.Forms.Button btnDelEmail;
         public System.Windows.Forms.TabControl tabContacto;
+        public System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.CheckBox cbEstadoEmail;
+        private System.Windows.Forms.Label lblRolTel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colEstado;
+        private System.Windows.Forms.CheckBox cbEstadoTel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDTipoTel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTipoTel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTelefono;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colEstadoTel;
     }
 }

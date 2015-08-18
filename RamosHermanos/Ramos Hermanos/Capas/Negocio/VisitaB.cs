@@ -14,6 +14,62 @@ namespace RamosHermanos.Capas.Negocio
 {
     class VisitaB
     {
+
+        public static VisitaEntity BuscarVisita(VisitaEntity visita)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT * 
+                                 FROM Visitas V
+                                 INNER JOIN Dias D ON V.idVisita = D.idDias
+                                 INNER JOIN Orden O ON V.idVisita = O.idOrden";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@rol", visita.rol);
+                cmd.Parameters.AddWithValue("@idPersona", visita.idPersona);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                DataRow row = dt.Rows[0];
+
+                visita.horarioVisitaA = Convert.ToString(row["horarioVisitaA"]);
+                visita.horarioVisitaB = Convert.ToString(row["horarioVisitaB"]);
+                // Dias
+                visita.dlunes = Convert.ToBoolean(row["dlunes"]);
+                visita.dmartes = Convert.ToBoolean(row["dmartes"]);
+                visita.dmiercoles = Convert.ToBoolean(row["dmiercoles"]);
+                visita.djueves = Convert.ToBoolean(row["djueves"]);
+                visita.dviernes = Convert.ToBoolean(row["dviernes"]);
+                visita.dsabado = Convert.ToBoolean(row["dsabado"]);
+                visita.ddomingo = Convert.ToBoolean(row["ddomingo"]);
+                //Orden
+                visita.olunes = Convert.ToInt32(row["olunes"]);
+                visita.omartes = Convert.ToInt32(row["omartes"]);
+                visita.omiercoles = Convert.ToInt32(row["omiercoles"]);
+                visita.ojueves = Convert.ToInt32(row["ojueves"]);
+                visita.oviernes = Convert.ToInt32(row["oviernes"]);
+                visita.osabado = Convert.ToInt32(row["osabado"]);
+                visita.odomingo = Convert.ToInt32(row["odomingo"]);
+
+                MySQL.DisconnectDB();
+
+                return visita;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+
         public static VisitaEntity InsertVisita(VisitaEntity visita)
         {
             try
@@ -51,7 +107,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO dias (idDias, lunes, martes, miercoles, jueves, viernes, sabado, domingo) 
+                string query = @"INSERT INTO dias (idDias, dlunes, dmartes, dmiercoles, djueves, dviernes, dsabado, ddomingo) 
                                   VALUES (@idDias, @dlunes, @dmartes, @dmiercoles, @djueves, @dviernes, @dsabado, @ddomingo);";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -86,7 +142,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO orden (idOrden, lunes, martes, miercoles, jueves, viernes, sabado, domingo) 
+                string query = @"INSERT INTO orden (idOrden, olunes, omartes, omiercoles, ojueves, oviernes, osabado, odomingo) 
                                   VALUES (@idOrden, @olunes, @omartes, @omiercoles, @ojueves, @oviernes, @osabado, @odomingo);";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);

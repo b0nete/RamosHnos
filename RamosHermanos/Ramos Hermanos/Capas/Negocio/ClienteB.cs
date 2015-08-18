@@ -162,6 +162,37 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static ClienteEntity DisableCliente(ClienteEntity cliente, CheckBox cb)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"UPDATE Clientes
+                                 SET estado = '0'
+                                 WHERE numDoc = @numDoc";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                //cmd.CommandText = query;
+
+                cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Cliente Desabilitado!");
+                cb.Checked = false;
+                MySQL.DisconnectDB();
+
+                return cliente;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
       
     }
 }

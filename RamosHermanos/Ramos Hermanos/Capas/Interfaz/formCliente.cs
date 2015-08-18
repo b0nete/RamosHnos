@@ -120,26 +120,57 @@ namespace RamosHermanos.Capas.Interfaz
                 return;
             }
 
-            CargarCliente();    
-            ClienteB.BuscarCliente(cliente);
-            txtIDcliente.Text = Convert.ToString(cliente.idCliente);
-            dtpFechaAlta.Value = cliente.fechaAlta;
-            cbTipoDoc.SelectedValue = cliente.tipoDoc;
-            txtnumDoc.Text = cliente.numDoc;
-            cbSexo.Text = cliente.sexo;
-            txtCUIL.Text = cliente.cuil;
-            txtApellido.Text = cliente.apellido;
-            txtNombre.Text = cliente.nombre;
-            cbEstadoCivil.Text = cliente.estadoCivil;
-            cbIVA.Text = cliente.condicionIVA;
-            //cbTipoCliente.SelectedValue = cliente.tipoCliente;
-            cbEstado.Checked = cliente.estado;
+            CargarCliente();
 
+            if (ClienteB.ExisteCliente(cliente) == false)
+            {
+                MessageBox.Show("El cliente no existe!");
+                return;
+            }
+            else
+            {
+                ClienteB.BuscarCliente(cliente);                                
+                txtIDcliente.Text = Convert.ToString(cliente.idCliente);
+                dtpFechaAlta.Value = cliente.fechaAlta;
+                cbTipoDoc.SelectedValue = cliente.tipoDoc;
+                txtnumDoc.Text = cliente.numDoc;
+                cbSexo.Text = cliente.sexo;
+                txtCUIL.Text = cliente.cuil;
+                txtApellido.Text = cliente.apellido;
+                txtNombre.Text = cliente.nombre;
+                cbEstadoCivil.Text = cliente.estadoCivil;
+                cbIVA.Text = cliente.condicionIVA;
+                //cbTipoCliente.SelectedValue = cliente.tipoCliente;
+                cbEstado.Checked = cliente.estado;
 
-            CargarSaldo(txtIDcliente);
-            SaldoB.BuscarSaldo(saldo);
-            txtCreditoMax.Text = Convert.ToString(saldo.creditoMax);
-            txtSaldo.Text = Convert.ToString(saldo.saldoActual);
+                CargarSaldo(txtIDcliente);
+                SaldoB.BuscarSaldo(saldo);
+                txtCreditoMax.Text = Convert.ToString(saldo.creditoMax);
+                txtSaldo.Text = Convert.ToString(saldo.saldoActual);
+
+                CargarVisita(txtIDcliente);
+                VisitaB.BuscarVisita(visita);
+                dtpA.Text = visita.horarioVisitaA;
+                dtpB.Text = visita.horarioVisitaB;
+                //Dias
+                cbLunes.Checked = visita.dlunes;
+                cbMartes.Checked = visita.dmartes;
+                cbMiercoles.Checked = visita.dmiercoles;
+                cbJueves.Checked = visita.djueves;
+                cbViernes.Checked = visita.dviernes;
+                cbSabado.Checked = visita.dsabado;
+                cbDomingo.Checked = visita.ddomingo;
+                //Orden
+                txtLun.Text = Convert.ToString(visita.olunes);
+                txtMar.Text = Convert.ToString(visita.omartes);
+                txtMie.Text = Convert.ToString(visita.omiercoles);
+                txtJue.Text = Convert.ToString(visita.ojueves);
+                txtVie.Text = Convert.ToString(visita.oviernes);
+                txtSab.Text = Convert.ToString(visita.osabado);
+                txtDom.Text = Convert.ToString(visita.odomingo);
+            }
+
+            CheckColor();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -200,13 +231,40 @@ namespace RamosHermanos.Capas.Interfaz
         {
             // Numero de Orden
             visita.idOrden = visita.idVisita;
-            visita.olunes = Convert.ToInt32(txtLun.Text);
-            visita.omartes = Convert.ToInt32(txtMar.Text);
-            visita.omiercoles = Convert.ToInt32(txtMie.Text);
-            visita.ojueves = Convert.ToInt32(txtJue.Text);
-            visita.oviernes = Convert.ToInt32(txtVie.Text);
-            visita.osabado = Convert.ToInt32(txtSab.Text);
-            visita.odomingo = Convert.ToInt32(txtDom.Text);   
+            if (txtLun.Text == string.Empty)
+                Convert.ToInt32(txtLun.Text == null);
+            else
+                visita.olunes = Convert.ToInt32(txtLun.Text);
+
+            if (txtMar.Text == string.Empty)
+                Convert.ToInt32(txtMar.Text == null);
+            else
+                visita.omartes = Convert.ToInt32(txtMar.Text);
+
+            if (txtMie.Text == string.Empty)
+                Convert.ToInt32(txtMie.Text == null);
+            else
+                visita.omiercoles = Convert.ToInt32(txtMie.Text);
+
+            if (txtJue.Text == string.Empty)
+                Convert.ToInt32(txtJue.Text == null);
+            else
+                visita.ojueves = Convert.ToInt32(txtJue.Text);
+
+            if (txtVie.Text == string.Empty)
+                Convert.ToInt32(txtVie.Text == null);
+            else
+                visita.oviernes = Convert.ToInt32(txtVie.Text);
+
+            if (txtSab.Text == string.Empty)
+                Convert.ToInt32(txtSab.Text == null);
+            else
+                visita.osabado = Convert.ToInt32(txtSab.Text);
+
+            if (txtDom.Text == string.Empty)
+                Convert.ToInt32(txtDom.Text == null);
+            else
+                visita.odomingo = Convert.ToInt32(txtDom.Text);
         }
 
         private void txtCreditoMax_TextChanged(object sender, EventArgs e)
@@ -247,6 +305,11 @@ namespace RamosHermanos.Capas.Interfaz
         {
             formContacto frm = new formContacto();
             frm.tabVar = 0;
+            frm.cbRolALL.SelectedValue = 1;
+            frm.txtIDALL.Text = txtIDcliente.Text;
+            frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
+            frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
+            frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
             frm.Show();
         }
 
@@ -254,54 +317,47 @@ namespace RamosHermanos.Capas.Interfaz
         {
             formContacto frm = new formContacto();
             frm.tabVar = 1;
+            frm.cbRolALL.SelectedValue = 1;
+            frm.txtIDALL.Text = txtIDcliente.Text;
+            frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
+            frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
+            frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
             frm.Show();
         }
 
         private void btnEmail_Click(object sender, EventArgs e)
         {
             formContacto frm = new formContacto();
+            //frm.tabContacto.SelectTab = tabEmails;
             frm.tabVar = 2;
+            frm.cbRolALL.SelectedValue = 1;
+            frm.txtIDALL.Text = txtIDcliente.Text;
+            frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
+            frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
+            frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
             frm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {            
             formtipoCliente frm = new formtipoCliente();
             frm.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (txtnumDoc.Text == "")
+            {
+                MessageBox.Show("Ingrese el Nº de documento del cliente a Eliminar");
+                return;
+            }
+            else
+            {
+                cliente.numDoc = txtnumDoc.Text;
+                ClienteB.DisableCliente(cliente, cbEstado);
+            }
 
-            //int[] array = new int[7];
-            //array[0] = Convert.ToInt32(txtLun.Text);
-            //array[1] = Convert.ToInt32(txtMar.Text);
-            //array[2] = Convert.ToInt32(txtMie.Text);
-            //array[3] = Convert.ToInt32(txtJue.Text);
-            //array[4] = Convert.ToInt32(txtVie.Text);
-            //array[5] = Convert.ToInt32(txtSab.Text);
-            //array[6] = Convert.ToInt32(txtDom.Text);
-
-            //visita.diasSemana[0] = Convert.ToBoolean(cbLunes.Checked);
-            //visita.diasSemana[1] = Convert.ToBoolean(cbMartes.Checked);
-            //visita.diasSemana[2] = Convert.ToBoolean(cbMiercoles.Checked);
-            //visita.diasSemana[3] = Convert.ToBoolean(cbJueves.Checked);
-            //visita.diasSemana[4] = Convert.ToBoolean(cbViernes.Checked);
-            //visita.diasSemana[5] = Convert.ToBoolean(cbSabado.Checked);
-            //visita.diasSemana[6] = Convert.ToBoolean(cbDomingo.Checked);
-
-            //MessageBox.Show(Convert.ToString(visita.diasSemana[1]));
- 
-
-
-            //VisitaB.CargarBOOL(comboBox1);
-            //bool[] diaSemana = new bool[3];
-            //diaSemana[0] = cbLunes.Checked;
-            //diaSemana[1] = cbMartes.Checked;
-            //diaSemana[2] = cbMiercoles.Checked;
-
-            //MessageBox.Show(Convert.ToString(diaSemana[0]) + " " + Convert.ToString(diaSemana[1]) + " " + Convert.ToString(diaSemana[2]));
-
+            CheckColor();
         }
 
         private void cbLunes_CheckedChanged(object sender, EventArgs e)
@@ -370,6 +426,30 @@ namespace RamosHermanos.Capas.Interfaz
                 txtDom.Enabled = false;
             else
                 txtDom.Enabled = true;
+        }
+
+        private void cbEstado_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckColor();
+        }
+
+        private void CheckColor()
+        {
+            if (cbEstado.Checked == true)
+            {
+                lblEstado.BackColor = Color.Green;
+                lblEstado.Text = "Habilitado";
+            }
+            else
+            {
+                lblEstado.BackColor = Color.Red;
+                lblEstado.Text = "Desabilitado";
+            }          
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+            
         }
 
 

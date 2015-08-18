@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace RamosHermanos.Capas.Entidades
 {
-    class RolEntity
+    class BarriosEntity
     {
-        public int idRol { get; set; }
-        public string rol { get; set; }
+        public int idBarrio { get; set; }
+        public int localidad { get; set; }
+        public string barrio { get; set; }
         public bool estado { get; set; }
     }
 }

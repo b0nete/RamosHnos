@@ -22,5 +22,11 @@ namespace RamosHermanos.Capas.Interfaz
             formCliente frm = new formCliente();
             frm.Show();
         }
+
+        private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formRoles frm = new formRoles();
+            frm.Show();
+        }
     }
 }

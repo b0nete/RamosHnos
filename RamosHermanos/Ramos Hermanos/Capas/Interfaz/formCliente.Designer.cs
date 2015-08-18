@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCliente));
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.lblEstado = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -109,7 +109,6 @@
             this.dtpB = new System.Windows.Forms.DateTimePicker();
             this.dtpA = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.tabAdicional = new System.Windows.Forms.TabPage();
@@ -150,13 +149,12 @@
             // 
             // tabInformacion
             // 
-            this.tabInformacion.Controls.Add(this.comboBox1);
+            this.tabInformacion.BackColor = System.Drawing.Color.Transparent;
             this.tabInformacion.Controls.Add(this.groupBox6);
             this.tabInformacion.Controls.Add(this.groupBox5);
             this.tabInformacion.Controls.Add(this.groupBox2);
             this.tabInformacion.Controls.Add(this.groupBox1);
             this.tabInformacion.Controls.Add(this.gbVisita);
-            this.tabInformacion.Controls.Add(this.button4);
             this.tabInformacion.Controls.Add(this.button5);
             this.tabInformacion.Controls.Add(this.btnSave);
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
@@ -165,18 +163,10 @@
             this.tabInformacion.Size = new System.Drawing.Size(776, 536);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
-            this.tabInformacion.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(244, 503);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 64;
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.lblEstado);
             this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.label18);
             this.groupBox6.Controls.Add(this.btnSearch);
@@ -216,6 +206,15 @@
             this.groupBox6.TabIndex = 68;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion Personal";
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(123, 22);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(0, 13);
+            this.lblEstado.TabIndex = 92;
             // 
             // button1
             // 
@@ -395,6 +394,7 @@
             this.cbEstado.Size = new System.Drawing.Size(15, 14);
             this.cbEstado.TabIndex = 77;
             this.cbEstado.UseVisualStyleBackColor = true;
+            this.cbEstado.CheckedChanged += new System.EventHandler(this.cbEstado_CheckedChanged);
             // 
             // label11
             // 
@@ -1073,17 +1073,6 @@
             this.label21.TabIndex = 41;
             this.label21.Text = "Horario de Visita";
             // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(701, 498);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(28, 28);
-            this.button4.TabIndex = 62;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // button5
             // 
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
@@ -1101,7 +1090,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(667, 498);
+            this.btnSave.Location = new System.Drawing.Point(701, 498);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 61;
@@ -1282,11 +1271,10 @@
         private System.Windows.Forms.DateTimePicker dtpB;
         private System.Windows.Forms.DateTimePicker dtpA;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Label lblEstado;
     }
 }
