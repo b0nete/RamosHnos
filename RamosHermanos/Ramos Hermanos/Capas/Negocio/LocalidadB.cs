@@ -26,8 +26,8 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("idProvincia", localidad.provincia);
-                cmd.Parameters.AddWithValue("localidad", localidad.localidad);
+                cmd.Parameters.AddWithValue("idProvincia", localidad.idProvincia);
+                cmd.Parameters.AddWithValue("localidad", localidad.idLocalidad);
                 cmd.Parameters.AddWithValue("estado", localidad.estado);
 
                 localidad.idLocalidad = Convert.ToInt32(cmd.ExecuteScalar());
@@ -43,7 +43,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void CargarCB(ComboBox cb, LocalidadEntity localidad)
+        public static void CargarCB(ComboBox cb, ComboBox cb2)
         {
             try
             {
@@ -54,13 +54,13 @@ namespace RamosHermanos.Capas.Negocio
 
                 ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("idProvincia", localidad.provincia);
+                cmd.Parameters.AddWithValue("@idProvincia", cb2.SelectedValue);
 
                   MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                   da.Fill(dt);
 
                   cb.DisplayMember = "localidad";
-                  cb.ValueMember = "idlocalidad";
+                  cb.ValueMember = "idLocalidad";
                   cb.DataSource = dt;
 
                   MySQL.DisconnectDB();

@@ -83,8 +83,8 @@ namespace RamosHermanos.Capas.Interfaz
                         CargarSaldo(txtIDcliente);
                         SaldoB.UpdateSaldo(saldo);
 
-                        //CargarVisita(txtIDcliente);
-                        //VisitaB.UpdateVisita(visita);
+                        CargarVisita(txtIDcliente);
+                        VisitaB.UpdateVisita(visita);
 
                         BuscarCliente();
                         return;
@@ -150,6 +150,7 @@ namespace RamosHermanos.Capas.Interfaz
 
                 CargarVisita(txtIDcliente);
                 VisitaB.BuscarVisita(visita);
+                txtIDVisita.Text = Convert.ToString(visita.idVisita);
                 dtpA.Text = visita.horarioVisitaA;
                 dtpB.Text = visita.horarioVisitaB;
                 //Dias
@@ -168,9 +169,15 @@ namespace RamosHermanos.Capas.Interfaz
                 txtVie.Text = Convert.ToString(visita.oviernes);
                 txtSab.Text = Convert.ToString(visita.osabado);
                 txtDom.Text = Convert.ToString(visita.odomingo);
+
+                //Contacto
+                DomicilioB.CargarTXT(txtDomic, txtIDcliente, 1);
+                EmailB.CargarTXT(txtEmail, txtIDcliente, 1);
+                TelefonoB.CargarTXT(txtTel, txtIDcliente, 1);
             }
 
             CheckColor();
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -451,6 +458,231 @@ namespace RamosHermanos.Capas.Interfaz
         {
             
         }
+
+        private void txtnumDoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+                if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else                   
+                    {
+                        e.Handled = true;
+                    } 
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+                if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                    if (Char.IsSeparator(e.KeyChar))
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    } 
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+                if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                    if (Char.IsSeparator(e.KeyChar))
+                    {
+                        e.Handled = false;
+                    }
+                    else
+                    {
+                        e.Handled = true;
+                    } 
+
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            //{
+            //    MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    e.Handled = true;
+            //    return;
+            //}
+        }
+
+        private void txtLun_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+                if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+        }
+
+        private void txtMar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+                if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+        }
+
+        private void txtMie_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+                if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+        }
+
+        private void txtJue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+                if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+        }
+
+        private void txtVie_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+                if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+        }
+
+        private void txtSab_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+                if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+        }
+
+        private void txtDom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+                if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+        }
+
+        private void groupBox4_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (VerificarCampos() == false)
+            {
+                return;
+            }
+            else 
+            {
+                DialogResult result = MessageBox.Show("Desea actualizar los datos del cliente?", "Actualizar", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    CargarCliente();
+                    ClienteB.UpdateCliente(cliente);
+
+                    CargarSaldo(txtIDcliente);
+                    SaldoB.UpdateSaldo(saldo);
+                                        
+                    CargarVisita(txtIDcliente);
+                    VisitaB.UpdateVisita(visita);
+                    //visita.idVisita = Convert.ToInt32(txtIDVisita.Text);
+                    CargarDias();
+                    VisitaB.UpdateDias(visita);
+                    CargarOrden();
+                    VisitaB.UpdateOrden(visita);
+
+                    BuscarCliente();
+                }             
+            }        
+        }
+
+
+
 
 
 

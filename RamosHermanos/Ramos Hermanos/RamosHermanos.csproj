@@ -120,7 +120,15 @@
     <Compile Include="Capas\Interfaz\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaz\Test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\Test.Designer.cs">
+      <DependentUpon>Test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Negocio\BarrioB.cs" />
     <Compile Include="Capas\Negocio\ClienteB.cs" />
+    <Compile Include="Capas\Negocio\DomicilioB.cs" />
     <Compile Include="Capas\Negocio\EmailB.cs" />
     <Compile Include="Capas\Negocio\LocalidadB.cs" />
     <Compile Include="Capas\Negocio\ProvinciaB.cs" />
@@ -162,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\Test.resx">
+      <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

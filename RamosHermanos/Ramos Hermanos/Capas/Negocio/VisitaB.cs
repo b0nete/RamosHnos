@@ -24,7 +24,8 @@ namespace RamosHermanos.Capas.Negocio
                 string query = @"SELECT * 
                                  FROM Visitas V
                                  INNER JOIN Dias D ON V.idVisita = D.idDias
-                                 INNER JOIN Orden O ON V.idVisita = O.idOrden";
+                                 INNER JOIN Orden O ON V.idVisita = O.idOrden
+                                 WHERE rol = @rol and idPersona = @idPersona";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -38,6 +39,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 DataRow row = dt.Rows[0];
 
+                visita.idVisita = Convert.ToInt32(row["idVisita"]);
                 visita.horarioVisitaA = Convert.ToString(row["horarioVisitaA"]);
                 visita.horarioVisitaB = Convert.ToString(row["horarioVisitaB"]);
                 // Dias
@@ -69,6 +71,42 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+//        public static VisitaEntity BuscarIDVisita(VisitaEntity visita)
+//        {
+//            try
+//            {
+//                MySQL.ConnectDB();
+
+//                string query = @"SELECT idVisita
+//                                 FROM Visitas V                                 
+//                                 WHERE rol = @rol and idPersona = @idPersona";
+
+//                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+//                cmd.Parameters.AddWithValue("@rol", visita.rol);
+//                cmd.Parameters.AddWithValue("@idPersona", visita.idPersona);
+
+//                DataTable dt = new DataTable();
+//                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+//                da.Fill(dt);
+
+//                DataRow row = dt.Rows[0];
+
+//                visita.idVisita = Convert.ToInt32(row["idVisita"]);
+
+//                MySQL.DisconnectDB();
+
+//                return visita;
+//            }
+
+//            catch (Exception ex)
+//            {
+//                MessageBox.Show("Error: " + ex);
+//                throw;
+//            }
+//        }
+
 
         public static VisitaEntity InsertVisita(VisitaEntity visita)
         {
@@ -88,6 +126,38 @@ namespace RamosHermanos.Capas.Negocio
 
                 visita.idVisita = Convert.ToInt32(cmd.ExecuteScalar());
                
+                //MessageBox.Show("Visita Guardada!");
+                MySQL.DisconnectDB();
+
+                return visita;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static VisitaEntity UpdateVisita(VisitaEntity visita)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"UPDATE visitas 
+                                 SET horarioVisitaA = @horarioVisitaA, horarioVisitaB = @horarioVisitaB
+                                 WHERE rol = @rol and idPersona = @idPersona;";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@rol", visita.rol);
+                cmd.Parameters.AddWithValue("@idPersona", visita.idPersona);
+                cmd.Parameters.AddWithValue("@horarioVisitaA", visita.horarioVisitaA);
+                cmd.Parameters.AddWithValue("@horarioVisitaB", visita.horarioVisitaB);
+
+                visita.idVisita = Convert.ToInt32(cmd.ExecuteScalar());
+
                 //MessageBox.Show("Visita Guardada!");
                 MySQL.DisconnectDB();
 
@@ -136,6 +206,42 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static VisitaEntity UpdateDias(VisitaEntity visita)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"UPDATE Dias
+                                 SET dlunes = @dlunes, dmartes = @dmartes, dmiercoles = @dmiercoles, djueves = @djueves, dviernes = @dviernes, dsabado = @dsabado, ddomingo = @ddomingo
+                                 WHERE idDias = @idDias";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idDias", visita.idDias);
+                cmd.Parameters.AddWithValue("@dlunes", visita.dlunes);
+                cmd.Parameters.AddWithValue("@dmartes", visita.dmartes);
+                cmd.Parameters.AddWithValue("@dmiercoles", visita.dmiercoles);
+                cmd.Parameters.AddWithValue("@djueves", visita.djueves);
+                cmd.Parameters.AddWithValue("@dviernes", visita.dviernes);
+                cmd.Parameters.AddWithValue("@dsabado", visita.dsabado);
+                cmd.Parameters.AddWithValue("@ddomingo", visita.ddomingo);
+
+                cmd.ExecuteNonQuery();
+
+                //MessageBox.Show("Visita Guardada!");
+                MySQL.DisconnectDB();
+
+                return visita;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static VisitaEntity InsertOrden(VisitaEntity visita)
         {
             try
@@ -171,30 +277,42 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void CargarBOOL(ComboBox cb)
+        public static VisitaEntity UpdateOrden(VisitaEntity visita)
         {
             try
             {
-                DataTable dt = new DataTable();
                 MySQL.ConnectDB();
 
-                string query = "SELECT diasSemana FROM visitas";  
+                string query = @"UPDATE Orden 
+                                 SET olunes = @olunes, omartes = @omartes, omiercoles = @omiercoles, ojueves = @ojueves, oviernes = @oviernes, osabado = @osabado, odomingo = @odomingo
+                                 WHERE idOrden = @idOrden";
 
-                ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                  MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                  da.Fill(dt);       
+                cmd.Parameters.AddWithValue("@idOrden", visita.idOrden);
+                cmd.Parameters.AddWithValue("@olunes", visita.olunes);
+                cmd.Parameters.AddWithValue("@omartes", visita.omartes);
+                cmd.Parameters.AddWithValue("@omiercoles", visita.omiercoles);
+                cmd.Parameters.AddWithValue("@ojueves", visita.ojueves);
+                cmd.Parameters.AddWithValue("@oviernes", visita.oviernes);
+                cmd.Parameters.AddWithValue("@osabado", visita.osabado);
+                cmd.Parameters.AddWithValue("@odomingo", visita.odomingo);
 
-                  cb.DataSource = dt;
-                  cb.DisplayMember = "diasSemana";
+                cmd.ExecuteNonQuery();
 
+                //MessageBox.Show("Visita Guardada!");
+                MySQL.DisconnectDB();
 
-                  MySQL.DisconnectDB();
+                return visita;
             }
+
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR" + ex);
+                MessageBox.Show("Error: " + ex);
+                throw;
             }
         }
+
+
     }
 }

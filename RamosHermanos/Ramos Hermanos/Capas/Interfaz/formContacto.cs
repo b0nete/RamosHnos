@@ -49,6 +49,16 @@ namespace RamosHermanos.Capas.Interfaz
             //Telefono
             tipoTelB.CargarCB(cbTipoTel);
             TelefonoB.CargarDGV(dgvTelefono, cbRolALL, txtIDALL);
+            //Domicilio
+            ProvinciaB.CargarCB(cbProvincia);
+            cbProvincia.SelectedValue = 5;
+
+            LocalidadB.CargarCB(cbLocalidad, cbProvincia);
+            cbLocalidad.SelectedValue = 26;
+
+            BarrioB.CargarCB(cbBarrio, cbLocalidad);
+            DomicilioB.CargarDGV(dgvDomicilio, cbRolALL, txtIDALL);
+
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -89,5 +99,68 @@ namespace RamosHermanos.Capas.Interfaz
         {
             this.Close();
         }
+
+        private void cbProvincia_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            LocalidadB.CargarCB(cbLocalidad, cbProvincia);
+            BarrioB.CargarCB(cbBarrio, cbLocalidad);
+        }
+
+        private void cbLocalidad_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            BarrioB.CargarCB(cbBarrio, cbLocalidad);
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            CargarDomicilio();
+            DomicilioB.InsertDomicilio(domicilio);
+        }
+
+        DomicilioEntity domicilio = new DomicilioEntity();
+        private void CargarDomicilio()
+        {
+            domicilio.rol = Convert.ToInt32(cbRolALL.SelectedValue);
+            domicilio.idPersona = Convert.ToInt32(txtIDALL.Text);
+            domicilio.provincia = Convert.ToInt32(cbProvincia.SelectedValue);
+            domicilio.localidad = Convert.ToInt32(cbLocalidad.SelectedValue);
+            domicilio.barrio = Convert.ToInt32(cbBarrio.SelectedValue);
+            domicilio.calle = txtCalle.Text;
+            domicilio.numero = txtnumCalle.Text;
+            domicilio.piso = txtPiso.Text;
+            domicilio.dpto = txtDpto.Text;
+            domicilio.CP = txtCP.Text;
+        }
+
+        private void dgvDomicilio_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvDomicilio_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvDomicilio.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+                //txtIDRol.Text = row.Cells["colIDRol"].Value.ToString();
+                cbProvincia.Text = row.Cells["colProvincia"].Value.ToString();
+                cbLocalidad.Text = row.Cells["colLocalidad"].Value.ToString();
+                cbBarrio.Text = row.Cells["colBarrio"].Value.ToString();
+                txtCalle.Text = row.Cells["colCalle"].Value.ToString();
+                txtnumCalle.Text = row.Cells["colNumero"].Value.ToString();
+                txtPiso.Text = row.Cells["colPiso"].Value.ToString();
+                txtDpto.Text = row.Cells["colDpto"].Value.ToString();
+                txtCP.Text = row.Cells["colCP"].Value.ToString();
+            }
+        }
+
+
+
     }
 }

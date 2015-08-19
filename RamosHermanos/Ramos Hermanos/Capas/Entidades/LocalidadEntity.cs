@@ -9,7 +9,7 @@ namespace RamosHermanos.Capas.Entidades
     class LocalidadEntity
     {
         public int idLocalidad { get; set; }
-        public int provincia { get; set; }
+        public int idProvincia { get; set; }
         public string localidad { get; set; }
         public bool estado { get; set; }
     }

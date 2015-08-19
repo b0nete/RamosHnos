@@ -10,15 +10,22 @@ using System.Windows.Forms;
 
 namespace RamosHermanos.Capas.Interfaz
 {
-    public partial class formDomicilio : Form
+    public partial class Test : Form
     {
-        public formDomicilio()
+        public Test()
         {
             InitializeComponent();
         }
 
-        private void formDomicilio_Load(object sender, EventArgs e)
+        private void comboBox1_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            
+        }
+
+        private void Test_Load(object sender, EventArgs e)
+        {
+
+
 
         }
     }
