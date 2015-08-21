@@ -218,17 +218,20 @@
             // 
             this.colIDRol.HeaderText = "ID Rol";
             this.colIDRol.Name = "colIDRol";
+            this.colIDRol.ReadOnly = true;
             this.colIDRol.Visible = false;
             // 
             // colRol
             // 
             this.colRol.HeaderText = "Rol";
             this.colRol.Name = "colRol";
+            this.colRol.ReadOnly = true;
             // 
             // colEstado
             // 
             this.colEstado.HeaderText = "Estado";
             this.colEstado.Name = "colEstado";
+            this.colEstado.ReadOnly = true;
             // 
             // formRoles
             // 

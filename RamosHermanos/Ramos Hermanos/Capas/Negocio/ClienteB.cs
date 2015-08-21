@@ -31,6 +31,7 @@ namespace RamosHermanos.Capas.Negocio
                 return false;
             else
                 return true;
+            
         }
 
         public static ClienteEntity UpdateCliente(ClienteEntity cliente)

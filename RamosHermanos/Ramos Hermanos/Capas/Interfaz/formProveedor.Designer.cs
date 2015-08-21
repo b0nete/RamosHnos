@@ -31,11 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProveedor));
             this.tabProveedor = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
-            this.tabAdicional = new System.Windows.Forms.TabPage();
-            this.tabListado = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabMovimientos = new System.Windows.Forms.TabPage();
-            this.tabPedido = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -78,15 +73,20 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.tabAdicional = new System.Windows.Forms.TabPage();
+            this.tabListado = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabMovimientos = new System.Windows.Forms.TabPage();
+            this.tabPedido = new System.Windows.Forms.TabPage();
             this.tabProveedor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
-            this.tabListado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbVisita.SuspendLayout();
+            this.tabListado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabProveedor
@@ -119,52 +119,6 @@
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.UseVisualStyleBackColor = true;
-            // 
-            // tabAdicional
-            // 
-            this.tabAdicional.Location = new System.Drawing.Point(4, 22);
-            this.tabAdicional.Name = "tabAdicional";
-            this.tabAdicional.Size = new System.Drawing.Size(776, 536);
-            this.tabAdicional.TabIndex = 2;
-            this.tabAdicional.Text = "Adicional";
-            this.tabAdicional.UseVisualStyleBackColor = true;
-            // 
-            // tabListado
-            // 
-            this.tabListado.Controls.Add(this.dataGridView1);
-            this.tabListado.Location = new System.Drawing.Point(4, 22);
-            this.tabListado.Name = "tabListado";
-            this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(776, 536);
-            this.tabListado.TabIndex = 1;
-            this.tabListado.Text = "Listado";
-            this.tabListado.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(762, 522);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // tabMovimientos
-            // 
-            this.tabMovimientos.Location = new System.Drawing.Point(4, 22);
-            this.tabMovimientos.Name = "tabMovimientos";
-            this.tabMovimientos.Size = new System.Drawing.Size(776, 536);
-            this.tabMovimientos.TabIndex = 3;
-            this.tabMovimientos.Text = "Movimientos";
-            this.tabMovimientos.UseVisualStyleBackColor = true;
-            // 
-            // tabPedido
-            // 
-            this.tabPedido.Location = new System.Drawing.Point(4, 22);
-            this.tabPedido.Name = "tabPedido";
-            this.tabPedido.Size = new System.Drawing.Size(776, 536);
-            this.tabPedido.TabIndex = 4;
-            this.tabPedido.Text = "Pedido";
-            this.tabPedido.UseVisualStyleBackColor = true;
             // 
             // groupBox6
             // 
@@ -638,6 +592,52 @@
             this.button6.TabIndex = 61;
             this.button6.UseVisualStyleBackColor = true;
             // 
+            // tabAdicional
+            // 
+            this.tabAdicional.Location = new System.Drawing.Point(4, 22);
+            this.tabAdicional.Name = "tabAdicional";
+            this.tabAdicional.Size = new System.Drawing.Size(776, 536);
+            this.tabAdicional.TabIndex = 2;
+            this.tabAdicional.Text = "Adicional";
+            this.tabAdicional.UseVisualStyleBackColor = true;
+            // 
+            // tabListado
+            // 
+            this.tabListado.Controls.Add(this.dataGridView1);
+            this.tabListado.Location = new System.Drawing.Point(4, 22);
+            this.tabListado.Name = "tabListado";
+            this.tabListado.Padding = new System.Windows.Forms.Padding(3);
+            this.tabListado.Size = new System.Drawing.Size(776, 536);
+            this.tabListado.TabIndex = 1;
+            this.tabListado.Text = "Listado";
+            this.tabListado.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(762, 522);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // tabMovimientos
+            // 
+            this.tabMovimientos.Location = new System.Drawing.Point(4, 22);
+            this.tabMovimientos.Name = "tabMovimientos";
+            this.tabMovimientos.Size = new System.Drawing.Size(776, 536);
+            this.tabMovimientos.TabIndex = 3;
+            this.tabMovimientos.Text = "Movimientos";
+            this.tabMovimientos.UseVisualStyleBackColor = true;
+            // 
+            // tabPedido
+            // 
+            this.tabPedido.Location = new System.Drawing.Point(4, 22);
+            this.tabPedido.Name = "tabPedido";
+            this.tabPedido.Size = new System.Drawing.Size(776, 536);
+            this.tabPedido.TabIndex = 4;
+            this.tabPedido.Text = "Pedido";
+            this.tabPedido.UseVisualStyleBackColor = true;
+            // 
             // formProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -646,10 +646,9 @@
             this.Controls.Add(this.tabProveedor);
             this.Name = "formProveedor";
             this.Text = "Proveedor";
+            this.Load += new System.EventHandler(this.formProveedor_Load);
             this.tabProveedor.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
-            this.tabListado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -658,6 +657,8 @@
             this.groupBox1.PerformLayout();
             this.gbVisita.ResumeLayout(false);
             this.gbVisita.PerformLayout();
+            this.tabListado.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

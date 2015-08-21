@@ -33,3 +33,4 @@ C:\Users\b0nete\Documents\GitHub\RamosHnos\RamosHermanos\Ramos Hermanos\obj\Debu
 C:\Users\b0nete\Documents\GitHub\RamosHnos\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.Capas.Interfaz.formtipoCliente.resources
 C:\Users\b0nete\Documents\GitHub\RamosHnos\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.Capas.Interfaz.formRoles.resources
 C:\Users\b0nete\Documents\GitHub\RamosHnos\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.Capas.Interfaz.Test.resources
+C:\Users\b0nete\Documents\GitHub\RamosHnos\RamosHermanos\Ramos Hermanos\obj\Debug\RamosHermanos.Capas.Interfaz.formRubro.resources

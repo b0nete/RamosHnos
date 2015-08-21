@@ -49,6 +49,7 @@ namespace RamosHermanos.Capas.Negocio
             try
             {
                 MySQL.ConnectDB();
+                dgv.Rows.Clear();
 
                 string query = "SELECT * FROM Emails WHERE rol = @rol and idPersona = @idPersona";
 

@@ -59,6 +59,7 @@ namespace RamosHermanos.Capas.Negocio
             try
             {
                 MySQL.ConnectDB();
+                dgv.Rows.Clear();
 
                 string query = @"SELECT D.idDomicilio, D.Calle, D.Numero, D.Piso, D.Dpto, D.CP, B.Barrio, L.Localidad, P.Provincia
                                  FROM Domicilios D 

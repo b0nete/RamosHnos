@@ -13,6 +13,58 @@ namespace RamosHermanos.Capas.Negocio
 {
     class TelefonoB
     {
+        public static bool ExisteTelefono(TelefonoEntity telefono)
+        {
+            MySQL.ConnectDB();
+
+            string query = @"SELECT COUNT(*)
+                             FROM Telefonos
+                             WHERE rol = @rol and idPersona = @idPersona and caracteristica = @caracteristica and numTel = @numTel";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+            cmd.Parameters.AddWithValue("@rol", telefono.rol);
+            cmd.Parameters.AddWithValue("@idPersona", telefono.idPersona);
+            cmd.Parameters.AddWithValue("@caracteristica", telefono.caracteristica);
+            cmd.Parameters.AddWithValue("@numTel", telefono.numTel);
+
+            int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (resultado == 0)
+                return false;
+            else
+                return true;
+        }
+
+        public static TelefonoEntity UpdateTelefono(TelefonoEntity telefono)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"UPDATE Telefonos
+                                 SET caracteristica = @caracteristica, numTel = @numTel, estado = @estado
+                                 WHERE idTelefono = @idTelefono";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idTelefono", telefono.idTelefono);
+                cmd.Parameters.AddWithValue("@caracteristica", telefono.caracteristica);
+                cmd.Parameters.AddWithValue("@numTel", telefono.numTel);
+                cmd.Parameters.AddWithValue("@estado", telefono.estado);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Telefono Actualizado!");
+                return telefono;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static TelefonoEntity InsertTelefono(TelefonoEntity telefono)
         {
             try
@@ -51,8 +103,12 @@ namespace RamosHermanos.Capas.Negocio
             try
             {
                 MySQL.ConnectDB();
+                dgv.Rows.Clear();
 
-                string query = "SELECT * FROM Telefonos WHERE rol = @rol and idPersona = @idPersona";
+                string query = @"SELECT T.idTelefono, TT.tipoTel, T.caracteristica, T.numTel, T.estado
+                                 FROM Telefonos T
+                                 INNER JOIN TipoTelefono TT ON T.TipoTel = TT.idTipoTel 
+                                 WHERE rol = @rol and idPersona = @idPersona";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -66,6 +122,8 @@ namespace RamosHermanos.Capas.Negocio
                     dgv.Rows.Add(
                     Convert.ToString(dr["idTelefono"]),
                     Convert.ToString(dr["tipoTel"]),
+                    Convert.ToString(dr["caracteristica"]),
+                    Convert.ToString(dr["numTel"]),
                     Convert.ToString(dr["caracteristica"]) +"-"+ Convert.ToString(dr["numTel"]),
                     Convert.ToBoolean(dr["estado"]));
                 }

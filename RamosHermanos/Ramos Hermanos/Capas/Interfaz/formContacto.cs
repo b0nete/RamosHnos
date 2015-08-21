@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions; //Para validar Email.
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
 
@@ -19,12 +20,14 @@ namespace RamosHermanos.Capas.Interfaz
         public formContacto()
         {
             InitializeComponent();
+
+            CheckColor(cbEstadoTel, lblEstadoEmail);
+            CheckColor(cbEstadoEmail, lblEstadoTel);
         }
 
         private void formContacto_Load(object sender, EventArgs e)
         {
-            CargaInicial();
-            
+            CargaInicial();            
         }
 
         private void CargaInicial()
@@ -63,9 +66,17 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button9_Click(object sender, EventArgs e)
         {
-            CargarEmail();
-            EmailB.InsertEmail(email);
-            EmailB.CargarDGV(dgvEmail, cbRolALL, txtIDALL);
+            if (ValidarEmail(txtEmail.Text) == false)
+            {
+                MessageBox.Show("Email Invalido");
+                return;
+            }
+            else
+            {
+                CargarEmail();
+                EmailB.InsertEmail(email);
+                EmailB.CargarDGV(dgvEmail, cbRolALL, txtIDALL);
+            }
         }
 
         EmailEntity email = new EmailEntity();
@@ -79,9 +90,26 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button3_Click(object sender, EventArgs e)
         {
-            CargarTelefono();
-            TelefonoB.InsertTelefono(telefono);
-            TelefonoB.CargarDGV(dgvTelefono, cbRolALL, txtIDALL);
+            if (ValidarTelefono() == false)
+            {
+                MessageBox.Show("Campos necesarios incompletos");
+                return;
+            }
+            else
+            {
+                CargarTelefono();
+                if (TelefonoB.ExisteTelefono(telefono) == true)
+                {
+                    MessageBox.Show("El telefono existe");
+                    return;
+                }
+                else
+                {
+                    CargarTelefono();
+                    TelefonoB.InsertTelefono(telefono);
+                    TelefonoB.CargarDGV(dgvTelefono, cbRolALL, txtIDALL);
+                }                
+            }            
         }
 
         TelefonoEntity telefono = new TelefonoEntity();
@@ -160,6 +188,139 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckColor(CheckBox cb, Label lbl)
+        {
+            if (cb.Checked == true)
+            {
+                lbl.BackColor = Color.Green;
+                lbl.Text = "Habilitado";
+            }
+            else
+            {
+                lbl.BackColor = Color.Red;
+                lbl.Text = "Desabilitado";
+            }
+        }
+
+        private void cbEstadoTel_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckColor(cbEstadoTel, lblEstadoTel);
+        }
+
+        private void cbEstadoEmail_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckColor(cbEstadoEmail, lblEstadoEmail);
+        }
+
+        private void dgvTelefono_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvTelefono.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+                cbTipoTel.Text = row.Cells["colIDTipoTel"].Value.ToString();
+                txtCaracteristica.Text = row.Cells["colCaracteristica"].Value.ToString();
+                txtNumTel.Text = row.Cells["colnumTel"].Value.ToString();
+                //cbEstadoTel.Checked = row.Cells["colEstadoTel"];
+            }
+        }
+
+        private void dgvEmail_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvDomicilio.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+                //txtIDRol.Text = row.Cells["colIDRol"].Value.ToString();
+                cbProvincia.Text = row.Cells["colProvincia"].Value.ToString();
+                cbLocalidad.Text = row.Cells["colLocalidad"].Value.ToString();
+                cbBarrio.Text = row.Cells["colBarrio"].Value.ToString();
+                txtCalle.Text = row.Cells["colCalle"].Value.ToString();
+                txtnumCalle.Text = row.Cells["colNumero"].Value.ToString();
+                txtPiso.Text = row.Cells["colPiso"].Value.ToString();
+                txtDpto.Text = row.Cells["colDpto"].Value.ToString();
+                txtCP.Text = row.Cells["colCP"].Value.ToString();
+            }
+        }
+
+        private void dgvTelefono_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        public static bool ValidarEmail(string seMailAComprobar)
+        {
+            String sFormato;
+            sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(seMailAComprobar, sFormato))
+            {
+                if (Regex.Replace(seMailAComprobar, sFormato, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private bool ValidarTelefono()
+        {
+            if (cbTipoTel.SelectedValue == null || txtCaracteristica.Text == string.Empty || txtNumTel.Text == string.Empty)
+            {
+                return false;
+            }
+            return true;            
+        }
+
+        private void btnUpdEmail_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnUpdTel_Click(object sender, EventArgs e)
+        {
+            if (ValidarTelefono() == false)
+            {
+                MessageBox.Show("Campos necesarios incompletos");
+                return;
+            }
+            else
+            {
+                CargarTelefono();
+                TelefonoB.UpdateTelefono(telefono);
+            }
+        }
 
 
     }

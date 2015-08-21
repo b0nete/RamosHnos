@@ -53,7 +53,7 @@ namespace RamosHermanos.Capas.Interfaz
         
             
 
-        private bool VerificarCampos() //Verificar valores necesarios cargados.
+        private bool ValidarCampos() //Verificar valores necesarios cargados.
         {
             if (txtnumDoc.Text == string.Empty || txtNombre.Text == string.Empty || txtApellido.Text == string.Empty || txtCUIL.MaskFull == false)
             {
@@ -65,7 +65,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void GuardarCliente()
         {
-            if (VerificarCampos() == false)
+            if (ValidarCampos() == false)
             {
                 return;
             }
@@ -140,7 +140,7 @@ namespace RamosHermanos.Capas.Interfaz
                 txtNombre.Text = cliente.nombre;
                 cbEstadoCivil.Text = cliente.estadoCivil;
                 cbIVA.Text = cliente.condicionIVA;
-                //cbTipoCliente.SelectedValue = cliente.tipoCliente;
+                cbTipoCliente.SelectedValue = cliente.tipoCliente;
                 cbEstado.Checked = cliente.estado;
 
                 CargarSaldo(txtIDcliente);
@@ -310,39 +310,60 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnDomicilio_Click(object sender, EventArgs e)
         {
-            formContacto frm = new formContacto();
-            frm.tabVar = 0;
-            frm.cbRolALL.SelectedValue = 1;
-            frm.txtIDALL.Text = txtIDcliente.Text;
-            frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
-            frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
-            frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
-            frm.Show();
+            if (txtIDcliente.Text == string.Empty)
+            {
+                MessageBox.Show("Ingrese un cliente");
+            }
+            else
+            {
+                formContacto frm = new formContacto();
+                frm.tabVar = 0;
+                frm.cbRolALL.SelectedValue = 1;
+                frm.txtIDALL.Text = txtIDcliente.Text;
+                frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.Show();
+            }
         }
 
         private void btnTelefono_Click_1(object sender, EventArgs e)
         {
-            formContacto frm = new formContacto();
-            frm.tabVar = 1;
-            frm.cbRolALL.SelectedValue = 1;
-            frm.txtIDALL.Text = txtIDcliente.Text;
-            frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
-            frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
-            frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
-            frm.Show();
+            if (txtIDcliente.Text == string.Empty)
+            {
+                MessageBox.Show("Ingrese un cliente");
+            }
+            else
+            {
+                formContacto frm = new formContacto();
+                frm.tabVar = 1;
+                frm.cbRolALL.SelectedValue = 1;
+                frm.txtIDALL.Text = txtIDcliente.Text;
+                frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.Show();
+            }
         }
 
         private void btnEmail_Click(object sender, EventArgs e)
         {
-            formContacto frm = new formContacto();
-            //frm.tabContacto.SelectTab = tabEmails;
-            frm.tabVar = 2;
-            frm.cbRolALL.SelectedValue = 1;
-            frm.txtIDALL.Text = txtIDcliente.Text;
-            frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
-            frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
-            frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
-            frm.Show();
+            if (txtIDcliente.Text == string.Empty)
+            {
+                MessageBox.Show("Ingrese un cliente");
+            }
+            else
+            {
+                formContacto frm = new formContacto();
+                //frm.tabContacto.SelectTab = tabEmails;
+                frm.tabVar = 2;
+                frm.cbRolALL.SelectedValue = 1;
+                frm.txtIDALL.Text = txtIDcliente.Text;
+                frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.Show();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -653,7 +674,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (VerificarCampos() == false)
+            if (ValidarCampos() == false)
             {
                 return;
             }

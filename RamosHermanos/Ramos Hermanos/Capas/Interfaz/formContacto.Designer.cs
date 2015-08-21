@@ -37,6 +37,15 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.txtNombreDom = new System.Windows.Forms.TextBox();
             this.dgvDomicilio = new System.Windows.Forms.DataGridView();
+            this.colIDDom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDpto = new System.Windows.Forms.TextBox();
@@ -72,10 +81,6 @@
             this.btnDelTel = new System.Windows.Forms.Button();
             this.txtNombreTel = new System.Windows.Forms.TextBox();
             this.dgvTelefono = new System.Windows.Forms.DataGridView();
-            this.colIDTipoTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTipoTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstadoTel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbEstadoTel = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -102,15 +107,17 @@
             this.cbEstadoEmail = new System.Windows.Forms.CheckBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.colIDDom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblEstadoTel = new System.Windows.Forms.Label();
+            this.lblEstadoEmail = new System.Windows.Forms.Label();
+            this.colIDTipoTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipoTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCaracteristica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colnumTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoTel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnUpdDom = new System.Windows.Forms.Button();
+            this.btnUpdTel = new System.Windows.Forms.Button();
+            this.btnUpdEmail = new System.Windows.Forms.Button();
             this.tabContacto.SuspendLayout();
             this.tabDomicilios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDomicilio)).BeginInit();
@@ -137,6 +144,7 @@
             // 
             // tabDomicilios
             // 
+            this.tabDomicilios.Controls.Add(this.btnUpdDom);
             this.tabDomicilios.Controls.Add(this.label5);
             this.tabDomicilios.Controls.Add(this.btnSaveDom);
             this.tabDomicilios.Controls.Add(this.button1);
@@ -170,7 +178,7 @@
             this.btnSaveDom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSaveDom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveDom.Location = new System.Drawing.Point(706, 176);
+            this.btnSaveDom.Location = new System.Drawing.Point(672, 176);
             this.btnSaveDom.Name = "btnSaveDom";
             this.btnSaveDom.Size = new System.Drawing.Size(28, 28);
             this.btnSaveDom.TabIndex = 87;
@@ -187,6 +195,7 @@
             this.button1.Size = new System.Drawing.Size(28, 28);
             this.button1.TabIndex = 90;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnDel
             // 
@@ -229,6 +238,61 @@
             this.dgvDomicilio.TabIndex = 88;
             this.dgvDomicilio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDomicilio_CellContentClick);
             this.dgvDomicilio.SelectionChanged += new System.EventHandler(this.dgvDomicilio_SelectionChanged);
+            // 
+            // colIDDom
+            // 
+            this.colIDDom.HeaderText = "idDomicilio";
+            this.colIDDom.Name = "colIDDom";
+            this.colIDDom.ReadOnly = true;
+            this.colIDDom.Visible = false;
+            // 
+            // colCalle
+            // 
+            this.colCalle.HeaderText = "Calle";
+            this.colCalle.Name = "colCalle";
+            this.colCalle.ReadOnly = true;
+            // 
+            // colNumero
+            // 
+            this.colNumero.HeaderText = "Numero";
+            this.colNumero.Name = "colNumero";
+            this.colNumero.ReadOnly = true;
+            // 
+            // colPiso
+            // 
+            this.colPiso.HeaderText = "colPiso";
+            this.colPiso.Name = "colPiso";
+            this.colPiso.ReadOnly = true;
+            // 
+            // colDpto
+            // 
+            this.colDpto.HeaderText = "Dpto";
+            this.colDpto.Name = "colDpto";
+            this.colDpto.ReadOnly = true;
+            // 
+            // colCP
+            // 
+            this.colCP.HeaderText = "CP";
+            this.colCP.Name = "colCP";
+            this.colCP.ReadOnly = true;
+            // 
+            // colBarrio
+            // 
+            this.colBarrio.HeaderText = "Barrio";
+            this.colBarrio.Name = "colBarrio";
+            this.colBarrio.ReadOnly = true;
+            // 
+            // colLocalidad
+            // 
+            this.colLocalidad.HeaderText = "Localidad";
+            this.colLocalidad.Name = "colLocalidad";
+            this.colLocalidad.ReadOnly = true;
+            // 
+            // colProvincia
+            // 
+            this.colProvincia.HeaderText = "Provincia";
+            this.colProvincia.Name = "colProvincia";
+            this.colProvincia.ReadOnly = true;
             // 
             // groupBox2
             // 
@@ -568,6 +632,7 @@
             // 
             // tabTelefonos
             // 
+            this.tabTelefonos.Controls.Add(this.btnUpdTel);
             this.tabTelefonos.Controls.Add(this.label16);
             this.tabTelefonos.Controls.Add(this.btnSaveTel);
             this.tabTelefonos.Controls.Add(this.button7);
@@ -601,7 +666,7 @@
             this.btnSaveTel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSaveTel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveTel.Location = new System.Drawing.Point(706, 98);
+            this.btnSaveTel.Location = new System.Drawing.Point(672, 98);
             this.btnSaveTel.Name = "btnSaveTel";
             this.btnSaveTel.Size = new System.Drawing.Size(28, 28);
             this.btnSaveTel.TabIndex = 98;
@@ -647,6 +712,8 @@
             this.dgvTelefono.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDTipoTel,
             this.colTipoTel,
+            this.colCaracteristica,
+            this.colnumTel,
             this.colTelefono,
             this.colEstadoTel});
             this.dgvTelefono.Location = new System.Drawing.Point(8, 132);
@@ -654,34 +721,12 @@
             this.dgvTelefono.ReadOnly = true;
             this.dgvTelefono.Size = new System.Drawing.Size(760, 364);
             this.dgvTelefono.TabIndex = 99;
-            // 
-            // colIDTipoTel
-            // 
-            this.colIDTipoTel.HeaderText = "Tipo Telefono";
-            this.colIDTipoTel.Name = "colIDTipoTel";
-            this.colIDTipoTel.ReadOnly = true;
-            this.colIDTipoTel.Visible = false;
-            // 
-            // colTipoTel
-            // 
-            this.colTipoTel.HeaderText = "Tipo Telefono";
-            this.colTipoTel.Name = "colTipoTel";
-            this.colTipoTel.ReadOnly = true;
-            // 
-            // colTelefono
-            // 
-            this.colTelefono.HeaderText = "Telefono";
-            this.colTelefono.Name = "colTelefono";
-            this.colTelefono.ReadOnly = true;
-            // 
-            // colEstadoTel
-            // 
-            this.colEstadoTel.HeaderText = "Estado";
-            this.colEstadoTel.Name = "colEstadoTel";
-            this.colEstadoTel.ReadOnly = true;
+            this.dgvTelefono.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefono_CellContentClick);
+            this.dgvTelefono.SelectionChanged += new System.EventHandler(this.dgvTelefono_SelectionChanged);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblEstadoTel);
             this.groupBox1.Controls.Add(this.cbEstadoTel);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.txtNumTel);
@@ -696,6 +741,7 @@
             this.groupBox1.TabIndex = 95;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Telefono";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // cbEstadoTel
             // 
@@ -707,6 +753,7 @@
             this.cbEstadoTel.Size = new System.Drawing.Size(15, 14);
             this.cbEstadoTel.TabIndex = 109;
             this.cbEstadoTel.UseVisualStyleBackColor = true;
+            this.cbEstadoTel.CheckedChanged += new System.EventHandler(this.cbEstadoTel_CheckedChanged);
             // 
             // label17
             // 
@@ -767,6 +814,7 @@
             // 
             // tabEmails
             // 
+            this.tabEmails.Controls.Add(this.btnUpdEmail);
             this.tabEmails.Controls.Add(this.lblRolTel);
             this.tabEmails.Controls.Add(this.label26);
             this.tabEmails.Controls.Add(this.label27);
@@ -828,7 +876,7 @@
             this.btnSaveEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSaveEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveEmail.Location = new System.Drawing.Point(705, 99);
+            this.btnSaveEmail.Location = new System.Drawing.Point(671, 99);
             this.btnSaveEmail.Name = "btnSaveEmail";
             this.btnSaveEmail.Size = new System.Drawing.Size(28, 28);
             this.btnSaveEmail.TabIndex = 109;
@@ -866,6 +914,7 @@
             this.button11.Size = new System.Drawing.Size(28, 28);
             this.button11.TabIndex = 112;
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // txtNombreEmail
             // 
@@ -889,6 +938,7 @@
             this.dgvEmail.ReadOnly = true;
             this.dgvEmail.Size = new System.Drawing.Size(760, 364);
             this.dgvEmail.TabIndex = 110;
+            this.dgvEmail.SelectionChanged += new System.EventHandler(this.dgvEmail_SelectionChanged);
             // 
             // colIDEmail
             // 
@@ -920,6 +970,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.lblEstadoEmail);
             this.groupBox3.Controls.Add(this.cbEstadoEmail);
             this.groupBox3.Controls.Add(this.txtEmail);
             this.groupBox3.Controls.Add(this.label29);
@@ -941,6 +992,7 @@
             this.cbEstadoEmail.Size = new System.Drawing.Size(15, 14);
             this.cbEstadoEmail.TabIndex = 108;
             this.cbEstadoEmail.UseVisualStyleBackColor = true;
+            this.cbEstadoEmail.CheckedChanged += new System.EventHandler(this.cbEstadoEmail_CheckedChanged);
             // 
             // txtEmail
             // 
@@ -960,60 +1012,95 @@
             this.label29.TabIndex = 106;
             this.label29.Text = "Email";
             // 
-            // colIDDom
+            // lblEstadoTel
             // 
-            this.colIDDom.HeaderText = "idDomicilio";
-            this.colIDDom.Name = "colIDDom";
-            this.colIDDom.ReadOnly = true;
-            this.colIDDom.Visible = false;
+            this.lblEstadoTel.AutoSize = true;
+            this.lblEstadoTel.Location = new System.Drawing.Point(684, 25);
+            this.lblEstadoTel.Name = "lblEstadoTel";
+            this.lblEstadoTel.Size = new System.Drawing.Size(0, 13);
+            this.lblEstadoTel.TabIndex = 93;
             // 
-            // colCalle
+            // lblEstadoEmail
             // 
-            this.colCalle.HeaderText = "Calle";
-            this.colCalle.Name = "colCalle";
-            this.colCalle.ReadOnly = true;
+            this.lblEstadoEmail.AutoSize = true;
+            this.lblEstadoEmail.Location = new System.Drawing.Point(675, 26);
+            this.lblEstadoEmail.Name = "lblEstadoEmail";
+            this.lblEstadoEmail.Size = new System.Drawing.Size(0, 13);
+            this.lblEstadoEmail.TabIndex = 93;
             // 
-            // colNumero
+            // colIDTipoTel
             // 
-            this.colNumero.HeaderText = "Numero";
-            this.colNumero.Name = "colNumero";
-            this.colNumero.ReadOnly = true;
+            this.colIDTipoTel.HeaderText = "Tipo Telefono";
+            this.colIDTipoTel.Name = "colIDTipoTel";
+            this.colIDTipoTel.ReadOnly = true;
+            this.colIDTipoTel.Visible = false;
             // 
-            // colPiso
+            // colTipoTel
             // 
-            this.colPiso.HeaderText = "colPiso";
-            this.colPiso.Name = "colPiso";
-            this.colPiso.ReadOnly = true;
+            this.colTipoTel.HeaderText = "Tipo Telefono";
+            this.colTipoTel.Name = "colTipoTel";
+            this.colTipoTel.ReadOnly = true;
             // 
-            // colDpto
+            // colCaracteristica
             // 
-            this.colDpto.HeaderText = "Dpto";
-            this.colDpto.Name = "colDpto";
-            this.colDpto.ReadOnly = true;
+            this.colCaracteristica.HeaderText = "Caracteristica";
+            this.colCaracteristica.Name = "colCaracteristica";
+            this.colCaracteristica.ReadOnly = true;
+            this.colCaracteristica.Visible = false;
             // 
-            // colCP
+            // colnumTel
             // 
-            this.colCP.HeaderText = "CP";
-            this.colCP.Name = "colCP";
-            this.colCP.ReadOnly = true;
+            this.colnumTel.HeaderText = "numTel";
+            this.colnumTel.Name = "colnumTel";
+            this.colnumTel.ReadOnly = true;
+            this.colnumTel.Visible = false;
             // 
-            // colBarrio
+            // colTelefono
             // 
-            this.colBarrio.HeaderText = "Barrio";
-            this.colBarrio.Name = "colBarrio";
-            this.colBarrio.ReadOnly = true;
+            this.colTelefono.HeaderText = "Telefono";
+            this.colTelefono.Name = "colTelefono";
+            this.colTelefono.ReadOnly = true;
             // 
-            // colLocalidad
+            // colEstadoTel
             // 
-            this.colLocalidad.HeaderText = "Localidad";
-            this.colLocalidad.Name = "colLocalidad";
-            this.colLocalidad.ReadOnly = true;
+            this.colEstadoTel.HeaderText = "Estado";
+            this.colEstadoTel.Name = "colEstadoTel";
+            this.colEstadoTel.ReadOnly = true;
             // 
-            // colProvincia
+            // btnUpdDom
             // 
-            this.colProvincia.HeaderText = "Provincia";
-            this.colProvincia.Name = "colProvincia";
-            this.colProvincia.ReadOnly = true;
+            this.btnUpdDom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdDom.BackgroundImage")));
+            this.btnUpdDom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpdDom.Location = new System.Drawing.Point(706, 176);
+            this.btnUpdDom.Name = "btnUpdDom";
+            this.btnUpdDom.Size = new System.Drawing.Size(28, 28);
+            this.btnUpdDom.TabIndex = 91;
+            this.btnUpdDom.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdTel
+            // 
+            this.btnUpdTel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdTel.BackgroundImage")));
+            this.btnUpdTel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpdTel.Location = new System.Drawing.Point(706, 98);
+            this.btnUpdTel.Name = "btnUpdTel";
+            this.btnUpdTel.Size = new System.Drawing.Size(28, 28);
+            this.btnUpdTel.TabIndex = 102;
+            this.btnUpdTel.UseVisualStyleBackColor = true;
+            this.btnUpdTel.Click += new System.EventHandler(this.btnUpdTel_Click);
+            // 
+            // btnUpdEmail
+            // 
+            this.btnUpdEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdEmail.BackgroundImage")));
+            this.btnUpdEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpdEmail.Location = new System.Drawing.Point(705, 99);
+            this.btnUpdEmail.Name = "btnUpdEmail";
+            this.btnUpdEmail.Size = new System.Drawing.Size(28, 28);
+            this.btnUpdEmail.TabIndex = 116;
+            this.btnUpdEmail.UseVisualStyleBackColor = true;
+            this.btnUpdEmail.Click += new System.EventHandler(this.btnUpdEmail_Click);
             // 
             // formContacto
             // 
@@ -1115,10 +1202,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colEstado;
         private System.Windows.Forms.CheckBox cbEstadoTel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDTipoTel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTipoTel;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTelefono;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colEstadoTel;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDDom;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNumero;
@@ -1128,5 +1211,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colBarrio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLocalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProvincia;
+        private System.Windows.Forms.Label lblEstadoTel;
+        private System.Windows.Forms.Label lblEstadoEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDTipoTel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTipoTel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCaracteristica;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colnumTel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTelefono;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colEstadoTel;
+        private System.Windows.Forms.Button btnUpdDom;
+        private System.Windows.Forms.Button btnUpdTel;
+        private System.Windows.Forms.Button btnUpdEmail;
     }
 }

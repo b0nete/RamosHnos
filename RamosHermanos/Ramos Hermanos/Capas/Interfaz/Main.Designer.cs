@@ -53,6 +53,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mcAgenda = new System.Windows.Forms.MonthCalendar();
+            this.rubroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +70,8 @@
             this.usuariosToolStripMenuItem,
             this.rolesToolStripMenuItem,
             this.salirToolStripMenuItem,
-            this.testToolStripMenuItem});
+            this.testToolStripMenuItem,
+            this.rubroToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(784, 24);
@@ -235,6 +237,13 @@
             this.mcAgenda.Name = "mcAgenda";
             this.mcAgenda.TabIndex = 25;
             // 
+            // rubroToolStripMenuItem
+            // 
+            this.rubroToolStripMenuItem.Name = "rubroToolStripMenuItem";
+            this.rubroToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.rubroToolStripMenuItem.Text = "Rubro";
+            this.rubroToolStripMenuItem.Click += new System.EventHandler(this.rubroToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,5 +288,6 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.MonthCalendar mcAgenda;
+        private System.Windows.Forms.ToolStripMenuItem rubroToolStripMenuItem;
     }
 }
