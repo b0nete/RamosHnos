@@ -33,7 +33,7 @@
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtSaldo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.cbTipoCliente = new System.Windows.Forms.ComboBox();
@@ -45,12 +45,12 @@
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtcuil = new System.Windows.Forms.MaskedTextBox();
-            this.txtIDcliente = new System.Windows.Forms.TextBox();
+            this.txtcuit = new System.Windows.Forms.MaskedTextBox();
+            this.txtIDprov = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtprov = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -58,7 +58,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.btnTelefono = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -78,6 +78,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.tabPedido = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtsaldoActual = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabProveedor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -122,8 +125,11 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.label6);
+            this.groupBox6.Controls.Add(this.txtsaldoActual);
+            this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Controls.Add(this.label2);
-            this.groupBox6.Controls.Add(this.textBox4);
+            this.groupBox6.Controls.Add(this.txtSaldo);
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.btnSearch);
             this.groupBox6.Controls.Add(this.cbTipoCliente);
@@ -135,12 +141,12 @@
             this.groupBox6.Controls.Add(this.cbEstado);
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.Controls.Add(this.label8);
-            this.groupBox6.Controls.Add(this.txtcuil);
-            this.groupBox6.Controls.Add(this.txtIDcliente);
+            this.groupBox6.Controls.Add(this.txtcuit);
+            this.groupBox6.Controls.Add(this.txtIDprov);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.label15);
             this.groupBox6.Controls.Add(this.label14);
-            this.groupBox6.Controls.Add(this.txtApellido);
+            this.groupBox6.Controls.Add(this.txtprov);
             this.groupBox6.Controls.Add(this.label1);
             this.groupBox6.Location = new System.Drawing.Point(6, 10);
             this.groupBox6.Name = "groupBox6";
@@ -156,29 +162,29 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label2.ForeColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(59, 206);
+            this.label2.Location = new System.Drawing.Point(16, 206);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(11, 13);
             this.label2.TabIndex = 90;
             this.label2.Text = "*";
             // 
-            // textBox4
+            // txtSaldo
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox4.Location = new System.Drawing.Point(102, 204);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(355, 20);
-            this.textBox4.TabIndex = 89;
+            this.txtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtSaldo.Location = new System.Drawing.Point(102, 204);
+            this.txtSaldo.Name = "txtSaldo";
+            this.txtSaldo.Size = new System.Drawing.Size(355, 20);
+            this.txtSaldo.TabIndex = 89;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(67, 207);
+            this.label4.Location = new System.Drawing.Point(31, 233);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 91;
-            this.label4.Text = "Saldo";
+            this.label4.Text = "Saldo Actual";
             // 
             // btnSearch
             // 
@@ -297,24 +303,24 @@
             this.label8.TabIndex = 30;
             this.label8.Text = "Nº Proveedor";
             // 
-            // txtcuil
+            // txtcuit
             // 
-            this.txtcuil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcuil.Location = new System.Drawing.Point(102, 95);
-            this.txtcuil.Mask = "00-00000000-0";
-            this.txtcuil.Name = "txtcuil";
-            this.txtcuil.Size = new System.Drawing.Size(355, 20);
-            this.txtcuil.TabIndex = 61;
-            this.txtcuil.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtcuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcuit.Location = new System.Drawing.Point(102, 95);
+            this.txtcuit.Mask = "00-00000000-0";
+            this.txtcuit.Name = "txtcuit";
+            this.txtcuit.Size = new System.Drawing.Size(355, 20);
+            this.txtcuit.TabIndex = 61;
+            this.txtcuit.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // txtIDcliente
+            // txtIDprov
             // 
-            this.txtIDcliente.Enabled = false;
-            this.txtIDcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtIDcliente.Location = new System.Drawing.Point(102, 42);
-            this.txtIDcliente.Name = "txtIDcliente";
-            this.txtIDcliente.Size = new System.Drawing.Size(355, 20);
-            this.txtIDcliente.TabIndex = 31;
+            this.txtIDprov.Enabled = false;
+            this.txtIDprov.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtIDprov.Location = new System.Drawing.Point(102, 42);
+            this.txtIDprov.Name = "txtIDprov";
+            this.txtIDprov.Size = new System.Drawing.Size(355, 20);
+            this.txtIDprov.TabIndex = 31;
             // 
             // label16
             // 
@@ -352,13 +358,13 @@
             this.label14.TabIndex = 69;
             this.label14.Text = "CUIT";
             // 
-            // txtApellido
+            // txtprov
             // 
-            this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtApellido.Location = new System.Drawing.Point(102, 124);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(355, 20);
-            this.txtApellido.TabIndex = 62;
+            this.txtprov.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtprov.Location = new System.Drawing.Point(102, 124);
+            this.txtprov.Name = "txtprov";
+            this.txtprov.Size = new System.Drawing.Size(355, 20);
+            this.txtprov.TabIndex = 62;
             // 
             // label1
             // 
@@ -394,7 +400,7 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.btnTelefono);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textEmail);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.label3);
@@ -440,13 +446,13 @@
             this.btnTelefono.TabIndex = 57;
             this.btnTelefono.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // textEmail
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox1.Location = new System.Drawing.Point(102, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(355, 20);
-            this.textBox1.TabIndex = 53;
+            this.textEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textEmail.Location = new System.Drawing.Point(102, 30);
+            this.textEmail.Name = "textEmail";
+            this.textEmail.Size = new System.Drawing.Size(355, 20);
+            this.textEmail.TabIndex = 53;
             // 
             // label5
             // 
@@ -591,6 +597,7 @@
             this.button6.Size = new System.Drawing.Size(28, 28);
             this.button6.TabIndex = 61;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // tabAdicional
             // 
@@ -638,6 +645,37 @@
             this.tabPedido.Text = "Pedido";
             this.tabPedido.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(16, 232);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(11, 13);
+            this.label6.TabIndex = 93;
+            this.label6.Text = "*";
+            // 
+            // txtsaldoActual
+            // 
+            this.txtsaldoActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtsaldoActual.Location = new System.Drawing.Point(102, 230);
+            this.txtsaldoActual.Name = "txtsaldoActual";
+            this.txtsaldoActual.Size = new System.Drawing.Size(355, 20);
+            this.txtsaldoActual.TabIndex = 92;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label9.Location = new System.Drawing.Point(26, 207);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(73, 13);
+            this.label9.TabIndex = 94;
+            this.label9.Text = "Saldo Maximo";
+            // 
             // formProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -674,7 +712,7 @@
         private System.Windows.Forms.TabPage tabPedido;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtSaldo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.ComboBox cbTipoCliente;
@@ -686,12 +724,12 @@
         private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MaskedTextBox txtcuil;
-        public System.Windows.Forms.TextBox txtIDcliente;
+        private System.Windows.Forms.MaskedTextBox txtcuit;
+        public System.Windows.Forms.TextBox txtIDprov;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtprov;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -699,7 +737,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btnTelefono;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textEmail;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
@@ -714,5 +752,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtsaldoActual;
+        private System.Windows.Forms.Label label9;
     }
 }

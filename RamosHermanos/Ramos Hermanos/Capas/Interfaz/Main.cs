@@ -41,5 +41,11 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
 
         }
+
+        private void agregarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formProveedor frm = new formProveedor();
+            frm.Show();
+        }
     }
 }

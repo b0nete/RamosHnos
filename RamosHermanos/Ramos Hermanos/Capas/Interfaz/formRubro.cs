@@ -39,6 +39,11 @@ namespace RamosHermanos.Capas.Interfaz
             RubroB.CargarDGV(dataGridView1);
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     
     
     }

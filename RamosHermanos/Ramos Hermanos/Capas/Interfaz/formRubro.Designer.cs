@@ -182,6 +182,7 @@
             this.groupBox1.TabIndex = 84;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rubro";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // dataGridView1
             // 
@@ -202,17 +203,20 @@
             // 
             this.colIdRubro.HeaderText = "ID Rubro";
             this.colIdRubro.Name = "colIdRubro";
+            this.colIdRubro.ReadOnly = true;
             this.colIdRubro.Visible = false;
             // 
             // colRubro
             // 
             this.colRubro.HeaderText = "Rubro";
             this.colRubro.Name = "colRubro";
+            this.colRubro.ReadOnly = true;
             // 
             // colEstado
             // 
             this.colEstado.HeaderText = "Estado";
             this.colEstado.Name = "colEstado";
+            this.colEstado.ReadOnly = true;
             // 
             // btnClose
             // 

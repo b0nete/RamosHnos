@@ -52,6 +52,7 @@
     <Compile Include="Capas\Entidades\DomicilioEntity.cs" />
     <Compile Include="Capas\Entidades\EmailEntity.cs" />
     <Compile Include="Capas\Entidades\LocalidadEntity.cs" />
+    <Compile Include="Capas\Entidades\ProveedorEntity.cs" />
     <Compile Include="Capas\Entidades\ProvinciaEntity.cs" />
     <Compile Include="Capas\Entidades\RolEntity.cs" />
     <Compile Include="Capas\Entidades\RubroEntity.cs" />
@@ -138,6 +139,7 @@
     <Compile Include="Capas\Negocio\DomicilioB.cs" />
     <Compile Include="Capas\Negocio\EmailB.cs" />
     <Compile Include="Capas\Negocio\LocalidadB.cs" />
+    <Compile Include="Capas\Negocio\ProveedorB.cs" />
     <Compile Include="Capas\Negocio\ProvinciaB.cs" />
     <Compile Include="Capas\Negocio\RolB.cs" />
     <Compile Include="Capas\Negocio\RubroB.cs" />
