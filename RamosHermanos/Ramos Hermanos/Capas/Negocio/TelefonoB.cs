@@ -42,12 +42,13 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query = @"UPDATE Telefonos
-                                 SET caracteristica = @caracteristica, numTel = @numTel, estado = @estado
+                                 SET tipoTel = @tipoTel, caracteristica = @caracteristica, numTel = @numTel, estado = @estado
                                  WHERE idTelefono = @idTelefono";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@idTelefono", telefono.idTelefono);
+                cmd.Parameters.AddWithValue("@tipoTel", telefono.tipoTel);
                 cmd.Parameters.AddWithValue("@caracteristica", telefono.caracteristica);
                 cmd.Parameters.AddWithValue("@numTel", telefono.numTel);
                 cmd.Parameters.AddWithValue("@estado", telefono.estado);
@@ -105,7 +106,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT T.idTelefono, TT.tipoTel, T.caracteristica, T.numTel, T.estado
+                string query = @"SELECT T.idTelefono, TT.idTipoTel, TT.tipoTel, T.caracteristica, T.numTel, T.estado
                                  FROM Telefonos T
                                  INNER JOIN TipoTelefono TT ON T.TipoTel = TT.idTipoTel 
                                  WHERE rol = @rol and idPersona = @idPersona";
@@ -121,6 +122,7 @@ namespace RamosHermanos.Capas.Negocio
                 {
                     dgv.Rows.Add(
                     Convert.ToString(dr["idTelefono"]),
+                    Convert.ToString(dr["idTipoTel"]),
                     Convert.ToString(dr["tipoTel"]),
                     Convert.ToString(dr["caracteristica"]),
                     Convert.ToString(dr["numTel"]),

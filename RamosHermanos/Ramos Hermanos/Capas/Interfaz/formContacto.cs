@@ -23,6 +23,7 @@ namespace RamosHermanos.Capas.Interfaz
 
             CheckColor(cbEstadoTel, lblEstadoEmail);
             CheckColor(cbEstadoEmail, lblEstadoTel);
+            CheckColor(cbEstadoDom, lblEstadoDom);
         }
 
         private void formContacto_Load(object sender, EventArgs e)
@@ -73,9 +74,17 @@ namespace RamosHermanos.Capas.Interfaz
             }
             else
             {
-                CargarEmail();
-                EmailB.InsertEmail(email);
-                EmailB.CargarDGV(dgvEmail, cbRolALL, txtIDALL);
+                if (EmailB.ExisteEmail(txtEmail) == true)
+                {
+                    MessageBox.Show("El mail ya existe");
+                    return;
+                }
+                else
+                {
+                    CargarEmail();
+                    EmailB.InsertEmail(email);
+                    EmailB.CargarDGV(dgvEmail, cbRolALL, txtIDALL);
+                }                
             }
         }
 
@@ -143,6 +152,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             CargarDomicilio();
             DomicilioB.InsertDomicilio(domicilio);
+            DomicilioB.CargarDGV(dgvDomicilio, cbRolALL, txtIDALL);
         }
 
         DomicilioEntity domicilio = new DomicilioEntity();
@@ -177,6 +187,7 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 DataGridViewRow row = cell.OwningRow;
                 //txtIDRol.Text = row.Cells["colIDRol"].Value.ToString();
+                domicilio.idDomicilio = Convert.ToInt32(row.Cells["colIDDom"].Value.ToString());
                 cbProvincia.Text = row.Cells["colProvincia"].Value.ToString();
                 cbLocalidad.Text = row.Cells["colLocalidad"].Value.ToString();
                 cbBarrio.Text = row.Cells["colBarrio"].Value.ToString();
@@ -185,6 +196,7 @@ namespace RamosHermanos.Capas.Interfaz
                 txtPiso.Text = row.Cells["colPiso"].Value.ToString();
                 txtDpto.Text = row.Cells["colDpto"].Value.ToString();
                 txtCP.Text = row.Cells["colCP"].Value.ToString();
+                cbEstadoDom.Checked = Convert.ToBoolean(row.Cells["colEstadoDom"].Value.ToString());
             }
         }
 
@@ -228,17 +240,22 @@ namespace RamosHermanos.Capas.Interfaz
             if (cell != null)
             {
                 DataGridViewRow row = cell.OwningRow;
-                cbTipoTel.Text = row.Cells["colIDTipoTel"].Value.ToString();
+                cbTipoTel.Text = row.Cells["colIDTelefono"].Value.ToString();
+                telefono.idTelefono = Convert.ToInt32(row.Cells["colIDTelefono"].Value.ToString());
+                cbTipoTel.SelectedValue = Convert.ToInt32(row.Cells["colIDTipoTel"].Value.ToString());
+                telefono.tipoTel = Convert.ToInt32(row.Cells["colIDTipoTel"].Value.ToString());
                 txtCaracteristica.Text = row.Cells["colCaracteristica"].Value.ToString();
+                telefono.caracteristica = row.Cells["colCaracteristica"].Value.ToString();
                 txtNumTel.Text = row.Cells["colnumTel"].Value.ToString();
-                //cbEstadoTel.Checked = row.Cells["colEstadoTel"];
+                telefono.numTel = row.Cells["colnumTel"].Value.ToString();
+                cbEstadoTel.Checked = Convert.ToBoolean(row.Cells["colEstadoTel"].Value.ToString());
             }
         }
 
         private void dgvEmail_SelectionChanged(object sender, EventArgs e)
         {
             DataGridViewCell cell = null;
-            foreach (DataGridViewCell selectedCell in dgvDomicilio.SelectedCells)
+            foreach (DataGridViewCell selectedCell in dgvEmail.SelectedCells)
             {
                 cell = selectedCell;
                 break;
@@ -246,15 +263,12 @@ namespace RamosHermanos.Capas.Interfaz
             if (cell != null)
             {
                 DataGridViewRow row = cell.OwningRow;
-                //txtIDRol.Text = row.Cells["colIDRol"].Value.ToString();
-                cbProvincia.Text = row.Cells["colProvincia"].Value.ToString();
-                cbLocalidad.Text = row.Cells["colLocalidad"].Value.ToString();
-                cbBarrio.Text = row.Cells["colBarrio"].Value.ToString();
-                txtCalle.Text = row.Cells["colCalle"].Value.ToString();
-                txtnumCalle.Text = row.Cells["colNumero"].Value.ToString();
-                txtPiso.Text = row.Cells["colPiso"].Value.ToString();
-                txtDpto.Text = row.Cells["colDpto"].Value.ToString();
-                txtCP.Text = row.Cells["colCP"].Value.ToString();
+                email.idEmail = Convert.ToInt32(row.Cells["colIDEmail"].Value.ToString());
+                //MessageBox.Show(Convert.ToString(email.idEmail));
+                txtEmail.Text = row.Cells["colEmail"].Value.ToString();                
+                email.email = row.Cells["colEmail"].Value.ToString();
+                cbEstadoEmail.Checked = Convert.ToBoolean(row.Cells["colEstado"].Value.ToString());
+                email.estado = Convert.ToBoolean(row.Cells["colEstado"].Value.ToString());
             }
         }
 
@@ -303,9 +317,28 @@ namespace RamosHermanos.Capas.Interfaz
             return true;            
         }
 
+        private bool ValidarDomicilio()
+        {
+            if (cbProvincia.SelectedValue == null || cbLocalidad.SelectedValue == null || cbBarrio.SelectedValue == null || txtCalle.Text == string.Empty || txtnumCalle.Text == string.Empty)
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void btnUpdEmail_Click(object sender, EventArgs e)
         {
-            
+            if (ValidarEmail(txtEmail.Text) == false)
+            {
+                MessageBox.Show("Seleccione un Email");
+                return;
+            }
+            else
+            {
+                CargarEmail();
+                EmailB.UpdateEmail(email);
+                EmailB.CargarDGV(dgvEmail, cbRolALL, txtIDALL);
+            }
         }
 
         private void btnUpdTel_Click(object sender, EventArgs e)
@@ -319,8 +352,41 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 CargarTelefono();
                 TelefonoB.UpdateTelefono(telefono);
+                TelefonoB.CargarDGV(dgvTelefono, cbRolALL, txtIDALL);
             }
         }
+
+        
+
+        private void btnUpdDom_Click(object sender, EventArgs e)
+        {
+            if (ValidarDomicilio() == false)
+            {
+                MessageBox.Show("Campos incompletos.");
+                return;
+            }
+            else
+            {
+                CargarDomicilio();
+                DomicilioB.UpdateDomicilio(domicilio);
+                DomicilioB.CargarDGV(dgvDomicilio, cbRolALL, txtIDALL);
+            }
+        }
+
+        private void cbEstadoDom_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckColor(cbEstadoDom, lblEstadoDom);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            formDomicilio frm = new formDomicilio();
+            frm.Show();
+        }
+
+      
+
+        
 
 
     }

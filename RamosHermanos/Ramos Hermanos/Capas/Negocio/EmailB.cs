@@ -13,6 +13,56 @@ namespace RamosHermanos.Capas.Negocio
 {
     class EmailB
     {
+
+        public static bool ExisteEmail(TextBox txt)
+        {
+            MySQL.ConnectDB();
+
+            string query = @"SELECT COUNT(*) FROM Emails
+                             WHERE email = @email";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+            cmd.Parameters.AddWithValue("@email", txt.Text);
+
+            int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (resultado == 0)
+                return false;
+            else
+                return true;
+
+        }
+
+        public static EmailEntity UpdateEmail(EmailEntity email)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"UPDATE Emails
+                                 SET email = @email, estado = @estado
+                                 WHERE idEmail = @idEmail";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idEmail", email.idEmail);
+                cmd.Parameters.AddWithValue("@email", email.email);
+                cmd.Parameters.AddWithValue("@estado", email.estado);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Email Actualizado!");
+                return email;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+
         public static EmailEntity InsertEmail(EmailEntity email)
         {
             try

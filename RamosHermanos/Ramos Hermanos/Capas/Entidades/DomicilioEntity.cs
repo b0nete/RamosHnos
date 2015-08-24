@@ -20,5 +20,6 @@ namespace RamosHermanos.Capas.Entidades
         public string piso { get; set; }
         public string dpto { get; set; }
         public string CP { get; set; }
+        public bool estado { get; set; }
     }
 }

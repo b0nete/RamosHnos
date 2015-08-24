@@ -65,20 +65,23 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvBarrio = new System.Windows.Forms.DataGridView();
             this.button9 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbLocalidadBar = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.cbEstadoBar = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBarrio = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tabDomicilios = new System.Windows.Forms.TabControl();
+            this.cbProvinciaBar = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.lblEstadoDom = new System.Windows.Forms.Label();
             this.tabProvincias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvincias)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -86,7 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalidad)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabBarrios.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBarrio)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tabDomicilios.SuspendLayout();
             this.SuspendLayout();
@@ -461,7 +464,7 @@
             this.tabBarrios.Controls.Add(this.button6);
             this.tabBarrios.Controls.Add(this.button7);
             this.tabBarrios.Controls.Add(this.button8);
-            this.tabBarrios.Controls.Add(this.dataGridView1);
+            this.tabBarrios.Controls.Add(this.dgvBarrio);
             this.tabBarrios.Controls.Add(this.button9);
             this.tabBarrios.Controls.Add(this.groupBox3);
             this.tabBarrios.Location = new System.Drawing.Point(4, 22);
@@ -478,11 +481,12 @@
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(407, 85);
+            this.button6.Location = new System.Drawing.Point(407, 108);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(28, 28);
             this.button6.TabIndex = 99;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -494,32 +498,33 @@
             this.button7.Size = new System.Drawing.Size(28, 28);
             this.button7.TabIndex = 96;
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
             this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button8.Location = new System.Drawing.Point(471, 85);
+            this.button8.Location = new System.Drawing.Point(471, 108);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(28, 28);
             this.button8.TabIndex = 97;
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvBarrio
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 119);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(491, 190);
-            this.dataGridView1.TabIndex = 95;
+            this.dgvBarrio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBarrio.Location = new System.Drawing.Point(8, 142);
+            this.dgvBarrio.Name = "dgvBarrio";
+            this.dgvBarrio.Size = new System.Drawing.Size(491, 167);
+            this.dgvBarrio.TabIndex = 95;
             // 
             // button9
             // 
             this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button9.Location = new System.Drawing.Point(439, 85);
+            this.button9.Location = new System.Drawing.Point(439, 108);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(28, 28);
             this.button9.TabIndex = 98;
@@ -527,51 +532,58 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.lblEstadoDom);
+            this.groupBox3.Controls.Add(this.cbProvinciaBar);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.cbLocalidadBar);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.checkBox2);
+            this.groupBox3.Controls.Add(this.cbEstadoBar);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label14);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.txtBarrio);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.textBox3);
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(8, 7);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(491, 72);
+            this.groupBox3.Size = new System.Drawing.Size(491, 95);
             this.groupBox3.TabIndex = 94;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Barrio";
             // 
-            // comboBox1
+            // cbLocalidadBar
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(70, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 21);
-            this.comboBox1.TabIndex = 90;
+            this.cbLocalidadBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLocalidadBar.FormattingEnabled = true;
+            this.cbLocalidadBar.Location = new System.Drawing.Point(303, 21);
+            this.cbLocalidadBar.Name = "cbLocalidadBar";
+            this.cbLocalidadBar.Size = new System.Drawing.Size(166, 21);
+            this.cbLocalidadBar.TabIndex = 90;
             // 
             // label9
             // 
             this.label9.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(15, 22);
+            this.label9.Location = new System.Drawing.Point(248, 24);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 13);
             this.label9.TabIndex = 89;
             this.label9.Text = "Localidad";
             // 
-            // checkBox2
+            // cbEstadoBar
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(70, 46);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 88;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbEstadoBar.AutoSize = true;
+            this.cbEstadoBar.Checked = true;
+            this.cbEstadoBar.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEstadoBar.Location = new System.Drawing.Point(70, 74);
+            this.cbEstadoBar.Name = "cbEstadoBar";
+            this.cbEstadoBar.Size = new System.Drawing.Size(15, 14);
+            this.cbEstadoBar.TabIndex = 88;
+            this.cbEstadoBar.UseVisualStyleBackColor = true;
+            this.cbEstadoBar.CheckedChanged += new System.EventHandler(this.cbEstadoBar_CheckedChanged);
             // 
             // label10
             // 
@@ -580,7 +592,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(21, 46);
+            this.label10.Location = new System.Drawing.Point(21, 74);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(11, 13);
             this.label10.TabIndex = 87;
@@ -591,7 +603,7 @@
             this.label12.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label12.Location = new System.Drawing.Point(28, 46);
+            this.label12.Location = new System.Drawing.Point(28, 74);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(40, 13);
             this.label12.TabIndex = 86;
@@ -604,26 +616,26 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(262, 22);
+            this.label14.Location = new System.Drawing.Point(29, 51);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(11, 13);
             this.label14.TabIndex = 85;
             this.label14.Text = "*";
             // 
-            // textBox2
+            // txtBarrio
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox2.Location = new System.Drawing.Point(303, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(168, 20);
-            this.textBox2.TabIndex = 84;
+            this.txtBarrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBarrio.Location = new System.Drawing.Point(70, 48);
+            this.txtBarrio.Name = "txtBarrio";
+            this.txtBarrio.Size = new System.Drawing.Size(168, 20);
+            this.txtBarrio.TabIndex = 84;
             // 
             // label15
             // 
             this.label15.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label15.Location = new System.Drawing.Point(269, 22);
+            this.label15.Location = new System.Drawing.Point(36, 51);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(34, 13);
             this.label15.TabIndex = 83;
@@ -661,6 +673,35 @@
             this.tabDomicilios.Size = new System.Drawing.Size(514, 377);
             this.tabDomicilios.TabIndex = 0;
             // 
+            // cbProvinciaBar
+            // 
+            this.cbProvinciaBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProvinciaBar.FormattingEnabled = true;
+            this.cbProvinciaBar.Location = new System.Drawing.Point(70, 21);
+            this.cbProvinciaBar.Name = "cbProvinciaBar";
+            this.cbProvinciaBar.Size = new System.Drawing.Size(168, 21);
+            this.cbProvinciaBar.TabIndex = 92;
+            this.cbProvinciaBar.SelectionChangeCommitted += new System.EventHandler(this.cbProvinciaBar_SelectionChangeCommitted);
+            // 
+            // label17
+            // 
+            this.label17.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label17.Location = new System.Drawing.Point(17, 24);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(51, 13);
+            this.label17.TabIndex = 91;
+            this.label17.Text = "Provincia";
+            // 
+            // lblEstadoDom
+            // 
+            this.lblEstadoDom.AutoSize = true;
+            this.lblEstadoDom.Location = new System.Drawing.Point(91, 74);
+            this.lblEstadoDom.Name = "lblEstadoDom";
+            this.lblEstadoDom.Size = new System.Drawing.Size(0, 13);
+            this.lblEstadoDom.TabIndex = 111;
+            // 
             // formDomicilio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -679,7 +720,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabBarrios.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBarrio)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabDomicilios.ResumeLayout(false);
@@ -725,20 +766,23 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvBarrio;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbLocalidadBar;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox cbEstadoBar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBarrio;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TabControl tabDomicilios;
+        private System.Windows.Forms.ComboBox cbProvinciaBar;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblEstadoDom;
 
     }
 }

@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Capas\Datos\MySQL.cs" />
-    <Compile Include="Capas\Entidades\BarriosEntity.cs" />
+    <Compile Include="Capas\Entidades\BarrioEntity.cs" />
     <Compile Include="Capas\Entidades\ClienteEntity.cs" />
     <Compile Include="Capas\Entidades\DomicilioEntity.cs" />
     <Compile Include="Capas\Entidades\EmailEntity.cs" />

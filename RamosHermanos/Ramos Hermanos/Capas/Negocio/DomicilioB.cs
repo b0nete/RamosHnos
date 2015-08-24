@@ -15,14 +15,68 @@ namespace RamosHermanos.Capas.Negocio
     {
         //Metodos
 
+        public static bool ExisteDomicilio(DomicilioEntity domicilio)
+        {
+            MySQL.ConnectDB();
+
+            string query = @"SELECT COUNT(*) FROM Domicilios
+                             WHERE idDomicilio = @idDomicilio";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+            cmd.Parameters.AddWithValue("@idDomicilio", domicilio.idDomicilio);
+
+            int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (resultado == 0)
+                return false;
+            else
+                return true;
+
+        }
+
+        public static DomicilioEntity UpdateDomicilio(DomicilioEntity domicilio)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"UPDATE Domicilios
+                                 SET provincia = @provincia, localidad = @localidad, barrio = @barrio, calle = @calle, numero = @numero, piso = @piso, dpto = @dpto, CP = @CP
+                                 WHERE idDomicilio = @idDomicilio";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idDomicilio", domicilio.idDomicilio);
+                cmd.Parameters.AddWithValue("@provincia", domicilio.provincia);
+                cmd.Parameters.AddWithValue("@localidad", domicilio.localidad);
+                cmd.Parameters.AddWithValue("@barrio", domicilio.barrio);
+                cmd.Parameters.AddWithValue("@calle", domicilio.calle);
+                cmd.Parameters.AddWithValue("@numero", domicilio.numero);
+                cmd.Parameters.AddWithValue("@piso", domicilio.piso);
+                cmd.Parameters.AddWithValue("@dpto", domicilio.dpto);
+                cmd.Parameters.AddWithValue("@CP", domicilio.CP);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Domicilio Actualizado!");
+                return domicilio;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static DomicilioEntity InsertDomicilio(DomicilioEntity domicilio)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO domicilios (rol, idPersona, provincia, localidad, barrio, calle, numero, piso, dpto, CP) 
-                                 VALUES (@rol, @idPersona, @provincia, @localidad, @barrio, @calle, @numero, @piso, @dpto, @CP);
+                string query = @"INSERT INTO domicilios (rol, idPersona, provincia, localidad, barrio, calle, numero, piso, dpto, CP, estado) 
+                                 VALUES (@rol, @idPersona, @provincia, @localidad, @barrio, @calle, @numero, @piso, @dpto, @CP, @estado);
                                  SELECT LAST_INSERT_ID()";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -38,6 +92,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@piso", domicilio.piso);
                 cmd.Parameters.AddWithValue("@dpto", domicilio.dpto);
                 cmd.Parameters.AddWithValue("@CP", domicilio.CP);
+                cmd.Parameters.AddWithValue("@estado", domicilio.estado);
 
                 //cmd.ExecuteNonQuery();
                 domicilio.idDomicilio = Convert.ToInt32(cmd.ExecuteScalar());
@@ -61,7 +116,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT D.idDomicilio, D.Calle, D.Numero, D.Piso, D.Dpto, D.CP, B.Barrio, L.Localidad, P.Provincia
+                string query = @"SELECT D.idDomicilio, D.Calle, D.Numero, D.Piso, D.Dpto, D.CP, B.Barrio, L.Localidad, P.Provincia, D.Estado
                                  FROM Domicilios D 
                                  INNER JOIN Provincias P ON P.idProvincia = D.Provincia
                                  INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
@@ -86,7 +141,8 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["CP"]),
                     Convert.ToString(dr["Barrio"]),
                     Convert.ToString(dr["Localidad"]),
-                    Convert.ToString(dr["Provincia"]));
+                    Convert.ToString(dr["Provincia"]),
+                    Convert.ToString(dr["Estado"]));
                 }
 
                 dr.Close();
@@ -109,7 +165,7 @@ namespace RamosHermanos.Capas.Negocio
                 string query = @"SELECT group_concat(' ', B.barrio,' ', calle,' ', numero,' ', piso,' ', dpto,' ', CP) 
                                  FROM Domicilios D
                                  INNER JOIN Barrios B ON D.barrio = B.idBarrio
-                                 WHERE rol = @rol and idPersona = @idPersona";
+                                 WHERE rol = @rol and idPersona = @idPersona and D.estado = 1";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 

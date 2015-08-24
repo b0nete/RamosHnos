@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RamosHermanos.Capas.Entidades
 {
-    class BarriosEntity
+    class BarrioEntity
     {
         public int idBarrio { get; set; }
         public int idLocalidad { get; set; }
