@@ -46,6 +46,12 @@ namespace RamosHermanos.Capas.Interfaz
                        
 
         }
+
+        private void MetodoFantasma()
+        {
+
+
+        }
         
     }
 }
