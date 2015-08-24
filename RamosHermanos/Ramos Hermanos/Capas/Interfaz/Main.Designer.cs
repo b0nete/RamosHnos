@@ -52,8 +52,8 @@
             this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mcAgenda = new System.Windows.Forms.MonthCalendar();
             this.rubroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mcAgenda = new System.Windows.Forms.MonthCalendar();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,6 +106,7 @@
             this.agregarProveedorToolStripMenuItem.Name = "agregarProveedorToolStripMenuItem";
             this.agregarProveedorToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.agregarProveedorToolStripMenuItem.Text = "Agregar Proveedor";
+            this.agregarProveedorToolStripMenuItem.Click += new System.EventHandler(this.agregarProveedorToolStripMenuItem_Click);
             // 
             // editarProveedorToolStripMenuItem
             // 
@@ -230,19 +231,19 @@
             this.testToolStripMenuItem.Text = "Test";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
-            // mcAgenda
-            // 
-            this.mcAgenda.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
-            this.mcAgenda.Location = new System.Drawing.Point(539, 42);
-            this.mcAgenda.Name = "mcAgenda";
-            this.mcAgenda.TabIndex = 25;
-            // 
             // rubroToolStripMenuItem
             // 
             this.rubroToolStripMenuItem.Name = "rubroToolStripMenuItem";
             this.rubroToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.rubroToolStripMenuItem.Text = "Rubro";
             this.rubroToolStripMenuItem.Click += new System.EventHandler(this.rubroToolStripMenuItem_Click);
+            // 
+            // mcAgenda
+            // 
+            this.mcAgenda.FirstDayOfWeek = System.Windows.Forms.Day.Monday;
+            this.mcAgenda.Location = new System.Drawing.Point(539, 42);
+            this.mcAgenda.Name = "mcAgenda";
+            this.mcAgenda.TabIndex = 25;
             // 
             // Main
             // 

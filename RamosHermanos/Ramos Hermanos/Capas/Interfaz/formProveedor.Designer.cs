@@ -32,11 +32,12 @@
             this.tabProveedor = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtSaldo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.cbTipoCliente = new System.Windows.Forms.ComboBox();
+            this.cbTipoProveedor = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.cbIVA = new System.Windows.Forms.ComboBox();
             this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
@@ -45,12 +46,12 @@
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtcuil = new System.Windows.Forms.MaskedTextBox();
-            this.txtIDcliente = new System.Windows.Forms.TextBox();
+            this.txtcuit = new System.Windows.Forms.MaskedTextBox();
+            this.txtid = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
@@ -122,11 +123,12 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Controls.Add(this.label2);
-            this.groupBox6.Controls.Add(this.textBox4);
+            this.groupBox6.Controls.Add(this.txtSaldo);
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.btnSearch);
-            this.groupBox6.Controls.Add(this.cbTipoCliente);
+            this.groupBox6.Controls.Add(this.cbTipoProveedor);
             this.groupBox6.Controls.Add(this.label24);
             this.groupBox6.Controls.Add(this.cbIVA);
             this.groupBox6.Controls.Add(this.dtpFechaAlta);
@@ -135,12 +137,12 @@
             this.groupBox6.Controls.Add(this.cbEstado);
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.Controls.Add(this.label8);
-            this.groupBox6.Controls.Add(this.txtcuil);
-            this.groupBox6.Controls.Add(this.txtIDcliente);
+            this.groupBox6.Controls.Add(this.txtcuit);
+            this.groupBox6.Controls.Add(this.txtid);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.label15);
             this.groupBox6.Controls.Add(this.label14);
-            this.groupBox6.Controls.Add(this.txtApellido);
+            this.groupBox6.Controls.Add(this.txtRazonSocial);
             this.groupBox6.Controls.Add(this.label1);
             this.groupBox6.Location = new System.Drawing.Point(6, 10);
             this.groupBox6.Name = "groupBox6";
@@ -148,6 +150,17 @@
             this.groupBox6.TabIndex = 67;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion Personal";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(460, 172);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 28);
+            this.button1.TabIndex = 92;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -162,13 +175,13 @@
             this.label2.TabIndex = 90;
             this.label2.Text = "*";
             // 
-            // textBox4
+            // txtSaldo
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox4.Location = new System.Drawing.Point(102, 204);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(355, 20);
-            this.textBox4.TabIndex = 89;
+            this.txtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtSaldo.Location = new System.Drawing.Point(102, 204);
+            this.txtSaldo.Name = "txtSaldo";
+            this.txtSaldo.Size = new System.Drawing.Size(355, 20);
+            this.txtSaldo.TabIndex = 89;
             // 
             // label4
             // 
@@ -191,15 +204,15 @@
             this.btnSearch.TabIndex = 88;
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // cbTipoCliente
+            // cbTipoProveedor
             // 
-            this.cbTipoCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTipoCliente.FormattingEnabled = true;
-            this.cbTipoCliente.Location = new System.Drawing.Point(102, 177);
-            this.cbTipoCliente.Name = "cbTipoCliente";
-            this.cbTipoCliente.Size = new System.Drawing.Size(355, 21);
-            this.cbTipoCliente.TabIndex = 84;
+            this.cbTipoProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoProveedor.FormattingEnabled = true;
+            this.cbTipoProveedor.Location = new System.Drawing.Point(102, 177);
+            this.cbTipoProveedor.Name = "cbTipoProveedor";
+            this.cbTipoProveedor.Size = new System.Drawing.Size(355, 21);
+            this.cbTipoProveedor.TabIndex = 84;
             // 
             // label24
             // 
@@ -297,24 +310,24 @@
             this.label8.TabIndex = 30;
             this.label8.Text = "Nº Proveedor";
             // 
-            // txtcuil
+            // txtcuit
             // 
-            this.txtcuil.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcuil.Location = new System.Drawing.Point(102, 95);
-            this.txtcuil.Mask = "00-00000000-0";
-            this.txtcuil.Name = "txtcuil";
-            this.txtcuil.Size = new System.Drawing.Size(355, 20);
-            this.txtcuil.TabIndex = 61;
-            this.txtcuil.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtcuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcuit.Location = new System.Drawing.Point(102, 95);
+            this.txtcuit.Mask = "00-00000000-0";
+            this.txtcuit.Name = "txtcuit";
+            this.txtcuit.Size = new System.Drawing.Size(355, 20);
+            this.txtcuit.TabIndex = 61;
+            this.txtcuit.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // txtIDcliente
+            // txtid
             // 
-            this.txtIDcliente.Enabled = false;
-            this.txtIDcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtIDcliente.Location = new System.Drawing.Point(102, 42);
-            this.txtIDcliente.Name = "txtIDcliente";
-            this.txtIDcliente.Size = new System.Drawing.Size(355, 20);
-            this.txtIDcliente.TabIndex = 31;
+            this.txtid.Enabled = false;
+            this.txtid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtid.Location = new System.Drawing.Point(102, 42);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(355, 20);
+            this.txtid.TabIndex = 31;
             // 
             // label16
             // 
@@ -352,13 +365,13 @@
             this.label14.TabIndex = 69;
             this.label14.Text = "CUIT";
             // 
-            // txtApellido
+            // txtRazonSocial
             // 
-            this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtApellido.Location = new System.Drawing.Point(102, 124);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(355, 20);
-            this.txtApellido.TabIndex = 62;
+            this.txtRazonSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtRazonSocial.Location = new System.Drawing.Point(102, 124);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(355, 20);
+            this.txtRazonSocial.TabIndex = 62;
             // 
             // label1
             // 
@@ -591,6 +604,7 @@
             this.button6.Size = new System.Drawing.Size(28, 28);
             this.button6.TabIndex = 61;
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // tabAdicional
             // 
@@ -674,10 +688,10 @@
         private System.Windows.Forms.TabPage tabPedido;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtSaldo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox cbTipoCliente;
+        private System.Windows.Forms.ComboBox cbTipoProveedor;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.ComboBox cbIVA;
         private System.Windows.Forms.DateTimePicker dtpFechaAlta;
@@ -686,12 +700,12 @@
         private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MaskedTextBox txtcuil;
-        public System.Windows.Forms.TextBox txtIDcliente;
+        private System.Windows.Forms.MaskedTextBox txtcuit;
+        public System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -714,5 +728,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button1;
     }
 }
