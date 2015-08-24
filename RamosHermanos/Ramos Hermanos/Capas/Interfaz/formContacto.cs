@@ -150,9 +150,18 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            CargarDomicilio();
-            DomicilioB.InsertDomicilio(domicilio);
-            DomicilioB.CargarDGV(dgvDomicilio, cbRolALL, txtIDALL);
+            if (ValidarDomicilio() == false)
+            {
+                MessageBox.Show("Campos incompletos");
+                return;
+            }
+            else
+            {
+                CargarDomicilio();
+                DomicilioB.InsertDomicilio(domicilio);
+                DomicilioB.CargarDGV(dgvDomicilio, cbRolALL, txtIDALL);
+            }
+            
         }
 
         DomicilioEntity domicilio = new DomicilioEntity();

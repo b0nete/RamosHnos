@@ -4,22 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RamosHnos.Capas.Entidades
+namespace RamosHermanos.Capas.Entidades
 {
-    public class ProveedorEntity
+    class ProveedorEntity
     {
-       public ProveedorEntity()
-       {
-       }
-
-        // Atributos        
-       public int idProveedor { get; set;}
-       public string razonSocial { get; set; }
-       public string cuit { get; set; }
-       public string email { get; set; }
-       public bool estado { get; set; }
-
-
+        public int idProveedor { get; set; }
+        public int rol { get; set; }
+        public string razsocial { get; set; }
+        public string cuit { get; set; }
+        public bool estado { get; set; }
+        public int tipoProveedor { get; set; }
+        public string condicioniva { get; set; }
 
     }
 }
