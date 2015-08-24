@@ -1,0 +1,7 @@
+LS
+CD (directorio/carpeta)
+
+git status // Muestra cambios
+git add . // Agrega todo
+git commit -m "BLA" // Commit
+git push -u origin master

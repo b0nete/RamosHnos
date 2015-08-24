@@ -31,8 +31,30 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProducto));
             this.tabProducto = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtStockMin = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtpFechaAct = new System.Windows.Forms.DateTimePicker();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cbMedida = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label22 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
@@ -44,9 +66,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
-            this.dtpFechaAct = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
@@ -64,32 +84,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.tabListado = new System.Windows.Forms.TabPage();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cbMedida = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtStockMin = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabProducto
@@ -119,6 +119,150 @@
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Información";
             this.tabInformacion.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.txtStockMin);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(8, 340);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(415, 75);
+            this.groupBox3.TabIndex = 110;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Stock";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox2.Location = new System.Drawing.Point(115, 45);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(261, 20);
+            this.textBox2.TabIndex = 98;
+            // 
+            // label16
+            // 
+            this.label16.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(33, 48);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(11, 13);
+            this.label16.TabIndex = 99;
+            this.label16.Text = "*";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label19.Location = new System.Drawing.Point(41, 48);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(68, 13);
+            this.label19.TabIndex = 97;
+            this.label19.Text = "Stock Actual";
+            // 
+            // label11
+            // 
+            this.label11.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(28, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(11, 13);
+            this.label11.TabIndex = 91;
+            this.label11.Text = "*";
+            // 
+            // txtStockMin
+            // 
+            this.txtStockMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtStockMin.Location = new System.Drawing.Point(115, 19);
+            this.txtStockMin.Name = "txtStockMin";
+            this.txtStockMin.Size = new System.Drawing.Size(261, 20);
+            this.txtStockMin.TabIndex = 90;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label13.Location = new System.Drawing.Point(36, 22);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(73, 13);
+            this.label13.TabIndex = 89;
+            this.label13.Text = "Stock Mínimo";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dtpFechaAct);
+            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.label24);
+            this.groupBox2.Controls.Add(this.label23);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(8, 420);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(415, 74);
+            this.groupBox2.TabIndex = 108;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Precio";
+            // 
+            // dtpFechaAct
+            // 
+            this.dtpFechaAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaAct.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaAct.Location = new System.Drawing.Point(112, 43);
+            this.dtpFechaAct.Name = "dtpFechaAct";
+            this.dtpFechaAct.Size = new System.Drawing.Size(263, 20);
+            this.dtpFechaAct.TabIndex = 85;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox3.Location = new System.Drawing.Point(113, 17);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(261, 20);
+            this.textBox3.TabIndex = 100;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label14.Location = new System.Drawing.Point(5, 46);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(103, 13);
+            this.label14.TabIndex = 83;
+            this.label14.Text = "Fecha Actualización";
+            // 
+            // label24
+            // 
+            this.label24.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label24.Location = new System.Drawing.Point(38, 20);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(70, 13);
+            this.label24.TabIndex = 106;
+            this.label24.Text = "Precio Actual";
+            // 
+            // label23
+            // 
+            this.label23.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label23.ForeColor = System.Drawing.Color.Red;
+            this.label23.Location = new System.Drawing.Point(30, 19);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(11, 13);
+            this.label23.TabIndex = 107;
+            this.label23.Text = "*";
             // 
             // dataGridView1
             // 
@@ -171,7 +315,101 @@
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Producto";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox4.Location = new System.Drawing.Point(115, 263);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(117, 20);
+            this.textBox4.TabIndex = 118;
+            // 
+            // label25
+            // 
+            this.label25.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.Color.Transparent;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label25.ForeColor = System.Drawing.Color.Red;
+            this.label25.Location = new System.Drawing.Point(54, 265);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(11, 13);
+            this.label25.TabIndex = 117;
+            this.label25.Text = "*";
+            // 
+            // label26
+            // 
+            this.label26.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label26.Location = new System.Drawing.Point(62, 266);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(49, 13);
+            this.label26.TabIndex = 116;
+            this.label26.Text = "Cantidad";
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(379, 258);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(28, 28);
+            this.button5.TabIndex = 112;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(249, 266);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(11, 13);
+            this.label10.TabIndex = 111;
+            this.label10.Text = "*";
+            // 
+            // cbMedida
+            // 
+            this.cbMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbMedida.FormattingEnabled = true;
+            this.cbMedida.Location = new System.Drawing.Point(304, 263);
+            this.cbMedida.Name = "cbMedida";
+            this.cbMedida.Size = new System.Drawing.Size(71, 21);
+            this.cbMedida.TabIndex = 110;
+            // 
+            // label3
+            // 
+            this.label3.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(256, 266);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 109;
+            this.label3.Text = "Medida";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(115, 71);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(263, 20);
+            this.dateTimePicker1.TabIndex = 105;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label22.Location = new System.Drawing.Point(51, 74);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(58, 13);
+            this.label22.TabIndex = 104;
+            this.label22.Text = "Fecha Alta";
             // 
             // button2
             // 
@@ -292,15 +530,6 @@
             this.label18.TabIndex = 86;
             this.label18.Text = "*";
             // 
-            // dtpFechaAct
-            // 
-            this.dtpFechaAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaAct.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAct.Location = new System.Drawing.Point(112, 43);
-            this.dtpFechaAct.Name = "dtpFechaAct";
-            this.dtpFechaAct.Size = new System.Drawing.Size(263, 20);
-            this.dtpFechaAct.TabIndex = 85;
-            // 
             // label12
             // 
             this.label12.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
@@ -313,16 +542,6 @@
             this.label12.Size = new System.Drawing.Size(11, 13);
             this.label12.TabIndex = 84;
             this.label12.Text = "*";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label14.Location = new System.Drawing.Point(5, 46);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(103, 13);
-            this.label14.TabIndex = 83;
-            this.label14.Text = "Fecha Actualización";
             // 
             // btnSearch
             // 
@@ -507,226 +726,6 @@
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(115, 71);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(263, 20);
-            this.dateTimePicker1.TabIndex = 105;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label22.Location = new System.Drawing.Point(51, 74);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(58, 13);
-            this.label22.TabIndex = 104;
-            this.label22.Text = "Fecha Alta";
-            // 
-            // label23
-            // 
-            this.label23.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label23.ForeColor = System.Drawing.Color.Red;
-            this.label23.Location = new System.Drawing.Point(30, 19);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(11, 13);
-            this.label23.TabIndex = 107;
-            this.label23.Text = "*";
-            // 
-            // label24
-            // 
-            this.label24.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label24.Location = new System.Drawing.Point(38, 20);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(70, 13);
-            this.label24.TabIndex = 106;
-            this.label24.Text = "Precio Actual";
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(379, 258);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(28, 28);
-            this.button5.TabIndex = 112;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(249, 266);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(11, 13);
-            this.label10.TabIndex = 111;
-            this.label10.Text = "*";
-            // 
-            // cbMedida
-            // 
-            this.cbMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbMedida.FormattingEnabled = true;
-            this.cbMedida.Location = new System.Drawing.Point(304, 263);
-            this.cbMedida.Name = "cbMedida";
-            this.cbMedida.Size = new System.Drawing.Size(71, 21);
-            this.cbMedida.TabIndex = 110;
-            // 
-            // label3
-            // 
-            this.label3.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(256, 266);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
-            this.label3.TabIndex = 109;
-            this.label3.Text = "Medida";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox3.Location = new System.Drawing.Point(113, 17);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(261, 20);
-            this.textBox3.TabIndex = 100;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dtpFechaAct);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(8, 420);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(415, 74);
-            this.groupBox2.TabIndex = 108;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Precio";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.txtStockMin);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(8, 340);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(415, 75);
-            this.groupBox3.TabIndex = 110;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Stock";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox2.Location = new System.Drawing.Point(115, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(261, 20);
-            this.textBox2.TabIndex = 98;
-            // 
-            // label16
-            // 
-            this.label16.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(33, 48);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(11, 13);
-            this.label16.TabIndex = 99;
-            this.label16.Text = "*";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label19.Location = new System.Drawing.Point(41, 48);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(68, 13);
-            this.label19.TabIndex = 97;
-            this.label19.Text = "Stock Actual";
-            // 
-            // label11
-            // 
-            this.label11.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(28, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(11, 13);
-            this.label11.TabIndex = 91;
-            this.label11.Text = "*";
-            // 
-            // txtStockMin
-            // 
-            this.txtStockMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtStockMin.Location = new System.Drawing.Point(115, 19);
-            this.txtStockMin.Name = "txtStockMin";
-            this.txtStockMin.Size = new System.Drawing.Size(261, 20);
-            this.txtStockMin.TabIndex = 90;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label13.Location = new System.Drawing.Point(36, 22);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 13);
-            this.label13.TabIndex = 89;
-            this.label13.Text = "Stock Mínimo";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox4.Location = new System.Drawing.Point(115, 263);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(117, 20);
-            this.textBox4.TabIndex = 118;
-            // 
-            // label25
-            // 
-            this.label25.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.Transparent;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(54, 265);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(11, 13);
-            this.label25.TabIndex = 117;
-            this.label25.Text = "*";
-            // 
-            // label26
-            // 
-            this.label26.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label26.Location = new System.Drawing.Point(62, 266);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(49, 13);
-            this.label26.TabIndex = 116;
-            this.label26.Text = "Cantidad";
-            // 
             // formProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -735,15 +734,16 @@
             this.Controls.Add(this.tabProducto);
             this.Name = "formProducto";
             this.Text = "Producto";
+            this.Load += new System.EventHandler(this.formProducto_Load);
             this.tabProducto.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }

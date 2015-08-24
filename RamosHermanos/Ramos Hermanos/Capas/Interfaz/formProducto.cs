@@ -17,9 +17,16 @@ namespace RamosHermanos.Capas.Interfaz
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void formProducto_Load(object sender, EventArgs e)
         {
 
         }
+
+        // Metodos
+
+        private void EventoFantasma()
+        {
+        }
+
     }
 }
