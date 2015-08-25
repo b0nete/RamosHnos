@@ -31,8 +31,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Test frm = new Test();
-            frm.Show();
+              Test frm = new Test();
+              frm.Show();
         }
 
         private void rubroToolStripMenuItem_Click(object sender, EventArgs e)

@@ -32,6 +32,12 @@
             this.tabProveedor = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtDebmax = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.cbIVA = new System.Windows.Forms.ComboBox();
             this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
@@ -73,12 +79,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.tabPedido = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtDebmax = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.tabProveedor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -151,6 +151,69 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion Personal";
             // 
+            // label10
+            // 
+            this.label10.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(50, 205);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(11, 13);
+            this.label10.TabIndex = 97;
+            this.label10.Text = "*";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Enabled = false;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox5.Location = new System.Drawing.Point(102, 202);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(355, 20);
+            this.textBox5.TabIndex = 96;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label13.Location = new System.Drawing.Point(59, 209);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(34, 13);
+            this.label13.TabIndex = 98;
+            this.label13.Text = "Saldo";
+            // 
+            // label6
+            // 
+            this.label6.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(10, 179);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(11, 13);
+            this.label6.TabIndex = 94;
+            this.label6.Text = "*";
+            // 
+            // txtDebmax
+            // 
+            this.txtDebmax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtDebmax.Location = new System.Drawing.Point(102, 176);
+            this.txtDebmax.Name = "txtDebmax";
+            this.txtDebmax.Size = new System.Drawing.Size(355, 20);
+            this.txtDebmax.TabIndex = 93;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label9.Location = new System.Drawing.Point(20, 183);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(77, 13);
+            this.label9.TabIndex = 95;
+            this.label9.Text = "Débito Máximo";
+            // 
             // btnSearch
             // 
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
@@ -161,6 +224,7 @@
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 88;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cbIVA
             // 
@@ -592,69 +656,6 @@
             this.tabPedido.TabIndex = 4;
             this.tabPedido.Text = "Pedido";
             this.tabPedido.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(10, 179);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(11, 13);
-            this.label6.TabIndex = 94;
-            this.label6.Text = "*";
-            // 
-            // txtDebmax
-            // 
-            this.txtDebmax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtDebmax.Location = new System.Drawing.Point(102, 176);
-            this.txtDebmax.Name = "txtDebmax";
-            this.txtDebmax.Size = new System.Drawing.Size(355, 20);
-            this.txtDebmax.TabIndex = 93;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(20, 183);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(77, 13);
-            this.label9.TabIndex = 95;
-            this.label9.Text = "Débito Máximo";
-            // 
-            // label10
-            // 
-            this.label10.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(50, 205);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(11, 13);
-            this.label10.TabIndex = 97;
-            this.label10.Text = "*";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox5.Location = new System.Drawing.Point(102, 202);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(355, 20);
-            this.textBox5.TabIndex = 96;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label13.Location = new System.Drawing.Point(59, 209);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(34, 13);
-            this.label13.TabIndex = 98;
-            this.label13.Text = "Saldo";
             // 
             // formProveedor
             // 
