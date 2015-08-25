@@ -84,13 +84,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtAGUAramedio = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.txtAGUAneg = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
-            this.txtAGUAeti = new System.Windows.Forms.TextBox();
             this.txtAGUAram = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDomicilio = new System.Windows.Forms.Button();
@@ -103,6 +97,7 @@
             this.txtDomic = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.gbVisita = new System.Windows.Forms.GroupBox();
+            this.txtIDVisita = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.cbLunes = new System.Windows.Forms.CheckBox();
             this.cbMartes = new System.Windows.Forms.CheckBox();
@@ -129,9 +124,19 @@
             this.tabSugerencias = new System.Windows.Forms.TabPage();
             this.tabFamilia = new System.Windows.Forms.TabPage();
             this.tabListado = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.tabMovimientos = new System.Windows.Forms.TabPage();
-            this.txtIDVisita = new System.Windows.Forms.TextBox();
+            this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCUIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCondicionIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -144,7 +149,7 @@
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.tabListado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMain
@@ -322,6 +327,7 @@
             this.cbTipoCliente.Name = "cbTipoCliente";
             this.cbTipoCliente.Size = new System.Drawing.Size(355, 21);
             this.cbTipoCliente.TabIndex = 84;
+            this.cbTipoCliente.DropDown += new System.EventHandler(this.cbTipoCliente_DropDown);
             // 
             // label24
             // 
@@ -696,7 +702,7 @@
             this.groupBox3.Size = new System.Drawing.Size(126, 142);
             this.groupBox3.TabIndex = 59;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Soda";
+            this.groupBox3.Text = "Agua";
             // 
             // txt25LT
             // 
@@ -795,13 +801,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.txtAGUAramedio);
-            this.groupBox4.Controls.Add(this.label34);
-            this.groupBox4.Controls.Add(this.txtAGUAneg);
-            this.groupBox4.Controls.Add(this.label33);
-            this.groupBox4.Controls.Add(this.txtAGUAeti);
             this.groupBox4.Controls.Add(this.txtAGUAram);
-            this.groupBox4.Controls.Add(this.label32);
             this.groupBox4.Controls.Add(this.label31);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -810,55 +810,8 @@
             this.groupBox4.Size = new System.Drawing.Size(126, 142);
             this.groupBox4.TabIndex = 59;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Agua";
+            this.groupBox4.Text = "Sodas";
             this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
-            // 
-            // txtAGUAramedio
-            // 
-            this.txtAGUAramedio.Enabled = false;
-            this.txtAGUAramedio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtAGUAramedio.Location = new System.Drawing.Point(64, 88);
-            this.txtAGUAramedio.Name = "txtAGUAramedio";
-            this.txtAGUAramedio.Size = new System.Drawing.Size(47, 20);
-            this.txtAGUAramedio.TabIndex = 106;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label34.Location = new System.Drawing.Point(2, 91);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(60, 13);
-            this.label34.TabIndex = 70;
-            this.label34.Text = "Ramos 1/2";
-            // 
-            // txtAGUAneg
-            // 
-            this.txtAGUAneg.Enabled = false;
-            this.txtAGUAneg.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtAGUAneg.Location = new System.Drawing.Point(64, 65);
-            this.txtAGUAneg.Name = "txtAGUAneg";
-            this.txtAGUAneg.Size = new System.Drawing.Size(47, 20);
-            this.txtAGUAneg.TabIndex = 105;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label33.Location = new System.Drawing.Point(10, 68);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(52, 13);
-            this.label33.TabIndex = 69;
-            this.label33.Text = "Negocios";
-            // 
-            // txtAGUAeti
-            // 
-            this.txtAGUAeti.Enabled = false;
-            this.txtAGUAeti.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtAGUAeti.Location = new System.Drawing.Point(64, 42);
-            this.txtAGUAeti.Name = "txtAGUAeti";
-            this.txtAGUAeti.Size = new System.Drawing.Size(47, 20);
-            this.txtAGUAeti.TabIndex = 104;
             // 
             // txtAGUAram
             // 
@@ -869,25 +822,15 @@
             this.txtAGUAram.Size = new System.Drawing.Size(47, 20);
             this.txtAGUAram.TabIndex = 103;
             // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label32.Location = new System.Drawing.Point(-1, 45);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(63, 13);
-            this.label32.TabIndex = 68;
-            this.label32.Text = "Etiquetados";
-            // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label31.Location = new System.Drawing.Point(22, 22);
+            this.label31.Location = new System.Drawing.Point(6, 22);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(40, 13);
+            this.label31.Size = new System.Drawing.Size(59, 13);
             this.label31.TabIndex = 67;
-            this.label31.Text = "Ramos";
+            this.label31.Text = "Retornable";
             // 
             // groupBox1
             // 
@@ -1017,6 +960,16 @@
             this.gbVisita.TabIndex = 64;
             this.gbVisita.TabStop = false;
             this.gbVisita.Text = "Visita";
+            // 
+            // txtIDVisita
+            // 
+            this.txtIDVisita.Enabled = false;
+            this.txtIDVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtIDVisita.Location = new System.Drawing.Point(48, -3);
+            this.txtIDVisita.Name = "txtIDVisita";
+            this.txtIDVisita.Size = new System.Drawing.Size(82, 20);
+            this.txtIDVisita.TabIndex = 98;
+            this.txtIDVisita.Visible = false;
             // 
             // groupBox7
             // 
@@ -1305,7 +1258,7 @@
             // 
             // tabListado
             // 
-            this.tabListado.Controls.Add(this.dataGridView1);
+            this.tabListado.Controls.Add(this.dgvCliente);
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Size = new System.Drawing.Size(776, 536);
@@ -1313,13 +1266,26 @@
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvCliente
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 7);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(762, 522);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDCliente,
+            this.colFechaAlta,
+            this.coltipoDoc,
+            this.colNumDoc,
+            this.colSexo,
+            this.colCUIL,
+            this.colApellido,
+            this.colNombre,
+            this.colEstadoCivil,
+            this.colCondicionIVA,
+            this.coltipoCliente});
+            this.dgvCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCliente.Location = new System.Drawing.Point(0, 0);
+            this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.Size = new System.Drawing.Size(776, 536);
+            this.dgvCliente.TabIndex = 1;
             // 
             // tabMovimientos
             // 
@@ -1330,15 +1296,60 @@
             this.tabMovimientos.Text = "Movimientos";
             this.tabMovimientos.UseVisualStyleBackColor = true;
             // 
-            // txtIDVisita
+            // colIDCliente
             // 
-            this.txtIDVisita.Enabled = false;
-            this.txtIDVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtIDVisita.Location = new System.Drawing.Point(48, -3);
-            this.txtIDVisita.Name = "txtIDVisita";
-            this.txtIDVisita.Size = new System.Drawing.Size(82, 20);
-            this.txtIDVisita.TabIndex = 98;
-            this.txtIDVisita.Visible = false;
+            this.colIDCliente.HeaderText = "ID Cliente";
+            this.colIDCliente.Name = "colIDCliente";
+            // 
+            // colFechaAlta
+            // 
+            this.colFechaAlta.HeaderText = "Fecha Alta";
+            this.colFechaAlta.Name = "colFechaAlta";
+            // 
+            // coltipoDoc
+            // 
+            this.coltipoDoc.HeaderText = "Tipo Documento";
+            this.coltipoDoc.Name = "coltipoDoc";
+            // 
+            // colNumDoc
+            // 
+            this.colNumDoc.HeaderText = "Nº Documento";
+            this.colNumDoc.Name = "colNumDoc";
+            // 
+            // colSexo
+            // 
+            this.colSexo.HeaderText = "Sexo";
+            this.colSexo.Name = "colSexo";
+            // 
+            // colCUIL
+            // 
+            this.colCUIL.HeaderText = "CUIL";
+            this.colCUIL.Name = "colCUIL";
+            // 
+            // colApellido
+            // 
+            this.colApellido.HeaderText = "Apellido";
+            this.colApellido.Name = "colApellido";
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            // 
+            // colEstadoCivil
+            // 
+            this.colEstadoCivil.HeaderText = "Estado Civil";
+            this.colEstadoCivil.Name = "colEstadoCivil";
+            // 
+            // colCondicionIVA
+            // 
+            this.colCondicionIVA.HeaderText = "Condicion IVA";
+            this.colCondicionIVA.Name = "colCondicionIVA";
+            // 
+            // coltipoCliente
+            // 
+            this.coltipoCliente.HeaderText = "Tipo Cliente";
+            this.coltipoCliente.Name = "coltipoCliente";
             // 
             // formCliente
             // 
@@ -1369,7 +1380,7 @@
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.tabListado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1383,7 +1394,7 @@
         private System.Windows.Forms.TabPage tabFamilia;
         private System.Windows.Forms.TabPage tabMovimientos;
         private System.Windows.Forms.TabPage tabListado;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnSearch;
@@ -1470,14 +1481,19 @@
         public System.Windows.Forms.TextBox txt12LT;
         public System.Windows.Forms.TextBox txt10LT;
         public System.Windows.Forms.TextBox txt4LT;
-        public System.Windows.Forms.TextBox txtAGUAramedio;
-        private System.Windows.Forms.Label label34;
-        public System.Windows.Forms.TextBox txtAGUAneg;
-        private System.Windows.Forms.Label label33;
-        public System.Windows.Forms.TextBox txtAGUAeti;
         public System.Windows.Forms.TextBox txtAGUAram;
-        private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         public System.Windows.Forms.TextBox txtIDVisita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coltipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNumDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCUIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoCivil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCondicionIVA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coltipoCliente;
     }
 }

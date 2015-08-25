@@ -105,6 +105,6 @@ namespace RamosHermanos.Capas.Interfaz
             frm.tabVar = 1;
             frm.Show();
         }
-        
+
     }
 }

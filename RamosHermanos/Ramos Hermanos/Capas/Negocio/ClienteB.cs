@@ -194,6 +194,48 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void CargarDGV(DataGridView dgv)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"SELECT C.idCliente, C.fechaAlta, TP.tipoDoc, C.numDoc, C.sexo, C.cuil, C.apellido, C.nombre, c.estadoCivil, c.condicionIVA, TC.tipocliente
+                                 FROM Clientes C
+                                 INNER JOIN tipoDocumento TP ON C.tipoDoc = TP.idTipoDoc
+                                 INNER JOIN tipoCliente TC ON C.tipoDoc = TC.idTipoCliente";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idCliente"]),
+                    Convert.ToString(dr["fechaAlta"]),
+                    Convert.ToString(dr["tipoDoc"]),
+                    Convert.ToString(dr["numDoc"]),
+                    Convert.ToString(dr["sexo"]),
+                    Convert.ToString(dr["cuil"]),
+                    Convert.ToString(dr["apellido"]),
+                    Convert.ToString(dr["nombre"]),
+                    Convert.ToString(dr["estadoCivil"]),
+                    Convert.ToString(dr["condicionIVA"]),
+                    Convert.ToString(dr["tipoCliente"]));
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
       
     }
 }
