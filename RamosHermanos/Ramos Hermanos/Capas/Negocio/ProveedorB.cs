@@ -17,8 +17,8 @@ namespace RamosHermanos.Capas.Negocio
         { 
             MySQL.ConnectDB();
 
-            string query = @"Insert into proveedores (rol,razonSocial,cuit,estado,condicionIVA,tipoProveedor)
-                          VALUES (@rol,@razonSocial,@cuit,@estado,@condicionIVA,@tipoProveedor);
+            string query = @"Insert into proveedores (rol,razonSocial,cuit,estado,condicionIVA,tipoProveedor,fechaAlta)
+                          VALUES (@rol,@razonSocial,@cuit,@estado,@condicionIVA,@tipoProveedor,@fechaAlta);
                           Select last_insert_id();";
 
             MySqlCommand cmd = new MySqlCommand (query, MySQL.sqlcnx);
@@ -29,7 +29,8 @@ namespace RamosHermanos.Capas.Negocio
             cmd.Parameters.AddWithValue("@estado", prov.estado);
             cmd.Parameters.AddWithValue("@condicionIVA", prov.condicioniva);
             cmd.Parameters.AddWithValue("@tipoProveedor", prov.tipoProveedor);
-                   
+            cmd.Parameters.AddWithValue("@fechaAlta", prov.fecha);
+                               
             txtid.Text= Convert.ToString(cmd.ExecuteScalar());
 
             MessageBox.Show("Guardado");

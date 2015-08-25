@@ -44,6 +44,11 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void agregarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             formProveedor frm = new formProveedor();
             frm.Show();
 

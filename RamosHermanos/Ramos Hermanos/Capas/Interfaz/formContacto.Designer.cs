@@ -38,7 +38,19 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.txtNombreDom = new System.Windows.Forms.TextBox();
             this.dgvDomicilio = new System.Windows.Forms.DataGridView();
+            this.colIDDom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoDom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblEstadoDom = new System.Windows.Forms.Label();
+            this.cbEstadoDom = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtDpto = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -74,6 +86,13 @@
             this.btnDelTel = new System.Windows.Forms.Button();
             this.txtNombreTel = new System.Windows.Forms.TextBox();
             this.dgvTelefono = new System.Windows.Forms.DataGridView();
+            this.colIDTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDTipoTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipoTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCaracteristica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colnumTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoTel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblEstadoTel = new System.Windows.Forms.Label();
             this.cbEstadoTel = new System.Windows.Forms.CheckBox();
@@ -103,25 +122,6 @@
             this.cbEstadoEmail = new System.Windows.Forms.CheckBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.lblEstadoDom = new System.Windows.Forms.Label();
-            this.cbEstadoDom = new System.Windows.Forms.CheckBox();
-            this.colIDDom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstadoDom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIDTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIDTipoTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTipoTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCaracteristica = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colnumTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstadoTel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabContacto.SuspendLayout();
             this.tabDomicilios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDomicilio)).BeginInit();
@@ -256,6 +256,67 @@
             this.dgvDomicilio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDomicilio_CellContentClick);
             this.dgvDomicilio.SelectionChanged += new System.EventHandler(this.dgvDomicilio_SelectionChanged);
             // 
+            // colIDDom
+            // 
+            this.colIDDom.HeaderText = "idDomicilio";
+            this.colIDDom.Name = "colIDDom";
+            this.colIDDom.ReadOnly = true;
+            this.colIDDom.Visible = false;
+            // 
+            // colCalle
+            // 
+            this.colCalle.HeaderText = "Calle";
+            this.colCalle.Name = "colCalle";
+            this.colCalle.ReadOnly = true;
+            // 
+            // colNumero
+            // 
+            this.colNumero.HeaderText = "Numero";
+            this.colNumero.Name = "colNumero";
+            this.colNumero.ReadOnly = true;
+            // 
+            // colPiso
+            // 
+            this.colPiso.HeaderText = "colPiso";
+            this.colPiso.Name = "colPiso";
+            this.colPiso.ReadOnly = true;
+            // 
+            // colDpto
+            // 
+            this.colDpto.HeaderText = "Dpto";
+            this.colDpto.Name = "colDpto";
+            this.colDpto.ReadOnly = true;
+            // 
+            // colCP
+            // 
+            this.colCP.HeaderText = "CP";
+            this.colCP.Name = "colCP";
+            this.colCP.ReadOnly = true;
+            // 
+            // colBarrio
+            // 
+            this.colBarrio.HeaderText = "Barrio";
+            this.colBarrio.Name = "colBarrio";
+            this.colBarrio.ReadOnly = true;
+            // 
+            // colLocalidad
+            // 
+            this.colLocalidad.HeaderText = "Localidad";
+            this.colLocalidad.Name = "colLocalidad";
+            this.colLocalidad.ReadOnly = true;
+            // 
+            // colProvincia
+            // 
+            this.colProvincia.HeaderText = "Provincia";
+            this.colProvincia.Name = "colProvincia";
+            this.colProvincia.ReadOnly = true;
+            // 
+            // colEstadoDom
+            // 
+            this.colEstadoDom.HeaderText = "Estado";
+            this.colEstadoDom.Name = "colEstadoDom";
+            this.colEstadoDom.ReadOnly = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lblEstadoDom);
@@ -294,6 +355,26 @@
             this.groupBox2.TabIndex = 84;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Domicilio";
+            // 
+            // lblEstadoDom
+            // 
+            this.lblEstadoDom.AutoSize = true;
+            this.lblEstadoDom.Location = new System.Drawing.Point(489, 129);
+            this.lblEstadoDom.Name = "lblEstadoDom";
+            this.lblEstadoDom.Size = new System.Drawing.Size(0, 13);
+            this.lblEstadoDom.TabIndex = 110;
+            // 
+            // cbEstadoDom
+            // 
+            this.cbEstadoDom.AutoSize = true;
+            this.cbEstadoDom.Checked = true;
+            this.cbEstadoDom.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEstadoDom.Location = new System.Drawing.Point(468, 129);
+            this.cbEstadoDom.Name = "cbEstadoDom";
+            this.cbEstadoDom.Size = new System.Drawing.Size(15, 14);
+            this.cbEstadoDom.TabIndex = 111;
+            this.cbEstadoDom.UseVisualStyleBackColor = true;
+            this.cbEstadoDom.CheckedChanged += new System.EventHandler(this.cbEstadoDom_CheckedChanged);
             // 
             // label2
             // 
@@ -702,6 +783,52 @@
             this.dgvTelefono.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefono_CellContentClick);
             this.dgvTelefono.SelectionChanged += new System.EventHandler(this.dgvTelefono_SelectionChanged);
             // 
+            // colIDTelefono
+            // 
+            this.colIDTelefono.HeaderText = "ID Telefono";
+            this.colIDTelefono.Name = "colIDTelefono";
+            this.colIDTelefono.ReadOnly = true;
+            this.colIDTelefono.Visible = false;
+            // 
+            // colIDTipoTel
+            // 
+            this.colIDTipoTel.HeaderText = "ID Tipo Tel";
+            this.colIDTipoTel.Name = "colIDTipoTel";
+            this.colIDTipoTel.ReadOnly = true;
+            this.colIDTipoTel.Visible = false;
+            // 
+            // colTipoTel
+            // 
+            this.colTipoTel.HeaderText = "Tipo Telefono";
+            this.colTipoTel.Name = "colTipoTel";
+            this.colTipoTel.ReadOnly = true;
+            // 
+            // colCaracteristica
+            // 
+            this.colCaracteristica.HeaderText = "Caracteristica";
+            this.colCaracteristica.Name = "colCaracteristica";
+            this.colCaracteristica.ReadOnly = true;
+            this.colCaracteristica.Visible = false;
+            // 
+            // colnumTel
+            // 
+            this.colnumTel.HeaderText = "numTel";
+            this.colnumTel.Name = "colnumTel";
+            this.colnumTel.ReadOnly = true;
+            this.colnumTel.Visible = false;
+            // 
+            // colTelefono
+            // 
+            this.colTelefono.HeaderText = "Telefono";
+            this.colTelefono.Name = "colTelefono";
+            this.colTelefono.ReadOnly = true;
+            // 
+            // colEstadoTel
+            // 
+            this.colEstadoTel.HeaderText = "Estado";
+            this.colEstadoTel.Name = "colEstadoTel";
+            this.colEstadoTel.ReadOnly = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblEstadoTel);
@@ -964,7 +1091,6 @@
             this.txtIDALL.Name = "txtIDALL";
             this.txtIDALL.Size = new System.Drawing.Size(110, 20);
             this.txtIDALL.TabIndex = 108;
-            this.txtIDALL.Visible = false;
             // 
             // groupBox3
             // 
@@ -1017,133 +1143,6 @@
             this.label29.Size = new System.Drawing.Size(32, 13);
             this.label29.TabIndex = 106;
             this.label29.Text = "Email";
-            // 
-            // lblEstadoDom
-            // 
-            this.lblEstadoDom.AutoSize = true;
-            this.lblEstadoDom.Location = new System.Drawing.Point(489, 129);
-            this.lblEstadoDom.Name = "lblEstadoDom";
-            this.lblEstadoDom.Size = new System.Drawing.Size(0, 13);
-            this.lblEstadoDom.TabIndex = 110;
-            // 
-            // cbEstadoDom
-            // 
-            this.cbEstadoDom.AutoSize = true;
-            this.cbEstadoDom.Checked = true;
-            this.cbEstadoDom.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbEstadoDom.Location = new System.Drawing.Point(468, 129);
-            this.cbEstadoDom.Name = "cbEstadoDom";
-            this.cbEstadoDom.Size = new System.Drawing.Size(15, 14);
-            this.cbEstadoDom.TabIndex = 111;
-            this.cbEstadoDom.UseVisualStyleBackColor = true;
-            this.cbEstadoDom.CheckedChanged += new System.EventHandler(this.cbEstadoDom_CheckedChanged);
-            // 
-            // colIDDom
-            // 
-            this.colIDDom.HeaderText = "idDomicilio";
-            this.colIDDom.Name = "colIDDom";
-            this.colIDDom.ReadOnly = true;
-            this.colIDDom.Visible = false;
-            // 
-            // colCalle
-            // 
-            this.colCalle.HeaderText = "Calle";
-            this.colCalle.Name = "colCalle";
-            this.colCalle.ReadOnly = true;
-            // 
-            // colNumero
-            // 
-            this.colNumero.HeaderText = "Numero";
-            this.colNumero.Name = "colNumero";
-            this.colNumero.ReadOnly = true;
-            // 
-            // colPiso
-            // 
-            this.colPiso.HeaderText = "colPiso";
-            this.colPiso.Name = "colPiso";
-            this.colPiso.ReadOnly = true;
-            // 
-            // colDpto
-            // 
-            this.colDpto.HeaderText = "Dpto";
-            this.colDpto.Name = "colDpto";
-            this.colDpto.ReadOnly = true;
-            // 
-            // colCP
-            // 
-            this.colCP.HeaderText = "CP";
-            this.colCP.Name = "colCP";
-            this.colCP.ReadOnly = true;
-            // 
-            // colBarrio
-            // 
-            this.colBarrio.HeaderText = "Barrio";
-            this.colBarrio.Name = "colBarrio";
-            this.colBarrio.ReadOnly = true;
-            // 
-            // colLocalidad
-            // 
-            this.colLocalidad.HeaderText = "Localidad";
-            this.colLocalidad.Name = "colLocalidad";
-            this.colLocalidad.ReadOnly = true;
-            // 
-            // colProvincia
-            // 
-            this.colProvincia.HeaderText = "Provincia";
-            this.colProvincia.Name = "colProvincia";
-            this.colProvincia.ReadOnly = true;
-            // 
-            // colEstadoDom
-            // 
-            this.colEstadoDom.HeaderText = "Estado";
-            this.colEstadoDom.Name = "colEstadoDom";
-            this.colEstadoDom.ReadOnly = true;
-            // 
-            // colIDTelefono
-            // 
-            this.colIDTelefono.HeaderText = "ID Telefono";
-            this.colIDTelefono.Name = "colIDTelefono";
-            this.colIDTelefono.ReadOnly = true;
-            this.colIDTelefono.Visible = false;
-            // 
-            // colIDTipoTel
-            // 
-            this.colIDTipoTel.HeaderText = "ID Tipo Tel";
-            this.colIDTipoTel.Name = "colIDTipoTel";
-            this.colIDTipoTel.ReadOnly = true;
-            this.colIDTipoTel.Visible = false;
-            // 
-            // colTipoTel
-            // 
-            this.colTipoTel.HeaderText = "Tipo Telefono";
-            this.colTipoTel.Name = "colTipoTel";
-            this.colTipoTel.ReadOnly = true;
-            // 
-            // colCaracteristica
-            // 
-            this.colCaracteristica.HeaderText = "Caracteristica";
-            this.colCaracteristica.Name = "colCaracteristica";
-            this.colCaracteristica.ReadOnly = true;
-            this.colCaracteristica.Visible = false;
-            // 
-            // colnumTel
-            // 
-            this.colnumTel.HeaderText = "numTel";
-            this.colnumTel.Name = "colnumTel";
-            this.colnumTel.ReadOnly = true;
-            this.colnumTel.Visible = false;
-            // 
-            // colTelefono
-            // 
-            this.colTelefono.HeaderText = "Telefono";
-            this.colTelefono.Name = "colTelefono";
-            this.colTelefono.ReadOnly = true;
-            // 
-            // colEstadoTel
-            // 
-            this.colEstadoTel.HeaderText = "Estado";
-            this.colEstadoTel.Name = "colEstadoTel";
-            this.colEstadoTel.ReadOnly = true;
             // 
             // formContacto
             // 

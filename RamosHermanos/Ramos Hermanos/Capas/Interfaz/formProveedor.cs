@@ -28,7 +28,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void button6_Click(object sender, EventArgs e)
         {
             cargarProv();
-            ProveedorB.InsertProveedor(proveedor, txtid);
+            ProveedorB.InsertProveedor(proveedor, txtidprov);
 
         }
 
@@ -37,19 +37,73 @@ namespace RamosHermanos.Capas.Interfaz
         private void cargarProv()
     
         {
+            proveedor.fecha = dtpFechaAlta.Value;
             proveedor.cuit = txtcuit.Text;
             proveedor.razsocial = txtRazonSocial.Text;
             proveedor.estado = cbEstado.Checked;
             proveedor.condicioniva = cbIVA.SelectedText;
-            proveedor.tipoProveedor = Convert.ToInt32(cbTipoProveedor.SelectedValue);
-            proveedor.rol = 2;          
+            proveedor.rol = 2;     
+           
 
         }
 
-        private void MetodoFantasma88()
+        SaldoEntity saldo = new SaldoEntity();
+
+        private void cargarsaldo()
+
         {
 
+            saldo.idPersona = Convert.ToInt32(txtidprov.Text);
+            saldo.rol = 2;
+            saldo.creditoMax = Convert.ToDouble(txtDebmax.Text);
+            
 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+
+        {
+           
+           if (txtidprov.Text == string.Empty)
+            {
+
+                MessageBox.Show("Por favor, ingrese un proveedor");
+
+            }
+
+            else
+
+            {
+                formContacto frm = new formContacto();
+                frm.tabVar = 2;
+                frm.cbRolALL.SelectedValue = 2;
+                frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+
+                frm.Show();
+
+
+            }
+
+          
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            formContacto frm = new formContacto();
+            frm.txtIDALL.Text = Convert.ToString(txtidprov.Text);
+            frm.tabVar = 0;
+            frm.Show();
+        }
+
+        private void btnTelefono_Click(object sender, EventArgs e)
+        {
+            
+            formContacto frm = new formContacto();
+            frm.txtIDALL.Text = Convert.ToString(txtidprov.Text);
+            frm.tabVar = 1;
+            frm.Show();
         }
         
     }

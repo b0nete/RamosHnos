@@ -9,6 +9,7 @@ namespace RamosHermanos.Capas.Entidades
     class ProveedorEntity
     {
         public int idProveedor { get; set; }
+        public DateTime fecha { get; set; }
         public int rol { get; set; }
         public string razsocial { get; set; }
         public string cuit { get; set; }
