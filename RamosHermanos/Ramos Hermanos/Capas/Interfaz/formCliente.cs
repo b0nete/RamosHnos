@@ -40,6 +40,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         public void CargaInicial()
         {
+            ClienteB.CargarDGV(dgvCliente);
             tipoDocB.CargarTipoDoc(cbTipoDoc);
             tipoClienteB.CargarTipoCliente(cbTipoCliente);
 
@@ -116,7 +117,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (txtnumDoc.Text == "")
             {
-                MessageBox.Show("Ingrese el Nº de documento del cliente a Buscar");
+                tabMain.SelectedTab = tabListado;
                 return;
             }
 
@@ -181,7 +182,7 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
-        {
+        {            
             BuscarCliente();
         }
 
@@ -700,6 +701,11 @@ namespace RamosHermanos.Capas.Interfaz
                     BuscarCliente();
                 }             
             }        
+        }
+
+        private void cbTipoCliente_DropDown(object sender, EventArgs e)
+        {
+            tipoClienteB.CargarTipoCliente(cbTipoCliente);
         }
 
 

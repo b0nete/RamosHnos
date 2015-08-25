@@ -45,19 +45,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvtipoCliente = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.colIDtipoCli = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coltCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPorc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtIDtipoCli = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvtipoCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtIDtipoCli);
             this.groupBox1.Controls.Add(this.cbColor);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.button4);
@@ -253,6 +255,7 @@
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 65;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // cbEstado
             // 
@@ -272,6 +275,8 @@
             this.txtDescuento.Name = "txtDescuento";
             this.txtDescuento.Size = new System.Drawing.Size(398, 20);
             this.txtDescuento.TabIndex = 7;
+            this.txtDescuento.TextChanged += new System.EventHandler(this.txtDescuento_TextChanged);
+            this.txtDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescuento_KeyPress);
             // 
             // btnSave
             // 
@@ -383,18 +388,6 @@
             this.dgvtipoCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtipoCliente_CellContentClick);
             this.dgvtipoCliente.SelectionChanged += new System.EventHandler(this.dgvtipoCliente_SelectionChanged);
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(584, 412);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 28);
-            this.button1.TabIndex = 67;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // colIDtipoCli
             // 
             this.colIDtipoCli.HeaderText = "ID Tipo Cliente";
@@ -433,6 +426,27 @@
             this.colEstado.HeaderText = "Estado";
             this.colEstado.Name = "colEstado";
             this.colEstado.ReadOnly = true;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(584, 412);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 28);
+            this.button1.TabIndex = 67;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // txtIDtipoCli
+            // 
+            this.txtIDtipoCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDtipoCli.Location = new System.Drawing.Point(516, -3);
+            this.txtIDtipoCli.Name = "txtIDtipoCli";
+            this.txtIDtipoCli.Size = new System.Drawing.Size(78, 20);
+            this.txtIDtipoCli.TabIndex = 68;
+            this.txtIDtipoCli.Visible = false;
             // 
             // formtipoCliente
             // 
@@ -478,5 +492,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPorc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colColor;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colEstado;
+        private System.Windows.Forms.TextBox txtIDtipoCli;
     }
 }

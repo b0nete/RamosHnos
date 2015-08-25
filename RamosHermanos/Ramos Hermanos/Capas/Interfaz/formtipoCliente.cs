@@ -51,7 +51,7 @@ namespace RamosHermanos.Capas.Interfaz
             CargartCliente();
             if (tipoClienteB.ExistetCliente(tcliente) == true)
             {
-                MessageBox.Show("El tipo de Cliente ya existe!");
+                MessageBox.Show("No se pueden usar valores repetidos: Tipo Cliente, Porcentaje de Descuento o Color repetidos.");
                 return;
             }
             else
@@ -97,6 +97,7 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 DataGridViewRow row = cell.OwningRow;
                 tcliente.idtipoCliente = Convert.ToInt32(row.Cells["colIDtipoCli"].Value.ToString());
+                txtIDtipoCli.Text = row.Cells["colIDtipoCli"].Value.ToString();
                 tcliente.tipoCliente = row.Cells["coltCliente"].Value.ToString();
                 txttCliente.Text = row.Cells["coltCliente"].Value.ToString();
                 tcliente.descripcion = row.Cells["colDescripcion"].Value.ToString();
@@ -107,6 +108,46 @@ namespace RamosHermanos.Capas.Interfaz
                 cbColor.Text = row.Cells["colColor"].Value.ToString();
                 tcliente.estado = Convert.ToBoolean(row.Cells["colEstado"].Value.ToString());
                 cbEstado.Checked = Convert.ToBoolean(row.Cells["colEstado"].Value.ToString());
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (txtIDtipoCli.Text == string.Empty)
+            {
+                MessageBox.Show("Seleccione un tipo de Cliente");
+            }
+            else
+            {
+                CargartCliente();
+                tipoClienteB.UpdatetCliente(tcliente);
+                tipoClienteB.CargarDGV(dgvtipoCliente);
+            }
+        }
+
+        private void txtDescuento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (ch == 44 && ch == 46 && txtDescuento.Text.IndexOf(',') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 44 && ch != 46)
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '.')
+            {
+                e.KeyChar = ',';
             }
         }
 

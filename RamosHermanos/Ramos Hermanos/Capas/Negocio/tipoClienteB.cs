@@ -19,10 +19,12 @@ namespace RamosHermanos.Capas.Negocio
             MySQL.ConnectDB();
 
             string query = @"SELECT COUNT(*) FROM tipoCliente
-                             WHERE tipoCliente = @tipoCliente";
+                             WHERE tipoCliente = @tipoCliente or porcDescuento = @porcDescuento or color = @color";
 
             MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
             cmd.Parameters.AddWithValue("@tipoCliente", tcliente.tipoCliente);
+            cmd.Parameters.AddWithValue("@porcDescuento", tcliente.porcDescuento);
+            cmd.Parameters.AddWithValue("@color", tcliente.color);
 
             int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -105,6 +107,7 @@ namespace RamosHermanos.Capas.Negocio
         {
             try
             {
+                dgv.Rows.Clear();
                 MySQL.ConnectDB();
 
                 string query = @"SELECT * FROM tipoCliente";
