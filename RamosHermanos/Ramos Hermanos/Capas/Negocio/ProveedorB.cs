@@ -7,6 +7,7 @@ using RamosHermanos.Capas.Datos;
 using RamosHermanos.Capas.Entidades;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace RamosHermanos.Capas.Negocio
 {
@@ -38,5 +39,24 @@ namespace RamosHermanos.Capas.Negocio
             return prov;
 
         }
-    }
-}
+
+
+        public static void cargardgv (DataGridView dgv)
+        {
+            MySQL.ConnectDB();
+            MySqlCommand cmd = new MySqlCommand (@"Select idProveedor as NumeroProveedor, rol as Rol, razonSocial as 'Razon Social',
+            cuit as Cuit, email as Email, estado as Estado, tipoProveedor as 'Tipo de Proveedor', condicionIva as 'Condicion Iva',
+            fechaAlta as 'Fecha de Alta' from proveedores", MySQL.sqlcnx);
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dgv.DataSource = dt;
+            MySQL.DisconnectDB();
+        }
+
+
+
+
+        }
+ }
+

@@ -80,13 +80,13 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-
+               
                 frm.Show();
 
 
             }
 
-          
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -104,6 +104,15 @@ namespace RamosHermanos.Capas.Interfaz
             frm.txtIDALL.Text = Convert.ToString(txtidprov.Text);
             frm.tabVar = 1;
             frm.Show();
+        }
+
+     
+        private void btnSearch_Click(object sender, EventArgs e)
+        
+        {
+            
+    
+
         }
         
     }
