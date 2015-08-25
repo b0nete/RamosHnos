@@ -42,12 +42,11 @@ namespace RamosHermanos.Capas.Interfaz
             proveedor.estado = cbEstado.Checked;
             proveedor.condicioniva = cbIVA.SelectedText;
             proveedor.tipoProveedor = Convert.ToInt32(cbTipoProveedor.SelectedValue);
-            proveedor.rol = 2;
-                       
+            proveedor.rol = 2;          
 
         }
 
-        private void MetodoFantasma23123()
+        private void MetodoFantasma45()
         {
 
 
