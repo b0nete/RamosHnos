@@ -14,33 +14,47 @@ namespace RamosHermanos.Capas.Negocio
 {
     class tipoClienteB
     {
+        public static bool ExistetCliente(tipoClienteEntity tcliente)
+        {
+            MySQL.ConnectDB();
+
+            string query = @"SELECT COUNT(*) FROM tipoCliente
+                             WHERE tipoCliente = @tipoCliente";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+            cmd.Parameters.AddWithValue("@tipoCliente", tcliente.tipoCliente);
+
+            int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (resultado == 0)
+                return false;
+            else
+                return true;
+
+        }
+
         public static tipoClienteEntity UpdatetCliente(tipoClienteEntity tcliente)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = @"UPDATE Clientes
-                                 SET fechaalta = @fechaAlta, tipodoc = @tipoDoc, numdoc = @numDoc, sexo = @sexo, cuil =  @cuil, nombre = @nombre, apellido = @apellido, estadoCivil = @estadoCivil, condicionIVA = @condicionIVA, tipoCliente = @tipoCliente, estado = @estado
-                                 WHERE numDoc = @numDoc";
+                string query = @"UPDATE tipoCliente
+                                 SET tipoCliente = @tipoCliente, descripcion = @descripcion, porcDescuento = @porcDescuento, color = @color, estado = @estado
+                                 WHERE idtipoCliente = @idtipoCliente";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                //cmd.Parameters.AddWithValue("@fechaAlta", cliente.fechaAlta);
-                //cmd.Parameters.AddWithValue("@tipoDoc", cliente.tipoDoc);
-                //cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
-                //cmd.Parameters.AddWithValue("@sexo", cliente.sexo);
-                //cmd.Parameters.AddWithValue("@cuil", cliente.cuil);
-                //cmd.Parameters.AddWithValue("@apellido", cliente.apellido);
-                //cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
-                //cmd.Parameters.AddWithValue("@estadoCivil", cliente.estadoCivil);
-                //cmd.Parameters.AddWithValue("@condicionIVA", cliente.condicionIVA);
-                //cmd.Parameters.AddWithValue("@tipoCliente", cliente.tipoCliente);
-                //cmd.Parameters.AddWithValue("@estado", cliente.estado);
+                cmd.Parameters.AddWithValue("@idtipoCliente", tcliente.idtipoCliente);
+                cmd.Parameters.AddWithValue("@tipoCliente", tcliente.tipoCliente);
+                cmd.Parameters.AddWithValue("@descripcion", tcliente.descripcion);
+                cmd.Parameters.AddWithValue("@porcDescuento", tcliente.porcDescuento);
+                cmd.Parameters.AddWithValue("@color", tcliente.color);
+                cmd.Parameters.AddWithValue("@estado", tcliente.estado);
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Cliente Actualizado!");
+                MessageBox.Show("Tipo Cliente Actualizado!");
                 return tcliente;
             }
 
@@ -86,57 +100,8 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static tipoClienteEntity BuscartCliente(tipoClienteEntity tcliente)
-        {
-            try
-            {
-                MySQL.ConnectDB();
 
-                string query = "SELECT * FROM Clientes WHERE numDoc = @numDoc";
-
-                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-
-                //cmd.Parameters.AddWithValue("@numDoc", tcliente.numDoc);
-
-                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
-                if (resultado == 0)
-                {
-                    MessageBox.Show("El Cliente no existe!");
-                }
-                else
-                {
-                    DataTable dt = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
-                    da.Fill(dt);
-
-                    DataRow row = dt.Rows[0];
-
-                    //cliente.idCliente = Convert.ToInt32(row["idCliente"]);
-                    //cliente.fechaAlta = Convert.ToDateTime(row["fechaAlta"]);
-                    //cliente.tipoDoc = Convert.ToInt32(row["tipoDoc"]);
-                    //cliente.sexo = Convert.ToString(row["sexo"]);
-                    //cliente.cuil = Convert.ToString(row["cuil"]);
-                    //cliente.apellido = Convert.ToString(row["apellido"]);
-                    //cliente.nombre = Convert.ToString(row["nombre"]);
-                    //cliente.estadoCivil = Convert.ToString(row["estadoCivil"]);
-                    //cliente.condicionIVA = Convert.ToString(row["condicionIVA"]);
-                    //cliente.tipoCliente = Convert.ToInt32(row["tipoCliente"]);
-                    //cliente.estado = Convert.ToBoolean(row["estado"]);
-
-                    MySQL.DisconnectDB();
-                }
-                return tcliente;
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex);
-                throw;
-            }
-        }
-
-        public static void ListadoDGV(DataGridView dgv)
+        public static void CargarDGV(DataGridView dgv)
         {
             try
             {
@@ -150,6 +115,7 @@ namespace RamosHermanos.Capas.Negocio
                 while (dr.Read())
                 {
                     int index = dgv.Rows.Add(
+                        Convert.ToString(dr["idtipoCliente"]),
                         Convert.ToString(dr["tipoCliente"]),
                         Convert.ToString(dr["descripcion"]),
                         Convert.ToInt32(dr["porcDescuento"]),
@@ -169,8 +135,6 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
-
-
 
         public static void CargarTipoCliente(ComboBox cb)
         {
