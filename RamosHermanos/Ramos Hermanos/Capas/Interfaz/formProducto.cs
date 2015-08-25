@@ -24,7 +24,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         // Metodos
 
-        private void EventoFantasma99()
+        private void EventoFantasma100()
         {
         }
 
