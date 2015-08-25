@@ -35,36 +35,33 @@ namespace RamosHermanos.Capas.Interfaz
         ProveedorEntity proveedor = new ProveedorEntity();
 
         private void cargarProv()
-    
         {
             proveedor.fecha = dtpFechaAlta.Value;
             proveedor.cuit = txtcuit.Text;
             proveedor.razsocial = txtRazonSocial.Text;
             proveedor.estado = cbEstado.Checked;
             proveedor.condicioniva = cbIVA.SelectedText;
-            proveedor.rol = 2;     
-           
+            proveedor.rol = 2;
+
 
         }
 
         SaldoEntity saldo = new SaldoEntity();
 
         private void cargarsaldo()
-
         {
 
             saldo.idPersona = Convert.ToInt32(txtidprov.Text);
             saldo.rol = 2;
             saldo.creditoMax = Convert.ToDouble(txtDebmax.Text);
-            
+
 
         }
 
         private void button7_Click(object sender, EventArgs e)
-
         {
-           
-           if (txtidprov.Text == string.Empty)
+
+            if (txtidprov.Text == string.Empty)
             {
 
                 MessageBox.Show("Por favor, ingrese un proveedor");
@@ -72,7 +69,6 @@ namespace RamosHermanos.Capas.Interfaz
             }
 
             else
-
             {
                 formContacto frm = new formContacto();
                 frm.tabVar = 2;
@@ -80,13 +76,13 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-               
+
                 frm.Show();
 
 
             }
 
-           
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -99,24 +95,11 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnTelefono_Click(object sender, EventArgs e)
         {
-            
+
             formContacto frm = new formContacto();
             frm.txtIDALL.Text = Convert.ToString(txtidprov.Text);
             frm.tabVar = 1;
             frm.Show();
         }
-
-<<<<<<< HEAD
-     
-        private void btnSearch_Click(object sender, EventArgs e)
-        
-        {
-            
-    
-
-        }
-        
-=======
->>>>>>> f36bc69574f47995443ff84694d58be688e6976f
     }
 }
