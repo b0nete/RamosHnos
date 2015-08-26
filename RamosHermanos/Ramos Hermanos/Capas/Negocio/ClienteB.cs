@@ -113,7 +113,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static ClienteEntity BuscarCliente(ClienteEntity cliente)
+        public static ClienteEntity BuscarClienteDOC(ClienteEntity cliente)
         {
             try
             {
@@ -149,6 +149,56 @@ namespace RamosHermanos.Capas.Negocio
                     cliente.estadoCivil = Convert.ToString(row["estadoCivil"]);
                     cliente.condicionIVA = Convert.ToString(row["condicionIVA"]);
                     cliente.tipoCliente = Convert.ToInt32(row["tipoCliente"]);  
+                    cliente.estado = Convert.ToBoolean(row["estado"]);
+
+                    MySQL.DisconnectDB();
+                }
+                return cliente;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static ClienteEntity BuscarClienteID(ClienteEntity cliente)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = "SELECT * FROM Clientes WHERE idCliente = @idCliente";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idCliente", cliente.idCliente);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("El Cliente no existe!");
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    DataRow row = dt.Rows[0];
+
+                    cliente.numDoc = Convert.ToString(row["numDoc"]);
+                    cliente.fechaAlta = Convert.ToDateTime(row["fechaAlta"]);
+                    cliente.tipoDoc = Convert.ToInt32(row["tipoDoc"]);
+                    cliente.sexo = Convert.ToString(row["sexo"]);
+                    cliente.cuil = Convert.ToString(row["cuil"]);
+                    cliente.apellido = Convert.ToString(row["apellido"]);
+                    cliente.nombre = Convert.ToString(row["nombre"]);
+                    cliente.estadoCivil = Convert.ToString(row["estadoCivil"]);
+                    cliente.condicionIVA = Convert.ToString(row["condicionIVA"]);
+                    cliente.tipoCliente = Convert.ToInt32(row["tipoCliente"]);
                     cliente.estado = Convert.ToBoolean(row["estado"]);
 
                     MySQL.DisconnectDB();
@@ -201,7 +251,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT C.idCliente, C.fechaAlta, TP.tipoDoc, C.numDoc, C.sexo, C.cuil, C.apellido, C.nombre, c.estadoCivil, c.condicionIVA, TC.tipocliente
+                string query = @"SELECT C.idCliente, C.fechaAlta, C.tipoDoc as IDtipoDoc, TP.tipoDoc, C.numDoc, C.sexo, C.cuil, C.apellido, C.nombre, c.estadoCivil, c.condicionIVA, C.tipoCliente as IDtipoCliente, TC.tipocliente
                                  FROM Clientes C
                                  INNER JOIN tipoDocumento TP ON C.tipoDoc = TP.idTipoDoc
                                  INNER JOIN tipoCliente TC ON C.tipoDoc = TC.idTipoCliente";
@@ -215,6 +265,7 @@ namespace RamosHermanos.Capas.Negocio
                     dgv.Rows.Add(
                     Convert.ToString(dr["idCliente"]),
                     Convert.ToString(dr["fechaAlta"]),
+                    Convert.ToString(dr["IDtipoDoc"]),
                     Convert.ToString(dr["tipoDoc"]),
                     Convert.ToString(dr["numDoc"]),
                     Convert.ToString(dr["sexo"]),
@@ -223,7 +274,8 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["nombre"]),
                     Convert.ToString(dr["estadoCivil"]),
                     Convert.ToString(dr["condicionIVA"]),
-                    Convert.ToString(dr["tipoCliente"]));
+                    Convert.ToString(dr["IDtipoCliente"]),
+                    Convert.ToString(dr["tipocliente"]));
                 }
 
                 dr.Close();

@@ -128,6 +128,7 @@
             this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coltipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNumDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,6 +137,7 @@
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCondicionIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
@@ -1272,6 +1274,7 @@
             this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDCliente,
             this.colFechaAlta,
+            this.colIDTipoDoc,
             this.coltipoDoc,
             this.colNumDoc,
             this.colSexo,
@@ -1280,12 +1283,14 @@
             this.colNombre,
             this.colEstadoCivil,
             this.colCondicionIVA,
+            this.colIDtipoCliente,
             this.coltipoCliente});
             this.dgvCliente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCliente.Location = new System.Drawing.Point(0, 0);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.Size = new System.Drawing.Size(776, 536);
             this.dgvCliente.TabIndex = 1;
+            this.dgvCliente.SelectionChanged += new System.EventHandler(this.dgvCliente_SelectionChanged);
             // 
             // tabMovimientos
             // 
@@ -1298,13 +1303,19 @@
             // 
             // colIDCliente
             // 
-            this.colIDCliente.HeaderText = "ID Cliente";
+            this.colIDCliente.HeaderText = "Nº Cliente";
             this.colIDCliente.Name = "colIDCliente";
             // 
             // colFechaAlta
             // 
             this.colFechaAlta.HeaderText = "Fecha Alta";
             this.colFechaAlta.Name = "colFechaAlta";
+            // 
+            // colIDTipoDoc
+            // 
+            this.colIDTipoDoc.HeaderText = "ID Tipo Doc";
+            this.colIDTipoDoc.Name = "colIDTipoDoc";
+            this.colIDTipoDoc.Visible = false;
             // 
             // coltipoDoc
             // 
@@ -1345,6 +1356,12 @@
             // 
             this.colCondicionIVA.HeaderText = "Condicion IVA";
             this.colCondicionIVA.Name = "colCondicionIVA";
+            // 
+            // colIDtipoCliente
+            // 
+            this.colIDtipoCliente.HeaderText = "ID Tipo Cliente";
+            this.colIDtipoCliente.Name = "colIDtipoCliente";
+            this.colIDtipoCliente.Visible = false;
             // 
             // coltipoCliente
             // 
@@ -1486,6 +1503,7 @@
         public System.Windows.Forms.TextBox txtIDVisita;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDTipoDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn coltipoDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNumDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSexo;
@@ -1494,6 +1512,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoCivil;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCondicionIVA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDtipoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn coltipoCliente;
     }
 }

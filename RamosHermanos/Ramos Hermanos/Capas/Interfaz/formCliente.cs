@@ -130,7 +130,7 @@ namespace RamosHermanos.Capas.Interfaz
             }
             else
             {
-                ClienteB.BuscarCliente(cliente);                                
+                ClienteB.BuscarClienteDOC(cliente);                                
                 txtIDcliente.Text = Convert.ToString(cliente.idCliente);
                 dtpFechaAlta.Value = cliente.fechaAlta;
                 cbTipoDoc.SelectedValue = cliente.tipoDoc;
@@ -706,6 +706,72 @@ namespace RamosHermanos.Capas.Interfaz
         private void cbTipoCliente_DropDown(object sender, EventArgs e)
         {
             tipoClienteB.CargarTipoCliente(cbTipoCliente);
+        }
+
+        private void dgvCliente_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvCliente.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+
+                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+
+                cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
+
+                ClienteB.BuscarClienteID(cliente);
+                txtIDcliente.Text = Convert.ToString(cliente.idCliente);
+                dtpFechaAlta.Value = cliente.fechaAlta;
+                cbTipoDoc.SelectedValue = cliente.tipoDoc;
+                txtnumDoc.Text = cliente.numDoc;
+                cbSexo.Text = cliente.sexo;
+                txtCUIL.Text = cliente.cuil;
+                txtApellido.Text = cliente.apellido;
+                txtNombre.Text = cliente.nombre;
+                cbEstadoCivil.Text = cliente.estadoCivil;
+                cbIVA.Text = cliente.condicionIVA;
+                cbTipoCliente.SelectedValue = cliente.tipoCliente;
+                cbEstado.Checked = cliente.estado;
+
+                CargarSaldo(txtIDcliente);
+                SaldoB.BuscarSaldo(saldo);
+                txtCreditoMax.Text = Convert.ToString(saldo.creditoMax);
+                txtSaldo.Text = Convert.ToString(saldo.saldoActual);
+
+                CargarVisita(txtIDcliente);
+                VisitaB.BuscarVisita(visita);
+                txtIDVisita.Text = Convert.ToString(visita.idVisita);
+                dtpA.Text = visita.horarioVisitaA;
+                dtpB.Text = visita.horarioVisitaB;
+                //Dias
+                cbLunes.Checked = visita.dlunes;
+                cbMartes.Checked = visita.dmartes;
+                cbMiercoles.Checked = visita.dmiercoles;
+                cbJueves.Checked = visita.djueves;
+                cbViernes.Checked = visita.dviernes;
+                cbSabado.Checked = visita.dsabado;
+                cbDomingo.Checked = visita.ddomingo;
+                //Orden
+                txtLun.Text = Convert.ToString(visita.olunes);
+                txtMar.Text = Convert.ToString(visita.omartes);
+                txtMie.Text = Convert.ToString(visita.omiercoles);
+                txtJue.Text = Convert.ToString(visita.ojueves);
+                txtVie.Text = Convert.ToString(visita.oviernes);
+                txtSab.Text = Convert.ToString(visita.osabado);
+                txtDom.Text = Convert.ToString(visita.odomingo);
+
+                //Contacto
+                DomicilioB.CargarTXT(txtDomic, txtIDcliente, 1);
+                EmailB.CargarTXT(txtEmail, txtIDcliente, 1);
+                TelefonoB.CargarTXT(txtTel, txtIDcliente, 1);
+
+                tabMain.SelectedTab = tabInformacion;
+            }
         }
 
 
