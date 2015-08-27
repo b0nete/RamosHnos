@@ -1,2 +1,0 @@
-C:\Users\b0nete\Documents\GitHub\Ramos Hermanos\Ramos Hermanos\bin\Debug\Ramos Hermanos.exe.config
-C:\Users\b0nete\Documents\GitHub\Ramos Hermanos\Ramos Hermanos\bin\Debug\RamosHermanos.exe.config

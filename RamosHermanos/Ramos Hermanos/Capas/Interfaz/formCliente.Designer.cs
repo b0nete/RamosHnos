@@ -125,7 +125,6 @@
             this.tabFamilia = new System.Windows.Forms.TabPage();
             this.tabListado = new System.Windows.Forms.TabPage();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
-            this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -139,6 +138,7 @@
             this.colCondicionIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -365,6 +365,7 @@
             this.cbIVA.Name = "cbIVA";
             this.cbIVA.Size = new System.Drawing.Size(355, 21);
             this.cbIVA.TabIndex = 83;
+            this.cbIVA.SelectedIndexChanged += new System.EventHandler(this.cbIVA_SelectedIndexChanged);
             // 
             // cbEstadoCivil
             // 
@@ -1292,15 +1293,6 @@
             this.dgvCliente.TabIndex = 1;
             this.dgvCliente.SelectionChanged += new System.EventHandler(this.dgvCliente_SelectionChanged);
             // 
-            // tabMovimientos
-            // 
-            this.tabMovimientos.Location = new System.Drawing.Point(4, 22);
-            this.tabMovimientos.Name = "tabMovimientos";
-            this.tabMovimientos.Size = new System.Drawing.Size(776, 536);
-            this.tabMovimientos.TabIndex = 4;
-            this.tabMovimientos.Text = "Movimientos";
-            this.tabMovimientos.UseVisualStyleBackColor = true;
-            // 
             // colIDCliente
             // 
             this.colIDCliente.HeaderText = "Nº Cliente";
@@ -1367,6 +1359,15 @@
             // 
             this.coltipoCliente.HeaderText = "Tipo Cliente";
             this.coltipoCliente.Name = "coltipoCliente";
+            // 
+            // tabMovimientos
+            // 
+            this.tabMovimientos.Location = new System.Drawing.Point(4, 22);
+            this.tabMovimientos.Name = "tabMovimientos";
+            this.tabMovimientos.Size = new System.Drawing.Size(776, 536);
+            this.tabMovimientos.TabIndex = 4;
+            this.tabMovimientos.Text = "Movimientos";
+            this.tabMovimientos.UseVisualStyleBackColor = true;
             // 
             // formCliente
             // 

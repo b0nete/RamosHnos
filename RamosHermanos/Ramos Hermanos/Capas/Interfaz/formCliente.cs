@@ -774,6 +774,11 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
+        private void cbIVA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 

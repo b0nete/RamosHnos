@@ -16,6 +16,7 @@ namespace RamosHermanos.Capas.Entidades
         public bool estado { get; set; }
         public int tipoProveedor { get; set; }
         public string condicioniva { get; set; }
+        public Double debMAX { get; set; }
 
     }
 }

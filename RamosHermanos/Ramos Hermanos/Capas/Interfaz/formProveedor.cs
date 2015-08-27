@@ -22,7 +22,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formProveedor_Load(object sender, EventArgs e)
         {
-
+            cbIVA.SelectedIndex = 0;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -42,10 +42,14 @@ namespace RamosHermanos.Capas.Interfaz
             proveedor.estado = cbEstado.Checked;
             proveedor.condicioniva = cbIVA.SelectedText;
             proveedor.rol = 2;
+            proveedor.debMAX = Convert.ToDouble(txtDebmax.Text);
+
+            
 
 
         }
 
+        
         SaldoEntity saldo = new SaldoEntity();
 
         private void cargarsaldo()
@@ -71,6 +75,7 @@ namespace RamosHermanos.Capas.Interfaz
             else
             {
                 formContacto frm = new formContacto();
+                frm.txtIDALL.Text = txtidprov.Text;
                 frm.tabVar = 2;
                 frm.cbRolALL.SelectedValue = 2;
                 frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
@@ -93,6 +98,41 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
+        private void BuscarProveedor()
+        {
+
+            if (txtRazonSocial.Text == "")
+
+            {
+                tabProveedor.SelectedTab = tabListado;
+                return;
+                
+            }
+
+            cargarProv();
+
+            if (ProveedorB.ExisteProveedor(proveedor) == false)
+            {
+
+                MessageBox.Show("El Proveedor no Existe");
+
+            }
+
+            else
+
+            {
+
+                ProveedorB.BuscarProvCuit(proveedor);
+                txtidprov.Text = Convert.ToString(proveedor.idProveedor);
+                txtRazonSocial.Text = proveedor.razsocial;
+                txtcuit.Text = proveedor.cuit;
+                txtDebmax.Text = Convert.ToString(proveedor.debMAX);
+
+                
+            }
+           
+        }
+
         private void btnTelefono_Click(object sender, EventArgs e)
         {
 
@@ -100,6 +140,12 @@ namespace RamosHermanos.Capas.Interfaz
             frm.txtIDALL.Text = Convert.ToString(txtidprov.Text);
             frm.tabVar = 1;
             frm.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            BuscarProveedor();
+
         }
     }
 }
