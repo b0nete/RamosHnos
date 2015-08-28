@@ -42,9 +42,7 @@ namespace RamosHermanos.Capas.Interfaz
             proveedor.estado = cbEstado.Checked;
             proveedor.condicioniva = cbIVA.SelectedText;
             proveedor.rol = 2;
-            proveedor.debMAX = Convert.ToDouble(txtDebmax.Text);
-
-            
+               
 
 
         }
@@ -115,18 +113,22 @@ namespace RamosHermanos.Capas.Interfaz
             {
 
                 MessageBox.Show("El Proveedor no Existe");
-
+                return;
             }
 
             else
 
             {
 
-                ProveedorB.BuscarProvCuit(proveedor);
+                ProveedorB.BuscarProvRazonsocial(proveedor);
                 txtidprov.Text = Convert.ToString(proveedor.idProveedor);
                 txtRazonSocial.Text = proveedor.razsocial;
                 txtcuit.Text = proveedor.cuit;
-                txtDebmax.Text = Convert.ToString(proveedor.debMAX);
+
+                CargarSaldo(txtidprov);
+                SaldoB.BuscarSaldo(saldo);
+                txtDebmax.Text = Convert.ToString(saldo.creditoMax);
+                
 
                 
             }
@@ -140,6 +142,16 @@ namespace RamosHermanos.Capas.Interfaz
             frm.txtIDALL.Text = Convert.ToString(txtidprov.Text);
             frm.tabVar = 1;
             frm.Show();
+        }
+
+        SaldoEntity deb = new SaldoEntity();
+       
+        public void CargarSaldo(TextBox txt)
+        {
+            deb.rol = 1;
+            deb.idPersona = Convert.ToInt32(txt.Text);
+            saldo.creditoMax = Convert.ToDouble(txtDebmax.Text);
+                        
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
