@@ -45,11 +45,11 @@ namespace RamosHermanos.Capas.Negocio
 
             MySQL.ConnectDB();
            
-            string query = @"Select COUNT * from proveedor
-                            where cuit == @cuit" ;
+            string query = @"Select COUNT(*) from proveedores
+                            where razonSocial = @razonSocial" ;
             
             MySqlCommand cmd = new MySqlCommand (query, MySQL.sqlcnx);
-            cmd.Parameters.AddWithValue("@cuit", prov.cuit);
+            cmd.Parameters.AddWithValue("@razonSocial", prov.razsocial);
 
             int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -64,17 +64,17 @@ namespace RamosHermanos.Capas.Negocio
             
             }
 
-        public static ProveedorEntity BuscarProvCuit(ProveedorEntity proveedor)
+        public static ProveedorEntity BuscarProvRazonsocial(ProveedorEntity proveedor)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = "SELECT * FROM proveedores WHERE cuil = @cuil";
+                string query = "SELECT * FROM proveedores WHERE razonSocial = @razonSocial";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@cuil", proveedor.cuit);
+                cmd.Parameters.AddWithValue("@razonSocial", proveedor.razsocial);
 
                 int resultado = Convert.ToInt32(cmd.ExecuteScalar());
                 if (resultado == 0)
