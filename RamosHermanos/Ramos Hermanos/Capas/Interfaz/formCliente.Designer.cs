@@ -1292,6 +1292,7 @@
             this.dgvCliente.Size = new System.Drawing.Size(776, 536);
             this.dgvCliente.TabIndex = 1;
             this.dgvCliente.SelectionChanged += new System.EventHandler(this.dgvCliente_SelectionChanged);
+            this.dgvCliente.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCliente_MouseDoubleClick);
             // 
             // colIDCliente
             // 

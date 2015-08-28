@@ -710,6 +710,21 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvCliente_SelectionChanged(object sender, EventArgs e)
         {
+            
+        }
+
+        private void cbIVA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCliente_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            SeleccionarDGV();
+        }
+
+        private void SeleccionarDGV()
+        {
             DataGridViewCell cell = null;
             foreach (DataGridViewCell selectedCell in dgvCliente.SelectedCells)
             {
@@ -772,11 +787,6 @@ namespace RamosHermanos.Capas.Interfaz
 
                 tabMain.SelectedTab = tabInformacion;
             }
-        }
-
-        private void cbIVA_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
 
