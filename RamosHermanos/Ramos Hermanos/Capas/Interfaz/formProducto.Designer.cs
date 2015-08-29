@@ -48,7 +48,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.lblEstado = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
@@ -189,6 +189,7 @@
             this.txtStockMin.Name = "txtStockMin";
             this.txtStockMin.Size = new System.Drawing.Size(261, 20);
             this.txtStockMin.TabIndex = 90;
+            this.txtStockMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStockMin_KeyPress);
             // 
             // label13
             // 
@@ -217,6 +218,7 @@
             // 
             // dtpFechaAct
             // 
+            this.dtpFechaAct.Enabled = false;
             this.dtpFechaAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaAct.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaAct.Location = new System.Drawing.Point(113, 43);
@@ -278,7 +280,7 @@
             // 
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.lblEstado);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtCantidad);
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.label26);
             this.groupBox1.Controls.Add(this.button5);
@@ -339,13 +341,14 @@
             this.lblEstado.Size = new System.Drawing.Size(0, 13);
             this.lblEstado.TabIndex = 93;
             // 
-            // textBox4
+            // txtCantidad
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox4.Location = new System.Drawing.Point(115, 263);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(117, 20);
-            this.textBox4.TabIndex = 118;
+            this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtCantidad.Location = new System.Drawing.Point(115, 263);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(117, 20);
+            this.txtCantidad.TabIndex = 118;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
             // label25
             // 
@@ -397,6 +400,7 @@
             // 
             // cbMedida
             // 
+            this.cbMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbMedida.FormattingEnabled = true;
             this.cbMedida.Location = new System.Drawing.Point(304, 263);
@@ -820,7 +824,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtStockMin;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label lblEstado;
