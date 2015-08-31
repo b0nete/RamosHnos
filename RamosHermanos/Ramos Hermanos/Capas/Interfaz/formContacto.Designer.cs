@@ -963,6 +963,7 @@
             // 
             this.lblRolTel.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.lblRolTel.AutoSize = true;
+            this.lblRolTel.Enabled = false;
             this.lblRolTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.lblRolTel.Location = new System.Drawing.Point(8, 510);
             this.lblRolTel.Name = "lblRolTel";
@@ -1022,12 +1023,14 @@
             // cbRolALL
             // 
             this.cbRolALL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRolALL.Enabled = false;
             this.cbRolALL.FormattingEnabled = true;
             this.cbRolALL.Location = new System.Drawing.Point(37, 507);
             this.cbRolALL.Name = "cbRolALL";
             this.cbRolALL.Size = new System.Drawing.Size(147, 21);
             this.cbRolALL.TabIndex = 113;
             this.cbRolALL.Visible = false;
+            this.cbRolALL.SelectionChangeCommitted += new System.EventHandler(this.cbRolALL_SelectionChangeCommitted);
             // 
             // button11
             // 

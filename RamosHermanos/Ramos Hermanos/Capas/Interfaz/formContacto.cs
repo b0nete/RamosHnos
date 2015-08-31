@@ -393,6 +393,11 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
+        private void cbRolALL_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            
+        }
+
       
 
         

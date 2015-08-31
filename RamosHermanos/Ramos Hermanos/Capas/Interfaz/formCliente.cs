@@ -358,12 +358,13 @@ namespace RamosHermanos.Capas.Interfaz
                 formContacto frm = new formContacto();
                 //frm.tabContacto.SelectTab = tabEmails;
                 frm.tabVar = 2;
+                frm.Show();
                 frm.cbRolALL.SelectedValue = 1;
                 frm.txtIDALL.Text = txtIDcliente.Text;
                 frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
                 frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
                 frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.Show();
+                
             }
         }
 

@@ -24,9 +24,11 @@ namespace RamosHermanos.Capas.Interfaz
         private void formProducto_Load(object sender, EventArgs e)
         {
             //Cargas iniciales de CB
+            ProductoB.CargarDGV(dgvProducto);
             tipoProductoB.CargarCB(cbTipoProducto);
             MarcaB.CargarCB(cbMarca);
             MedidaB.CargarCB(cbMedida);
+
 
             CheckColor();
         }
@@ -113,10 +115,17 @@ namespace RamosHermanos.Capas.Interfaz
 
             CargarPrecio(txtIDProd);
             PrecioB.InsertPrecio(precio);
+
+            ProductoB.CargarDGV(dgvProducto);
+        }
+
+        private void cbMarca_DropDown(object sender, EventArgs e)
+        {
+            MarcaB.CargarCB(cbMarca);
         }
 
         // Metodos
-                       
+
         private void CheckColor() //Cambia Label y Color de acuerdo a el estado Checked.
         {
             if (cbEstado.Checked == true)
@@ -155,11 +164,48 @@ namespace RamosHermanos.Capas.Interfaz
             precio.precio = Convert.ToDouble(txtPrecioActual.Text);
         }
 
-        private void cbMarca_DropDown(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
-            MarcaB.CargarCB(cbMarca);
+            CargarProducto();
+            ProductoB.UpdateProducto(producto);
+
+            CargarPrecio(txtIDProd);
+            PrecioB.InsertPrecio(precio);
         }
-    }    
+
+        private void dgvProducto_DoubleClick(object sender, EventArgs e)
+        {
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvProducto.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+
+                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+
+                producto.idProducto = Convert.ToInt32(row.Cells["colIDProducto"].Value.ToString());
+
+                ProductoB.BuscarProducto(producto);
+                txtIDProd.Text = Convert.ToString(producto.idProducto);
+                dtpFechaAlta.Value = Convert.ToDateTime(producto.fechaAlta);
+                cbTipoProducto.SelectedValue = producto.tipoProducto;
+                cbMarca.SelectedValue = producto.marca;
+                txtProducto.Text = producto.producto;
+                txtDescripcion.Text = producto.descripcion;
+                txtCantidad.Text = Convert.ToString(producto.cantidad);
+                cbMedida.SelectedValue = producto.medida;
+                txtStockMin.Text = Convert.ToString(producto.stockMin);
+                txtStockActual.Text = Convert.ToString(producto.stockActual);
+
+                
+            }
+
+        }
+    }
 }
 
 

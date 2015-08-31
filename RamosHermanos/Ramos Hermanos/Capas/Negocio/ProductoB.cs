@@ -40,26 +40,24 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query = @"UPDATE Productos
-                                 SET fechaalta = @fechaAlta, tipodoc = @tipoDoc, numdoc = @numDoc, sexo = @sexo, cuil =  @cuil, nombre = @nombre, apellido = @apellido, estadoCivil = @estadoCivil, condicionIVA = @condicionIVA, tipoCliente = @tipoCliente, estado = @estado
-                                 WHERE numDoc = @numDoc";
+                                 SET tipoProducto = @tipoProducto, marca = @marca, producto = @producto, descripcion = @descripcion, cantidad = @cantidad, medida = @medida, stockMin = @stockMin, estado = @estado
+                                 WHERE idProducto = @idProducto";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                //cmd.Parameters.AddWithValue("@fechaAlta", cliente.fechaAlta);
-                //cmd.Parameters.AddWithValue("@tipoDoc", cliente.tipoDoc);
-                //cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
-                //cmd.Parameters.AddWithValue("@sexo", cliente.sexo);
-                //cmd.Parameters.AddWithValue("@cuil", cliente.cuil);
-                //cmd.Parameters.AddWithValue("@apellido", cliente.apellido);
-                //cmd.Parameters.AddWithValue("@nombre", cliente.nombre);
-                //cmd.Parameters.AddWithValue("@estadoCivil", cliente.estadoCivil);
-                //cmd.Parameters.AddWithValue("@condicionIVA", cliente.condicionIVA);
-                //cmd.Parameters.AddWithValue("@tipoCliente", cliente.tipoCliente);
-                //cmd.Parameters.AddWithValue("@estado", cliente.estado);
+                cmd.Parameters.AddWithValue("@idProducto", producto.idProducto);
+                cmd.Parameters.AddWithValue("@tipoProducto", producto.tipoProducto);
+                cmd.Parameters.AddWithValue("@marca", producto.marca);
+                cmd.Parameters.AddWithValue("@producto", producto.producto);
+                cmd.Parameters.AddWithValue("@descripcion", producto.descripcion);
+                cmd.Parameters.AddWithValue("@cantidad", producto.cantidad);
+                cmd.Parameters.AddWithValue("@medida", producto.medida);
+                cmd.Parameters.AddWithValue("@stockMin", producto.stockMin);
+                cmd.Parameters.AddWithValue("@estado", producto.estado);
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Cliente Actualizado!");
+                MessageBox.Show("Producto Actualizado!");
                 return producto;
             }
 
@@ -110,6 +108,54 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static ProductoEntity BuscarProducto(ProductoEntity producto)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = "SELECT * FROM Productos WHERE idProducto = @idProducto";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idProducto", producto.idProducto);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("El Producto no existe!");
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    DataRow row = dt.Rows[0];
+
+                    producto.fechaAlta = Convert.ToDateTime(row["fechaAlta"]);
+                    producto.tipoProducto = Convert.ToInt32(row["tipoProducto"]);
+                    producto.marca = Convert.ToInt32(row["marca"]); 
+                    producto.producto = Convert.ToString(row["producto"]);
+                    producto.descripcion = Convert.ToString(row["descripcion"]);
+                    producto.cantidad = Convert.ToDouble(row["cantidad"]);
+                    producto.medida = Convert.ToInt32(row["medida"]);
+                    producto.stockMin = Convert.ToInt32(row["stockMin"]);
+                    producto.stockActual = Convert.ToInt32(row["stockActual"]);
+
+                    MySQL.DisconnectDB();
+                }
+                return producto;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static void CargarDGV(DataGridView dgv)
         {
             try
@@ -131,19 +177,14 @@ namespace RamosHermanos.Capas.Negocio
                 while (dr.Read())
                 {
                     dgv.Rows.Add(
-                    Convert.ToString(dr["idCliente"]),
-                    Convert.ToString(dr["fechaAlta"]),
-                    Convert.ToString(dr["IDtipoDoc"]),
-                    Convert.ToString(dr["tipoDoc"]),
-                    Convert.ToString(dr["numDoc"]),
-                    Convert.ToString(dr["sexo"]),
-                    Convert.ToString(dr["cuil"]),
-                    Convert.ToString(dr["apellido"]),
-                    Convert.ToString(dr["nombre"]),
-                    Convert.ToString(dr["estadoCivil"]),
-                    Convert.ToString(dr["condicionIVA"]),
-                    Convert.ToString(dr["IDtipoCliente"]),
-                    Convert.ToString(dr["tipocliente"]));
+                    Convert.ToString(dr["idProducto"]),
+                    Convert.ToString(dr["tipoProducto"]),
+                    Convert.ToString(dr["marca"]),
+                    Convert.ToString(dr["producto"]),
+                    Convert.ToString(dr["cantidad"]),
+                    Convert.ToString(dr["medida"]),
+                    Convert.ToString(dr["stockActual"]),
+                    Convert.ToString(dr["precio"]));
                 }
 
                 dr.Close();

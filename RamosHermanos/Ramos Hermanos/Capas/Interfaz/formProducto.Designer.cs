@@ -44,7 +44,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.lblEstado = new System.Windows.Forms.Label();
@@ -97,7 +97,7 @@
             this.tabInformacion.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,14 +109,14 @@
             this.tabProducto.Location = new System.Drawing.Point(0, 0);
             this.tabProducto.Name = "tabProducto";
             this.tabProducto.SelectedIndex = 0;
-            this.tabProducto.Size = new System.Drawing.Size(784, 562);
+            this.tabProducto.Size = new System.Drawing.Size(784, 561);
             this.tabProducto.TabIndex = 0;
             // 
             // tabInformacion
             // 
             this.tabInformacion.Controls.Add(this.groupBox3);
             this.tabInformacion.Controls.Add(this.groupBox2);
-            this.tabInformacion.Controls.Add(this.dataGridView1);
+            this.tabInformacion.Controls.Add(this.dgvProducto);
             this.tabInformacion.Controls.Add(this.groupBox1);
             this.tabInformacion.Controls.Add(this.btnDel);
             this.tabInformacion.Controls.Add(this.btnSave);
@@ -124,7 +124,7 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(776, 536);
+            this.tabInformacion.Size = new System.Drawing.Size(776, 535);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Información";
             this.tabInformacion.UseVisualStyleBackColor = true;
@@ -277,12 +277,12 @@
             this.label23.TabIndex = 107;
             this.label23.Text = "*";
             // 
-            // dataGridView1
+            // dgvProducto
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvProducto.AllowUserToAddRows = false;
+            this.dgvProducto.AllowUserToDeleteRows = false;
+            this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDProducto,
             this.colTipo,
             this.colMarca,
@@ -291,11 +291,12 @@
             this.colMedida,
             this.colStock,
             this.colPrecio});
-            this.dataGridView1.Location = new System.Drawing.Point(429, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(341, 488);
-            this.dataGridView1.TabIndex = 51;
+            this.dgvProducto.Location = new System.Drawing.Point(429, 6);
+            this.dgvProducto.Name = "dgvProducto";
+            this.dgvProducto.ReadOnly = true;
+            this.dgvProducto.Size = new System.Drawing.Size(341, 488);
+            this.dgvProducto.TabIndex = 51;
+            this.dgvProducto.DoubleClick += new System.EventHandler(this.dgvProducto_DoubleClick);
             // 
             // groupBox1
             // 
@@ -761,6 +762,7 @@
             this.btnEdit.Size = new System.Drawing.Size(28, 28);
             this.btnEdit.TabIndex = 76;
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // tabListado
             // 
@@ -805,7 +807,7 @@
             // 
             // colMedida
             // 
-            this.colMedida.HeaderText = "colMedida";
+            this.colMedida.HeaderText = "Medida";
             this.colMedida.Name = "colMedida";
             this.colMedida.ReadOnly = true;
             // 
@@ -825,7 +827,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tabProducto);
             this.Name = "formProducto";
             this.Text = "Producto";
@@ -836,7 +838,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -870,7 +872,7 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProducto;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;

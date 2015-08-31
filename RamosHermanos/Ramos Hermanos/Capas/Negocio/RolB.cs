@@ -83,13 +83,12 @@ namespace RamosHermanos.Capas.Negocio
                 string query = "SELECT * FROM Roles";  
 
                 ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-
-
+                
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 da.Fill(dt);
 
-                cb.DisplayMember = "rol";
                 cb.ValueMember = "idRol";
+                cb.DisplayMember = "rol";                
                 cb.DataSource = dt;
 
                 MySQL.DisconnectDB();
