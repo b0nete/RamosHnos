@@ -72,53 +72,45 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        //public static PrecioEntity BuscarPrecio(PrecioEntity precio)
-        //{
-        //    try
-        //    {
-        //        MySQL.ConnectDB();
+        public static PrecioEntity BuscarPrecio(PrecioEntity precio)
+        {
+            try
+            {
+                MySQL.ConnectDB();
 
-        //        string query = "SELECT * FROM Productos WHERE idProducto = @idProducto";
+                string query = "SELECT * FROM precioProductos WHERE producto = @producto";
 
-        //        MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-        //        cmd.Parameters.AddWithValue("@idProducto", producto.idProducto);
+                cmd.Parameters.AddWithValue("@producto", precio.producto);
 
-        //        int resultado = Convert.ToInt32(cmd.ExecuteScalar());
-        //        if (resultado == 0)
-        //        {
-        //            MessageBox.Show("El Producto no existe!");
-        //        }
-        //        else
-        //        {
-        //            DataTable dt = new DataTable();
-        //            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("No hay precio!");
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-        //            da.Fill(dt);
+                    da.Fill(dt);
 
-        //            DataRow row = dt.Rows[0];
+                    DataRow row = dt.Rows[0];
 
-        //            producto.fechaAlta = Convert.ToDateTime(row["fechaAlta"]);
-        //            producto.tipoProducto = Convert.ToInt32(row["tipoProducto"]);
-        //            producto.marca = Convert.ToInt32(row["marca"]);
-        //            producto.producto = Convert.ToString(row["producto"]);
-        //            producto.descripcion = Convert.ToString(row["descripcion"]);
-        //            producto.cantidad = Convert.ToDouble(row["cantidad"]);
-        //            producto.medida = Convert.ToInt32(row["medida"]);
-        //            producto.stockMin = Convert.ToInt32(row["stockMin"]);
-        //            producto.stockActual = Convert.ToInt32(row["stockActual"]);
+                    precio.precio = Convert.ToDouble(row["precio"]);
 
-        //            MySQL.DisconnectDB();
-        //        }
-        //        return producto;
-        //    }
+                    MySQL.DisconnectDB();
+                }
+                return precio;
+            }
 
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error: " + ex);
-        //        throw;
-        //    }
-        //}
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
 
 
     }

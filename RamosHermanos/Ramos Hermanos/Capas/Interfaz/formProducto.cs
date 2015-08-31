@@ -201,6 +201,10 @@ namespace RamosHermanos.Capas.Interfaz
                 txtStockMin.Text = Convert.ToString(producto.stockMin);
                 txtStockActual.Text = Convert.ToString(producto.stockActual);
 
+                precio.producto = producto.idProducto;
+                PrecioB.BuscarPrecio(precio);
+                txtPrecioActual.Text = Convert.ToString(precio.precio);
+
                 
             }
 
