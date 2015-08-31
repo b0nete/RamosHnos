@@ -64,6 +64,9 @@ namespace RamosHermanos.Capas.Negocio
             
             }
 
+                  
+          
+       
         public static ProveedorEntity BuscarProvRazonsocial(ProveedorEntity proveedor)
         {
             try

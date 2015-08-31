@@ -1027,7 +1027,6 @@
             this.cbRolALL.Name = "cbRolALL";
             this.cbRolALL.Size = new System.Drawing.Size(147, 21);
             this.cbRolALL.TabIndex = 113;
-            this.cbRolALL.Visible = false;
             // 
             // button11
             // 
