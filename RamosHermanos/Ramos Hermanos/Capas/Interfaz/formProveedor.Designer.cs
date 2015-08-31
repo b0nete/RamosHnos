@@ -33,7 +33,7 @@
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtSaldoActual = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDebmax = new System.Windows.Forms.TextBox();
@@ -56,10 +56,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnDomicilio = new System.Windows.Forms.Button();
+            this.btnEmail = new System.Windows.Forms.Button();
             this.btnTelefono = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -120,11 +120,12 @@
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.UseVisualStyleBackColor = true;
+            this.tabInformacion.Click += new System.EventHandler(this.tabInformacion_Click);
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.label10);
-            this.groupBox6.Controls.Add(this.textBox5);
+            this.groupBox6.Controls.Add(this.txtSaldoActual);
             this.groupBox6.Controls.Add(this.label13);
             this.groupBox6.Controls.Add(this.label6);
             this.groupBox6.Controls.Add(this.txtDebmax);
@@ -164,14 +165,14 @@
             this.label10.TabIndex = 97;
             this.label10.Text = "*";
             // 
-            // textBox5
+            // txtSaldoActual
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox5.Location = new System.Drawing.Point(102, 202);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(355, 20);
-            this.textBox5.TabIndex = 96;
+            this.txtSaldoActual.Enabled = false;
+            this.txtSaldoActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtSaldoActual.Location = new System.Drawing.Point(102, 202);
+            this.txtSaldoActual.Name = "txtSaldoActual";
+            this.txtSaldoActual.Size = new System.Drawing.Size(355, 20);
+            this.txtSaldoActual.TabIndex = 96;
             // 
             // label13
             // 
@@ -406,10 +407,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button7);
+            this.groupBox1.Controls.Add(this.btnDomicilio);
+            this.groupBox1.Controls.Add(this.btnEmail);
             this.groupBox1.Controls.Add(this.btnTelefono);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.label3);
@@ -422,29 +423,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contacto";
             // 
-            // button3
+            // btnDomicilio
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button3.Location = new System.Drawing.Point(463, 55);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 56;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnDomicilio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDomicilio.BackgroundImage")));
+            this.btnDomicilio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDomicilio.Location = new System.Drawing.Point(463, 55);
+            this.btnDomicilio.Name = "btnDomicilio";
+            this.btnDomicilio.Size = new System.Drawing.Size(28, 28);
+            this.btnDomicilio.TabIndex = 56;
+            this.btnDomicilio.UseVisualStyleBackColor = true;
+            this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
             // 
-            // button7
+            // btnEmail
             // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button7.Location = new System.Drawing.Point(463, 27);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(28, 28);
-            this.button7.TabIndex = 58;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.btnEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEmail.BackgroundImage")));
+            this.btnEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnEmail.Location = new System.Drawing.Point(463, 27);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(28, 28);
+            this.btnEmail.TabIndex = 58;
+            this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.button7_Click);
             // 
             // btnTelefono
             // 
@@ -456,14 +457,15 @@
             this.btnTelefono.Size = new System.Drawing.Size(28, 28);
             this.btnTelefono.TabIndex = 57;
             this.btnTelefono.UseVisualStyleBackColor = true;
+            this.btnTelefono.Click += new System.EventHandler(this.btnTelefono_Click_1);
             // 
-            // textBox1
+            // txtEmail
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox1.Location = new System.Drawing.Point(102, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(355, 20);
-            this.textBox1.TabIndex = 53;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtEmail.Location = new System.Drawing.Point(102, 30);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(355, 20);
+            this.txtEmail.TabIndex = 53;
             // 
             // label5
             // 
@@ -709,10 +711,10 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnDomicilio;
+        private System.Windows.Forms.Button btnEmail;
         private System.Windows.Forms.Button btnTelefono;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
@@ -728,7 +730,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtSaldoActual;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDebmax;

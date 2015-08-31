@@ -23,43 +23,65 @@ namespace RamosHermanos.Capas.Interfaz
         private void formProveedor_Load(object sender, EventArgs e)
         {
             cbIVA.SelectedIndex = 0;
+                      
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             cargarProv();
             ProveedorB.InsertProveedor(proveedor, txtidprov);
+            cargarSaldo();
+            SaldoB.InsertSaldo(saldo);
+            cargarEmail();
+            
+
 
         }
 
         ProveedorEntity proveedor = new ProveedorEntity();
 
         private void cargarProv()
+
         {
             proveedor.fecha = dtpFechaAlta.Value;
             proveedor.cuit = txtcuit.Text;
             proveedor.razsocial = txtRazonSocial.Text;
             proveedor.estado = cbEstado.Checked;
-            proveedor.condicioniva = cbIVA.SelectedText;
+            proveedor.condicioniva = cbIVA.Text;
             proveedor.rol = 2;
                
+        }
 
+        SaldoEntity saldo = new SaldoEntity();
 
+        private void cargarSaldo()
+
+        {
+
+            saldo.idPersona =Convert.ToInt32(txtidprov.Text);
+            saldo.rol = 2;
+            saldo.creditoMax = Convert.ToDouble(txtDebmax.Text);
+            //saldo.saldoActual = Convert.ToDouble(txtSaldoActual.Text);
+            
+
+                
+
+        
+        }
+
+        EmailEntity email = new EmailEntity();
+
+        private void cargarEmail()
+
+        {
+
+            email.idPersona = Convert.ToInt32(txtidprov.Text);
+            email.rol = 2;
+               
         }
 
         
-        SaldoEntity saldo = new SaldoEntity();
-
-        private void cargarsaldo()
-        {
-
-            saldo.idPersona = Convert.ToInt32(txtidprov.Text);
-            saldo.rol = 2;
-            saldo.creditoMax = Convert.ToDouble(txtDebmax.Text);
-
-
-        }
-
+        
         private void button7_Click(object sender, EventArgs e)
         {
 
@@ -88,76 +110,90 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+             
+           
+             
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            formContacto frm = new formContacto();
-            frm.txtIDALL.Text = Convert.ToString(txtidprov.Text);
-            frm.tabVar = 0;
-            frm.Show();
+            proveedor.razsocial = txtRazonSocial.Text;
+            ProveedorB.BuscarProvRazonsocial(proveedor);
+            txtcuit.Text = proveedor.cuit;
+            txtidprov.Text = Convert.ToString(proveedor.idProveedor);
+            cbEstado.Checked = proveedor.estado;
+            cbIVA.SelectedValue = proveedor.condicioniva;
+            dtpFechaAlta.Value = proveedor.fecha;
+
+
+            saldo.rol = 2;
+            saldo.idPersona= Convert.ToInt32(txtidprov.Text);
+            SaldoB.BuscarSaldo(saldo);
+            txtDebmax.Text = Convert.ToString(saldo.creditoMax);
+            //txtSaldo.Text = Convert.ToString(saldo.saldoActual);
+
+
+            EmailB.CargarTXT(txtEmail, txtidprov, 2);
+                  
+                                           
         }
 
-        private void BuscarProveedor()
+        private void btnDomicilio_Click(object sender, EventArgs e)
         {
-
-            if (txtRazonSocial.Text == "")
-
-            {
-                tabProveedor.SelectedTab = tabListado;
-                return;
-                
-            }
-
-            cargarProv();
-
-            if (ProveedorB.ExisteProveedor(proveedor) == false)
+            if (txtidprov.Text == string.Empty)
             {
 
-                MessageBox.Show("El Proveedor no Existe");
-                return;
+                MessageBox.Show("Por favor, ingrese un proveedor");
+
             }
 
             else
+            {
+                formContacto frm = new formContacto();
+                frm.txtIDALL.Text = txtidprov.Text;
+                frm.tabVar = 1;
+                frm.cbRolALL.SelectedValue = 2;
+                frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
 
+                frm.Show();
+
+
+            }
+        }
+
+        private void btnTelefono_Click_1(object sender, EventArgs e)
+        {
+            if (txtidprov.Text == string.Empty)
             {
 
-                ProveedorB.BuscarProvRazonsocial(proveedor);
-                txtidprov.Text = Convert.ToString(proveedor.idProveedor);
-                txtRazonSocial.Text = proveedor.razsocial;
-                txtcuit.Text = proveedor.cuit;
+                MessageBox.Show("Por favor, ingrese un proveedor");
 
-                CargarSaldo(txtidprov);
-                SaldoB.BuscarSaldo(saldo);
-                txtDebmax.Text = Convert.ToString(saldo.creditoMax);
-                
-
-                
             }
-           
+
+            else
+            {
+                formContacto frm = new formContacto();
+                frm.txtIDALL.Text = txtidprov.Text;
+                frm.tabVar = 0;
+                frm.cbRolALL.SelectedValue = 2;
+                frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+
+                frm.Show();
+
+
+            }
         }
 
-        private void btnTelefono_Click(object sender, EventArgs e)
+        private void tabInformacion_Click(object sender, EventArgs e)
         {
 
-            formContacto frm = new formContacto();
-            frm.txtIDALL.Text = Convert.ToString(txtidprov.Text);
-            frm.tabVar = 1;
-            frm.Show();
         }
 
-        SaldoEntity deb = new SaldoEntity();
-       
-        public void CargarSaldo(TextBox txt)
-        {
-            deb.rol = 1;
-            deb.idPersona = Convert.ToInt32(txt.Text);
-            saldo.creditoMax = Convert.ToDouble(txtDebmax.Text);
-                        
-        }
+        
+              
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            BuscarProveedor();
-
-        }
+        
     }
 }

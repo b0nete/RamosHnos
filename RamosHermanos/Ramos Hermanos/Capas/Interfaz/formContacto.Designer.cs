@@ -1029,8 +1029,11 @@
             this.cbRolALL.Name = "cbRolALL";
             this.cbRolALL.Size = new System.Drawing.Size(147, 21);
             this.cbRolALL.TabIndex = 113;
+<<<<<<< HEAD
             this.cbRolALL.Visible = false;
             this.cbRolALL.SelectionChangeCommitted += new System.EventHandler(this.cbRolALL_SelectionChangeCommitted);
+=======
+>>>>>>> 399ba91f2f21554b6c0749ff60fdd8c56148b955
             // 
             // button11
             // 
