@@ -177,6 +177,7 @@ namespace RamosHermanos.Capas.Interfaz
             domicilio.piso = txtPiso.Text;
             domicilio.dpto = txtDpto.Text;
             domicilio.CP = txtCP.Text;
+            domicilio.estado = cbEstadoDom.Checked;
         }
 
         private void dgvDomicilio_CellContentClick(object sender, DataGridViewCellEventArgs e)

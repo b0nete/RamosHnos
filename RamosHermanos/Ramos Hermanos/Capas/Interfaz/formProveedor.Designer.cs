@@ -61,9 +61,9 @@
             this.btnTelefono = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.gbVisita = new System.Windows.Forms.GroupBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
@@ -120,7 +120,6 @@
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.UseVisualStyleBackColor = true;
-            this.tabInformacion.Click += new System.EventHandler(this.tabInformacion_Click);
             // 
             // groupBox6
             // 
@@ -412,9 +411,9 @@
             this.groupBox1.Controls.Add(this.btnTelefono);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtTel);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtDomicilio);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Location = new System.Drawing.Point(6, 367);
             this.groupBox1.Name = "groupBox1";
@@ -445,7 +444,7 @@
             this.btnEmail.Size = new System.Drawing.Size(28, 28);
             this.btnEmail.TabIndex = 58;
             this.btnEmail.UseVisualStyleBackColor = true;
-            this.btnEmail.Click += new System.EventHandler(this.button7_Click);
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
             // btnTelefono
             // 
@@ -477,13 +476,13 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Emails";
             // 
-            // textBox3
+            // txtTel
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox3.Location = new System.Drawing.Point(102, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(355, 20);
-            this.textBox3.TabIndex = 55;
+            this.txtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtTel.Location = new System.Drawing.Point(102, 86);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(355, 20);
+            this.txtTel.TabIndex = 55;
             // 
             // label3
             // 
@@ -495,13 +494,13 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "Domicilios";
             // 
-            // textBox2
+            // txtDomicilio
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox2.Location = new System.Drawing.Point(102, 59);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(355, 20);
-            this.textBox2.TabIndex = 54;
+            this.txtDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtDomicilio.Location = new System.Drawing.Point(102, 59);
+            this.txtDomicilio.Name = "txtDomicilio";
+            this.txtDomicilio.Size = new System.Drawing.Size(355, 20);
+            this.txtDomicilio.TabIndex = 54;
             // 
             // label7
             // 
@@ -716,9 +715,9 @@
         private System.Windows.Forms.Button btnTelefono;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDomicilio;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox gbVisita;
         private System.Windows.Forms.MonthCalendar monthCalendar1;

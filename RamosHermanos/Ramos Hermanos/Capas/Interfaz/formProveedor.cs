@@ -80,36 +80,6 @@ namespace RamosHermanos.Capas.Interfaz
                
         }
 
-        
-        
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-            if (txtidprov.Text == string.Empty)
-            {
-
-                MessageBox.Show("Por favor, ingrese un proveedor");
-
-            }
-
-            else
-            {
-                formContacto frm = new formContacto();
-                frm.txtIDALL.Text = txtidprov.Text;
-                frm.tabVar = 2;
-                frm.cbRolALL.SelectedValue = 2;
-                frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-                frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-                frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-
-                frm.Show();
-
-
-            }
-
-
-        }
-
              
            
              
@@ -131,37 +101,16 @@ namespace RamosHermanos.Capas.Interfaz
             //txtSaldo.Text = Convert.ToString(saldo.saldoActual);
 
 
-            EmailB.CargarTXT(txtEmail, txtidprov, 2);
-                  
+            EmailB.CargarTXT(txtEmail , txtidprov, 2);
+            DomicilioB.CargarTXT(txtDomicilio , txtidprov, 2);
+            TelefonoB.CargarTXT(txtTel , txtidprov, 2);
+
                                            
         }
 
+
+
         private void btnDomicilio_Click(object sender, EventArgs e)
-        {
-            if (txtidprov.Text == string.Empty)
-            {
-
-                MessageBox.Show("Por favor, ingrese un proveedor");
-
-            }
-
-            else
-            {
-                formContacto frm = new formContacto();
-                frm.txtIDALL.Text = txtidprov.Text;
-                frm.tabVar = 1;
-                frm.cbRolALL.SelectedValue = 2;
-                frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-                frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-                frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-
-                frm.Show();
-
-
-            }
-        }
-
-        private void btnTelefono_Click_1(object sender, EventArgs e)
         {
             if (txtidprov.Text == string.Empty)
             {
@@ -186,9 +135,54 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-        private void tabInformacion_Click(object sender, EventArgs e)
+        private void btnTelefono_Click_1(object sender, EventArgs e)
         {
+            if (txtidprov.Text == string.Empty)
+            {
 
+                MessageBox.Show("Por favor, ingrese un proveedor");
+
+            }
+
+            else
+            {
+                formContacto frm = new formContacto();
+                frm.txtIDALL.Text = txtidprov.Text;
+                frm.tabVar = 1;
+                frm.cbRolALL.SelectedValue = 2;
+                frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+
+                frm.Show();
+
+
+            }
+        }
+
+        private void btnEmail_Click(object sender, EventArgs e)
+        {
+            if (txtidprov.Text == string.Empty)
+            {
+
+                MessageBox.Show("Por favor, ingrese un proveedor");
+
+            }
+
+            else
+            {
+                formContacto frm = new formContacto();
+                frm.txtIDALL.Text = txtidprov.Text;
+                frm.tabVar = 2;
+                frm.cbRolALL.SelectedValue = 2;
+                frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+
+                frm.Show();
+
+
+            }
         }
 
         
