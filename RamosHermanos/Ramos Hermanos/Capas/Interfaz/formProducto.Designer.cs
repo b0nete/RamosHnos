@@ -32,7 +32,7 @@
             this.tabProducto = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtStockActual = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtpFechaAct = new System.Windows.Forms.DateTimePicker();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPrecioActual = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -55,13 +55,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cbMedida = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.cbMarca = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIDProd = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -82,9 +82,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnDel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.tabListado = new System.Windows.Forms.TabPage();
+            this.colIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -111,7 +119,7 @@
             this.tabInformacion.Controls.Add(this.dataGridView1);
             this.tabInformacion.Controls.Add(this.groupBox1);
             this.tabInformacion.Controls.Add(this.btnDel);
-            this.tabInformacion.Controls.Add(this.button1);
+            this.tabInformacion.Controls.Add(this.btnSave);
             this.tabInformacion.Controls.Add(this.btnEdit);
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
@@ -123,7 +131,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.txtStockActual);
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label11);
@@ -137,14 +145,14 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Stock";
             // 
-            // textBox2
+            // txtStockActual
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox2.Location = new System.Drawing.Point(115, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(261, 20);
-            this.textBox2.TabIndex = 98;
+            this.txtStockActual.Enabled = false;
+            this.txtStockActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtStockActual.Location = new System.Drawing.Point(115, 45);
+            this.txtStockActual.Name = "txtStockActual";
+            this.txtStockActual.Size = new System.Drawing.Size(261, 20);
+            this.txtStockActual.TabIndex = 98;
             // 
             // label16
             // 
@@ -204,7 +212,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dtpFechaAct);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txtPrecioActual);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label24);
             this.groupBox2.Controls.Add(this.label23);
@@ -226,13 +234,14 @@
             this.dtpFechaAct.Size = new System.Drawing.Size(261, 20);
             this.dtpFechaAct.TabIndex = 85;
             // 
-            // textBox3
+            // txtPrecioActual
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox3.Location = new System.Drawing.Point(113, 17);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(261, 20);
-            this.textBox3.TabIndex = 100;
+            this.txtPrecioActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtPrecioActual.Location = new System.Drawing.Point(113, 17);
+            this.txtPrecioActual.Name = "txtPrecioActual";
+            this.txtPrecioActual.Size = new System.Drawing.Size(261, 20);
+            this.txtPrecioActual.TabIndex = 100;
+            this.txtPrecioActual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // label14
             // 
@@ -270,9 +279,21 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDProducto,
+            this.colTipo,
+            this.colMarca,
+            this.colProducto,
+            this.colCantidad,
+            this.colMedida,
+            this.colStock,
+            this.colPrecio});
             this.dataGridView1.Location = new System.Drawing.Point(429, 6);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(341, 488);
             this.dataGridView1.TabIndex = 51;
             // 
@@ -287,13 +308,13 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.cbMedida);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtpFechaAlta);
             this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.cbMarca);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.label21);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtIDProd);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label9);
@@ -419,15 +440,15 @@
             this.label3.TabIndex = 109;
             this.label3.Text = "Medida";
             // 
-            // dateTimePicker1
+            // dtpFechaAlta
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(115, 71);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(261, 20);
-            this.dateTimePicker1.TabIndex = 105;
+            this.dtpFechaAlta.Enabled = false;
+            this.dtpFechaAlta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaAlta.Location = new System.Drawing.Point(115, 71);
+            this.dtpFechaAlta.Name = "dtpFechaAlta";
+            this.dtpFechaAlta.Size = new System.Drawing.Size(261, 20);
+            this.dtpFechaAlta.TabIndex = 105;
             // 
             // label22
             // 
@@ -460,6 +481,7 @@
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(261, 21);
             this.cbMarca.TabIndex = 102;
+            this.cbMarca.DropDown += new System.EventHandler(this.cbMarca_DropDown);
             // 
             // label20
             // 
@@ -485,14 +507,14 @@
             this.label21.TabIndex = 100;
             this.label21.Text = "Marca";
             // 
-            // textBox1
+            // txtIDProd
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox1.Location = new System.Drawing.Point(115, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(261, 20);
-            this.textBox1.TabIndex = 96;
+            this.txtIDProd.Enabled = false;
+            this.txtIDProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtIDProd.Location = new System.Drawing.Point(115, 45);
+            this.txtIDProd.Name = "txtIDProd";
+            this.txtIDProd.Size = new System.Drawing.Size(261, 20);
+            this.txtIDProd.TabIndex = 96;
             // 
             // label17
             // 
@@ -717,16 +739,17 @@
             this.btnDel.TabIndex = 75;
             this.btnDel.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnSave
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(672, 500);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 28);
-            this.button1.TabIndex = 74;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(672, 500);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(28, 28);
+            this.btnSave.TabIndex = 74;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnEdit
             // 
@@ -748,6 +771,55 @@
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
+            // 
+            // colIDProducto
+            // 
+            this.colIDProducto.HeaderText = "Nº Producto";
+            this.colIDProducto.Name = "colIDProducto";
+            this.colIDProducto.ReadOnly = true;
+            this.colIDProducto.Visible = false;
+            // 
+            // colTipo
+            // 
+            this.colTipo.HeaderText = "Tipo";
+            this.colTipo.Name = "colTipo";
+            this.colTipo.ReadOnly = true;
+            // 
+            // colMarca
+            // 
+            this.colMarca.HeaderText = "Marca";
+            this.colMarca.Name = "colMarca";
+            this.colMarca.ReadOnly = true;
+            // 
+            // colProducto
+            // 
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
+            // 
+            // colMedida
+            // 
+            this.colMedida.HeaderText = "colMedida";
+            this.colMedida.Name = "colMedida";
+            this.colMedida.ReadOnly = true;
+            // 
+            // colStock
+            // 
+            this.colStock.HeaderText = "Stock";
+            this.colStock.Name = "colStock";
+            this.colStock.ReadOnly = true;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.HeaderText = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
             // 
             // formProducto
             // 
@@ -786,7 +858,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtProducto;
@@ -805,7 +877,7 @@
         private System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtIDProd;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label10;
@@ -813,12 +885,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaAlta;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPrecioActual;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtStockActual;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label11;
@@ -829,5 +901,13 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMedida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
     }
 }

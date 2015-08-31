@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMarca));
             this.dgvMarcas = new System.Windows.Forms.DataGridView();
+            this.colIDMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -43,9 +46,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.colIDMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +66,25 @@
             this.dgvMarcas.TabIndex = 96;
             this.dgvMarcas.SelectionChanged += new System.EventHandler(this.dgvMarcas_SelectionChanged);
             // 
+            // colIDMarca
+            // 
+            this.colIDMarca.HeaderText = "ID Marca";
+            this.colIDMarca.Name = "colIDMarca";
+            this.colIDMarca.ReadOnly = true;
+            this.colIDMarca.Visible = false;
+            // 
+            // colMarca
+            // 
+            this.colMarca.HeaderText = "Marca";
+            this.colMarca.Name = "colMarca";
+            this.colMarca.ReadOnly = true;
+            // 
+            // colEstado
+            // 
+            this.colEstado.HeaderText = "Estado";
+            this.colEstado.Name = "colEstado";
+            this.colEstado.ReadOnly = true;
+            // 
             // btnClose
             // 
             this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
@@ -76,6 +95,7 @@
             this.btnClose.Size = new System.Drawing.Size(28, 28);
             this.btnClose.TabIndex = 95;
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnDel
             // 
@@ -214,25 +234,6 @@
             this.label15.Size = new System.Drawing.Size(11, 13);
             this.label15.TabIndex = 66;
             this.label15.Text = "*";
-            // 
-            // colIDMarca
-            // 
-            this.colIDMarca.HeaderText = "ID Marca";
-            this.colIDMarca.Name = "colIDMarca";
-            this.colIDMarca.ReadOnly = true;
-            this.colIDMarca.Visible = false;
-            // 
-            // colMarca
-            // 
-            this.colMarca.HeaderText = "Marca";
-            this.colMarca.Name = "colMarca";
-            this.colMarca.ReadOnly = true;
-            // 
-            // colEstado
-            // 
-            this.colEstado.HeaderText = "Estado";
-            this.colEstado.Name = "colEstado";
-            this.colEstado.ReadOnly = true;
             // 
             // formMarca
             // 

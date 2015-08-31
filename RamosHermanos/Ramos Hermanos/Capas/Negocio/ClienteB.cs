@@ -100,7 +100,7 @@ namespace RamosHermanos.Capas.Negocio
                 cliente.idCliente = Convert.ToInt32(cmd.ExecuteScalar());
                 txt.Text = Convert.ToString(cliente.idCliente);
 
-                MessageBox.Show(Convert.ToString(cliente.idCliente));
+                MessageBox.Show("Cliente Guardado!");
                 MySQL.DisconnectDB();
 
                 return cliente;
