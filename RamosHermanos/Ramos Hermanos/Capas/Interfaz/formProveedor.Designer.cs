@@ -73,10 +73,16 @@
             this.label21 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnGuardarProv = new System.Windows.Forms.Button();
             this.tabAdicional = new System.Windows.Forms.TabPage();
             this.tabListado = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProveedor = new System.Windows.Forms.DataGridView();
+            this.colidprov = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipoIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.tabPedido = new System.Windows.Forms.TabPage();
             this.tabProveedor.SuspendLayout();
@@ -87,7 +93,7 @@
             this.groupBox1.SuspendLayout();
             this.gbVisita.SuspendLayout();
             this.tabListado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.SuspendLayout();
             // 
             // tabProveedor
@@ -112,7 +118,7 @@
             this.tabInformacion.Controls.Add(this.gbVisita);
             this.tabInformacion.Controls.Add(this.button4);
             this.tabInformacion.Controls.Add(this.button5);
-            this.tabInformacion.Controls.Add(this.button6);
+            this.tabInformacion.Controls.Add(this.btnGuardarProv);
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
@@ -158,7 +164,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(50, 205);
+            this.label10.Location = new System.Drawing.Point(16, 152);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(11, 13);
             this.label10.TabIndex = 97;
@@ -444,7 +450,6 @@
             this.btnEmail.Size = new System.Drawing.Size(28, 28);
             this.btnEmail.TabIndex = 58;
             this.btnEmail.UseVisualStyleBackColor = true;
-            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
             // btnTelefono
             // 
@@ -599,17 +604,17 @@
             this.button5.TabIndex = 63;
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnGuardarProv
             // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(667, 498);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(28, 28);
-            this.button6.TabIndex = 61;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnGuardarProv.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardarProv.BackgroundImage")));
+            this.btnGuardarProv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardarProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarProv.Location = new System.Drawing.Point(667, 498);
+            this.btnGuardarProv.Name = "btnGuardarProv";
+            this.btnGuardarProv.Size = new System.Drawing.Size(28, 28);
+            this.btnGuardarProv.TabIndex = 61;
+            this.btnGuardarProv.UseVisualStyleBackColor = true;
+            this.btnGuardarProv.Click += new System.EventHandler(this.btnGuardarProv_Click);
             // 
             // tabAdicional
             // 
@@ -622,7 +627,7 @@
             // 
             // tabListado
             // 
-            this.tabListado.Controls.Add(this.dataGridView1);
+            this.tabListado.Controls.Add(this.dgvProveedor);
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Padding = new System.Windows.Forms.Padding(3);
@@ -631,13 +636,57 @@
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvProveedor
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(762, 522);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colidprov,
+            this.colRazonSocial,
+            this.colCuit,
+            this.colEstado,
+            this.colTipoIVA,
+            this.colFechaAlta});
+            this.dgvProveedor.Location = new System.Drawing.Point(6, 6);
+            this.dgvProveedor.Name = "dgvProveedor";
+            this.dgvProveedor.ReadOnly = true;
+            this.dgvProveedor.Size = new System.Drawing.Size(762, 522);
+            this.dgvProveedor.TabIndex = 0;
+            // 
+            // colidprov
+            // 
+            this.colidprov.HeaderText = "ID Proveedor";
+            this.colidprov.Name = "colidprov";
+            this.colidprov.ReadOnly = true;
+            // 
+            // colRazonSocial
+            // 
+            this.colRazonSocial.HeaderText = "Razon Social";
+            this.colRazonSocial.Name = "colRazonSocial";
+            this.colRazonSocial.ReadOnly = true;
+            // 
+            // colCuit
+            // 
+            this.colCuit.HeaderText = "Cuit";
+            this.colCuit.Name = "colCuit";
+            this.colCuit.ReadOnly = true;
+            // 
+            // colEstado
+            // 
+            this.colEstado.HeaderText = "Estado";
+            this.colEstado.Name = "colEstado";
+            this.colEstado.ReadOnly = true;
+            // 
+            // colTipoIVA
+            // 
+            this.colTipoIVA.HeaderText = "Tipo IVA";
+            this.colTipoIVA.Name = "colTipoIVA";
+            this.colTipoIVA.ReadOnly = true;
+            // 
+            // colFechaAlta
+            // 
+            this.colFechaAlta.HeaderText = "Fecha Alta";
+            this.colFechaAlta.Name = "colFechaAlta";
+            this.colFechaAlta.ReadOnly = true;
             // 
             // tabMovimientos
             // 
@@ -677,7 +726,7 @@
             this.gbVisita.ResumeLayout(false);
             this.gbVisita.PerformLayout();
             this.tabListado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -689,7 +738,7 @@
         private System.Windows.Forms.TabPage tabListado;
         private System.Windows.Forms.TabPage tabAdicional;
         private System.Windows.Forms.TabPage tabMovimientos;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProveedor;
         private System.Windows.Forms.TabPage tabPedido;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Button btnSearch;
@@ -727,12 +776,18 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnGuardarProv;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtSaldoActual;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDebmax;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colidprov;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRazonSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCuit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTipoIVA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
     }
 }

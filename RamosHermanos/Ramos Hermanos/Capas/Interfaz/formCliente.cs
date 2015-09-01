@@ -790,6 +790,11 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
+        private void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
 
 
 

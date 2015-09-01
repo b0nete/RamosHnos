@@ -55,6 +55,8 @@ namespace RamosHermanos.Capas.Negocio
                 MessageBox.Show("Error: " + ex);
                 throw;
             }
+
+        
         }
 
         public static SaldoEntity InsertSaldo(SaldoEntity saldo)

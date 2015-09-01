@@ -83,6 +83,7 @@ namespace RamosHermanos.Capas.Negocio
                 if (resultado == 0)
                 {
                     MessageBox.Show("El Proveedor NO existe!");
+                    
                 }
                 else
                 {
@@ -94,7 +95,7 @@ namespace RamosHermanos.Capas.Negocio
                     DataRow row = dt.Rows[0];
 
                     proveedor.idProveedor = Convert.ToInt32(row["idProveedor"]);
-                    proveedor.fecha = Convert.ToDateTime(row["fechaAlta"]);
+                    proveedor.fecha = Convert.ToDateTime(row["fechaAlta"]); ;
                     proveedor.cuit = Convert.ToString(row["cuit"]);
                     proveedor.razsocial = Convert.ToString(row["razonSocial"]);
                     proveedor.condicioniva = Convert.ToString(row["condicionIVA"]);
@@ -115,20 +116,45 @@ namespace RamosHermanos.Capas.Negocio
 
         public static void cargardgv (DataGridView dgv)
         {
-            MySQL.ConnectDB();
-            MySqlCommand cmd = new MySqlCommand (@"Select idProveedor as NumeroProveedor, rol as Rol, razonSocial as 'Razon Social',
-            cuit as Cuit, email as Email, estado as Estado, tipoProveedor as 'Tipo de Proveedor', condicionIva as 'Condicion Iva',
-            fechaAlta as 'Fecha de Alta' from proveedores", MySQL.sqlcnx);
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dgv.DataSource = dt;
-            MySQL.DisconnectDB();
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"Select P.idProveedor , P.razonSocial , P.cuit , P.estado ,P.condicionIVA ,P.fechaAlta
+                                FROM proveedores P";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idProveedor"]),
+                    Convert.ToString(dr["razonSocial"]),
+                    Convert.ToString(dr["cuit"]),
+                    Convert.ToString(dr["estado"]),
+                    Convert.ToString(dr["condicionIVA"]),
+                    Convert.ToString(dr["fechaAlta"]));
+                                       
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
         }
 
 
 
 
-        }
  }
+ 
 
