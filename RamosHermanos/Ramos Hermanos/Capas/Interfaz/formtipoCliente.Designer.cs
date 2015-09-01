@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formtipoCliente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtIDtipoCli = new System.Windows.Forms.TextBox();
             this.cbColor = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.colColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtIDtipoCli = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvtipoCliente)).BeginInit();
             this.SuspendLayout();
@@ -81,6 +81,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tipo Cliente";
+            // 
+            // txtIDtipoCli
+            // 
+            this.txtIDtipoCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDtipoCli.Location = new System.Drawing.Point(516, -3);
+            this.txtIDtipoCli.Name = "txtIDtipoCli";
+            this.txtIDtipoCli.Size = new System.Drawing.Size(78, 20);
+            this.txtIDtipoCli.TabIndex = 68;
+            this.txtIDtipoCli.Visible = false;
             // 
             // cbColor
             // 
@@ -386,6 +395,7 @@
             this.dgvtipoCliente.Size = new System.Drawing.Size(600, 205);
             this.dgvtipoCliente.TabIndex = 1;
             this.dgvtipoCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtipoCliente_CellContentClick);
+            this.dgvtipoCliente.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtipoCliente_CellDoubleClick);
             this.dgvtipoCliente.SelectionChanged += new System.EventHandler(this.dgvtipoCliente_SelectionChanged);
             // 
             // colIDtipoCli
@@ -438,15 +448,6 @@
             this.button1.TabIndex = 67;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // txtIDtipoCli
-            // 
-            this.txtIDtipoCli.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDtipoCli.Location = new System.Drawing.Point(516, -3);
-            this.txtIDtipoCli.Name = "txtIDtipoCli";
-            this.txtIDtipoCli.Size = new System.Drawing.Size(78, 20);
-            this.txtIDtipoCli.TabIndex = 68;
-            this.txtIDtipoCli.Visible = false;
             // 
             // formtipoCliente
             // 

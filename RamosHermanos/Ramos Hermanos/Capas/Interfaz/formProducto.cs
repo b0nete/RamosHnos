@@ -29,7 +29,6 @@ namespace RamosHermanos.Capas.Interfaz
             MarcaB.CargarCB(cbMarca);
             MedidaB.CargarCB(cbMedida);
 
-
             CheckColor();
         }
 
@@ -110,13 +109,32 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            CargarProducto();
-            ProductoB.InsertProducto(producto, txtIDProd);
+            if (ValidarCampos() == true)
+            {
+                return;
+            }
+            else
+            {
+                CargarProducto(); // Cargamos la Entidad.
 
-            CargarPrecio(txtIDProd);
-            PrecioB.InsertPrecio(precio);
+                if (ProductoB.ExisteProductoID(producto) == true) // Verificamos si el ID del producto Existe.
+                {
+                    return;
+                }
+                else if (ProductoB.ExisteProducto(producto) == true) // Verificamos si los datos coinciden con los de otro producto.
+                {
+                    return;
+                }
+                else
+                {
+                    ProductoB.InsertProducto(producto, txtIDProd);
 
-            ProductoB.CargarDGV(dgvProducto);
+                    CargarPrecio(txtIDProd);
+                    PrecioB.InsertPrecio(precio);
+
+                    ProductoB.CargarDGV(dgvProducto);
+                }
+            }
         }
 
         private void cbMarca_DropDown(object sender, EventArgs e)
@@ -124,56 +142,30 @@ namespace RamosHermanos.Capas.Interfaz
             MarcaB.CargarCB(cbMarca);
         }
 
-        // Metodos
-
-        private void CheckColor() //Cambia Label y Color de acuerdo a el estado Checked.
-        {
-            if (cbEstado.Checked == true)
-            {
-                lblEstado.BackColor = Color.Green;
-                lblEstado.Text = "Habilitado";
-            }
-            else
-            {
-                lblEstado.BackColor = Color.Red;
-                lblEstado.Text = "Desabilitado";
-            }
-        }
-
-        // Entidades
-
-        ProductoEntity producto = new ProductoEntity();
-        private void CargarProducto()
-        {
-            producto.fechaAlta = dtpFechaAlta.Value;
-            producto.tipoProducto = Convert.ToInt32(cbTipoProducto.SelectedValue);
-            producto.marca = Convert.ToInt32(cbMarca.SelectedValue);
-            producto.producto = txtProducto.Text;
-            producto.descripcion = txtDescripcion.Text;
-            producto.cantidad = Convert.ToDouble(txtCantidad.Text);
-            producto.medida = Convert.ToInt32(cbMedida.SelectedValue);
-            producto.stockMin = Convert.ToInt32(txtStockMin.Text);
-            producto.estado = cbEstado.Checked;
-        }
-
-        PrecioEntity precio = new PrecioEntity();
-        private void CargarPrecio(TextBox txt)
-        {
-            precio.producto = Convert.ToInt32(txt.Text);
-            precio.fechaActualizacion = dtpFechaAct.Value;
-            precio.precio = Convert.ToDouble(txtPrecioActual.Text);
-        }
-
         private void btnEdit_Click(object sender, EventArgs e)
         {
             CargarProducto();
             ProductoB.UpdateProducto(producto);
 
-            CargarPrecio(txtIDProd);
-            PrecioB.InsertPrecio(precio);
+            precio.producto = Convert.ToInt32(txtIDProd.Text); //Asignamos el ID del producto para desabilitar los precios anteriores.
+            PrecioB.DisablePrecio(precio);//Método para desabilitar los precios.
+            CargarPrecio(txtIDProd); //Cargamos los atributos de la entidad para pasarlos al método que realiza la carga en la DB.
+            PrecioB.InsertPrecio(precio); //Método para cargar pasar los datos de la entidad a la DB.
+
+            ProductoB.CargarDGV(dgvProducto);
         }
 
         private void dgvProducto_DoubleClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvProducto_DoubleClick_1(object sender, EventArgs e)
         {
             DataGridViewCell cell = null;
             foreach (DataGridViewCell selectedCell in dgvProducto.SelectedCells)
@@ -204,11 +196,85 @@ namespace RamosHermanos.Capas.Interfaz
                 precio.producto = producto.idProducto;
                 PrecioB.BuscarPrecio(precio);
                 txtPrecioActual.Text = Convert.ToString(precio.precio);
+                txtFechaActualizacion.Text = Convert.ToString(precio.fechaActualizacion);
 
-                
+                tabProducto.SelectedTab = tabInformacion;
             }
-
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Clean();
+        }
+
+        // Metodos
+
+        private void CheckColor() //Cambia Label y Color de acuerdo a el estado Checked.
+        {
+            if (cbEstado.Checked == true)
+            {
+                lblEstado.BackColor = Color.Green;
+                lblEstado.Text = "Habilitado";
+            }
+            else
+            {
+                lblEstado.BackColor = Color.Red;
+                lblEstado.Text = "Desabilitado";
+            }
+        }
+
+        private bool ValidarCampos()
+        {
+            if (cbTipoProducto.SelectedValue == null || cbMarca.SelectedValue == null || txtProducto.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null || txtStockMin.Text == string.Empty || txtPrecioActual.Text == string.Empty)
+            {
+                MessageBox.Show("Campos necesarios incompletos!");
+                return true;
+            }
+            else
+                return false;
+        }
+
+        private void Clean()
+        {
+            txtIDProd.Text = "";
+            cbTipoProducto.SelectedIndex = 0;
+            cbMarca.SelectedIndex = 0;
+            txtProducto.Text = "";
+            txtDescripcion.Text = "";
+            txtCantidad.Text = "";
+            cbMedida.SelectedIndex = 0;
+            txtStockMin.Text = "";
+            txtPrecioActual.Text = "";
+            txtFechaActualizacion.Text = "";
+        }
+
+        // Entidades
+
+        ProductoEntity producto = new ProductoEntity();
+        private void CargarProducto()
+        {
+            producto.fechaAlta = dtpFechaAlta.Value;
+            producto.tipoProducto = Convert.ToInt32(cbTipoProducto.SelectedValue);
+            producto.marca = Convert.ToInt32(cbMarca.SelectedValue);
+            producto.producto = txtProducto.Text;
+            producto.descripcion = txtDescripcion.Text;
+            producto.cantidad = Convert.ToDouble(txtCantidad.Text);
+            producto.medida = Convert.ToInt32(cbMedida.SelectedValue);
+            producto.stockMin = Convert.ToInt32(txtStockMin.Text);
+            producto.estado = cbEstado.Checked;
+        }
+
+        PrecioEntity precio = new PrecioEntity();
+        private void CargarPrecio(TextBox txt)
+        {
+            precio.producto = Convert.ToInt32(txt.Text);
+            precio.precio = Convert.ToDouble(txtPrecioActual.Text);
+        }
+
+        
+
+
+        
     }
 }
 

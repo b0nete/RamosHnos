@@ -150,14 +150,14 @@ namespace RamosHermanos.Capas.Negocio
 
                 ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                  MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                  da.Fill(dt);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
 
-                  cb.DataSource = dt;
-                  cb.DisplayMember = "tipoCliente";
-                  cb.ValueMember = "idTipoCliente";
+                cb.DataSource = dt;
+                cb.DisplayMember = "tipoCliente";
+                cb.ValueMember = "idTipoCliente";
 
-                  MySQL.DisconnectDB();
+                MySQL.DisconnectDB();
             }
             catch (Exception ex)
             {

@@ -176,9 +176,7 @@ namespace RamosHermanos.Capas.Interfaz
                 EmailB.CargarTXT(txtEmail, txtIDcliente, 1);
                 TelefonoB.CargarTXT(txtTel, txtIDcliente, 1);
             }
-
-            CheckColor();
-            
+            CheckColor();           
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -790,11 +788,67 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
+<<<<<<< HEAD
         private void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
+=======
+        private void dgvClean_Click(object sender, EventArgs e)
+        {
+            Clean();
+        }
+
+        private void Clean()
+        {
+            txtIDcliente.Text = "";
+            txtnumDoc.Text = "";
+            cbTipoDoc.SelectedIndex = 0;
+            cbSexo.SelectedIndex = 0;
+            cbEstadoCivil.SelectedIndex = 0;
+            cbIVA.SelectedIndex = 4;
+            txtnumDoc.Text = "";
+            txtCUIL.Text = "";
+            txtApellido.Text = "";
+            txtNombre.Text = "";
+            cbTipoCliente.Text = "";
+            txtEmail.Text= "" ;
+            txtDom.Text = "";
+            txtTel.Text = "";
+            txtCreditoMax.Text = "";
+            txtSaldo.Text = "";
+            txt4LT.Text = "";
+            txt10LT.Text = "";
+            txt12LT.Text = "";
+            txt20LT.Text = "";
+            txt25LT.Text = "";
+            txtAGUAram.Text = "";
+            cbLunes.Checked = false;
+            cbMartes.Checked = false;
+            cbMiercoles.Checked = false;
+            cbJueves.Checked = false;
+            cbViernes.Checked = false;
+            cbSabado.Checked = false;
+            cbDomingo.Checked = false;
+            txtLun.Text = "";
+            txtMar.Text = "";
+            txtMie.Text = "";
+            txtJue.Text = "";
+            txtVie.Text = "";
+            txtSab.Text = "";
+            txtDom.Text = "";
+            dtpA.Text = "09:00";
+            dtpB.Text = "16:00";
+            
+           
+        }
+
+        private void cbTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+>>>>>>> e3da9c512a736e60326b053178cdca8ff5c71155
 
 
 

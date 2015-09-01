@@ -264,7 +264,7 @@ namespace RamosHermanos.Capas.Negocio
                 {
                     dgv.Rows.Add(
                     Convert.ToString(dr["idCliente"]),
-                    Convert.ToString(dr["fechaAlta"]),
+                    Convert.ToDateTime(dr["fechaAlta"]).ToString("dd/MM/yyyy"),
                     Convert.ToString(dr["IDtipoDoc"]),
                     Convert.ToString(dr["tipoDoc"]),
                     Convert.ToString(dr["numDoc"]),
