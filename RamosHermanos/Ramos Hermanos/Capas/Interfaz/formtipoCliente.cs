@@ -87,28 +87,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvtipoCliente_SelectionChanged(object sender, EventArgs e)
         {
-            DataGridViewCell cell = null;
-            foreach (DataGridViewCell selectedCell in dgvtipoCliente.SelectedCells)
-            {
-                cell = selectedCell;
-                break;
-            }
-            if (cell != null)
-            {
-                DataGridViewRow row = cell.OwningRow;
-                tcliente.idtipoCliente = Convert.ToInt32(row.Cells["colIDtipoCli"].Value.ToString());
-                txtIDtipoCli.Text = row.Cells["colIDtipoCli"].Value.ToString();
-                tcliente.tipoCliente = row.Cells["coltCliente"].Value.ToString();
-                txttCliente.Text = row.Cells["coltCliente"].Value.ToString();
-                tcliente.descripcion = row.Cells["colDescripcion"].Value.ToString();
-                txtDescripcion.Text = row.Cells["colDescripcion"].Value.ToString();
-                tcliente.porcDescuento = Convert.ToInt32(row.Cells["colPorc"].Value.ToString());
-                txtDescuento.Text = row.Cells["colPorc"].Value.ToString();
-                tcliente.color = row.Cells["colColor"].Value.ToString();
-                cbColor.Text = row.Cells["colColor"].Value.ToString();
-                tcliente.estado = Convert.ToBoolean(row.Cells["colEstado"].Value.ToString());
-                cbEstado.Checked = Convert.ToBoolean(row.Cells["colEstado"].Value.ToString());
-            }
+            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -148,6 +127,32 @@ namespace RamosHermanos.Capas.Interfaz
             if (e.KeyChar == '.')
             {
                 e.KeyChar = ',';
+            }
+        }
+
+        private void dgvtipoCliente_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvtipoCliente.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+                tcliente.idtipoCliente = Convert.ToInt32(row.Cells["colIDtipoCli"].Value.ToString());
+                txtIDtipoCli.Text = row.Cells["colIDtipoCli"].Value.ToString();
+                tcliente.tipoCliente = row.Cells["coltCliente"].Value.ToString();
+                txttCliente.Text = row.Cells["coltCliente"].Value.ToString();
+                tcliente.descripcion = row.Cells["colDescripcion"].Value.ToString();
+                txtDescripcion.Text = row.Cells["colDescripcion"].Value.ToString();
+                tcliente.porcDescuento = Convert.ToInt32(row.Cells["colPorc"].Value.ToString());
+                txtDescuento.Text = row.Cells["colPorc"].Value.ToString();
+                tcliente.color = row.Cells["colColor"].Value.ToString();
+                cbColor.Text = row.Cells["colColor"].Value.ToString();
+                tcliente.estado = Convert.ToBoolean(row.Cells["colEstado"].Value.ToString());
+                cbEstado.Checked = Convert.ToBoolean(row.Cells["colEstado"].Value.ToString());
             }
         }
 

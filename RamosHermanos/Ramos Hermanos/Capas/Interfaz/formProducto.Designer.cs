@@ -39,12 +39,11 @@
             this.txtStockMin = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtpFechaAct = new System.Windows.Forms.DateTimePicker();
+            this.txtFechaActualizacion = new System.Windows.Forms.TextBox();
             this.txtPrecioActual = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.lblEstado = new System.Windows.Forms.Label();
@@ -70,7 +69,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtProducto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -85,6 +83,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.tabListado = new System.Windows.Forms.TabPage();
+            this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.colIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,12 +92,14 @@
             this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvClean = new System.Windows.Forms.Button();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabListado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // tabProducto
@@ -114,9 +115,9 @@
             // 
             // tabInformacion
             // 
+            this.tabInformacion.Controls.Add(this.dgvClean);
             this.tabInformacion.Controls.Add(this.groupBox3);
             this.tabInformacion.Controls.Add(this.groupBox2);
-            this.tabInformacion.Controls.Add(this.dgvProducto);
             this.tabInformacion.Controls.Add(this.groupBox1);
             this.tabInformacion.Controls.Add(this.btnDel);
             this.tabInformacion.Controls.Add(this.btnSave);
@@ -140,7 +141,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(8, 340);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(415, 75);
+            this.groupBox3.Size = new System.Drawing.Size(760, 75);
             this.groupBox3.TabIndex = 110;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Stock";
@@ -211,7 +212,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dtpFechaAct);
+            this.groupBox2.Controls.Add(this.txtFechaActualizacion);
             this.groupBox2.Controls.Add(this.txtPrecioActual);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label24);
@@ -219,20 +220,19 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(8, 420);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(415, 74);
+            this.groupBox2.Size = new System.Drawing.Size(760, 74);
             this.groupBox2.TabIndex = 108;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Precio";
             // 
-            // dtpFechaAct
+            // txtFechaActualizacion
             // 
-            this.dtpFechaAct.Enabled = false;
-            this.dtpFechaAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaAct.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAct.Location = new System.Drawing.Point(113, 43);
-            this.dtpFechaAct.Name = "dtpFechaAct";
-            this.dtpFechaAct.Size = new System.Drawing.Size(261, 20);
-            this.dtpFechaAct.TabIndex = 85;
+            this.txtFechaActualizacion.Enabled = false;
+            this.txtFechaActualizacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtFechaActualizacion.Location = new System.Drawing.Point(113, 43);
+            this.txtFechaActualizacion.Name = "txtFechaActualizacion";
+            this.txtFechaActualizacion.Size = new System.Drawing.Size(261, 20);
+            this.txtFechaActualizacion.TabIndex = 108;
             // 
             // txtPrecioActual
             // 
@@ -277,27 +277,6 @@
             this.label23.TabIndex = 107;
             this.label23.Text = "*";
             // 
-            // dgvProducto
-            // 
-            this.dgvProducto.AllowUserToAddRows = false;
-            this.dgvProducto.AllowUserToDeleteRows = false;
-            this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colIDProducto,
-            this.colTipo,
-            this.colMarca,
-            this.colProducto,
-            this.colCantidad,
-            this.colMedida,
-            this.colStock,
-            this.colPrecio});
-            this.dgvProducto.Location = new System.Drawing.Point(429, 6);
-            this.dgvProducto.Name = "dgvProducto";
-            this.dgvProducto.ReadOnly = true;
-            this.dgvProducto.Size = new System.Drawing.Size(341, 488);
-            this.dgvProducto.TabIndex = 51;
-            this.dgvProducto.DoubleClick += new System.EventHandler(this.dgvProducto_DoubleClick);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button4);
@@ -324,7 +303,6 @@
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtProducto);
             this.groupBox1.Controls.Add(this.label6);
@@ -338,7 +316,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(8, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(415, 328);
+            this.groupBox1.Size = new System.Drawing.Size(760, 328);
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Producto";
@@ -611,16 +589,6 @@
             this.label8.TabIndex = 78;
             this.label8.Text = "*";
             // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(526, 37);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(28, 28);
-            this.button7.TabIndex = 64;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // label5
             // 
             this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
@@ -766,13 +734,36 @@
             // 
             // tabListado
             // 
+            this.tabListado.Controls.Add(this.dgvProducto);
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(776, 536);
+            this.tabListado.Size = new System.Drawing.Size(776, 535);
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
+            // 
+            // dgvProducto
+            // 
+            this.dgvProducto.AllowUserToAddRows = false;
+            this.dgvProducto.AllowUserToDeleteRows = false;
+            this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDProducto,
+            this.colTipo,
+            this.colMarca,
+            this.colProducto,
+            this.colCantidad,
+            this.colMedida,
+            this.colStock,
+            this.colPrecio});
+            this.dgvProducto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProducto.Location = new System.Drawing.Point(3, 3);
+            this.dgvProducto.Name = "dgvProducto";
+            this.dgvProducto.ReadOnly = true;
+            this.dgvProducto.Size = new System.Drawing.Size(770, 529);
+            this.dgvProducto.TabIndex = 52;
+            this.dgvProducto.DoubleClick += new System.EventHandler(this.dgvProducto_DoubleClick_1);
             // 
             // colIDProducto
             // 
@@ -823,6 +814,18 @@
             this.colPrecio.Name = "colPrecio";
             this.colPrecio.ReadOnly = true;
             // 
+            // dgvClean
+            // 
+            this.dgvClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dgvClean.BackgroundImage")));
+            this.dgvClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dgvClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvClean.Location = new System.Drawing.Point(638, 500);
+            this.dgvClean.Name = "dgvClean";
+            this.dgvClean.Size = new System.Drawing.Size(28, 28);
+            this.dgvClean.TabIndex = 111;
+            this.dgvClean.UseVisualStyleBackColor = true;
+            this.dgvClean.Click += new System.EventHandler(this.button1_Click);
+            // 
             // formProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -838,9 +841,10 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabListado.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -853,7 +857,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DateTimePicker dtpFechaAct;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnSearch;
@@ -861,7 +864,6 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.Label label6;
@@ -872,7 +874,6 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dgvProducto;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
@@ -903,6 +904,8 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txtFechaActualizacion;
+        private System.Windows.Forms.DataGridView dgvProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
@@ -911,5 +914,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
+        private System.Windows.Forms.Button dgvClean;
     }
 }

@@ -19,6 +19,32 @@ namespace RamosHermanos.Capas.Negocio
             MySQL.ConnectDB();
 
             string query = @"SELECT COUNT(*) FROM Productos
+                             WHERE tipoProducto = @tipoProducto and marca = @marca and cantidad = @cantidad and medida = @medida";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+            cmd.Parameters.AddWithValue("@tipoProducto", producto.tipoProducto);
+            cmd.Parameters.AddWithValue("@marca", producto.marca);
+            cmd.Parameters.AddWithValue("@cantidad", producto.cantidad);
+            cmd.Parameters.AddWithValue("@medida", producto.medida);
+
+            int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (resultado == 0)
+            {
+                return false;
+            }
+            else
+            {
+                MessageBox.Show("El producto ya existe!");
+                return true;                
+            }
+        }
+
+        public static bool ExisteProductoID(ProductoEntity producto)
+        {
+            MySQL.ConnectDB();
+
+            string query = @"SELECT COUNT(*) FROM Productos
                              WHERE idProducto = @idProducto";
 
             MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -27,10 +53,14 @@ namespace RamosHermanos.Capas.Negocio
             int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
             if (resultado == 0)
+            {
                 return false;
+            }
             else
+            {
+                MessageBox.Show("El ID producto ya existe!");
                 return true;
-
+            }
         }
 
         public static ProductoEntity UpdateProducto(ProductoEntity producto)
@@ -168,7 +198,8 @@ namespace RamosHermanos.Capas.Negocio
                                  INNER JOIN TipoProducto TP ON TP.idTipoProducto = P.tipoProducto
                                  INNER JOIN Marcas M ON M.idMarca = P.Marca
                                  INNER JOIN Medidas MM ON MM.idMedida = P.Medida
-                                 INNER JOIN precioProductos PP ON PP.Producto = P.idProducto";
+                                 INNER JOIN precioProductos PP ON PP.Producto = P.idProducto
+                                 WHERE PP.estado = 1";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 

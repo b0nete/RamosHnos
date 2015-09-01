@@ -139,6 +139,7 @@
             this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMovimientos = new System.Windows.Forms.TabPage();
+            this.dgvClean = new System.Windows.Forms.Button();
             this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -172,6 +173,7 @@
             // tabInformacion
             // 
             this.tabInformacion.BackColor = System.Drawing.Color.Transparent;
+            this.tabInformacion.Controls.Add(this.dgvClean);
             this.tabInformacion.Controls.Add(this.button4);
             this.tabInformacion.Controls.Add(this.groupBox6);
             this.tabInformacion.Controls.Add(this.groupBox5);
@@ -330,6 +332,7 @@
             this.cbTipoCliente.Size = new System.Drawing.Size(355, 21);
             this.cbTipoCliente.TabIndex = 84;
             this.cbTipoCliente.DropDown += new System.EventHandler(this.cbTipoCliente_DropDown);
+            this.cbTipoCliente.SelectedIndexChanged += new System.EventHandler(this.cbTipoCliente_SelectedIndexChanged);
             // 
             // label24
             // 
@@ -1271,6 +1274,8 @@
             // 
             // dgvCliente
             // 
+            this.dgvCliente.AllowUserToAddRows = false;
+            this.dgvCliente.AllowUserToDeleteRows = false;
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDCliente,
@@ -1289,6 +1294,7 @@
             this.dgvCliente.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCliente.Location = new System.Drawing.Point(0, 0);
             this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.ReadOnly = true;
             this.dgvCliente.Size = new System.Drawing.Size(776, 536);
             this.dgvCliente.TabIndex = 1;
             this.dgvCliente.SelectionChanged += new System.EventHandler(this.dgvCliente_SelectionChanged);
@@ -1369,6 +1375,18 @@
             this.tabMovimientos.TabIndex = 4;
             this.tabMovimientos.Text = "Movimientos";
             this.tabMovimientos.UseVisualStyleBackColor = true;
+            // 
+            // dgvClean
+            // 
+            this.dgvClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dgvClean.BackgroundImage")));
+            this.dgvClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.dgvClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvClean.Location = new System.Drawing.Point(633, 498);
+            this.dgvClean.Name = "dgvClean";
+            this.dgvClean.Size = new System.Drawing.Size(28, 28);
+            this.dgvClean.TabIndex = 112;
+            this.dgvClean.UseVisualStyleBackColor = true;
+            this.dgvClean.Click += new System.EventHandler(this.dgvClean_Click);
             // 
             // formCliente
             // 
@@ -1516,5 +1534,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCondicionIVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDtipoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn coltipoCliente;
+        private System.Windows.Forms.Button dgvClean;
     }
 }

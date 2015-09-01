@@ -12,5 +12,6 @@ namespace RamosHermanos.Capas.Entidades
         public int producto { get; set; }
         public DateTime fechaActualizacion { get; set; }
         public double precio { get; set; }
+        public bool estado { get; set; }
     }
 }

@@ -13,6 +13,30 @@ namespace RamosHermanos.Capas.Negocio
 {
     class PrecioB
     {
+        public static void DisablePrecio(PrecioEntity precio)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"UPDATE precioProductos
+                                 SET estado = 0
+                                 WHERE producto = @producto";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@producto", precio.producto);
+                
+                cmd.ExecuteNonQuery();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static PrecioEntity InsertPrecio(PrecioEntity precio)
         {
             try
@@ -20,8 +44,8 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
 
-                string query = @"INSERT INTO precioProductos (producto, fechaActualizacion, precio) 
-                                 VALUES (@producto, @fechaActualizacion, @precio)";
+                string query = @"INSERT INTO precioProductos (producto, fechaActualizacion, precio, estado) 
+                                 VALUES (@producto, NOW(), @precio, 1)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -78,7 +102,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = "SELECT * FROM precioProductos WHERE producto = @producto";
+                string query = "SELECT * FROM precioProductos WHERE producto = @producto and estado = 1";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -99,6 +123,7 @@ namespace RamosHermanos.Capas.Negocio
                     DataRow row = dt.Rows[0];
 
                     precio.precio = Convert.ToDouble(row["precio"]);
+                    precio.fechaActualizacion = Convert.ToDateTime(row["fechaActualizacion"]);
 
                     MySQL.DisconnectDB();
                 }
