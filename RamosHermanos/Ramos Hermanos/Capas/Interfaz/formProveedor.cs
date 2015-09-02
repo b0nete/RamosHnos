@@ -44,7 +44,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         SaldoEntity saldo = new SaldoEntity();
 
-        private void cargarSaldo()
+        private void cargarSaldo(TextBox txt)
         {
 
             saldo.idPersona = Convert.ToInt32(txtidprov.Text);
@@ -150,7 +150,7 @@ namespace RamosHermanos.Capas.Interfaz
 
                 //Cargar Saldos
 
-                cargarSaldo();
+                cargarSaldo(txtidprov);
                 SaldoB.BuscarSaldo(saldo);
                 txtDebmax.Text = Convert.ToString(saldo.creditoMax);
                 txtSaldoActual.Text = Convert.ToString(saldo.saldoActual);
@@ -207,6 +207,9 @@ namespace RamosHermanos.Capas.Interfaz
         private void btnGuardarProv_Click(object sender, EventArgs e)
         {
             GuardarProveedor();
+            ProveedorB.cargardgv(dgvProveedor);
+
+
             //cargarProv();
             //ProveedorB.InsertProveedor(proveedor, txtidprov);
             //cargarSaldo();
@@ -215,6 +218,46 @@ namespace RamosHermanos.Capas.Interfaz
             //EmailB.InsertEmail(email);
             //ProveedorB.cargardgv(dgvProveedor);
 
+        }
+
+       
+        private void SeleccionarDGV()
+        {
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in  dgvProveedor.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+
+                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+                proveedor.idProveedor = Convert.ToInt32(row.Cells["colidprov"].Value.ToString());
+                ProveedorB.BuscarProvRazonsocial(proveedor);
+                txtidprov.Text = Convert.ToString(proveedor.idProveedor);
+                txtRazonSocial.Text = proveedor.razsocial;
+                txtcuit.Text = proveedor.cuit;
+                txtDebmax.Text = Convert.ToString(proveedor.debMAX);
+                dtpFechaAlta.Value = proveedor.fecha;
+                cbIVA.SelectedValue = proveedor.condicioniva;
+
+                //Saldo
+                cargarSaldo(txtidprov);
+                SaldoB.BuscarSaldo(saldo);
+                txtDebmax.Text = Convert.ToString(saldo.creditoMax);
+                txtSaldoActual.Text=Convert.ToString(saldo.saldoActual);
+
+                
+                //Contacto
+                DomicilioB.CargarTXT(txtDomicilio , txtidprov, 2);
+                EmailB.CargarTXT(txtEmail, txtidprov, 2);
+                TelefonoB.CargarTXT(txtTel, txtidprov, 2);
+
+                tabProveedor.SelectedTab = tabInformacion;
+
+            }
         }
 
 
@@ -234,8 +277,8 @@ namespace RamosHermanos.Capas.Interfaz
                     if (result == DialogResult.OK)
                     {
                         cargarProv();
-
-                        cargarSaldo();
+                        ProveedorB.UpdateProveedor(proveedor);
+                        cargarSaldo(txtidprov);
 
                         BuscarProv();
 
@@ -246,16 +289,33 @@ namespace RamosHermanos.Capas.Interfaz
                         return;
                     }
                             }
-                            else if (ProveedorB.ExisteProveedor(proveedor) == true)
+                            else if (ProveedorB.ExisteProveedor(proveedor) == false)
                             {
                                 cargarProv();
                                 ProveedorB.InsertProveedor(proveedor,txtidprov);
 
-                                cargarSaldo();
+                                cargarSaldo(txtidprov);
                                 SaldoB.InsertSaldo(saldo);
 
                             }                
                         }
                     }
+
+        private void dgvProveedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SeleccionarDGV();
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+       
             }
 }

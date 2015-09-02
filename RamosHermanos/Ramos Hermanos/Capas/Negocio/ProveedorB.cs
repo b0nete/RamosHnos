@@ -18,8 +18,8 @@ namespace RamosHermanos.Capas.Negocio
         { 
             MySQL.ConnectDB();
 
-            string query = @"Insert into proveedores (rol,razonSocial,cuit,estado,condicionIVA,tipoProveedor,fechaAlta)
-                          VALUES (@rol,@razonSocial,@cuit,@estado,@condicionIVA,@tipoProveedor,@fechaAlta);
+            string query = @"Insert into proveedores (rol,razonSocial,cuit,estado,condicionIVA,fechaAlta)
+                          VALUES (@rol,@razonSocial,@cuit,@estado,@condicionIVA,@fechaAlta);
                           Select last_insert_id();";
 
             MySqlCommand cmd = new MySqlCommand (query, MySQL.sqlcnx);
@@ -29,7 +29,6 @@ namespace RamosHermanos.Capas.Negocio
             cmd.Parameters.AddWithValue("@cuit", prov.cuit);
             cmd.Parameters.AddWithValue("@estado", prov.estado);
             cmd.Parameters.AddWithValue("@condicionIVA", prov.condicioniva);
-            cmd.Parameters.AddWithValue("@tipoProveedor", prov.tipoProveedor);
             cmd.Parameters.AddWithValue("@fechaAlta", prov.fecha);
                                
             txtid.Text= Convert.ToString(cmd.ExecuteScalar());
@@ -64,7 +63,39 @@ namespace RamosHermanos.Capas.Negocio
             
             }
 
-                  
+        public static ProveedorEntity UpdateProveedor(ProveedorEntity prov)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"UPDATE proveedores
+                               SET razonsocial = @razonSocial, estado = @estado,condicionIVA =@condicionIVA,debMAX=@debMAX)
+                               WHERE cuit = @cuit";
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@cuit", prov.cuit);
+                cmd.Parameters.AddWithValue("@razonSocial", prov.razsocial);
+                cmd.Parameters.AddWithValue("@estado", prov.estado);
+                cmd.Parameters.AddWithValue("@condicionIVA", prov.condicioniva);
+                cmd.Parameters.AddWithValue("@debMAX", prov.debMAX);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Proveedor Actualizado");
+
+                return prov;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR  " + ex);
+                throw;
+            }
+        
+        
+        }
+            
           
        
         public static ProveedorEntity BuscarProvRazonsocial(ProveedorEntity proveedor)
