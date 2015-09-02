@@ -133,6 +133,12 @@
     <Compile Include="Capas\Interfaz\formtipoCliente.Designer.cs">
       <DependentUpon>formtipoCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaz\formUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\formUsuario.Designer.cs">
+      <DependentUpon>formUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formtipoCliente.resx">
       <DependentUpon>formtipoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\formUsuario.resx">
+      <DependentUpon>formUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

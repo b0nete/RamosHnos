@@ -30,19 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.inicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cajaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarGastoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.insumosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarInsumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verInsumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarInsumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rolesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +49,6 @@
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inicioToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.proveedoresToolStripMenuItem,
             this.productosToolStripMenuItem,
@@ -71,12 +64,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(784, 24);
             this.menuStrip1.TabIndex = 23;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // inicioToolStripMenuItem
-            // 
-            this.inicioToolStripMenuItem.Name = "inicioToolStripMenuItem";
-            this.inicioToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.inicioToolStripMenuItem.Text = "Inicio";
             // 
             // clientesToolStripMenuItem
             // 
@@ -115,52 +102,15 @@
             // 
             // insumosToolStripMenuItem
             // 
-            this.insumosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarInsumoToolStripMenuItem,
-            this.verInsumoToolStripMenuItem,
-            this.editarInsumoToolStripMenuItem});
             this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
             this.insumosToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.insumosToolStripMenuItem.Text = "Insumos";
             // 
-            // agregarInsumoToolStripMenuItem
-            // 
-            this.agregarInsumoToolStripMenuItem.Name = "agregarInsumoToolStripMenuItem";
-            this.agregarInsumoToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.agregarInsumoToolStripMenuItem.Text = "Agregar Insumo";
-            // 
-            // verInsumoToolStripMenuItem
-            // 
-            this.verInsumoToolStripMenuItem.Name = "verInsumoToolStripMenuItem";
-            this.verInsumoToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.verInsumoToolStripMenuItem.Text = "Ver Insumo";
-            // 
-            // editarInsumoToolStripMenuItem
-            // 
-            this.editarInsumoToolStripMenuItem.Name = "editarInsumoToolStripMenuItem";
-            this.editarInsumoToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.editarInsumoToolStripMenuItem.Text = "Editar Insumo";
-            // 
             // usuariosToolStripMenuItem
             // 
-            this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.agregarUsuarioToolStripMenuItem,
-            this.verUsuariosToolStripMenuItem});
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
             this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
-            // 
-            // agregarUsuarioToolStripMenuItem
-            // 
-            this.agregarUsuarioToolStripMenuItem.Name = "agregarUsuarioToolStripMenuItem";
-            this.agregarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.agregarUsuarioToolStripMenuItem.Text = "Agregar Usuario";
-            // 
-            // verUsuariosToolStripMenuItem
-            // 
-            this.verUsuariosToolStripMenuItem.Name = "verUsuariosToolStripMenuItem";
-            this.verUsuariosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
-            this.verUsuariosToolStripMenuItem.Text = "Ver Usuarios";
             // 
             // rolesToolStripMenuItem
             // 
@@ -217,19 +167,13 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem inicioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cajaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarGastoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem insumosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agregarInsumoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verInsumoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editarInsumoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem agregarUsuarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rolesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
