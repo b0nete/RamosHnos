@@ -7,6 +7,7 @@ using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using RamosHermanos.Capas.Datos;
+using RamosHermanos.Capas.Entidades;
 
 namespace RamosHermanos.Capas.Negocio
 {

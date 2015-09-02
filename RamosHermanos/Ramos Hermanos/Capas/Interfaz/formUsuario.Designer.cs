@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formUsuario));
             this.tabUsuarios = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
-            this.tabListado = new System.Windows.Forms.TabPage();
-            this.tabLogs = new System.Windows.Forms.TabPage();
-            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.dgvLogs = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -48,8 +44,6 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtIDusuario = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
@@ -66,14 +60,25 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tabListado = new System.Windows.Forms.TabPage();
+            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.tabLogs = new System.Windows.Forms.TabPage();
+            this.dgvLogs = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtIDusuario = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnClean = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.tabUsuarios.SuspendLayout();
             this.tabInformacion.SuspendLayout();
-            this.tabListado.SuspendLayout();
-            this.tabLogs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.tabListado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            this.tabLogs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
             this.SuspendLayout();
             // 
             // tabUsuarios
@@ -90,6 +95,10 @@
             // 
             // tabInformacion
             // 
+            this.tabInformacion.Controls.Add(this.btnClean);
+            this.tabInformacion.Controls.Add(this.button4);
+            this.tabInformacion.Controls.Add(this.button5);
+            this.tabInformacion.Controls.Add(this.btnSave);
             this.tabInformacion.Controls.Add(this.groupBox1);
             this.tabInformacion.Controls.Add(this.groupBox6);
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
@@ -99,45 +108,6 @@
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.UseVisualStyleBackColor = true;
-            // 
-            // tabListado
-            // 
-            this.tabListado.Controls.Add(this.dgvUsuarios);
-            this.tabListado.Location = new System.Drawing.Point(4, 22);
-            this.tabListado.Name = "tabListado";
-            this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(776, 535);
-            this.tabListado.TabIndex = 1;
-            this.tabListado.Text = "Listado";
-            this.tabListado.UseVisualStyleBackColor = true;
-            // 
-            // tabLogs
-            // 
-            this.tabLogs.Controls.Add(this.dgvLogs);
-            this.tabLogs.Location = new System.Drawing.Point(4, 22);
-            this.tabLogs.Name = "tabLogs";
-            this.tabLogs.Size = new System.Drawing.Size(776, 535);
-            this.tabLogs.TabIndex = 2;
-            this.tabLogs.Text = "Logs";
-            this.tabLogs.UseVisualStyleBackColor = true;
-            // 
-            // dgvUsuarios
-            // 
-            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvUsuarios.Location = new System.Drawing.Point(3, 3);
-            this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.Size = new System.Drawing.Size(770, 529);
-            this.dgvUsuarios.TabIndex = 0;
-            // 
-            // dgvLogs
-            // 
-            this.dgvLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLogs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvLogs.Location = new System.Drawing.Point(0, 0);
-            this.dgvLogs.Name = "dgvLogs";
-            this.dgvLogs.Size = new System.Drawing.Size(776, 535);
-            this.dgvLogs.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -189,19 +159,6 @@
             this.label18.Size = new System.Drawing.Size(11, 13);
             this.label18.TabIndex = 105;
             this.label18.Text = "*";
-            // 
-            // label16
-            // 
-            this.label16.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(55, 40);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(11, 13);
-            this.label16.TabIndex = 104;
-            this.label16.Text = "*";
             // 
             // textBox2
             // 
@@ -304,25 +261,6 @@
             this.label12.Size = new System.Drawing.Size(54, 13);
             this.label12.TabIndex = 94;
             this.label12.Text = "Privilegios";
-            // 
-            // txtIDusuario
-            // 
-            this.txtIDusuario.Enabled = false;
-            this.txtIDusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDusuario.Location = new System.Drawing.Point(123, 39);
-            this.txtIDusuario.Name = "txtIDusuario";
-            this.txtIDusuario.Size = new System.Drawing.Size(355, 20);
-            this.txtIDusuario.TabIndex = 31;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label8.Location = new System.Drawing.Point(62, 42);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 13);
-            this.label8.TabIndex = 30;
-            this.label8.Text = "Nº Usuario";
             // 
             // groupBox6
             // 
@@ -509,6 +447,120 @@
             this.label2.TabIndex = 65;
             this.label2.Text = "DNI";
             // 
+            // tabListado
+            // 
+            this.tabListado.Controls.Add(this.dgvUsuarios);
+            this.tabListado.Location = new System.Drawing.Point(4, 22);
+            this.tabListado.Name = "tabListado";
+            this.tabListado.Padding = new System.Windows.Forms.Padding(3);
+            this.tabListado.Size = new System.Drawing.Size(776, 535);
+            this.tabListado.TabIndex = 1;
+            this.tabListado.Text = "Listado";
+            this.tabListado.UseVisualStyleBackColor = true;
+            // 
+            // dgvUsuarios
+            // 
+            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUsuarios.Location = new System.Drawing.Point(3, 3);
+            this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.Size = new System.Drawing.Size(770, 529);
+            this.dgvUsuarios.TabIndex = 0;
+            // 
+            // tabLogs
+            // 
+            this.tabLogs.Controls.Add(this.dgvLogs);
+            this.tabLogs.Location = new System.Drawing.Point(4, 22);
+            this.tabLogs.Name = "tabLogs";
+            this.tabLogs.Size = new System.Drawing.Size(776, 535);
+            this.tabLogs.TabIndex = 2;
+            this.tabLogs.Text = "Logs";
+            this.tabLogs.UseVisualStyleBackColor = true;
+            // 
+            // dgvLogs
+            // 
+            this.dgvLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLogs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLogs.Location = new System.Drawing.Point(0, 0);
+            this.dgvLogs.Name = "dgvLogs";
+            this.dgvLogs.Size = new System.Drawing.Size(776, 535);
+            this.dgvLogs.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label8.Location = new System.Drawing.Point(62, 42);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(43, 13);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Usuario";
+            // 
+            // txtIDusuario
+            // 
+            this.txtIDusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDusuario.Location = new System.Drawing.Point(123, 39);
+            this.txtIDusuario.Name = "txtIDusuario";
+            this.txtIDusuario.Size = new System.Drawing.Size(355, 20);
+            this.txtIDusuario.TabIndex = 31;
+            // 
+            // label16
+            // 
+            this.label16.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(55, 40);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(11, 13);
+            this.label16.TabIndex = 104;
+            this.label16.Text = "*";
+            // 
+            // btnClean
+            // 
+            this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
+            this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClean.Location = new System.Drawing.Point(640, 501);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(28, 28);
+            this.btnClean.TabIndex = 76;
+            this.btnClean.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button4.Location = new System.Drawing.Point(708, 501);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(28, 28);
+            this.button4.TabIndex = 75;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button5.Location = new System.Drawing.Point(742, 501);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(28, 28);
+            this.button5.TabIndex = 74;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(674, 501);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(28, 28);
+            this.btnSave.TabIndex = 73;
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
             // formUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -520,14 +572,14 @@
             this.Load += new System.EventHandler(this.formUsuario_Load);
             this.tabUsuarios.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
-            this.tabListado.ResumeLayout(false);
-            this.tabLogs.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.tabListado.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            this.tabLogs.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -540,7 +592,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label6;
@@ -551,8 +602,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label12;
-        public System.Windows.Forms.TextBox txtIDusuario;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.DateTimePicker dtpNacimiento;
         private System.Windows.Forms.Label label9;
@@ -572,6 +621,13 @@
         private System.Windows.Forms.DataGridView dgvUsuarios;
         private System.Windows.Forms.TabPage tabLogs;
         private System.Windows.Forms.DataGridView dgvLogs;
+        private System.Windows.Forms.Label label16;
+        public System.Windows.Forms.TextBox txtIDusuario;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnClean;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnSave;
 
     }
 }
