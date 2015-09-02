@@ -59,5 +59,11 @@ namespace RamosHermanos.Capas.Interfaz
             formProducto frm = new formProducto();
             frm.Show();
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formUsuario frm = new formUsuario();
+            frm.Show();
+        }
     }
 }

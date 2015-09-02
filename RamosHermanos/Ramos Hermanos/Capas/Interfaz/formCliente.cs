@@ -109,6 +109,8 @@ namespace RamosHermanos.Capas.Interfaz
                     VisitaB.InsertDias(visita);
                     CargarOrden();
                     VisitaB.InsertOrden(visita);
+
+                    ClienteB.CargarDGV(dgvCliente);
                 }                
             }
         }

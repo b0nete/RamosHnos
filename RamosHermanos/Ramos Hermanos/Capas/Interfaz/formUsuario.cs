@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RamosHermanos.Capas.Negocio;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -15,6 +16,11 @@ namespace RamosHermanos.Capas.Interfaz
         public formUsuario()
         {
             InitializeComponent();
+        }
+
+        private void formUsuario_Load(object sender, EventArgs e)
+        {
+            PrivilegiosB.CargarCB(cbPrivilegios);
         }
     }
 }

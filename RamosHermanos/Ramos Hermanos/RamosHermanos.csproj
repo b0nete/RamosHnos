@@ -66,6 +66,7 @@
     <Compile Include="Capas\Entidades\tipoDocEntity.cs" />
     <Compile Include="Capas\Entidades\tipoProductoEntity.cs" />
     <Compile Include="Capas\Entidades\tipoTelEntity.cs" />
+    <Compile Include="Capas\Entidades\UsuarioEntity.cs" />
     <Compile Include="Capas\Entidades\VisitaEntity.cs" />
     <Compile Include="Capas\Interfaz\formCliente.cs">
       <SubType>Form</SubType>
@@ -159,6 +160,7 @@
     <Compile Include="Capas\Negocio\MarcaB.cs" />
     <Compile Include="Capas\Negocio\MedidaB.cs" />
     <Compile Include="Capas\Negocio\PrecioB.cs" />
+    <Compile Include="Capas\Negocio\PrivilegiosB.cs" />
     <Compile Include="Capas\Negocio\ProductoB.cs" />
     <Compile Include="Capas\Negocio\ProveedorB.cs" />
     <Compile Include="Capas\Negocio\ProvinciaB.cs" />
@@ -170,6 +172,7 @@
     <Compile Include="Capas\Negocio\tipoDocB.cs" />
     <Compile Include="Capas\Negocio\tipoProductoB.cs" />
     <Compile Include="Capas\Negocio\tipoTelB.cs" />
+    <Compile Include="Capas\Negocio\UsuarioB.cs" />
     <Compile Include="Capas\Negocio\VisitaB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

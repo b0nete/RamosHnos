@@ -12,14 +12,12 @@ namespace RamosHnos.Capas.Entidades
         //idusuario , tipoDoc , numDoc, sexo, rol , nombre, apellido, cuil, email ,estado
  
         public int idUsuario { get; set; }
-        public int tipoDoc { get; set; }
         public string numDoc { get; set; }
-        public string sexo { get; set; }
-        public int rol { get; set; }
         public string nombre { get; set; }
+        public int MyProperty { get; set; }
         public string apellido { get; set; }
-        public string cuil { get; set; }
         public string email { get; set; }
+        public string password { get; set; }
         public bool estado { get; set; }
     }
 }
