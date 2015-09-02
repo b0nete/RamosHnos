@@ -176,7 +176,9 @@ namespace RamosHermanos.Capas.Interfaz
                 EmailB.CargarTXT(txtEmail, txtIDcliente, 1);
                 TelefonoB.CargarTXT(txtTel, txtIDcliente, 1);
             }
-            CheckColor();           
+
+            CheckColor();
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -788,16 +790,9 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-<<<<<<< HEAD
         private void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-        }
-
-=======
-        private void dgvClean_Click(object sender, EventArgs e)
-        {
-            Clean();
         }
 
         private void Clean()
@@ -813,7 +808,7 @@ namespace RamosHermanos.Capas.Interfaz
             txtApellido.Text = "";
             txtNombre.Text = "";
             cbTipoCliente.Text = "";
-            txtEmail.Text= "" ;
+            txtEmail.Text = "";
             txtDom.Text = "";
             txtTel.Text = "";
             txtCreditoMax.Text = "";
@@ -840,15 +835,13 @@ namespace RamosHermanos.Capas.Interfaz
             txtDom.Text = "";
             dtpA.Text = "09:00";
             dtpB.Text = "16:00";
-            
-           
+        }
+         
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            Clean();
         }
 
-        private void cbTipoCliente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
->>>>>>> e3da9c512a736e60326b053178cdca8ff5c71155
 
 
 
