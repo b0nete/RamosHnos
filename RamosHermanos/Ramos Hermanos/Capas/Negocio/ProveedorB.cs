@@ -95,7 +95,54 @@ namespace RamosHermanos.Capas.Negocio
         
         
         }
-            
+
+        public static ProveedorEntity BuscarIdProv(ProveedorEntity proveedor)
+        {
+
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"Select * from proveedores
+                                WHERE idproveedor = @idProveedor";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idProveedor", proveedor.idProveedor);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("El Proveedor NO existe!");
+
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    DataRow row = dt.Rows[0];
+
+                    proveedor.idProveedor = Convert.ToInt32(row["idProveedor"]);
+                    proveedor.fecha = Convert.ToDateTime(row["fechaAlta"]); ;
+                    proveedor.cuit = Convert.ToString(row["cuit"]);
+                    proveedor.razsocial = Convert.ToString(row["razonSocial"]);
+                    proveedor.condicioniva = Convert.ToString(row["condicionIVA"]);
+                    proveedor.estado = Convert.ToBoolean(row["estado"]);
+
+                    MySQL.DisconnectDB();
+                }
+                return proveedor;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
           
        
         public static ProveedorEntity BuscarProvRazonsocial(ProveedorEntity proveedor)

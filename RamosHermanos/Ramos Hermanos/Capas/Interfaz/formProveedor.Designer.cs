@@ -409,7 +409,6 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(259, 219);
             this.dataGridView2.TabIndex = 0;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // groupBox1
             // 
@@ -655,8 +654,7 @@
             this.dgvProveedor.Size = new System.Drawing.Size(762, 522);
             this.dgvProveedor.TabIndex = 0;
             this.dgvProveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedor_CellContentClick);
-            this.dgvProveedor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProveedor_CellDoubleClick);
-            this.dgvProveedor.DoubleClick += new System.EventHandler(this.formProveedor_Load);
+            this.dgvProveedor.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvProveedor_MouseDoubleClick);
             // 
             // colidprov
             // 

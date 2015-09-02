@@ -47,9 +47,9 @@ namespace RamosHermanos.Capas.Interfaz
         private void cargarSaldo(TextBox txt)
         {
 
-            saldo.idPersona = Convert.ToInt32(txtidprov.Text);
             saldo.rol = 2;
-            saldo.creditoMax = Convert.ToDouble(txtDebmax.Text);
+            saldo.idPersona = Convert.ToInt32(txt.Text);
+            //saldo.creditoMax = Convert.ToDouble(txtDebmax.Text);
             //saldo.saldoActual = Convert.ToDouble(txtSaldoActual.Text);
 
         }
@@ -224,7 +224,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void SeleccionarDGV()
         {
             DataGridViewCell cell = null;
-            foreach (DataGridViewCell selectedCell in  dgvProveedor.SelectedCells)
+            foreach (DataGridViewCell selectedCell in dgvProveedor.SelectedCells)
             {
                 cell = selectedCell;
                 break;
@@ -235,11 +235,10 @@ namespace RamosHermanos.Capas.Interfaz
 
                 //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
                 proveedor.idProveedor = Convert.ToInt32(row.Cells["colidprov"].Value.ToString());
-                ProveedorB.BuscarProvRazonsocial(proveedor);
+                ProveedorB.BuscarIdProv(proveedor);
                 txtidprov.Text = Convert.ToString(proveedor.idProveedor);
                 txtRazonSocial.Text = proveedor.razsocial;
                 txtcuit.Text = proveedor.cuit;
-                txtDebmax.Text = Convert.ToString(proveedor.debMAX);
                 dtpFechaAlta.Value = proveedor.fecha;
                 cbIVA.SelectedValue = proveedor.condicioniva;
 
@@ -247,11 +246,11 @@ namespace RamosHermanos.Capas.Interfaz
                 cargarSaldo(txtidprov);
                 SaldoB.BuscarSaldo(saldo);
                 txtDebmax.Text = Convert.ToString(saldo.creditoMax);
-                txtSaldoActual.Text=Convert.ToString(saldo.saldoActual);
+                txtSaldoActual.Text = Convert.ToString(saldo.saldoActual);
 
-                
+
                 //Contacto
-                DomicilioB.CargarTXT(txtDomicilio , txtidprov, 2);
+                DomicilioB.CargarTXT(txtDomicilio, txtidprov, 2);
                 EmailB.CargarTXT(txtEmail, txtidprov, 2);
                 TelefonoB.CargarTXT(txtTel, txtidprov, 2);
 
@@ -259,7 +258,6 @@ namespace RamosHermanos.Capas.Interfaz
 
             }
         }
-
 
         private void GuardarProveedor()
         {
@@ -301,14 +299,10 @@ namespace RamosHermanos.Capas.Interfaz
                         }
                     }
 
-        private void dgvProveedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void dgvProveedor_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             SeleccionarDGV();
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void dgvProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -316,6 +310,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-       
-            }
+        
+
+       }
 }
