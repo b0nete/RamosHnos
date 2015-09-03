@@ -55,7 +55,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void OpenMain()
         {
-            Main frm = new Main();
+            formMain frm = new formMain();
+            frm.usr = usuario.numDoc;
             frm.Show();
         }
 
