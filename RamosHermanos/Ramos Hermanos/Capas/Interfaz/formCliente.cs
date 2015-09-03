@@ -684,6 +684,16 @@ namespace RamosHermanos.Capas.Interfaz
             }
             else 
             {
+                if (txtIDcliente.Text == string.Empty)
+                {
+                    DialogResult result1 = MessageBox.Show("Seleccione un cliente", "Advertencia!", MessageBoxButtons.OK);
+                    if (result1 == DialogResult.OK)
+                    {
+                        tabMain.SelectedTab = tabListado;
+                        return;
+                    }
+                    return;                                
+                }
                 DialogResult result = MessageBox.Show("Desea actualizar los datos del cliente?", "Actualizar", MessageBoxButtons.OKCancel);
                 if (result == DialogResult.OK)
                 {
