@@ -70,15 +70,17 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query = @"UPDATE proveedores
-                               SET razonsocial = @razonSocial, estado = @estado,condicionIVA =@condicionIVA,debMAX=@debMAX)
+                               SET fechaAlta = @fechaAlta, razonsocial = @razonSocial, estado = @estado,condicionIVA =@condicionIVA,debMAX=@debMAX
                                WHERE cuit = @cuit";
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
+                cmd.Parameters.AddWithValue("@fechaAlta", prov.fecha);
                 cmd.Parameters.AddWithValue("@cuit", prov.cuit);
                 cmd.Parameters.AddWithValue("@razonSocial", prov.razsocial);
                 cmd.Parameters.AddWithValue("@estado", prov.estado);
                 cmd.Parameters.AddWithValue("@condicionIVA", prov.condicioniva);
                 cmd.Parameters.AddWithValue("@debMAX", prov.debMAX);
+
 
                 cmd.ExecuteNonQuery();
 

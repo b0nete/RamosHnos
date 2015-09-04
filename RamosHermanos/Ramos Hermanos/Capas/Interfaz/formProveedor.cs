@@ -49,7 +49,7 @@ namespace RamosHermanos.Capas.Interfaz
 
             saldo.rol = 2;
             saldo.idPersona = Convert.ToInt32(txt.Text);
-            //saldo.creditoMax = Convert.ToDouble(txtDebmax.Text);
+            saldo.creditoMax = Convert.ToDouble(txtDebmax.Text);
             //saldo.saldoActual = Convert.ToDouble(txtSaldoActual.Text);
 
         }
@@ -242,11 +242,13 @@ namespace RamosHermanos.Capas.Interfaz
                 dtpFechaAlta.Value = proveedor.fecha;
                 cbIVA.SelectedValue = proveedor.condicioniva;
 
+
                 //Saldo
-                cargarSaldo(txtidprov);
+                saldo.rol = 2;
+                saldo.idPersona = Convert.ToInt32(txtidprov.Text);
                 SaldoB.BuscarSaldo(saldo);
                 txtDebmax.Text = Convert.ToString(saldo.creditoMax);
-                txtSaldoActual.Text = Convert.ToString(saldo.saldoActual);
+                //txtSaldoActual.Text = Convert.ToString(saldo.saldoActual);
 
 
                 //Contacto
@@ -254,11 +256,25 @@ namespace RamosHermanos.Capas.Interfaz
                 EmailB.CargarTXT(txtEmail, txtidprov, 2);
                 TelefonoB.CargarTXT(txtTel, txtidprov, 2);
 
+
+
                 tabProveedor.SelectedTab = tabInformacion;
 
             }
         }
 
+        ////VisitaEntity visita = new VisitaEntity();
+        ////private void cargarVisita(TextBox text )
+        ////{
+        ////     visita.rol = 2;
+        ////     visita.idPersona = Convert.ToInt32(txtidprov.Text);
+        ////     visita.horarioVisitaA  = Convert.ToString(dtpA.Text);
+        ////     visita.horarioVisitaB  = Convert.ToString(dtpB.Text);   
+                 
+        
+        ////}
+
+    
         private void GuardarProveedor()
         {
             if (VerificarCampos() == false)
@@ -276,7 +292,10 @@ namespace RamosHermanos.Capas.Interfaz
                     {
                         cargarProv();
                         ProveedorB.UpdateProveedor(proveedor);
+
                         cargarSaldo(txtidprov);
+                        SaldoB.UpdateSaldo(saldo);
+
 
                         BuscarProv();
 
@@ -295,6 +314,9 @@ namespace RamosHermanos.Capas.Interfaz
                                 cargarSaldo(txtidprov);
                                 SaldoB.InsertSaldo(saldo);
 
+                     //           cargarVisita(txtidprov);
+                       //         VisitaB.InsertVisita(visita);
+                                
                             }                
                         }
                     }
@@ -310,7 +332,66 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-        
+        private void clean()
+        {
 
-       }
-}
+            txtRazonSocial.Text = "";
+            txtcuit.Text = "";
+            txtDebmax.Text = "";
+            txtDomicilio.Text = "";
+            txtEmail.Text = "";
+            txtidprov.Text = "";
+            txtSaldoActual.Text = "";
+            txtTel.Text = "";
+            cbIVA.SelectedIndex = 0;
+                   
+        
+        }
+
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            clean();
+        }
+
+        private void editarProv()
+        {
+            if (VerificarCampos() == false)
+            {
+                return;
+            }
+            else
+            {
+                if (txtidprov.Text == string.Empty)
+                {
+                    DialogResult result1 = MessageBox.Show("Seleccione un Proveedor", "Atencion!", MessageBoxButtons.OK);
+                    if (result1 == DialogResult.OK)
+                    {
+
+                        tabProveedor.SelectedTab = tabListado;
+                        return;
+                    
+                    }
+                    return;
+                    }
+                    DialogResult result = MessageBox.Show("¿Desea actualizar los datos del Proveedor?", "Actualizar", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
+                    {
+                        cargarProv();
+                        ProveedorB.UpdateProveedor(proveedor);
+                        BuscarProv();
+                       
+
+                    }             
+                }
+            
+            
+            }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            editarProv();
+        }
+        
+        }
+ }
+

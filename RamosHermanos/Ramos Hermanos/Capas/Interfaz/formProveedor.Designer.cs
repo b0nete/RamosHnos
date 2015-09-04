@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProveedor));
             this.tabProveedor = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
+            this.btnClean = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtSaldoActual = new System.Windows.Forms.TextBox();
@@ -67,12 +68,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.gbVisita = new System.Windows.Forms.GroupBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.label30 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dtpA = new System.Windows.Forms.DateTimePicker();
-            this.label21 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.btnGuardarProv = new System.Windows.Forms.Button();
             this.tabAdicional = new System.Windows.Forms.TabPage();
             this.tabListado = new System.Windows.Forms.TabPage();
@@ -112,12 +108,12 @@
             // 
             // tabInformacion
             // 
+            this.tabInformacion.Controls.Add(this.btnClean);
             this.tabInformacion.Controls.Add(this.groupBox6);
             this.tabInformacion.Controls.Add(this.groupBox2);
             this.tabInformacion.Controls.Add(this.groupBox1);
             this.tabInformacion.Controls.Add(this.gbVisita);
             this.tabInformacion.Controls.Add(this.button4);
-            this.tabInformacion.Controls.Add(this.button5);
             this.tabInformacion.Controls.Add(this.btnGuardarProv);
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
@@ -126,6 +122,18 @@
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.UseVisualStyleBackColor = true;
+            // 
+            // btnClean
+            // 
+            this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
+            this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClean.Location = new System.Drawing.Point(666, 498);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(28, 28);
+            this.btnClean.TabIndex = 71;
+            this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
             // groupBox6
             // 
@@ -259,9 +267,10 @@
             // 
             // dtpFechaAlta
             // 
+            this.dtpFechaAlta.CustomFormat = "dd/MM/yyyy";
             this.dtpFechaAlta.Enabled = false;
             this.dtpFechaAlta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaAlta.Location = new System.Drawing.Point(102, 68);
             this.dtpFechaAlta.Name = "dtpFechaAlta";
             this.dtpFechaAlta.Size = new System.Drawing.Size(355, 20);
@@ -396,7 +405,7 @@
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Location = new System.Drawing.Point(502, 10);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(265, 238);
+            this.groupBox2.Size = new System.Drawing.Size(265, 261);
             this.groupBox2.TabIndex = 66;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Rubros";
@@ -407,7 +416,7 @@
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 16);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(259, 219);
+            this.dataGridView2.Size = new System.Drawing.Size(259, 242);
             this.dataGridView2.TabIndex = 0;
             // 
             // groupBox1
@@ -520,96 +529,38 @@
             // gbVisita
             // 
             this.gbVisita.Controls.Add(this.monthCalendar1);
-            this.gbVisita.Controls.Add(this.label30);
-            this.gbVisita.Controls.Add(this.dateTimePicker2);
-            this.gbVisita.Controls.Add(this.dtpA);
-            this.gbVisita.Controls.Add(this.label21);
             this.gbVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbVisita.Location = new System.Drawing.Point(505, 254);
+            this.gbVisita.Location = new System.Drawing.Point(505, 277);
             this.gbVisita.Name = "gbVisita";
-            this.gbVisita.Size = new System.Drawing.Size(265, 238);
+            this.gbVisita.Size = new System.Drawing.Size(265, 215);
             this.gbVisita.TabIndex = 64;
             this.gbVisita.TabStop = false;
             this.gbVisita.Text = "Pedidos";
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(20, 23);
+            this.monthCalendar1.Location = new System.Drawing.Point(9, 30);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 62;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label30.Location = new System.Drawing.Point(131, 215);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(14, 13);
-            this.label30.TabIndex = 61;
-            this.label30.Text = "A";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.CustomFormat = "HH:mm";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(147, 213);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.ShowUpDown = true;
-            this.dateTimePicker2.Size = new System.Drawing.Size(60, 20);
-            this.dateTimePicker2.TabIndex = 60;
-            this.dateTimePicker2.Value = new System.DateTime(2015, 8, 4, 16, 0, 0, 0);
-            // 
-            // dtpA
-            // 
-            this.dtpA.CustomFormat = "HH:mm";
-            this.dtpA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpA.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpA.Location = new System.Drawing.Point(67, 213);
-            this.dtpA.Name = "dtpA";
-            this.dtpA.ShowUpDown = true;
-            this.dtpA.Size = new System.Drawing.Size(60, 20);
-            this.dtpA.TabIndex = 59;
-            this.dtpA.Value = new System.DateTime(2015, 8, 4, 9, 0, 0, 0);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(80, 196);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(114, 13);
-            this.label21.TabIndex = 41;
-            this.label21.Text = "Horario de Entrega";
             // 
             // button4
             // 
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(701, 498);
+            this.button4.Location = new System.Drawing.Point(734, 498);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 62;
             this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button5.Location = new System.Drawing.Point(735, 498);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(28, 28);
-            this.button5.TabIndex = 63;
-            this.button5.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // btnGuardarProv
             // 
             this.btnGuardarProv.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardarProv.BackgroundImage")));
             this.btnGuardarProv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGuardarProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarProv.Location = new System.Drawing.Point(667, 498);
+            this.btnGuardarProv.Location = new System.Drawing.Point(700, 498);
             this.btnGuardarProv.Name = "btnGuardarProv";
             this.btnGuardarProv.Size = new System.Drawing.Size(28, 28);
             this.btnGuardarProv.TabIndex = 61;
@@ -728,7 +679,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gbVisita.ResumeLayout(false);
-            this.gbVisita.PerformLayout();
             this.tabListado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
             this.ResumeLayout(false);
@@ -774,12 +724,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox gbVisita;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dtpA;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnGuardarProv;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtSaldoActual;
@@ -793,5 +738,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipoIVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
+        private System.Windows.Forms.Button btnClean;
     }
 }
