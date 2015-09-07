@@ -272,6 +272,7 @@ namespace RamosHermanos.Capas.Interfaz
             precio.precio = Convert.ToDouble(txtPrecioActual.Text);
         }
 
+
         
 
 

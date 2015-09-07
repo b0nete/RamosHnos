@@ -49,6 +49,7 @@
             this.tabSugerencias = new System.Windows.Forms.TabPage();
             this.tabAdicional = new System.Windows.Forms.TabPage();
             this.tabInformacion = new System.Windows.Forms.TabPage();
+            this.btnClean = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.lblEstado = new System.Windows.Forms.Label();
@@ -136,10 +137,8 @@
             this.dtpB = new System.Windows.Forms.DateTimePicker();
             this.dtpA = new System.Windows.Forms.DateTimePicker();
             this.label21 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.tabMain = new System.Windows.Forms.TabControl();
-            this.btnClean = new System.Windows.Forms.Button();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -207,68 +206,81 @@
             // 
             this.colIDCliente.HeaderText = "Nº Cliente";
             this.colIDCliente.Name = "colIDCliente";
+            this.colIDCliente.ReadOnly = true;
             // 
             // colFechaAlta
             // 
             this.colFechaAlta.HeaderText = "Fecha Alta";
             this.colFechaAlta.Name = "colFechaAlta";
+            this.colFechaAlta.ReadOnly = true;
             // 
             // colIDTipoDoc
             // 
             this.colIDTipoDoc.HeaderText = "ID Tipo Doc";
             this.colIDTipoDoc.Name = "colIDTipoDoc";
+            this.colIDTipoDoc.ReadOnly = true;
             this.colIDTipoDoc.Visible = false;
             // 
             // coltipoDoc
             // 
             this.coltipoDoc.HeaderText = "Tipo Documento";
             this.coltipoDoc.Name = "coltipoDoc";
+            this.coltipoDoc.ReadOnly = true;
             // 
             // colNumDoc
             // 
             this.colNumDoc.HeaderText = "Nº Documento";
             this.colNumDoc.Name = "colNumDoc";
+            this.colNumDoc.ReadOnly = true;
             // 
             // colSexo
             // 
             this.colSexo.HeaderText = "Sexo";
             this.colSexo.Name = "colSexo";
+            this.colSexo.ReadOnly = true;
             // 
             // colCUIL
             // 
             this.colCUIL.HeaderText = "CUIL";
             this.colCUIL.Name = "colCUIL";
+            this.colCUIL.ReadOnly = true;
             // 
             // colApellido
             // 
             this.colApellido.HeaderText = "Apellido";
             this.colApellido.Name = "colApellido";
+            this.colApellido.ReadOnly = true;
             // 
             // colNombre
             // 
             this.colNombre.HeaderText = "Nombre";
             this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
             // 
             // colEstadoCivil
             // 
             this.colEstadoCivil.HeaderText = "Estado Civil";
             this.colEstadoCivil.Name = "colEstadoCivil";
+            this.colEstadoCivil.ReadOnly = true;
             // 
             // colCondicionIVA
             // 
             this.colCondicionIVA.HeaderText = "Condicion IVA";
             this.colCondicionIVA.Name = "colCondicionIVA";
+            this.colCondicionIVA.ReadOnly = true;
             // 
             // colIDtipoCliente
             // 
             this.colIDtipoCliente.HeaderText = "ID Tipo Cliente";
             this.colIDtipoCliente.Name = "colIDtipoCliente";
+            this.colIDtipoCliente.ReadOnly = true;
             this.colIDtipoCliente.Visible = false;
             // 
             // coltipoCliente
             // 
             this.coltipoCliente.HeaderText = "Tipo Cliente";
             this.coltipoCliente.Name = "coltipoCliente";
+            this.coltipoCliente.ReadOnly = true;
             // 
             // tabFamilia
             // 
@@ -309,7 +321,6 @@
             this.tabInformacion.Controls.Add(this.groupBox2);
             this.tabInformacion.Controls.Add(this.groupBox1);
             this.tabInformacion.Controls.Add(this.gbVisita);
-            this.tabInformacion.Controls.Add(this.button5);
             this.tabInformacion.Controls.Add(this.btnSave);
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
@@ -318,12 +329,24 @@
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             // 
+            // btnClean
+            // 
+            this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
+            this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClean.Location = new System.Drawing.Point(674, 498);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(28, 28);
+            this.btnClean.TabIndex = 70;
+            this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
+            // 
             // button4
             // 
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(701, 498);
+            this.button4.Location = new System.Drawing.Point(742, 498);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 69;
@@ -515,9 +538,10 @@
             // 
             // dtpFechaAlta
             // 
+            this.dtpFechaAlta.CustomFormat = "dd/MM/yyyy";
             this.dtpFechaAlta.Enabled = false;
             this.dtpFechaAlta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaAlta.Location = new System.Drawing.Point(102, 68);
             this.dtpFechaAlta.Name = "dtpFechaAlta";
             this.dtpFechaAlta.Size = new System.Drawing.Size(355, 20);
@@ -1103,7 +1127,6 @@
             this.txtIDVisita.Name = "txtIDVisita";
             this.txtIDVisita.Size = new System.Drawing.Size(82, 20);
             this.txtIDVisita.TabIndex = 98;
-            this.txtIDVisita.Visible = false;
             // 
             // groupBox7
             // 
@@ -1337,24 +1360,12 @@
             this.label21.TabIndex = 41;
             this.label21.Text = "Horario de Visita";
             // 
-            // button5
-            // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button5.Location = new System.Drawing.Point(735, 498);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(28, 28);
-            this.button5.TabIndex = 63;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // btnSave
             // 
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(667, 498);
+            this.btnSave.Location = new System.Drawing.Point(708, 498);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 61;
@@ -1375,18 +1386,6 @@
             this.tabMain.SelectedIndex = 0;
             this.tabMain.Size = new System.Drawing.Size(784, 562);
             this.tabMain.TabIndex = 4;
-            // 
-            // btnClean
-            // 
-            this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
-            this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(633, 498);
-            this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(28, 28);
-            this.btnClean.TabIndex = 70;
-            this.btnClean.UseVisualStyleBackColor = true;
-            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
             // formCliente
             // 
@@ -1531,7 +1530,6 @@
         private System.Windows.Forms.DateTimePicker dtpB;
         private System.Windows.Forms.DateTimePicker dtpA;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TabControl tabMain;
         private System.Windows.Forms.Button btnClean;

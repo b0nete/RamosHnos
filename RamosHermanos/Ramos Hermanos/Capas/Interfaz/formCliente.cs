@@ -48,6 +48,8 @@ namespace RamosHermanos.Capas.Interfaz
             cbSexo.SelectedIndex = 0;
             cbEstadoCivil.SelectedIndex = 0;
             cbIVA.SelectedIndex = 4;
+
+            CheckColor();
         }
 
   
@@ -86,6 +88,11 @@ namespace RamosHermanos.Capas.Interfaz
 
                         CargarVisita(txtIDcliente);
                         VisitaB.UpdateVisita(visita);
+                        visita.idVisita = Convert.ToInt32(txtIDVisita.Text);
+                        CargarDias();
+                        VisitaB.UpdateDias(visita);
+                        CargarOrden();
+                        VisitaB.UpdateOrden(visita);
 
                         BuscarCliente();
                         return;
@@ -705,7 +712,7 @@ namespace RamosHermanos.Capas.Interfaz
                                         
                     CargarVisita(txtIDcliente);
                     VisitaB.UpdateVisita(visita);
-                    //visita.idVisita = Convert.ToInt32(txtIDVisita.Text);
+                    visita.idVisita = Convert.ToInt32(txtIDVisita.Text);
                     CargarDias();
                     VisitaB.UpdateDias(visita);
                     CargarOrden();

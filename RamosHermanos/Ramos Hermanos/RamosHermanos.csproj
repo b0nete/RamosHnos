@@ -180,6 +180,7 @@
     <Compile Include="Capas\Negocio\tipoTelB.cs" />
     <Compile Include="Capas\Negocio\UsuarioB.cs" />
     <Compile Include="Capas\Negocio\VisitaB.cs" />
+    <Compile Include="Libs\InputBox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Capas\Interfaz\formCliente.resx">
@@ -250,9 +251,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Libs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
