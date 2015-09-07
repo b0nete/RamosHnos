@@ -44,6 +44,16 @@ namespace RamosHermanos.Capas.Interfaz
             tipoDocB.CargarTipoDoc(cbTipoDoc);
             tipoClienteB.CargarTipoCliente(cbTipoCliente);
 
+            //Cargar Ultimas ordenes de entrega.
+            VisitaB.BuscarOrdenMAX(visita);
+            txtLun.Text = Convert.ToString(visita.olunes + 1);
+            txtMar.Text = Convert.ToString(visita.omartes + 1);
+            txtMie.Text = Convert.ToString(visita.omiercoles + 1);
+            txtJue.Text = Convert.ToString(visita.ojueves + 1);
+            txtVie.Text = Convert.ToString(visita.oviernes + 1);
+            txtSab.Text = Convert.ToString(visita.osabado + 1);
+            txtDom.Text = Convert.ToString(visita.odomingo + 1);
+
             //Valores Iniciales
             cbSexo.SelectedIndex = 0;
             cbEstadoCivil.SelectedIndex = 0;
@@ -322,7 +332,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (txtIDcliente.Text == string.Empty)
             {
-                MessageBox.Show("Ingrese un cliente");
+                tabMain.SelectedTab = tabListado;
             }
             else
             {
@@ -342,7 +352,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (txtIDcliente.Text == string.Empty)
             {
-                MessageBox.Show("Ingrese un cliente");
+                tabMain.SelectedTab = tabListado;
             }
             else
             {
@@ -361,7 +371,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (txtIDcliente.Text == string.Empty)
             {
-                MessageBox.Show("Ingrese un cliente");
+                tabMain.SelectedTab = tabListado;
             }
             else
             {
@@ -373,7 +383,8 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.cbRolALL.SelectedValue = 1;                
                 frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
                 frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;                                
+                frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.CargarDGVs();                
             }
         }
 
@@ -401,10 +412,10 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void cbLunes_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbLunes.Checked == false)            
+            if (cbLunes.Checked == false)
                 txtLun.Enabled = false;
             else
-                txtLun.Enabled = true;
+                txtLun.Enabled = true;              
         }
 
         private void txtLun_TextChanged(object sender, EventArgs e)
@@ -414,28 +425,26 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void cbMartes_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbMartes.Checked == false)            
-                txtMar.Enabled = false;            
+            if (cbMartes.Checked == false)
+                txtMar.Enabled = false;
             else
-                txtMar.Enabled = true;
+                txtMar.Enabled = true;           
         }
 
         private void cbMiercoles_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbMiercoles.Checked == false)            
+            if (cbMiercoles.Checked == false)
                 txtMie.Enabled = false;
             else
-                txtMie.Enabled = true;
-            
+                txtMie.Enabled = true;       
         }
 
         private void cbJueves_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbJueves.Checked == false)            
+            if (cbJueves.Checked == false)
                 txtJue.Enabled = false;
             else
-                txtJue.Enabled = true;
-            
+                txtJue.Enabled = true;   
         }
 
         private void groupBox7_Enter(object sender, EventArgs e)
@@ -445,26 +454,26 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void cbViernes_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbViernes.Checked == false)            
-                txtVie.Enabled = false;            
+            if (cbViernes.Checked == false)
+                txtVie.Enabled = false;
             else
-                txtVie.Enabled = true;
+                txtVie.Enabled = true;           
         }
 
         private void cbSabado_CheckedChanged(object sender, EventArgs e)
         {
-            if (cbSabado.Checked == false)            
+            if (cbSabado.Checked == false)
                 txtSab.Enabled = false;
             else
                 txtSab.Enabled = true;
         }
 
         private void cbDomingo_CheckedChanged(object sender, EventArgs e)
-        {
+        {            
             if (cbDomingo.Checked == false)            
-                txtDom.Enabled = false;
-            else
-                txtDom.Enabled = true;
+                txtDom.Enabled = false;            
+            else            
+                txtDom.Enabled = true;           
         }
 
         private void cbEstado_CheckedChanged(object sender, EventArgs e)
@@ -861,10 +870,15 @@ namespace RamosHermanos.Capas.Interfaz
             Clean();
         }
 
+        private void cbLunes_Validated(object sender, EventArgs e)
+        {        
 
+        }
 
+        private void txtIDcliente_TextChanged(object sender, EventArgs e)
+        {
 
-
+        }
 
     }
 }

@@ -30,8 +30,7 @@ namespace RamosHermanos.Capas.Negocio
             if (resultado == 0)
                 return false;
             else
-                return true;
-            
+                return true;           
         }
 
         public static ClienteEntity UpdateCliente(ClienteEntity cliente)
@@ -40,9 +39,11 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"UPDATE Clientes
+                string query = @"SET @@sql_safe_updates = 0; 
+                                 UPDATE Clientes
                                  SET fechaalta = @fechaAlta, tipodoc = @tipoDoc, numdoc = @numDoc, sexo = @sexo, cuil =  @cuil, nombre = @nombre, apellido = @apellido, estadoCivil = @estadoCivil, condicionIVA = @condicionIVA, tipoCliente = @tipoCliente, estado = @estado
-                                 WHERE numDoc = @numDoc";
+                                 WHERE numDoc = @numDoc;
+                                 SET @@sql_safe_updates = 1";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 

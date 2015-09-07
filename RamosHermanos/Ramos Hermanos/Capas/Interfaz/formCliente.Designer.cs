@@ -627,6 +627,7 @@
             this.txtIDcliente.Name = "txtIDcliente";
             this.txtIDcliente.Size = new System.Drawing.Size(355, 20);
             this.txtIDcliente.TabIndex = 31;
+            this.txtIDcliente.TextChanged += new System.EventHandler(this.txtIDcliente_TextChanged);
             // 
             // label13
             // 
@@ -1127,6 +1128,7 @@
             this.txtIDVisita.Name = "txtIDVisita";
             this.txtIDVisita.Size = new System.Drawing.Size(82, 20);
             this.txtIDVisita.TabIndex = 98;
+            this.txtIDVisita.Visible = false;
             // 
             // groupBox7
             // 
@@ -1156,6 +1158,7 @@
             this.cbLunes.Text = "Lunes";
             this.cbLunes.UseVisualStyleBackColor = true;
             this.cbLunes.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
+            this.cbLunes.Validated += new System.EventHandler(this.cbLunes_Validated);
             // 
             // cbMartes
             // 

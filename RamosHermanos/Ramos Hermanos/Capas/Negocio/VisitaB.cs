@@ -242,6 +242,45 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static VisitaEntity BuscarOrdenMAX(VisitaEntity visita)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT MAX(olunes) olunes, MAX(omartes) omartes, MAX(omiercoles) omiercoles, MAX(ojueves) ojueves, MAX(oviernes) oviernes, MAX(osabado) osabado, MAX(odomingo) odomingo
+                                 FROM orden                                 ";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                DataRow row = dt.Rows[0];
+
+                //Orden
+                visita.olunes = Convert.ToInt32(row["olunes"]);
+                visita.omartes = Convert.ToInt32(row["omartes"]);
+                visita.omiercoles = Convert.ToInt32(row["omiercoles"]);
+                visita.ojueves = Convert.ToInt32(row["ojueves"]);
+                visita.oviernes = Convert.ToInt32(row["oviernes"]);
+                visita.osabado = Convert.ToInt32(row["osabado"]);
+                visita.odomingo = Convert.ToInt32(row["odomingo"]);
+
+                MySQL.DisconnectDB();
+
+                return visita;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static VisitaEntity InsertOrden(VisitaEntity visita)
         {
             try
@@ -283,7 +322,30 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"UPDATE Orden 
+                string query = @"SET @@sql_safe_updates = 0;
+UPDATE Orden
+SET olunes = olunes + 1
+WHERE olunes > @olunes;
+UPDATE Orden
+SET omartes = omartes + 1
+WHERE omartes > @omartes;
+UPDATE Orden
+SET omiercoles = omiercoles + 1
+WHERE omiercoles > @omiercoles;
+UPDATE Orden
+SET ojueves = ojueves + 1
+WHERE ojueves > @ojueves;
+UPDATE Orden
+SET oviernes = oviernes + 1
+WHERE oviernes > @oviernes;
+UPDATE Orden
+SET osabado = osabado + 1
+WHERE osabado > @osabado;
+UPDATE Orden
+SET odomingo = odomingo + 1
+WHERE odomingo > @odomingo;
+SET @@sql_safe_updates = 1; 
+                                 UPDATE Orden 
                                  SET olunes = @olunes, omartes = @omartes, omiercoles = @omiercoles, ojueves = @ojueves, oviernes = @oviernes, osabado = @osabado, odomingo = @odomingo
                                  WHERE idOrden = @idOrden";
 

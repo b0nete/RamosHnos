@@ -48,21 +48,21 @@ namespace RamosHermanos.Capas.Interfaz
             
             RolB.CargarCB(cbRolALL);
 
-            //Emails
-            EmailB.CargarDGV(dgvEmail, cbRolALL, txtIDALL);
             //Telefono
             tipoTelB.CargarCB(cbTipoTel);
-            TelefonoB.CargarDGV(dgvTelefono, cbRolALL, txtIDALL);
             //Domicilio
             ProvinciaB.CargarCB(cbProvincia);
             cbProvincia.SelectedValue = 5;
-
             LocalidadB.CargarCB(cbLocalidad, cbProvincia);
             cbLocalidad.SelectedValue = 26;
-
             BarrioB.CargarCB(cbBarrio, cbLocalidad);
-            DomicilioB.CargarDGV(dgvDomicilio, cbRolALL, txtIDALL);
+        }
 
+        public void CargarDGVs()
+        {
+            EmailB.CargarDGV(dgvEmail, cbRolALL, txtIDALL);
+            TelefonoB.CargarDGV(dgvTelefono, cbRolALL, txtIDALL);
+            DomicilioB.CargarDGV(dgvDomicilio, cbRolALL, txtIDALL);
         }
 
         private void button9_Click(object sender, EventArgs e)
