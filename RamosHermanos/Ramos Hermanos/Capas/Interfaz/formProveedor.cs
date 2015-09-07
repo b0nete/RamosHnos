@@ -24,9 +24,8 @@ namespace RamosHermanos.Capas.Interfaz
         {
             cbIVA.SelectedIndex = 0;
             ProveedorB.cargardgv(dgvProveedor);
-
-
-
+           
+            
         }
 
         ProveedorEntity proveedor = new ProveedorEntity();
@@ -296,7 +295,6 @@ namespace RamosHermanos.Capas.Interfaz
                         cargarSaldo(txtidprov);
                         SaldoB.UpdateSaldo(saldo);
 
-
                         BuscarProv();
 
                         return;
@@ -378,6 +376,8 @@ namespace RamosHermanos.Capas.Interfaz
                     {
                         cargarProv();
                         ProveedorB.UpdateProveedor(proveedor);
+                        cargarSaldo(txtidprov);
+                        SaldoB.UpdateSaldo(saldo);
                         BuscarProv();
                        
 
@@ -389,9 +389,92 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button4_Click(object sender, EventArgs e)
         {
+
             editarProv();
         }
+
+        private void btnEmail_Click_1(object sender, EventArgs e)
+        {
+            if (txtidprov.Text == string.Empty)
+            {
+
+                MessageBox.Show("Por favor, ingrese un proveedor");
+
+            }
+
+            else
+            {
+                formContacto frm = new formContacto();
+                frm.txtIDALL.Text = txtidprov.Text;
+                frm.tabVar = 2;
+                frm.Show();
+                frm.cbRolALL.SelectedValue = 2;
+                frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+            }
+        }
+
+        private void txtcuit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsNumber(e.KeyChar))
+            {
+                e.Handled = false;
+                
+            }
+            else
+                if (Char.IsControl(e.KeyChar))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                    MessageBox.Show("Solo se permiten Números");
+                } 
+        }
+
+        private void txtRazonSocial_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+        {
+            MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            e.Handled = true;
+            return;
+
+        }
         
+}
+
+        private void txtDebmax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8)
+            {
+                e.Handled = false;
+                return;
+            }
+            bool IsDec = false;
+            int nroDec = 0;
+
+            for (int i = 0; i < txtDebmax.Text.Length; i++)
+            {
+                if (txtDebmax.Text[i] == '.')
+                    IsDec = true;
+
+                if (IsDec && nroDec++ >= 2)
+                {
+                    e.Handled = true;
+                    return;
+                }
+            }
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+                e.Handled = false;
+            else if (e.KeyChar == 46)
+                e.Handled = (IsDec) ? true : false;
+            else
+                e.Handled = true; 
+        }
         }
  }
 

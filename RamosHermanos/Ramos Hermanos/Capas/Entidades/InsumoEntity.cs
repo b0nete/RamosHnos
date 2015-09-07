@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RamosHnos.Capas.Entidades
+namespace RamosHermanos.Capas.Entidades
 {
     class InsumoEntity
     {
         public int idInsumo { get; set; }
+        public DateTime fecha { get; set; }
         public int rubro { get; set; }
         public int proveedor { get; set; }
         public string marca { get; set; }
@@ -17,5 +18,4 @@ namespace RamosHnos.Capas.Entidades
         public string stockMin { get; set; }
         public bool estado { get; set; }
     }
-
 }

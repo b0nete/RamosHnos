@@ -217,6 +217,7 @@
             this.txtDebmax.Name = "txtDebmax";
             this.txtDebmax.Size = new System.Drawing.Size(355, 20);
             this.txtDebmax.TabIndex = 93;
+            this.txtDebmax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDebmax_KeyPress);
             // 
             // label9
             // 
@@ -336,6 +337,7 @@
             this.txtcuit.Size = new System.Drawing.Size(355, 20);
             this.txtcuit.TabIndex = 61;
             this.txtcuit.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtcuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcuit_KeyPress);
             // 
             // txtidprov
             // 
@@ -389,6 +391,7 @@
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(355, 20);
             this.txtRazonSocial.TabIndex = 62;
+            this.txtRazonSocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRazonSocial_KeyPress);
             // 
             // label1
             // 
@@ -459,6 +462,7 @@
             this.btnEmail.Size = new System.Drawing.Size(28, 28);
             this.btnEmail.TabIndex = 58;
             this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click_1);
             // 
             // btnTelefono
             // 
