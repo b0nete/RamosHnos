@@ -44,13 +44,14 @@
             this.rubroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mcAgenda = new System.Windows.Forms.MonthCalendar();
             this.pnlInfo = new System.Windows.Forms.Panel();
+            this.lblSesion = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tmrHora = new System.Windows.Forms.Timer(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblSesion = new System.Windows.Forms.Label();
+            this.distribuidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlInfo.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +69,8 @@
             this.rolesToolStripMenuItem,
             this.salirToolStripMenuItem,
             this.testToolStripMenuItem,
-            this.rubroToolStripMenuItem});
+            this.rubroToolStripMenuItem,
+            this.distribuidoresToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(784, 24);
@@ -173,6 +175,25 @@
             this.pnlInfo.TabIndex = 26;
             this.pnlInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlInfo_Paint);
             // 
+            // lblSesion
+            // 
+            this.lblSesion.AutoSize = true;
+            this.lblSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSesion.Location = new System.Drawing.Point(718, 4);
+            this.lblSesion.Name = "lblSesion";
+            this.lblSesion.Size = new System.Drawing.Size(0, 13);
+            this.lblSesion.TabIndex = 34;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(624, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 13);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Tiempo Sesión:";
+            // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
@@ -217,24 +238,12 @@
             this.tmrHora.Interval = 1000;
             this.tmrHora.Tick += new System.EventHandler(this.tmrHora_Tick);
             // 
-            // label4
+            // distribuidoresToolStripMenuItem
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(624, 4);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 13);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Tiempo Sesión:";
-            // 
-            // lblSesion
-            // 
-            this.lblSesion.AutoSize = true;
-            this.lblSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSesion.Location = new System.Drawing.Point(718, 4);
-            this.lblSesion.Name = "lblSesion";
-            this.lblSesion.Size = new System.Drawing.Size(0, 13);
-            this.lblSesion.TabIndex = 34;
+            this.distribuidoresToolStripMenuItem.Name = "distribuidoresToolStripMenuItem";
+            this.distribuidoresToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.distribuidoresToolStripMenuItem.Text = "Distribuidores";
+            this.distribuidoresToolStripMenuItem.Click += new System.EventHandler(this.distribuidoresToolStripMenuItem_Click);
             // 
             // formMain
             // 
@@ -281,5 +290,6 @@
         private System.Windows.Forms.Timer tmrHora;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblSesion;
+        private System.Windows.Forms.ToolStripMenuItem distribuidoresToolStripMenuItem;
     }
 }

@@ -49,6 +49,7 @@
     <Compile Include="Capas\Datos\MySQL.cs" />
     <Compile Include="Capas\Entidades\BarrioEntity.cs" />
     <Compile Include="Capas\Entidades\ClienteEntity.cs" />
+    <Compile Include="Capas\Entidades\DistribuidoresEntity.cs" />
     <Compile Include="Capas\Entidades\DomicilioEntity.cs" />
     <Compile Include="Capas\Entidades\EmailEntity.cs" />
     <Compile Include="Capas\Entidades\LocalidadEntity.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Capas\Entidades\tipoProductoEntity.cs" />
     <Compile Include="Capas\Entidades\tipoTelEntity.cs" />
     <Compile Include="Capas\Entidades\UsuarioEntity.cs" />
+    <Compile Include="Capas\Entidades\VehiculoEntity.cs" />
     <Compile Include="Capas\Entidades\VisitaEntity.cs" />
     <Compile Include="Capas\Interfaz\formCliente.cs">
       <SubType>Form</SubType>
@@ -79,6 +81,12 @@
     </Compile>
     <Compile Include="Capas\Interfaz\formContacto.Designer.cs">
       <DependentUpon>formContacto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaz\formDistribuidores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\formDistribuidores.Designer.cs">
+      <DependentUpon>formDistribuidores.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Interfaz\formDomicilio.cs">
       <SubType>Form</SubType>
@@ -160,6 +168,7 @@
     </Compile>
     <Compile Include="Capas\Negocio\BarrioB.cs" />
     <Compile Include="Capas\Negocio\ClienteB.cs" />
+    <Compile Include="Capas\Negocio\DistribuidoresB.cs" />
     <Compile Include="Capas\Negocio\DomicilioB.cs" />
     <Compile Include="Capas\Negocio\EmailB.cs" />
     <Compile Include="Capas\Negocio\LocalidadB.cs" />
@@ -179,6 +188,7 @@
     <Compile Include="Capas\Negocio\tipoProductoB.cs" />
     <Compile Include="Capas\Negocio\tipoTelB.cs" />
     <Compile Include="Capas\Negocio\UsuarioB.cs" />
+    <Compile Include="Capas\Negocio\VehiculoB.cs" />
     <Compile Include="Capas\Negocio\VisitaB.cs" />
     <Compile Include="Libs\InputBox.cs" />
     <Compile Include="Program.cs" />
@@ -188,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formContacto.resx">
       <DependentUpon>formContacto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\formDistribuidores.resx">
+      <DependentUpon>formDistribuidores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formDomicilio.resx">
       <DependentUpon>formDomicilio.cs</DependentUpon>
