@@ -92,6 +92,7 @@ namespace RamosHermanos.Capas.Negocio
         }
         public static void CargarDGV (DataGridView DGV)
         {
+            DGV.Rows.Clear();
             MySQL.ConnectDB();
 
             string query = @"Select * from rubros";
@@ -109,6 +110,28 @@ namespace RamosHermanos.Capas.Negocio
               DR.Close();
  
         }
+
+        public static void CargarDGVproveedor(DataGridView DGV)
+        {
+            DGV.Rows.Clear();
+            MySQL.ConnectDB();
+
+            string query = @"Select * from rubros";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+            MySqlDataReader DR = cmd.ExecuteReader();
+
+            while (DR.Read())
+            {
+                DGV.Rows.Add(
+                Convert.ToString(DR["idrubro"]),
+                Convert.ToString(DR["rubro"]));
+            }
+            DR.Close();
+
+        }
+
+
         public static void CargarRubro(ComboBox cb)
         {
             try

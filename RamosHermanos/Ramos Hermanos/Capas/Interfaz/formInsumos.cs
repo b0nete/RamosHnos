@@ -27,9 +27,9 @@ namespace RamosHermanos.Capas.Interfaz
           insumo.fecha= dtpFecha.Value;
           insumo.insumo= txtInsumo.Text;
           insumo.marca = cbMarca.Text;
-          insumo.proveedor = Convert.ToInt32(cbProv.Text);
-          insumo.rubro = Convert.ToInt32(txtRubro.Text);
-          insumo.stockMin = txtStockMin.Text;
+          //insumo.proveedor = Convert.ToInt32(cbProv.Text);
+          //insumo.rubro = Convert.ToInt32(txtRubro.Text);
+          //insumo.stockMin = txtStockMin.Text;
                 
         }
 
@@ -66,9 +66,9 @@ namespace RamosHermanos.Capas.Interfaz
                 insumo.fecha = dtpFecha.Value;
                 insumo.insumo = txtInsumo.Text;
                 insumo.marca = cbMarca.Text;
-                insumo.proveedor = Convert.ToInt32(cbProv.Text);
-                insumo.rubro = Convert.ToInt32(txtRubro.Text);
-                insumo.stockMin = txtStockMin.Text;
+                //insumo.proveedor = Convert.ToInt32(cbProv.Text);
+                //insumo.rubro = Convert.ToInt32(txtRubro.Text);
+                //insumo.stockMin = txtStockMin.Text;
 
                }
                 

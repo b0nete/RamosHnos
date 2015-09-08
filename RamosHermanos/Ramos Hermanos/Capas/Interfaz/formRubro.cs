@@ -49,6 +49,7 @@ namespace RamosHermanos.Capas.Interfaz
                 {
                     cargarRubro();
                     RubroB.InsertRubro(rubro, txtidRubro);
+                                        
                 }
                 else
                 {
@@ -79,6 +80,8 @@ namespace RamosHermanos.Capas.Interfaz
        
         private void formRubro_Load(object sender, EventArgs e)
         {
+
+            cbEstado.Checked = true;
             RubroB.CargarDGV(dgvRubro);
 
         }

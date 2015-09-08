@@ -23,6 +23,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void formProveedor_Load(object sender, EventArgs e)
         {
             cbIVA.SelectedIndex = 0;
+            RubroB.CargarDGVproveedor(dgvRubro);
             ProveedorB.cargardgv(dgvProveedor);
            
             
@@ -480,6 +481,11 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         private void cbIVA_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvRubro_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

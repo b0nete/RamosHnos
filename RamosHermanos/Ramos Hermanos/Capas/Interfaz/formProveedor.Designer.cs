@@ -55,7 +55,7 @@
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvRubro = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDomicilio = new System.Windows.Forms.Button();
             this.btnEmail = new System.Windows.Forms.Button();
@@ -81,11 +81,14 @@
             this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.tabPedido = new System.Windows.Forms.TabPage();
+            this.idColRub = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSeleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProveedor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRubro)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbVisita.SuspendLayout();
             this.tabListado.SuspendLayout();
@@ -406,7 +409,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.dgvRubro);
             this.groupBox2.Location = new System.Drawing.Point(502, 10);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(265, 261);
@@ -414,14 +417,21 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Rubros";
             // 
-            // dataGridView2
+            // dgvRubro
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 16);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(259, 242);
-            this.dataGridView2.TabIndex = 0;
+            this.dgvRubro.AllowUserToAddRows = false;
+            this.dgvRubro.AllowUserToDeleteRows = false;
+            this.dgvRubro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRubro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idColRub,
+            this.colSeleccion,
+            this.colRubro});
+            this.dgvRubro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRubro.Location = new System.Drawing.Point(3, 16);
+            this.dgvRubro.Name = "dgvRubro";
+            this.dgvRubro.Size = new System.Drawing.Size(259, 242);
+            this.dgvRubro.TabIndex = 0;
+            this.dgvRubro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRubro_CellContentClick);
             // 
             // groupBox1
             // 
@@ -669,6 +679,25 @@
             this.tabPedido.Text = "Pedido";
             this.tabPedido.UseVisualStyleBackColor = true;
             // 
+            // idColRub
+            // 
+            this.idColRub.HeaderText = "IdRubro";
+            this.idColRub.Name = "idColRub";
+            this.idColRub.Visible = false;
+            // 
+            // colSeleccion
+            // 
+            this.colSeleccion.HeaderText = "Seleccion";
+            this.colSeleccion.Name = "colSeleccion";
+            this.colSeleccion.ReadOnly = true;
+            this.colSeleccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colSeleccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colRubro
+            // 
+            this.colRubro.HeaderText = "Rubro";
+            this.colRubro.Name = "colRubro";
+            // 
             // formProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -683,7 +712,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRubro)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.gbVisita.ResumeLayout(false);
@@ -719,7 +748,7 @@
         private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvRubro;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnDomicilio;
         private System.Windows.Forms.Button btnEmail;
@@ -747,5 +776,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipoIVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
         private System.Windows.Forms.Button btnClean;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idColRub;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colSeleccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;
     }
 }
