@@ -478,6 +478,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtEmail.Location = new System.Drawing.Point(102, 30);
             this.txtEmail.Name = "txtEmail";
@@ -496,6 +497,7 @@
             // 
             // txtTel
             // 
+            this.txtTel.Enabled = false;
             this.txtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtTel.Location = new System.Drawing.Point(102, 86);
             this.txtTel.Name = "txtTel";
@@ -514,6 +516,7 @@
             // 
             // txtDomicilio
             // 
+            this.txtDomicilio.Enabled = false;
             this.txtDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtDomicilio.Location = new System.Drawing.Point(102, 59);
             this.txtDomicilio.Name = "txtDomicilio";

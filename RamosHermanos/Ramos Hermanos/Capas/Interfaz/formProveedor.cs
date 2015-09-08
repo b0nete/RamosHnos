@@ -93,6 +93,7 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.CargarDGVs();
             }
         }
 
@@ -115,6 +116,7 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.CargarDGVs();
             }
         }
 
@@ -152,7 +154,7 @@ namespace RamosHermanos.Capas.Interfaz
                 cargarSaldo(txtidprov);
                 SaldoB.BuscarSaldo(saldo);
                 txtDebmax.Text = Convert.ToString(saldo.creditoMax);
-                txtSaldoActual.Text = Convert.ToString(saldo.saldoActual);
+                //txtSaldoActual.Text = Convert.ToString(saldo.saldoActual);
 
 
                 EmailB.CargarTXT(txtEmail, txtidprov, 2);
@@ -389,8 +391,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button4_Click(object sender, EventArgs e)
         {
-
             editarProv();
+            ProveedorB.cargardgv(dgvProveedor);
         }
 
         private void btnEmail_Click_1(object sender, EventArgs e)

@@ -37,7 +37,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formLogin frm = new formLogin();
+            formInsumos frm = new formInsumos();
             frm.Show();
               //Test frm = new Test();
               //frm.Show();

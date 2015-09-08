@@ -36,27 +36,126 @@ namespace RamosHermanos.Capas.Negocio
         
         }
 
+        public static InsumoEntity BuscarInsumos(InsumoEntity insumo)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = "SELECT * FROM insumo WHERE insumo=@insumo";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@insumo", insumo.insumo);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("El insumo NO existe!");
+
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    DataRow row = dt.Rows[0];
+
+                    insumo.idInsumo = Convert.ToInt32(row["idInsumo"]);
+                    insumo.estado = Convert.ToBoolean(row["estado"]);
+                    insumo.descripcion = Convert.ToString(row["idInsumo"]);
+                    insumo.fecha = Convert.ToDateTime(row["idInsumo"]);
+                    insumo.insumo = Convert.ToString(row["idInsumo"]);
+                    insumo.marca = Convert.ToString(row["idInsumo"]);
+                    insumo.proveedor = Convert.ToInt32(row["idInsumo"]);
+                    insumo.rubro = Convert.ToInt32(row["idInsumo"]);
+                    insumo.stockMin= Convert.ToString(row["idInsumo"]);
+                    
+                    MySQL.DisconnectDB();
+                }
+                return insumo;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static InsumoEntity UpdateInsumo(InsumoEntity insumo)
         {
-            MySQL.ConnectDB();
+            try
+            {
+                MySQL.ConnectDB();
 
-            string query = @"UPDATE from insumos
+                string query = @"UPDATE from insumos
                            SET fecha=@fecha, proveedor=@proveedor, rubro=@rubro, marca=@marca, insumo=@insumo, descripcion=@descripcion
                            stockmin=@stockmin, estado=@estado
                            where idinsumo=@idinsumo";
 
-            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-            cmd.Parameters.AddWithValue("@fecha", insumo.fecha);
-            cmd.Parameters.AddWithValue("@proveedor", insumo.proveedor);
-            cmd.Parameters.AddWithValue("@rubro", insumo.rubro);
-            cmd.Parameters.AddWithValue("@marca";insumo.marca);
-            cmd.Parameters.AddWithValue("@insumo";insumo.insumo);
-            cmd.Parameters.AddWithValue("@descripcion";insumo.descripcion);
+                cmd.Parameters.AddWithValue("@fecha", insumo.fecha);
+                cmd.Parameters.AddWithValue("@proveedor", insumo.proveedor);
+                cmd.Parameters.AddWithValue("@rubro", insumo.rubro);
+                cmd.Parameters.AddWithValue("@marca", insumo.marca);
+                cmd.Parameters.AddWithValue("@insumo", insumo.insumo);
+                cmd.Parameters.AddWithValue("@descripcion", insumo.descripcion);
+                cmd.Parameters.AddWithValue("@stockmin", insumo.stockMin);
+                cmd.Parameters.AddWithValue("@estado", insumo.estado);
 
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Insumo Actualizado");
+
+                return insumo;
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR" + ex);
+                throw;
+            }
+
+        }
+
+        public static InsumoEntity InsertInsumo(InsumoEntity insumo, TextBox Text)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @" Insert into insumos (proveedor, rubro, marca, insumo, descripcion, stockMin, estado
+                                VALUES ( @proveedor, @rubro, @marca, @insumo, @descripcion, @stockMin, @estado);
+                                SELECT LAST_INSERT_ID();";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.ExecuteNonQuery();
+
+                cmd.Parameters.AddWithValue("@fecha", insumo.fecha);
+                cmd.Parameters.AddWithValue("@proveedor", insumo.proveedor);
+                cmd.Parameters.AddWithValue("@rubro", insumo.rubro);
+                cmd.Parameters.AddWithValue("@marca", insumo.marca);
+                cmd.Parameters.AddWithValue("@insumo", insumo.insumo);
+                cmd.Parameters.AddWithValue("@descripcion", insumo.descripcion);
+                cmd.Parameters.AddWithValue("@stockmin", insumo.stockMin);
+                cmd.Parameters.AddWithValue("@estado", insumo.estado);
+
+                return insumo;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR" + ex);
+                throw;
+            }
+        
         
         }
-        
-        
     }
 }
