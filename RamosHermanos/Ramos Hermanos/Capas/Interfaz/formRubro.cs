@@ -21,9 +21,51 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            cargarRubro();
-            RubroB.InsertRubro(rubro, txtidRubro);
+            GuardarRubro();
+            RubroB.CargarDGV(dgvRubro);
+        }
 
+        private bool VerificarCampos()
+        {
+            if (txtRubro.Text == string.Empty)
+            {
+                MessageBox.Show("Campos Obligatorios Incompletos");
+                return false;
+            }
+            return true;    
+
+        }
+
+        private void GuardarRubro()
+        {
+            if (VerificarCampos() == false)
+            {
+                return;
+            }
+            else
+            {
+                rubro.rubro = txtRubro.Text;
+                if (RubroB.ExisteRubro(rubro) == false)
+                {
+                    cargarRubro();
+                    RubroB.InsertRubro(rubro, txtidRubro);
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("El rubro ya existe", "Rubro Existe", MessageBoxButtons.OK);
+                    {
+                        return;
+                    }
+                          
+                
+                
+                }
+            
+            
+            }
+
+        
+        
         }
 
         RubroEntity rubro = new RubroEntity();
@@ -34,9 +76,15 @@ namespace RamosHermanos.Capas.Interfaz
             rubro.estado = cbEstado.Checked;
         }
 
+       
         private void formRubro_Load(object sender, EventArgs e)
         {
-            RubroB.CargarDGV(dataGridView1);
+            RubroB.CargarDGV(dgvRubro);
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     

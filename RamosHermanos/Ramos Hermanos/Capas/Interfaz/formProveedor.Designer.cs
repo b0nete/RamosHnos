@@ -265,6 +265,7 @@
             this.cbIVA.Name = "cbIVA";
             this.cbIVA.Size = new System.Drawing.Size(355, 21);
             this.cbIVA.TabIndex = 83;
+            this.cbIVA.SelectedIndexChanged += new System.EventHandler(this.cbIVA_SelectedIndexChanged);
             // 
             // dtpFechaAlta
             // 

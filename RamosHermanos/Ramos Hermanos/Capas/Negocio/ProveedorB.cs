@@ -230,6 +230,33 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static void CargarProv(ComboBox cb)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQL.ConnectDB();
+
+                string query = "SELECT * FROM proveedores";  
+
+                ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                  MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                  da.Fill(dt);
+
+                  cb.DataSource = dt;
+                  cb.DisplayMember = "razonSocial";
+                  cb.ValueMember = "idProveedor";
+
+
+                  MySQL.DisconnectDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR" + ex);
+            }
+        }
         }
 
 

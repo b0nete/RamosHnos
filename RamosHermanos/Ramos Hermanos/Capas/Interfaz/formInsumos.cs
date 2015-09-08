@@ -38,7 +38,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool VerificarCampos()
         {
-            if (cbProv.SelectedValue == null || cbRubro.SelectedValue == null || cbMarca.SelectedValue == null || txtProducto.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null || txtStockMin.Text == string.Empty || txtStockActual.Text == string.Empty)
+            if (cbProv.SelectedValue == null || cbRubro.SelectedValue == null || cbMarca.SelectedValue == null || txtProducto.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null || txtStockMin.Text == string.Empty)
             {
                 MessageBox.Show("Complete los campos Obligatorios");
 
@@ -94,9 +94,6 @@ namespace RamosHermanos.Capas.Interfaz
                         cargarInsumo();
                         InsumoB.UpdateInsumo(insumo);
 
-
-
-
                         BuscarInsumo();
                         return;
                     }
@@ -121,6 +118,10 @@ namespace RamosHermanos.Capas.Interfaz
         private void formInsumos_Load(object sender, EventArgs e)
         {
 
+            ProveedorB.CargarProv(cbProv);
+            RubroB.CargarRubro(cbRubro);
+            MarcaB.CargarCB(cbMarca);
+            MedidaB.CargarCB(cbMedida);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -139,6 +140,17 @@ namespace RamosHermanos.Capas.Interfaz
             formMarca frm = new formMarca();
             frm.Show(); 
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            formProveedor frm = new formProveedor();
+            frm.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            BuscarInsumo();
         }
 
         
