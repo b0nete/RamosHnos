@@ -49,7 +49,7 @@
     <Compile Include="Capas\Datos\MySQL.cs" />
     <Compile Include="Capas\Entidades\BarrioEntity.cs" />
     <Compile Include="Capas\Entidades\ClienteEntity.cs" />
-    <Compile Include="Capas\Entidades\DistribuidoresEntity.cs" />
+    <Compile Include="Capas\Entidades\DistribuidorEntity.cs" />
     <Compile Include="Capas\Entidades\DomicilioEntity.cs" />
     <Compile Include="Capas\Entidades\EmailEntity.cs" />
     <Compile Include="Capas\Entidades\InsumoEntity.cs" />
@@ -169,7 +169,7 @@
     </Compile>
     <Compile Include="Capas\Negocio\BarrioB.cs" />
     <Compile Include="Capas\Negocio\ClienteB.cs" />
-    <Compile Include="Capas\Negocio\DistribuidoresB.cs" />
+    <Compile Include="Capas\Negocio\DistribuidorB.cs" />
     <Compile Include="Capas\Negocio\DomicilioB.cs" />
     <Compile Include="Capas\Negocio\EmailB.cs" />
     <Compile Include="Capas\Negocio\InsumoB.cs" />

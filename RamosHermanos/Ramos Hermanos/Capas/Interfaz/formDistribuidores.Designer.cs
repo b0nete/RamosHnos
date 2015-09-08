@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formDistribuidores));
-            this.tabDistribuidores = new System.Windows.Forms.TabControl();
+            this.tabDistribuidor = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
-            this.tabListado = new System.Windows.Forms.TabPage();
             this.btnClean = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.dtpNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.label27 = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -49,7 +50,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtCUIL = new System.Windows.Forms.MaskedTextBox();
-            this.txtIDcliente = new System.Windows.Forms.TextBox();
+            this.txtIDdistribuidor = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -64,6 +65,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.cbVehiculo = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDomicilio = new System.Windows.Forms.Button();
             this.btnEmail = new System.Windows.Forms.Button();
@@ -75,11 +78,10 @@
             this.txtDomic = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.tabListado = new System.Windows.Forms.TabPage();
             this.tabVehiculos = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.dgvtipoCliente = new System.Windows.Forms.DataGridView();
+            this.dgvVehiculos = new System.Windows.Forms.DataGridView();
             this.colIDVehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,46 +89,58 @@
             this.colColor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblEstadoVeh = new System.Windows.Forms.Label();
             this.txtPatente = new System.Windows.Forms.MaskedTextBox();
             this.nudModelo = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbMarca = new System.Windows.Forms.ComboBox();
             this.cbColor = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.txttCliente = new System.Windows.Forms.TextBox();
+            this.btnUpdVeh = new System.Windows.Forms.Button();
+            this.cbEstadoVeh = new System.Windows.Forms.CheckBox();
+            this.btnSaveVehi = new System.Windows.Forms.Button();
+            this.txtIDvehiculo = new System.Windows.Forms.TextBox();
             this.btnColor = new System.Windows.Forms.Button();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label27 = new System.Windows.Forms.Label();
-            this.tabDistribuidores.SuspendLayout();
+            this.dgvDistribuidores = new System.Windows.Forms.DataGridView();
+            this.colIDDistribuidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCUIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabDistribuidor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabListado.SuspendLayout();
             this.tabVehiculos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvtipoCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudModelo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDistribuidores)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabDistribuidores
+            // tabDistribuidor
             // 
-            this.tabDistribuidores.Controls.Add(this.tabInformacion);
-            this.tabDistribuidores.Controls.Add(this.tabListado);
-            this.tabDistribuidores.Controls.Add(this.tabVehiculos);
-            this.tabDistribuidores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabDistribuidores.Location = new System.Drawing.Point(0, 0);
-            this.tabDistribuidores.Name = "tabDistribuidores";
-            this.tabDistribuidores.SelectedIndex = 0;
-            this.tabDistribuidores.Size = new System.Drawing.Size(784, 561);
-            this.tabDistribuidores.TabIndex = 0;
+            this.tabDistribuidor.Controls.Add(this.tabInformacion);
+            this.tabDistribuidor.Controls.Add(this.tabListado);
+            this.tabDistribuidor.Controls.Add(this.tabVehiculos);
+            this.tabDistribuidor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabDistribuidor.Location = new System.Drawing.Point(0, 0);
+            this.tabDistribuidor.Name = "tabDistribuidor";
+            this.tabDistribuidor.SelectedIndex = 0;
+            this.tabDistribuidor.Size = new System.Drawing.Size(784, 561);
+            this.tabDistribuidor.TabIndex = 0;
             // 
             // tabInformacion
             // 
@@ -143,16 +157,6 @@
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.UseVisualStyleBackColor = true;
-            // 
-            // tabListado
-            // 
-            this.tabListado.Location = new System.Drawing.Point(4, 22);
-            this.tabListado.Name = "tabListado";
-            this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(776, 535);
-            this.tabListado.TabIndex = 1;
-            this.tabListado.Text = "Listado";
-            this.tabListado.UseVisualStyleBackColor = true;
             // 
             // btnClean
             // 
@@ -175,10 +179,11 @@
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 77;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.dateTimePicker1);
+            this.groupBox6.Controls.Add(this.dtpNacimiento);
             this.groupBox6.Controls.Add(this.label27);
             this.groupBox6.Controls.Add(this.lblEstado);
             this.groupBox6.Controls.Add(this.label18);
@@ -194,7 +199,7 @@
             this.groupBox6.Controls.Add(this.label11);
             this.groupBox6.Controls.Add(this.label8);
             this.groupBox6.Controls.Add(this.txtCUIL);
-            this.groupBox6.Controls.Add(this.txtIDcliente);
+            this.groupBox6.Controls.Add(this.txtIDdistribuidor);
             this.groupBox6.Controls.Add(this.label13);
             this.groupBox6.Controls.Add(this.label10);
             this.groupBox6.Controls.Add(this.label9);
@@ -215,6 +220,28 @@
             this.groupBox6.TabIndex = 76;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion Personal";
+            // 
+            // dtpNacimiento
+            // 
+            this.dtpNacimiento.CustomFormat = "dd/MM/yyyy";
+            this.dtpNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNacimiento.Location = new System.Drawing.Point(102, 149);
+            this.dtpNacimiento.MaxDate = new System.DateTime(2015, 9, 8, 0, 0, 0, 0);
+            this.dtpNacimiento.Name = "dtpNacimiento";
+            this.dtpNacimiento.Size = new System.Drawing.Size(355, 20);
+            this.dtpNacimiento.TabIndex = 94;
+            this.dtpNacimiento.Value = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label27.Location = new System.Drawing.Point(36, 155);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(60, 13);
+            this.label27.TabIndex = 93;
+            this.label27.Text = "Nacimiento";
             // 
             // lblEstado
             // 
@@ -247,6 +274,7 @@
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 88;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtnumDoc
             // 
@@ -335,6 +363,7 @@
             this.cbEstado.Size = new System.Drawing.Size(15, 14);
             this.cbEstado.TabIndex = 77;
             this.cbEstado.UseVisualStyleBackColor = true;
+            this.cbEstado.CheckedChanged += new System.EventHandler(this.cbEstado_CheckedChanged);
             // 
             // label11
             // 
@@ -366,14 +395,14 @@
             this.txtCUIL.TabIndex = 61;
             this.txtCUIL.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
-            // txtIDcliente
+            // txtIDdistribuidor
             // 
-            this.txtIDcliente.Enabled = false;
-            this.txtIDcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtIDcliente.Location = new System.Drawing.Point(102, 42);
-            this.txtIDcliente.Name = "txtIDcliente";
-            this.txtIDcliente.Size = new System.Drawing.Size(355, 20);
-            this.txtIDcliente.TabIndex = 31;
+            this.txtIDdistribuidor.Enabled = false;
+            this.txtIDdistribuidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtIDdistribuidor.Location = new System.Drawing.Point(102, 42);
+            this.txtIDdistribuidor.Name = "txtIDdistribuidor";
+            this.txtIDdistribuidor.Size = new System.Drawing.Size(355, 20);
+            this.txtIDdistribuidor.TabIndex = 31;
             // 
             // label13
             // 
@@ -519,7 +548,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.comboBox1);
+            this.groupBox5.Controls.Add(this.cbVehiculo);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(506, 9);
@@ -528,6 +557,26 @@
             this.groupBox5.TabIndex = 75;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Vehículo";
+            // 
+            // cbVehiculo
+            // 
+            this.cbVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbVehiculo.FormattingEnabled = true;
+            this.cbVehiculo.Location = new System.Drawing.Point(62, 19);
+            this.cbVehiculo.Name = "cbVehiculo";
+            this.cbVehiculo.Size = new System.Drawing.Size(194, 21);
+            this.cbVehiculo.TabIndex = 93;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label20.Location = new System.Drawing.Point(6, 22);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(50, 13);
+            this.label20.TabIndex = 94;
+            this.label20.Text = "Vehículo";
             // 
             // groupBox1
             // 
@@ -558,6 +607,7 @@
             this.btnDomicilio.Size = new System.Drawing.Size(28, 28);
             this.btnDomicilio.TabIndex = 56;
             this.btnDomicilio.UseVisualStyleBackColor = true;
+            this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
             // 
             // btnEmail
             // 
@@ -569,6 +619,7 @@
             this.btnEmail.Size = new System.Drawing.Size(28, 28);
             this.btnEmail.TabIndex = 58;
             this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
             // btnTelefono
             // 
@@ -580,6 +631,7 @@
             this.btnTelefono.Size = new System.Drawing.Size(28, 28);
             this.btnTelefono.TabIndex = 57;
             this.btnTelefono.UseVisualStyleBackColor = true;
+            this.btnTelefono.Click += new System.EventHandler(this.btnTelefono_Click);
             // 
             // txtEmail
             // 
@@ -648,31 +700,23 @@
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 71;
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // comboBox1
+            // tabListado
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(62, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(194, 21);
-            this.comboBox1.TabIndex = 93;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label20.Location = new System.Drawing.Point(6, 22);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(50, 13);
-            this.label20.TabIndex = 94;
-            this.label20.Text = "Vehículo";
+            this.tabListado.Controls.Add(this.dgvDistribuidores);
+            this.tabListado.Location = new System.Drawing.Point(4, 22);
+            this.tabListado.Name = "tabListado";
+            this.tabListado.Padding = new System.Windows.Forms.Padding(3);
+            this.tabListado.Size = new System.Drawing.Size(776, 535);
+            this.tabListado.TabIndex = 1;
+            this.tabListado.Text = "Listado";
+            this.tabListado.UseVisualStyleBackColor = true;
             // 
             // tabVehiculos
             // 
             this.tabVehiculos.Controls.Add(this.button1);
-            this.tabVehiculos.Controls.Add(this.dgvtipoCliente);
+            this.tabVehiculos.Controls.Add(this.dgvVehiculos);
             this.tabVehiculos.Controls.Add(this.groupBox2);
             this.tabVehiculos.Location = new System.Drawing.Point(4, 22);
             this.tabVehiculos.Name = "tabVehiculos";
@@ -692,23 +736,24 @@
             this.button1.TabIndex = 73;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dgvtipoCliente
+            // dgvVehiculos
             // 
-            this.dgvtipoCliente.AllowUserToAddRows = false;
-            this.dgvtipoCliente.AllowUserToDeleteRows = false;
-            this.dgvtipoCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvtipoCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvVehiculos.AllowUserToAddRows = false;
+            this.dgvVehiculos.AllowUserToDeleteRows = false;
+            this.dgvVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVehiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDVehiculo,
             this.colMarca,
             this.colModelo,
             this.colPatente,
             this.colColor,
             this.colEstado});
-            this.dgvtipoCliente.Location = new System.Drawing.Point(6, 198);
-            this.dgvtipoCliente.Name = "dgvtipoCliente";
-            this.dgvtipoCliente.ReadOnly = true;
-            this.dgvtipoCliente.Size = new System.Drawing.Size(762, 295);
-            this.dgvtipoCliente.TabIndex = 72;
+            this.dgvVehiculos.Location = new System.Drawing.Point(6, 198);
+            this.dgvVehiculos.Name = "dgvVehiculos";
+            this.dgvVehiculos.ReadOnly = true;
+            this.dgvVehiculos.Size = new System.Drawing.Size(762, 295);
+            this.dgvVehiculos.TabIndex = 72;
+            this.dgvVehiculos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvVehiculos_MouseDoubleClick);
             // 
             // colIDVehiculo
             // 
@@ -750,17 +795,17 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblEstadoVeh);
             this.groupBox2.Controls.Add(this.txtPatente);
             this.groupBox2.Controls.Add(this.nudModelo);
             this.groupBox2.Controls.Add(this.label21);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.cbMarca);
             this.groupBox2.Controls.Add(this.cbColor);
             this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.button5);
-            this.groupBox2.Controls.Add(this.txttCliente);
+            this.groupBox2.Controls.Add(this.btnUpdVeh);
+            this.groupBox2.Controls.Add(this.cbEstadoVeh);
+            this.groupBox2.Controls.Add(this.btnSaveVehi);
+            this.groupBox2.Controls.Add(this.txtIDvehiculo);
             this.groupBox2.Controls.Add(this.btnColor);
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Controls.Add(this.label24);
@@ -773,6 +818,14 @@
             this.groupBox2.TabIndex = 71;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Vehiculos";
+            // 
+            // lblEstadoVeh
+            // 
+            this.lblEstadoVeh.AutoSize = true;
+            this.lblEstadoVeh.Location = new System.Drawing.Point(111, 159);
+            this.lblEstadoVeh.Name = "lblEstadoVeh";
+            this.lblEstadoVeh.Size = new System.Drawing.Size(0, 13);
+            this.lblEstadoVeh.TabIndex = 93;
             // 
             // txtPatente
             // 
@@ -814,156 +867,52 @@
             this.label21.TabIndex = 69;
             this.label21.Text = "Modelo";
             // 
-            // comboBox2
+            // cbMarca
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "AliceBlue",
-            "AntiqueWhite",
-            "Aqua",
-            "Aquamarine",
-            "Azure",
-            "Beige",
-            "Bisque",
-            "Black",
-            "BlanchedAlmond",
-            "Blue",
-            "BlueViolet",
-            "Brown",
-            "BurlyWood",
-            "CadetBlue",
-            "Chartreuse",
-            "Chocolate",
-            "Coral",
-            "CornflowerBlue",
-            "Cornsilk",
-            "Crimson",
-            "Cyan",
-            "DarkBlue",
-            "DarkCyan",
-            "DarkGoldenrod",
-            "DarkGray",
-            "DarkGreen",
-            "DarkKhaki",
-            "DarkMagena",
-            "DarkOliveGreen",
-            "DarkOrange",
-            "DarkOrchid",
-            "DarkRed",
-            "DarkSalmon",
-            "DarkSeaGreen",
-            "DarkSlateBlue",
-            "DarkSlateGray",
-            "DarkTurquoise",
-            "DarkViolet",
-            "DeepPink",
-            "DeepSkyBlue",
-            "DimGray",
-            "DodgerBlue",
-            "Firebrick",
-            "FloralWhite",
-            "ForestGreen",
-            "Fuschia",
-            "Gainsboro",
-            "GhostWhite",
-            "Gold",
-            "Goldenrod",
-            "Gray",
-            "Green",
-            "GreenYellow",
-            "Honeydew",
-            "HotPink",
-            "IndianRed",
-            "Indigo",
-            "Ivory",
-            "Khaki",
-            "Lavender",
-            "LavenderBlush",
-            "LawnGreen",
-            "LemonChiffon",
-            "LightBlue",
-            "LightCoral",
-            "LightCyan",
-            "LightGoldenrodYellow",
-            "LightGreen",
-            "LightGray",
-            "LightPink",
-            "LightSalmon",
-            "LightSeaGreen",
-            "LightSkyBlue",
-            "LightSlateGray",
-            "LightSteelBlue",
-            "LightYellow",
-            "Lime",
-            "LimeGreen",
-            "Linen",
-            "Magenta",
-            "Maroon",
-            "MediumAquamarine",
-            "MediumBlue",
-            "MediumOrchid",
-            "MediumPurple",
-            "MediumSeaGreen",
-            "MediumSlateBlue",
-            "MediumSpringGreen",
-            "MediumTurquoise",
-            "MediumVioletRed",
-            "MidnightBlue",
-            "MintCream",
-            "MistyRose",
-            "Moccasin",
-            "NavajoWhite",
-            "Navy",
-            "OldLace",
-            "Olive",
-            "OliveDrab",
-            "Orange",
-            "OrangeRed",
-            "Orchid",
-            "PaleGoldenrod",
-            "PaleGreen",
-            "PaleTurquoise",
-            "PaleVioletRed",
-            "PapayaWhip",
-            "PeachPuff",
-            "Peru",
-            "Pink",
-            "Plum",
-            "PowderBlue",
-            "Purple",
-            "Red",
-            "RosyBrown",
-            "RoyalBlue",
-            "SaddleBrown",
-            "Salmon",
-            "SandyBrown",
-            "SeaGreen",
-            "Seashell",
-            "Sienna",
-            "Silver",
-            "SkyBlue",
-            "SlateBlue",
-            "SlateGray",
-            "Snow",
-            "SpringGreen",
-            "SteelBlue",
-            "Tan",
-            "Teal",
-            "Thistle",
-            "Tomato",
-            "Turquoise",
-            "Violet",
-            "Wheat",
-            "White",
-            "WhiteSmoke",
-            "Yellow",
-            "YellowGreen"});
-            this.comboBox2.Location = new System.Drawing.Point(90, 45);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(398, 21);
-            this.comboBox2.TabIndex = 68;
+            this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMarca.FormattingEnabled = true;
+            this.cbMarca.Items.AddRange(new object[] {
+            "Alfa Romeo",
+            "Audi",
+            "BMW",
+            "Chery",
+            "Chevrolet",
+            "Citroën",
+            "Daewoo",
+            "Daimler Chrysler",
+            "Dodge",
+            "Fiat",
+            "Ford",
+            "General Motors",
+            "Honda",
+            "Hyundai",
+            "Isuzu",
+            "Jaguar",
+            "Jeep",
+            "Kia Motors",
+            "Lada",
+            "Land Rover",
+            "Lexus",
+            "Mazda",
+            "Mercedes Benz",
+            "Mitsubishi",
+            "Nissan",
+            "Opel",
+            "Peugeot",
+            "Porsche",
+            "Renault",
+            "Saab",
+            "Seat",
+            "Subaru",
+            "Suzuki",
+            "Toyota",
+            "Volkswagen",
+            "Volvo"});
+            this.cbMarca.Location = new System.Drawing.Point(90, 45);
+            this.cbMarca.Name = "cbMarca";
+            this.cbMarca.Size = new System.Drawing.Size(398, 21);
+            this.cbMarca.TabIndex = 68;
             // 
             // cbColor
             // 
@@ -1115,6 +1064,7 @@
             this.cbColor.Name = "cbColor";
             this.cbColor.Size = new System.Drawing.Size(364, 21);
             this.cbColor.TabIndex = 67;
+            this.cbColor.SelectedIndexChanged += new System.EventHandler(this.cbColor_SelectedIndexChanged);
             // 
             // label22
             // 
@@ -1126,57 +1076,50 @@
             this.label22.TabIndex = 9;
             this.label22.Text = "Estado";
             // 
-            // button2
+            // btnUpdVeh
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button2.Location = new System.Drawing.Point(693, 145);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 28);
-            this.button2.TabIndex = 65;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdVeh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdVeh.BackgroundImage")));
+            this.btnUpdVeh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdVeh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpdVeh.Location = new System.Drawing.Point(728, 145);
+            this.btnUpdVeh.Name = "btnUpdVeh";
+            this.btnUpdVeh.Size = new System.Drawing.Size(28, 28);
+            this.btnUpdVeh.TabIndex = 65;
+            this.btnUpdVeh.UseVisualStyleBackColor = true;
+            this.btnUpdVeh.Click += new System.EventHandler(this.btnUpdVeh_Click);
             // 
-            // checkBox1
+            // cbEstadoVeh
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(90, 159);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbEstadoVeh.AutoSize = true;
+            this.cbEstadoVeh.Checked = true;
+            this.cbEstadoVeh.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEstadoVeh.Location = new System.Drawing.Point(90, 159);
+            this.cbEstadoVeh.Name = "cbEstadoVeh";
+            this.cbEstadoVeh.Size = new System.Drawing.Size(15, 14);
+            this.cbEstadoVeh.TabIndex = 8;
+            this.cbEstadoVeh.UseVisualStyleBackColor = true;
+            this.cbEstadoVeh.CheckedChanged += new System.EventHandler(this.cbEstadoVeh_CheckedChanged);
             // 
-            // button3
+            // btnSaveVehi
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(659, 145);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 64;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSaveVehi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveVehi.BackgroundImage")));
+            this.btnSaveVehi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveVehi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveVehi.Location = new System.Drawing.Point(694, 145);
+            this.btnSaveVehi.Name = "btnSaveVehi";
+            this.btnSaveVehi.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveVehi.TabIndex = 64;
+            this.btnSaveVehi.UseVisualStyleBackColor = true;
+            this.btnSaveVehi.Click += new System.EventHandler(this.btnSaveVehi_Click);
             // 
-            // button5
+            // txtIDvehiculo
             // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button5.Location = new System.Drawing.Point(727, 145);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(28, 28);
-            this.button5.TabIndex = 66;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // txttCliente
-            // 
-            this.txttCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txttCliente.Location = new System.Drawing.Point(90, 19);
-            this.txttCliente.Name = "txttCliente";
-            this.txttCliente.Size = new System.Drawing.Size(398, 20);
-            this.txttCliente.TabIndex = 5;
+            this.txtIDvehiculo.Enabled = false;
+            this.txtIDvehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDvehiculo.Location = new System.Drawing.Point(90, 19);
+            this.txtIDvehiculo.Name = "txtIDvehiculo";
+            this.txtIDvehiculo.Size = new System.Drawing.Size(398, 20);
+            this.txtIDvehiculo.TabIndex = 5;
             // 
             // btnColor
             // 
@@ -1227,35 +1170,108 @@
             this.label26.TabIndex = 0;
             this.label26.Text = "Nº Vehículo";
             // 
-            // dateTimePicker1
+            // dgvDistribuidores
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(102, 149);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(355, 20);
-            this.dateTimePicker1.TabIndex = 94;
+            this.dgvDistribuidores.AllowUserToAddRows = false;
+            this.dgvDistribuidores.AllowUserToDeleteRows = false;
+            this.dgvDistribuidores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDistribuidores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDDistribuidor,
+            this.colFechaAlta,
+            this.colIDTipoDoc,
+            this.coltipoDoc,
+            this.colNumDoc,
+            this.colNacimiento,
+            this.colSexo,
+            this.colCUIL,
+            this.colApellido,
+            this.colNombre,
+            this.colEstadoCivil});
+            this.dgvDistribuidores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDistribuidores.Location = new System.Drawing.Point(3, 3);
+            this.dgvDistribuidores.Name = "dgvDistribuidores";
+            this.dgvDistribuidores.ReadOnly = true;
+            this.dgvDistribuidores.Size = new System.Drawing.Size(770, 529);
+            this.dgvDistribuidores.TabIndex = 2;
+            this.dgvDistribuidores.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvDistribuidores_MouseDoubleClick);
             // 
-            // label27
+            // colIDDistribuidor
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label27.Location = new System.Drawing.Point(36, 155);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(60, 13);
-            this.label27.TabIndex = 93;
-            this.label27.Text = "Nacimiento";
+            this.colIDDistribuidor.HeaderText = "Nº Distribuidor";
+            this.colIDDistribuidor.Name = "colIDDistribuidor";
+            this.colIDDistribuidor.ReadOnly = true;
+            // 
+            // colFechaAlta
+            // 
+            this.colFechaAlta.HeaderText = "Fecha Alta";
+            this.colFechaAlta.Name = "colFechaAlta";
+            this.colFechaAlta.ReadOnly = true;
+            // 
+            // colIDTipoDoc
+            // 
+            this.colIDTipoDoc.HeaderText = "ID Tipo Doc";
+            this.colIDTipoDoc.Name = "colIDTipoDoc";
+            this.colIDTipoDoc.ReadOnly = true;
+            this.colIDTipoDoc.Visible = false;
+            // 
+            // coltipoDoc
+            // 
+            this.coltipoDoc.HeaderText = "Tipo Documento";
+            this.coltipoDoc.Name = "coltipoDoc";
+            this.coltipoDoc.ReadOnly = true;
+            // 
+            // colNumDoc
+            // 
+            this.colNumDoc.HeaderText = "Nº Documento";
+            this.colNumDoc.Name = "colNumDoc";
+            this.colNumDoc.ReadOnly = true;
+            // 
+            // colNacimiento
+            // 
+            this.colNacimiento.HeaderText = "Fecha Nacimiento";
+            this.colNacimiento.Name = "colNacimiento";
+            this.colNacimiento.ReadOnly = true;
+            // 
+            // colSexo
+            // 
+            this.colSexo.HeaderText = "Sexo";
+            this.colSexo.Name = "colSexo";
+            this.colSexo.ReadOnly = true;
+            // 
+            // colCUIL
+            // 
+            this.colCUIL.HeaderText = "CUIL";
+            this.colCUIL.Name = "colCUIL";
+            this.colCUIL.ReadOnly = true;
+            // 
+            // colApellido
+            // 
+            this.colApellido.HeaderText = "Apellido";
+            this.colApellido.Name = "colApellido";
+            this.colApellido.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colEstadoCivil
+            // 
+            this.colEstadoCivil.HeaderText = "Estado Civil";
+            this.colEstadoCivil.Name = "colEstadoCivil";
+            this.colEstadoCivil.ReadOnly = true;
             // 
             // formDistribuidores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.tabDistribuidores);
+            this.Controls.Add(this.tabDistribuidor);
             this.Name = "formDistribuidores";
             this.Text = "Distribuidores";
-            this.tabDistribuidores.ResumeLayout(false);
+            this.Load += new System.EventHandler(this.formDistribuidores_Load);
+            this.tabDistribuidor.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -1263,18 +1279,20 @@
             this.groupBox5.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabListado.ResumeLayout(false);
             this.tabVehiculos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvtipoCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudModelo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDistribuidores)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabDistribuidores;
+        private System.Windows.Forms.TabControl tabDistribuidor;
         private System.Windows.Forms.TabPage tabInformacion;
         private System.Windows.Forms.TabPage tabListado;
         private System.Windows.Forms.Button btnClean;
@@ -1294,7 +1312,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MaskedTextBox txtCUIL;
-        public System.Windows.Forms.TextBox txtIDcliente;
+        public System.Windows.Forms.TextBox txtIDdistribuidor;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -1309,7 +1327,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbVehiculo;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnDomicilio;
@@ -1324,7 +1342,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TabPage tabVehiculos;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dgvtipoCliente;
+        private System.Windows.Forms.DataGridView dgvVehiculos;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDVehiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn colModelo;
@@ -1335,20 +1353,32 @@
         private System.Windows.Forms.MaskedTextBox txtPatente;
         private System.Windows.Forms.NumericUpDown nudModelo;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.ComboBox cbColor;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox txttCliente;
+        private System.Windows.Forms.Button btnUpdVeh;
+        private System.Windows.Forms.CheckBox cbEstadoVeh;
+        private System.Windows.Forms.Button btnSaveVehi;
+        private System.Windows.Forms.TextBox txtIDvehiculo;
         private System.Windows.Forms.Button btnColor;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpNacimiento;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label lblEstadoVeh;
+        private System.Windows.Forms.DataGridView dgvDistribuidores;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDDistribuidor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDTipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coltipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNumDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNacimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCUIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoCivil;
     }
 }

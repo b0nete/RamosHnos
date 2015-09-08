@@ -144,5 +144,67 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static void CargarDGV(DataGridView dgv)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"SELECT *
+                                 FROM Vehiculos";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idVehiculo"]),
+                    Convert.ToString(dr["marca"]),
+                    Convert.ToString(dr["modelo"]),
+                    Convert.ToString(dr["patente"]),
+                    Convert.ToString(dr["color"]),
+                    Convert.ToString(dr["estado"]));
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void CargarCB(ComboBox cb)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQL.ConnectDB();
+
+                string query = "SELECT * FROM Vehiculos";  
+
+                ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                  MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                  da.Fill(dt);
+
+                  cb.DisplayMember = "patente";
+                  cb.ValueMember = "idVehiculo";
+                  cb.DataSource = dt;
+
+                  MySQL.DisconnectDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

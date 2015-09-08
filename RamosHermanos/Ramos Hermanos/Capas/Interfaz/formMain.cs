@@ -105,7 +105,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void distribuidoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            formDistribuidores frm = new formDistribuidores();
+            frm.Show();
         }
         
        

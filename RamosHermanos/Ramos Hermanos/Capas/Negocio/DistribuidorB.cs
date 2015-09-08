@@ -11,17 +11,17 @@ using RamosHermanos.Capas.Entidades;
 
 namespace RamosHermanos.Capas.Negocio
 {
-    class DistribuidoresB
+    class DistribuidorB
     {
-        public static bool ExisteDistribuidores(DistribuidoresEntity Distribuidores)
+        public static bool ExisteDistribuidor(DistribuidorEntity Distribuidor)
         {
             MySQL.ConnectDB();
 
-            string query = @"SELECT COUNT(*) FROM Distribuidoress
+            string query = @"SELECT COUNT(*) FROM Distribuidores
                              WHERE numDoc = @numDoc";
 
             MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-            cmd.Parameters.AddWithValue("@numDoc", Distribuidores.numDoc);
+            cmd.Parameters.AddWithValue("@numDoc", Distribuidor.numDoc);
 
             int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -31,35 +31,35 @@ namespace RamosHermanos.Capas.Negocio
                 return true;
         }
 
-        public static DistribuidoresEntity UpdateDistribuidores(DistribuidoresEntity Distribuidores)
+        public static DistribuidorEntity UpdateDistribuidor(DistribuidorEntity Distribuidor)
         {
             try
             {
                 MySQL.ConnectDB();
 
                 string query = @"SET @@sql_safe_updates = 0; 
-                                 UPDATE Distribuidoress
+                                 UPDATE Distribuidores
                                  SET tipodoc = @tipoDoc, numdoc = @numDoc, fechaNacimiento = @fechaNacimiento, sexo = @sexo, cuil =  @cuil, nombre = @nombre, apellido = @apellido, estadoCivil = @estadoCivil, vehiculo = @vehiculo, estado = @estado
                                  WHERE numDoc = @numDoc;
                                  SET @@sql_safe_updates = 1";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@tipoDoc", Distribuidores.tipoDoc);
-                cmd.Parameters.AddWithValue("@numDoc", Distribuidores.numDoc);
-                cmd.Parameters.AddWithValue("@fechaNacimiento", Distribuidores.fechaNacimiento);
-                cmd.Parameters.AddWithValue("@sexo", Distribuidores.sexo);
-                cmd.Parameters.AddWithValue("@cuil", Distribuidores.cuil);
-                cmd.Parameters.AddWithValue("@apellido", Distribuidores.apellido);
-                cmd.Parameters.AddWithValue("@nombre", Distribuidores.nombre);
-                cmd.Parameters.AddWithValue("@estadoCivil", Distribuidores.estadoCivil);
-                cmd.Parameters.AddWithValue("@vehiculo", Distribuidores.vehiculo);
-                cmd.Parameters.AddWithValue("@estado", Distribuidores.estado);
+                cmd.Parameters.AddWithValue("@tipoDoc", Distribuidor.tipoDoc);
+                cmd.Parameters.AddWithValue("@numDoc", Distribuidor.numDoc);
+                cmd.Parameters.AddWithValue("@fechaNacimiento", Distribuidor.fechaNacimiento);
+                cmd.Parameters.AddWithValue("@sexo", Distribuidor.sexo);
+                cmd.Parameters.AddWithValue("@cuil", Distribuidor.cuil);
+                cmd.Parameters.AddWithValue("@apellido", Distribuidor.apellido);
+                cmd.Parameters.AddWithValue("@nombre", Distribuidor.nombre);
+                cmd.Parameters.AddWithValue("@estadoCivil", Distribuidor.estadoCivil);
+                cmd.Parameters.AddWithValue("@vehiculo", Distribuidor.vehiculo);
+                cmd.Parameters.AddWithValue("@estado", Distribuidor.estado);
 
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Distribuidor Actualizado!");
-                return Distribuidores;
+                return Distribuidor;
             }
 
             catch (Exception ex)
@@ -70,14 +70,14 @@ namespace RamosHermanos.Capas.Negocio
         }
 
 
-        public static DistribuidoresEntity InsertDistribuidores(DistribuidoresEntity Distribuidores, TextBox txt)
+        public static DistribuidorEntity InsertDistribuidores(DistribuidorEntity Distribuidores, TextBox txt)
         {
             try
             {
                 MySQL.ConnectDB();
 
 
-                string query = @"INSERT INTO Distribuidoress (rol, fechaAlta, tipoDoc, numDoc, sexo, cuil, apellido, nombre, estadoCivil, condicionIVA, tipoDistribuidores, estado) 
+                string query = @"INSERT INTO Distribuidores (rol, fechaAlta, tipoDoc, numDoc, fechaNacimiento, sexo, cuil, apellido, nombre, estadoCivil, vehiculo, estado) 
                                  VALUES ('3', @fechaAlta, @tipoDoc, @numdoc, @fechaNacimiento, @sexo, @cuil, @apellido, @nombre, @estadoCivil, @vehiculo, @estado);
                                  SELECT LAST_INSERT_ID();";
 
@@ -86,13 +86,13 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@fechaAlta", Distribuidores.fechaAlta);
                 cmd.Parameters.AddWithValue("@tipoDoc", Distribuidores.tipoDoc);
                 cmd.Parameters.AddWithValue("@numDoc", Distribuidores.numDoc);
-                cmd.Parameters.AddWithValue("@numDoc", Distribuidores.fechaNacimiento);
+                cmd.Parameters.AddWithValue("@fechaNacimiento", Distribuidores.fechaNacimiento);
                 cmd.Parameters.AddWithValue("@sexo", Distribuidores.sexo);
                 cmd.Parameters.AddWithValue("@cuil", Distribuidores.cuil);
                 cmd.Parameters.AddWithValue("@apellido", Distribuidores.apellido);
                 cmd.Parameters.AddWithValue("@nombre", Distribuidores.nombre);
                 cmd.Parameters.AddWithValue("@estadoCivil", Distribuidores.estadoCivil);
-                cmd.Parameters.AddWithValue("@tipoDistribuidores", Distribuidores.vehiculo);
+                cmd.Parameters.AddWithValue("@vehiculo", Distribuidores.vehiculo);
                 cmd.Parameters.AddWithValue("@estado", Distribuidores.estado);
 
                 Distribuidores.idDistribuidor = Convert.ToInt32(cmd.ExecuteScalar());
@@ -111,7 +111,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static DistribuidoresEntity BuscarDistribuidorDOC(DistribuidoresEntity Distribuidores)
+        public static DistribuidorEntity BuscarDistribuidorDOC(DistribuidorEntity Distribuidores)
         {
             try
             {
@@ -137,7 +137,7 @@ namespace RamosHermanos.Capas.Negocio
 
                     DataRow row = dt.Rows[0];
 
-                    Distribuidores.idDistribuidor = Convert.ToInt32(row["idDistribuidores"]);
+                    Distribuidores.idDistribuidor = Convert.ToInt32(row["idDistribuidor"]);
                     Distribuidores.fechaAlta = Convert.ToDateTime(row["fechaAlta"]);
                     Distribuidores.tipoDoc = Convert.ToInt32(row["tipoDoc"]);
                     Distribuidores.fechaNacimiento = Convert.ToDateTime(row["fechaNacimiento"]);
@@ -152,6 +152,48 @@ namespace RamosHermanos.Capas.Negocio
                     MySQL.DisconnectDB();
                 }
                 return Distribuidores;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void CargarDGV(DataGridView dgv)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"SELECT D.idDistribuidor, D.fechaAlta, D.tipoDoc as IDtipoDoc, TP.tipoDoc, D.numDoc, D.fechaNacimiento, D.sexo, D.cuil, D.apellido, D.nombre, D.estadoCivil
+                                 FROM Distribuidores D
+                                 INNER JOIN tipoDocumento TP ON D.tipoDoc = TP.idTipoDoc";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idDistribuidor"]),
+                    Convert.ToDateTime(dr["fechaAlta"]).ToString("dd/MM/yyyy"),
+                    Convert.ToString(dr["IDtipoDoc"]),
+                    Convert.ToString(dr["tipoDoc"]),
+                    Convert.ToString(dr["numDoc"]),
+                    Convert.ToDateTime(dr["fechaNacimiento"]).ToString("dd/MM/yyyy"),
+                    Convert.ToString(dr["sexo"]),
+                    Convert.ToString(dr["cuil"]),
+                    Convert.ToString(dr["apellido"]),
+                    Convert.ToString(dr["nombre"]),
+                    Convert.ToString(dr["estadoCivil"]));
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
             }
 
             catch (Exception ex)

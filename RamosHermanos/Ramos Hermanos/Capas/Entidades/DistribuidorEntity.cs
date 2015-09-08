@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RamosHermanos.Capas.Entidades
 {
-    class DistribuidoresEntity
+    class DistribuidorEntity
     {
         public int idDistribuidor { get; set; }
         public int rol { get; set; }

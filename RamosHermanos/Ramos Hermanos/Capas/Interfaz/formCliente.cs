@@ -728,6 +728,7 @@ namespace RamosHermanos.Capas.Interfaz
                     VisitaB.UpdateOrden(visita);
 
                     BuscarCliente();
+                    ClienteB.CargarDGV(dgvCliente);
                 }             
             }        
         }
