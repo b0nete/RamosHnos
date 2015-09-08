@@ -24,7 +24,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void Test_Load(object sender, EventArgs e)
         {
-
+            
 
 
         }
