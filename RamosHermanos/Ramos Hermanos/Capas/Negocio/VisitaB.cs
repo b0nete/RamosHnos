@@ -248,26 +248,28 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
+                visita = null;
+
                 string query = @"SELECT MAX(olunes) olunes, MAX(omartes) omartes, MAX(omiercoles) omiercoles, MAX(ojueves) ojueves, MAX(oviernes) oviernes, MAX(osabado) osabado, MAX(odomingo) odomingo
                                  FROM orden";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-                
-                DataTable dt = new DataTable();
+
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr = cmd.ExecuteReader();
 
-                da.Fill(dt);
-                     
-                DataRow row = dt.Rows[0];
-
-                //Orden
-                visita.olunes = Convert.ToInt32(row["olunes"]);
-                visita.omartes = Convert.ToInt32(row["omartes"]);
-                visita.omiercoles = Convert.ToInt32(row["omiercoles"]);
-                visita.ojueves = Convert.ToInt32(row["ojueves"]);
-                visita.oviernes = Convert.ToInt32(row["oviernes"]);
-                visita.osabado = Convert.ToInt32(row["osabado"]);
-                visita.odomingo = Convert.ToInt32(row["odomingo"]);
+                while (dr.Read())
+                    if (visita != null)
+                    {
+                        //Orden
+                        visita.olunes = Convert.ToInt32(dr["olunes"]);
+                        visita.omartes = Convert.ToInt32(dr["omartes"]);
+                        visita.omiercoles = Convert.ToInt32(dr["omiercoles"]);
+                        visita.ojueves = Convert.ToInt32(dr["ojueves"]);
+                        visita.oviernes = Convert.ToInt32(dr["oviernes"]);
+                        visita.osabado = Convert.ToInt32(dr["osabado"]);
+                        visita.odomingo = Convert.ToInt32(dr["odomingo"]);
+                    }
 
                 MySQL.DisconnectDB();
 

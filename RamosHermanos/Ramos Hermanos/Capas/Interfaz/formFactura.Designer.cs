@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formFactura));
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabFactura = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -59,6 +61,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -70,21 +73,47 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabProductos = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.tabClientes = new System.Windows.Forms.TabPage();
+            this.dgvProducto = new System.Windows.Forms.DataGridView();
+            this.colIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCUIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCondicionIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMain.SuspendLayout();
             this.tabFactura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabProductos.SuspendLayout();
+            this.tabClientes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMain
             // 
             this.tabMain.Controls.Add(this.tabFactura);
             this.tabMain.Controls.Add(this.tabProductos);
+            this.tabMain.Controls.Add(this.tabClientes);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
@@ -115,6 +144,31 @@
             this.tabFactura.Text = "Factura";
             this.tabFactura.UseVisualStyleBackColor = true;
             this.tabFactura.Click += new System.EventHandler(this.tabFactura_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(734, 216);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(28, 28);
+            this.button3.TabIndex = 89;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(700, 216);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(28, 28);
+            this.button2.TabIndex = 87;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox8
             // 
@@ -255,6 +309,10 @@
             // 
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "C",
+            "E",
+            "X"});
             this.comboBox2.Location = new System.Drawing.Point(83, 17);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(60, 21);
@@ -394,6 +452,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles";
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSearch.Location = new System.Drawing.Point(379, 12);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(28, 28);
+            this.btnSearch.TabIndex = 89;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
             // textBox7
             // 
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -486,6 +555,7 @@
             // 
             // tabProductos
             // 
+            this.tabProductos.Controls.Add(this.dgvProducto);
             this.tabProductos.Location = new System.Drawing.Point(4, 22);
             this.tabProductos.Name = "tabProductos";
             this.tabProductos.Size = new System.Drawing.Size(776, 785);
@@ -493,41 +563,192 @@
             this.tabProductos.Text = "Productos";
             this.tabProductos.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // tabClientes
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(700, 216);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 28);
-            this.button2.TabIndex = 87;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.tabClientes.Controls.Add(this.dgvCliente);
+            this.tabClientes.Location = new System.Drawing.Point(4, 22);
+            this.tabClientes.Name = "tabClientes";
+            this.tabClientes.Size = new System.Drawing.Size(776, 785);
+            this.tabClientes.TabIndex = 3;
+            this.tabClientes.Text = "Clientes";
+            this.tabClientes.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // dgvProducto
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(734, 216);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 89;
-            this.button3.UseVisualStyleBackColor = true;
+            this.dgvProducto.AllowUserToAddRows = false;
+            this.dgvProducto.AllowUserToDeleteRows = false;
+            this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDProducto,
+            this.colTipo,
+            this.colMarca,
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.colMedida,
+            this.colStock,
+            this.dataGridViewTextBoxColumn3});
+            this.dgvProducto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvProducto.Location = new System.Drawing.Point(0, 0);
+            this.dgvProducto.Name = "dgvProducto";
+            this.dgvProducto.ReadOnly = true;
+            this.dgvProducto.Size = new System.Drawing.Size(776, 785);
+            this.dgvProducto.TabIndex = 53;
             // 
-            // btnSearch
+            // colIDProducto
             // 
-            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSearch.Location = new System.Drawing.Point(379, 12);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(28, 28);
-            this.btnSearch.TabIndex = 89;
-            this.btnSearch.UseVisualStyleBackColor = true;
+            this.colIDProducto.HeaderText = "Nº Producto";
+            this.colIDProducto.Name = "colIDProducto";
+            this.colIDProducto.ReadOnly = true;
+            this.colIDProducto.Visible = false;
+            // 
+            // colTipo
+            // 
+            this.colTipo.HeaderText = "Tipo";
+            this.colTipo.Name = "colTipo";
+            this.colTipo.ReadOnly = true;
+            // 
+            // colMarca
+            // 
+            this.colMarca.HeaderText = "Marca";
+            this.colMarca.Name = "colMarca";
+            this.colMarca.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Producto";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Cantidad";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // colMedida
+            // 
+            this.colMedida.HeaderText = "Medida";
+            this.colMedida.Name = "colMedida";
+            this.colMedida.ReadOnly = true;
+            // 
+            // colStock
+            // 
+            this.colStock.HeaderText = "Stock";
+            this.colStock.Name = "colStock";
+            this.colStock.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Precio";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dgvCliente
+            // 
+            this.dgvCliente.AllowUserToAddRows = false;
+            this.dgvCliente.AllowUserToDeleteRows = false;
+            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDCliente,
+            this.colFechaAlta,
+            this.colIDTipoDoc,
+            this.coltipoDoc,
+            this.colNumDoc,
+            this.colSexo,
+            this.colCUIL,
+            this.colApellido,
+            this.colNombre,
+            this.colEstadoCivil,
+            this.colCondicionIVA,
+            this.colIDtipoCliente,
+            this.coltipoCliente});
+            this.dgvCliente.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCliente.Location = new System.Drawing.Point(0, 0);
+            this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.ReadOnly = true;
+            this.dgvCliente.Size = new System.Drawing.Size(776, 785);
+            this.dgvCliente.TabIndex = 2;
+            this.dgvCliente.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCliente_MouseDoubleClick);
+            // 
+            // colIDCliente
+            // 
+            this.colIDCliente.HeaderText = "Nº Cliente";
+            this.colIDCliente.Name = "colIDCliente";
+            this.colIDCliente.ReadOnly = true;
+            // 
+            // colFechaAlta
+            // 
+            this.colFechaAlta.HeaderText = "Fecha Alta";
+            this.colFechaAlta.Name = "colFechaAlta";
+            this.colFechaAlta.ReadOnly = true;
+            // 
+            // colIDTipoDoc
+            // 
+            this.colIDTipoDoc.HeaderText = "ID Tipo Doc";
+            this.colIDTipoDoc.Name = "colIDTipoDoc";
+            this.colIDTipoDoc.ReadOnly = true;
+            this.colIDTipoDoc.Visible = false;
+            // 
+            // coltipoDoc
+            // 
+            this.coltipoDoc.HeaderText = "Tipo Documento";
+            this.coltipoDoc.Name = "coltipoDoc";
+            this.coltipoDoc.ReadOnly = true;
+            // 
+            // colNumDoc
+            // 
+            this.colNumDoc.HeaderText = "Nº Documento";
+            this.colNumDoc.Name = "colNumDoc";
+            this.colNumDoc.ReadOnly = true;
+            // 
+            // colSexo
+            // 
+            this.colSexo.HeaderText = "Sexo";
+            this.colSexo.Name = "colSexo";
+            this.colSexo.ReadOnly = true;
+            // 
+            // colCUIL
+            // 
+            this.colCUIL.HeaderText = "CUIL";
+            this.colCUIL.Name = "colCUIL";
+            this.colCUIL.ReadOnly = true;
+            // 
+            // colApellido
+            // 
+            this.colApellido.HeaderText = "Apellido";
+            this.colApellido.Name = "colApellido";
+            this.colApellido.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colEstadoCivil
+            // 
+            this.colEstadoCivil.HeaderText = "Estado Civil";
+            this.colEstadoCivil.Name = "colEstadoCivil";
+            this.colEstadoCivil.ReadOnly = true;
+            // 
+            // colCondicionIVA
+            // 
+            this.colCondicionIVA.HeaderText = "Condicion IVA";
+            this.colCondicionIVA.Name = "colCondicionIVA";
+            this.colCondicionIVA.ReadOnly = true;
+            // 
+            // colIDtipoCliente
+            // 
+            this.colIDtipoCliente.HeaderText = "ID Tipo Cliente";
+            this.colIDtipoCliente.Name = "colIDtipoCliente";
+            this.colIDtipoCliente.ReadOnly = true;
+            this.colIDtipoCliente.Visible = false;
+            // 
+            // coltipoCliente
+            // 
+            this.coltipoCliente.HeaderText = "Tipo Cliente";
+            this.coltipoCliente.Name = "coltipoCliente";
+            this.coltipoCliente.ReadOnly = true;
             // 
             // formFactura
             // 
@@ -548,6 +769,10 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabProductos.ResumeLayout(false);
+            this.tabClientes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -598,6 +823,30 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TabPage tabClientes;
+        private System.Windows.Forms.DataGridView dgvProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMedida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDTipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coltipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNumDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCUIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoCivil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCondicionIVA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDtipoCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coltipoCliente;
 
     }
 }

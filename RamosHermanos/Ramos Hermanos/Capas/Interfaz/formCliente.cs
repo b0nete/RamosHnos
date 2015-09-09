@@ -46,13 +46,15 @@ namespace RamosHermanos.Capas.Interfaz
 
             //Cargar Ultimas ordenes de entrega.
             VisitaB.BuscarOrdenMAX(visita);
-            txtLun.Text = Convert.ToString(visita.olunes + 1);
-            txtMar.Text = Convert.ToString(visita.omartes + 1);
-            txtMie.Text = Convert.ToString(visita.omiercoles + 1);
-            txtJue.Text = Convert.ToString(visita.ojueves + 1);
-            txtVie.Text = Convert.ToString(visita.oviernes + 1);
-            txtSab.Text = Convert.ToString(visita.osabado + 1);
-            txtDom.Text = Convert.ToString(visita.odomingo + 1);
+            {
+                txtLun.Text = Convert.ToString(visita.olunes + 1);
+                txtMar.Text = Convert.ToString(visita.omartes + 1);
+                txtMie.Text = Convert.ToString(visita.omiercoles + 1);
+                txtJue.Text = Convert.ToString(visita.ojueves + 1);
+                txtVie.Text = Convert.ToString(visita.oviernes + 1);
+                txtSab.Text = Convert.ToString(visita.osabado + 1);
+                txtDom.Text = Convert.ToString(visita.odomingo + 1);
+            }
 
             //Valores Iniciales
             cbSexo.SelectedIndex = 0;
