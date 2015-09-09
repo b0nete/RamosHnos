@@ -27,9 +27,9 @@ namespace RamosHermanos.Capas.Interfaz
           insumo.fecha= dtpFecha.Value;
           insumo.insumo= txtInsumo.Text;
           insumo.marca = cbMarca.Text;
-          //insumo.proveedor = Convert.ToInt32(cbProv.Text);
-          //insumo.rubro = Convert.ToInt32(txtRubro.Text);
-          //insumo.stockMin = txtStockMin.Text;
+          insumo.proveedor = Convert.ToInt32(cbProv.SelectedValue);
+          insumo.rubro = Convert.ToInt32(cbRubro.SelectedValue);
+          insumo.stockMin = txtStockMin.Text;
                 
         }
 
@@ -73,6 +73,13 @@ namespace RamosHermanos.Capas.Interfaz
                }
                 
             }
+        private void guardar()
+        {
+
+            cargarInsumo();
+            InsumoB.InsertInsumo(insumo, txtidInsumo);
+        
+        }
 
         private void GuardarInsumo()
         {
@@ -126,7 +133,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GuardarInsumo();
+            guardar();
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -42,6 +42,7 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rubroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.distribuidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mcAgenda = new System.Windows.Forms.MonthCalendar();
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.lblSesion = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tmrHora = new System.Windows.Forms.Timer(this.components);
-            this.distribuidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pnlInfo.SuspendLayout();
             this.SuspendLayout();
@@ -118,6 +118,7 @@
             this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
             this.insumosToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.insumosToolStripMenuItem.Text = "Insumos";
+            this.insumosToolStripMenuItem.Click += new System.EventHandler(this.insumosToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -152,6 +153,13 @@
             this.rubroToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.rubroToolStripMenuItem.Text = "Rubro";
             this.rubroToolStripMenuItem.Click += new System.EventHandler(this.rubroToolStripMenuItem_Click);
+            // 
+            // distribuidoresToolStripMenuItem
+            // 
+            this.distribuidoresToolStripMenuItem.Name = "distribuidoresToolStripMenuItem";
+            this.distribuidoresToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.distribuidoresToolStripMenuItem.Text = "Distribuidores";
+            this.distribuidoresToolStripMenuItem.Click += new System.EventHandler(this.distribuidoresToolStripMenuItem_Click);
             // 
             // mcAgenda
             // 
@@ -237,13 +245,6 @@
             this.tmrHora.Enabled = true;
             this.tmrHora.Interval = 1000;
             this.tmrHora.Tick += new System.EventHandler(this.tmrHora_Tick);
-            // 
-            // distribuidoresToolStripMenuItem
-            // 
-            this.distribuidoresToolStripMenuItem.Name = "distribuidoresToolStripMenuItem";
-            this.distribuidoresToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
-            this.distribuidoresToolStripMenuItem.Text = "Distribuidores";
-            this.distribuidoresToolStripMenuItem.Click += new System.EventHandler(this.distribuidoresToolStripMenuItem_Click);
             // 
             // formMain
             // 

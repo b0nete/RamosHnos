@@ -82,8 +82,8 @@
             this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.tabPedido = new System.Windows.Forms.TabPage();
             this.idColRub = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSeleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSeleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabProveedor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -424,8 +424,8 @@
             this.dgvRubro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRubro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idColRub,
-            this.colSeleccion,
-            this.colRubro});
+            this.colRubro,
+            this.colSeleccion});
             this.dgvRubro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRubro.Location = new System.Drawing.Point(3, 16);
             this.dgvRubro.Name = "dgvRubro";
@@ -685,6 +685,11 @@
             this.idColRub.Name = "idColRub";
             this.idColRub.Visible = false;
             // 
+            // colRubro
+            // 
+            this.colRubro.HeaderText = "Rubro";
+            this.colRubro.Name = "colRubro";
+            // 
             // colSeleccion
             // 
             this.colSeleccion.HeaderText = "Seleccion";
@@ -692,11 +697,6 @@
             this.colSeleccion.ReadOnly = true;
             this.colSeleccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colSeleccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colRubro
-            // 
-            this.colRubro.HeaderText = "Rubro";
-            this.colRubro.Name = "colRubro";
             // 
             // formProveedor
             // 
@@ -777,7 +777,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColRub;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colSeleccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colSeleccion;
     }
 }

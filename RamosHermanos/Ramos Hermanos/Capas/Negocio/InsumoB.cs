@@ -123,28 +123,32 @@ namespace RamosHermanos.Capas.Negocio
 
         }
 
-        public static InsumoEntity InsertInsumo(InsumoEntity insumo, TextBox Text)
+        public static InsumoEntity InsertInsumo(InsumoEntity insumo, TextBox txtid)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = @" Insert into insumos (marca, insumo, descripcion, stockMin, estado
-                                VALUES ( @proveedor, @rubro, @marca, @insumo, @descripcion, @estado);
-                                SELECT LAST_INSERT_ID();";
+                string query = @"Insert into insumos (fecha, proveedor,rubro, marca, insumo, descripcion, stockMin, estado)
+                                VALUES (@fecha, @proveedor,@rubro, @marca, @insumo, @descripcion, @stockMin, @estado);
+                                SELECT LAST_INSERT_ID()";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.ExecuteNonQuery();
-
+               
                 cmd.Parameters.AddWithValue("@fecha", insumo.fecha);
-                //cmd.Parameters.AddWithValue("@proveedor", insumo.proveedor);
-                //cmd.Parameters.AddWithValue("@rubro", insumo.rubro);
+                cmd.Parameters.AddWithValue("@proveedor", insumo.proveedor);
+                cmd.Parameters.AddWithValue("@rubro", insumo.rubro);
                 cmd.Parameters.AddWithValue("@marca", insumo.marca);
                 cmd.Parameters.AddWithValue("@insumo", insumo.insumo);
                 cmd.Parameters.AddWithValue("@descripcion", insumo.descripcion);
-                //cmd.Parameters.AddWithValue("@stockmin", insumo.stockMin);
+                cmd.Parameters.AddWithValue("@stockmin", insumo.stockMin);
                 cmd.Parameters.AddWithValue("@estado", insumo.estado);
+
+                txtid.Text = Convert.ToString(cmd.ExecuteScalar());
+
+
+                MessageBox.Show("Guardado");
 
                 return insumo;
 

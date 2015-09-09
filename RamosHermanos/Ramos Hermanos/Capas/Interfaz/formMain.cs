@@ -109,6 +109,12 @@ namespace RamosHermanos.Capas.Interfaz
             formDistribuidores frm = new formDistribuidores();
             frm.Show();
         }
+
+        private void insumosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formInsumos frm = new formInsumos();
+            frm.Show();
+        }
         
        
        
