@@ -95,6 +95,12 @@
     <Compile Include="Capas\Interfaz\formDomicilio.Designer.cs">
       <DependentUpon>formDomicilio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaz\formFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\formFactura.Designer.cs">
+      <DependentUpon>formFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\formInsumos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formDomicilio.resx">
       <DependentUpon>formDomicilio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\formFactura.resx">
+      <DependentUpon>formFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formInsumos.resx">
       <DependentUpon>formInsumos.cs</DependentUpon>

@@ -249,7 +249,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query = @"SELECT MAX(olunes) olunes, MAX(omartes) omartes, MAX(omiercoles) omiercoles, MAX(ojueves) ojueves, MAX(oviernes) oviernes, MAX(osabado) osabado, MAX(odomingo) odomingo
-                                 FROM orden                                 ";
+                                 FROM orden";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
                 
@@ -257,7 +257,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
                 da.Fill(dt);
-
+                     
                 DataRow row = dt.Rows[0];
 
                 //Orden
