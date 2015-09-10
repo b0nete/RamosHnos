@@ -36,6 +36,12 @@ namespace RamosHermanos.Capas.Interfaz
 
             // Productos
             ProductoB.CargarDGV(dgvProducto);
+
+            // Valores Iniciales
+            cbTipoFactura.SelectedIndex = 0;
+            cbformaPago.SelectedIndex = 0;
+            dtpfechaEntrega.Value = System.DateTime.Today.AddDays(30);
+            
         }
 
         private void label1_MouseHover(object sender, EventArgs e)
@@ -64,19 +70,12 @@ namespace RamosHermanos.Capas.Interfaz
 
                 cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
 
-                //ClienteB.BuscarClienteID(cliente);
-                //txtIDcliente.Text = Convert.ToString(cliente.idCliente);
-                //dtpFechaAlta.Value = cliente.fechaAlta;
-                //cbTipoDoc.SelectedValue = cliente.tipoDoc;
-                //txtnumDoc.Text = cliente.numDoc;
-                //cbSexo.Text = cliente.sexo;
-                //txtCUIL.Text = cliente.cuil;
-                //txtApellido.Text = cliente.apellido;
-                //txtNombre.Text = cliente.nombre;
-                //cbEstadoCivil.Text = cliente.estadoCivil;
-                //cbIVA.Text = cliente.condicionIVA;
-                //cbTipoCliente.SelectedValue = cliente.tipoCliente;
-                //cbEstado.Checked = cliente.estado;
+                ClienteB.BuscarClienteID(cliente);
+                txtIDcliente.Text = Convert.ToString(cliente.idCliente);
+                txtnumDoc.Text = cliente.numDoc;
+                txtNombre.Text = cliente.apellido + ' ' + cliente.nombre;
+                txtIVA.Text = cliente.condicionIVA;
+                //txtDomicilio.Text
 
                 tabMain.SelectedTab = tabFactura;
             }
@@ -94,6 +93,33 @@ namespace RamosHermanos.Capas.Interfaz
         ProductoEntity producto = new ProductoEntity();
         private void CargarProducto()
         {
+        }
+
+        private void tabMain_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void dgvProducto_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvProducto.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+
+                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+
+                producto.idProducto = Convert.ToInt32(row.Cells["colIDProducto"].Value.ToString());
+
+                ProductoB.AddProductoDGV(dgvFactura, producto);
+
+                tabMain.SelectedTab = tabFactura;
+            }
         }
        
 

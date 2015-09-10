@@ -41,39 +41,34 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvFactura = new System.Windows.Forms.DataGridView();
-            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbfechaFactura = new System.Windows.Forms.DateTimePicker();
+            this.cbTipoFactura = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.cbnumFactura = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpfechaEntrega = new System.Windows.Forms.DateTimePicker();
+            this.dtpVencimiento = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbformaPago = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtIVA = new System.Windows.Forms.TextBox();
+            this.txtDomicilio = new System.Windows.Forms.TextBox();
+            this.txtTel = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtIDcliente = new System.Windows.Forms.TextBox();
+            this.txtnumDoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabProductos = new System.Windows.Forms.TabPage();
-            this.tabClientes = new System.Windows.Forms.TabPage();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.colIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +78,7 @@
             this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabClientes = new System.Windows.Forms.TabPage();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -97,6 +93,11 @@
             this.colCondicionIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMain.SuspendLayout();
             this.tabFactura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
@@ -104,8 +105,8 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabProductos.SuspendLayout();
-            this.tabClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
+            this.tabClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,6 +121,7 @@
             this.tabMain.SelectedIndex = 0;
             this.tabMain.Size = new System.Drawing.Size(784, 811);
             this.tabMain.TabIndex = 0;
+            this.tabMain.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tabMain_MouseDoubleClick);
             // 
             // tabFactura
             // 
@@ -242,6 +244,8 @@
             // 
             // dgvFactura
             // 
+            this.dgvFactura.AllowUserToAddRows = false;
+            this.dgvFactura.AllowUserToDeleteRows = false;
             this.dgvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCodigo,
@@ -254,38 +258,13 @@
             this.dgvFactura.Size = new System.Drawing.Size(760, 400);
             this.dgvFactura.TabIndex = 79;
             // 
-            // colCodigo
-            // 
-            this.colCodigo.HeaderText = "Código";
-            this.colCodigo.Name = "colCodigo";
-            // 
-            // colProducto
-            // 
-            this.colProducto.HeaderText = "Producto";
-            this.colProducto.Name = "colProducto";
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.HeaderText = "Precio Unitario";
-            this.colPrecio.Name = "colPrecio";
-            // 
-            // colSubTotal
-            // 
-            this.colSubTotal.HeaderText = "SubTotal";
-            this.colSubTotal.Name = "colSubTotal";
-            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
-            this.groupBox3.Controls.Add(this.comboBox2);
+            this.groupBox3.Controls.Add(this.cbfechaFactura);
+            this.groupBox3.Controls.Add(this.cbTipoFactura);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.textBox5);
+            this.groupBox3.Controls.Add(this.cbnumFactura);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(426, 6);
@@ -295,28 +274,28 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Soderia";
             // 
-            // dateTimePicker1
+            // cbfechaFactura
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(83, 70);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(253, 20);
-            this.dateTimePicker1.TabIndex = 11;
+            this.cbfechaFactura.CustomFormat = "dd/MM/yyyy";
+            this.cbfechaFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbfechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.cbfechaFactura.Location = new System.Drawing.Point(83, 70);
+            this.cbfechaFactura.Name = "cbfechaFactura";
+            this.cbfechaFactura.Size = new System.Drawing.Size(253, 20);
+            this.cbfechaFactura.TabIndex = 11;
             // 
-            // comboBox2
+            // cbTipoFactura
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbTipoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoFactura.FormattingEnabled = true;
+            this.cbTipoFactura.Items.AddRange(new object[] {
             "C",
             "E",
             "X"});
-            this.comboBox2.Location = new System.Drawing.Point(83, 17);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(60, 21);
-            this.comboBox2.TabIndex = 9;
+            this.cbTipoFactura.Location = new System.Drawing.Point(83, 17);
+            this.cbTipoFactura.Name = "cbTipoFactura";
+            this.cbTipoFactura.Size = new System.Drawing.Size(60, 21);
+            this.cbTipoFactura.TabIndex = 9;
             // 
             // label8
             // 
@@ -338,13 +317,13 @@
             this.label13.TabIndex = 7;
             this.label13.Text = "Fecha Factura";
             // 
-            // textBox5
+            // cbnumFactura
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(83, 44);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(253, 20);
-            this.textBox5.TabIndex = 6;
+            this.cbnumFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbnumFactura.Location = new System.Drawing.Point(83, 44);
+            this.cbnumFactura.Name = "cbnumFactura";
+            this.cbnumFactura.Size = new System.Drawing.Size(253, 20);
+            this.cbnumFactura.TabIndex = 6;
             // 
             // label14
             // 
@@ -358,12 +337,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dateTimePicker3);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.dtpfechaEntrega);
+            this.groupBox2.Controls.Add(this.dtpVencimiento);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cbformaPago);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(8, 137);
             this.groupBox2.Name = "groupBox2";
@@ -372,25 +351,25 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles Venta";
             // 
-            // dateTimePicker3
+            // dtpfechaEntrega
             // 
-            this.dateTimePicker3.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(91, 46);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(210, 20);
-            this.dateTimePicker3.TabIndex = 13;
+            this.dtpfechaEntrega.CustomFormat = "dd/MM/yyyy";
+            this.dtpfechaEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpfechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpfechaEntrega.Location = new System.Drawing.Point(91, 46);
+            this.dtpfechaEntrega.Name = "dtpfechaEntrega";
+            this.dtpfechaEntrega.Size = new System.Drawing.Size(210, 20);
+            this.dtpfechaEntrega.TabIndex = 13;
             // 
-            // dateTimePicker2
+            // dtpVencimiento
             // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(373, 19);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 12;
+            this.dtpVencimiento.CustomFormat = "dd/MM/yyyy";
+            this.dtpVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpVencimiento.Location = new System.Drawing.Point(373, 19);
+            this.dtpVencimiento.Name = "dtpVencimiento";
+            this.dtpVencimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpVencimiento.TabIndex = 12;
             // 
             // label7
             // 
@@ -422,27 +401,30 @@
             this.label11.TabIndex = 2;
             this.label11.Text = "Forma de Pago";
             // 
-            // comboBox1
+            // cbformaPago
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(91, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(210, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cbformaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbformaPago.FormattingEnabled = true;
+            this.cbformaPago.Items.AddRange(new object[] {
+            "Efectivo"});
+            this.cbformaPago.Location = new System.Drawing.Point(91, 19);
+            this.cbformaPago.Name = "cbformaPago";
+            this.cbformaPago.Size = new System.Drawing.Size(210, 21);
+            this.cbformaPago.TabIndex = 1;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtIVA);
+            this.groupBox1.Controls.Add(this.txtDomicilio);
+            this.groupBox1.Controls.Add(this.txtTel);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtIDcliente);
+            this.groupBox1.Controls.Add(this.txtnumDoc);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(8, 6);
@@ -451,6 +433,15 @@
             this.groupBox1.TabIndex = 76;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Enabled = false;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(142, 17);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(230, 20);
+            this.txtNombre.TabIndex = 90;
             // 
             // btnSearch
             // 
@@ -463,29 +454,32 @@
             this.btnSearch.TabIndex = 89;
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // textBox7
+            // txtIVA
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(75, 95);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(172, 20);
-            this.textBox7.TabIndex = 11;
+            this.txtIVA.Enabled = false;
+            this.txtIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIVA.Location = new System.Drawing.Point(75, 95);
+            this.txtIVA.Name = "txtIVA";
+            this.txtIVA.Size = new System.Drawing.Size(172, 20);
+            this.txtIVA.TabIndex = 11;
             // 
-            // textBox6
+            // txtDomicilio
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(75, 69);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(332, 20);
-            this.textBox6.TabIndex = 9;
+            this.txtDomicilio.Enabled = false;
+            this.txtDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDomicilio.Location = new System.Drawing.Point(75, 69);
+            this.txtDomicilio.Name = "txtDomicilio";
+            this.txtDomicilio.Size = new System.Drawing.Size(332, 20);
+            this.txtDomicilio.TabIndex = 9;
             // 
-            // textBox1
+            // txtTel
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(253, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(154, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtTel.Enabled = false;
+            this.txtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTel.Location = new System.Drawing.Point(253, 43);
+            this.txtTel.Name = "txtTel";
+            this.txtTel.Size = new System.Drawing.Size(154, 20);
+            this.txtTel.TabIndex = 10;
             // 
             // label6
             // 
@@ -527,21 +521,23 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Documento";
             // 
-            // textBox3
+            // txtIDcliente
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(75, 17);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(298, 20);
-            this.textBox3.TabIndex = 6;
+            this.txtIDcliente.Enabled = false;
+            this.txtIDcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDcliente.Location = new System.Drawing.Point(75, 17);
+            this.txtIDcliente.Name = "txtIDcliente";
+            this.txtIDcliente.Size = new System.Drawing.Size(61, 20);
+            this.txtIDcliente.TabIndex = 6;
             // 
-            // textBox2
+            // txtnumDoc
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(75, 43);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(117, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtnumDoc.Enabled = false;
+            this.txtnumDoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnumDoc.Location = new System.Drawing.Point(75, 43);
+            this.txtnumDoc.Name = "txtnumDoc";
+            this.txtnumDoc.Size = new System.Drawing.Size(117, 20);
+            this.txtnumDoc.TabIndex = 5;
             // 
             // label1
             // 
@@ -563,16 +559,6 @@
             this.tabProductos.Text = "Productos";
             this.tabProductos.UseVisualStyleBackColor = true;
             // 
-            // tabClientes
-            // 
-            this.tabClientes.Controls.Add(this.dgvCliente);
-            this.tabClientes.Location = new System.Drawing.Point(4, 22);
-            this.tabClientes.Name = "tabClientes";
-            this.tabClientes.Size = new System.Drawing.Size(776, 785);
-            this.tabClientes.TabIndex = 3;
-            this.tabClientes.Text = "Clientes";
-            this.tabClientes.UseVisualStyleBackColor = true;
-            // 
             // dgvProducto
             // 
             this.dgvProducto.AllowUserToAddRows = false;
@@ -593,6 +579,7 @@
             this.dgvProducto.ReadOnly = true;
             this.dgvProducto.Size = new System.Drawing.Size(776, 785);
             this.dgvProducto.TabIndex = 53;
+            this.dgvProducto.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvProducto_MouseDoubleClick);
             // 
             // colIDProducto
             // 
@@ -642,6 +629,16 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Precio";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // tabClientes
+            // 
+            this.tabClientes.Controls.Add(this.dgvCliente);
+            this.tabClientes.Location = new System.Drawing.Point(4, 22);
+            this.tabClientes.Name = "tabClientes";
+            this.tabClientes.Size = new System.Drawing.Size(776, 785);
+            this.tabClientes.TabIndex = 3;
+            this.tabClientes.Text = "Clientes";
+            this.tabClientes.UseVisualStyleBackColor = true;
             // 
             // dgvCliente
             // 
@@ -750,6 +747,35 @@
             this.coltipoCliente.Name = "coltipoCliente";
             this.coltipoCliente.ReadOnly = true;
             // 
+            // colCodigo
+            // 
+            this.colCodigo.HeaderText = "Código";
+            this.colCodigo.Name = "colCodigo";
+            this.colCodigo.ReadOnly = true;
+            // 
+            // colProducto
+            // 
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.HeaderText = "Precio Unitario";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
+            // 
+            // colSubTotal
+            // 
+            this.colSubTotal.HeaderText = "SubTotal";
+            this.colSubTotal.Name = "colSubTotal";
+            this.colSubTotal.ReadOnly = true;
+            // 
             // formFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,8 +796,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabProductos.ResumeLayout(false);
-            this.tabClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
+            this.tabClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
 
@@ -789,35 +815,30 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.DataGridView dgvFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DateTimePicker cbfechaFactura;
+        private System.Windows.Forms.ComboBox cbTipoFactura;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox cbnumFactura;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpfechaEntrega;
+        private System.Windows.Forms.DateTimePicker dtpVencimiento;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbformaPago;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtIVA;
+        private System.Windows.Forms.TextBox txtDomicilio;
+        private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtIDcliente;
+        private System.Windows.Forms.TextBox txtnumDoc;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabProductos;
         private System.Windows.Forms.Button button3;
@@ -847,6 +868,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCondicionIVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDtipoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn coltipoCliente;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
 
     }
 }
