@@ -25,7 +25,7 @@ namespace RamosHermanos.Capas.Interfaz
           insumo.estado = cbEstado.Checked;
           insumo.descripcion= txtDescripcion.Text;
           insumo.fecha= dtpFecha.Value;
-          insumo.insumo= txtInsumo.Text;
+          insumo.insumo= Convert.ToString(txtInsumo.Text);
           insumo.marca = cbMarca.Text;
           insumo.proveedor = Convert.ToInt32(cbProv.SelectedValue);
           insumo.rubro = Convert.ToString(cbRubro.SelectedValue);
@@ -42,13 +42,20 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 MessageBox.Show("Complete los campos Obligatorios");
 
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
 
         private void BuscarInsumo()
         {
+            if (txtInsumo.Text == string.Empty)
+            {
+                tabListadoI.SelectedTab = tabListado;
+                return;
+            
+            }
+
             cargarInsumo();
 
             if (InsumoB.ExisteInsumo(insumo) == false)
@@ -63,11 +70,11 @@ namespace RamosHermanos.Capas.Interfaz
                 insumo.estado = cbEstado.Checked;
                 insumo.descripcion = txtDescripcion.Text;
                 insumo.fecha = dtpFecha.Value;
-                insumo.insumo = labelInsumo.Text;
+                insumo.insumo = txtInsumo.Text;
                 insumo.marca = cbMarca.Text;
                 insumo.proveedor = Convert.ToInt32(cbProv.SelectedValue);
                 insumo.rubro = Convert.ToString(txtRubro.Text);
-                insumo.stockMin = txtStockMin.Text;
+                insumo.stockMin =Convert.ToString(txtStockMin.Text);
 
                }
                 
@@ -81,6 +88,7 @@ namespace RamosHermanos.Capas.Interfaz
             RubroB.CargarRubro(cbRubro);
             MarcaB.CargarCB(cbMarca);
             MedidaB.CargarCB(cbMedida);
+            InsumoB.cargardgvInsumo(dgvinsumos);
             checkcolor();
 
             
@@ -129,26 +137,31 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (VerificarCampos() == true)
             {
-                return;
-            }
-            else
-            {
-                cargarInsumo(); //cargamos la entidad
-                if (InsumoB.ExisteInsumoID(insumo) == true) //verificamos si existe el ID
-                {
-                   return;                
-                }
-                else if (InsumoB.ExisteInsumo(insumo) == false) // Verificamos si los datos coinciden con los de otro insumo.
+                if (VerificarCampos() == false)
                 {
                     return;
                 }
                 else
                 {
-                    InsumoB.InsertInsumo(insumo,txtidInsumo);                                       
+                    cargarInsumo();
+                    if (InsumoB.ExisteInsumoID(insumo) == true)
+                    {
+                        return;
+                    }
+                    else if ( InsumoB.ExisteInsumo(insumo) == true)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        InsumoB.InsertInsumo(insumo, txtidInsumo);
+                        
+                    }
                 }
             }
+                    
+    
                         
             
         }

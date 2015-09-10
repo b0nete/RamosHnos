@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formInsumos));
-            this.tabInsumo = new System.Windows.Forms.TabControl();
+            this.tabListadoI = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtStockActual = new System.Windows.Forms.TextBox();
@@ -44,6 +44,7 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtInsumo = new System.Windows.Forms.TextBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
@@ -82,7 +83,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.tabListado = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvinsumos = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,26 +91,25 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtInsumo = new System.Windows.Forms.TextBox();
-            this.tabInsumo.SuspendLayout();
+            this.tabListadoI.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabListado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvinsumos)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabInsumo
+            // tabListadoI
             // 
-            this.tabInsumo.Controls.Add(this.tabInformacion);
-            this.tabInsumo.Controls.Add(this.tabListado);
-            this.tabInsumo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabInsumo.Location = new System.Drawing.Point(0, 0);
-            this.tabInsumo.Name = "tabInsumo";
-            this.tabInsumo.SelectedIndex = 0;
-            this.tabInsumo.Size = new System.Drawing.Size(784, 561);
-            this.tabInsumo.TabIndex = 0;
+            this.tabListadoI.Controls.Add(this.tabInformacion);
+            this.tabListadoI.Controls.Add(this.tabListado);
+            this.tabListadoI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabListadoI.Location = new System.Drawing.Point(0, 0);
+            this.tabListadoI.Name = "tabListadoI";
+            this.tabListadoI.SelectedIndex = 0;
+            this.tabListadoI.Size = new System.Drawing.Size(784, 561);
+            this.tabListadoI.TabIndex = 0;
             // 
             // tabInformacion
             // 
@@ -304,6 +304,14 @@
             this.groupBox1.TabIndex = 111;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Insumo";
+            // 
+            // txtInsumo
+            // 
+            this.txtInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtInsumo.Location = new System.Drawing.Point(115, 178);
+            this.txtInsumo.Name = "txtInsumo";
+            this.txtInsumo.Size = new System.Drawing.Size(261, 20);
+            this.txtInsumo.TabIndex = 121;
             // 
             // lblEstado
             // 
@@ -720,7 +728,7 @@
             // 
             // tabListado
             // 
-            this.tabListado.Controls.Add(this.dataGridView2);
+            this.tabListado.Controls.Add(this.dgvinsumos);
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Size = new System.Drawing.Size(776, 535);
@@ -728,12 +736,12 @@
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dgvinsumos
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvinsumos.AllowUserToAddRows = false;
+            this.dgvinsumos.AllowUserToDeleteRows = false;
+            this.dgvinsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvinsumos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -741,11 +749,11 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(770, 529);
-            this.dataGridView2.TabIndex = 113;
+            this.dgvinsumos.Location = new System.Drawing.Point(3, 3);
+            this.dgvinsumos.Name = "dgvinsumos";
+            this.dgvinsumos.ReadOnly = true;
+            this.dgvinsumos.Size = new System.Drawing.Size(770, 529);
+            this.dgvinsumos.TabIndex = 113;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -789,24 +797,16 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // txtInsumo
-            // 
-            this.txtInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtInsumo.Location = new System.Drawing.Point(115, 178);
-            this.txtInsumo.Name = "txtInsumo";
-            this.txtInsumo.Size = new System.Drawing.Size(261, 20);
-            this.txtInsumo.TabIndex = 121;
-            // 
             // formInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.tabInsumo);
+            this.Controls.Add(this.tabListadoI);
             this.Name = "formInsumos";
             this.Text = "Insumos";
             this.Load += new System.EventHandler(this.formInsumos_Load);
-            this.tabInsumo.ResumeLayout(false);
+            this.tabListadoI.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -815,14 +815,14 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabListado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvinsumos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabInsumo;
+        private System.Windows.Forms.TabControl tabListadoI;
         private System.Windows.Forms.TabPage tabInformacion;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtStockActual;
@@ -875,7 +875,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.TabPage tabListado;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvinsumos;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
