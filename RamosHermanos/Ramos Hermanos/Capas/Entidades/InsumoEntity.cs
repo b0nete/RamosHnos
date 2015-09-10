@@ -10,7 +10,7 @@ namespace RamosHermanos.Capas.Entidades
     {
         public int idInsumo { get; set; }
         public DateTime fecha { get; set; }
-        public int rubro { get; set; }
+        public string rubro { get; set; }
         public int proveedor { get; set; }
         public string marca { get; set; }
         public string insumo { get; set; }

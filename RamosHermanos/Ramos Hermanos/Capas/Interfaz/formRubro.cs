@@ -23,6 +23,8 @@ namespace RamosHermanos.Capas.Interfaz
         {
             GuardarRubro();
             RubroB.CargarDGV(dgvRubro);
+            txtidRubro.Text = "";
+            txtRubro.Text = "";
         }
 
         private bool VerificarCampos()
@@ -80,9 +82,11 @@ namespace RamosHermanos.Capas.Interfaz
        
         private void formRubro_Load(object sender, EventArgs e)
         {
-
+            
             cbEstado.Checked = true;
             RubroB.CargarDGV(dgvRubro);
+            txtidRubro.Text = "";
+            txtRubro.Text = "";
 
         }
 

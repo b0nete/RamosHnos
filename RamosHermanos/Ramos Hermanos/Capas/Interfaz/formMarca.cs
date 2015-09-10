@@ -22,6 +22,8 @@ namespace RamosHermanos.Capas.Interfaz
         private void formMarca_Load(object sender, EventArgs e)
         {
             MarcaB.CargarDGV(dgvMarcas);
+            txtIDMarca.Text = "";
+            txtMarca.Text = "";
         }
 
         //Eventos
@@ -52,6 +54,8 @@ namespace RamosHermanos.Capas.Interfaz
                     CargarMarca();
                     MarcaB.InsertMarca(marca, txtIDMarca);
                     MarcaB.CargarDGV(dgvMarcas);
+                    txtIDMarca.Text = "";
+                    txtMarca.Text = "";
                 }
             }
         }

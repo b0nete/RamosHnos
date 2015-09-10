@@ -43,8 +43,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblEstado = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
@@ -70,8 +70,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtProducto = new System.Windows.Forms.TextBox();
-            this.txtInsumo = new System.Windows.Forms.Label();
+            this.labelInsumo = new System.Windows.Forms.Label();
             this.cbRubro = new System.Windows.Forms.ComboBox();
             this.cbEstado = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -82,17 +81,29 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
+            this.tabListado = new System.Windows.Forms.TabPage();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtInsumo = new System.Windows.Forms.TextBox();
             this.tabInsumo.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabListado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabInsumo
             // 
             this.tabInsumo.Controls.Add(this.tabInformacion);
+            this.tabInsumo.Controls.Add(this.tabListado);
             this.tabInsumo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabInsumo.Location = new System.Drawing.Point(0, 0);
             this.tabInsumo.Name = "tabInsumo";
@@ -104,7 +115,6 @@
             // 
             this.tabInformacion.Controls.Add(this.groupBox3);
             this.tabInformacion.Controls.Add(this.groupBox2);
-            this.tabInformacion.Controls.Add(this.dataGridView1);
             this.tabInformacion.Controls.Add(this.groupBox1);
             this.tabInformacion.Controls.Add(this.btnDel);
             this.tabInformacion.Controls.Add(this.button1);
@@ -171,6 +181,7 @@
             this.txtStockMin.Name = "txtStockMin";
             this.txtStockMin.Size = new System.Drawing.Size(261, 20);
             this.txtStockMin.TabIndex = 90;
+            this.txtStockMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStockMin_KeyPress);
             // 
             // label13
             // 
@@ -213,6 +224,7 @@
             this.txtCostoAct.Name = "txtCostoAct";
             this.txtCostoAct.Size = new System.Drawing.Size(261, 20);
             this.txtCostoAct.TabIndex = 100;
+            this.txtCostoAct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostoAct_KeyPress);
             // 
             // label14
             // 
@@ -248,16 +260,10 @@
             this.label23.TabIndex = 107;
             this.label23.Text = "*";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(429, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(341, 488);
-            this.dataGridView1.TabIndex = 112;
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtInsumo);
+            this.groupBox1.Controls.Add(this.lblEstado);
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.label27);
             this.groupBox1.Controls.Add(this.txtCantidad);
@@ -283,8 +289,7 @@
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.button7);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtProducto);
-            this.groupBox1.Controls.Add(this.txtInsumo);
+            this.groupBox1.Controls.Add(this.labelInsumo);
             this.groupBox1.Controls.Add(this.cbRubro);
             this.groupBox1.Controls.Add(this.cbEstado);
             this.groupBox1.Controls.Add(this.label1);
@@ -299,6 +304,15 @@
             this.groupBox1.TabIndex = 111;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Insumo";
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(136, 25);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(0, 13);
+            this.lblEstado.TabIndex = 1;
             // 
             // button4
             // 
@@ -332,6 +346,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(117, 20);
             this.txtCantidad.TabIndex = 118;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
             // label25
             // 
@@ -430,6 +445,7 @@
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(261, 21);
             this.cbMarca.TabIndex = 102;
+            this.cbMarca.SelectedIndexChanged += new System.EventHandler(this.cbMarca_SelectedIndexChanged);
             // 
             // label20
             // 
@@ -457,6 +473,7 @@
             // 
             // txtidInsumo
             // 
+            this.txtidInsumo.Enabled = false;
             this.txtidInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtidInsumo.Location = new System.Drawing.Point(114, 45);
             this.txtidInsumo.Name = "txtidInsumo";
@@ -580,24 +597,16 @@
             this.label5.TabIndex = 61;
             this.label5.Text = "*";
             // 
-            // txtProducto
+            // labelInsumo
             // 
-            this.txtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtProducto.Location = new System.Drawing.Point(115, 178);
-            this.txtProducto.Name = "txtProducto";
-            this.txtProducto.Size = new System.Drawing.Size(261, 20);
-            this.txtProducto.TabIndex = 60;
-            // 
-            // txtInsumo
-            // 
-            this.txtInsumo.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.txtInsumo.AutoSize = true;
-            this.txtInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtInsumo.Location = new System.Drawing.Point(59, 181);
-            this.txtInsumo.Name = "txtInsumo";
-            this.txtInsumo.Size = new System.Drawing.Size(41, 13);
-            this.txtInsumo.TabIndex = 59;
-            this.txtInsumo.Text = "Insumo";
+            this.labelInsumo.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.labelInsumo.AutoSize = true;
+            this.labelInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.labelInsumo.Location = new System.Drawing.Point(59, 181);
+            this.labelInsumo.Name = "labelInsumo";
+            this.labelInsumo.Size = new System.Drawing.Size(41, 13);
+            this.labelInsumo.TabIndex = 59;
+            this.labelInsumo.Text = "Insumo";
             // 
             // cbRubro
             // 
@@ -620,6 +629,7 @@
             this.cbEstado.Size = new System.Drawing.Size(15, 14);
             this.cbEstado.TabIndex = 50;
             this.cbEstado.UseVisualStyleBackColor = true;
+            this.cbEstado.CheckedChanged += new System.EventHandler(this.cbEstado_CheckedChanged);
             // 
             // label1
             // 
@@ -708,6 +718,85 @@
             this.btnEdit.TabIndex = 115;
             this.btnEdit.UseVisualStyleBackColor = true;
             // 
+            // tabListado
+            // 
+            this.tabListado.Controls.Add(this.dataGridView2);
+            this.tabListado.Location = new System.Drawing.Point(4, 22);
+            this.tabListado.Name = "tabListado";
+            this.tabListado.Size = new System.Drawing.Size(776, 535);
+            this.tabListado.TabIndex = 1;
+            this.tabListado.Text = "Listado";
+            this.tabListado.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
+            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.Size = new System.Drawing.Size(770, 529);
+            this.dataGridView2.TabIndex = 113;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "IDinsumo";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Fecha Alta";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Proveedor";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Insumo";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Stock Actual";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Rubro";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Marca";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // txtInsumo
+            // 
+            this.txtInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtInsumo.Location = new System.Drawing.Point(115, 178);
+            this.txtInsumo.Name = "txtInsumo";
+            this.txtInsumo.Size = new System.Drawing.Size(261, 20);
+            this.txtInsumo.TabIndex = 121;
+            // 
             // formInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -723,9 +812,10 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabListado.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -746,7 +836,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label25;
@@ -771,8 +860,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtProducto;
-        private System.Windows.Forms.Label txtInsumo;
+        private System.Windows.Forms.Label labelInsumo;
         private System.Windows.Forms.ComboBox cbRubro;
         private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.Label label1;
@@ -785,5 +873,16 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.TabPage tabListado;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.TextBox txtInsumo;
     }
 }

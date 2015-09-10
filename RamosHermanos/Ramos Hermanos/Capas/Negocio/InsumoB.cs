@@ -21,11 +21,12 @@ namespace RamosHermanos.Capas.Negocio
             MySQL.ConnectDB();
 
             string query = @"select count(*) from insumos
-                             where idinsumo=@idinsumo";
+                             where insumo=@insumo";
 
             MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-            cmd.Parameters.AddWithValue("@idinsumo", insumo.idInsumo);
+            cmd.Parameters.AddWithValue("@insumo", insumo.insumo);
+       
 
             int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -42,7 +43,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = "SELECT * FROM insumo WHERE insumo=@insumo";
+                string query = "SELECT * FROM insumos WHERE insumo=@insumo";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -69,9 +70,9 @@ namespace RamosHermanos.Capas.Negocio
                     insumo.fecha = Convert.ToDateTime(row["fecha"]);
                     insumo.insumo = Convert.ToString(row["insumo"]);
                     insumo.marca = Convert.ToString(row["marca"]);
-                    //insumo.proveedor = Convert.ToInt32(row["idInsumo"]);
-                    //insumo.rubro = Convert.ToInt32(row["idInsumo"]);
-                    //insumo.stockMin= Convert.ToString(row["idInsumo"]);
+                    insumo.proveedor = Convert.ToInt32(row["idInsumo"]);
+                    insumo.rubro = Convert.ToString(row["idInsumo"]);
+                    insumo.stockMin = Convert.ToString(row["idInsumo"]);
                     
                     MySQL.DisconnectDB();
                 }
@@ -82,6 +83,29 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MessageBox.Show("Error: " + ex);
                 throw;
+            }
+        }
+
+        public static bool ExisteInsumoID(InsumoEntity insumo)
+        {
+            MySQL.ConnectDB();
+
+            string query = @"SELECT COUNT(*) FROM Insumos
+                             WHERE idInsumo = @idInsumo";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+            cmd.Parameters.AddWithValue("@idInsumo", insumo.idInsumo);
+
+            int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (resultado == 0)
+            {
+                return false;
+            }
+            else
+            {
+                MessageBox.Show("El ID de Insumo ya existe!");
+                return true;
             }
         }
 
@@ -131,7 +155,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 string query = @"Insert into insumos (fecha, proveedor,rubro, marca, insumo, descripcion, stockMin, estado)
                                 VALUES (@fecha, @proveedor,@rubro, @marca, @insumo, @descripcion, @stockMin, @estado);
-                                SELECT LAST_INSERT_ID()";
+                                SELECT LAST_INSERT_ID();";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -142,7 +166,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@marca", insumo.marca);
                 cmd.Parameters.AddWithValue("@insumo", insumo.insumo);
                 cmd.Parameters.AddWithValue("@descripcion", insumo.descripcion);
-                cmd.Parameters.AddWithValue("@stockmin", insumo.stockMin);
+                cmd.Parameters.AddWithValue("@stockMin", insumo.stockMin);
                 cmd.Parameters.AddWithValue("@estado", insumo.estado);
 
                 txtid.Text = Convert.ToString(cmd.ExecuteScalar());

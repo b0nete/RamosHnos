@@ -81,6 +81,7 @@
             this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.tabPedido = new System.Windows.Forms.TabPage();
+            this.lblEstado = new System.Windows.Forms.Label();
             this.idColRub = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSeleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -140,6 +141,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.lblEstado);
             this.groupBox6.Controls.Add(this.label10);
             this.groupBox6.Controls.Add(this.txtSaldoActual);
             this.groupBox6.Controls.Add(this.label13);
@@ -311,6 +313,7 @@
             this.cbEstado.Size = new System.Drawing.Size(15, 14);
             this.cbEstado.TabIndex = 77;
             this.cbEstado.UseVisualStyleBackColor = true;
+            this.cbEstado.CheckedChanged += new System.EventHandler(this.cbEstado_CheckedChanged);
             // 
             // label11
             // 
@@ -679,11 +682,19 @@
             this.tabPedido.Text = "Pedido";
             this.tabPedido.UseVisualStyleBackColor = true;
             // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Location = new System.Drawing.Point(123, 22);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(0, 13);
+            this.lblEstado.TabIndex = 2;
+            // 
             // idColRub
             // 
             this.idColRub.HeaderText = "IdRubro";
             this.idColRub.Name = "idColRub";
-            this.idColRub.Visible = false;
             // 
             // colRubro
             // 
@@ -776,6 +787,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipoIVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
         private System.Windows.Forms.Button btnClean;
+        private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColRub;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colSeleccion;

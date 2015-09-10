@@ -25,7 +25,7 @@ namespace RamosHermanos.Capas.Interfaz
             cbIVA.SelectedIndex = 0;
             RubroB.CargarDGVproveedor(dgvRubro);
             ProveedorB.cargardgv(dgvProveedor);
-           
+            CheckColor();
             
         }
 
@@ -480,6 +480,19 @@ namespace RamosHermanos.Capas.Interfaz
                 e.Handled = true; 
         }
 
+        private void CheckColor()
+        {
+            if (cbEstado.Checked == true)
+            {
+                lblEstado.BackColor = Color.Green;
+                lblEstado.Text = "Habilitado";
+            }
+            else
+            {
+                lblEstado.BackColor = Color.Red;
+                lblEstado.Text = "Desabilitado";
+            }
+        }
         private void cbIVA_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -488,6 +501,11 @@ namespace RamosHermanos.Capas.Interfaz
         private void dgvRubro_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void cbEstado_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckColor();   
         }
         }
  }
