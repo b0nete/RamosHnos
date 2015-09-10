@@ -81,23 +81,9 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-        // Metodos
-
-        // Entidades
-
-        ClienteEntity cliente = new ClienteEntity();
-        private void CargarCliente()
-        {
-        }
-
-        ProductoEntity producto = new ProductoEntity();
-        private void CargarProducto()
-        {
-        }
-
         private void tabMain_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            
+
         }
 
         private void dgvProducto_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -121,6 +107,44 @@ namespace RamosHermanos.Capas.Interfaz
                 tabMain.SelectedTab = tabFactura;
             }
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            CargarFactura();
+            FacturaB.InsertFactura(factura);
+        }
+
+        // Metodos
+
+        // Entidades
+
+        ClienteEntity cliente = new ClienteEntity();
+        private void CargarCliente()
+        {
+            cliente.idCliente = Convert.ToInt32(txtIDcliente.Text);           
+        }
+
+        ProductoEntity producto = new ProductoEntity();
+        private void CargarProducto()
+        {
+            //producto.idProducto;
+        }
+
+        FacturaEntity factura = new FacturaEntity();
+        private void CargarFactura()
+        {
+            factura.tipoFactura = cbTipoFactura.Text;
+            factura.numFactura = txtnumFactura.Text;
+            factura.fechaFactura = dtpfechaFactura.Value;
+            factura.fechaVencimiento = dtpVencimiento.Value;
+            factura.fechaEntrega = dtpfechaEntrega.Value;
+            factura.formaPago = cbformaPago.Text;
+            factura.cliente = Convert.ToInt32(txtIDcliente.Text);
+            factura.observaciones = txtObservaciones.Text;
+            factura.total = Convert.ToDouble(txtTotal.Text);
+            factura.estado = cbEstado.Text;
+        }
+        
        
 
     }
