@@ -40,7 +40,7 @@ namespace RamosHermanos.Capas.Interfaz
             // Valores Iniciales
             cbTipoFactura.SelectedIndex = 0;
             cbformaPago.SelectedIndex = 0;
-            dtpfechaEntrega.Value = System.DateTime.Today.AddDays(30);
+            dtpVencimiento.Value = System.DateTime.Today.AddDays(30);
             
         }
 
@@ -110,8 +110,22 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            CargarFactura();
-            FacturaB.InsertFactura(factura);
+            //CargarFactura();
+            //FacturaB.InsertFactura(factura);
+
+            itemFactura.factura = txtnumFactura.Text;
+
+            foreach (DataGridViewRow row in dgvFactura.Rows)
+            {
+                itemFactura.producto = Convert.ToInt32(row.Cells["colCodigo"].Value);
+                itemFactura.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
+                itemFactura.precioUnitario = Convert.ToDouble(row.Cells["colPrecio"].Value);
+                //itemFactura.subTotal = Convert.ToDouble(row.Cells["colSubTotal"].Value);
+
+                //itemsFacturaB.InsertItemFactura2(dgvFactura);
+            }
+
+            
         }
 
         // Metodos
@@ -143,6 +157,23 @@ namespace RamosHermanos.Capas.Interfaz
             factura.observaciones = txtObservaciones.Text;
             factura.total = Convert.ToDouble(txtTotal.Text);
             factura.estado = cbEstado.Text;
+        }
+
+        itemFacturaEntity itemFactura = new itemFacturaEntity();
+        private void CargarItemFactura()
+        {
+            //itemFactura.producto = dgvFactura.cells
+        }
+
+        private void dgvFactura_MouseClick(object sender, MouseEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvFactura.Rows)
+            {
+                if (row.Cells["colCantidad"].Value != string.Empty && row.Cells["colPrecio"].Value != string.Empty)
+                {
+                    row.Cells["colSubTotal"].Value = Convert.ToInt32(row.Cells["colCantidad"].Value) * Convert.ToDouble(row.Cells["colPrecio"].Value);
+                }
+            }
         }
         
        

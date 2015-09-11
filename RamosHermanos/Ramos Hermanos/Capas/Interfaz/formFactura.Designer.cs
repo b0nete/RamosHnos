@@ -285,6 +285,7 @@
             this.dgvFactura.Name = "dgvFactura";
             this.dgvFactura.Size = new System.Drawing.Size(760, 400);
             this.dgvFactura.TabIndex = 79;
+            this.dgvFactura.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvFactura_MouseClick);
             // 
             // colCodigo
             // 

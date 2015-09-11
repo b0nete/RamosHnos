@@ -51,29 +51,6 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        //private void btGuardar_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        SqlConnection conx = new SqlConnection(datosConx);
-        //        conx.Open();
-        //        SqlCommand cmd = new SqlCommand("INSERT INTO (FechaDatos) VALUES (@nombre)", conx);
-
-        //        foreach (DataGridViewRow row in datosVer.Rows)
-        //        {
-        //            cmd.Parameters.Clear();
-
-        //            string Nombre = row.Cells[0].Value.ToString();
-        //            cmd.Parameters.AddWithValue("@nombre", Nombre);
-
-        //            cmd.ExecuteNonQuery();
-
-        //        }
-        //    }
-        //    catch (Exception ed)
-        //    {
-        //        MessageBox.Show(ed.Message);
-        //    }
-        //}
+        
     }
 }

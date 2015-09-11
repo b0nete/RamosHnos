@@ -236,6 +236,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void Clean()
         {
+            producto.idProducto = Convert.ToInt32(null);
             cbEstado.Checked = true;
             txtIDProd.Text = "";
             cbTipoProducto.SelectedIndex = 0;
