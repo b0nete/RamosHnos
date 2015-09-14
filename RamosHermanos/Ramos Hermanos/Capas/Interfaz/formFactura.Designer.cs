@@ -66,7 +66,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtIVA = new System.Windows.Forms.TextBox();
-            this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.txtTel = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -100,6 +99,7 @@
             this.colCondicionIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.tabMain.SuspendLayout();
             this.tabFactura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
@@ -153,6 +153,7 @@
             // 
             // cbEstado
             // 
+            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEstado.FormattingEnabled = true;
             this.cbEstado.Items.AddRange(new object[] {
@@ -286,7 +287,7 @@
             this.dgvFactura.Name = "dgvFactura";
             this.dgvFactura.Size = new System.Drawing.Size(760, 400);
             this.dgvFactura.TabIndex = 79;
-            this.dgvFactura.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactura_CellEndEdit);
+            this.dgvFactura.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvFactura_CellStateChanged);
             this.dgvFactura.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactura_CellValueChanged);
             this.dgvFactura.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvFactura_MouseClick);
             // 
@@ -347,6 +348,7 @@
             // 
             // cbTipoFactura
             // 
+            this.cbTipoFactura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoFactura.FormattingEnabled = true;
             this.cbTipoFactura.Items.AddRange(new object[] {
@@ -464,6 +466,7 @@
             // 
             // cbformaPago
             // 
+            this.cbformaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbformaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbformaPago.FormattingEnabled = true;
             this.cbformaPago.Items.AddRange(new object[] {
@@ -475,10 +478,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbDomicilio);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.txtIVA);
-            this.groupBox1.Controls.Add(this.txtDomicilio);
             this.groupBox1.Controls.Add(this.txtTel);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -514,6 +517,7 @@
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 89;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtIVA
             // 
@@ -523,15 +527,6 @@
             this.txtIVA.Name = "txtIVA";
             this.txtIVA.Size = new System.Drawing.Size(172, 20);
             this.txtIVA.TabIndex = 11;
-            // 
-            // txtDomicilio
-            // 
-            this.txtDomicilio.Enabled = false;
-            this.txtDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDomicilio.Location = new System.Drawing.Point(75, 69);
-            this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(332, 20);
-            this.txtDomicilio.TabIndex = 9;
             // 
             // txtTel
             // 
@@ -726,6 +721,7 @@
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.Size = new System.Drawing.Size(776, 785);
             this.dgvCliente.TabIndex = 2;
+            this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
             this.dgvCliente.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCliente_MouseDoubleClick);
             // 
             // colIDCliente
@@ -808,6 +804,20 @@
             this.coltipoCliente.Name = "coltipoCliente";
             this.coltipoCliente.ReadOnly = true;
             // 
+            // cbDomicilio
+            // 
+            this.cbDomicilio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDomicilio.FormattingEnabled = true;
+            this.cbDomicilio.Items.AddRange(new object[] {
+            "C",
+            "E",
+            "X"});
+            this.cbDomicilio.Location = new System.Drawing.Point(75, 69);
+            this.cbDomicilio.Name = "cbDomicilio";
+            this.cbDomicilio.Size = new System.Drawing.Size(331, 21);
+            this.cbDomicilio.TabIndex = 10;
+            // 
             // formFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -863,7 +873,6 @@
         private System.Windows.Forms.ComboBox cbformaPago;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtIVA;
-        private System.Windows.Forms.TextBox txtDomicilio;
         private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -908,6 +917,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cbDomicilio;
 
     }
 }

@@ -156,6 +156,44 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void CargarCB(ComboBox cb, TextBox txt)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT D.idDomicilio, CONCAT(D.idDomicilio,' ',D.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
+                                 FROM Domicilios D 
+                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
+                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
+                                 INNER JOIN Barrios B ON D.Barrio = B.idBarrio
+                                 WHERE rol = @rol and idPersona = @idPersona";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@rol", 1);
+                cmd.Parameters.AddWithValue("@idPersona", txt.Text);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                cb.DataSource = dt;
+                cb.ValueMember = "idDomicilio";
+                cb.DisplayMember = "domCompleto";
+                
+
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static void CargarTXT(TextBox txt, TextBox txt2, int rol)
         {
             try

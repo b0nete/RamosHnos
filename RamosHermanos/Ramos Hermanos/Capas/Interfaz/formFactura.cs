@@ -41,6 +41,7 @@ namespace RamosHermanos.Capas.Interfaz
             cbTipoFactura.SelectedIndex = 0;
             cbformaPago.SelectedIndex = 0;
             dtpVencimiento.Value = System.DateTime.Today.AddDays(30);
+            cbEstado.SelectedIndex = 2;
 
         }
 
@@ -76,6 +77,8 @@ namespace RamosHermanos.Capas.Interfaz
                 txtNombre.Text = cliente.apellido + ' ' + cliente.nombre;
                 txtIVA.Text = cliente.condicionIVA;
                 //txtDomicilio.Text
+
+                DomicilioB.CargarCB(cbDomicilio, txtIDcliente);
 
                 tabMain.SelectedTab = tabFactura;
             }
@@ -173,7 +176,12 @@ namespace RamosHermanos.Capas.Interfaz
             
         }
 
-        private void dgvFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dgvFactura.Rows.RemoveAt(dgvFactura.CurrentRow.Index);
+        }
+
+        private void dgvFactura_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
             // Se genera la variable para acumular los SubTotales.
             double total = 0;
@@ -183,21 +191,28 @@ namespace RamosHermanos.Capas.Interfaz
             {
 
                 // Se ejecutan las operaciones solo si la columna cantidad y precio tienen algún valor, ya que de lo contrario nos dará un error.
-                if (row.Cells["colCantidad"].Value != string.Empty && row.Cells["colPrecio"].Value != string.Empty)
+                if (row.Cells["colCantidad"].ToString() != string.Empty && row.Cells["colPrecio"].ToString() != string.Empty)
                 {
                     row.Cells["colSubTotal"].Value = Convert.ToInt32(row.Cells["colCantidad"].Value) * Convert.ToDouble(row.Cells["colPrecio"].Value);
 
-                    total += Convert.ToDouble(row.Cells["colSubTotal"].Value);                    
+                    total += Convert.ToDouble(row.Cells["colSubTotal"].Value);
                 }
 
                 txtTotal.Text = Convert.ToString(total);
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvFactura.Rows.RemoveAt(dgvFactura.CurrentRow.Index);
+
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            tabMain.SelectedTab = tabClientes;
+        }
+
+
 
 
 
