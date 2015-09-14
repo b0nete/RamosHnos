@@ -333,6 +333,11 @@ namespace RamosHermanos.Capas.Interfaz
         {
 
         }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     
           
     }

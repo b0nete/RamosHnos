@@ -94,6 +94,11 @@ namespace RamosHermanos.Capas.Interfaz
         {
 
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     
     
     }

@@ -35,9 +35,18 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnSaveDom = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
             this.txtNombreDom = new System.Windows.Forms.TextBox();
             this.dgvDomicilio = new System.Windows.Forms.DataGridView();
+            this.colIDDom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoDom = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblEstadoDom = new System.Windows.Forms.Label();
             this.cbEstadoDom = new System.Windows.Forms.CheckBox();
@@ -73,7 +82,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.btnSaveTel = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
-            this.btnDelTel = new System.Windows.Forms.Button();
             this.txtNombreTel = new System.Windows.Forms.TextBox();
             this.dgvTelefono = new System.Windows.Forms.DataGridView();
             this.colIDTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,7 +106,6 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.btnSaveEmail = new System.Windows.Forms.Button();
-            this.btnDelEmail = new System.Windows.Forms.Button();
             this.cbRolALL = new System.Windows.Forms.ComboBox();
             this.button11 = new System.Windows.Forms.Button();
             this.txtNombreEmail = new System.Windows.Forms.TextBox();
@@ -112,16 +119,6 @@
             this.cbEstadoEmail = new System.Windows.Forms.CheckBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.colIDDom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstadoDom = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabContacto.SuspendLayout();
             this.tabDomicilios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDomicilio)).BeginInit();
@@ -152,7 +149,6 @@
             this.tabDomicilios.Controls.Add(this.label5);
             this.tabDomicilios.Controls.Add(this.btnSaveDom);
             this.tabDomicilios.Controls.Add(this.button1);
-            this.tabDomicilios.Controls.Add(this.btnDel);
             this.tabDomicilios.Controls.Add(this.txtNombreDom);
             this.tabDomicilios.Controls.Add(this.dgvDomicilio);
             this.tabDomicilios.Controls.Add(this.groupBox2);
@@ -169,7 +165,7 @@
             this.btnUpdDom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdDom.BackgroundImage")));
             this.btnUpdDom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpdDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpdDom.Location = new System.Drawing.Point(706, 188);
+            this.btnUpdDom.Location = new System.Drawing.Point(740, 188);
             this.btnUpdDom.Name = "btnUpdDom";
             this.btnUpdDom.Size = new System.Drawing.Size(28, 28);
             this.btnUpdDom.TabIndex = 91;
@@ -194,7 +190,7 @@
             this.btnSaveDom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSaveDom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveDom.Location = new System.Drawing.Point(672, 188);
+            this.btnSaveDom.Location = new System.Drawing.Point(706, 188);
             this.btnSaveDom.Name = "btnSaveDom";
             this.btnSaveDom.Size = new System.Drawing.Size(28, 28);
             this.btnSaveDom.TabIndex = 87;
@@ -212,17 +208,6 @@
             this.button1.TabIndex = 90;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnDel
-            // 
-            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
-            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDel.Location = new System.Drawing.Point(740, 188);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(28, 28);
-            this.btnDel.TabIndex = 83;
-            this.btnDel.UseVisualStyleBackColor = true;
             // 
             // txtNombreDom
             // 
@@ -255,6 +240,69 @@
             this.dgvDomicilio.TabIndex = 88;
             this.dgvDomicilio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDomicilio_CellContentClick);
             this.dgvDomicilio.SelectionChanged += new System.EventHandler(this.dgvDomicilio_SelectionChanged);
+            // 
+            // colIDDom
+            // 
+            this.colIDDom.HeaderText = "idDomicilio";
+            this.colIDDom.Name = "colIDDom";
+            this.colIDDom.ReadOnly = true;
+            this.colIDDom.Visible = false;
+            // 
+            // colCalle
+            // 
+            this.colCalle.HeaderText = "Calle";
+            this.colCalle.Name = "colCalle";
+            this.colCalle.ReadOnly = true;
+            // 
+            // colNumero
+            // 
+            this.colNumero.HeaderText = "Numero";
+            this.colNumero.Name = "colNumero";
+            this.colNumero.ReadOnly = true;
+            // 
+            // colPiso
+            // 
+            this.colPiso.HeaderText = "colPiso";
+            this.colPiso.Name = "colPiso";
+            this.colPiso.ReadOnly = true;
+            // 
+            // colDpto
+            // 
+            this.colDpto.HeaderText = "Dpto";
+            this.colDpto.Name = "colDpto";
+            this.colDpto.ReadOnly = true;
+            // 
+            // colCP
+            // 
+            this.colCP.HeaderText = "CP";
+            this.colCP.Name = "colCP";
+            this.colCP.ReadOnly = true;
+            // 
+            // colBarrio
+            // 
+            this.colBarrio.HeaderText = "Barrio";
+            this.colBarrio.Name = "colBarrio";
+            this.colBarrio.ReadOnly = true;
+            // 
+            // colLocalidad
+            // 
+            this.colLocalidad.HeaderText = "Localidad";
+            this.colLocalidad.Name = "colLocalidad";
+            this.colLocalidad.ReadOnly = true;
+            // 
+            // colProvincia
+            // 
+            this.colProvincia.HeaderText = "Provincia";
+            this.colProvincia.Name = "colProvincia";
+            this.colProvincia.ReadOnly = true;
+            // 
+            // colEstadoDom
+            // 
+            this.colEstadoDom.HeaderText = "Estado";
+            this.colEstadoDom.Name = "colEstadoDom";
+            this.colEstadoDom.ReadOnly = true;
+            this.colEstadoDom.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEstadoDom.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // groupBox2
             // 
@@ -621,7 +669,6 @@
             this.tabTelefonos.Controls.Add(this.label16);
             this.tabTelefonos.Controls.Add(this.btnSaveTel);
             this.tabTelefonos.Controls.Add(this.button7);
-            this.tabTelefonos.Controls.Add(this.btnDelTel);
             this.tabTelefonos.Controls.Add(this.txtNombreTel);
             this.tabTelefonos.Controls.Add(this.dgvTelefono);
             this.tabTelefonos.Controls.Add(this.groupBox1);
@@ -638,7 +685,7 @@
             this.btnUpdTel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdTel.BackgroundImage")));
             this.btnUpdTel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpdTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpdTel.Location = new System.Drawing.Point(706, 98);
+            this.btnUpdTel.Location = new System.Drawing.Point(740, 98);
             this.btnUpdTel.Name = "btnUpdTel";
             this.btnUpdTel.Size = new System.Drawing.Size(28, 28);
             this.btnUpdTel.TabIndex = 102;
@@ -663,7 +710,7 @@
             this.btnSaveTel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSaveTel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveTel.Location = new System.Drawing.Point(672, 98);
+            this.btnSaveTel.Location = new System.Drawing.Point(706, 98);
             this.btnSaveTel.Name = "btnSaveTel";
             this.btnSaveTel.Size = new System.Drawing.Size(28, 28);
             this.btnSaveTel.TabIndex = 98;
@@ -681,17 +728,6 @@
             this.button7.TabIndex = 101;
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // btnDelTel
-            // 
-            this.btnDelTel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelTel.BackgroundImage")));
-            this.btnDelTel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDelTel.Location = new System.Drawing.Point(740, 98);
-            this.btnDelTel.Name = "btnDelTel";
-            this.btnDelTel.Size = new System.Drawing.Size(28, 28);
-            this.btnDelTel.TabIndex = 94;
-            this.btnDelTel.UseVisualStyleBackColor = true;
             // 
             // txtNombreTel
             // 
@@ -871,7 +907,6 @@
             this.tabEmails.Controls.Add(this.label26);
             this.tabEmails.Controls.Add(this.label27);
             this.tabEmails.Controls.Add(this.btnSaveEmail);
-            this.tabEmails.Controls.Add(this.btnDelEmail);
             this.tabEmails.Controls.Add(this.cbRolALL);
             this.tabEmails.Controls.Add(this.button11);
             this.tabEmails.Controls.Add(this.txtNombreEmail);
@@ -891,7 +926,7 @@
             this.btnUpdEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdEmail.BackgroundImage")));
             this.btnUpdEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpdEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpdEmail.Location = new System.Drawing.Point(705, 99);
+            this.btnUpdEmail.Location = new System.Drawing.Point(739, 99);
             this.btnUpdEmail.Name = "btnUpdEmail";
             this.btnUpdEmail.Size = new System.Drawing.Size(28, 28);
             this.btnUpdEmail.TabIndex = 116;
@@ -941,23 +976,12 @@
             this.btnSaveEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnSaveEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveEmail.Location = new System.Drawing.Point(671, 99);
+            this.btnSaveEmail.Location = new System.Drawing.Point(705, 99);
             this.btnSaveEmail.Name = "btnSaveEmail";
             this.btnSaveEmail.Size = new System.Drawing.Size(28, 28);
             this.btnSaveEmail.TabIndex = 109;
             this.btnSaveEmail.UseVisualStyleBackColor = true;
             this.btnSaveEmail.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // btnDelEmail
-            // 
-            this.btnDelEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelEmail.BackgroundImage")));
-            this.btnDelEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDelEmail.Location = new System.Drawing.Point(739, 99);
-            this.btnDelEmail.Name = "btnDelEmail";
-            this.btnDelEmail.Size = new System.Drawing.Size(28, 28);
-            this.btnDelEmail.TabIndex = 105;
-            this.btnDelEmail.UseVisualStyleBackColor = true;
             // 
             // cbRolALL
             // 
@@ -1085,69 +1109,6 @@
             this.label29.TabIndex = 106;
             this.label29.Text = "Email";
             // 
-            // colIDDom
-            // 
-            this.colIDDom.HeaderText = "idDomicilio";
-            this.colIDDom.Name = "colIDDom";
-            this.colIDDom.ReadOnly = true;
-            this.colIDDom.Visible = false;
-            // 
-            // colCalle
-            // 
-            this.colCalle.HeaderText = "Calle";
-            this.colCalle.Name = "colCalle";
-            this.colCalle.ReadOnly = true;
-            // 
-            // colNumero
-            // 
-            this.colNumero.HeaderText = "Numero";
-            this.colNumero.Name = "colNumero";
-            this.colNumero.ReadOnly = true;
-            // 
-            // colPiso
-            // 
-            this.colPiso.HeaderText = "colPiso";
-            this.colPiso.Name = "colPiso";
-            this.colPiso.ReadOnly = true;
-            // 
-            // colDpto
-            // 
-            this.colDpto.HeaderText = "Dpto";
-            this.colDpto.Name = "colDpto";
-            this.colDpto.ReadOnly = true;
-            // 
-            // colCP
-            // 
-            this.colCP.HeaderText = "CP";
-            this.colCP.Name = "colCP";
-            this.colCP.ReadOnly = true;
-            // 
-            // colBarrio
-            // 
-            this.colBarrio.HeaderText = "Barrio";
-            this.colBarrio.Name = "colBarrio";
-            this.colBarrio.ReadOnly = true;
-            // 
-            // colLocalidad
-            // 
-            this.colLocalidad.HeaderText = "Localidad";
-            this.colLocalidad.Name = "colLocalidad";
-            this.colLocalidad.ReadOnly = true;
-            // 
-            // colProvincia
-            // 
-            this.colProvincia.HeaderText = "Provincia";
-            this.colProvincia.Name = "colProvincia";
-            this.colProvincia.ReadOnly = true;
-            // 
-            // colEstadoDom
-            // 
-            this.colEstadoDom.HeaderText = "Estado";
-            this.colEstadoDom.Name = "colEstadoDom";
-            this.colEstadoDom.ReadOnly = true;
-            this.colEstadoDom.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEstadoDom.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // formContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1185,7 +1146,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSaveDom;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnDel;
         public System.Windows.Forms.TextBox txtNombreDom;
         public System.Windows.Forms.DataGridView dgvDomicilio;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -1219,7 +1179,6 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnSaveTel;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button btnDelTel;
         public System.Windows.Forms.TextBox txtNombreTel;
         public System.Windows.Forms.DataGridView dgvTelefono;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -1239,7 +1198,6 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Button btnSaveEmail;
-        private System.Windows.Forms.Button btnDelEmail;
         public System.Windows.Forms.TabControl tabContacto;
         public System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.CheckBox cbEstadoEmail;

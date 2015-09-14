@@ -79,7 +79,6 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtRubro = new System.Windows.Forms.Label();
-            this.btnDel = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.tabListado = new System.Windows.Forms.TabPage();
@@ -91,6 +90,7 @@
             this.colStockActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button11 = new System.Windows.Forms.Button();
             this.tabInsumo.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -113,10 +113,10 @@
             // 
             // tabInformacion
             // 
+            this.tabInformacion.Controls.Add(this.button11);
             this.tabInformacion.Controls.Add(this.groupBox3);
             this.tabInformacion.Controls.Add(this.groupBox2);
             this.tabInformacion.Controls.Add(this.groupBox1);
-            this.tabInformacion.Controls.Add(this.btnDel);
             this.tabInformacion.Controls.Add(this.button1);
             this.tabInformacion.Controls.Add(this.btnEdit);
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
@@ -697,17 +697,6 @@
             this.txtRubro.TabIndex = 26;
             this.txtRubro.Text = "Rubro";
             // 
-            // btnDel
-            // 
-            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
-            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDel.Location = new System.Drawing.Point(740, 500);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(28, 28);
-            this.btnDel.TabIndex = 114;
-            this.btnDel.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
@@ -803,6 +792,18 @@
             this.colMarca.Name = "colMarca";
             this.colMarca.ReadOnly = true;
             // 
+            // button11
+            // 
+            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button11.Location = new System.Drawing.Point(740, 500);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(28, 28);
+            this.button11.TabIndex = 113;
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // formInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -874,7 +875,6 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label txtRubro;
-        private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Label label27;
@@ -890,5 +890,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colStockActual;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
+        private System.Windows.Forms.Button button11;
     }
 }
