@@ -41,7 +41,7 @@ namespace RamosHermanos.Capas.Interfaz
             cbTipoFactura.SelectedIndex = 0;
             cbformaPago.SelectedIndex = 0;
             dtpVencimiento.Value = System.DateTime.Today.AddDays(30);
-            
+
         }
 
         private void label1_MouseHover(object sender, EventArgs e)
@@ -110,22 +110,13 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //CargarFactura();
-            //FacturaB.InsertFactura(factura);
+            CargarFactura();
+            FacturaB.InsertFactura(factura);
 
             itemFactura.factura = txtnumFactura.Text;
+            CargarItemFactura();
+            itemsFacturaB.InsertItemFactura(itemFactura, dgvFactura);
 
-            foreach (DataGridViewRow row in dgvFactura.Rows)
-            {
-                itemFactura.producto = Convert.ToInt32(row.Cells["colCodigo"].Value);
-                itemFactura.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
-                itemFactura.precioUnitario = Convert.ToDouble(row.Cells["colPrecio"].Value);
-                //itemFactura.subTotal = Convert.ToDouble(row.Cells["colSubTotal"].Value);
-
-                //itemsFacturaB.InsertItemFactura2(dgvFactura);
-            }
-
-            
         }
 
         // Metodos
@@ -135,7 +126,7 @@ namespace RamosHermanos.Capas.Interfaz
         ClienteEntity cliente = new ClienteEntity();
         private void CargarCliente()
         {
-            cliente.idCliente = Convert.ToInt32(txtIDcliente.Text);           
+            cliente.idCliente = Convert.ToInt32(txtIDcliente.Text);
         }
 
         ProductoEntity producto = new ProductoEntity();
@@ -162,21 +153,53 @@ namespace RamosHermanos.Capas.Interfaz
         itemFacturaEntity itemFactura = new itemFacturaEntity();
         private void CargarItemFactura()
         {
-            //itemFactura.producto = dgvFactura.cells
+            DataGridViewRow row = new DataGridViewRow();
+
+            itemFactura.producto = Convert.ToInt32(row.Cells["colCodigo"].Value);
+            itemFactura.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
+            itemFactura.precioUnitario = Convert.ToDouble(row.Cells["colPrecio"].Value);
+            //itemFactura.subTotal = Convert.ToDouble(row.Cells["colSubTotal"].Value);
         }
 
         private void dgvFactura_MouseClick(object sender, MouseEventArgs e)
         {
+            
+        }
+
+
+
+        private void dgvFactura_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            // Se genera la variable para acumular los SubTotales.
+            double total = 0;
+
+            // Se recorre cada fila del DGV.
             foreach (DataGridViewRow row in dgvFactura.Rows)
             {
+
+                // Se ejecutan las operaciones solo si la columna cantidad y precio tienen algún valor, ya que de lo contrario nos dará un error.
                 if (row.Cells["colCantidad"].Value != string.Empty && row.Cells["colPrecio"].Value != string.Empty)
                 {
                     row.Cells["colSubTotal"].Value = Convert.ToInt32(row.Cells["colCantidad"].Value) * Convert.ToDouble(row.Cells["colPrecio"].Value);
+
+                    total += Convert.ToDouble(row.Cells["colSubTotal"].Value);                    
                 }
+
+                txtTotal.Text = Convert.ToString(total);
             }
         }
-        
-       
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dgvFactura.Rows.RemoveAt(dgvFactura.CurrentRow.Index);
+        }
+
+
 
     }
 }
