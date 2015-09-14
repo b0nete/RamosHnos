@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formInsumos));
-            this.tabListadoI = new System.Windows.Forms.TabControl();
+            this.tabInsumo = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtStockActual = new System.Windows.Forms.TextBox();
@@ -84,14 +84,14 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.tabListado = new System.Windows.Forms.TabPage();
             this.dgvinsumos = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabListadoI.SuspendLayout();
+            this.colidinsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStockActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabInsumo.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -100,16 +100,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvinsumos)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabListadoI
+            // tabInsumo
             // 
-            this.tabListadoI.Controls.Add(this.tabInformacion);
-            this.tabListadoI.Controls.Add(this.tabListado);
-            this.tabListadoI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabListadoI.Location = new System.Drawing.Point(0, 0);
-            this.tabListadoI.Name = "tabListadoI";
-            this.tabListadoI.SelectedIndex = 0;
-            this.tabListadoI.Size = new System.Drawing.Size(784, 561);
-            this.tabListadoI.TabIndex = 0;
+            this.tabInsumo.Controls.Add(this.tabInformacion);
+            this.tabInsumo.Controls.Add(this.tabListado);
+            this.tabInsumo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabInsumo.Location = new System.Drawing.Point(0, 0);
+            this.tabInsumo.Name = "tabInsumo";
+            this.tabInsumo.SelectedIndex = 0;
+            this.tabInsumo.Size = new System.Drawing.Size(784, 561);
+            this.tabInsumo.TabIndex = 0;
             // 
             // tabInformacion
             // 
@@ -126,6 +126,7 @@
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.UseVisualStyleBackColor = true;
+            this.tabInformacion.Click += new System.EventHandler(this.tabInformacion_Click);
             // 
             // groupBox3
             // 
@@ -453,6 +454,7 @@
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(261, 21);
             this.cbMarca.TabIndex = 102;
+            this.cbMarca.DropDown += new System.EventHandler(this.cbMarca_DropDown);
             this.cbMarca.SelectedIndexChanged += new System.EventHandler(this.cbMarca_SelectedIndexChanged);
             // 
             // label20
@@ -507,6 +509,8 @@
             this.cbProv.Name = "cbProv";
             this.cbProv.Size = new System.Drawing.Size(261, 21);
             this.cbProv.TabIndex = 94;
+            this.cbProv.DropDown += new System.EventHandler(this.cbProv_DropDown);
+            this.cbProv.SelectedIndexChanged += new System.EventHandler(this.cbProv_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -625,6 +629,7 @@
             this.cbRubro.Name = "cbRubro";
             this.cbRubro.Size = new System.Drawing.Size(261, 21);
             this.cbRubro.TabIndex = 54;
+            this.cbRubro.DropDown += new System.EventHandler(this.cbRubro_DropDown);
             // 
             // cbEstado
             // 
@@ -742,71 +747,72 @@
             this.dgvinsumos.AllowUserToDeleteRows = false;
             this.dgvinsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvinsumos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
+            this.colidinsumo,
+            this.colFechaAlta,
+            this.colProv,
+            this.colInsumo,
+            this.colStockActual,
+            this.colRubro,
+            this.colMarca});
             this.dgvinsumos.Location = new System.Drawing.Point(3, 3);
             this.dgvinsumos.Name = "dgvinsumos";
             this.dgvinsumos.ReadOnly = true;
             this.dgvinsumos.Size = new System.Drawing.Size(770, 529);
             this.dgvinsumos.TabIndex = 113;
+            this.dgvinsumos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvinsumos_MouseDoubleClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // colidinsumo
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "IDinsumo";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.colidinsumo.HeaderText = "IDinsumo";
+            this.colidinsumo.Name = "colidinsumo";
+            this.colidinsumo.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // colFechaAlta
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Fecha Alta";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.colFechaAlta.HeaderText = "Fecha Alta";
+            this.colFechaAlta.Name = "colFechaAlta";
+            this.colFechaAlta.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // colProv
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Proveedor";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.colProv.HeaderText = "Proveedor";
+            this.colProv.Name = "colProv";
+            this.colProv.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // colInsumo
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Insumo";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.colInsumo.HeaderText = "Insumo";
+            this.colInsumo.Name = "colInsumo";
+            this.colInsumo.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn5
+            // colStockActual
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Stock Actual";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.colStockActual.HeaderText = "Stock Actual";
+            this.colStockActual.Name = "colStockActual";
+            this.colStockActual.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn6
+            // colRubro
             // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Rubro";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.colRubro.HeaderText = "Rubro";
+            this.colRubro.Name = "colRubro";
+            this.colRubro.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn7
+            // colMarca
             // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Marca";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.colMarca.HeaderText = "Marca";
+            this.colMarca.Name = "colMarca";
+            this.colMarca.ReadOnly = true;
             // 
             // formInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.tabListadoI);
+            this.Controls.Add(this.tabInsumo);
             this.Name = "formInsumos";
             this.Text = "Insumos";
             this.Load += new System.EventHandler(this.formInsumos_Load);
-            this.tabListadoI.ResumeLayout(false);
+            this.tabInsumo.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -822,7 +828,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabListadoI;
+        private System.Windows.Forms.TabControl tabInsumo;
         private System.Windows.Forms.TabPage tabInformacion;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtStockActual;
@@ -876,13 +882,13 @@
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.TabPage tabListado;
         private System.Windows.Forms.DataGridView dgvinsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.TextBox txtInsumo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colidinsumo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInsumo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStockActual;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
     }
 }

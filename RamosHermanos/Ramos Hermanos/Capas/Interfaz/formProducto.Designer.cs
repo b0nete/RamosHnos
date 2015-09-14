@@ -404,6 +404,7 @@
             this.cbMedida.Name = "cbMedida";
             this.cbMedida.Size = new System.Drawing.Size(71, 21);
             this.cbMedida.TabIndex = 110;
+            this.cbMedida.DropDown += new System.EventHandler(this.cbMedida_DropDown);
             // 
             // label3
             // 

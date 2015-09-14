@@ -30,6 +30,7 @@ namespace RamosHermanos.Capas.Interfaz
           insumo.proveedor = Convert.ToInt32(cbProv.SelectedValue);
           insumo.rubro = Convert.ToString(cbRubro.SelectedValue);
           insumo.stockMin = Convert.ToString(txtStockMin.Text);
+          
                 
         }
 
@@ -51,7 +52,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (txtInsumo.Text == string.Empty)
             {
-                tabListadoI.SelectedTab = tabListado;
+                tabInsumo.SelectedTab = tabListado;
                 return;
             
             }
@@ -67,14 +68,14 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 InsumoB.BuscarInsumos(insumo);
                 txtidInsumo.Text = Convert.ToString(insumo.idInsumo);
-                insumo.estado = cbEstado.Checked;
-                insumo.descripcion = txtDescripcion.Text;
-                insumo.fecha = dtpFecha.Value;
-                insumo.insumo = txtInsumo.Text;
-                insumo.marca = cbMarca.Text;
-                insumo.proveedor = Convert.ToInt32(cbProv.SelectedValue);
-                insumo.rubro = Convert.ToString(txtRubro.Text);
-                insumo.stockMin =Convert.ToString(txtStockMin.Text);
+                cbEstado.Checked = insumo.estado;
+                txtDescripcion.Text = insumo.descripcion;
+                dtpFecha.Value = insumo.fecha;
+                txtInsumo.Text = insumo.insumo;
+                cbMarca.Text = insumo.marca;
+                cbProv.SelectedValue = insumo.proveedor;
+                txtRubro.Text = insumo.rubro;
+                txtStockMin.Text = insumo.stockMin;
 
                }
                 
@@ -156,7 +157,9 @@ namespace RamosHermanos.Capas.Interfaz
                     else
                     {
                         InsumoB.InsertInsumo(insumo, txtidInsumo);
-                        
+                        cargarCosto(txtidInsumo);
+                        CostoB.InsertCosto(costo);
+                        InsumoB.cargardgvInsumo(dgvinsumos);
                     }
                 }
             }
@@ -165,6 +168,15 @@ namespace RamosHermanos.Capas.Interfaz
                         
             
         }
+
+        CostoEntity costo = new CostoEntity();
+        private void cargarCosto(TextBox txt)
+        {
+            costo.insumo = Convert.ToInt32(txt.Text);
+            costo.costo = Convert.ToDouble(txtCostoAct.Text);
+            costo.fechaActualizacion = dtpFechaActualizacion.Value;
+        }
+        
 
         private void cbEstado_CheckedChanged(object sender, EventArgs e)
         {
@@ -254,7 +266,70 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
+        private void SeleccionarDGV()
+        {
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvinsumos.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+
+                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+                insumo.insumo =Convert.ToString(row.Cells["colInsumo"].Value);
+                
+                InsumoB.BuscarInsumos(insumo);
+               // insumo.idInsumo = Convert.ToInt32(txtidInsumo.Text);
+                dtpFecha.Value = insumo.fecha;
+                cbProv.SelectedValue = insumo.proveedor;
+                txtInsumo.Text = insumo.insumo;
+                txtRubro.Text = insumo.rubro;
+                cbMarca.Text = insumo.marca;
+
+                tabInsumo.SelectedTab = tabInformacion;
+             
+
+            }
+        }
+
         private void cbMarca_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvinsumos_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            SeleccionarDGV();
+        }
+
+        private void cbProv_DropDown(object sender, EventArgs e)
+        {
+            ProveedorB.CargarProv(cbProv);
+           
+        }
+
+        private void cbProv_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbRubro_DropDown(object sender, EventArgs e)
+        {
+            
+            RubroB.CargarRubro(cbRubro);
+            
+        }
+
+        private void cbMarca_DropDown(object sender, EventArgs e)
+        {
+            MarcaB.CargarCB(cbMarca);
+            
+        }
+
+        private void tabInformacion_Click(object sender, EventArgs e)
         {
 
         }

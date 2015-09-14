@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RamosHnos.Capas.Entidades
+namespace RamosHermanos.Capas.Entidades
 {
-    class CostoInsumoEntity
+    class CostoEntity
     {
         public int idCostoInsumo { get; set; }
         public int insumo { get; set; }

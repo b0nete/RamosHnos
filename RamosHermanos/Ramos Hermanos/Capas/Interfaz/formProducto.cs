@@ -273,6 +273,11 @@ namespace RamosHermanos.Capas.Interfaz
             precio.precio = Convert.ToDouble(txtPrecioActual.Text);
         }
 
+        private void cbMedida_DropDown(object sender, EventArgs e)
+        {
+            MedidaB.CargarCB(cbMedida);
+        }
+
 
         
 

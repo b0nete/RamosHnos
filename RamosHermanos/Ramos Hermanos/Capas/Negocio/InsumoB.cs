@@ -70,9 +70,9 @@ namespace RamosHermanos.Capas.Negocio
                     insumo.fecha = Convert.ToDateTime(row["fecha"]);
                     insumo.insumo = Convert.ToString(row["insumo"]);
                     insumo.marca = Convert.ToString(row["marca"]);
-                    insumo.proveedor = Convert.ToInt32(row["idInsumo"]);
-                    insumo.rubro = Convert.ToString(row["idInsumo"]);
-                    insumo.stockMin = Convert.ToString(row["idInsumo"]);
+                    insumo.proveedor = Convert.ToInt32(row["proveedor"]);
+                    insumo.rubro = Convert.ToString(row["rubro"]);
+                    insumo.stockMin = Convert.ToString(row["stockMin"]);
                     
                     MySQL.DisconnectDB();
                 }
@@ -193,8 +193,12 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"Select I.idInsumo , I.insumo , I.fecha , I.proveedor ,I.StockMin, I.rubro, I.marca
-                                FROM insumos I";
+                string query = @"Select I.idInsumo , I.insumo , I.fecha , P.razonSocial ,I.StockMin, R.rubro, I.marca
+                                FROM insumos I
+                                INNER JOIN proveedores P ON I.proveedor = P.idProveedor
+                                INNER JOIN rubros R on I.rubro = R.idRubro ";
+                                
+;
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -205,7 +209,7 @@ namespace RamosHermanos.Capas.Negocio
                     dgv.Rows.Add(
                     Convert.ToString(dr["idInsumo"]),
                     Convert.ToString(dr["fecha"]),
-                    Convert.ToString(dr["proveedor"]),
+                    Convert.ToString(dr["razonSocial"]),
                     Convert.ToString(dr["insumo"]),                   
                     Convert.ToString(dr["stockMin"]),
                     Convert.ToString(dr["rubro"]),
