@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formFactura));
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabFactura = new System.Windows.Forms.TabPage();
@@ -105,9 +104,6 @@
             this.tabImpresion = new System.Windows.Forms.TabPage();
             this.crvImpresion = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.dsFactura = new RamosHermanos.Capas.Reportes.dsFactura();
-            this.dsFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dtItemFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dtItemFacturaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabMain.SuspendLayout();
             this.tabFactura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
@@ -120,9 +116,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabImpresion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsFactura)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFacturaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtItemFacturaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtItemFacturaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMain
@@ -135,7 +128,7 @@
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(784, 811);
+            this.tabMain.Size = new System.Drawing.Size(784, 729);
             this.tabMain.TabIndex = 0;
             this.tabMain.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tabMain_MouseDoubleClick);
             // 
@@ -160,7 +153,7 @@
             this.tabFactura.Location = new System.Drawing.Point(4, 22);
             this.tabFactura.Name = "tabFactura";
             this.tabFactura.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFactura.Size = new System.Drawing.Size(776, 785);
+            this.tabFactura.Size = new System.Drawing.Size(776, 703);
             this.tabFactura.TabIndex = 1;
             this.tabFactura.Text = "Factura";
             this.tabFactura.UseVisualStyleBackColor = true;
@@ -171,7 +164,7 @@
             this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(638, 751);
+            this.btnPrint.Location = new System.Drawing.Point(638, 667);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(28, 28);
             this.btnPrint.TabIndex = 92;
@@ -187,7 +180,7 @@
             "PENDIENTE",
             "ANULADO",
             "PAGADO"});
-            this.cbEstado.Location = new System.Drawing.Point(639, 682);
+            this.cbEstado.Location = new System.Drawing.Point(639, 598);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(129, 21);
             this.cbEstado.TabIndex = 90;
@@ -196,7 +189,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(599, 685);
+            this.label12.Location = new System.Drawing.Point(599, 601);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(40, 13);
             this.label12.TabIndex = 91;
@@ -231,7 +224,7 @@
             // txtObservaciones
             // 
             this.txtObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtObservaciones.Location = new System.Drawing.Point(8, 672);
+            this.txtObservaciones.Location = new System.Drawing.Point(8, 588);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
             this.txtObservaciones.Size = new System.Drawing.Size(573, 78);
@@ -241,7 +234,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 656);
+            this.label9.Location = new System.Drawing.Point(9, 572);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 13);
             this.label9.TabIndex = 85;
@@ -250,7 +243,7 @@
             // txtTotal
             // 
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(639, 656);
+            this.txtTotal.Location = new System.Drawing.Point(639, 572);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(129, 20);
             this.txtTotal.TabIndex = 81;
@@ -259,7 +252,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(597, 659);
+            this.label2.Location = new System.Drawing.Point(597, 575);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 80;
@@ -270,7 +263,7 @@
             this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
             this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(672, 751);
+            this.btnClean.Location = new System.Drawing.Point(672, 667);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
             this.btnClean.TabIndex = 84;
@@ -281,7 +274,7 @@
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(740, 751);
+            this.button4.Location = new System.Drawing.Point(740, 667);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 83;
@@ -292,7 +285,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(706, 751);
+            this.btnSave.Location = new System.Drawing.Point(706, 667);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 82;
@@ -312,7 +305,7 @@
             this.colSubTotal});
             this.dgvFactura.Location = new System.Drawing.Point(8, 250);
             this.dgvFactura.Name = "dgvFactura";
-            this.dgvFactura.Size = new System.Drawing.Size(760, 400);
+            this.dgvFactura.Size = new System.Drawing.Size(760, 316);
             this.dgvFactura.TabIndex = 79;
             this.dgvFactura.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvFactura_CellStateChanged);
             this.dgvFactura.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactura_CellValueChanged);
@@ -651,7 +644,7 @@
             this.tabProductos.Controls.Add(this.dgvProducto);
             this.tabProductos.Location = new System.Drawing.Point(4, 22);
             this.tabProductos.Name = "tabProductos";
-            this.tabProductos.Size = new System.Drawing.Size(776, 785);
+            this.tabProductos.Size = new System.Drawing.Size(776, 703);
             this.tabProductos.TabIndex = 2;
             this.tabProductos.Text = "Productos";
             this.tabProductos.UseVisualStyleBackColor = true;
@@ -674,7 +667,7 @@
             this.dgvProducto.Location = new System.Drawing.Point(0, 0);
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.ReadOnly = true;
-            this.dgvProducto.Size = new System.Drawing.Size(776, 785);
+            this.dgvProducto.Size = new System.Drawing.Size(776, 703);
             this.dgvProducto.TabIndex = 53;
             this.dgvProducto.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvProducto_MouseDoubleClick);
             // 
@@ -732,7 +725,7 @@
             this.tabClientes.Controls.Add(this.dgvCliente);
             this.tabClientes.Location = new System.Drawing.Point(4, 22);
             this.tabClientes.Name = "tabClientes";
-            this.tabClientes.Size = new System.Drawing.Size(776, 785);
+            this.tabClientes.Size = new System.Drawing.Size(776, 703);
             this.tabClientes.TabIndex = 3;
             this.tabClientes.Text = "Clientes";
             this.tabClientes.UseVisualStyleBackColor = true;
@@ -760,7 +753,7 @@
             this.dgvCliente.Location = new System.Drawing.Point(0, 0);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
-            this.dgvCliente.Size = new System.Drawing.Size(776, 785);
+            this.dgvCliente.Size = new System.Drawing.Size(776, 703);
             this.dgvCliente.TabIndex = 2;
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
             this.dgvCliente.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCliente_MouseDoubleClick);
@@ -850,7 +843,7 @@
             this.tabImpresion.Controls.Add(this.crvImpresion);
             this.tabImpresion.Location = new System.Drawing.Point(4, 22);
             this.tabImpresion.Name = "tabImpresion";
-            this.tabImpresion.Size = new System.Drawing.Size(776, 785);
+            this.tabImpresion.Size = new System.Drawing.Size(776, 703);
             this.tabImpresion.TabIndex = 4;
             this.tabImpresion.Text = "Impresion";
             this.tabImpresion.UseVisualStyleBackColor = true;
@@ -863,7 +856,7 @@
             this.crvImpresion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crvImpresion.Location = new System.Drawing.Point(0, 0);
             this.crvImpresion.Name = "crvImpresion";
-            this.crvImpresion.Size = new System.Drawing.Size(776, 785);
+            this.crvImpresion.Size = new System.Drawing.Size(776, 703);
             this.crvImpresion.TabIndex = 0;
             this.crvImpresion.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -872,26 +865,11 @@
             this.dsFactura.DataSetName = "dsFactura";
             this.dsFactura.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dsFacturaBindingSource
-            // 
-            this.dsFacturaBindingSource.DataSource = this.dsFactura;
-            this.dsFacturaBindingSource.Position = 0;
-            // 
-            // dtItemFacturaBindingSource
-            // 
-            this.dtItemFacturaBindingSource.DataMember = "dtItemFactura";
-            this.dtItemFacturaBindingSource.DataSource = this.dsFactura;
-            // 
-            // dtItemFacturaBindingSource1
-            // 
-            this.dtItemFacturaBindingSource1.DataMember = "dtItemFactura";
-            this.dtItemFacturaBindingSource1.DataSource = this.dsFacturaBindingSource;
-            // 
             // formFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 811);
+            this.ClientSize = new System.Drawing.Size(784, 729);
             this.Controls.Add(this.tabMain);
             this.Name = "formFactura";
             this.Text = "Factura";
@@ -912,7 +890,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.tabImpresion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dsFactura)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFacturaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -994,9 +971,6 @@
         private System.Windows.Forms.Button btnPrint;
         private Reportes.dsFactura dsFactura;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crvImpresion;
-        private System.Windows.Forms.BindingSource dsFacturaBindingSource;
-        private System.Windows.Forms.BindingSource dtItemFacturaBindingSource;
-        private System.Windows.Forms.BindingSource dtItemFacturaBindingSource1;
 
     }
 }
