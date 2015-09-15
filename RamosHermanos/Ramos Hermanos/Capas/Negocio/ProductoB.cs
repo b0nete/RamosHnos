@@ -251,9 +251,9 @@ namespace RamosHermanos.Capas.Negocio
                     dgv.Rows.Add(
                     Convert.ToString(dr["idProducto"]),
                     Convert.ToString(dr["producto"]),
-                    Convert.ToString(""),
+                    Convert.ToString(null),
                     Convert.ToString(dr["precio"]),
-                    Convert.ToString(""));
+                    Convert.ToString(null));
                 }
 
                 dr.Close();
