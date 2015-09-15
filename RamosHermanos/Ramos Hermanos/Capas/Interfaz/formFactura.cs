@@ -7,8 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using CrystalDecisions.CrystalReports.Engine;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Reportes;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -42,7 +45,6 @@ namespace RamosHermanos.Capas.Interfaz
             cbformaPago.SelectedIndex = 0;
             dtpVencimiento.Value = System.DateTime.Today.AddDays(30);
             cbEstado.SelectedIndex = 2;
-
         }
 
         private void label1_MouseHover(object sender, EventArgs e)
@@ -210,6 +212,55 @@ namespace RamosHermanos.Capas.Interfaz
         private void btnSearch_Click(object sender, EventArgs e)
         {
             tabMain.SelectedTab = tabClientes;
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
+            string rep = @"\Capas\Reportes\crFactura.rpt";
+
+            dsFactura ds = new dsFactura();
+            //Cargamos DetalleFactura al DS.
+            ds.Tables[1].Rows.Add
+                (
+                txtnumFactura.Text
+                //dgvFactura[0, 1].Value.ToString(),
+                //dgvFactura[0, 2].Value.ToString(),
+                //dgvFactura[0, 3].Value.ToString(),
+                //dgvFactura[0, 4].Value.ToString(),
+                //dgvFactura[0, 5].Value.ToString(),
+                //dgvFactura[0, 6].Value.ToString(),
+                //dgvFactura[0, 7].Value.ToString(),
+                //dgvFactura[0, 8].Value.ToString(),
+                //dgvFactura[0, 9].Value.ToString(),
+                //dgvFactura[0, 10].Value.ToString()
+                );
+
+
+
+            //Cargamos ItemsFactura al DS.
+            int rows = dgvFactura.Rows.Count;
+
+            for (int i = 0; i <= rows - 1; i++)
+            {
+                ds.Tables[0].Rows.Add
+                (
+                new object[]
+                {
+                    dgvFactura[0,i].Value.ToString(),
+                    dgvFactura[1,i].Value.ToString(),
+                    dgvFactura[2,i].Value.ToString(),
+                    dgvFactura[3,i].Value.ToString(),
+                    dgvFactura[4,i].Value.ToString(),
+                }
+                );
+
+                ReportDocument rd = new ReportDocument();
+                rd.Load(ruta + rep);
+                //rd.Load("C:/Users/b0nete/Documents/GitHub/RamosHnos/RamosHermanos/Ramos Hermanos/Capas/Reportes/crFactura.rpt");
+                rd.SetDataSource(ds);
+                crvImpresion.ReportSource = rd;
+            }     
         }
 
 

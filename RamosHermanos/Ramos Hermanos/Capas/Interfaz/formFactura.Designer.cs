@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formFactura));
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabFactura = new System.Windows.Forms.TabPage();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
@@ -63,6 +65,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cbformaPago = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtIVA = new System.Windows.Forms.TextBox();
@@ -99,7 +102,12 @@
             this.colCondicionIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbDomicilio = new System.Windows.Forms.ComboBox();
+            this.tabImpresion = new System.Windows.Forms.TabPage();
+            this.crvImpresion = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.dsFactura = new RamosHermanos.Capas.Reportes.dsFactura();
+            this.dsFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtItemFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtItemFacturaBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabMain.SuspendLayout();
             this.tabFactura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
@@ -110,6 +118,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.tabClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
+            this.tabImpresion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFactura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFacturaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtItemFacturaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtItemFacturaBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMain
@@ -117,6 +130,7 @@
             this.tabMain.Controls.Add(this.tabFactura);
             this.tabMain.Controls.Add(this.tabProductos);
             this.tabMain.Controls.Add(this.tabClientes);
+            this.tabMain.Controls.Add(this.tabImpresion);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
@@ -127,6 +141,7 @@
             // 
             // tabFactura
             // 
+            this.tabFactura.Controls.Add(this.btnPrint);
             this.tabFactura.Controls.Add(this.cbEstado);
             this.tabFactura.Controls.Add(this.label12);
             this.tabFactura.Controls.Add(this.button3);
@@ -150,6 +165,18 @@
             this.tabFactura.Text = "Factura";
             this.tabFactura.UseVisualStyleBackColor = true;
             this.tabFactura.Click += new System.EventHandler(this.tabFactura_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
+            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(638, 751);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(28, 28);
+            this.btnPrint.TabIndex = 92;
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // cbEstado
             // 
@@ -498,6 +525,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles";
             // 
+            // cbDomicilio
+            // 
+            this.cbDomicilio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDomicilio.FormattingEnabled = true;
+            this.cbDomicilio.Items.AddRange(new object[] {
+            "C",
+            "E",
+            "X"});
+            this.cbDomicilio.Location = new System.Drawing.Point(75, 69);
+            this.cbDomicilio.Name = "cbDomicilio";
+            this.cbDomicilio.Size = new System.Drawing.Size(331, 21);
+            this.cbDomicilio.TabIndex = 10;
+            // 
             // txtNombre
             // 
             this.txtNombre.Enabled = false;
@@ -804,19 +845,47 @@
             this.coltipoCliente.Name = "coltipoCliente";
             this.coltipoCliente.ReadOnly = true;
             // 
-            // cbDomicilio
+            // tabImpresion
             // 
-            this.cbDomicilio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDomicilio.FormattingEnabled = true;
-            this.cbDomicilio.Items.AddRange(new object[] {
-            "C",
-            "E",
-            "X"});
-            this.cbDomicilio.Location = new System.Drawing.Point(75, 69);
-            this.cbDomicilio.Name = "cbDomicilio";
-            this.cbDomicilio.Size = new System.Drawing.Size(331, 21);
-            this.cbDomicilio.TabIndex = 10;
+            this.tabImpresion.Controls.Add(this.crvImpresion);
+            this.tabImpresion.Location = new System.Drawing.Point(4, 22);
+            this.tabImpresion.Name = "tabImpresion";
+            this.tabImpresion.Size = new System.Drawing.Size(776, 785);
+            this.tabImpresion.TabIndex = 4;
+            this.tabImpresion.Text = "Impresion";
+            this.tabImpresion.UseVisualStyleBackColor = true;
+            // 
+            // crvImpresion
+            // 
+            this.crvImpresion.ActiveViewIndex = -1;
+            this.crvImpresion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crvImpresion.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crvImpresion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crvImpresion.Location = new System.Drawing.Point(0, 0);
+            this.crvImpresion.Name = "crvImpresion";
+            this.crvImpresion.Size = new System.Drawing.Size(776, 785);
+            this.crvImpresion.TabIndex = 0;
+            this.crvImpresion.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
+            // dsFactura
+            // 
+            this.dsFactura.DataSetName = "dsFactura";
+            this.dsFactura.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dsFacturaBindingSource
+            // 
+            this.dsFacturaBindingSource.DataSource = this.dsFactura;
+            this.dsFacturaBindingSource.Position = 0;
+            // 
+            // dtItemFacturaBindingSource
+            // 
+            this.dtItemFacturaBindingSource.DataMember = "dtItemFactura";
+            this.dtItemFacturaBindingSource.DataSource = this.dsFactura;
+            // 
+            // dtItemFacturaBindingSource1
+            // 
+            this.dtItemFacturaBindingSource1.DataMember = "dtItemFactura";
+            this.dtItemFacturaBindingSource1.DataSource = this.dsFacturaBindingSource;
             // 
             // formFactura
             // 
@@ -841,6 +910,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             this.tabClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
+            this.tabImpresion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dsFactura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFacturaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -918,6 +990,13 @@
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbDomicilio;
+        private System.Windows.Forms.TabPage tabImpresion;
+        private System.Windows.Forms.Button btnPrint;
+        private Reportes.dsFactura dsFactura;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crvImpresion;
+        private System.Windows.Forms.BindingSource dsFacturaBindingSource;
+        private System.Windows.Forms.BindingSource dtItemFacturaBindingSource;
+        private System.Windows.Forms.BindingSource dtItemFacturaBindingSource1;
 
     }
 }
