@@ -133,6 +133,25 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
+        private void dNIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void personaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCliente frm = new formCliente();
+            frm.caseSwitch = 1;
+            frm.Show();
+        }
+
+        private void personaJurídicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCliente frm = new formCliente();
+            frm.caseSwitch = 2;
+            frm.Show();
+        }
+
        
        
        

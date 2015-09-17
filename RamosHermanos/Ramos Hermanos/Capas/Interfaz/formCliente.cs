@@ -21,15 +21,17 @@ namespace RamosHermanos.Capas.Interfaz
 
         // Eventos
 
+        public int caseSwitch = 0;
+
         private void formCliente_Load(object sender, EventArgs e)
         {
             //Tabs Inutilizados.
-            tabMain.Controls.Remove(tabMovimientos);
             tabMain.Controls.Remove(tabAdicional);
             tabMain.Controls.Remove(tabFamilia);
+            tabMain.Controls.Remove(tabSugerencias);
 
             // Casos de Inicio.
-            int caseSwitch = 0;
+            
             switch (caseSwitch)
             {
                 case 1:
