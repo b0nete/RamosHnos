@@ -23,6 +23,29 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formCliente_Load(object sender, EventArgs e)
         {
+            //Tabs Inutilizados.
+            tabMain.Controls.Remove(tabMovimientos);
+            tabMain.Controls.Remove(tabAdicional);
+            tabMain.Controls.Remove(tabFamilia);
+
+            // Casos de Inicio.
+            int caseSwitch = 0;
+            switch (caseSwitch)
+            {
+                case 1:
+                    tabMain.Controls.Remove(tabInformacionJ);
+                    tabMain.Controls.Remove(tabListado);
+                    break;
+                case 2:
+                    tabMain.Controls.Remove(tabInformacion);
+                    tabMain.Controls.Remove(tabListado);
+                    break;
+                default:
+                    Console.WriteLine("Default case");
+                    break;
+            }
+
+            //Cargar ComboBoxs.
             ClienteB.CargarDGV(dgvCliente);
             tipoDocB.CargarTipoDoc(cbTipoDoc);
             tipoClienteB.CargarTipoCliente(cbTipoCliente);
@@ -46,8 +69,7 @@ namespace RamosHermanos.Capas.Interfaz
 
             CheckColor();
 
-            //Ocultar Tabs
-            tabMain.Controls.Remove(tabMovimientos);
+            
         }
 
         private void gbCliente_Enter(object sender, EventArgs e)

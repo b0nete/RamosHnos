@@ -25,49 +25,49 @@ namespace RamosHermanos.Capas.Interfaz
         {
             formProveedor frm = new formProveedor();
 
-            if (frm.txtRazonSocial.Text == "")
-            {
-                tabProveedor.Controls.Add(tabListado);
-                tabProveedor.Controls.Remove(tabInformacion);
-                tabProveedor.Controls.Remove(tabAdicional);
-                tabProveedor.Controls.Remove(tabMovimientos);
-                tabProveedor.Controls.Remove(tabPedido);
-                tabProveedor.SelectedTab = tabListado;
-                return;
+            //if (frm.txtRazonSocial.Text == "")
+            //{
+            //    tabProveedor.Controls.Add(tabListado);
+            //    tabProveedor.Controls.Remove(tabInformacion);
+            //    tabProveedor.Controls.Remove(tabAdicional);
+            //    tabProveedor.Controls.Remove(tabMovimientos);
+            //    tabProveedor.Controls.Remove(tabPedido);
+            //    tabProveedor.SelectedTab = tabListado;
+            //    return;
 
-            }
+            //}
 
-            cargarProv();
+            //cargarProv();
 
-            if (ProveedorB.ExisteProveedor(proveedor) == false)
-            {
-                MessageBox.Show("El proveedor no existe");
-                return;
-            }
+            //if (ProveedorB.ExisteProveedor(proveedor) == false)
+            //{
+            //    MessageBox.Show("El proveedor no existe");
+            //    return;
+            //}
 
-            else
-            {
-                ProveedorB.BuscarProvRazonsocial(proveedor);
-                txtidprov.Text = Convert.ToString(proveedor.idProveedor);
-                txtRazonSocial.Text = proveedor.razsocial;
-                txtcuit.Text = proveedor.cuit;
-                txtDebmax.Text = Convert.ToString(proveedor.debMAX);
-                dtpFechaAlta.Value = proveedor.fecha;
-                cbIVA.SelectedValue = proveedor.condicioniva;
+            //else
+            //{
+            //    ProveedorB.BuscarProvRazonsocial(proveedor);
+            //    txtidprov.Text = Convert.ToString(proveedor.idProveedor);
+            //    txtRazonSocial.Text = proveedor.razsocial;
+            //    txtcuit.Text = proveedor.cuit;
+            //    txtDebmax.Text = Convert.ToString(proveedor.debMAX);
+            //    dtpFechaAlta.Value = proveedor.fecha;
+            //    cbIVA.SelectedValue = proveedor.condicioniva;
 
-                //Cargar Saldos
+            //    //Cargar Saldos
 
-                cargarSaldo(txtidprov);
-                SaldoB.BuscarSaldo(saldo);
-                txtDebmax.Text = Convert.ToString(saldo.creditoMax);
-                //txtSaldoActual.Text = Convert.ToString(saldo.saldoActual);
+            //    cargarSaldo(txtidprov);
+            //    SaldoB.BuscarSaldo(saldo);
+            //    txtDebmax.Text = Convert.ToString(saldo.creditoMax);
+            //    //txtSaldoActual.Text = Convert.ToString(saldo.saldoActual);
 
 
-                EmailB.CargarTXT(txtEmail, txtidprov, 2);
-                DomicilioB.CargarTXT(txtDomicilio, txtidprov, 2);
-                TelefonoB.CargarTXT(txtTel, txtidprov, 2);
+            //    EmailB.CargarTXT(txtEmail, txtidprov, 2);
+            //    DomicilioB.CargarTXT(txtDomicilio, txtidprov, 2);
+            //    TelefonoB.CargarTXT(txtTel, txtidprov, 2);
 
-            }
+            //}
         }
     }
 }
