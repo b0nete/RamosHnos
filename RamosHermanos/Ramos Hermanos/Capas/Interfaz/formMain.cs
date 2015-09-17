@@ -25,8 +25,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formCliente frm = new formCliente();
-            frm.Show();
+
         }
 
         private void rolesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,6 +112,12 @@ namespace RamosHermanos.Capas.Interfaz
         private void insumosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formInsumos frm = new formInsumos();
+            frm.Show();
+        }
+
+        private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCliente frm = new formCliente();
             frm.Show();
         }
         

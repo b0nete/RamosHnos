@@ -127,11 +127,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
 
                 int resultado = Convert.ToInt32(cmd.ExecuteScalar());
-                if (resultado == 0)
-                {
-                    MessageBox.Show("El Cliente no existe!");
-                }
-                else
+                if (resultado != 0)
                 {
                     DataTable dt = new DataTable();
                     MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -139,7 +135,7 @@ namespace RamosHermanos.Capas.Negocio
                     da.Fill(dt);
 
                     DataRow row = dt.Rows[0];
-                    
+
                     cliente.idCliente = Convert.ToInt32(row["idCliente"]);
                     cliente.fechaAlta = Convert.ToDateTime(row["fechaAlta"]);
                     cliente.tipoDoc = Convert.ToInt32(row["tipoDoc"]);
@@ -149,11 +145,12 @@ namespace RamosHermanos.Capas.Negocio
                     cliente.nombre = Convert.ToString(row["nombre"]);
                     cliente.estadoCivil = Convert.ToString(row["estadoCivil"]);
                     cliente.condicionIVA = Convert.ToString(row["condicionIVA"]);
-                    cliente.tipoCliente = Convert.ToInt32(row["tipoCliente"]);  
+                    cliente.tipoCliente = Convert.ToInt32(row["tipoCliente"]);
                     cliente.estado = Convert.ToBoolean(row["estado"]);
 
                     MySQL.DisconnectDB();
                 }
+
                 return cliente;
             }
 
