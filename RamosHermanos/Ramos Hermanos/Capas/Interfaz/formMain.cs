@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using RamosHermanos.Capas.Entidades;
 
+
 namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formMain : Form
@@ -57,8 +58,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formProveedor frm = new formProveedor();
-            frm.Show();
+            ;
 
         }
 
@@ -119,6 +119,23 @@ namespace RamosHermanos.Capas.Interfaz
         {
             formCliente frm = new formCliente();
             frm.Show();
+        }
+
+        private void nºProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registrarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            formProveedor frm = new formProveedor();
+            frm.Show();
+        }
+
+        private void buscarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+                    
+
         }
         
        

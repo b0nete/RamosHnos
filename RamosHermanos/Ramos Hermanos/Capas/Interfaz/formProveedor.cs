@@ -24,9 +24,10 @@ namespace RamosHermanos.Capas.Interfaz
         {
             cbIVA.SelectedIndex = 0;
             RubroB.CargarDGVproveedor(dgvRubro);
+            tabProveedor.Controls.Remove(tabListado);
             ProveedorB.cargardgv(dgvProveedor);
             CheckColor();
-            
+                        
         }
 
         ProveedorEntity proveedor = new ProveedorEntity();
@@ -126,7 +127,11 @@ namespace RamosHermanos.Capas.Interfaz
 
             if (txtRazonSocial.Text == "")
             {
-
+                tabProveedor.Controls.Add(tabListado);
+                tabProveedor.Controls.Remove(tabInformacion);
+                tabProveedor.Controls.Remove(tabAdicional);
+                tabProveedor.Controls.Remove(tabMovimientos);
+                tabProveedor.Controls.Remove(tabPedido);
                 tabProveedor.SelectedTab = tabListado;
                 return;
 
@@ -258,8 +263,12 @@ namespace RamosHermanos.Capas.Interfaz
                 EmailB.CargarTXT(txtEmail, txtidprov, 2);
                 TelefonoB.CargarTXT(txtTel, txtidprov, 2);
 
-
-
+                tabProveedor.Controls.Remove(tabListado);
+                tabProveedor.Controls.Add(tabInformacion);
+                tabProveedor.Controls.Add(tabAdicional);
+                tabProveedor.Controls.Add(tabMovimientos);
+                tabProveedor.Controls.Add(tabPedido);               
+                
                 tabProveedor.SelectedTab = tabInformacion;
 
             }
@@ -328,10 +337,7 @@ namespace RamosHermanos.Capas.Interfaz
             SeleccionarDGV();
         }
 
-        private void dgvProveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
 
         private void clean()
         {
