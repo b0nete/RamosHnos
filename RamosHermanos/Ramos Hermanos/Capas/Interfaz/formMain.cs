@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Libs;
 
 
 namespace RamosHermanos.Capas.Interfaz
@@ -132,12 +133,7 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
-        private void buscarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-                    
-
-        }
-        
+       
        
        
     }

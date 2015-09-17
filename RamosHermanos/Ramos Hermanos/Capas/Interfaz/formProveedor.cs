@@ -170,6 +170,8 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
+
+
         private bool VerificarCampos()
         {
 

@@ -85,11 +85,6 @@
             this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.tabPedido = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.tabProveedor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -631,11 +626,6 @@
             // 
             // tabListado
             // 
-            this.tabListado.Controls.Add(this.button1);
-            this.tabListado.Controls.Add(this.label4);
-            this.tabListado.Controls.Add(this.textBox1);
-            this.tabListado.Controls.Add(this.textBox2);
-            this.tabListado.Controls.Add(this.label21);
             this.tabListado.Controls.Add(this.dgvProveedor);
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
@@ -657,10 +647,10 @@
             this.colEstado,
             this.colTipoIVA,
             this.colFechaAlta});
-            this.dgvProveedor.Location = new System.Drawing.Point(6, 54);
+            this.dgvProveedor.Location = new System.Drawing.Point(6, 0);
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.ReadOnly = true;
-            this.dgvProveedor.Size = new System.Drawing.Size(762, 474);
+            this.dgvProveedor.Size = new System.Drawing.Size(770, 528);
             this.dgvProveedor.TabIndex = 0;
             this.dgvProveedor.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvProveedor_MouseDoubleClick);
             // 
@@ -718,54 +708,6 @@
             this.tabPedido.Text = "Pedido";
             this.tabPedido.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button1.Location = new System.Drawing.Point(317, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 43);
-            this.button1.TabIndex = 99;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(21, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 13);
-            this.label4.TabIndex = 89;
-            this.label4.Text = "Nº Proveedor";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox1.Location = new System.Drawing.Point(92, 5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(219, 20);
-            this.textBox1.TabIndex = 90;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox2.Location = new System.Drawing.Point(92, 28);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(219, 20);
-            this.textBox2.TabIndex = 92;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label21.Location = new System.Drawing.Point(21, 31);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(70, 13);
-            this.label21.TabIndex = 96;
-            this.label21.Text = "Razon Social";
-            // 
             // formProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -785,7 +727,6 @@
             this.groupBox1.PerformLayout();
             this.gbVisita.ResumeLayout(false);
             this.tabListado.ResumeLayout(false);
-            this.tabListado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
             this.ResumeLayout(false);
 
@@ -849,10 +790,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idColRub;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colSeleccion;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label21;
     }
 }
