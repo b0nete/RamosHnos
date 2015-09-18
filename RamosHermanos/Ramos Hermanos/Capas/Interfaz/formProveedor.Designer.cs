@@ -734,28 +734,24 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabProveedor;
-        private System.Windows.Forms.TabPage tabInformacion;
-        private System.Windows.Forms.TabPage tabListado;
-        private System.Windows.Forms.TabPage tabAdicional;
-        private System.Windows.Forms.TabPage tabMovimientos;
-        private System.Windows.Forms.DataGridView dgvProveedor;
-        private System.Windows.Forms.TabPage tabPedido;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox cbIVA;
-        private System.Windows.Forms.DateTimePicker dtpFechaAlta;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.CheckBox cbEstado;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MaskedTextBox txtcuit;
+        public System.Windows.Forms.TabControl tabProveedor;
+        public System.Windows.Forms.TabPage tabInformacion;
+        public System.Windows.Forms.TabPage tabListado;
+        public System.Windows.Forms.TabPage tabAdicional;
+        public System.Windows.Forms.TabPage tabMovimientos;
+        public System.Windows.Forms.DataGridView dgvProveedor;
+        public System.Windows.Forms.TabPage tabPedido;
+        public System.Windows.Forms.GroupBox groupBox6;
+        public System.Windows.Forms.Button btnSearch;
+        public System.Windows.Forms.Label label20;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.CheckBox cbEstado;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtidprov;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dgvRubro;
@@ -774,10 +770,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnGuardarProv;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtSaldoActual;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtDebmax;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn colidprov;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRazonSocial;
@@ -790,5 +784,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idColRub;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colSeleccion;
+        public System.Windows.Forms.TextBox txtRazonSocial;
+        public System.Windows.Forms.ComboBox cbIVA;
+        public System.Windows.Forms.DateTimePicker dtpFechaAlta;
+        public System.Windows.Forms.MaskedTextBox txtcuit;
+        public System.Windows.Forms.TextBox txtSaldoActual;
+        public System.Windows.Forms.TextBox txtDebmax;
     }
 }

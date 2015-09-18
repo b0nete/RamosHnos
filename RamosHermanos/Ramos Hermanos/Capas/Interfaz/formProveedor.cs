@@ -32,7 +32,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         ProveedorEntity proveedor = new ProveedorEntity();
 
-        private void cargarProv()
+         public void cargarProv()
         {
             proveedor.fecha = dtpFechaAlta.Value;
             proveedor.cuit = txtcuit.Text;
