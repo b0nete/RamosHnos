@@ -10,6 +10,7 @@ namespace RamosHermanos.Capas.Entidades
     {
         public int idCliente { get; set; }
         public int rol { get; set; }
+        public string tipoPersona { get; set; }
         public DateTime fechaAlta { get; set; }
         public int tipoDoc { get; set; }
         public string numDoc { get; set; }

@@ -52,7 +52,6 @@
             this.btnClean = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.lblEstado = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -143,7 +142,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.label32 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -152,7 +150,7 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label36 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbEstadoPJ = new System.Windows.Forms.CheckBox();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
@@ -218,6 +216,8 @@
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.label63 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.lblEstadoPJ = new System.Windows.Forms.Label();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -486,14 +486,6 @@
             this.groupBox6.Text = "Persona";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(123, 22);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(0, 13);
-            this.lblEstado.TabIndex = 92;
-            // 
             // button1
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
@@ -578,11 +570,11 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label24.Location = new System.Drawing.Point(33, 319);
+            this.label24.Location = new System.Drawing.Point(47, 320);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(63, 13);
+            this.label24.Size = new System.Drawing.Size(52, 13);
             this.label24.TabIndex = 85;
-            this.label24.Text = "Tipo Cliente";
+            this.label24.Text = "Categoria";
             // 
             // cbIVA
             // 
@@ -1521,7 +1513,7 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.label32);
+            this.groupBox9.Controls.Add(this.lblEstadoPJ);
             this.groupBox9.Controls.Add(this.button5);
             this.groupBox9.Controls.Add(this.button6);
             this.groupBox9.Controls.Add(this.comboBox2);
@@ -1530,7 +1522,7 @@
             this.groupBox9.Controls.Add(this.dateTimePicker1);
             this.groupBox9.Controls.Add(this.label36);
             this.groupBox9.Controls.Add(this.label38);
-            this.groupBox9.Controls.Add(this.checkBox1);
+            this.groupBox9.Controls.Add(this.cbEstadoPJ);
             this.groupBox9.Controls.Add(this.label39);
             this.groupBox9.Controls.Add(this.label40);
             this.groupBox9.Controls.Add(this.maskedTextBox1);
@@ -1550,14 +1542,6 @@
             this.groupBox9.TabIndex = 76;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Persona Jurídica";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(123, 22);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(0, 13);
-            this.label32.TabIndex = 92;
             // 
             // button5
             // 
@@ -1657,16 +1641,16 @@
             this.label38.TabIndex = 78;
             this.label38.Text = "Fecha Alta";
             // 
-            // checkBox1
+            // cbEstadoPJ
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(102, 22);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 77;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbEstadoPJ.AutoSize = true;
+            this.cbEstadoPJ.Checked = true;
+            this.cbEstadoPJ.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEstadoPJ.Location = new System.Drawing.Point(102, 22);
+            this.cbEstadoPJ.Name = "cbEstadoPJ";
+            this.cbEstadoPJ.Size = new System.Drawing.Size(15, 14);
+            this.cbEstadoPJ.TabIndex = 77;
+            this.cbEstadoPJ.UseVisualStyleBackColor = true;
             // 
             // label39
             // 
@@ -2373,6 +2357,22 @@
             this.button10.TabIndex = 71;
             this.button10.UseVisualStyleBackColor = true;
             // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(123, 22);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(0, 13);
+            this.lblEstado.TabIndex = 92;
+            // 
+            // lblEstadoPJ
+            // 
+            this.lblEstadoPJ.AutoSize = true;
+            this.lblEstadoPJ.Location = new System.Drawing.Point(123, 22);
+            this.lblEstadoPJ.Name = "lblEstadoPJ";
+            this.lblEstadoPJ.Size = new System.Drawing.Size(0, 13);
+            this.lblEstadoPJ.TabIndex = 93;
+            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2446,7 +2446,6 @@
         private System.Windows.Forms.TabPage tabAdicional;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnSearch;
@@ -2536,7 +2535,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ComboBox comboBox2;
@@ -2545,7 +2543,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbEstadoPJ;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
@@ -2616,6 +2614,8 @@
         public System.Windows.Forms.TabPage tabListado;
         public System.Windows.Forms.TabPage tabInformacion;
         public System.Windows.Forms.TabPage tabInformacionJ;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Label lblEstadoPJ;
 
     }
 }

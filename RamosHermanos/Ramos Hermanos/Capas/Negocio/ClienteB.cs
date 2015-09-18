@@ -80,13 +80,14 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
 
-                string query = @"INSERT INTO Clientes (rol, fechaAlta, tipoDoc, numDoc, sexo, cuil, apellido, nombre, estadoCivil, condicionIVA, tipoCliente, estado) 
-                                 VALUES ('1', @fechaAlta, @tipoDoc, @numdoc, @sexo, @cuil, @apellido, @nombre, @estadoCivil, @condicionIVA, @tipoCliente, @estado);
+                string query = @"INSERT INTO Clientes (rol, tipoPersona, fechaAlta,  tipoDoc, numDoc, sexo, cuil, apellido, nombre, estadoCivil, condicionIVA, tipoCliente, estado) 
+                                 VALUES ('1', @tipoPersona, @fechaAlta, @tipoDoc, @numdoc, @sexo, @cuil, @apellido, @nombre, @estadoCivil, @condicionIVA, @tipoCliente, @estado);
                                  SELECT LAST_INSERT_ID();";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@fechaAlta", cliente.fechaAlta);
+                cmd.Parameters.AddWithValue("@tipoPersona", cliente.tipoPersona);
                 cmd.Parameters.AddWithValue("@tipoDoc", cliente.tipoDoc);
                 cmd.Parameters.AddWithValue("@numDoc", cliente.numDoc);
                 cmd.Parameters.AddWithValue("@sexo", cliente.sexo);

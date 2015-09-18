@@ -30,8 +30,7 @@ namespace RamosHermanos.Capas.Interfaz
             tabMain.Controls.Remove(tabFamilia);
             tabMain.Controls.Remove(tabSugerencias);
 
-            // Casos de Inicio.
-            
+            // Casos de Inicio.            
             switch (caseSwitch)
             {
                 case 1:
@@ -42,6 +41,11 @@ namespace RamosHermanos.Capas.Interfaz
                     tabMain.Controls.Remove(tabInformacion);
                     tabMain.Controls.Remove(tabListado);
                     break;
+                case 3:
+                    tabMain.Controls.Remove(tabInformacion);
+                    tabMain.Controls.Remove(tabInformacionJ);
+                    tabMain.Controls.Remove(tabMovimientos);
+                    break;                    
                 default:
                     Console.WriteLine("Default case");
                     break;
@@ -69,9 +73,7 @@ namespace RamosHermanos.Capas.Interfaz
             cbEstadoCivil.SelectedIndex = 0;
             cbIVA.SelectedIndex = 4;
 
-            CheckColor();
-
-            
+            CheckColor(cbEstado, lblEstado);
         }
 
         private void gbCliente_Enter(object sender, EventArgs e)
@@ -81,6 +83,9 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //Tipo de Persona = Persona
+            cliente.tipoPersona = "P";
+
             if (ValidarCampos() == false)
             {
                 return;
@@ -224,7 +229,7 @@ namespace RamosHermanos.Capas.Interfaz
                 ClienteB.DisableCliente(cliente, cbEstado);
             }
 
-            CheckColor();
+            CheckColor(cbEstado, lblEstado);
         }
 
         private void cbLunes_CheckedChanged(object sender, EventArgs e)
@@ -295,7 +300,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void cbEstado_CheckedChanged(object sender, EventArgs e)
         {
-            CheckColor();
+            CheckColor(cbEstado, lblEstado);
         }
 
         private void groupBox6_Enter(object sender, EventArgs e)
@@ -456,7 +461,7 @@ namespace RamosHermanos.Capas.Interfaz
                 TelefonoB.CargarTXT(txtTel, txtIDcliente, 1);
             }
 
-            CheckColor();
+            CheckColor(cbEstado, lblEstado);
         }
 
         private void CargarDias()
@@ -630,17 +635,17 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-        private void CheckColor()
+        private void CheckColor(CheckBox cb, Label lbl)
         {
-            if (cbEstado.Checked == true)
+            if (cb.Checked == true)
             {
-                lblEstado.BackColor = Color.Green;
-                lblEstado.Text = "Habilitado";
+                lbl.BackColor = Color.Green;
+                lbl.Text = "Habilitado";
             }
             else
             {
-                lblEstado.BackColor = Color.Red;
-                lblEstado.Text = "Desabilitado";
+                lbl.BackColor = Color.Red;
+                lbl.Text = "Desabilitado";
             }
         }
 
