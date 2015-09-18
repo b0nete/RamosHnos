@@ -188,6 +188,7 @@ namespace RamosHermanos.Capas.Negocio
 
                     DataRow row = dt.Rows[0];
 
+                    cliente.tipoPersona = Convert.ToString(row["tipoPersona"]);
                     cliente.numDoc = Convert.ToString(row["numDoc"]);
                     cliente.fechaAlta = Convert.ToDateTime(row["fechaAlta"]);
                     cliente.tipoDoc = Convert.ToInt32(row["tipoDoc"]);

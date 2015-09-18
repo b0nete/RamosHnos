@@ -550,7 +550,7 @@ namespace RamosHermanos.Capas.Interfaz
             txt12LT.Text = "";
             txt20LT.Text = "";
             txt25LT.Text = "";
-            txtAGUAram.Text = "";
+            txtRetornable.Text = "";
             cbLunes.Checked = false;
             cbMartes.Checked = false;
             cbMiercoles.Checked = false;
@@ -586,52 +586,64 @@ namespace RamosHermanos.Capas.Interfaz
                 cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
 
                 ClienteB.BuscarClienteID(cliente);
-                txtIDcliente.Text = Convert.ToString(cliente.idCliente);
-                dtpFechaAlta.Value = cliente.fechaAlta;
-                cbTipoDoc.SelectedValue = cliente.tipoDoc;
-                txtnumDoc.Text = cliente.numDoc;
-                cbSexo.Text = cliente.sexo;
-                txtCUIL.Text = cliente.cuil;
-                txtApellido.Text = cliente.apellido;
-                txtNombre.Text = cliente.nombre;
-                cbEstadoCivil.Text = cliente.estadoCivil;
-                cbIVA.Text = cliente.condicionIVA;
-                cbTipoCliente.SelectedValue = cliente.tipoCliente;
-                cbEstado.Checked = cliente.estado;
 
-                CargarSaldo(txtIDcliente);
-                SaldoB.BuscarSaldo(saldo);
-                txtCreditoMax.Text = Convert.ToString(saldo.creditoMax);
-                txtSaldo.Text = Convert.ToString(saldo.saldoActual);
+                if (cliente.tipoPersona == "P")
+                {
+                    txtIDcliente.Text = Convert.ToString(cliente.idCliente);
+                    dtpFechaAlta.Value = cliente.fechaAlta;
+                    cbTipoDoc.SelectedValue = cliente.tipoDoc;
+                    txtnumDoc.Text = cliente.numDoc;
+                    cbSexo.Text = cliente.sexo;
+                    txtCUIL.Text = cliente.cuil;
+                    txtApellido.Text = cliente.apellido;
+                    txtNombre.Text = cliente.nombre;
+                    cbEstadoCivil.Text = cliente.estadoCivil;
+                    cbIVA.Text = cliente.condicionIVA;
+                    cbTipoCliente.SelectedValue = cliente.tipoCliente;
+                    cbEstado.Checked = cliente.estado;
 
-                CargarVisita(txtIDcliente);
-                VisitaB.BuscarVisita(visita);
-                txtIDVisita.Text = Convert.ToString(visita.idVisita);
-                dtpA.Text = visita.horarioVisitaA;
-                dtpB.Text = visita.horarioVisitaB;
-                //Dias
-                cbLunes.Checked = visita.dlunes;
-                cbMartes.Checked = visita.dmartes;
-                cbMiercoles.Checked = visita.dmiercoles;
-                cbJueves.Checked = visita.djueves;
-                cbViernes.Checked = visita.dviernes;
-                cbSabado.Checked = visita.dsabado;
-                cbDomingo.Checked = visita.ddomingo;
-                //Orden
-                txtLun.Text = Convert.ToString(visita.olunes);
-                txtMar.Text = Convert.ToString(visita.omartes);
-                txtMie.Text = Convert.ToString(visita.omiercoles);
-                txtJue.Text = Convert.ToString(visita.ojueves);
-                txtVie.Text = Convert.ToString(visita.oviernes);
-                txtSab.Text = Convert.ToString(visita.osabado);
-                txtDom.Text = Convert.ToString(visita.odomingo);
+                    CargarSaldo(txtIDcliente);
+                    SaldoB.BuscarSaldo(saldo);
+                    txtCreditoMax.Text = Convert.ToString(saldo.creditoMax);
+                    txtSaldo.Text = Convert.ToString(saldo.saldoActual);
 
-                //Contacto
-                DomicilioB.CargarTXT(txtDomic, txtIDcliente, 1);
-                EmailB.CargarTXT(txtEmail, txtIDcliente, 1);
-                TelefonoB.CargarTXT(txtTel, txtIDcliente, 1);
+                    CargarVisita(txtIDcliente);
+                    VisitaB.BuscarVisita(visita);
+                    txtIDVisita.Text = Convert.ToString(visita.idVisita);
+                    dtpA.Text = visita.horarioVisitaA;
+                    dtpB.Text = visita.horarioVisitaB;
+                    //Dias
+                    cbLunes.Checked = visita.dlunes;
+                    cbMartes.Checked = visita.dmartes;
+                    cbMiercoles.Checked = visita.dmiercoles;
+                    cbJueves.Checked = visita.djueves;
+                    cbViernes.Checked = visita.dviernes;
+                    cbSabado.Checked = visita.dsabado;
+                    cbDomingo.Checked = visita.ddomingo;
+                    //Orden
+                    txtLun.Text = Convert.ToString(visita.olunes);
+                    txtMar.Text = Convert.ToString(visita.omartes);
+                    txtMie.Text = Convert.ToString(visita.omiercoles);
+                    txtJue.Text = Convert.ToString(visita.ojueves);
+                    txtVie.Text = Convert.ToString(visita.oviernes);
+                    txtSab.Text = Convert.ToString(visita.osabado);
+                    txtDom.Text = Convert.ToString(visita.odomingo);
 
-                tabMain.SelectedTab = tabInformacion;
+                    //Contacto
+                    DomicilioB.CargarTXT(txtDomic, txtIDcliente, 1);
+                    EmailB.CargarTXT(txtEmail, txtIDcliente, 1);
+                    TelefonoB.CargarTXT(txtTel, txtIDcliente, 1);
+
+
+                    tabMain.Controls.Remove(tabListado);
+                    tabMain.Controls.Add(tabInformacion);
+                    tabMain.Controls.Add(tabMovimientos);
+                }
+                else if (cliente.tipoPersona == "PJ")
+                {
+                    MessageBox.Show(cliente.tipoPersona);
+                }
+                
             }
         }
 
@@ -903,6 +915,11 @@ namespace RamosHermanos.Capas.Interfaz
             visita.idPersona = Convert.ToInt32(txt.Text);
             visita.horarioVisitaA = Convert.ToString(dtpA.Text);
             visita.horarioVisitaB = Convert.ToString(dtpB.Text);
+        }
+
+        private void groupBox9_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

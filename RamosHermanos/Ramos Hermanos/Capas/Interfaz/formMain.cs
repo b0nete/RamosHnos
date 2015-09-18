@@ -119,6 +119,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formCliente frm = new formCliente();
+            frm.caseSwitch = 3;
             frm.Show();
         }
 
