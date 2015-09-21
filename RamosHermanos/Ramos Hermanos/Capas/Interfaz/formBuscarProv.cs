@@ -19,16 +19,18 @@ namespace RamosHermanos.Capas.Interfaz
             InitializeComponent();
         }
 
-
-
+        
         private void btnSearch_Click(object sender, EventArgs e)
         {
             BuscarProv();   
         }
+
+        formProveedor frm = new formProveedor();
+        ProveedorEntity proveedor = new ProveedorEntity();
+
         private void BuscarProv()
         {
-            formProveedor frm = new formProveedor();
-            ProveedorEntity proveedor = new ProveedorEntity();
+            
             if (txtRazonSocial.Text == "")
             {
                 
