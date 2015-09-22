@@ -138,7 +138,7 @@ namespace RamosHermanos.Capas.Interfaz
             }
 
             cargarProv();
-
+            
             if (ProveedorB.ExisteProveedor(proveedor) == false)
             {
                 MessageBox.Show("El proveedor no existe");

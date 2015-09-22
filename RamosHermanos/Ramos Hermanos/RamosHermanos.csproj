@@ -87,6 +87,12 @@
     <Compile Include="Capas\Entidades\UsuarioEntity.cs" />
     <Compile Include="Capas\Entidades\VehiculoEntity.cs" />
     <Compile Include="Capas\Entidades\VisitaEntity.cs" />
+    <Compile Include="Capas\Interfaz\formBuscarInsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\formBuscarInsumo.Designer.cs">
+      <DependentUpon>formBuscarInsumo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\formBuscarProv.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -248,6 +254,9 @@
     <Compile Include="Libs\InputBox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Capas\Interfaz\formBuscarInsumo.resx">
+      <DependentUpon>formBuscarInsumo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formBuscarProv.resx">
       <DependentUpon>formBuscarProv.cs</DependentUpon>
     </EmbeddedResource>
