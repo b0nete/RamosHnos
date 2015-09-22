@@ -583,6 +583,7 @@ namespace RamosHermanos.Capas.Interfaz
 
                 //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
 
+                cliente.rol = 1;
                 cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
 
                 ClienteB.BuscarClienteID(cliente);
@@ -634,10 +635,13 @@ namespace RamosHermanos.Capas.Interfaz
                     EmailB.CargarTXT(txtEmail, txtIDcliente, 1);
                     TelefonoB.CargarTXT(txtTel, txtIDcliente, 1);
 
-
+                    //Tabs
                     tabMain.Controls.Remove(tabListado);
                     tabMain.Controls.Add(tabInformacion);
                     tabMain.Controls.Add(tabMovimientos);
+
+                    //Cargar tabReparto
+                    DistribuidorB.CargarDGVCB(cliente, dgvLun);
                 }
                 else if (cliente.tipoPersona == "PJ")
                 {
@@ -920,6 +924,80 @@ namespace RamosHermanos.Capas.Interfaz
         private void groupBox9_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            caseSwitch = 1;
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            caseSwitch = 2;
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            caseSwitch = 3;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            //Tipo de Persona = Persona
+            cliente.tipoPersona = "PJ";
+
+            if (ValidarCampos() == false)
+            {
+                return;
+            }
+            else
+            {
+                cliente.numDoc = txtnumDoc.Text;
+                if (ClienteB.ExisteCliente(cliente) == true)
+                {
+                    DialogResult result = MessageBox.Show("El cliente existe, desea actualizarlo con los datos ingresados?", "Cliente existente", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
+                    {
+                        CargarCliente();
+                        ClienteB.UpdateCliente(cliente);
+
+                        CargarSaldo(txtIDcliente);
+                        SaldoB.UpdateSaldo(saldo);
+
+                        CargarVisita(txtIDcliente);
+                        VisitaB.UpdateVisita(visita);
+                        visita.idVisita = Convert.ToInt32(txtIDVisita.Text);
+                        CargarDias();
+                        VisitaB.UpdateDias(visita);
+                        CargarOrden();
+                        VisitaB.UpdateOrden(visita);
+
+                        BuscarCliente();
+                        return;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else if (ClienteB.ExisteCliente(cliente) == false)
+                {
+                    CargarCliente();
+                    ClienteB.InsertCliente(cliente, txtIDcliente);
+
+                    CargarSaldo(txtIDcliente);
+                    SaldoB.InsertSaldo(saldo);
+
+                    CargarVisita(txtIDcliente);
+                    VisitaB.InsertVisita(visita);
+                    CargarDias();
+                    VisitaB.InsertDias(visita);
+                    CargarOrden();
+                    VisitaB.InsertOrden(visita);
+
+                    ClienteB.CargarDGV(dgvCliente);
+                }
+            }
         }
     }
 }

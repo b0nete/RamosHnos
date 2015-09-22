@@ -79,6 +79,18 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.tabListado = new System.Windows.Forms.TabPage();
+            this.dgvDistribuidores = new System.Windows.Forms.DataGridView();
+            this.colIDDistribuidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCUIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabVehiculos = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvVehiculos = new System.Windows.Forms.DataGridView();
@@ -105,36 +117,58 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.dgvDistribuidores = new System.Windows.Forms.DataGridView();
-            this.colIDDistribuidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIDTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coltipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNumDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCUIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabHojaRuta = new System.Windows.Forms.TabPage();
+            this.tabDias = new System.Windows.Forms.TabControl();
+            this.tabLunes = new System.Windows.Forms.TabPage();
+            this.tabMartes = new System.Windows.Forms.TabPage();
+            this.tabMiercoles = new System.Windows.Forms.TabPage();
+            this.tabJueves = new System.Windows.Forms.TabPage();
+            this.tabViernes = new System.Windows.Forms.TabPage();
+            this.tabSabado = new System.Windows.Forms.TabPage();
+            this.tabDomingo = new System.Windows.Forms.TabPage();
+            this.dgvLun = new System.Windows.Forms.DataGridView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabDistribuidor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabListado.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDistribuidores)).BeginInit();
             this.tabVehiculos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudModelo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDistribuidores)).BeginInit();
+            this.tabHojaRuta.SuspendLayout();
+            this.tabDias.SuspendLayout();
+            this.tabLunes.SuspendLayout();
+            this.tabMartes.SuspendLayout();
+            this.tabMiercoles.SuspendLayout();
+            this.tabJueves.SuspendLayout();
+            this.tabViernes.SuspendLayout();
+            this.tabSabado.SuspendLayout();
+            this.tabDomingo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.SuspendLayout();
             // 
             // tabDistribuidor
             // 
             this.tabDistribuidor.Controls.Add(this.tabInformacion);
-            this.tabDistribuidor.Controls.Add(this.tabListado);
             this.tabDistribuidor.Controls.Add(this.tabVehiculos);
+            this.tabDistribuidor.Controls.Add(this.tabHojaRuta);
+            this.tabDistribuidor.Controls.Add(this.tabListado);
             this.tabDistribuidor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabDistribuidor.Location = new System.Drawing.Point(0, 0);
             this.tabDistribuidor.Name = "tabDistribuidor";
@@ -548,6 +582,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.button2);
             this.groupBox5.Controls.Add(this.cbVehiculo);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -565,8 +600,9 @@
             this.cbVehiculo.FormattingEnabled = true;
             this.cbVehiculo.Location = new System.Drawing.Point(62, 19);
             this.cbVehiculo.Name = "cbVehiculo";
-            this.cbVehiculo.Size = new System.Drawing.Size(194, 21);
+            this.cbVehiculo.Size = new System.Drawing.Size(160, 21);
             this.cbVehiculo.TabIndex = 93;
+            this.cbVehiculo.DropDown += new System.EventHandler(this.cbVehiculo_DropDown);
             // 
             // label20
             // 
@@ -712,6 +748,98 @@
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
+            // 
+            // dgvDistribuidores
+            // 
+            this.dgvDistribuidores.AllowUserToAddRows = false;
+            this.dgvDistribuidores.AllowUserToDeleteRows = false;
+            this.dgvDistribuidores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDistribuidores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDDistribuidor,
+            this.colFechaAlta,
+            this.colIDTipoDoc,
+            this.coltipoDoc,
+            this.colNumDoc,
+            this.colNacimiento,
+            this.colSexo,
+            this.colCUIL,
+            this.colApellido,
+            this.colNombre,
+            this.colEstadoCivil});
+            this.dgvDistribuidores.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDistribuidores.Location = new System.Drawing.Point(3, 3);
+            this.dgvDistribuidores.Name = "dgvDistribuidores";
+            this.dgvDistribuidores.ReadOnly = true;
+            this.dgvDistribuidores.Size = new System.Drawing.Size(770, 529);
+            this.dgvDistribuidores.TabIndex = 2;
+            this.dgvDistribuidores.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvDistribuidores_MouseDoubleClick);
+            // 
+            // colIDDistribuidor
+            // 
+            this.colIDDistribuidor.HeaderText = "Nº Distribuidor";
+            this.colIDDistribuidor.Name = "colIDDistribuidor";
+            this.colIDDistribuidor.ReadOnly = true;
+            // 
+            // colFechaAlta
+            // 
+            this.colFechaAlta.HeaderText = "Fecha Alta";
+            this.colFechaAlta.Name = "colFechaAlta";
+            this.colFechaAlta.ReadOnly = true;
+            // 
+            // colIDTipoDoc
+            // 
+            this.colIDTipoDoc.HeaderText = "ID Tipo Doc";
+            this.colIDTipoDoc.Name = "colIDTipoDoc";
+            this.colIDTipoDoc.ReadOnly = true;
+            this.colIDTipoDoc.Visible = false;
+            // 
+            // coltipoDoc
+            // 
+            this.coltipoDoc.HeaderText = "Tipo Documento";
+            this.coltipoDoc.Name = "coltipoDoc";
+            this.coltipoDoc.ReadOnly = true;
+            // 
+            // colNumDoc
+            // 
+            this.colNumDoc.HeaderText = "Nº Documento";
+            this.colNumDoc.Name = "colNumDoc";
+            this.colNumDoc.ReadOnly = true;
+            // 
+            // colNacimiento
+            // 
+            this.colNacimiento.HeaderText = "Fecha Nacimiento";
+            this.colNacimiento.Name = "colNacimiento";
+            this.colNacimiento.ReadOnly = true;
+            // 
+            // colSexo
+            // 
+            this.colSexo.HeaderText = "Sexo";
+            this.colSexo.Name = "colSexo";
+            this.colSexo.ReadOnly = true;
+            // 
+            // colCUIL
+            // 
+            this.colCUIL.HeaderText = "CUIL";
+            this.colCUIL.Name = "colCUIL";
+            this.colCUIL.ReadOnly = true;
+            // 
+            // colApellido
+            // 
+            this.colApellido.HeaderText = "Apellido";
+            this.colApellido.Name = "colApellido";
+            this.colApellido.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colEstadoCivil
+            // 
+            this.colEstadoCivil.HeaderText = "Estado Civil";
+            this.colEstadoCivil.Name = "colEstadoCivil";
+            this.colEstadoCivil.ReadOnly = true;
             // 
             // tabVehiculos
             // 
@@ -1170,97 +1298,177 @@
             this.label26.TabIndex = 0;
             this.label26.Text = "Nº Vehículo";
             // 
-            // dgvDistribuidores
+            // tabHojaRuta
             // 
-            this.dgvDistribuidores.AllowUserToAddRows = false;
-            this.dgvDistribuidores.AllowUserToDeleteRows = false;
-            this.dgvDistribuidores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDistribuidores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colIDDistribuidor,
-            this.colFechaAlta,
-            this.colIDTipoDoc,
-            this.coltipoDoc,
-            this.colNumDoc,
-            this.colNacimiento,
-            this.colSexo,
-            this.colCUIL,
-            this.colApellido,
-            this.colNombre,
-            this.colEstadoCivil});
-            this.dgvDistribuidores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDistribuidores.Location = new System.Drawing.Point(3, 3);
-            this.dgvDistribuidores.Name = "dgvDistribuidores";
-            this.dgvDistribuidores.ReadOnly = true;
-            this.dgvDistribuidores.Size = new System.Drawing.Size(770, 529);
-            this.dgvDistribuidores.TabIndex = 2;
-            this.dgvDistribuidores.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvDistribuidores_MouseDoubleClick);
+            this.tabHojaRuta.Controls.Add(this.tabDias);
+            this.tabHojaRuta.Location = new System.Drawing.Point(4, 22);
+            this.tabHojaRuta.Name = "tabHojaRuta";
+            this.tabHojaRuta.Size = new System.Drawing.Size(776, 535);
+            this.tabHojaRuta.TabIndex = 3;
+            this.tabHojaRuta.Text = "Hoja de Ruta";
+            this.tabHojaRuta.UseVisualStyleBackColor = true;
             // 
-            // colIDDistribuidor
+            // tabDias
             // 
-            this.colIDDistribuidor.HeaderText = "Nº Distribuidor";
-            this.colIDDistribuidor.Name = "colIDDistribuidor";
-            this.colIDDistribuidor.ReadOnly = true;
+            this.tabDias.Controls.Add(this.tabLunes);
+            this.tabDias.Controls.Add(this.tabMartes);
+            this.tabDias.Controls.Add(this.tabMiercoles);
+            this.tabDias.Controls.Add(this.tabJueves);
+            this.tabDias.Controls.Add(this.tabViernes);
+            this.tabDias.Controls.Add(this.tabSabado);
+            this.tabDias.Controls.Add(this.tabDomingo);
+            this.tabDias.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabDias.Location = new System.Drawing.Point(0, 0);
+            this.tabDias.Name = "tabDias";
+            this.tabDias.SelectedIndex = 0;
+            this.tabDias.Size = new System.Drawing.Size(776, 535);
+            this.tabDias.TabIndex = 0;
             // 
-            // colFechaAlta
+            // tabLunes
             // 
-            this.colFechaAlta.HeaderText = "Fecha Alta";
-            this.colFechaAlta.Name = "colFechaAlta";
-            this.colFechaAlta.ReadOnly = true;
+            this.tabLunes.Controls.Add(this.dgvLun);
+            this.tabLunes.Location = new System.Drawing.Point(4, 22);
+            this.tabLunes.Name = "tabLunes";
+            this.tabLunes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabLunes.Size = new System.Drawing.Size(768, 509);
+            this.tabLunes.TabIndex = 0;
+            this.tabLunes.Text = "Lunes";
+            this.tabLunes.UseVisualStyleBackColor = true;
             // 
-            // colIDTipoDoc
+            // tabMartes
             // 
-            this.colIDTipoDoc.HeaderText = "ID Tipo Doc";
-            this.colIDTipoDoc.Name = "colIDTipoDoc";
-            this.colIDTipoDoc.ReadOnly = true;
-            this.colIDTipoDoc.Visible = false;
+            this.tabMartes.Controls.Add(this.dataGridView1);
+            this.tabMartes.Location = new System.Drawing.Point(4, 22);
+            this.tabMartes.Name = "tabMartes";
+            this.tabMartes.Padding = new System.Windows.Forms.Padding(3);
+            this.tabMartes.Size = new System.Drawing.Size(768, 509);
+            this.tabMartes.TabIndex = 1;
+            this.tabMartes.Text = "Martes";
+            this.tabMartes.UseVisualStyleBackColor = true;
             // 
-            // coltipoDoc
+            // tabMiercoles
             // 
-            this.coltipoDoc.HeaderText = "Tipo Documento";
-            this.coltipoDoc.Name = "coltipoDoc";
-            this.coltipoDoc.ReadOnly = true;
+            this.tabMiercoles.Controls.Add(this.dataGridView2);
+            this.tabMiercoles.Location = new System.Drawing.Point(4, 22);
+            this.tabMiercoles.Name = "tabMiercoles";
+            this.tabMiercoles.Size = new System.Drawing.Size(768, 509);
+            this.tabMiercoles.TabIndex = 2;
+            this.tabMiercoles.Text = "Miercoles";
+            this.tabMiercoles.UseVisualStyleBackColor = true;
             // 
-            // colNumDoc
+            // tabJueves
             // 
-            this.colNumDoc.HeaderText = "Nº Documento";
-            this.colNumDoc.Name = "colNumDoc";
-            this.colNumDoc.ReadOnly = true;
+            this.tabJueves.Controls.Add(this.dataGridView3);
+            this.tabJueves.Location = new System.Drawing.Point(4, 22);
+            this.tabJueves.Name = "tabJueves";
+            this.tabJueves.Size = new System.Drawing.Size(768, 509);
+            this.tabJueves.TabIndex = 3;
+            this.tabJueves.Text = "Jueves";
+            this.tabJueves.UseVisualStyleBackColor = true;
             // 
-            // colNacimiento
+            // tabViernes
             // 
-            this.colNacimiento.HeaderText = "Fecha Nacimiento";
-            this.colNacimiento.Name = "colNacimiento";
-            this.colNacimiento.ReadOnly = true;
+            this.tabViernes.Controls.Add(this.dataGridView4);
+            this.tabViernes.Location = new System.Drawing.Point(4, 22);
+            this.tabViernes.Name = "tabViernes";
+            this.tabViernes.Size = new System.Drawing.Size(768, 509);
+            this.tabViernes.TabIndex = 4;
+            this.tabViernes.Text = "Viernes";
+            this.tabViernes.UseVisualStyleBackColor = true;
             // 
-            // colSexo
+            // tabSabado
             // 
-            this.colSexo.HeaderText = "Sexo";
-            this.colSexo.Name = "colSexo";
-            this.colSexo.ReadOnly = true;
+            this.tabSabado.Controls.Add(this.dataGridView5);
+            this.tabSabado.Location = new System.Drawing.Point(4, 22);
+            this.tabSabado.Name = "tabSabado";
+            this.tabSabado.Size = new System.Drawing.Size(768, 509);
+            this.tabSabado.TabIndex = 5;
+            this.tabSabado.Text = "Sabado";
+            this.tabSabado.UseVisualStyleBackColor = true;
             // 
-            // colCUIL
+            // tabDomingo
             // 
-            this.colCUIL.HeaderText = "CUIL";
-            this.colCUIL.Name = "colCUIL";
-            this.colCUIL.ReadOnly = true;
+            this.tabDomingo.Controls.Add(this.dataGridView6);
+            this.tabDomingo.Location = new System.Drawing.Point(4, 22);
+            this.tabDomingo.Name = "tabDomingo";
+            this.tabDomingo.Size = new System.Drawing.Size(768, 509);
+            this.tabDomingo.TabIndex = 6;
+            this.tabDomingo.Text = "Domingo";
+            this.tabDomingo.UseVisualStyleBackColor = true;
             // 
-            // colApellido
+            // dgvLun
             // 
-            this.colApellido.HeaderText = "Apellido";
-            this.colApellido.Name = "colApellido";
-            this.colApellido.ReadOnly = true;
+            this.dgvLun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLun.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLun.Location = new System.Drawing.Point(3, 3);
+            this.dgvLun.Name = "dgvLun";
+            this.dgvLun.Size = new System.Drawing.Size(762, 503);
+            this.dgvLun.TabIndex = 0;
             // 
-            // colNombre
+            // dataGridView1
             // 
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.ReadOnly = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(762, 503);
+            this.dataGridView1.TabIndex = 1;
             // 
-            // colEstadoCivil
+            // dataGridView2
             // 
-            this.colEstadoCivil.HeaderText = "Estado Civil";
-            this.colEstadoCivil.Name = "colEstadoCivil";
-            this.colEstadoCivil.ReadOnly = true;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(768, 509);
+            this.dataGridView2.TabIndex = 1;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(768, 509);
+            this.dataGridView3.TabIndex = 1;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView4.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.Size = new System.Drawing.Size(768, 509);
+            this.dataGridView4.TabIndex = 1;
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView5.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.Size = new System.Drawing.Size(768, 509);
+            this.dataGridView5.TabIndex = 1;
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView6.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.Size = new System.Drawing.Size(768, 509);
+            this.dataGridView6.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button2.Location = new System.Drawing.Point(228, 16);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(28, 28);
+            this.button2.TabIndex = 89;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // formDistribuidores
             // 
@@ -1280,12 +1488,28 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabListado.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDistribuidores)).EndInit();
             this.tabVehiculos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudModelo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDistribuidores)).EndInit();
+            this.tabHojaRuta.ResumeLayout(false);
+            this.tabDias.ResumeLayout(false);
+            this.tabLunes.ResumeLayout(false);
+            this.tabMartes.ResumeLayout(false);
+            this.tabMiercoles.ResumeLayout(false);
+            this.tabJueves.ResumeLayout(false);
+            this.tabViernes.ResumeLayout(false);
+            this.tabSabado.ResumeLayout(false);
+            this.tabDomingo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1380,5 +1604,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoCivil;
+        private System.Windows.Forms.TabPage tabHojaRuta;
+        private System.Windows.Forms.TabControl tabDias;
+        private System.Windows.Forms.TabPage tabLunes;
+        private System.Windows.Forms.TabPage tabMartes;
+        private System.Windows.Forms.TabPage tabMiercoles;
+        private System.Windows.Forms.TabPage tabJueves;
+        private System.Windows.Forms.TabPage tabViernes;
+        private System.Windows.Forms.TabPage tabSabado;
+        private System.Windows.Forms.TabPage tabDomingo;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dgvLun;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView dataGridView6;
     }
 }

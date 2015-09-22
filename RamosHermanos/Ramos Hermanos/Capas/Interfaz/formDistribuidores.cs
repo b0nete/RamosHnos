@@ -28,6 +28,9 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formDistribuidores_Load(object sender, EventArgs e)
         {
+            //Tabs Ocultos
+            tabDistribuidor.Controls.Remove(tabListado);
+
             //tabInformacion
             VehiculoB.CargarCB(cbVehiculo);
             CheckColor(cbEstado, lblEstado);
@@ -362,6 +365,11 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
                 frm.CargarDGVs();
             }
+        }
+
+        private void cbVehiculo_DropDown(object sender, EventArgs e)
+        {
+            VehiculoB.CargarCB(cbVehiculo);
         }
 
         

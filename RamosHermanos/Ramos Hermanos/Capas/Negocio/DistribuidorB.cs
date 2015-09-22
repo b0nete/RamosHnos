@@ -202,5 +202,91 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static List<DistribuidorEntity> ListDistribuidores()
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                DistribuidorEntity distribuidor = new DistribuidorEntity();
+                List<DistribuidorEntity> list = new List<DistribuidorEntity>();
+
+                string query = @"SELECT idDistribuidor, nombre
+                                 FROM Distribuidores";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    distribuidor.idDistribuidor = Convert.ToInt32(dr["idDistribuidor"]);
+                    distribuidor.nombre = Convert.ToString(dr["nombre"]);
+
+                    list.Add(distribuidor);                    
+                }
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void CargarDGVCB(ClienteEntity cliente, DataGridView dgv)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"SELECT D.idDomicilio, CONCAT(D.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
+                                 FROM Domicilios D 
+                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
+                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
+                                 INNER JOIN Barrios B ON D.Barrio = B.idBarrio
+                                 WHERE rol = @rol and idPersona = @idPersona";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@rol", cliente.rol);
+                cmd.Parameters.AddWithValue("@idPersona", cliente.idCliente);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(null),
+                    Convert.ToString(null),
+                    Convert.ToString(dr["idDomicilio"]),
+                    Convert.ToString(dr["domCompleto"]),
+                    Convert.ToString(null));
+                };
+
+                dr.Close();
+
+                //
+
+                DataGridViewComboBoxColumn comboboxColumn = dgv.Columns["colRdistribuidor"] as DataGridViewComboBoxColumn;
+
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    comboboxColumn.DataSource = DistribuidorB.ListDistribuidores();
+                    comboboxColumn.ValueMember = "idDistribuidor";
+                }
+
+
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
     }
 }
