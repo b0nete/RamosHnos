@@ -147,6 +147,12 @@
     <Compile Include="Capas\Interfaz\formMarca.Designer.cs">
       <DependentUpon>formMarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaz\formPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\formPedidos.Designer.cs">
+      <DependentUpon>formPedidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\formProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +289,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formMarca.resx">
       <DependentUpon>formMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\formPedidos.resx">
+      <DependentUpon>formPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formProducto.resx">
       <DependentUpon>formProducto.cs</DependentUpon>
