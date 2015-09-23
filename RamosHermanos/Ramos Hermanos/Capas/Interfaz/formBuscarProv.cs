@@ -33,29 +33,27 @@ namespace RamosHermanos.Capas.Interfaz
             
             if (txtRazonSocial.Text == "")
             {
-                
                 frm.tabProveedor.Controls.Remove(frm.tabInformacion);
                 frm.tabProveedor.Controls.Remove(frm.tabAdicional);
                 frm.tabProveedor.Controls.Remove(frm.tabMovimientos);
                 frm.tabProveedor.Controls.Remove(frm.tabPedido);
                 frm.Show();
                 frm.tabProveedor.SelectedTab = frm.tabListado;
-                frm.tabProveedor.Controls.Add(frm.tabListado);
-                
-               
+                frm.tabProveedor.Controls.Add(frm.tabListado);   
             }
 
-            frm.cargarProv();
+            //frm.cargarProv();
+            proveedor.razsocial = txtRazonSocial.Text;
 
             if (ProveedorB.ExisteProveedor(proveedor) == false)
             {
                 MessageBox.Show("El proveedor no existe");
                 return;
             }
-
             else
             {
                 ProveedorB.BuscarProvRazonsocial(proveedor);
+                frm.Show();
                 frm.txtidprov.Text = Convert.ToString(proveedor.idProveedor);
                 frm.txtRazonSocial.Text = proveedor.razsocial;
                 frm.txtcuit.Text = proveedor.cuit;

@@ -163,7 +163,6 @@ namespace RamosHermanos.Capas.Negocio
                 if (resultado == 0)
                 {
                     MessageBox.Show("El Proveedor NO existe!");
-                    
                 }
                 else
                 {
