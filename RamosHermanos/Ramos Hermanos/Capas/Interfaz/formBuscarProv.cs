@@ -42,8 +42,7 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.tabProveedor.SelectedTab = frm.tabListado;
                 frm.tabProveedor.Controls.Add(frm.tabListado);
                 
-                return;
-
+               
             }
 
             frm.cargarProv();
