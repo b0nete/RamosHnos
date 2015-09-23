@@ -57,16 +57,16 @@ namespace RamosHermanos.Capas.Interfaz
             tipoClienteB.CargarTipoCliente(cbTipoCliente);
 
             //Cargar Ultimas ordenes de entrega.
-            VisitaB.BuscarOrdenMAX(visita);
-            {
-                txtLun.Text = Convert.ToString(visita.olunes + 1);
-                txtMar.Text = Convert.ToString(visita.omartes + 1);
-                txtMie.Text = Convert.ToString(visita.omiercoles + 1);
-                txtJue.Text = Convert.ToString(visita.ojueves + 1);
-                txtVie.Text = Convert.ToString(visita.oviernes + 1);
-                txtSab.Text = Convert.ToString(visita.osabado + 1);
-                txtDom.Text = Convert.ToString(visita.odomingo + 1);
-            }
+            //VisitaB.BuscarOrdenMAX(visita);
+            //{
+            //    txtLun.Text = Convert.ToString(visita.olunes + 1);
+            //    txtMar.Text = Convert.ToString(visita.omartes + 1);
+            //    txtMie.Text = Convert.ToString(visita.omiercoles + 1);
+            //    txtJue.Text = Convert.ToString(visita.ojueves + 1);
+            //    txtVie.Text = Convert.ToString(visita.oviernes + 1);
+            //    txtSab.Text = Convert.ToString(visita.osabado + 1);
+            //    txtDom.Text = Convert.ToString(visita.odomingo + 1);
+            //}
 
             //Valores Iniciales
             cbSexo.SelectedIndex = 0;
@@ -104,13 +104,13 @@ namespace RamosHermanos.Capas.Interfaz
                         CargarSaldo(txtIDcliente);
                         SaldoB.UpdateSaldo(saldo);
 
-                        CargarVisita(txtIDcliente);
-                        VisitaB.UpdateVisita(visita);
-                        visita.idVisita = Convert.ToInt32(txtIDVisita.Text);
-                        CargarDias();
-                        VisitaB.UpdateDias(visita);
-                        CargarOrden();
-                        VisitaB.UpdateOrden(visita);
+                        //CargarVisita(txtIDcliente);
+                        //VisitaB.UpdateVisita(visita);
+                        //visita.idVisita = Convert.ToInt32(txtIDVisita.Text);
+                        //CargarDias();
+                        //VisitaB.UpdateDias(visita);
+                        //CargarOrden();
+                        //VisitaB.UpdateOrden(visita);
 
                         BuscarCliente();
                         return;
@@ -128,12 +128,12 @@ namespace RamosHermanos.Capas.Interfaz
                     CargarSaldo(txtIDcliente);
                     SaldoB.InsertSaldo(saldo);
 
-                    CargarVisita(txtIDcliente);
-                    VisitaB.InsertVisita(visita);
-                    CargarDias();
-                    VisitaB.InsertDias(visita);
-                    CargarOrden();
-                    VisitaB.InsertOrden(visita);
+                    //CargarVisita(txtIDcliente);
+                    //VisitaB.InsertVisita(visita);
+                    //CargarDias();
+                    //VisitaB.InsertDias(visita);
+                    //CargarOrden();
+                    //VisitaB.InsertOrden(visita);
 
                     ClienteB.CargarDGV(dgvCliente);
                 }
@@ -232,71 +232,71 @@ namespace RamosHermanos.Capas.Interfaz
             CheckColor(cbEstado, lblEstado);
         }
 
-        private void cbLunes_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbLunes.Checked == false)
-                txtLun.Enabled = false;
-            else
-                txtLun.Enabled = true;              
-        }
+        //private void cbLunes_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (cbLunes.Checked == false)
+        //        txtLun.Enabled = false;
+        //    else
+        //        txtLun.Enabled = true;              
+        //}
 
-        private void txtLun_TextChanged(object sender, EventArgs e)
-        {
+        //private void txtLun_TextChanged(object sender, EventArgs e)
+        //{
             
-        }
+        //}
 
-        private void cbMartes_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbMartes.Checked == false)
-                txtMar.Enabled = false;
-            else
-                txtMar.Enabled = true;           
-        }
+        //private void cbMartes_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (cbMartes.Checked == false)
+        //        txtMar.Enabled = false;
+        //    else
+        //        txtMar.Enabled = true;           
+        //}
 
-        private void cbMiercoles_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbMiercoles.Checked == false)
-                txtMie.Enabled = false;
-            else
-                txtMie.Enabled = true;       
-        }
+        //private void cbMiercoles_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (cbMiercoles.Checked == false)
+        //        txtMie.Enabled = false;
+        //    else
+        //        txtMie.Enabled = true;       
+        //}
 
-        private void cbJueves_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbJueves.Checked == false)
-                txtJue.Enabled = false;
-            else
-                txtJue.Enabled = true;   
-        }
+        //private void cbJueves_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (cbJueves.Checked == false)
+        //        txtJue.Enabled = false;
+        //    else
+        //        txtJue.Enabled = true;   
+        //}
 
         private void groupBox7_Enter(object sender, EventArgs e)
         {
 
         }
 
-        private void cbViernes_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbViernes.Checked == false)
-                txtVie.Enabled = false;
-            else
-                txtVie.Enabled = true;           
-        }
+        //private void cbViernes_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (cbViernes.Checked == false)
+        //        txtVie.Enabled = false;
+        //    else
+        //        txtVie.Enabled = true;           
+        //}
 
-        private void cbSabado_CheckedChanged(object sender, EventArgs e)
-        {
-            if (cbSabado.Checked == false)
-                txtSab.Enabled = false;
-            else
-                txtSab.Enabled = true;
-        }
+        //private void cbSabado_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (cbSabado.Checked == false)
+        //        txtSab.Enabled = false;
+        //    else
+        //        txtSab.Enabled = true;
+        //}
 
-        private void cbDomingo_CheckedChanged(object sender, EventArgs e)
-        {            
-            if (cbDomingo.Checked == false)            
-                txtDom.Enabled = false;            
-            else            
-                txtDom.Enabled = true;           
-        }
+        //private void cbDomingo_CheckedChanged(object sender, EventArgs e)
+        //{            
+        //    if (cbDomingo.Checked == false)            
+        //        txtDom.Enabled = false;            
+        //    else            
+        //        txtDom.Enabled = true;           
+        //}
 
         private void cbEstado_CheckedChanged(object sender, EventArgs e)
         {
@@ -340,13 +340,13 @@ namespace RamosHermanos.Capas.Interfaz
                     CargarSaldo(txtIDcliente);
                     SaldoB.UpdateSaldo(saldo);
                                         
-                    CargarVisita(txtIDcliente);
-                    VisitaB.UpdateVisita(visita);
-                    visita.idVisita = Convert.ToInt32(txtIDVisita.Text);
-                    CargarDias();
-                    VisitaB.UpdateDias(visita);
-                    CargarOrden();
-                    VisitaB.UpdateOrden(visita);
+                    //CargarVisita(txtIDcliente);
+                    //VisitaB.UpdateVisita(visita);
+                    //visita.idVisita = Convert.ToInt32(txtIDVisita.Text);
+                    //CargarDias();
+                    //VisitaB.UpdateDias(visita);
+                    //CargarOrden();
+                    //VisitaB.UpdateOrden(visita);
 
                     BuscarCliente();
                     ClienteB.CargarDGV(dgvCliente);
@@ -433,27 +433,27 @@ namespace RamosHermanos.Capas.Interfaz
                 txtCreditoMax.Text = Convert.ToString(saldo.creditoMax);
                 txtSaldo.Text = Convert.ToString(saldo.saldoActual);
 
-                CargarVisita(txtIDcliente);
-                VisitaB.BuscarVisita(visita);
-                txtIDVisita.Text = Convert.ToString(visita.idVisita);
-                dtpA.Text = visita.horarioVisitaA;
-                dtpB.Text = visita.horarioVisitaB;
-                //Dias
-                cbLunes.Checked = visita.dlunes;
-                cbMartes.Checked = visita.dmartes;
-                cbMiercoles.Checked = visita.dmiercoles;
-                cbJueves.Checked = visita.djueves;
-                cbViernes.Checked = visita.dviernes;
-                cbSabado.Checked = visita.dsabado;
-                cbDomingo.Checked = visita.ddomingo;
-                //Orden
-                txtLun.Text = Convert.ToString(visita.olunes);
-                txtMar.Text = Convert.ToString(visita.omartes);
-                txtMie.Text = Convert.ToString(visita.omiercoles);
-                txtJue.Text = Convert.ToString(visita.ojueves);
-                txtVie.Text = Convert.ToString(visita.oviernes);
-                txtSab.Text = Convert.ToString(visita.osabado);
-                txtDom.Text = Convert.ToString(visita.odomingo);
+                //CargarVisita(txtIDcliente);
+                //VisitaB.BuscarVisita(visita);
+                //txtIDVisita.Text = Convert.ToString(visita.idVisita);
+                //dtpA.Text = visita.horarioVisitaA;
+                //dtpB.Text = visita.horarioVisitaB;
+                ////Dias
+                //cbLunes.Checked = visita.dlunes;
+                //cbMartes.Checked = visita.dmartes;
+                //cbMiercoles.Checked = visita.dmiercoles;
+                //cbJueves.Checked = visita.djueves;
+                //cbViernes.Checked = visita.dviernes;
+                //cbSabado.Checked = visita.dsabado;
+                //cbDomingo.Checked = visita.ddomingo;
+                ////Orden
+                //txtLun.Text = Convert.ToString(visita.olunes);
+                //txtMar.Text = Convert.ToString(visita.omartes);
+                //txtMie.Text = Convert.ToString(visita.omiercoles);
+                //txtJue.Text = Convert.ToString(visita.ojueves);
+                //txtVie.Text = Convert.ToString(visita.oviernes);
+                //txtSab.Text = Convert.ToString(visita.osabado);
+                //txtDom.Text = Convert.ToString(visita.odomingo);
 
                 //Contacto
                 DomicilioB.CargarTXT(txtDomic, txtIDcliente, 1);
@@ -464,58 +464,58 @@ namespace RamosHermanos.Capas.Interfaz
             CheckColor(cbEstado, lblEstado);
         }
 
-        private void CargarDias()
-        {
-            // Días Semana
-            visita.idDias = visita.idVisita;
-            visita.dlunes = cbLunes.Checked;
-            visita.dmartes = cbMartes.Checked;
-            visita.dmiercoles = cbMiercoles.Checked;
-            visita.djueves = cbJueves.Checked;
-            visita.dviernes = cbViernes.Checked;
-            visita.dsabado = cbSabado.Checked;
-            visita.ddomingo = cbDomingo.Checked;
-        }
+        //private void CargarDias()
+        //{
+        //    // Días Semana
+        //    visita.idDias = visita.idVisita;
+        //    visita.dlunes = cbLunes.Checked;
+        //    visita.dmartes = cbMartes.Checked;
+        //    visita.dmiercoles = cbMiercoles.Checked;
+        //    visita.djueves = cbJueves.Checked;
+        //    visita.dviernes = cbViernes.Checked;
+        //    visita.dsabado = cbSabado.Checked;
+        //    visita.ddomingo = cbDomingo.Checked;
+        //}
 
-        private void CargarOrden()
-        {
-            // Numero de Orden
-            visita.idOrden = visita.idVisita;
-            if (txtLun.Text == string.Empty)
-                Convert.ToInt32(txtLun.Text == null);
-            else
-                visita.olunes = Convert.ToInt32(txtLun.Text);
+        //private void CargarOrden()
+        //{
+        //    // Numero de Orden
+        //    visita.idOrden = visita.idVisita;
+        //    if (txtLun.Text == string.Empty)
+        //        Convert.ToInt32(txtLun.Text == null);
+        //    else
+        //        visita.olunes = Convert.ToInt32(txtLun.Text);
 
-            if (txtMar.Text == string.Empty)
-                Convert.ToInt32(txtMar.Text == null);
-            else
-                visita.omartes = Convert.ToInt32(txtMar.Text);
+        //    if (txtMar.Text == string.Empty)
+        //        Convert.ToInt32(txtMar.Text == null);
+        //    else
+        //        visita.omartes = Convert.ToInt32(txtMar.Text);
 
-            if (txtMie.Text == string.Empty)
-                Convert.ToInt32(txtMie.Text == null);
-            else
-                visita.omiercoles = Convert.ToInt32(txtMie.Text);
+        //    if (txtMie.Text == string.Empty)
+        //        Convert.ToInt32(txtMie.Text == null);
+        //    else
+        //        visita.omiercoles = Convert.ToInt32(txtMie.Text);
 
-            if (txtJue.Text == string.Empty)
-                Convert.ToInt32(txtJue.Text == null);
-            else
-                visita.ojueves = Convert.ToInt32(txtJue.Text);
+        //    if (txtJue.Text == string.Empty)
+        //        Convert.ToInt32(txtJue.Text == null);
+        //    else
+        //        visita.ojueves = Convert.ToInt32(txtJue.Text);
 
-            if (txtVie.Text == string.Empty)
-                Convert.ToInt32(txtVie.Text == null);
-            else
-                visita.oviernes = Convert.ToInt32(txtVie.Text);
+        //    if (txtVie.Text == string.Empty)
+        //        Convert.ToInt32(txtVie.Text == null);
+        //    else
+        //        visita.oviernes = Convert.ToInt32(txtVie.Text);
 
-            if (txtSab.Text == string.Empty)
-                Convert.ToInt32(txtSab.Text == null);
-            else
-                visita.osabado = Convert.ToInt32(txtSab.Text);
+        //    if (txtSab.Text == string.Empty)
+        //        Convert.ToInt32(txtSab.Text == null);
+        //    else
+        //        visita.osabado = Convert.ToInt32(txtSab.Text);
 
-            if (txtDom.Text == string.Empty)
-                Convert.ToInt32(txtDom.Text == null);
-            else
-                visita.odomingo = Convert.ToInt32(txtDom.Text);
-        }
+        //    if (txtDom.Text == string.Empty)
+        //        Convert.ToInt32(txtDom.Text == null);
+        //    else
+        //        visita.odomingo = Convert.ToInt32(txtDom.Text);
+        //}
 
         private bool ValidarCampos() //Verificar valores necesarios cargados.
         {
@@ -541,7 +541,6 @@ namespace RamosHermanos.Capas.Interfaz
             txtNombre.Text = "";
             cbTipoCliente.Text = "";
             txtEmail.Text = "";
-            txtDom.Text = "";
             txtTel.Text = "";
             txtCreditoMax.Text = "";
             txtSaldo.Text = "";
@@ -551,22 +550,22 @@ namespace RamosHermanos.Capas.Interfaz
             txt20LT.Text = "";
             txt25LT.Text = "";
             txtRetornable.Text = "";
-            cbLunes.Checked = false;
-            cbMartes.Checked = false;
-            cbMiercoles.Checked = false;
-            cbJueves.Checked = false;
-            cbViernes.Checked = false;
-            cbSabado.Checked = false;
-            cbDomingo.Checked = false;
-            txtLun.Text = "";
-            txtMar.Text = "";
-            txtMie.Text = "";
-            txtJue.Text = "";
-            txtVie.Text = "";
-            txtSab.Text = "";
-            txtDom.Text = "";
-            dtpA.Text = "09:00";
-            dtpB.Text = "16:00";
+            //cbLunes.Checked = false;
+            //cbMartes.Checked = false;
+            //cbMiercoles.Checked = false;
+            //cbJueves.Checked = false;
+            //cbViernes.Checked = false;
+            //cbSabado.Checked = false;
+            //cbDomingo.Checked = false;
+            //txtLun.Text = "";
+            //txtMar.Text = "";
+            //txtMie.Text = "";
+            //txtJue.Text = "";
+            //txtVie.Text = "";
+            //txtSab.Text = "";
+            //txtDom.Text = "";
+            //dtpA.Text = "09:00";
+            //dtpB.Text = "16:00";
         }
 
         private void SeleccionarDGV()
@@ -608,27 +607,27 @@ namespace RamosHermanos.Capas.Interfaz
                     txtCreditoMax.Text = Convert.ToString(saldo.creditoMax);
                     txtSaldo.Text = Convert.ToString(saldo.saldoActual);
 
-                    CargarVisita(txtIDcliente);
-                    VisitaB.BuscarVisita(visita);
-                    txtIDVisita.Text = Convert.ToString(visita.idVisita);
-                    dtpA.Text = visita.horarioVisitaA;
-                    dtpB.Text = visita.horarioVisitaB;
-                    //Dias
-                    cbLunes.Checked = visita.dlunes;
-                    cbMartes.Checked = visita.dmartes;
-                    cbMiercoles.Checked = visita.dmiercoles;
-                    cbJueves.Checked = visita.djueves;
-                    cbViernes.Checked = visita.dviernes;
-                    cbSabado.Checked = visita.dsabado;
-                    cbDomingo.Checked = visita.ddomingo;
+                    //CargarVisita(txtIDcliente);
+                    //VisitaB.BuscarVisita(visita);
+                    //txtIDVisita.Text = Convert.ToString(visita.idVisita);
+                    //dtpA.Text = visita.horarioVisitaA;
+                    //dtpB.Text = visita.horarioVisitaB;
+                    ////Dias
+                    //cbLunes.Checked = visita.dlunes;
+                    //cbMartes.Checked = visita.dmartes;
+                    //cbMiercoles.Checked = visita.dmiercoles;
+                    //cbJueves.Checked = visita.djueves;
+                    //cbViernes.Checked = visita.dviernes;
+                    //cbSabado.Checked = visita.dsabado;
+                    //cbDomingo.Checked = visita.ddomingo;
                     //Orden
-                    txtLun.Text = Convert.ToString(visita.olunes);
-                    txtMar.Text = Convert.ToString(visita.omartes);
-                    txtMie.Text = Convert.ToString(visita.omiercoles);
-                    txtJue.Text = Convert.ToString(visita.ojueves);
-                    txtVie.Text = Convert.ToString(visita.oviernes);
-                    txtSab.Text = Convert.ToString(visita.osabado);
-                    txtDom.Text = Convert.ToString(visita.odomingo);
+                    //txtLun.Text = Convert.ToString(visita.olunes);
+                    //txtMar.Text = Convert.ToString(visita.omartes);
+                    //txtMie.Text = Convert.ToString(visita.omiercoles);
+                    //txtJue.Text = Convert.ToString(visita.ojueves);
+                    //txtVie.Text = Convert.ToString(visita.oviernes);
+                    //txtSab.Text = Convert.ToString(visita.osabado);
+                    //txtDom.Text = Convert.ToString(visita.odomingo);
 
                     //Contacto
                     DomicilioB.CargarTXT(txtDomic, txtIDcliente, 1);
@@ -641,7 +640,14 @@ namespace RamosHermanos.Capas.Interfaz
                     tabMain.Controls.Add(tabMovimientos);
 
                     //Cargar tabReparto
-                    DistribuidorB.CargarDGVCB(cliente, dgvLun);
+                    DistribuidorB.CargarDGVCB(cliente, dgvLu, "colRdistribuidorLu");
+                    DistribuidorB.CargarDGVCB(cliente, dgvMa, "colRdistribuidorMa");
+                    DistribuidorB.CargarDGVCB(cliente, dgvMi, "colRdistribuidorMi");
+                    DistribuidorB.CargarDGVCB(cliente, dgvJu, "colRdistribuidorJu");
+                    DistribuidorB.CargarDGVCB(cliente, dgvVi, "colRdistribuidorVi");
+                    DistribuidorB.CargarDGVCB(cliente, dgvSa, "colRdistribuidorSa");
+                    DistribuidorB.CargarDGVCB(cliente, dgvDo, "colRdistribuidorDo");
+
                 }
                 else if (cliente.tipoPersona == "PJ")
                 {
@@ -913,13 +919,13 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         VisitaEntity visita = new VisitaEntity();
-        private void CargarVisita(TextBox txt)
-        {
-            visita.rol = 1;
-            visita.idPersona = Convert.ToInt32(txt.Text);
-            visita.horarioVisitaA = Convert.ToString(dtpA.Text);
-            visita.horarioVisitaB = Convert.ToString(dtpB.Text);
-        }
+        //private void CargarVisita(TextBox txt)
+        //{
+        //    visita.rol = 1;
+        //    visita.idPersona = Convert.ToInt32(txt.Text);
+        //    visita.horarioVisitaA = Convert.ToString(dtpA.Text);
+        //    visita.horarioVisitaB = Convert.ToString(dtpB.Text);
+        //}
 
         private void groupBox9_Enter(object sender, EventArgs e)
         {
@@ -964,13 +970,13 @@ namespace RamosHermanos.Capas.Interfaz
                         CargarSaldo(txtIDcliente);
                         SaldoB.UpdateSaldo(saldo);
 
-                        CargarVisita(txtIDcliente);
-                        VisitaB.UpdateVisita(visita);
-                        visita.idVisita = Convert.ToInt32(txtIDVisita.Text);
-                        CargarDias();
-                        VisitaB.UpdateDias(visita);
-                        CargarOrden();
-                        VisitaB.UpdateOrden(visita);
+                        //CargarVisita(txtIDcliente);
+                        //VisitaB.UpdateVisita(visita);
+                        //visita.idVisita = Convert.ToInt32(txtIDVisita.Text);
+                        //CargarDias();
+                        //VisitaB.UpdateDias(visita);
+                        //CargarOrden();
+                        //VisitaB.UpdateOrden(visita);
 
                         BuscarCliente();
                         return;
@@ -988,12 +994,12 @@ namespace RamosHermanos.Capas.Interfaz
                     CargarSaldo(txtIDcliente);
                     SaldoB.InsertSaldo(saldo);
 
-                    CargarVisita(txtIDcliente);
-                    VisitaB.InsertVisita(visita);
-                    CargarDias();
-                    VisitaB.InsertDias(visita);
-                    CargarOrden();
-                    VisitaB.InsertOrden(visita);
+                    //CargarVisita(txtIDcliente);
+                    //VisitaB.InsertVisita(visita);
+                    //CargarDias();
+                    //VisitaB.InsertDias(visita);
+                    //CargarOrden();
+                    //VisitaB.InsertOrden(visita);
 
                     ClienteB.CargarDGV(dgvCliente);
                 }

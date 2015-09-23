@@ -115,28 +115,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDomic = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.gbVisita = new System.Windows.Forms.GroupBox();
-            this.txtIDVisita = new System.Windows.Forms.TextBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.cbLunes = new System.Windows.Forms.CheckBox();
-            this.cbMartes = new System.Windows.Forms.CheckBox();
-            this.cbMiercoles = new System.Windows.Forms.CheckBox();
-            this.cbJueves = new System.Windows.Forms.CheckBox();
-            this.cbDomingo = new System.Windows.Forms.CheckBox();
-            this.cbViernes = new System.Windows.Forms.CheckBox();
-            this.cbSabado = new System.Windows.Forms.CheckBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.txtDom = new System.Windows.Forms.TextBox();
-            this.txtSab = new System.Windows.Forms.TextBox();
-            this.txtVie = new System.Windows.Forms.TextBox();
-            this.txtJue = new System.Windows.Forms.TextBox();
-            this.txtMie = new System.Windows.Forms.TextBox();
-            this.txtMar = new System.Windows.Forms.TextBox();
-            this.txtLun = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.dtpB = new System.Windows.Forms.DateTimePicker();
-            this.dtpA = new System.Windows.Forms.DateTimePicker();
-            this.label21 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabInformacionJ = new System.Windows.Forms.TabPage();
@@ -192,51 +170,66 @@
             this.label60 = new System.Windows.Forms.Label();
             this.txtDomicilioPJ = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.cbLunesPJ = new System.Windows.Forms.CheckBox();
-            this.cbMartesPJ = new System.Windows.Forms.CheckBox();
-            this.cbMiercolesPJ = new System.Windows.Forms.CheckBox();
-            this.cbJuevesPJ = new System.Windows.Forms.CheckBox();
-            this.cbDomingoPJ = new System.Windows.Forms.CheckBox();
-            this.cbViernesPJ = new System.Windows.Forms.CheckBox();
-            this.cbSabadoPJ = new System.Windows.Forms.CheckBox();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.txtDomPJ = new System.Windows.Forms.TextBox();
-            this.txtSabPJ = new System.Windows.Forms.TextBox();
-            this.txtViePJ = new System.Windows.Forms.TextBox();
-            this.txtJuePJ = new System.Windows.Forms.TextBox();
-            this.txtMiePJ = new System.Windows.Forms.TextBox();
-            this.txtMarPJ = new System.Windows.Forms.TextBox();
-            this.txtLunPJ = new System.Windows.Forms.TextBox();
-            this.label62 = new System.Windows.Forms.Label();
-            this.dtpBPJ = new System.Windows.Forms.DateTimePicker();
-            this.dtpAPJ = new System.Windows.Forms.DateTimePicker();
-            this.label63 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabDias = new System.Windows.Forms.TabControl();
             this.tabLunes = new System.Windows.Forms.TabPage();
-            this.dgvLun = new System.Windows.Forms.DataGridView();
+            this.dgvLu = new System.Windows.Forms.DataGridView();
             this.tabMartes = new System.Windows.Forms.TabPage();
+            this.dgvMa = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabMiercoles = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvMi = new System.Windows.Forms.DataGridView();
             this.tabJueves = new System.Windows.Forms.TabPage();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dgvJu = new System.Windows.Forms.DataGridView();
             this.tabViernes = new System.Windows.Forms.TabPage();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.dgvVi = new System.Windows.Forms.DataGridView();
             this.tabSabado = new System.Windows.Forms.TabPage();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.dgvSa = new System.Windows.Forms.DataGridView();
             this.tabDomingo = new System.Windows.Forms.TabPage();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dgvDo = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRdistribuidorMa = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.colRIDcliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRcliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDdomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRdomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRIDdistribuidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRdistribuidor = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colRdistribuidorLu = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.asd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRdistribuidorMi = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.fdgdg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRdistribuidorJu = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.fn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRdistribuidorVi = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.kghd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRdistribuidorSa = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.hthdf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRdistribuidorDo = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -246,9 +239,6 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.gbVisita.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox8.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabInformacionJ.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -257,25 +247,23 @@
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox14.SuspendLayout();
-            this.groupBox15.SuspendLayout();
-            this.groupBox16.SuspendLayout();
-            this.groupBox17.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabDias.SuspendLayout();
             this.tabLunes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLun)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLu)).BeginInit();
             this.tabMartes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabMiercoles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMi)).BeginInit();
             this.tabJueves.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJu)).BeginInit();
             this.tabViernes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVi)).BeginInit();
             this.tabSabado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSa)).BeginInit();
             this.tabDomingo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDo)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMovimientos
@@ -444,7 +432,6 @@
             this.tabInformacion.Controls.Add(this.groupBox5);
             this.tabInformacion.Controls.Add(this.groupBox2);
             this.tabInformacion.Controls.Add(this.groupBox1);
-            this.tabInformacion.Controls.Add(this.gbVisita);
             this.tabInformacion.Controls.Add(this.btnSave);
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
@@ -961,7 +948,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(502, 87);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(265, 161);
+            this.groupBox2.Size = new System.Drawing.Size(265, 172);
             this.groupBox2.TabIndex = 66;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Envases";
@@ -982,7 +969,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(3, 16);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(126, 142);
+            this.groupBox3.Size = new System.Drawing.Size(126, 153);
             this.groupBox3.TabIndex = 59;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Agua";
@@ -991,7 +978,7 @@
             // 
             this.txt25LT.Enabled = false;
             this.txt25LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt25LT.Location = new System.Drawing.Point(64, 111);
+            this.txt25LT.Location = new System.Drawing.Point(64, 123);
             this.txt25LT.Name = "txt25LT";
             this.txt25LT.Size = new System.Drawing.Size(47, 20);
             this.txt25LT.TabIndex = 102;
@@ -1000,7 +987,7 @@
             // 
             this.txt20LT.Enabled = false;
             this.txt20LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt20LT.Location = new System.Drawing.Point(64, 88);
+            this.txt20LT.Location = new System.Drawing.Point(64, 97);
             this.txt20LT.Name = "txt20LT";
             this.txt20LT.Size = new System.Drawing.Size(47, 20);
             this.txt20LT.TabIndex = 101;
@@ -1009,7 +996,7 @@
             // 
             this.txt12LT.Enabled = false;
             this.txt12LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt12LT.Location = new System.Drawing.Point(64, 65);
+            this.txt12LT.Location = new System.Drawing.Point(64, 71);
             this.txt12LT.Name = "txt12LT";
             this.txt12LT.Size = new System.Drawing.Size(47, 20);
             this.txt12LT.TabIndex = 100;
@@ -1018,7 +1005,7 @@
             // 
             this.txt10LT.Enabled = false;
             this.txt10LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt10LT.Location = new System.Drawing.Point(64, 42);
+            this.txt10LT.Location = new System.Drawing.Point(64, 45);
             this.txt10LT.Name = "txt10LT";
             this.txt10LT.Size = new System.Drawing.Size(47, 20);
             this.txt10LT.TabIndex = 99;
@@ -1036,7 +1023,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label27.Location = new System.Drawing.Point(18, 114);
+            this.label27.Location = new System.Drawing.Point(18, 126);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(40, 13);
             this.label27.TabIndex = 66;
@@ -1046,7 +1033,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label26.Location = new System.Drawing.Point(18, 91);
+            this.label26.Location = new System.Drawing.Point(18, 100);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(40, 13);
             this.label26.TabIndex = 64;
@@ -1056,7 +1043,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label25.Location = new System.Drawing.Point(18, 67);
+            this.label25.Location = new System.Drawing.Point(18, 73);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(40, 13);
             this.label25.TabIndex = 62;
@@ -1066,7 +1053,7 @@
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label23.Location = new System.Drawing.Point(18, 45);
+            this.label23.Location = new System.Drawing.Point(18, 48);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(40, 13);
             this.label23.TabIndex = 60;
@@ -1090,7 +1077,7 @@
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(136, 16);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(126, 142);
+            this.groupBox4.Size = new System.Drawing.Size(126, 153);
             this.groupBox4.TabIndex = 59;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Sodas";
@@ -1227,266 +1214,6 @@
             this.label7.TabIndex = 27;
             this.label7.Text = "Telefonos";
             // 
-            // gbVisita
-            // 
-            this.gbVisita.Controls.Add(this.txtIDVisita);
-            this.gbVisita.Controls.Add(this.groupBox7);
-            this.gbVisita.Controls.Add(this.groupBox8);
-            this.gbVisita.Controls.Add(this.label30);
-            this.gbVisita.Controls.Add(this.dtpB);
-            this.gbVisita.Controls.Add(this.dtpA);
-            this.gbVisita.Controls.Add(this.label21);
-            this.gbVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbVisita.Location = new System.Drawing.Point(505, 254);
-            this.gbVisita.Name = "gbVisita";
-            this.gbVisita.Size = new System.Drawing.Size(265, 238);
-            this.gbVisita.TabIndex = 64;
-            this.gbVisita.TabStop = false;
-            this.gbVisita.Text = "Visita";
-            // 
-            // txtIDVisita
-            // 
-            this.txtIDVisita.Enabled = false;
-            this.txtIDVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtIDVisita.Location = new System.Drawing.Point(48, -3);
-            this.txtIDVisita.Name = "txtIDVisita";
-            this.txtIDVisita.Size = new System.Drawing.Size(82, 20);
-            this.txtIDVisita.TabIndex = 98;
-            this.txtIDVisita.Visible = false;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.cbLunes);
-            this.groupBox7.Controls.Add(this.cbMartes);
-            this.groupBox7.Controls.Add(this.cbMiercoles);
-            this.groupBox7.Controls.Add(this.cbJueves);
-            this.groupBox7.Controls.Add(this.cbDomingo);
-            this.groupBox7.Controls.Add(this.cbViernes);
-            this.groupBox7.Controls.Add(this.cbSabado);
-            this.groupBox7.Location = new System.Drawing.Point(3, 16);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(126, 180);
-            this.groupBox7.TabIndex = 62;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Día";
-            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
-            // 
-            // cbLunes
-            // 
-            this.cbLunes.AutoSize = true;
-            this.cbLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLunes.Location = new System.Drawing.Point(24, 18);
-            this.cbLunes.Name = "cbLunes";
-            this.cbLunes.Size = new System.Drawing.Size(55, 17);
-            this.cbLunes.TabIndex = 59;
-            this.cbLunes.Text = "Lunes";
-            this.cbLunes.UseVisualStyleBackColor = true;
-            this.cbLunes.CheckedChanged += new System.EventHandler(this.cbLunes_CheckedChanged);
-            this.cbLunes.Validated += new System.EventHandler(this.cbLunes_Validated);
-            // 
-            // cbMartes
-            // 
-            this.cbMartes.AutoSize = true;
-            this.cbMartes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMartes.Location = new System.Drawing.Point(24, 41);
-            this.cbMartes.Name = "cbMartes";
-            this.cbMartes.Size = new System.Drawing.Size(58, 17);
-            this.cbMartes.TabIndex = 60;
-            this.cbMartes.Text = "Martes";
-            this.cbMartes.UseVisualStyleBackColor = true;
-            this.cbMartes.CheckedChanged += new System.EventHandler(this.cbMartes_CheckedChanged);
-            // 
-            // cbMiercoles
-            // 
-            this.cbMiercoles.AutoSize = true;
-            this.cbMiercoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMiercoles.Location = new System.Drawing.Point(24, 64);
-            this.cbMiercoles.Name = "cbMiercoles";
-            this.cbMiercoles.Size = new System.Drawing.Size(71, 17);
-            this.cbMiercoles.TabIndex = 61;
-            this.cbMiercoles.Text = "Miercoles";
-            this.cbMiercoles.UseVisualStyleBackColor = true;
-            this.cbMiercoles.CheckedChanged += new System.EventHandler(this.cbMiercoles_CheckedChanged);
-            // 
-            // cbJueves
-            // 
-            this.cbJueves.AutoSize = true;
-            this.cbJueves.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbJueves.Location = new System.Drawing.Point(24, 87);
-            this.cbJueves.Name = "cbJueves";
-            this.cbJueves.Size = new System.Drawing.Size(60, 17);
-            this.cbJueves.TabIndex = 62;
-            this.cbJueves.Text = "Jueves";
-            this.cbJueves.UseVisualStyleBackColor = true;
-            this.cbJueves.CheckedChanged += new System.EventHandler(this.cbJueves_CheckedChanged);
-            // 
-            // cbDomingo
-            // 
-            this.cbDomingo.AutoSize = true;
-            this.cbDomingo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDomingo.Location = new System.Drawing.Point(24, 156);
-            this.cbDomingo.Name = "cbDomingo";
-            this.cbDomingo.Size = new System.Drawing.Size(68, 17);
-            this.cbDomingo.TabIndex = 65;
-            this.cbDomingo.Text = "Domingo";
-            this.cbDomingo.UseVisualStyleBackColor = true;
-            this.cbDomingo.CheckedChanged += new System.EventHandler(this.cbDomingo_CheckedChanged);
-            // 
-            // cbViernes
-            // 
-            this.cbViernes.AutoSize = true;
-            this.cbViernes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbViernes.Location = new System.Drawing.Point(24, 110);
-            this.cbViernes.Name = "cbViernes";
-            this.cbViernes.Size = new System.Drawing.Size(61, 17);
-            this.cbViernes.TabIndex = 63;
-            this.cbViernes.Text = "Viernes";
-            this.cbViernes.UseVisualStyleBackColor = true;
-            this.cbViernes.CheckedChanged += new System.EventHandler(this.cbViernes_CheckedChanged);
-            // 
-            // cbSabado
-            // 
-            this.cbSabado.AutoSize = true;
-            this.cbSabado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSabado.Location = new System.Drawing.Point(24, 133);
-            this.cbSabado.Name = "cbSabado";
-            this.cbSabado.Size = new System.Drawing.Size(63, 17);
-            this.cbSabado.TabIndex = 64;
-            this.cbSabado.Text = "Sabado";
-            this.cbSabado.UseVisualStyleBackColor = true;
-            this.cbSabado.CheckedChanged += new System.EventHandler(this.cbSabado_CheckedChanged);
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.txtDom);
-            this.groupBox8.Controls.Add(this.txtSab);
-            this.groupBox8.Controls.Add(this.txtVie);
-            this.groupBox8.Controls.Add(this.txtJue);
-            this.groupBox8.Controls.Add(this.txtMie);
-            this.groupBox8.Controls.Add(this.txtMar);
-            this.groupBox8.Controls.Add(this.txtLun);
-            this.groupBox8.Location = new System.Drawing.Point(136, 16);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(126, 178);
-            this.groupBox8.TabIndex = 63;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Nº de Orden";
-            // 
-            // txtDom
-            // 
-            this.txtDom.Enabled = false;
-            this.txtDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtDom.Location = new System.Drawing.Point(41, 154);
-            this.txtDom.Name = "txtDom";
-            this.txtDom.Size = new System.Drawing.Size(47, 20);
-            this.txtDom.TabIndex = 97;
-            this.txtDom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDom_KeyPress);
-            // 
-            // txtSab
-            // 
-            this.txtSab.Enabled = false;
-            this.txtSab.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtSab.Location = new System.Drawing.Point(41, 131);
-            this.txtSab.Name = "txtSab";
-            this.txtSab.Size = new System.Drawing.Size(47, 20);
-            this.txtSab.TabIndex = 96;
-            this.txtSab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSab_KeyPress);
-            // 
-            // txtVie
-            // 
-            this.txtVie.Enabled = false;
-            this.txtVie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtVie.Location = new System.Drawing.Point(41, 108);
-            this.txtVie.Name = "txtVie";
-            this.txtVie.Size = new System.Drawing.Size(47, 20);
-            this.txtVie.TabIndex = 95;
-            this.txtVie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVie_KeyPress);
-            // 
-            // txtJue
-            // 
-            this.txtJue.Enabled = false;
-            this.txtJue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtJue.Location = new System.Drawing.Point(41, 85);
-            this.txtJue.Name = "txtJue";
-            this.txtJue.Size = new System.Drawing.Size(47, 20);
-            this.txtJue.TabIndex = 94;
-            this.txtJue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJue_KeyPress);
-            // 
-            // txtMie
-            // 
-            this.txtMie.Enabled = false;
-            this.txtMie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtMie.Location = new System.Drawing.Point(41, 62);
-            this.txtMie.Name = "txtMie";
-            this.txtMie.Size = new System.Drawing.Size(47, 20);
-            this.txtMie.TabIndex = 93;
-            this.txtMie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMie_KeyPress);
-            // 
-            // txtMar
-            // 
-            this.txtMar.Enabled = false;
-            this.txtMar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtMar.Location = new System.Drawing.Point(41, 39);
-            this.txtMar.Name = "txtMar";
-            this.txtMar.Size = new System.Drawing.Size(47, 20);
-            this.txtMar.TabIndex = 92;
-            this.txtMar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMar_KeyPress);
-            // 
-            // txtLun
-            // 
-            this.txtLun.Enabled = false;
-            this.txtLun.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtLun.Location = new System.Drawing.Point(41, 16);
-            this.txtLun.Name = "txtLun";
-            this.txtLun.Size = new System.Drawing.Size(47, 20);
-            this.txtLun.TabIndex = 91;
-            this.txtLun.TextChanged += new System.EventHandler(this.txtLun_TextChanged);
-            this.txtLun.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLun_KeyPress);
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label30.Location = new System.Drawing.Point(131, 215);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(14, 13);
-            this.label30.TabIndex = 61;
-            this.label30.Text = "A";
-            // 
-            // dtpB
-            // 
-            this.dtpB.CustomFormat = "HH:mm";
-            this.dtpB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpB.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpB.Location = new System.Drawing.Point(147, 213);
-            this.dtpB.Name = "dtpB";
-            this.dtpB.ShowUpDown = true;
-            this.dtpB.Size = new System.Drawing.Size(60, 20);
-            this.dtpB.TabIndex = 60;
-            this.dtpB.Value = new System.DateTime(2015, 8, 4, 16, 0, 0, 0);
-            // 
-            // dtpA
-            // 
-            this.dtpA.CustomFormat = "HH:mm";
-            this.dtpA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpA.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpA.Location = new System.Drawing.Point(67, 213);
-            this.dtpA.Name = "dtpA";
-            this.dtpA.ShowUpDown = true;
-            this.dtpA.Size = new System.Drawing.Size(60, 20);
-            this.dtpA.TabIndex = 59;
-            this.dtpA.Value = new System.DateTime(2015, 8, 4, 9, 0, 0, 0);
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(87, 196);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(101, 13);
-            this.label21.TabIndex = 41;
-            this.label21.Text = "Horario de Visita";
-            // 
             // btnSave
             // 
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
@@ -1524,7 +1251,6 @@
             this.tabInformacionJ.Controls.Add(this.groupBox10);
             this.tabInformacionJ.Controls.Add(this.groupBox11);
             this.tabInformacionJ.Controls.Add(this.groupBox14);
-            this.tabInformacionJ.Controls.Add(this.groupBox15);
             this.tabInformacionJ.Controls.Add(this.button10);
             this.tabInformacionJ.Location = new System.Drawing.Point(4, 22);
             this.tabInformacionJ.Name = "tabInformacionJ";
@@ -1858,7 +1584,7 @@
             this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox11.Location = new System.Drawing.Point(502, 87);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(265, 161);
+            this.groupBox11.Size = new System.Drawing.Size(265, 172);
             this.groupBox11.TabIndex = 74;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Envases";
@@ -1879,7 +1605,7 @@
             this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox12.Location = new System.Drawing.Point(3, 16);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(126, 142);
+            this.groupBox12.Size = new System.Drawing.Size(126, 153);
             this.groupBox12.TabIndex = 59;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Agua";
@@ -1888,7 +1614,7 @@
             // 
             this.txt25LTPJ.Enabled = false;
             this.txt25LTPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt25LTPJ.Location = new System.Drawing.Point(64, 111);
+            this.txt25LTPJ.Location = new System.Drawing.Point(64, 123);
             this.txt25LTPJ.Name = "txt25LTPJ";
             this.txt25LTPJ.Size = new System.Drawing.Size(47, 20);
             this.txt25LTPJ.TabIndex = 102;
@@ -1897,7 +1623,7 @@
             // 
             this.txt20LTPJ.Enabled = false;
             this.txt20LTPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt20LTPJ.Location = new System.Drawing.Point(64, 88);
+            this.txt20LTPJ.Location = new System.Drawing.Point(64, 97);
             this.txt20LTPJ.Name = "txt20LTPJ";
             this.txt20LTPJ.Size = new System.Drawing.Size(47, 20);
             this.txt20LTPJ.TabIndex = 101;
@@ -1906,7 +1632,7 @@
             // 
             this.txt12LTPJ.Enabled = false;
             this.txt12LTPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt12LTPJ.Location = new System.Drawing.Point(64, 65);
+            this.txt12LTPJ.Location = new System.Drawing.Point(64, 71);
             this.txt12LTPJ.Name = "txt12LTPJ";
             this.txt12LTPJ.Size = new System.Drawing.Size(47, 20);
             this.txt12LTPJ.TabIndex = 100;
@@ -1915,7 +1641,7 @@
             // 
             this.txt10LTPJ.Enabled = false;
             this.txt10LTPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt10LTPJ.Location = new System.Drawing.Point(64, 42);
+            this.txt10LTPJ.Location = new System.Drawing.Point(64, 45);
             this.txt10LTPJ.Name = "txt10LTPJ";
             this.txt10LTPJ.Size = new System.Drawing.Size(47, 20);
             this.txt10LTPJ.TabIndex = 99;
@@ -1933,7 +1659,7 @@
             // 
             this.label53.AutoSize = true;
             this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label53.Location = new System.Drawing.Point(18, 114);
+            this.label53.Location = new System.Drawing.Point(18, 126);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(40, 13);
             this.label53.TabIndex = 66;
@@ -1943,7 +1669,7 @@
             // 
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label54.Location = new System.Drawing.Point(18, 91);
+            this.label54.Location = new System.Drawing.Point(18, 100);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(40, 13);
             this.label54.TabIndex = 64;
@@ -1953,7 +1679,7 @@
             // 
             this.label55.AutoSize = true;
             this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label55.Location = new System.Drawing.Point(18, 67);
+            this.label55.Location = new System.Drawing.Point(18, 73);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(40, 13);
             this.label55.TabIndex = 62;
@@ -1963,7 +1689,7 @@
             // 
             this.label56.AutoSize = true;
             this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label56.Location = new System.Drawing.Point(18, 45);
+            this.label56.Location = new System.Drawing.Point(18, 48);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(40, 13);
             this.label56.TabIndex = 60;
@@ -1987,7 +1713,7 @@
             this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox13.Location = new System.Drawing.Point(136, 16);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(126, 142);
+            this.groupBox13.Size = new System.Drawing.Size(126, 153);
             this.groupBox13.TabIndex = 59;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Sodas";
@@ -2120,249 +1846,6 @@
             this.label61.TabIndex = 27;
             this.label61.Text = "Telefonos";
             // 
-            // groupBox15
-            // 
-            this.groupBox15.Controls.Add(this.textBox16);
-            this.groupBox15.Controls.Add(this.groupBox16);
-            this.groupBox15.Controls.Add(this.groupBox17);
-            this.groupBox15.Controls.Add(this.label62);
-            this.groupBox15.Controls.Add(this.dtpBPJ);
-            this.groupBox15.Controls.Add(this.dtpAPJ);
-            this.groupBox15.Controls.Add(this.label63);
-            this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox15.Location = new System.Drawing.Point(505, 254);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(265, 238);
-            this.groupBox15.TabIndex = 72;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Visita";
-            // 
-            // textBox16
-            // 
-            this.textBox16.Enabled = false;
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox16.Location = new System.Drawing.Point(48, -3);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(82, 20);
-            this.textBox16.TabIndex = 98;
-            this.textBox16.Visible = false;
-            // 
-            // groupBox16
-            // 
-            this.groupBox16.Controls.Add(this.cbLunesPJ);
-            this.groupBox16.Controls.Add(this.cbMartesPJ);
-            this.groupBox16.Controls.Add(this.cbMiercolesPJ);
-            this.groupBox16.Controls.Add(this.cbJuevesPJ);
-            this.groupBox16.Controls.Add(this.cbDomingoPJ);
-            this.groupBox16.Controls.Add(this.cbViernesPJ);
-            this.groupBox16.Controls.Add(this.cbSabadoPJ);
-            this.groupBox16.Location = new System.Drawing.Point(3, 16);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(126, 180);
-            this.groupBox16.TabIndex = 62;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Día";
-            // 
-            // cbLunesPJ
-            // 
-            this.cbLunesPJ.AutoSize = true;
-            this.cbLunesPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLunesPJ.Location = new System.Drawing.Point(24, 18);
-            this.cbLunesPJ.Name = "cbLunesPJ";
-            this.cbLunesPJ.Size = new System.Drawing.Size(55, 17);
-            this.cbLunesPJ.TabIndex = 59;
-            this.cbLunesPJ.Text = "Lunes";
-            this.cbLunesPJ.UseVisualStyleBackColor = true;
-            // 
-            // cbMartesPJ
-            // 
-            this.cbMartesPJ.AutoSize = true;
-            this.cbMartesPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMartesPJ.Location = new System.Drawing.Point(24, 41);
-            this.cbMartesPJ.Name = "cbMartesPJ";
-            this.cbMartesPJ.Size = new System.Drawing.Size(58, 17);
-            this.cbMartesPJ.TabIndex = 60;
-            this.cbMartesPJ.Text = "Martes";
-            this.cbMartesPJ.UseVisualStyleBackColor = true;
-            // 
-            // cbMiercolesPJ
-            // 
-            this.cbMiercolesPJ.AutoSize = true;
-            this.cbMiercolesPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMiercolesPJ.Location = new System.Drawing.Point(24, 64);
-            this.cbMiercolesPJ.Name = "cbMiercolesPJ";
-            this.cbMiercolesPJ.Size = new System.Drawing.Size(71, 17);
-            this.cbMiercolesPJ.TabIndex = 61;
-            this.cbMiercolesPJ.Text = "Miercoles";
-            this.cbMiercolesPJ.UseVisualStyleBackColor = true;
-            // 
-            // cbJuevesPJ
-            // 
-            this.cbJuevesPJ.AutoSize = true;
-            this.cbJuevesPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbJuevesPJ.Location = new System.Drawing.Point(24, 87);
-            this.cbJuevesPJ.Name = "cbJuevesPJ";
-            this.cbJuevesPJ.Size = new System.Drawing.Size(60, 17);
-            this.cbJuevesPJ.TabIndex = 62;
-            this.cbJuevesPJ.Text = "Jueves";
-            this.cbJuevesPJ.UseVisualStyleBackColor = true;
-            // 
-            // cbDomingoPJ
-            // 
-            this.cbDomingoPJ.AutoSize = true;
-            this.cbDomingoPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDomingoPJ.Location = new System.Drawing.Point(24, 156);
-            this.cbDomingoPJ.Name = "cbDomingoPJ";
-            this.cbDomingoPJ.Size = new System.Drawing.Size(68, 17);
-            this.cbDomingoPJ.TabIndex = 65;
-            this.cbDomingoPJ.Text = "Domingo";
-            this.cbDomingoPJ.UseVisualStyleBackColor = true;
-            // 
-            // cbViernesPJ
-            // 
-            this.cbViernesPJ.AutoSize = true;
-            this.cbViernesPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbViernesPJ.Location = new System.Drawing.Point(24, 110);
-            this.cbViernesPJ.Name = "cbViernesPJ";
-            this.cbViernesPJ.Size = new System.Drawing.Size(61, 17);
-            this.cbViernesPJ.TabIndex = 63;
-            this.cbViernesPJ.Text = "Viernes";
-            this.cbViernesPJ.UseVisualStyleBackColor = true;
-            // 
-            // cbSabadoPJ
-            // 
-            this.cbSabadoPJ.AutoSize = true;
-            this.cbSabadoPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSabadoPJ.Location = new System.Drawing.Point(24, 133);
-            this.cbSabadoPJ.Name = "cbSabadoPJ";
-            this.cbSabadoPJ.Size = new System.Drawing.Size(63, 17);
-            this.cbSabadoPJ.TabIndex = 64;
-            this.cbSabadoPJ.Text = "Sabado";
-            this.cbSabadoPJ.UseVisualStyleBackColor = true;
-            // 
-            // groupBox17
-            // 
-            this.groupBox17.Controls.Add(this.txtDomPJ);
-            this.groupBox17.Controls.Add(this.txtSabPJ);
-            this.groupBox17.Controls.Add(this.txtViePJ);
-            this.groupBox17.Controls.Add(this.txtJuePJ);
-            this.groupBox17.Controls.Add(this.txtMiePJ);
-            this.groupBox17.Controls.Add(this.txtMarPJ);
-            this.groupBox17.Controls.Add(this.txtLunPJ);
-            this.groupBox17.Location = new System.Drawing.Point(136, 16);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(126, 178);
-            this.groupBox17.TabIndex = 63;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Nº de Orden";
-            // 
-            // txtDomPJ
-            // 
-            this.txtDomPJ.Enabled = false;
-            this.txtDomPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtDomPJ.Location = new System.Drawing.Point(41, 154);
-            this.txtDomPJ.Name = "txtDomPJ";
-            this.txtDomPJ.Size = new System.Drawing.Size(47, 20);
-            this.txtDomPJ.TabIndex = 97;
-            // 
-            // txtSabPJ
-            // 
-            this.txtSabPJ.Enabled = false;
-            this.txtSabPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtSabPJ.Location = new System.Drawing.Point(41, 131);
-            this.txtSabPJ.Name = "txtSabPJ";
-            this.txtSabPJ.Size = new System.Drawing.Size(47, 20);
-            this.txtSabPJ.TabIndex = 96;
-            // 
-            // txtViePJ
-            // 
-            this.txtViePJ.Enabled = false;
-            this.txtViePJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtViePJ.Location = new System.Drawing.Point(41, 108);
-            this.txtViePJ.Name = "txtViePJ";
-            this.txtViePJ.Size = new System.Drawing.Size(47, 20);
-            this.txtViePJ.TabIndex = 95;
-            // 
-            // txtJuePJ
-            // 
-            this.txtJuePJ.Enabled = false;
-            this.txtJuePJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtJuePJ.Location = new System.Drawing.Point(41, 85);
-            this.txtJuePJ.Name = "txtJuePJ";
-            this.txtJuePJ.Size = new System.Drawing.Size(47, 20);
-            this.txtJuePJ.TabIndex = 94;
-            // 
-            // txtMiePJ
-            // 
-            this.txtMiePJ.Enabled = false;
-            this.txtMiePJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtMiePJ.Location = new System.Drawing.Point(41, 62);
-            this.txtMiePJ.Name = "txtMiePJ";
-            this.txtMiePJ.Size = new System.Drawing.Size(47, 20);
-            this.txtMiePJ.TabIndex = 93;
-            // 
-            // txtMarPJ
-            // 
-            this.txtMarPJ.Enabled = false;
-            this.txtMarPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtMarPJ.Location = new System.Drawing.Point(41, 39);
-            this.txtMarPJ.Name = "txtMarPJ";
-            this.txtMarPJ.Size = new System.Drawing.Size(47, 20);
-            this.txtMarPJ.TabIndex = 92;
-            // 
-            // txtLunPJ
-            // 
-            this.txtLunPJ.Enabled = false;
-            this.txtLunPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtLunPJ.Location = new System.Drawing.Point(41, 16);
-            this.txtLunPJ.Name = "txtLunPJ";
-            this.txtLunPJ.Size = new System.Drawing.Size(47, 20);
-            this.txtLunPJ.TabIndex = 91;
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label62.Location = new System.Drawing.Point(131, 215);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(14, 13);
-            this.label62.TabIndex = 61;
-            this.label62.Text = "A";
-            // 
-            // dtpBPJ
-            // 
-            this.dtpBPJ.CustomFormat = "HH:mm";
-            this.dtpBPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBPJ.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBPJ.Location = new System.Drawing.Point(147, 213);
-            this.dtpBPJ.Name = "dtpBPJ";
-            this.dtpBPJ.ShowUpDown = true;
-            this.dtpBPJ.Size = new System.Drawing.Size(60, 20);
-            this.dtpBPJ.TabIndex = 60;
-            this.dtpBPJ.Value = new System.DateTime(2015, 8, 4, 16, 0, 0, 0);
-            // 
-            // dtpAPJ
-            // 
-            this.dtpAPJ.CustomFormat = "HH:mm";
-            this.dtpAPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpAPJ.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpAPJ.Location = new System.Drawing.Point(67, 213);
-            this.dtpAPJ.Name = "dtpAPJ";
-            this.dtpAPJ.ShowUpDown = true;
-            this.dtpAPJ.Size = new System.Drawing.Size(60, 20);
-            this.dtpAPJ.TabIndex = 59;
-            this.dtpAPJ.Value = new System.DateTime(2015, 8, 4, 9, 0, 0, 0);
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(87, 196);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(101, 13);
-            this.label63.TabIndex = 41;
-            this.label63.Text = "Horario de Visita";
-            // 
             // button10
             // 
             this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
@@ -2403,7 +1886,7 @@
             // 
             // tabLunes
             // 
-            this.tabLunes.Controls.Add(this.dgvLun);
+            this.tabLunes.Controls.Add(this.dgvLu);
             this.tabLunes.Location = new System.Drawing.Point(4, 22);
             this.tabLunes.Name = "tabLunes";
             this.tabLunes.Padding = new System.Windows.Forms.Padding(3);
@@ -2412,24 +1895,25 @@
             this.tabLunes.Text = "Lunes";
             this.tabLunes.UseVisualStyleBackColor = true;
             // 
-            // dgvLun
+            // dgvLu
             // 
-            this.dgvLun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLun.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvLu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colRIDcliente,
             this.colRcliente,
             this.colIDdomicilio,
             this.colRdomicilio,
             this.colRIDdistribuidor,
-            this.colRdistribuidor});
-            this.dgvLun.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvLun.Location = new System.Drawing.Point(3, 3);
-            this.dgvLun.Name = "dgvLun";
-            this.dgvLun.Size = new System.Drawing.Size(762, 504);
-            this.dgvLun.TabIndex = 0;
+            this.colRdistribuidorLu});
+            this.dgvLu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLu.Location = new System.Drawing.Point(3, 3);
+            this.dgvLu.Name = "dgvLu";
+            this.dgvLu.Size = new System.Drawing.Size(762, 504);
+            this.dgvLu.TabIndex = 0;
             // 
             // tabMartes
             // 
+            this.tabMartes.Controls.Add(this.dgvMa);
             this.tabMartes.Controls.Add(this.dataGridView1);
             this.tabMartes.Location = new System.Drawing.Point(4, 22);
             this.tabMartes.Name = "tabMartes";
@@ -2438,6 +1922,22 @@
             this.tabMartes.TabIndex = 1;
             this.tabMartes.Text = "Martes";
             this.tabMartes.UseVisualStyleBackColor = true;
+            // 
+            // dgvMa
+            // 
+            this.dgvMa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.colRdistribuidorMa});
+            this.dgvMa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMa.Location = new System.Drawing.Point(3, 3);
+            this.dgvMa.Name = "dgvMa";
+            this.dgvMa.Size = new System.Drawing.Size(762, 504);
+            this.dgvMa.TabIndex = 2;
             // 
             // dataGridView1
             // 
@@ -2450,7 +1950,7 @@
             // 
             // tabMiercoles
             // 
-            this.tabMiercoles.Controls.Add(this.dataGridView2);
+            this.tabMiercoles.Controls.Add(this.dgvMi);
             this.tabMiercoles.Location = new System.Drawing.Point(4, 22);
             this.tabMiercoles.Name = "tabMiercoles";
             this.tabMiercoles.Size = new System.Drawing.Size(768, 510);
@@ -2458,18 +1958,25 @@
             this.tabMiercoles.Text = "Miercoles";
             this.tabMiercoles.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // dgvMi
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(768, 510);
-            this.dataGridView2.TabIndex = 1;
+            this.dgvMi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.asd,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.colRdistribuidorMi});
+            this.dgvMi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMi.Location = new System.Drawing.Point(0, 0);
+            this.dgvMi.Name = "dgvMi";
+            this.dgvMi.Size = new System.Drawing.Size(768, 510);
+            this.dgvMi.TabIndex = 1;
             // 
             // tabJueves
             // 
-            this.tabJueves.Controls.Add(this.dataGridView3);
+            this.tabJueves.Controls.Add(this.dgvJu);
             this.tabJueves.Location = new System.Drawing.Point(4, 22);
             this.tabJueves.Name = "tabJueves";
             this.tabJueves.Size = new System.Drawing.Size(768, 510);
@@ -2477,18 +1984,25 @@
             this.tabJueves.Text = "Jueves";
             this.tabJueves.UseVisualStyleBackColor = true;
             // 
-            // dataGridView3
+            // dgvJu
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(768, 510);
-            this.dataGridView3.TabIndex = 1;
+            this.dgvJu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvJu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fdgdg,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.colRdistribuidorJu});
+            this.dgvJu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvJu.Location = new System.Drawing.Point(0, 0);
+            this.dgvJu.Name = "dgvJu";
+            this.dgvJu.Size = new System.Drawing.Size(768, 510);
+            this.dgvJu.TabIndex = 1;
             // 
             // tabViernes
             // 
-            this.tabViernes.Controls.Add(this.dataGridView4);
+            this.tabViernes.Controls.Add(this.dgvVi);
             this.tabViernes.Location = new System.Drawing.Point(4, 22);
             this.tabViernes.Name = "tabViernes";
             this.tabViernes.Size = new System.Drawing.Size(768, 510);
@@ -2496,18 +2010,25 @@
             this.tabViernes.Text = "Viernes";
             this.tabViernes.UseVisualStyleBackColor = true;
             // 
-            // dataGridView4
+            // dgvVi
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView4.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(768, 510);
-            this.dataGridView4.TabIndex = 1;
+            this.dgvVi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.fn,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.colRdistribuidorVi});
+            this.dgvVi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvVi.Location = new System.Drawing.Point(0, 0);
+            this.dgvVi.Name = "dgvVi";
+            this.dgvVi.Size = new System.Drawing.Size(768, 510);
+            this.dgvVi.TabIndex = 1;
             // 
             // tabSabado
             // 
-            this.tabSabado.Controls.Add(this.dataGridView5);
+            this.tabSabado.Controls.Add(this.dgvSa);
             this.tabSabado.Location = new System.Drawing.Point(4, 22);
             this.tabSabado.Name = "tabSabado";
             this.tabSabado.Size = new System.Drawing.Size(768, 510);
@@ -2515,18 +2036,25 @@
             this.tabSabado.Text = "Sabado";
             this.tabSabado.UseVisualStyleBackColor = true;
             // 
-            // dataGridView5
+            // dgvSa
             // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView5.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(768, 510);
-            this.dataGridView5.TabIndex = 1;
+            this.dgvSa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.kghd,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25,
+            this.colRdistribuidorSa});
+            this.dgvSa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvSa.Location = new System.Drawing.Point(0, 0);
+            this.dgvSa.Name = "dgvSa";
+            this.dgvSa.Size = new System.Drawing.Size(768, 510);
+            this.dgvSa.TabIndex = 1;
             // 
             // tabDomingo
             // 
-            this.tabDomingo.Controls.Add(this.dataGridView6);
+            this.tabDomingo.Controls.Add(this.dgvDo);
             this.tabDomingo.Location = new System.Drawing.Point(4, 22);
             this.tabDomingo.Name = "tabDomingo";
             this.tabDomingo.Size = new System.Drawing.Size(768, 510);
@@ -2534,24 +2062,69 @@
             this.tabDomingo.Text = "Domingo";
             this.tabDomingo.UseVisualStyleBackColor = true;
             // 
-            // dataGridView6
+            // dgvDo
             // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView6.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(768, 510);
-            this.dataGridView6.TabIndex = 1;
+            this.dgvDo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.hthdf,
+            this.dataGridViewTextBoxColumn27,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30,
+            this.colRdistribuidorDo});
+            this.dgvDo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDo.Location = new System.Drawing.Point(0, 0);
+            this.dgvDo.Name = "dgvDo";
+            this.dgvDo.Size = new System.Drawing.Size(768, 510);
+            this.dgvDo.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nº Cliente";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Cliente";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "ID Domicilio";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Domicilio";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Width = 400;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Nº Distribuidor";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Visible = false;
+            // 
+            // colRdistribuidorMa
+            // 
+            this.colRdistribuidorMa.HeaderText = "Distribuidor";
+            this.colRdistribuidorMa.Name = "colRdistribuidorMa";
+            this.colRdistribuidorMa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRdistribuidorMa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // colRIDcliente
             // 
             this.colRIDcliente.HeaderText = "Nº Cliente";
             this.colRIDcliente.Name = "colRIDcliente";
+            this.colRIDcliente.Visible = false;
             // 
             // colRcliente
             // 
             this.colRcliente.HeaderText = "Cliente";
             this.colRcliente.Name = "colRcliente";
+            this.colRcliente.Visible = false;
             // 
             // colIDdomicilio
             // 
@@ -2562,18 +2135,200 @@
             // 
             this.colRdomicilio.HeaderText = "Domicilio";
             this.colRdomicilio.Name = "colRdomicilio";
+            this.colRdomicilio.Width = 400;
             // 
             // colRIDdistribuidor
             // 
             this.colRIDdistribuidor.HeaderText = "Nº Distribuidor";
             this.colRIDdistribuidor.Name = "colRIDdistribuidor";
+            this.colRIDdistribuidor.Visible = false;
             // 
-            // colRdistribuidor
+            // colRdistribuidorLu
             // 
-            this.colRdistribuidor.HeaderText = "Distribuidor";
-            this.colRdistribuidor.Name = "colRdistribuidor";
-            this.colRdistribuidor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRdistribuidor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.colRdistribuidorLu.HeaderText = "Distribuidor";
+            this.colRdistribuidorLu.Name = "colRdistribuidorLu";
+            this.colRdistribuidorLu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRdistribuidorLu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // asd
+            // 
+            this.asd.HeaderText = "Nº Cliente";
+            this.asd.Name = "asd";
+            this.asd.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Cliente";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "ID Domicilio";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Domicilio";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 400;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Nº Distribuidor";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            // 
+            // colRdistribuidorMi
+            // 
+            this.colRdistribuidorMi.HeaderText = "Distribuidor";
+            this.colRdistribuidorMi.Name = "colRdistribuidorMi";
+            this.colRdistribuidorMi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRdistribuidorMi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // fdgdg
+            // 
+            this.fdgdg.HeaderText = "Nº Cliente";
+            this.fdgdg.Name = "fdgdg";
+            this.fdgdg.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "Cliente";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.HeaderText = "ID Domicilio";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.HeaderText = "Domicilio";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.Width = 400;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.HeaderText = "Nº Distribuidor";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.Visible = false;
+            // 
+            // colRdistribuidorJu
+            // 
+            this.colRdistribuidorJu.HeaderText = "Distribuidor";
+            this.colRdistribuidorJu.Name = "colRdistribuidorJu";
+            this.colRdistribuidorJu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRdistribuidorJu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // fn
+            // 
+            this.fn.HeaderText = "Nº Cliente";
+            this.fn.Name = "fn";
+            this.fn.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.HeaderText = "Cliente";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.HeaderText = "ID Domicilio";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.HeaderText = "Domicilio";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.Width = 400;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.HeaderText = "Nº Distribuidor";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.Visible = false;
+            // 
+            // colRdistribuidorVi
+            // 
+            this.colRdistribuidorVi.HeaderText = "Distribuidor";
+            this.colRdistribuidorVi.Name = "colRdistribuidorVi";
+            this.colRdistribuidorVi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRdistribuidorVi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // kghd
+            // 
+            this.kghd.HeaderText = "Nº Cliente";
+            this.kghd.Name = "kghd";
+            this.kghd.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.HeaderText = "Cliente";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.HeaderText = "ID Domicilio";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.HeaderText = "Domicilio";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.Width = 400;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.HeaderText = "Nº Distribuidor";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.Visible = false;
+            // 
+            // colRdistribuidorSa
+            // 
+            this.colRdistribuidorSa.HeaderText = "Distribuidor";
+            this.colRdistribuidorSa.Name = "colRdistribuidorSa";
+            this.colRdistribuidorSa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRdistribuidorSa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // hthdf
+            // 
+            this.hthdf.HeaderText = "Nº Cliente";
+            this.hthdf.Name = "hthdf";
+            this.hthdf.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.HeaderText = "Cliente";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.HeaderText = "ID Domicilio";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.HeaderText = "Domicilio";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.Width = 400;
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.HeaderText = "Nº Distribuidor";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.dataGridViewTextBoxColumn30.Visible = false;
+            // 
+            // colRdistribuidorDo
+            // 
+            this.colRdistribuidorDo.HeaderText = "Distribuidor";
+            this.colRdistribuidorDo.Name = "colRdistribuidorDo";
+            this.colRdistribuidorDo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colRdistribuidorDo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // formCliente
             // 
@@ -2598,12 +2353,6 @@
             this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.gbVisita.ResumeLayout(false);
-            this.gbVisita.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             this.tabMain.ResumeLayout(false);
             this.tabInformacionJ.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
@@ -2617,28 +2366,23 @@
             this.groupBox13.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
-            this.groupBox15.ResumeLayout(false);
-            this.groupBox15.PerformLayout();
-            this.groupBox16.ResumeLayout(false);
-            this.groupBox16.PerformLayout();
-            this.groupBox17.ResumeLayout(false);
-            this.groupBox17.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabDias.ResumeLayout(false);
             this.tabLunes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLun)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLu)).EndInit();
             this.tabMartes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabMiercoles.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMi)).EndInit();
             this.tabJueves.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvJu)).EndInit();
             this.tabViernes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVi)).EndInit();
             this.tabSabado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSa)).EndInit();
             this.tabDomingo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2726,28 +2470,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDomic;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox gbVisita;
-        public System.Windows.Forms.TextBox txtIDVisita;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.CheckBox cbLunes;
-        private System.Windows.Forms.CheckBox cbMartes;
-        private System.Windows.Forms.CheckBox cbMiercoles;
-        private System.Windows.Forms.CheckBox cbJueves;
-        private System.Windows.Forms.CheckBox cbDomingo;
-        private System.Windows.Forms.CheckBox cbViernes;
-        private System.Windows.Forms.CheckBox cbSabado;
-        private System.Windows.Forms.GroupBox groupBox8;
-        public System.Windows.Forms.TextBox txtDom;
-        public System.Windows.Forms.TextBox txtSab;
-        public System.Windows.Forms.TextBox txtVie;
-        public System.Windows.Forms.TextBox txtJue;
-        public System.Windows.Forms.TextBox txtMie;
-        public System.Windows.Forms.TextBox txtMar;
-        public System.Windows.Forms.TextBox txtLun;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.DateTimePicker dtpB;
-        private System.Windows.Forms.DateTimePicker dtpA;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Button button2;
@@ -2801,28 +2523,6 @@
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.TextBox txtDomicilioPJ;
         private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.GroupBox groupBox15;
-        public System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.GroupBox groupBox16;
-        private System.Windows.Forms.CheckBox cbLunesPJ;
-        private System.Windows.Forms.CheckBox cbMartesPJ;
-        private System.Windows.Forms.CheckBox cbMiercolesPJ;
-        private System.Windows.Forms.CheckBox cbJuevesPJ;
-        private System.Windows.Forms.CheckBox cbDomingoPJ;
-        private System.Windows.Forms.CheckBox cbViernesPJ;
-        private System.Windows.Forms.CheckBox cbSabadoPJ;
-        private System.Windows.Forms.GroupBox groupBox17;
-        public System.Windows.Forms.TextBox txtDomPJ;
-        public System.Windows.Forms.TextBox txtSabPJ;
-        public System.Windows.Forms.TextBox txtViePJ;
-        public System.Windows.Forms.TextBox txtJuePJ;
-        public System.Windows.Forms.TextBox txtMiePJ;
-        public System.Windows.Forms.TextBox txtMarPJ;
-        public System.Windows.Forms.TextBox txtLunPJ;
-        private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.DateTimePicker dtpBPJ;
-        private System.Windows.Forms.DateTimePicker dtpAPJ;
-        private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Button button10;
         public System.Windows.Forms.TabControl tabMain;
         public System.Windows.Forms.TabPage tabMovimientos;
@@ -2834,25 +2534,62 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabControl tabDias;
         private System.Windows.Forms.TabPage tabLunes;
-        private System.Windows.Forms.DataGridView dgvLun;
+        private System.Windows.Forms.DataGridView dgvLu;
+        private System.Windows.Forms.TabPage tabMartes;
+        private System.Windows.Forms.DataGridView dgvMa;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TabPage tabMiercoles;
+        private System.Windows.Forms.DataGridView dgvMi;
+        private System.Windows.Forms.TabPage tabJueves;
+        private System.Windows.Forms.DataGridView dgvJu;
+        private System.Windows.Forms.TabPage tabViernes;
+        private System.Windows.Forms.DataGridView dgvVi;
+        private System.Windows.Forms.TabPage tabSabado;
+        private System.Windows.Forms.DataGridView dgvSa;
+        private System.Windows.Forms.TabPage tabDomingo;
+        private System.Windows.Forms.DataGridView dgvDo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRIDcliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRcliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDdomicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRdomicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRIDdistribuidor;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidor;
-        private System.Windows.Forms.TabPage tabMartes;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TabPage tabMiercoles;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TabPage tabJueves;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.TabPage tabViernes;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.TabPage tabSabado;
-        private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.TabPage tabDomingo;
-        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidorLu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidorMa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidorMi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fdgdg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidorJu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidorVi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kghd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidorSa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hthdf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidorDo;
 
     }
 }

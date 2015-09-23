@@ -209,21 +209,23 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                DistribuidorEntity distribuidor = new DistribuidorEntity();
                 List<DistribuidorEntity> list = new List<DistribuidorEntity>();
 
-                string query = @"SELECT idDistribuidor, nombre
-                                 FROM Distribuidores";
+                string query = @"SELECT D.idDistribuidor, V.Patente
+                                 FROM Distribuidores D
+                                 INNER JOIN Vehiculos V ON D.Vehiculo = V.idVehiculo";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
                 MySqlDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read())
                 {
-                    distribuidor.idDistribuidor = Convert.ToInt32(dr["idDistribuidor"]);
-                    distribuidor.nombre = Convert.ToString(dr["nombre"]);
+                    DistribuidorEntity distribuidor = new DistribuidorEntity();
 
-                    list.Add(distribuidor);                    
+                    distribuidor.idDistribuidor = Convert.ToInt32(dr["idDistribuidor"]);
+                    distribuidor.nombre = Convert.ToString(dr["patente"]);
+
+                    list.Add(distribuidor);
                 }
 
                 return list;
@@ -235,7 +237,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void CargarDGVCB(ClienteEntity cliente, DataGridView dgv)
+        public static void CargarDGVCB(ClienteEntity cliente, DataGridView dgv, string colRdistribuidor)
         {
             try
             {
@@ -270,14 +272,10 @@ namespace RamosHermanos.Capas.Negocio
 
                 //
 
-                DataGridViewComboBoxColumn comboboxColumn = dgv.Columns["colRdistribuidor"] as DataGridViewComboBoxColumn;
-
-                foreach (DataGridViewRow row in dgv.Rows)
-                {
-                    comboboxColumn.DataSource = DistribuidorB.ListDistribuidores();
-                    comboboxColumn.ValueMember = "idDistribuidor";
-                }
-
+                DataGridViewComboBoxColumn comboboxColumn = dgv.Columns[colRdistribuidor] as DataGridViewComboBoxColumn;
+                comboboxColumn.DataSource = DistribuidorB.ListDistribuidores();
+                comboboxColumn.ValueMember = "idDistribuidor";
+                comboboxColumn.DisplayMember = "nombre";
 
                 MySQL.DisconnectDB();
             }
