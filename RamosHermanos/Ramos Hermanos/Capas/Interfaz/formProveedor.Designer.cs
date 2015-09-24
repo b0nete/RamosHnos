@@ -759,11 +759,8 @@
         private System.Windows.Forms.Button btnDomicilio;
         private System.Windows.Forms.Button btnEmail;
         private System.Windows.Forms.Button btnTelefono;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtDomicilio;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox gbVisita;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
@@ -790,5 +787,8 @@
         public System.Windows.Forms.MaskedTextBox txtcuit;
         public System.Windows.Forms.TextBox txtSaldoActual;
         public System.Windows.Forms.TextBox txtDebmax;
+        public System.Windows.Forms.TextBox txtEmail;
+        public System.Windows.Forms.TextBox txtTel;
+        public System.Windows.Forms.TextBox txtDomicilio;
     }
 }
