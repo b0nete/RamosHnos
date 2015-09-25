@@ -68,6 +68,9 @@
             this.dgvBarrio = new System.Windows.Forms.DataGridView();
             this.button9 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblEstadoDom = new System.Windows.Forms.Label();
+            this.cbProvinciaBar = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.cbLocalidadBar = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbEstadoBar = new System.Windows.Forms.CheckBox();
@@ -79,9 +82,26 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tabDomicilios = new System.Windows.Forms.TabControl();
-            this.cbProvinciaBar = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.lblEstadoDom = new System.Windows.Forms.Label();
+            this.tabCalles = new System.Windows.Forms.TabPage();
+            this.btnSaveCalle = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnDelCalle = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnUpdCalle = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtCalle = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.cbBarriosCalle = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cbLocalidadesCalle = new System.Windows.Forms.ComboBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.cbEstadoCalle = new System.Windows.Forms.CheckBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtIDcalle = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
             this.tabProvincias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvincias)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -92,6 +112,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBarrio)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tabDomicilios.SuspendLayout();
+            this.tabCalles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabProvincias
@@ -553,6 +576,35 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Barrio";
             // 
+            // lblEstadoDom
+            // 
+            this.lblEstadoDom.AutoSize = true;
+            this.lblEstadoDom.Location = new System.Drawing.Point(91, 74);
+            this.lblEstadoDom.Name = "lblEstadoDom";
+            this.lblEstadoDom.Size = new System.Drawing.Size(0, 13);
+            this.lblEstadoDom.TabIndex = 111;
+            // 
+            // cbProvinciaBar
+            // 
+            this.cbProvinciaBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProvinciaBar.FormattingEnabled = true;
+            this.cbProvinciaBar.Location = new System.Drawing.Point(70, 21);
+            this.cbProvinciaBar.Name = "cbProvinciaBar";
+            this.cbProvinciaBar.Size = new System.Drawing.Size(168, 21);
+            this.cbProvinciaBar.TabIndex = 92;
+            this.cbProvinciaBar.SelectionChangeCommitted += new System.EventHandler(this.cbProvinciaBar_SelectionChangeCommitted);
+            // 
+            // label17
+            // 
+            this.label17.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label17.Location = new System.Drawing.Point(17, 24);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(51, 13);
+            this.label17.TabIndex = 91;
+            this.label17.Text = "Provincia";
+            // 
             // cbLocalidadBar
             // 
             this.cbLocalidadBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -663,6 +715,7 @@
             // 
             // tabDomicilios
             // 
+            this.tabDomicilios.Controls.Add(this.tabCalles);
             this.tabDomicilios.Controls.Add(this.tabBarrios);
             this.tabDomicilios.Controls.Add(this.tabLocalidades);
             this.tabDomicilios.Controls.Add(this.tabProvincias);
@@ -673,34 +726,233 @@
             this.tabDomicilios.Size = new System.Drawing.Size(514, 377);
             this.tabDomicilios.TabIndex = 0;
             // 
-            // cbProvinciaBar
+            // tabCalles
             // 
-            this.cbProvinciaBar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbProvinciaBar.FormattingEnabled = true;
-            this.cbProvinciaBar.Location = new System.Drawing.Point(70, 21);
-            this.cbProvinciaBar.Name = "cbProvinciaBar";
-            this.cbProvinciaBar.Size = new System.Drawing.Size(168, 21);
-            this.cbProvinciaBar.TabIndex = 92;
-            this.cbProvinciaBar.SelectionChangeCommitted += new System.EventHandler(this.cbProvinciaBar_SelectionChangeCommitted);
+            this.tabCalles.Controls.Add(this.btnSaveCalle);
+            this.tabCalles.Controls.Add(this.btnClose);
+            this.tabCalles.Controls.Add(this.btnDelCalle);
+            this.tabCalles.Controls.Add(this.dataGridView1);
+            this.tabCalles.Controls.Add(this.btnUpdCalle);
+            this.tabCalles.Controls.Add(this.groupBox4);
+            this.tabCalles.Location = new System.Drawing.Point(4, 22);
+            this.tabCalles.Name = "tabCalles";
+            this.tabCalles.Size = new System.Drawing.Size(506, 351);
+            this.tabCalles.TabIndex = 3;
+            this.tabCalles.Text = "Calles";
+            this.tabCalles.UseVisualStyleBackColor = true;
             // 
-            // label17
+            // btnSaveCalle
             // 
-            this.label17.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label17.Location = new System.Drawing.Point(17, 24);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(51, 13);
-            this.label17.TabIndex = 91;
-            this.label17.Text = "Provincia";
+            this.btnSaveCalle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveCalle.BackgroundImage")));
+            this.btnSaveCalle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSaveCalle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveCalle.Location = new System.Drawing.Point(407, 108);
+            this.btnSaveCalle.Name = "btnSaveCalle";
+            this.btnSaveCalle.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveCalle.TabIndex = 105;
+            this.btnSaveCalle.UseVisualStyleBackColor = true;
+            this.btnSaveCalle.Click += new System.EventHandler(this.btnSaveCalle_Click);
             // 
-            // lblEstadoDom
+            // btnClose
             // 
-            this.lblEstadoDom.AutoSize = true;
-            this.lblEstadoDom.Location = new System.Drawing.Point(91, 74);
-            this.lblEstadoDom.Name = "lblEstadoDom";
-            this.lblEstadoDom.Size = new System.Drawing.Size(0, 13);
-            this.lblEstadoDom.TabIndex = 111;
+            this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnClose.Location = new System.Drawing.Point(471, 316);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(28, 28);
+            this.btnClose.TabIndex = 102;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnDelCalle
+            // 
+            this.btnDelCalle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelCalle.BackgroundImage")));
+            this.btnDelCalle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDelCalle.Location = new System.Drawing.Point(471, 108);
+            this.btnDelCalle.Name = "btnDelCalle";
+            this.btnDelCalle.Size = new System.Drawing.Size(28, 28);
+            this.btnDelCalle.TabIndex = 103;
+            this.btnDelCalle.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 142);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(491, 167);
+            this.dataGridView1.TabIndex = 101;
+            // 
+            // btnUpdCalle
+            // 
+            this.btnUpdCalle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdCalle.BackgroundImage")));
+            this.btnUpdCalle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpdCalle.Location = new System.Drawing.Point(439, 108);
+            this.btnUpdCalle.Name = "btnUpdCalle";
+            this.btnUpdCalle.Size = new System.Drawing.Size(28, 28);
+            this.btnUpdCalle.TabIndex = 104;
+            this.btnUpdCalle.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtCalle);
+            this.groupBox4.Controls.Add(this.label19);
+            this.groupBox4.Controls.Add(this.cbBarriosCalle);
+            this.groupBox4.Controls.Add(this.label18);
+            this.groupBox4.Controls.Add(this.cbLocalidadesCalle);
+            this.groupBox4.Controls.Add(this.label20);
+            this.groupBox4.Controls.Add(this.cbEstadoCalle);
+            this.groupBox4.Controls.Add(this.label21);
+            this.groupBox4.Controls.Add(this.label22);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Controls.Add(this.label25);
+            this.groupBox4.Controls.Add(this.txtIDcalle);
+            this.groupBox4.Controls.Add(this.label26);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(8, 7);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(491, 95);
+            this.groupBox4.TabIndex = 100;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Calle";
+            // 
+            // txtCalle
+            // 
+            this.txtCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCalle.Location = new System.Drawing.Point(55, 50);
+            this.txtCalle.Name = "txtCalle";
+            this.txtCalle.Size = new System.Drawing.Size(185, 20);
+            this.txtCalle.TabIndex = 115;
+            // 
+            // label19
+            // 
+            this.label19.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label19.Location = new System.Drawing.Point(23, 53);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(30, 13);
+            this.label19.TabIndex = 114;
+            this.label19.Text = "Calle";
+            // 
+            // cbBarriosCalle
+            // 
+            this.cbBarriosCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBarriosCalle.FormattingEnabled = true;
+            this.cbBarriosCalle.Location = new System.Drawing.Point(300, 23);
+            this.cbBarriosCalle.Name = "cbBarriosCalle";
+            this.cbBarriosCalle.Size = new System.Drawing.Size(185, 21);
+            this.cbBarriosCalle.TabIndex = 113;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(76, 76);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(0, 13);
+            this.label18.TabIndex = 111;
+            // 
+            // cbLocalidadesCalle
+            // 
+            this.cbLocalidadesCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLocalidadesCalle.FormattingEnabled = true;
+            this.cbLocalidadesCalle.Location = new System.Drawing.Point(55, 23);
+            this.cbLocalidadesCalle.Name = "cbLocalidadesCalle";
+            this.cbLocalidadesCalle.Size = new System.Drawing.Size(185, 21);
+            this.cbLocalidadesCalle.TabIndex = 90;
+            // 
+            // label20
+            // 
+            this.label20.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label20.Location = new System.Drawing.Point(0, 26);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(53, 13);
+            this.label20.TabIndex = 89;
+            this.label20.Text = "Localidad";
+            // 
+            // cbEstadoCalle
+            // 
+            this.cbEstadoCalle.AutoSize = true;
+            this.cbEstadoCalle.Checked = true;
+            this.cbEstadoCalle.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEstadoCalle.Location = new System.Drawing.Point(55, 76);
+            this.cbEstadoCalle.Name = "cbEstadoCalle";
+            this.cbEstadoCalle.Size = new System.Drawing.Size(15, 14);
+            this.cbEstadoCalle.TabIndex = 88;
+            this.cbEstadoCalle.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label21.ForeColor = System.Drawing.Color.Red;
+            this.label21.Location = new System.Drawing.Point(6, 76);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(11, 13);
+            this.label21.TabIndex = 87;
+            this.label21.Text = "*";
+            // 
+            // label22
+            // 
+            this.label22.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label22.Location = new System.Drawing.Point(13, 76);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(40, 13);
+            this.label22.TabIndex = 86;
+            this.label22.Text = "Estado";
+            // 
+            // label23
+            // 
+            this.label23.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label23.ForeColor = System.Drawing.Color.Red;
+            this.label23.Location = new System.Drawing.Point(261, 26);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(11, 13);
+            this.label23.TabIndex = 85;
+            this.label23.Text = "*";
+            // 
+            // label25
+            // 
+            this.label25.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label25.Location = new System.Drawing.Point(268, 26);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(34, 13);
+            this.label25.TabIndex = 83;
+            this.label25.Text = "Barrio";
+            // 
+            // txtIDcalle
+            // 
+            this.txtIDcalle.Enabled = false;
+            this.txtIDcalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtIDcalle.Location = new System.Drawing.Point(384, -3);
+            this.txtIDcalle.Name = "txtIDcalle";
+            this.txtIDcalle.Size = new System.Drawing.Size(101, 20);
+            this.txtIDcalle.TabIndex = 82;
+            // 
+            // label26
+            // 
+            this.label26.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label26.Location = new System.Drawing.Point(336, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(44, 13);
+            this.label26.TabIndex = 81;
+            this.label26.Text = "ID Calle";
             // 
             // formDomicilio
             // 
@@ -724,6 +976,10 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabDomicilios.ResumeLayout(false);
+            this.tabCalles.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -779,10 +1035,30 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TabControl tabDomicilios;
         private System.Windows.Forms.ComboBox cbProvinciaBar;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label lblEstadoDom;
+        private System.Windows.Forms.TabPage tabCalles;
+        private System.Windows.Forms.Button btnSaveCalle;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnDelCalle;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnUpdCalle;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ComboBox cbBarriosCalle;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox cbLocalidadesCalle;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.CheckBox cbEstadoCalle;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox txtIDcalle;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txtCalle;
+        private System.Windows.Forms.Label label19;
+        public System.Windows.Forms.TabControl tabDomicilios;
 
     }
 }

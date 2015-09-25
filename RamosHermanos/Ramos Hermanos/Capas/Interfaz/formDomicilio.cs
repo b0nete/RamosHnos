@@ -19,6 +19,7 @@ namespace RamosHermanos.Capas.Interfaz
             InitializeComponent();
         }
 
+        // Eventos
         private void formDomicilio_Load(object sender, EventArgs e)
         {
             ProvinciaB.CargarCB(cbProvinciaBar);
@@ -65,6 +66,33 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
+        private void btnSaveCalle_Click(object sender, EventArgs e)
+        {
+            if (ValidarCalles() == false)
+            {
+                MessageBox.Show("Campos incompletos");
+                return;
+            }
+            else
+            {
+                if (CalleB.ExisteCalle(txtCalle) == true)
+                {
+                    MessageBox.Show("La calle ya existe");
+                    return;
+                }
+                else
+                {
+                    CargarBarrio();
+                    BarrioB.InsertBarrio(barrio);
+                }
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         // Metodos
 
         private void CheckColor(CheckBox cb, Label lbl)
@@ -79,7 +107,27 @@ namespace RamosHermanos.Capas.Interfaz
                 lbl.BackColor = Color.Red;
                 lbl.Text = "Desabilitado";
             }
+        }        
+
+        // Entidades
+
+        BarrioEntity barrio = new BarrioEntity();
+        private void CargarBarrio()
+        {
+            barrio.idLocalidad = Convert.ToInt32(cbLocalidadBar.SelectedValue);
+            barrio.barrio = txtBarrio.Text;
+            barrio.estado = Convert.ToBoolean(cbEstadoBar.Checked);
         }
+
+        CalleEntity calle = new CalleEntity();
+        private void CargarCalle()
+        {
+            calle.idBarrio = Convert.ToInt32(cbBarriosCalle.SelectedValue);
+            calle.calle = txtCalle.Text;
+            calle.estado = Convert.ToBoolean(cbEstadoCalle.Checked);
+        }
+
+        // Validaciones
 
         private bool ValidarBarrios()
         {
@@ -90,13 +138,16 @@ namespace RamosHermanos.Capas.Interfaz
             return true;
         }
 
-        BarrioEntity barrio = new BarrioEntity();
-        private void CargarBarrio()
+        private bool ValidarCalles()
         {
-            barrio.idLocalidad = Convert.ToInt32(cbLocalidadBar.SelectedValue);
-            barrio.barrio = txtBarrio.Text;
-            barrio.estado = Convert.ToBoolean(cbEstadoBar.Checked);
+            if (cbLocalidadesCalle.SelectedValue == null || cbBarriosCalle.SelectedValue == null || txtBarrio.Text == string.Empty)
+            {
+                return false;
+            }
+            return true;
         }
+
+        
 
         
     }

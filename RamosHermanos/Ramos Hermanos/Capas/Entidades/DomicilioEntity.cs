@@ -15,7 +15,7 @@ namespace RamosHermanos.Capas.Entidades
         public int provincia { get; set; }
         public int localidad { get; set; }
         public int barrio { get; set; }
-        public string calle { get; set; }
+        public int calle { get; set; }
         public string numero { get; set; }
         public string piso { get; set; }
         public string dpto { get; set; }

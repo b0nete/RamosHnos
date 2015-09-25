@@ -37,6 +37,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtNombreDom = new System.Windows.Forms.TextBox();
             this.dgvDomicilio = new System.Windows.Forms.DataGridView();
+            this.colIDDom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoDom = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblEstadoDom = new System.Windows.Forms.Label();
             this.cbEstadoDom = new System.Windows.Forms.CheckBox();
@@ -65,7 +75,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtnumCalle = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtCalle = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tabTelefonos = new System.Windows.Forms.TabPage();
             this.btnUpdTel = new System.Windows.Forms.Button();
@@ -109,16 +118,8 @@
             this.cbEstadoEmail = new System.Windows.Forms.CheckBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.colIDDom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDpto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstadoDom = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
+            this.cbCalle = new System.Windows.Forms.ComboBox();
             this.tabContacto.SuspendLayout();
             this.tabDomicilios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDomicilio)).BeginInit();
@@ -241,8 +242,73 @@
             this.dgvDomicilio.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDomicilio_CellContentClick);
             this.dgvDomicilio.SelectionChanged += new System.EventHandler(this.dgvDomicilio_SelectionChanged);
             // 
+            // colIDDom
+            // 
+            this.colIDDom.HeaderText = "idDomicilio";
+            this.colIDDom.Name = "colIDDom";
+            this.colIDDom.ReadOnly = true;
+            this.colIDDom.Visible = false;
+            // 
+            // colCalle
+            // 
+            this.colCalle.HeaderText = "Calle";
+            this.colCalle.Name = "colCalle";
+            this.colCalle.ReadOnly = true;
+            // 
+            // colNumero
+            // 
+            this.colNumero.HeaderText = "Numero";
+            this.colNumero.Name = "colNumero";
+            this.colNumero.ReadOnly = true;
+            // 
+            // colPiso
+            // 
+            this.colPiso.HeaderText = "Piso";
+            this.colPiso.Name = "colPiso";
+            this.colPiso.ReadOnly = true;
+            // 
+            // colDpto
+            // 
+            this.colDpto.HeaderText = "Dpto";
+            this.colDpto.Name = "colDpto";
+            this.colDpto.ReadOnly = true;
+            // 
+            // colCP
+            // 
+            this.colCP.HeaderText = "CP";
+            this.colCP.Name = "colCP";
+            this.colCP.ReadOnly = true;
+            // 
+            // colBarrio
+            // 
+            this.colBarrio.HeaderText = "Barrio";
+            this.colBarrio.Name = "colBarrio";
+            this.colBarrio.ReadOnly = true;
+            // 
+            // colLocalidad
+            // 
+            this.colLocalidad.HeaderText = "Localidad";
+            this.colLocalidad.Name = "colLocalidad";
+            this.colLocalidad.ReadOnly = true;
+            // 
+            // colProvincia
+            // 
+            this.colProvincia.HeaderText = "Provincia";
+            this.colProvincia.Name = "colProvincia";
+            this.colProvincia.ReadOnly = true;
+            // 
+            // colEstadoDom
+            // 
+            this.colEstadoDom.HeaderText = "Estado";
+            this.colEstadoDom.Name = "colEstadoDom";
+            this.colEstadoDom.ReadOnly = true;
+            this.colEstadoDom.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEstadoDom.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.cbCalle);
             this.groupBox2.Controls.Add(this.lblEstadoDom);
             this.groupBox2.Controls.Add(this.cbEstadoDom);
             this.groupBox2.Controls.Add(this.label2);
@@ -270,7 +336,6 @@
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.txtnumCalle);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.txtCalle);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(8, 32);
@@ -580,14 +645,6 @@
             this.label8.Size = new System.Drawing.Size(45, 13);
             this.label8.TabIndex = 30;
             this.label8.Text = "Nº/Lote";
-            // 
-            // txtCalle
-            // 
-            this.txtCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtCalle.Location = new System.Drawing.Point(468, 51);
-            this.txtCalle.Name = "txtCalle";
-            this.txtCalle.Size = new System.Drawing.Size(238, 20);
-            this.txtCalle.TabIndex = 29;
             // 
             // label7
             // 
@@ -1048,68 +1105,28 @@
             this.label29.TabIndex = 106;
             this.label29.Text = "Email";
             // 
-            // colIDDom
+            // button3
             // 
-            this.colIDDom.HeaderText = "idDomicilio";
-            this.colIDDom.Name = "colIDDom";
-            this.colIDDom.ReadOnly = true;
-            this.colIDDom.Visible = false;
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(710, 46);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(28, 28);
+            this.button3.TabIndex = 113;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
-            // colCalle
+            // cbCalle
             // 
-            this.colCalle.HeaderText = "Calle";
-            this.colCalle.Name = "colCalle";
-            this.colCalle.ReadOnly = true;
-            // 
-            // colNumero
-            // 
-            this.colNumero.HeaderText = "Numero";
-            this.colNumero.Name = "colNumero";
-            this.colNumero.ReadOnly = true;
-            // 
-            // colPiso
-            // 
-            this.colPiso.HeaderText = "Piso";
-            this.colPiso.Name = "colPiso";
-            this.colPiso.ReadOnly = true;
-            // 
-            // colDpto
-            // 
-            this.colDpto.HeaderText = "Dpto";
-            this.colDpto.Name = "colDpto";
-            this.colDpto.ReadOnly = true;
-            // 
-            // colCP
-            // 
-            this.colCP.HeaderText = "CP";
-            this.colCP.Name = "colCP";
-            this.colCP.ReadOnly = true;
-            // 
-            // colBarrio
-            // 
-            this.colBarrio.HeaderText = "Barrio";
-            this.colBarrio.Name = "colBarrio";
-            this.colBarrio.ReadOnly = true;
-            // 
-            // colLocalidad
-            // 
-            this.colLocalidad.HeaderText = "Localidad";
-            this.colLocalidad.Name = "colLocalidad";
-            this.colLocalidad.ReadOnly = true;
-            // 
-            // colProvincia
-            // 
-            this.colProvincia.HeaderText = "Provincia";
-            this.colProvincia.Name = "colProvincia";
-            this.colProvincia.ReadOnly = true;
-            // 
-            // colEstadoDom
-            // 
-            this.colEstadoDom.HeaderText = "Estado";
-            this.colEstadoDom.Name = "colEstadoDom";
-            this.colEstadoDom.ReadOnly = true;
-            this.colEstadoDom.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEstadoDom.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.cbCalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbCalle.FormattingEnabled = true;
+            this.cbCalle.Location = new System.Drawing.Point(468, 50);
+            this.cbCalle.Name = "cbCalle";
+            this.cbCalle.Size = new System.Drawing.Size(238, 21);
+            this.cbCalle.TabIndex = 112;
             // 
             // formContacto
             // 
@@ -1176,7 +1193,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtnumCalle;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtCalle;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnSaveTel;
@@ -1232,5 +1248,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colLocalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProvincia;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colEstadoDom;
+        private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.ComboBox cbCalle;
     }
 }

@@ -56,6 +56,7 @@ namespace RamosHermanos.Capas.Interfaz
             LocalidadB.CargarCB(cbLocalidad, cbProvincia);
             cbLocalidad.SelectedValue = 26;
             BarrioB.CargarCB(cbBarrio, cbLocalidad);
+            CalleB.CargarCB(cbCalle, cbBarrio);
         }
 
         public void CargarDGVs()
@@ -172,7 +173,7 @@ namespace RamosHermanos.Capas.Interfaz
             domicilio.provincia = Convert.ToInt32(cbProvincia.SelectedValue);
             domicilio.localidad = Convert.ToInt32(cbLocalidad.SelectedValue);
             domicilio.barrio = Convert.ToInt32(cbBarrio.SelectedValue);
-            domicilio.calle = txtCalle.Text;
+            domicilio.calle = Convert.ToInt32(cbCalle.SelectedValue);
             domicilio.numero = txtnumCalle.Text;
             domicilio.piso = txtPiso.Text;
             domicilio.dpto = txtDpto.Text;
@@ -201,7 +202,7 @@ namespace RamosHermanos.Capas.Interfaz
                 cbProvincia.Text = row.Cells["colProvincia"].Value.ToString();
                 cbLocalidad.Text = row.Cells["colLocalidad"].Value.ToString();
                 cbBarrio.Text = row.Cells["colBarrio"].Value.ToString();
-                txtCalle.Text = row.Cells["colCalle"].Value.ToString();
+                cbCalle.Text = row.Cells["colCalle"].Value.ToString();
                 txtnumCalle.Text = row.Cells["colNumero"].Value.ToString();
                 txtPiso.Text = row.Cells["colPiso"].Value.ToString();
                 txtDpto.Text = row.Cells["colDpto"].Value.ToString();
@@ -329,7 +330,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool ValidarDomicilio()
         {
-            if (cbProvincia.SelectedValue == null || cbLocalidad.SelectedValue == null || cbBarrio.SelectedValue == null || txtCalle.Text == string.Empty || txtnumCalle.Text == string.Empty)
+            if (cbProvincia.SelectedValue == null || cbLocalidad.SelectedValue == null || cbBarrio.SelectedValue == null || cbCalle.SelectedValue == null || txtnumCalle.Text == string.Empty)
             {
                 return false;
             }
@@ -397,6 +398,12 @@ namespace RamosHermanos.Capas.Interfaz
         private void cbRolALL_SelectionChangeCommitted(object sender, EventArgs e)
         {
             
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            formDomicilio frm = new formDomicilio();
+            frm.Show();
         }
 
       
