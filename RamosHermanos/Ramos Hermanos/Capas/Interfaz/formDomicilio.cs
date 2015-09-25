@@ -19,12 +19,34 @@ namespace RamosHermanos.Capas.Interfaz
             InitializeComponent();
         }
 
+        public int tabVar;
+
         // Eventos
         private void formDomicilio_Load(object sender, EventArgs e)
         {
+            // Tab Inicial
+            switch (tabVar)
+            {
+                case 0:
+                    tabDomicilios.SelectedTab = tabCalles;
+                    break;
+                case 1:
+                    tabDomicilios.SelectedTab = tabBarrios;
+                    break;
+                case 2:
+                    tabDomicilios.SelectedTab = tabLocalidades;
+                    break;
+                case 3:
+                    tabDomicilios.SelectedTab = tabProvincias;
+                    break;
+            }
+
+            // Combo.
             ProvinciaB.CargarCB(cbProvinciaBar);
             LocalidadB.CargarCB(cbLocalidadBar, cbProvinciaBar);
             BarrioB.CargarDGV(dgvBarrio);
+            // Calles
+            ProvinciaB.CargarCB(cbProvinciaCalle);
 
             CheckColor(cbEstadoBar, lblEstadoDom);
         }
@@ -62,6 +84,7 @@ namespace RamosHermanos.Capas.Interfaz
                 {
                     CargarBarrio();
                     BarrioB.InsertBarrio(barrio);
+                    BarrioB.CargarDGV(dgvBarrio);
                 }
             }
         }
@@ -82,8 +105,9 @@ namespace RamosHermanos.Capas.Interfaz
                 }
                 else
                 {
-                    CargarBarrio();
-                    BarrioB.InsertBarrio(barrio);
+                    CargarCalle();
+                    CalleB.InsertCalle(calle);
+                    CalleB.CargarDGV(dgvCalle);
                 }
             }
         }
@@ -140,11 +164,21 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool ValidarCalles()
         {
-            if (cbLocalidadesCalle.SelectedValue == null || cbBarriosCalle.SelectedValue == null || txtBarrio.Text == string.Empty)
+            if (cbLocalidadesCalle.SelectedValue == null || cbBarriosCalle.SelectedValue == null || txtCalle.Text == string.Empty)
             {
                 return false;
             }
             return true;
+        }
+
+        private void cbProvinciaCalle_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            LocalidadB.CargarCB(cbLocalidadesCalle, cbProvinciaCalle);
+        }
+
+        private void cbLocalidadesCalle_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            BarrioB.CargarCB(cbBarriosCalle, cbLocalidadesCalle);
         }
 
         

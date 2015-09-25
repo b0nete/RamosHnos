@@ -129,7 +129,9 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 DataTable dt = new DataTable();
 
-                string query = @"SELECT * FROM Calles";
+                string query = @"SELECT B.Barrio, C.Calle, C.Estado
+                                 FROM Calles C
+                                 INNER JOIN Barrios B ON C.idBarrio = B.idBarrio";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 

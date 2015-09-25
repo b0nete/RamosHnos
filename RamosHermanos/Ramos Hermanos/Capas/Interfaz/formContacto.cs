@@ -392,6 +392,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void button2_Click(object sender, EventArgs e)
         {
             formDomicilio frm = new formDomicilio();
+            frm.tabVar = 1;
             frm.Show();
         }
 
@@ -403,7 +404,18 @@ namespace RamosHermanos.Capas.Interfaz
         private void button3_Click_1(object sender, EventArgs e)
         {
             formDomicilio frm = new formDomicilio();
+            frm.tabVar = 0;
             frm.Show();
+        }
+
+        private void cbCalle_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cbBarrio_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CalleB.CargarCB(cbCalle, cbBarrio);
         }
 
       

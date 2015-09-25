@@ -48,6 +48,8 @@
             this.colProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstadoDom = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.cbCalle = new System.Windows.Forms.ComboBox();
             this.lblEstadoDom = new System.Windows.Forms.Label();
             this.cbEstadoDom = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -118,8 +120,6 @@
             this.cbEstadoEmail = new System.Windows.Forms.CheckBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.cbCalle = new System.Windows.Forms.ComboBox();
             this.tabContacto.SuspendLayout();
             this.tabDomicilios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDomicilio)).BeginInit();
@@ -345,6 +345,29 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Domicilio";
             // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(710, 46);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(28, 28);
+            this.button3.TabIndex = 113;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // cbCalle
+            // 
+            this.cbCalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbCalle.FormattingEnabled = true;
+            this.cbCalle.Location = new System.Drawing.Point(468, 50);
+            this.cbCalle.Name = "cbCalle";
+            this.cbCalle.Size = new System.Drawing.Size(238, 21);
+            this.cbCalle.TabIndex = 112;
+            this.cbCalle.SelectionChangeCommitted += new System.EventHandler(this.cbCalle_SelectionChangeCommitted);
+            // 
             // lblEstadoDom
             // 
             this.lblEstadoDom.AutoSize = true;
@@ -463,6 +486,7 @@
             this.cbBarrio.Name = "cbBarrio";
             this.cbBarrio.Size = new System.Drawing.Size(238, 21);
             this.cbBarrio.TabIndex = 65;
+            this.cbBarrio.SelectionChangeCommitted += new System.EventHandler(this.cbBarrio_SelectionChangeCommitted);
             // 
             // label4
             // 
@@ -1104,29 +1128,6 @@
             this.label29.Size = new System.Drawing.Size(32, 13);
             this.label29.TabIndex = 106;
             this.label29.Text = "Email";
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(710, 46);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 113;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
-            // 
-            // cbCalle
-            // 
-            this.cbCalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbCalle.FormattingEnabled = true;
-            this.cbCalle.Location = new System.Drawing.Point(468, 50);
-            this.cbCalle.Name = "cbCalle";
-            this.cbCalle.Size = new System.Drawing.Size(238, 21);
-            this.cbCalle.TabIndex = 112;
             // 
             // formContacto
             // 
