@@ -372,6 +372,14 @@ namespace RamosHermanos.Capas.Interfaz
             VehiculoB.CargarCB(cbVehiculo);
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            formDomicilio frm = new formDomicilio();
+            frm.tabVar = 0;
+            frm.Show();
+
+        }
+
         
  
     }

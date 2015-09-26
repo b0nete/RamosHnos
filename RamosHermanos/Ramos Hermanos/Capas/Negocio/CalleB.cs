@@ -94,6 +94,52 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static CalleEntity BuscarCalleID(CalleEntity calle)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT C.idCalle, C.Calle, B.Barrio, L.Localidad, P.Provincia
+                                 FROM Calles C
+                                 INNER JOIN Barrios B ON C.idBarrio = B.idBarrio
+                                 INNER JOIN Localidades L ON B.idLocalidad = L.idLocalidad
+                                 INNER JOIN Provincias P ON L.idProvincia = P.idProvincia
+                                 WHERE C.idCalle = 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idCalle", calle.idCalle);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("La calle no existe!");
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    DataRow row = dt.Rows[0];
+
+                    calle.idBarrio = Convert.ToInt32(row["idBarrio"]);
+                    calle.calle = Convert.ToString(row["calle"]);
+                    calle.estado = Convert.ToBoolean(row["estado"]);
+
+                    MySQL.DisconnectDB();
+                }
+                return calle;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static void CargarCB(ComboBox cb, ComboBox cb2)
         {
             try
@@ -127,23 +173,36 @@ namespace RamosHermanos.Capas.Negocio
             try
             {
                 MySQL.ConnectDB();
-                DataTable dt = new DataTable();
+                dgv.Rows.Clear();
 
-                string query = @"SELECT B.Barrio, C.Calle, C.Estado
+                string query = @"SELECT P.idProvincia, P.Provincia, L.idLocalidad, L.Localidad, B.idBarrio, B.Barrio, C.idCalle, C.Calle, C.Estado
                                  FROM Calles C
                                  INNER JOIN Barrios B ON C.idBarrio = B.idBarrio
+                                 INNER JOIN Localidades L ON B.idLocalidad = L.idLocalidad
+                                 INNER JOIN Provincias P ON L.idProvincia = P.idProvincia
                                  WHERE B.idBarrio = @idBarrio";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@idBarrio", barrio.idBarrio);
 
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr = cmd.ExecuteReader();
 
-                da.Fill(dt);
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idProvincia"]),
+                    Convert.ToString(dr["provincia"]),
+                    Convert.ToString(dr["idLocalidad"]),
+                    Convert.ToString(dr["localidad"]),
+                    Convert.ToString(dr["idBarrio"]),
+                    Convert.ToString(dr["barrio"]),
+                    Convert.ToString(dr["idCalle"]),
+                    Convert.ToString(dr["calle"]),
+                    Convert.ToBoolean(dr["estado"]));
+                }
 
-                dgv.DataSource = dt;
-
+                dr.Close();
                 MySQL.DisconnectDB();
             }
 

@@ -47,7 +47,7 @@ namespace RamosHermanos.Capas.Interfaz
                     tabMain.Controls.Remove(tabMovimientos);
                     break;                    
                 default:
-                    Console.WriteLine("Default case");
+                    MessageBox.Show("Default case");
                     break;
             }
 

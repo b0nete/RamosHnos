@@ -135,12 +135,22 @@
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabRecorrido = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.dgvRecorrido = new System.Windows.Forms.DataGridView();
             this.colIDcalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colREstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.tabDistribuidor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -169,6 +179,8 @@
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDistribuidores)).BeginInit();
             this.tabRecorrido.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecorrido)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1482,13 +1494,97 @@
             // 
             // tabRecorrido
             // 
-            this.tabRecorrido.Controls.Add(this.dgvRecorrido);
+            this.tabRecorrido.Controls.Add(this.tabControl1);
             this.tabRecorrido.Location = new System.Drawing.Point(4, 22);
             this.tabRecorrido.Name = "tabRecorrido";
             this.tabRecorrido.Size = new System.Drawing.Size(776, 535);
             this.tabRecorrido.TabIndex = 4;
             this.tabRecorrido.Text = "Recorrido";
             this.tabRecorrido.UseVisualStyleBackColor = true;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(776, 535);
+            this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.btnDel);
+            this.tabPage1.Controls.Add(this.btnAdd);
+            this.tabPage1.Controls.Add(this.dgvRecorrido);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(768, 509);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Lunes";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(768, 509);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Martes";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(768, 509);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Miercoles";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(768, 509);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Jueves";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(768, 509);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Viernes";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(768, 509);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Sabado";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(768, 509);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Domingo";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // dgvRecorrido
             // 
@@ -1499,11 +1595,11 @@
             this.colDesde,
             this.colHasta,
             this.colREstado});
-            this.dgvRecorrido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRecorrido.Location = new System.Drawing.Point(0, 0);
+            this.dgvRecorrido.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvRecorrido.Location = new System.Drawing.Point(3, 40);
             this.dgvRecorrido.Name = "dgvRecorrido";
-            this.dgvRecorrido.Size = new System.Drawing.Size(776, 535);
-            this.dgvRecorrido.TabIndex = 0;
+            this.dgvRecorrido.Size = new System.Drawing.Size(762, 466);
+            this.dgvRecorrido.TabIndex = 4;
             // 
             // colIDcalle
             // 
@@ -1529,6 +1625,29 @@
             // 
             this.colREstado.HeaderText = "Estado";
             this.colREstado.Name = "colREstado";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAdd.Location = new System.Drawing.Point(6, 6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(28, 28);
+            this.btnAdd.TabIndex = 90;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
+            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDel.Location = new System.Drawing.Point(40, 6);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(28, 28);
+            this.btnDel.TabIndex = 91;
+            this.btnDel.UseVisualStyleBackColor = true;
             // 
             // formDistribuidores
             // 
@@ -1571,6 +1690,8 @@
             this.tabListado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDistribuidores)).EndInit();
             this.tabRecorrido.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecorrido)).EndInit();
             this.ResumeLayout(false);
 
@@ -1684,11 +1805,21 @@
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.DataGridView dataGridView6;
         private System.Windows.Forms.TabPage tabRecorrido;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dgvRecorrido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDcalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDesde;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHasta;
         private System.Windows.Forms.DataGridViewTextBoxColumn colREstado;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

@@ -20,6 +20,7 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         public int tabVar;
+        public int DGVvar = 1;
 
         // Eventos
         private void formDomicilio_Load(object sender, EventArgs e)
@@ -41,11 +42,14 @@ namespace RamosHermanos.Capas.Interfaz
                     break;
             }
 
-            // Combo.
+            // Combos
+            //Provincia
             ProvinciaB.CargarCB(cbProvinciaBar);
+            //Localidad
             LocalidadB.CargarCB(cbLocalidadBar, cbProvinciaBar);
+            //Barrio
             BarrioB.CargarDGV(dgvBarrio);
-            // Calles
+            //Calles
             ProvinciaB.CargarCB(cbProvinciaCalle);
 
             CheckColor(cbEstadoBar, lblEstadoDom);
@@ -132,7 +136,7 @@ namespace RamosHermanos.Capas.Interfaz
                 lbl.BackColor = Color.Red;
                 lbl.Text = "Desabilitado";
             }
-        }        
+        }
 
         // Entidades
 
@@ -189,8 +193,36 @@ namespace RamosHermanos.Capas.Interfaz
             CalleB.CargarDGV(barrio, dgvCalle);
         }
 
-        
+        private void dgvCalle_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvCalle.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                switch (DGVvar)
+                {
+                    case 1:
+                        DataGridViewRow row = cell.OwningRow;
+                        cbProvinciaCalle.SelectedValue = row.Cells["colCIDProvincia"].Value.ToString();
+                        cbLocalidadesCalle.SelectedValue = row.Cells["colCIDLocalidad"].Value.ToString();
+                        cbBarriosCalle.SelectedValue = row.Cells["colCIDBarrio"].Value.ToString();
+                        txtCalle.Text = row.Cells["colCCalle"].Value.ToString();
+                        cbEstadoCalle.Checked = Convert.ToBoolean(row.Cells["colCEstado"].Value);
 
-        
+                        break;
+                    case 2:
+                        Console.WriteLine("Case 2");
+                        break;
+                }                
+            }
+
+
+
+
+        }
     }
 }
