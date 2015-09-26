@@ -35,33 +35,37 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnAgregarDomicilio = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.mcAgenda = new System.Windows.Forms.MonthCalendar();
             this.groupbox = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.dgvFactura = new System.Windows.Forms.DataGridView();
-            this.colNpedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPedido = new System.Windows.Forms.DataGridView();
+            this.colIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEliminarProducto = new System.Windows.Forms.Button();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpEntrega = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.lblEstado = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -75,7 +79,7 @@
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupbox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -103,25 +107,26 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnAgregarDomicilio);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button6);
+            this.groupBox1.Controls.Add(this.btnImprimir);
             this.groupBox1.Controls.Add(this.cbEstado);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtObservaciones);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.txtTotal);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.button8);
-            this.groupBox1.Controls.Add(this.button9);
+            this.groupBox1.Controls.Add(this.btnLimpiar);
+            this.groupBox1.Controls.Add(this.btnEditar);
+            this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.mcAgenda);
             this.groupBox1.Controls.Add(this.groupbox);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnBuscarCliente);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dtpEntrega);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.lblEstado);
             this.groupBox1.Controls.Add(this.label27);
@@ -138,6 +143,19 @@
             this.groupBox1.TabIndex = 113;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Pedido";
+            // 
+            // BtnAgregarDomicilio
+            // 
+            this.BtnAgregarDomicilio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnAgregarDomicilio.BackgroundImage")));
+            this.BtnAgregarDomicilio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnAgregarDomicilio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAgregarDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAgregarDomicilio.Location = new System.Drawing.Point(421, 83);
+            this.BtnAgregarDomicilio.Name = "BtnAgregarDomicilio";
+            this.BtnAgregarDomicilio.Size = new System.Drawing.Size(28, 28);
+            this.BtnAgregarDomicilio.TabIndex = 128;
+            this.BtnAgregarDomicilio.UseVisualStyleBackColor = true;
+            this.BtnAgregarDomicilio.Click += new System.EventHandler(this.BtnAgregarDomicilio_Click);
             // 
             // textBox3
             // 
@@ -158,16 +176,16 @@
             this.label1.TabIndex = 134;
             this.label1.Text = "Domicilio";
             // 
-            // button6
+            // btnImprimir
             // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(642, 648);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(28, 28);
-            this.button6.TabIndex = 122;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnImprimir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnImprimir.BackgroundImage")));
+            this.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.Location = new System.Drawing.Point(642, 648);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(28, 28);
+            this.btnImprimir.TabIndex = 122;
+            this.btnImprimir.UseVisualStyleBackColor = true;
             // 
             // cbEstado
             // 
@@ -175,13 +193,14 @@
             this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEstado.FormattingEnabled = true;
             this.cbEstado.Items.AddRange(new object[] {
+            "ACTIVO",
             "PENDIENTE",
-            "ANULADO",
-            "PAGADO"});
+            "ANULADO"});
             this.cbEstado.Location = new System.Drawing.Point(643, 584);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(129, 21);
             this.cbEstado.TabIndex = 120;
+            this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.cbEstado_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -214,6 +233,7 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(643, 558);
             this.txtTotal.Name = "txtTotal";
@@ -230,39 +250,39 @@
             this.label11.TabIndex = 113;
             this.label11.Text = "TOTAL";
             // 
-            // button7
+            // btnLimpiar
             // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(676, 648);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(28, 28);
-            this.button7.TabIndex = 117;
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnLimpiar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.BackgroundImage")));
+            this.btnLimpiar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(676, 648);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(28, 28);
+            this.btnLimpiar.TabIndex = 117;
+            this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnEditar
             // 
-            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button8.Location = new System.Drawing.Point(744, 648);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(28, 28);
-            this.button8.TabIndex = 116;
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnEditar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEditar.BackgroundImage")));
+            this.btnEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnEditar.Location = new System.Drawing.Point(744, 648);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(28, 28);
+            this.btnEditar.TabIndex = 116;
+            this.btnEditar.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnGuardar
             // 
-            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(710, 648);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(28, 28);
-            this.button9.TabIndex = 115;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.btnGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardar.BackgroundImage")));
+            this.btnGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(710, 648);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(28, 28);
+            this.btnGuardar.TabIndex = 115;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // mcAgenda
             // 
@@ -273,44 +293,20 @@
             // 
             // groupbox
             // 
-            this.groupbox.Controls.Add(this.button3);
-            this.groupbox.Controls.Add(this.button5);
-            this.groupbox.Controls.Add(this.dgvFactura);
+            this.groupbox.Controls.Add(this.dgvPedido);
+            this.groupbox.Controls.Add(this.btnEliminarProducto);
+            this.groupbox.Controls.Add(this.btnAgregarProducto);
             this.groupbox.Location = new System.Drawing.Point(6, 184);
             this.groupbox.Name = "groupbox";
-            this.groupbox.Size = new System.Drawing.Size(772, 351);
+            this.groupbox.Size = new System.Drawing.Size(772, 354);
             this.groupbox.TabIndex = 130;
             this.groupbox.TabStop = false;
             this.groupbox.Text = "Productos";
             // 
-            // button3
+            // dgvPedido
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(733, 315);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 143;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(699, 315);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(28, 28);
-            this.button5.TabIndex = 142;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // dgvFactura
-            // 
-            this.dgvFactura.AllowUserToAddRows = false;
-            this.dgvFactura.AllowUserToDeleteRows = false;
+            this.dgvPedido.AllowUserToAddRows = false;
+            this.dgvPedido.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -318,12 +314,15 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colNpedido,
+            this.dgvPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDProducto,
+            this.colTipo,
+            this.colMarca,
             this.colProducto,
             this.colCantidad,
+            this.colMedida,
             this.colPrecio,
             this.colSubTotal});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -333,9 +332,10 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFactura.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvFactura.Location = new System.Drawing.Point(6, 19);
-            this.dgvFactura.Name = "dgvFactura";
+            this.dgvPedido.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPedido.Location = new System.Drawing.Point(6, 14);
+            this.dgvPedido.Name = "dgvPedido";
+            this.dgvPedido.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -343,15 +343,28 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFactura.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvFactura.Size = new System.Drawing.Size(760, 290);
-            this.dgvFactura.TabIndex = 80;
+            this.dgvPedido.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPedido.Size = new System.Drawing.Size(760, 300);
+            this.dgvPedido.TabIndex = 144;
             // 
-            // colNpedido
+            // colIDProducto
             // 
-            this.colNpedido.HeaderText = "Numero Pedido";
-            this.colNpedido.Name = "colNpedido";
-            this.colNpedido.ReadOnly = true;
+            this.colIDProducto.HeaderText = "Nº Producto";
+            this.colIDProducto.Name = "colIDProducto";
+            this.colIDProducto.ReadOnly = true;
+            this.colIDProducto.Visible = false;
+            // 
+            // colTipo
+            // 
+            this.colTipo.HeaderText = "Tipo";
+            this.colTipo.Name = "colTipo";
+            this.colTipo.ReadOnly = true;
+            // 
+            // colMarca
+            // 
+            this.colMarca.HeaderText = "Marca";
+            this.colMarca.Name = "colMarca";
+            this.colMarca.ReadOnly = true;
             // 
             // colProducto
             // 
@@ -363,10 +376,17 @@
             // 
             this.colCantidad.HeaderText = "Cantidad";
             this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
+            // 
+            // colMedida
+            // 
+            this.colMedida.HeaderText = "Medida";
+            this.colMedida.Name = "colMedida";
+            this.colMedida.ReadOnly = true;
             // 
             // colPrecio
             // 
-            this.colPrecio.HeaderText = "Precio Unitario";
+            this.colPrecio.HeaderText = "Precio";
             this.colPrecio.Name = "colPrecio";
             this.colPrecio.ReadOnly = true;
             // 
@@ -376,16 +396,42 @@
             this.colSubTotal.Name = "colSubTotal";
             this.colSubTotal.ReadOnly = true;
             // 
-            // button1
+            // btnEliminarProducto
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button1.Location = new System.Drawing.Point(421, 52);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 28);
-            this.button1.TabIndex = 128;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEliminarProducto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminarProducto.BackgroundImage")));
+            this.btnEliminarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarProducto.Location = new System.Drawing.Point(738, 320);
+            this.btnEliminarProducto.Name = "btnEliminarProducto";
+            this.btnEliminarProducto.Size = new System.Drawing.Size(28, 28);
+            this.btnEliminarProducto.TabIndex = 143;
+            this.btnEliminarProducto.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregarProducto
+            // 
+            this.btnAgregarProducto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAgregarProducto.BackgroundImage")));
+            this.btnAgregarProducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProducto.Location = new System.Drawing.Point(704, 320);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(28, 28);
+            this.btnAgregarProducto.TabIndex = 142;
+            this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscarCliente.BackgroundImage")));
+            this.btnBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(421, 52);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(28, 28);
+            this.btnBuscarCliente.TabIndex = 128;
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
             // textBox1
             // 
@@ -419,14 +465,14 @@
             this.label4.TabIndex = 124;
             this.label4.Text = "*";
             // 
-            // dateTimePicker1
+            // dtpEntrega
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(115, 136);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(300, 20);
-            this.dateTimePicker1.TabIndex = 123;
+            this.dtpEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpEntrega.Location = new System.Drawing.Point(115, 136);
+            this.dtpEntrega.Name = "dtpEntrega";
+            this.dtpEntrega.Size = new System.Drawing.Size(300, 20);
+            this.dtpEntrega.TabIndex = 123;
             // 
             // label6
             // 
@@ -462,6 +508,7 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Enabled = false;
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(115, 110);
@@ -529,12 +576,13 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "formPedidos";
             this.Text = "formPedidos";
+            this.Load += new System.EventHandler(this.formPedidos_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupbox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPedido)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -546,31 +594,25 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.MonthCalendar mcAgenda;
         private System.Windows.Forms.GroupBox groupbox;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DataGridView dgvFactura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNpedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEliminarProducto;
+        private System.Windows.Forms.Button btnAgregarProducto;
+        private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpEntrega;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label label27;
@@ -580,6 +622,16 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMedida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
+        private System.Windows.Forms.Button BtnAgregarDomicilio;
+        public System.Windows.Forms.DataGridView dgvPedido;
 
 
     }

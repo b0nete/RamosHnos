@@ -21,9 +21,21 @@ namespace RamosHermanos.Capas.Interfaz
 
         //Eventos
 
+        public int caseSwitch = 0;
+
         private void formProducto_Load(object sender, EventArgs e)
         {
             //Cargas iniciales de CB
+            
+            switch (caseSwitch)
+            {
+                case 1:
+                    tabProducto.Controls.Remove(tabListado);
+                    break;
+                case 2:
+                    tabProducto.Controls.Remove(tabInformacion);
+                    break;
+            }
             ProductoB.CargarDGV(dgvProducto);
             tipoProductoB.CargarCB(cbTipoProducto);
             MarcaB.CargarCB(cbMarca);
@@ -165,41 +177,93 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
+        formPedidos frmP = new formPedidos();
+        public int caseSwitchProducto = 1;
+
         private void dgvProducto_DoubleClick_1(object sender, EventArgs e)
         {
-            DataGridViewCell cell = null;
-            foreach (DataGridViewCell selectedCell in dgvProducto.SelectedCells)
+            switch (caseSwitchProducto)
             {
-                cell = selectedCell;
-                break;
-            }
-            if (cell != null)
-            {
-                DataGridViewRow row = cell.OwningRow;
+                case 1:
+                    {
+                        DataGridViewCell cell = null;
+                        foreach (DataGridViewCell selectedCell in dgvProducto.SelectedCells)
+                        {
+                            cell = selectedCell;
+                            break;
+                        }
+                        if (cell != null)
+                        {
+                            DataGridViewRow row = cell.OwningRow;
 
-                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+                            //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
 
-                producto.idProducto = Convert.ToInt32(row.Cells["colIDProducto"].Value.ToString());
+                            producto.idProducto = Convert.ToInt32(row.Cells["colIDProducto"].Value.ToString());
 
-                ProductoB.BuscarProducto(producto);
-                txtIDProd.Text = Convert.ToString(producto.idProducto);
-                dtpFechaAlta.Value = Convert.ToDateTime(producto.fechaAlta);
-                cbTipoProducto.SelectedValue = producto.tipoProducto;
-                cbMarca.SelectedValue = producto.marca;
-                txtProducto.Text = producto.producto;
-                txtDescripcion.Text = producto.descripcion;
-                txtCantidad.Text = Convert.ToString(producto.cantidad);
-                cbMedida.SelectedValue = producto.medida;
-                txtStockMin.Text = Convert.ToString(producto.stockMin);
-                txtStockActual.Text = Convert.ToString(producto.stockActual);
+                            ProductoB.BuscarProducto(producto);
+                            txtIDProd.Text = Convert.ToString(producto.idProducto);
+                            dtpFechaAlta.Value = Convert.ToDateTime(producto.fechaAlta);
+                            cbTipoProducto.SelectedValue = producto.tipoProducto;
+                            cbMarca.SelectedValue = producto.marca;
+                            txtProducto.Text = producto.producto;
+                            txtDescripcion.Text = producto.descripcion;
+                            txtCantidad.Text = Convert.ToString(producto.cantidad);
+                            cbMedida.SelectedValue = producto.medida;
+                            txtStockMin.Text = Convert.ToString(producto.stockMin);
+                            txtStockActual.Text = Convert.ToString(producto.stockActual);
 
-                precio.producto = producto.idProducto;
-                PrecioB.BuscarPrecio(precio);
-                txtPrecioActual.Text = Convert.ToString(precio.precio);
-                txtFechaActualizacion.Text = Convert.ToString(precio.fechaActualizacion);
+                            precio.producto = producto.idProducto;
+                            PrecioB.BuscarPrecio(precio);
+                            txtPrecioActual.Text = Convert.ToString(precio.precio);
+                            txtFechaActualizacion.Text = Convert.ToString(precio.fechaActualizacion);
 
-                tabProducto.SelectedTab = tabInformacion;
-            }
+                            tabProducto.SelectedTab = tabInformacion;
+                        }
+                    }
+                    break;
+                    case 2:
+                    {
+                        DataGridViewCell cell = null;
+                        foreach (DataGridViewCell selectedCell in dgvProducto.SelectedCells)
+                        {
+                            cell = selectedCell;
+                            break;
+                        }
+                        if (cell != null)
+                        {
+                            DataGridViewRow row = cell.OwningRow;
+
+                            //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+
+                            producto.idProducto = Convert.ToInt32(row.Cells["colIDProducto"].Value.ToString());
+
+                            ProductoB.BuscarProducto(producto);
+                            txtIDProd.Text = Convert.ToString(producto.idProducto);
+                            dtpFechaAlta.Value = Convert.ToDateTime(producto.fechaAlta);
+                            cbTipoProducto.SelectedValue = producto.tipoProducto;
+                            cbMarca.SelectedValue = producto.marca;
+                            txtProducto.Text = producto.producto;
+                            txtDescripcion.Text = producto.descripcion;
+                            txtCantidad.Text = Convert.ToString(producto.cantidad);
+                            cbMedida.SelectedValue = producto.medida;
+                            txtStockMin.Text = Convert.ToString(producto.stockMin);
+                            txtStockActual.Text = Convert.ToString(producto.stockActual);
+
+                            precio.producto = producto.idProducto;
+                            PrecioB.BuscarPrecio(precio);
+                            txtPrecioActual.Text = Convert.ToString(precio.precio);
+                            txtFechaActualizacion.Text = Convert.ToString(precio.fechaActualizacion);
+
+                            tabProducto.SelectedTab = tabInformacion;
+                        }
+                    }
+                    break;      
+                
+        }
+                   
+
+                    
+                  
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -19,13 +19,15 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT into Pedidos (observaciones, total, estado)
-                             VALUES (@observaciones,@total,@estado);
+                string query = @"INSERT into Pedidos (fechaPedido,fechaEntrega,observaciones, total, estado)
+                             VALUES (@fechaPedido,@fechaEntrega,@observaciones,@total,@estado);
                              SELECT LAST_INSERT_ID();";
 
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
+                cmd.Parameters.AddWithValue("@fechaPedido", pedido.fechaPedido);
+                cmd.Parameters.AddWithValue("@fechaEntrega", pedido.fechaEntrega);
                 cmd.Parameters.AddWithValue("@observaciones", pedido.observaciones);
                 cmd.Parameters.AddWithValue("@total", pedido.total);
                 cmd.Parameters.AddWithValue("@estado", pedido.estado);

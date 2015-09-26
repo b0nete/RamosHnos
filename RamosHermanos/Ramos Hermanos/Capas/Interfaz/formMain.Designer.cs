@@ -66,6 +66,7 @@
             this.propiedadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.acercaDeRamosHnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mcAgenda = new System.Windows.Forms.MonthCalendar();
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.lblSesion = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tmrHora = new System.Windows.Forms.Timer(this.components);
-            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msPrincipal.SuspendLayout();
             this.pnlInfo.SuspendLayout();
             this.SuspendLayout();
@@ -303,6 +303,7 @@
             this.ingresarGastoToolStripMenuItem.Name = "ingresarGastoToolStripMenuItem";
             this.ingresarGastoToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.ingresarGastoToolStripMenuItem.Text = "Generar Comprobante";
+            this.ingresarGastoToolStripMenuItem.Click += new System.EventHandler(this.ingresarGastoToolStripMenuItem_Click);
             // 
             // administraciónToolStripMenuItem
             // 
@@ -357,6 +358,13 @@
             this.acercaDeRamosHnosToolStripMenuItem.Name = "acercaDeRamosHnosToolStripMenuItem";
             this.acercaDeRamosHnosToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.acercaDeRamosHnosToolStripMenuItem.Text = "Acerca de";
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.testToolStripMenuItem.Text = "Test";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click_1);
             // 
             // mcAgenda
             // 
@@ -442,13 +450,6 @@
             this.tmrHora.Enabled = true;
             this.tmrHora.Interval = 1000;
             this.tmrHora.Tick += new System.EventHandler(this.tmrHora_Tick);
-            // 
-            // testToolStripMenuItem
-            // 
-            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
-            this.testToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
-            this.testToolStripMenuItem.Text = "Test";
-            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click_1);
             // 
             // formMain
             // 

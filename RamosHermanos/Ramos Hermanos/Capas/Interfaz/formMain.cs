@@ -165,6 +165,12 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
+        private void ingresarGastoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formFactura frm = new formFactura();
+            frm.Show();
+        }
+
        
        
        
