@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Negocio;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -17,19 +19,20 @@ namespace RamosHermanos.Capas.Interfaz
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        PedidoEntity pedido = new PedidoEntity();
+        public void cargarPedido()
         {
+            pedido.observaciones = txtObservaciones.Text;
+            pedido.total = Convert.ToDouble(txtTotal.Text);
+            pedido.estado = cbEstado.Text;
 
         }
 
-        private void formPedidos_Load(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)
         {
-
+            PedidoB.InsertPedido(pedido);
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

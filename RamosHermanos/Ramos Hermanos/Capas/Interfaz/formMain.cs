@@ -159,6 +159,12 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
+        private void testToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            formPedidos frm = new formPedidos();
+            frm.Show();
+        }
+
        
        
        

@@ -84,7 +84,6 @@ namespace RamosHermanos.Capas.Interfaz
         
         private void formInsumos_Load(object sender, EventArgs e)
         {
-
             ProveedorB.CargarProv(cbProv);
             RubroB.CargarRubro(cbRubro);
             MarcaB.CargarCB(cbMarca);
