@@ -122,7 +122,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void CargarDGV(DataGridView dgv)
+        public static void CargarDGV(BarrioEntity barrio, DataGridView dgv)
         {
             try
             {
@@ -131,9 +131,12 @@ namespace RamosHermanos.Capas.Negocio
 
                 string query = @"SELECT B.Barrio, C.Calle, C.Estado
                                  FROM Calles C
-                                 INNER JOIN Barrios B ON C.idBarrio = B.idBarrio";
+                                 INNER JOIN Barrios B ON C.idBarrio = B.idBarrio
+                                 WHERE B.idBarrio = @idBarrio";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idBarrio", barrio.idBarrio);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 

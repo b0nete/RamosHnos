@@ -116,11 +116,12 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT D.idDomicilio, D.Calle, D.Numero, D.Piso, D.Dpto, D.CP, B.Barrio, L.Localidad, P.Provincia, D.Estado
+                string query = @"SELECT D.idDomicilio, C.Calle, D.Numero, D.Piso, D.Dpto, D.CP, B.Barrio, L.Localidad, P.Provincia, D.Estado
                                  FROM Domicilios D 
                                  INNER JOIN Provincias P ON P.idProvincia = D.Provincia
                                  INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
                                  INNER JOIN Barrios B ON D.Barrio = B.idBarrio
+                                 INNER JOIN Calles C ON D.Calle = C.idCalle
                                  WHERE rol = @rol and idPersona = @idPersona";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);

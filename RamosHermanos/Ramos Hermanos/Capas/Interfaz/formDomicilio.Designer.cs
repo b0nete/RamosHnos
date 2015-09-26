@@ -871,6 +871,7 @@
             this.cbBarriosCalle.Name = "cbBarriosCalle";
             this.cbBarriosCalle.Size = new System.Drawing.Size(185, 21);
             this.cbBarriosCalle.TabIndex = 113;
+            this.cbBarriosCalle.SelectionChangeCommitted += new System.EventHandler(this.cbBarriosCalle_SelectionChangeCommitted);
             // 
             // label18
             // 

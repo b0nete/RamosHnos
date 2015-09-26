@@ -107,7 +107,8 @@ namespace RamosHermanos.Capas.Interfaz
                 {
                     CargarCalle();
                     CalleB.InsertCalle(calle);
-                    CalleB.CargarDGV(dgvCalle);
+                    CargarBarrio();
+                    CalleB.CargarDGV(barrio, dgvCalle);
                 }
             }
         }
@@ -179,6 +180,13 @@ namespace RamosHermanos.Capas.Interfaz
         private void cbLocalidadesCalle_SelectionChangeCommitted(object sender, EventArgs e)
         {
             BarrioB.CargarCB(cbBarriosCalle, cbLocalidadesCalle);
+        }
+
+        private void cbBarriosCalle_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            // Cargamos el ID de barrio para llenar el DGV.
+            barrio.idBarrio = Convert.ToInt32(cbBarriosCalle.SelectedValue);
+            CalleB.CargarDGV(barrio, dgvCalle);
         }
 
         
