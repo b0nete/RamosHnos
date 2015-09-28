@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Interfaz.Contratos;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -195,6 +196,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvCalle_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            formDistribuidores frm = new formDistribuidores();
+
             DataGridViewCell cell = null;
             foreach (DataGridViewCell selectedCell in dgvCalle.SelectedCells)
             {
@@ -207,8 +210,8 @@ namespace RamosHermanos.Capas.Interfaz
 
                 switch (DGVvar)
                 {
-                        // Caso 1: Carga datos en los elementos para editarlos.
-                    case 1:                        
+                    // Caso 1: Carga datos en los elementos para editarlos.
+                    case 1:
                         cbProvinciaCalle.SelectedValue = row.Cells["colCIDProvincia"].Value.ToString();
                         cbLocalidadesCalle.SelectedValue = row.Cells["colCIDLocalidad"].Value.ToString();
                         cbBarriosCalle.SelectedValue = row.Cells["colCIDBarrio"].Value.ToString();
@@ -216,29 +219,19 @@ namespace RamosHermanos.Capas.Interfaz
                         cbEstadoCalle.Checked = Convert.ToBoolean(row.Cells["colCEstado"].Value);
                         break;
 
-                        // Caso 2: Envía datos al formRecorrido.
+                    // Caso 2: Envía datos al formRecorrido.
                     case 2:
+                        DataGridViewRow rowA = this.dgvCalle.CurrentRow as DataGridViewRow;
 
-                        formDistribuidores frm = new formDistribuidores();
+                        IAddItem parent = this.Owner as IAddItem;
+                        parent.AddNewItem(rowA);
 
-                        frm.tabVar = 0;
-                        //frm.Show();
-
-                        //DataGridViewRow row = this.dataGridView1.SelectedRows[0] as DataGridViewRow;
- 
- 
-                        //IAddItem parent = this.Owner as IAddItem;
-                        //parent.AddNewItem(row);
- 
                         this.Close();
                         break;
                 }
-
-                }                
             }
-
-
-
-
         }
+
+
     }
+}

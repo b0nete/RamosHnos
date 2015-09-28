@@ -140,17 +140,17 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvRecorridoLu = new System.Windows.Forms.DataGridView();
+            this.colIDcalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colREstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.colIDcalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colREstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabDistribuidor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -1556,8 +1556,6 @@
             // 
             // dgvRecorridoLu
             // 
-            this.dgvRecorridoLu.AllowUserToAddRows = false;
-            this.dgvRecorridoLu.AllowUserToDeleteRows = false;
             this.dgvRecorridoLu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecorridoLu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDcalle,
@@ -1570,6 +1568,33 @@
             this.dgvRecorridoLu.Name = "dgvRecorridoLu";
             this.dgvRecorridoLu.Size = new System.Drawing.Size(762, 466);
             this.dgvRecorridoLu.TabIndex = 4;
+            // 
+            // colIDcalle
+            // 
+            this.colIDcalle.HeaderText = "Nº Calle";
+            this.colIDcalle.Name = "colIDcalle";
+            // 
+            // colCalle
+            // 
+            this.colCalle.HeaderText = "Calle";
+            this.colCalle.Name = "colCalle";
+            // 
+            // colDesde
+            // 
+            this.colDesde.HeaderText = "Desde";
+            this.colDesde.Name = "colDesde";
+            // 
+            // colHasta
+            // 
+            this.colHasta.HeaderText = "Hasta";
+            this.colHasta.Name = "colHasta";
+            // 
+            // colREstado
+            // 
+            this.colREstado.HeaderText = "Estado";
+            this.colREstado.Name = "colREstado";
+            this.colREstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colREstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tabPage2
             // 
@@ -1625,33 +1650,6 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Domingo";
             this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // colIDcalle
-            // 
-            this.colIDcalle.HeaderText = "Nº Calle";
-            this.colIDcalle.Name = "colIDcalle";
-            // 
-            // colCalle
-            // 
-            this.colCalle.HeaderText = "Calle";
-            this.colCalle.Name = "colCalle";
-            // 
-            // colDesde
-            // 
-            this.colDesde.HeaderText = "Desde";
-            this.colDesde.Name = "colDesde";
-            // 
-            // colHasta
-            // 
-            this.colHasta.HeaderText = "Hasta";
-            this.colHasta.Name = "colHasta";
-            // 
-            // colREstado
-            // 
-            this.colREstado.HeaderText = "Estado";
-            this.colREstado.Name = "colREstado";
-            this.colREstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colREstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // formDistribuidores
             // 

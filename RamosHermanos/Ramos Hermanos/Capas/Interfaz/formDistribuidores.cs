@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Interfaz.Contratos;
 
 namespace RamosHermanos.Capas.Interfaz
 {
-    public partial class formDistribuidores : Form
+    public partial class formDistribuidores : Form, IAddItem
     {
         public int tabVar;
 
@@ -389,19 +390,23 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show(this);
         }
 
+        // Contratos
+
+        //#region IAddItem Members
+
         public void AddNewItem(DataGridViewRow row)
         {
-            string idCalle = row.Cells["colIDcalle"].Value.ToString();
-            string Calle = row.Cells["colCalle"].Value.ToString();
+            string idCalle = row.Cells["colCIDcalle"].Value.ToString();
+            string calle = row.Cells["colCCalle"].Value.ToString();
 
-            this.dataGridView1.Rows.Add(new[] { idCalle, Calle });
+            this.dgvRecorridoLu.Rows.Add(new[] { idCalle, calle });
         }
 
-        // Interfaces
+        //#endregion
+
         interface IAddItem
         {
             void AddNewItem(DataGridViewRow row);
         }
- 
     }
 }

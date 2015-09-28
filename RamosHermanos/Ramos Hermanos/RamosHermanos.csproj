@@ -89,6 +89,7 @@
     <Compile Include="Capas\Entidades\UsuarioEntity.cs" />
     <Compile Include="Capas\Entidades\VehiculoEntity.cs" />
     <Compile Include="Capas\Entidades\VisitaEntity.cs" />
+    <Compile Include="Capas\Interfaz\Contratos\IAddItem.cs" />
     <Compile Include="Capas\Interfaz\formBuscarInsumo.cs">
       <SubType>Form</SubType>
     </Compile>
