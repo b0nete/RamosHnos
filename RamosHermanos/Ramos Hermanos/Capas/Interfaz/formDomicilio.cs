@@ -203,20 +203,37 @@ namespace RamosHermanos.Capas.Interfaz
             }
             if (cell != null)
             {
+                DataGridViewRow row = cell.OwningRow;
+
                 switch (DGVvar)
                 {
-                    case 1:
-                        DataGridViewRow row = cell.OwningRow;
+                        // Caso 1: Carga datos en los elementos para editarlos.
+                    case 1:                        
                         cbProvinciaCalle.SelectedValue = row.Cells["colCIDProvincia"].Value.ToString();
                         cbLocalidadesCalle.SelectedValue = row.Cells["colCIDLocalidad"].Value.ToString();
                         cbBarriosCalle.SelectedValue = row.Cells["colCIDBarrio"].Value.ToString();
                         txtCalle.Text = row.Cells["colCCalle"].Value.ToString();
                         cbEstadoCalle.Checked = Convert.ToBoolean(row.Cells["colCEstado"].Value);
+                        break;
 
-                        break;
+                        // Caso 2: Envía datos al formRecorrido.
                     case 2:
-                        Console.WriteLine("Case 2");
+
+                        formDistribuidores frm = new formDistribuidores();
+
+                        frm.tabVar = 0;
+                        //frm.Show();
+
+                        //DataGridViewRow row = this.dataGridView1.SelectedRows[0] as DataGridViewRow;
+ 
+ 
+                        //IAddItem parent = this.Owner as IAddItem;
+                        //parent.AddNewItem(row);
+ 
+                        this.Close();
                         break;
+                }
+
                 }                
             }
 
@@ -225,4 +242,3 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
     }
-}

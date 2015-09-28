@@ -14,6 +14,8 @@ namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formDistribuidores : Form
     {
+        public int tabVar;
+
         public formDistribuidores()
         {
             InitializeComponent();
@@ -28,6 +30,13 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formDistribuidores_Load(object sender, EventArgs e)
         {
+            //Tab Inicial
+            switch (tabVar)
+            {
+                case 0:
+                    tabDistribuidor.SelectedTab = tabRecorrido;
+                    break;
+            }
             //Tabs Ocultos
             tabDistribuidor.Controls.Remove(tabListado);
 
@@ -376,11 +385,23 @@ namespace RamosHermanos.Capas.Interfaz
         {
             formDomicilio frm = new formDomicilio();
             frm.tabVar = 0;
-            frm.Show();
-
+            frm.DGVvar = 2;
+            frm.Show(this);
         }
 
-        
+        public void AddNewItem(DataGridViewRow row)
+        {
+            string idCalle = row.Cells["colIDcalle"].Value.ToString();
+            string Calle = row.Cells["colCalle"].Value.ToString();
+
+            this.dataGridView1.Rows.Add(new[] { idCalle, Calle });
+        }
+
+        // Interfaces
+        interface IAddItem
+        {
+            void AddNewItem(DataGridViewRow row);
+        }
  
     }
 }

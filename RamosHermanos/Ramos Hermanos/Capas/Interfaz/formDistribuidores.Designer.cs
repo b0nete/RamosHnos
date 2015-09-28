@@ -137,20 +137,20 @@
             this.tabRecorrido = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.dgvRecorridoLu = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.dgvRecorrido = new System.Windows.Forms.DataGridView();
             this.colIDcalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colREstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
+            this.colREstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabDistribuidor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -181,7 +181,7 @@
             this.tabRecorrido.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecorrido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecorridoLu)).BeginInit();
             this.SuspendLayout();
             // 
             // tabDistribuidor
@@ -1522,7 +1522,7 @@
             // 
             this.tabPage1.Controls.Add(this.btnDel);
             this.tabPage1.Controls.Add(this.btnAdd);
-            this.tabPage1.Controls.Add(this.dgvRecorrido);
+            this.tabPage1.Controls.Add(this.dgvRecorridoLu);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -1530,6 +1530,46 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lunes";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
+            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDel.Location = new System.Drawing.Point(40, 6);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(28, 28);
+            this.btnDel.TabIndex = 91;
+            this.btnDel.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAdd.Location = new System.Drawing.Point(6, 6);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(28, 28);
+            this.btnAdd.TabIndex = 90;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // dgvRecorridoLu
+            // 
+            this.dgvRecorridoLu.AllowUserToAddRows = false;
+            this.dgvRecorridoLu.AllowUserToDeleteRows = false;
+            this.dgvRecorridoLu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRecorridoLu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDcalle,
+            this.colCalle,
+            this.colDesde,
+            this.colHasta,
+            this.colREstado});
+            this.dgvRecorridoLu.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvRecorridoLu.Location = new System.Drawing.Point(3, 40);
+            this.dgvRecorridoLu.Name = "dgvRecorridoLu";
+            this.dgvRecorridoLu.Size = new System.Drawing.Size(762, 466);
+            this.dgvRecorridoLu.TabIndex = 4;
             // 
             // tabPage2
             // 
@@ -1586,21 +1626,6 @@
             this.tabPage7.Text = "Domingo";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // dgvRecorrido
-            // 
-            this.dgvRecorrido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRecorrido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colIDcalle,
-            this.colCalle,
-            this.colDesde,
-            this.colHasta,
-            this.colREstado});
-            this.dgvRecorrido.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvRecorrido.Location = new System.Drawing.Point(3, 40);
-            this.dgvRecorrido.Name = "dgvRecorrido";
-            this.dgvRecorrido.Size = new System.Drawing.Size(762, 466);
-            this.dgvRecorrido.TabIndex = 4;
-            // 
             // colIDcalle
             // 
             this.colIDcalle.HeaderText = "Nº Calle";
@@ -1625,29 +1650,8 @@
             // 
             this.colREstado.HeaderText = "Estado";
             this.colREstado.Name = "colREstado";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAdd.Location = new System.Drawing.Point(6, 6);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(28, 28);
-            this.btnAdd.TabIndex = 90;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnDel
-            // 
-            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
-            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDel.Location = new System.Drawing.Point(40, 6);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(28, 28);
-            this.btnDel.TabIndex = 91;
-            this.btnDel.UseVisualStyleBackColor = true;
+            this.colREstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colREstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // formDistribuidores
             // 
@@ -1692,7 +1696,7 @@
             this.tabRecorrido.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRecorrido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRecorridoLu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1807,12 +1811,6 @@
         private System.Windows.Forms.TabPage tabRecorrido;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.DataGridView dgvRecorrido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDcalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDesde;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHasta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colREstado;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
@@ -1821,5 +1819,11 @@
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
+        public System.Windows.Forms.DataGridView dgvRecorridoLu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDcalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDesde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHasta;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colREstado;
     }
 }
