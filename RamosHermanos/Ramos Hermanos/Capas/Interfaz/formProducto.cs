@@ -342,6 +342,11 @@ namespace RamosHermanos.Capas.Interfaz
             MedidaB.CargarCB(cbMedida);
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
 
         
 

@@ -27,47 +27,63 @@ namespace RamosHermanos.Capas.Interfaz
             pedido.estado = cbEstado.Text;
             pedido.fechaPedido = dtpFecha.Value;
             pedido.fechaEntrega = dtpEntrega.Value;
-   
-        }
 
-        formCliente frm = new formCliente();
-        private void btnBuscarCliente_Click(object sender, EventArgs e)
-        {
-            frm.caseSwitch = 3;
-            frm.Show();
-            
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            PedidoB.InsertPedido(pedido);
-        }
-
-        formProducto frm1 = new formProducto();
-        private void btnAgregarProducto_Click(object sender, EventArgs e)
-        {
-            frm1.caseSwitch = 2;
-            frm1.Show();
         }
 
         private void formPedidos_Load(object sender, EventArgs e)
         {
-            ProductoB.CargarDGV(dgvPedido);
+            ProductoB.CargarDGV(dgvProducto);
+            ClienteB.CargarDGV(dgvCliente);
         }
 
-        private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-
+            tabMain.SelectedTab = tabProducto;
+            tabMain.Controls.Remove(tabClientes);
+            tabMain.Controls.Remove(tabRemito);
+            return;
         }
 
-        formContacto frm2 = new formContacto();
-        private void BtnAgregarDomicilio_Click(object sender, EventArgs e)
+        ProductoEntity producto = new ProductoEntity();
+        private void CargarProducto()
         {
-            frm2.Show();
+            //producto.idProducto;
+        }
+
+        ClienteEntity cliente = new ClienteEntity();
+        private void CargarCliente()
+        { 
+        
+        
+        }
+
+        private void dgvProducto_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvProducto.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+
+                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el producto para cargarlo en tabInformación.
+
+                producto.idProducto = Convert.ToInt32(row.Cells["colIDProducto"].Value.ToString());
+               
+                
+                ProductoB.AddProductoDGV(dgvPedido, producto);
+
+                tabMain.SelectedTab = tabPedido;
+            }
         }
 
         
+       
 
+        
         
 
         

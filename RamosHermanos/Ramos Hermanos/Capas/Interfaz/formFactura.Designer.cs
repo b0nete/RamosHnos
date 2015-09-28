@@ -669,6 +669,7 @@
             this.dgvProducto.ReadOnly = true;
             this.dgvProducto.Size = new System.Drawing.Size(776, 703);
             this.dgvProducto.TabIndex = 53;
+            this.dgvProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellContentClick);
             this.dgvProducto.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvProducto_MouseDoubleClick);
             // 
             // colIDProducto

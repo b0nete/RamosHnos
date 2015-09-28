@@ -288,6 +288,43 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+        public static ClienteEntity AddClienteDGV(DataGridView dgv, ClienteEntity cliente)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT * from clientes";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idCliente", cliente.idCliente);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idClienteProducto"]),
+                    Convert.ToString(dr["tipoPersona"]),
+                    Convert.ToString(dr["numDoc"]),
+                    Convert.ToString(dr["apellido"]),
+                    Convert.ToString(dr["nombre"]));
+                    
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
+
+                return cliente;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
       
     }
 }
