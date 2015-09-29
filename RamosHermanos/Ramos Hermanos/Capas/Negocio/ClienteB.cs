@@ -325,6 +325,34 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static ClienteEntity AddClienteText(ClienteEntity cliente)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+
+                string query = @"Select * from clientes";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idCliente", cliente.idCliente);
+
+                cliente.idCliente = Convert.ToInt32(cmd.ExecuteScalar());
+                
+                MySQL.DisconnectDB();
+
+                return cliente;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
       
     }
 }

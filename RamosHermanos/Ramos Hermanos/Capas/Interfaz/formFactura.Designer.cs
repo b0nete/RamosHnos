@@ -307,6 +307,7 @@
             this.dgvFactura.Name = "dgvFactura";
             this.dgvFactura.Size = new System.Drawing.Size(760, 316);
             this.dgvFactura.TabIndex = 79;
+            this.dgvFactura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactura_CellContentClick);
             this.dgvFactura.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvFactura_CellStateChanged);
             this.dgvFactura.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactura_CellValueChanged);
             this.dgvFactura.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvFactura_MouseClick);
@@ -531,6 +532,7 @@
             this.cbDomicilio.Name = "cbDomicilio";
             this.cbDomicilio.Size = new System.Drawing.Size(331, 21);
             this.cbDomicilio.TabIndex = 10;
+            this.cbDomicilio.SelectedIndexChanged += new System.EventHandler(this.cbDomicilio_SelectedIndexChanged);
             // 
             // txtNombre
             // 

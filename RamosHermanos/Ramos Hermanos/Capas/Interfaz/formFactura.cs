@@ -268,6 +268,16 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
+        private void dgvFactura_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cbDomicilio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 
