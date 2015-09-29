@@ -237,20 +237,20 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void CargarDGVCB(ClienteEntity cliente, DataGridView dgv, string colRdistribuidor)
+        public static void CargarDGVCB(ClienteEntity cliente, DataGridView dgv, string colDistribuidor)
         {
             try
             {
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT D.idDomicilio, CONCAT(C.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
-                                 FROM Domicilios D 
+                string query = @"SELECT D.rol, D.idPersona, D.idDomicilio, CONCAT(C.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
+                                 FROM Domicilios D
                                  INNER JOIN Provincias P ON P.idProvincia = D.Provincia
                                  INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
                                  INNER JOIN Barrios B ON D.Barrio = B.idBarrio
                                  INNER JOIN Calles C ON C.idCalle = D.Calle
-                                 WHERE rol = @rol and idPersona = @idPersona";
+                                 WHERE D.rol = @rol and D.idPersona = @idPersona";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -262,7 +262,7 @@ namespace RamosHermanos.Capas.Negocio
                 while (dr.Read())
                 {
                     dgv.Rows.Add(
-                    Convert.ToString(null),
+                    Convert.ToString(dr["idPersona"]),
                     Convert.ToString(null),
                     Convert.ToString(dr["idDomicilio"]),
                     Convert.ToString(dr["domCompleto"]),
@@ -273,7 +273,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 //
 
-                DataGridViewComboBoxColumn comboboxColumn = dgv.Columns[colRdistribuidor] as DataGridViewComboBoxColumn;
+                DataGridViewComboBoxColumn comboboxColumn = dgv.Columns[colDistribuidor] as DataGridViewComboBoxColumn;
                 comboboxColumn.DataSource = DistribuidorB.ListDistribuidores();
                 comboboxColumn.ValueMember = "idDistribuidor";
                 comboboxColumn.DisplayMember = "nombre";

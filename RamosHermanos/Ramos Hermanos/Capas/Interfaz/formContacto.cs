@@ -405,7 +405,12 @@ namespace RamosHermanos.Capas.Interfaz
         {
             formDomicilio frm = new formDomicilio();
             frm.tabVar = 0;
+                    
             frm.Show();
+
+            frm.cbProvinciaCalle.SelectedValue = cbProvincia.SelectedValue;
+            frm.cbLocalidadesCalle.SelectedValue = cbLocalidad.SelectedValue;
+            frm.cbBarriosCalle.SelectedValue = cbBarrio.SelectedValue;
         }
 
         private void cbCalle_SelectionChangeCommitted(object sender, EventArgs e)

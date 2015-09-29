@@ -87,6 +87,15 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDelCalle = new System.Windows.Forms.Button();
             this.dgvCalle = new System.Windows.Forms.DataGridView();
+            this.colCIDProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCIDLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCIDBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCIDCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnUpdCalle = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cbProvinciaCalle = new System.Windows.Forms.ComboBox();
@@ -104,15 +113,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.txtIDcalle = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.colCIDProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCIDLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCLocalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCIDBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCBarrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCIDCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabProvincias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvincias)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -810,6 +810,62 @@
             this.dgvCalle.TabIndex = 101;
             this.dgvCalle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCalle_MouseDoubleClick);
             // 
+            // colCIDProvincia
+            // 
+            this.colCIDProvincia.HeaderText = "Nº Provincia";
+            this.colCIDProvincia.Name = "colCIDProvincia";
+            this.colCIDProvincia.ReadOnly = true;
+            // 
+            // colCProvincia
+            // 
+            this.colCProvincia.HeaderText = "Provincia";
+            this.colCProvincia.Name = "colCProvincia";
+            this.colCProvincia.ReadOnly = true;
+            // 
+            // colCIDLocalidad
+            // 
+            this.colCIDLocalidad.HeaderText = "Nº Localidad";
+            this.colCIDLocalidad.Name = "colCIDLocalidad";
+            this.colCIDLocalidad.ReadOnly = true;
+            // 
+            // colCLocalidad
+            // 
+            this.colCLocalidad.HeaderText = "Localidad";
+            this.colCLocalidad.Name = "colCLocalidad";
+            this.colCLocalidad.ReadOnly = true;
+            // 
+            // colCIDBarrio
+            // 
+            this.colCIDBarrio.HeaderText = "Nº Barrio";
+            this.colCIDBarrio.Name = "colCIDBarrio";
+            this.colCIDBarrio.ReadOnly = true;
+            // 
+            // colCBarrio
+            // 
+            this.colCBarrio.HeaderText = "Barrio";
+            this.colCBarrio.Name = "colCBarrio";
+            this.colCBarrio.ReadOnly = true;
+            // 
+            // colCIDCalle
+            // 
+            this.colCIDCalle.HeaderText = "Nº Calle";
+            this.colCIDCalle.Name = "colCIDCalle";
+            this.colCIDCalle.ReadOnly = true;
+            // 
+            // colCCalle
+            // 
+            this.colCCalle.HeaderText = "Calle";
+            this.colCCalle.Name = "colCCalle";
+            this.colCCalle.ReadOnly = true;
+            // 
+            // colCEstado
+            // 
+            this.colCEstado.HeaderText = "Estado";
+            this.colCEstado.Name = "colCEstado";
+            this.colCEstado.ReadOnly = true;
+            this.colCEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCEstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // btnUpdCalle
             // 
             this.btnUpdCalle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdCalle.BackgroundImage")));
@@ -848,13 +904,16 @@
             // 
             // cbProvinciaCalle
             // 
+            this.cbProvinciaCalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbProvinciaCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbProvinciaCalle.FormattingEnabled = true;
             this.cbProvinciaCalle.Location = new System.Drawing.Point(55, 22);
             this.cbProvinciaCalle.Name = "cbProvinciaCalle";
             this.cbProvinciaCalle.Size = new System.Drawing.Size(184, 21);
             this.cbProvinciaCalle.TabIndex = 117;
+            this.cbProvinciaCalle.SelectedIndexChanged += new System.EventHandler(this.cbProvinciaCalle_SelectedIndexChanged);
             this.cbProvinciaCalle.SelectionChangeCommitted += new System.EventHandler(this.cbProvinciaCalle_SelectionChangeCommitted);
+            this.cbProvinciaCalle.SelectedValueChanged += new System.EventHandler(this.cbProvinciaCalle_SelectedValueChanged);
             // 
             // label27
             // 
@@ -888,13 +947,16 @@
             // 
             // cbBarriosCalle
             // 
+            this.cbBarriosCalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBarriosCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbBarriosCalle.FormattingEnabled = true;
             this.cbBarriosCalle.Location = new System.Drawing.Point(55, 49);
             this.cbBarriosCalle.Name = "cbBarriosCalle";
             this.cbBarriosCalle.Size = new System.Drawing.Size(185, 21);
             this.cbBarriosCalle.TabIndex = 113;
+            this.cbBarriosCalle.SelectedIndexChanged += new System.EventHandler(this.cbBarriosCalle_SelectedIndexChanged);
             this.cbBarriosCalle.SelectionChangeCommitted += new System.EventHandler(this.cbBarriosCalle_SelectionChangeCommitted);
+            this.cbBarriosCalle.SelectedValueChanged += new System.EventHandler(this.cbBarriosCalle_SelectedValueChanged);
             // 
             // label18
             // 
@@ -906,6 +968,7 @@
             // 
             // cbLocalidadesCalle
             // 
+            this.cbLocalidadesCalle.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbLocalidadesCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbLocalidadesCalle.FormattingEnabled = true;
             this.cbLocalidadesCalle.Location = new System.Drawing.Point(300, 23);
@@ -913,6 +976,7 @@
             this.cbLocalidadesCalle.Size = new System.Drawing.Size(185, 21);
             this.cbLocalidadesCalle.TabIndex = 90;
             this.cbLocalidadesCalle.SelectionChangeCommitted += new System.EventHandler(this.cbLocalidadesCalle_SelectionChangeCommitted);
+            this.cbLocalidadesCalle.SelectedValueChanged += new System.EventHandler(this.cbLocalidadesCalle_SelectedValueChanged);
             // 
             // label20
             // 
@@ -1003,53 +1067,6 @@
             this.label26.Size = new System.Drawing.Size(44, 13);
             this.label26.TabIndex = 81;
             this.label26.Text = "ID Calle";
-            // 
-            // colCIDProvincia
-            // 
-            this.colCIDProvincia.HeaderText = "Nº Provincia";
-            this.colCIDProvincia.Name = "colCIDProvincia";
-            // 
-            // colCProvincia
-            // 
-            this.colCProvincia.HeaderText = "Provincia";
-            this.colCProvincia.Name = "colCProvincia";
-            // 
-            // colCIDLocalidad
-            // 
-            this.colCIDLocalidad.HeaderText = "Nº Localidad";
-            this.colCIDLocalidad.Name = "colCIDLocalidad";
-            // 
-            // colCLocalidad
-            // 
-            this.colCLocalidad.HeaderText = "Localidad";
-            this.colCLocalidad.Name = "colCLocalidad";
-            // 
-            // colCIDBarrio
-            // 
-            this.colCIDBarrio.HeaderText = "Nº Barrio";
-            this.colCIDBarrio.Name = "colCIDBarrio";
-            // 
-            // colCBarrio
-            // 
-            this.colCBarrio.HeaderText = "Barrio";
-            this.colCBarrio.Name = "colCBarrio";
-            // 
-            // colCIDCalle
-            // 
-            this.colCIDCalle.HeaderText = "Nº Calle";
-            this.colCIDCalle.Name = "colCIDCalle";
-            // 
-            // colCCalle
-            // 
-            this.colCCalle.HeaderText = "Calle";
-            this.colCCalle.Name = "colCCalle";
-            // 
-            // colCEstado
-            // 
-            this.colCEstado.HeaderText = "Estado";
-            this.colCEstado.Name = "colCEstado";
-            this.colCEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colCEstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // formDomicilio
             // 
@@ -1142,9 +1159,7 @@
         private System.Windows.Forms.DataGridView dgvCalle;
         private System.Windows.Forms.Button btnUpdCalle;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox cbBarriosCalle;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox cbLocalidadesCalle;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.CheckBox cbEstadoCalle;
         private System.Windows.Forms.Label label21;
@@ -1156,7 +1171,6 @@
         private System.Windows.Forms.TextBox txtCalle;
         private System.Windows.Forms.Label label19;
         public System.Windows.Forms.TabControl tabDomicilios;
-        private System.Windows.Forms.ComboBox cbProvinciaCalle;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCIDProvincia;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCProvincia;
@@ -1167,6 +1181,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCIDCalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCCalle;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colCEstado;
+        public System.Windows.Forms.ComboBox cbBarriosCalle;
+        public System.Windows.Forms.ComboBox cbLocalidadesCalle;
+        public System.Windows.Forms.ComboBox cbProvinciaCalle;
 
     }
 }

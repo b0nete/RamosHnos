@@ -226,10 +226,36 @@ namespace RamosHermanos.Capas.Interfaz
                         IAddItem parent = this.Owner as IAddItem;
                         parent.AddNewItem(rowA);
 
-                        this.Close();
+                        //this.Close();
                         break;
                 }
             }
+        }
+
+        private void cbProvinciaCalle_SelectedValueChanged(object sender, EventArgs e)
+        {
+            LocalidadB.CargarCB(cbLocalidadesCalle, cbProvinciaCalle);
+        }
+
+        private void cbProvinciaCalle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbLocalidadesCalle_SelectedValueChanged(object sender, EventArgs e)
+        {
+            BarrioB.CargarCB(cbBarriosCalle, cbLocalidadesCalle);
+        }
+
+        private void cbBarriosCalle_SelectedValueChanged(object sender, EventArgs e)
+        {
+            barrio.idBarrio = Convert.ToInt32(cbBarriosCalle.SelectedValue);
+            CalleB.CargarDGV(barrio, dgvCalle);
+        }
+
+        private void cbBarriosCalle_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
 

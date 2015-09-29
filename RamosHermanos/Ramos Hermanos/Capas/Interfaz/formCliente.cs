@@ -640,13 +640,13 @@ namespace RamosHermanos.Capas.Interfaz
                     tabMain.Controls.Add(tabMovimientos);
 
                     //Cargar tabReparto
-                    DistribuidorB.CargarDGVCB(cliente, dgvLu, "colRdistribuidorLu");
-                    DistribuidorB.CargarDGVCB(cliente, dgvMa, "colRdistribuidorMa");
-                    DistribuidorB.CargarDGVCB(cliente, dgvMi, "colRdistribuidorMi");
-                    DistribuidorB.CargarDGVCB(cliente, dgvJu, "colRdistribuidorJu");
-                    DistribuidorB.CargarDGVCB(cliente, dgvVi, "colRdistribuidorVi");
-                    DistribuidorB.CargarDGVCB(cliente, dgvSa, "colRdistribuidorSa");
-                    DistribuidorB.CargarDGVCB(cliente, dgvDo, "colRdistribuidorDo");
+                    DistribuidorB.CargarDGVCB(cliente, dgvLu, "colVLudistribuidor");
+                    //DistribuidorB.CargarDGVCB(cliente, dgvMa, "colVMadistribuidor");
+                    //DistribuidorB.CargarDGVCB(cliente, dgvMi, "colVMidistribuidor");
+                    //DistribuidorB.CargarDGVCB(cliente, dgvJu, "colVJudistribuidor");
+                    //DistribuidorB.CargarDGVCB(cliente, dgvVi, "colVVidistribuidor");
+                    //DistribuidorB.CargarDGVCB(cliente, dgvSa, "colVSadistribuidor");
+                    //DistribuidorB.CargarDGVCB(cliente, dgvDo, "colVDodistribuidor");
 
                 }
                 else if (cliente.tipoPersona == "PJ")
@@ -919,13 +919,17 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         VisitaEntity visita = new VisitaEntity();
-        //private void CargarVisita(TextBox txt)
-        //{
-        //    visita.rol = 1;
-        //    visita.idPersona = Convert.ToInt32(txt.Text);
-        //    visita.horarioVisitaA = Convert.ToString(dtpA.Text);
-        //    visita.horarioVisitaB = Convert.ToString(dtpB.Text);
-        //}
+        private void CargarVisita(string strDia, DataGridView dgv)
+        {
+            DataGridViewRow row = new DataGridViewRow();
+
+            visita.rol = 1;
+            visita.idPersona = Convert.ToInt32(dgv.CurrentRow.Cells["colVLucliente"].Value);
+            visita.dia = strDia;
+            visita.domicilio = Convert.ToInt32(dgv.CurrentRow.Cells["colVLudomicilio"].Value);
+            visita.distribuidor = Convert.ToInt32(dgv.CurrentRow.Cells["colVLudistribuidor"].Value);
+            visita.estado = Convert.ToBoolean(dgv.CurrentRow.Cells["colVLuestado"].Value);
+        }
 
         private void groupBox9_Enter(object sender, EventArgs e)
         {
@@ -1005,5 +1009,20 @@ namespace RamosHermanos.Capas.Interfaz
                 }
             }
         }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+            string strDia = "LU";
+            
+
+            foreach (DataGridViewRow row in dgvLu.Rows)
+            {
+                CargarVisita(strDia, dgvLu);
+                VisitaB.InsertVisita(visita, dgvLu);
+            }
+            
+        }
+
+        
     }
 }

@@ -1556,6 +1556,8 @@
             // 
             // dgvRecorridoLu
             // 
+            this.dgvRecorridoLu.AllowUserToAddRows = false;
+            this.dgvRecorridoLu.AllowUserToDeleteRows = false;
             this.dgvRecorridoLu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecorridoLu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDcalle,
@@ -1566,6 +1568,7 @@
             this.dgvRecorridoLu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvRecorridoLu.Location = new System.Drawing.Point(3, 40);
             this.dgvRecorridoLu.Name = "dgvRecorridoLu";
+            this.dgvRecorridoLu.ReadOnly = true;
             this.dgvRecorridoLu.Size = new System.Drawing.Size(762, 466);
             this.dgvRecorridoLu.TabIndex = 4;
             // 
@@ -1573,26 +1576,31 @@
             // 
             this.colIDcalle.HeaderText = "Nº Calle";
             this.colIDcalle.Name = "colIDcalle";
+            this.colIDcalle.ReadOnly = true;
             // 
             // colCalle
             // 
             this.colCalle.HeaderText = "Calle";
             this.colCalle.Name = "colCalle";
+            this.colCalle.ReadOnly = true;
             // 
             // colDesde
             // 
             this.colDesde.HeaderText = "Desde";
             this.colDesde.Name = "colDesde";
+            this.colDesde.ReadOnly = true;
             // 
             // colHasta
             // 
             this.colHasta.HeaderText = "Hasta";
             this.colHasta.Name = "colHasta";
+            this.colHasta.ReadOnly = true;
             // 
             // colREstado
             // 
             this.colREstado.HeaderText = "Estado";
             this.colREstado.Name = "colREstado";
+            this.colREstado.ReadOnly = true;
             this.colREstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colREstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 

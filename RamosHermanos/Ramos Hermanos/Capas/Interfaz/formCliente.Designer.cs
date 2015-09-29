@@ -171,65 +171,72 @@
             this.txtDomicilioPJ = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabDias = new System.Windows.Forms.TabControl();
+            this.tabVisita = new System.Windows.Forms.TabPage();
+            this.btnSaveRepJu = new System.Windows.Forms.TabControl();
             this.tabLunes = new System.Windows.Forms.TabPage();
+            this.btnSaveRepLu = new System.Windows.Forms.Button();
             this.dgvLu = new System.Windows.Forms.DataGridView();
+            this.colVLucliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRcliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVLudomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dfgdfgdfg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRIDdistribuidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVLudistribuidor = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colVLuestado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabMartes = new System.Windows.Forms.TabPage();
+            this.btnSaveRepMa = new System.Windows.Forms.Button();
             this.dgvMa = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabMiercoles = new System.Windows.Forms.TabPage();
-            this.dgvMi = new System.Windows.Forms.DataGridView();
-            this.tabJueves = new System.Windows.Forms.TabPage();
-            this.dgvJu = new System.Windows.Forms.DataGridView();
-            this.tabViernes = new System.Windows.Forms.TabPage();
-            this.dgvVi = new System.Windows.Forms.DataGridView();
-            this.tabSabado = new System.Windows.Forms.TabPage();
-            this.dgvSa = new System.Windows.Forms.DataGridView();
-            this.tabDomingo = new System.Windows.Forms.TabPage();
-            this.dgvDo = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRdistribuidorMa = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colRIDcliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRcliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIDdomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRdomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRIDdistribuidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRdistribuidorLu = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.asd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tabMiercoles = new System.Windows.Forms.TabPage();
+            this.btnSaveRepMi = new System.Windows.Forms.Button();
+            this.dgvMi = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRdistribuidorMi = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.fdgdg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tabJueves = new System.Windows.Forms.TabPage();
+            this.button14 = new System.Windows.Forms.Button();
+            this.dgvJu = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRdistribuidorJu = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.fn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tabViernes = new System.Windows.Forms.TabPage();
+            this.button15 = new System.Windows.Forms.Button();
+            this.dgvVi = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRdistribuidorVi = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.kghd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tabSabado = new System.Windows.Forms.TabPage();
+            this.button16 = new System.Windows.Forms.Button();
+            this.dgvSa = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRdistribuidorSa = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.hthdf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.tabDomingo = new System.Windows.Forms.TabPage();
+            this.button17 = new System.Windows.Forms.Button();
+            this.dgvDo = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRdistribuidorDo = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -247,13 +254,12 @@
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox14.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabDias.SuspendLayout();
+            this.tabVisita.SuspendLayout();
+            this.btnSaveRepJu.SuspendLayout();
             this.tabLunes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLu)).BeginInit();
             this.tabMartes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabMiercoles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMi)).BeginInit();
             this.tabJueves.SuspendLayout();
@@ -1235,7 +1241,7 @@
             this.tabMain.Controls.Add(this.tabFamilia);
             this.tabMain.Controls.Add(this.tabListado);
             this.tabMain.Controls.Add(this.tabMovimientos);
-            this.tabMain.Controls.Add(this.tabPage1);
+            this.tabMain.Controls.Add(this.tabVisita);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
@@ -1858,34 +1864,35 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
-            // tabPage1
+            // tabVisita
             // 
-            this.tabPage1.Controls.Add(this.tabDias);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(776, 536);
-            this.tabPage1.TabIndex = 7;
-            this.tabPage1.Text = "Reparto";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabVisita.Controls.Add(this.btnSaveRepJu);
+            this.tabVisita.Location = new System.Drawing.Point(4, 22);
+            this.tabVisita.Name = "tabVisita";
+            this.tabVisita.Size = new System.Drawing.Size(776, 536);
+            this.tabVisita.TabIndex = 7;
+            this.tabVisita.Text = "Visita";
+            this.tabVisita.UseVisualStyleBackColor = true;
             // 
-            // tabDias
+            // btnSaveRepJu
             // 
-            this.tabDias.Controls.Add(this.tabLunes);
-            this.tabDias.Controls.Add(this.tabMartes);
-            this.tabDias.Controls.Add(this.tabMiercoles);
-            this.tabDias.Controls.Add(this.tabJueves);
-            this.tabDias.Controls.Add(this.tabViernes);
-            this.tabDias.Controls.Add(this.tabSabado);
-            this.tabDias.Controls.Add(this.tabDomingo);
-            this.tabDias.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabDias.Location = new System.Drawing.Point(0, 0);
-            this.tabDias.Name = "tabDias";
-            this.tabDias.SelectedIndex = 0;
-            this.tabDias.Size = new System.Drawing.Size(776, 536);
-            this.tabDias.TabIndex = 1;
+            this.btnSaveRepJu.Controls.Add(this.tabLunes);
+            this.btnSaveRepJu.Controls.Add(this.tabMartes);
+            this.btnSaveRepJu.Controls.Add(this.tabMiercoles);
+            this.btnSaveRepJu.Controls.Add(this.tabJueves);
+            this.btnSaveRepJu.Controls.Add(this.tabViernes);
+            this.btnSaveRepJu.Controls.Add(this.tabSabado);
+            this.btnSaveRepJu.Controls.Add(this.tabDomingo);
+            this.btnSaveRepJu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSaveRepJu.Location = new System.Drawing.Point(0, 0);
+            this.btnSaveRepJu.Name = "btnSaveRepJu";
+            this.btnSaveRepJu.SelectedIndex = 0;
+            this.btnSaveRepJu.Size = new System.Drawing.Size(776, 536);
+            this.btnSaveRepJu.TabIndex = 1;
             // 
             // tabLunes
             // 
+            this.tabLunes.Controls.Add(this.btnSaveRepLu);
             this.tabLunes.Controls.Add(this.dgvLu);
             this.tabLunes.Location = new System.Drawing.Point(4, 22);
             this.tabLunes.Name = "tabLunes";
@@ -1895,26 +1902,83 @@
             this.tabLunes.Text = "Lunes";
             this.tabLunes.UseVisualStyleBackColor = true;
             // 
+            // btnSaveRepLu
+            // 
+            this.btnSaveRepLu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRepLu.BackgroundImage")));
+            this.btnSaveRepLu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveRepLu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRepLu.Location = new System.Drawing.Point(734, 476);
+            this.btnSaveRepLu.Name = "btnSaveRepLu";
+            this.btnSaveRepLu.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveRepLu.TabIndex = 62;
+            this.btnSaveRepLu.UseVisualStyleBackColor = true;
+            this.btnSaveRepLu.Click += new System.EventHandler(this.button11_Click_1);
+            // 
             // dgvLu
             // 
+            this.dgvLu.AllowUserToAddRows = false;
+            this.dgvLu.AllowUserToDeleteRows = false;
             this.dgvLu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colRIDcliente,
+            this.colVLucliente,
             this.colRcliente,
-            this.colIDdomicilio,
-            this.colRdomicilio,
+            this.colVLudomicilio,
+            this.dfgdfgdfg,
             this.colRIDdistribuidor,
-            this.colRdistribuidorLu});
-            this.dgvLu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvLu.Location = new System.Drawing.Point(3, 3);
+            this.colVLudistribuidor,
+            this.colVLuestado});
+            this.dgvLu.Location = new System.Drawing.Point(0, 0);
             this.dgvLu.Name = "dgvLu";
-            this.dgvLu.Size = new System.Drawing.Size(762, 504);
-            this.dgvLu.TabIndex = 0;
+            this.dgvLu.Size = new System.Drawing.Size(768, 470);
+            this.dgvLu.TabIndex = 1;
+            // 
+            // colVLucliente
+            // 
+            this.colVLucliente.HeaderText = "Nº Cliente";
+            this.colVLucliente.Name = "colVLucliente";
+            this.colVLucliente.Visible = false;
+            // 
+            // colRcliente
+            // 
+            this.colRcliente.HeaderText = "Cliente";
+            this.colRcliente.Name = "colRcliente";
+            this.colRcliente.Visible = false;
+            // 
+            // colVLudomicilio
+            // 
+            this.colVLudomicilio.HeaderText = "ID Domicilio";
+            this.colVLudomicilio.Name = "colVLudomicilio";
+            // 
+            // dfgdfgdfg
+            // 
+            this.dfgdfgdfg.HeaderText = "Domicilio";
+            this.dfgdfgdfg.Name = "dfgdfgdfg";
+            this.dfgdfgdfg.Width = 400;
+            // 
+            // colRIDdistribuidor
+            // 
+            this.colRIDdistribuidor.HeaderText = "Nº Distribuidor";
+            this.colRIDdistribuidor.Name = "colRIDdistribuidor";
+            this.colRIDdistribuidor.Visible = false;
+            // 
+            // colVLudistribuidor
+            // 
+            this.colVLudistribuidor.HeaderText = "Distribuidor";
+            this.colVLudistribuidor.Name = "colVLudistribuidor";
+            this.colVLudistribuidor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colVLudistribuidor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colVLuestado
+            // 
+            this.colVLuestado.HeaderText = "Estado";
+            this.colVLuestado.Name = "colVLuestado";
+            this.colVLuestado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colVLuestado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tabMartes
             // 
+            this.tabMartes.Controls.Add(this.btnSaveRepMa);
             this.tabMartes.Controls.Add(this.dgvMa);
-            this.tabMartes.Controls.Add(this.dataGridView1);
             this.tabMartes.Location = new System.Drawing.Point(4, 22);
             this.tabMartes.Name = "tabMartes";
             this.tabMartes.Padding = new System.Windows.Forms.Padding(3);
@@ -1922,6 +1986,17 @@
             this.tabMartes.TabIndex = 1;
             this.tabMartes.Text = "Martes";
             this.tabMartes.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveRepMa
+            // 
+            this.btnSaveRepMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRepMa.BackgroundImage")));
+            this.btnSaveRepMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveRepMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRepMa.Location = new System.Drawing.Point(734, 476);
+            this.btnSaveRepMa.Name = "btnSaveRepMa";
+            this.btnSaveRepMa.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveRepMa.TabIndex = 64;
+            this.btnSaveRepMa.UseVisualStyleBackColor = true;
             // 
             // dgvMa
             // 
@@ -1932,151 +2007,11 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
-            this.colRdistribuidorMa});
-            this.dgvMa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMa.Location = new System.Drawing.Point(3, 3);
+            this.dataGridViewComboBoxColumn1});
+            this.dgvMa.Location = new System.Drawing.Point(0, 0);
             this.dgvMa.Name = "dgvMa";
-            this.dgvMa.Size = new System.Drawing.Size(762, 504);
-            this.dgvMa.TabIndex = 2;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(762, 504);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // tabMiercoles
-            // 
-            this.tabMiercoles.Controls.Add(this.dgvMi);
-            this.tabMiercoles.Location = new System.Drawing.Point(4, 22);
-            this.tabMiercoles.Name = "tabMiercoles";
-            this.tabMiercoles.Size = new System.Drawing.Size(768, 510);
-            this.tabMiercoles.TabIndex = 2;
-            this.tabMiercoles.Text = "Miercoles";
-            this.tabMiercoles.UseVisualStyleBackColor = true;
-            // 
-            // dgvMi
-            // 
-            this.dgvMi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.asd,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.colRdistribuidorMi});
-            this.dgvMi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvMi.Location = new System.Drawing.Point(0, 0);
-            this.dgvMi.Name = "dgvMi";
-            this.dgvMi.Size = new System.Drawing.Size(768, 510);
-            this.dgvMi.TabIndex = 1;
-            // 
-            // tabJueves
-            // 
-            this.tabJueves.Controls.Add(this.dgvJu);
-            this.tabJueves.Location = new System.Drawing.Point(4, 22);
-            this.tabJueves.Name = "tabJueves";
-            this.tabJueves.Size = new System.Drawing.Size(768, 510);
-            this.tabJueves.TabIndex = 3;
-            this.tabJueves.Text = "Jueves";
-            this.tabJueves.UseVisualStyleBackColor = true;
-            // 
-            // dgvJu
-            // 
-            this.dgvJu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fdgdg,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.colRdistribuidorJu});
-            this.dgvJu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvJu.Location = new System.Drawing.Point(0, 0);
-            this.dgvJu.Name = "dgvJu";
-            this.dgvJu.Size = new System.Drawing.Size(768, 510);
-            this.dgvJu.TabIndex = 1;
-            // 
-            // tabViernes
-            // 
-            this.tabViernes.Controls.Add(this.dgvVi);
-            this.tabViernes.Location = new System.Drawing.Point(4, 22);
-            this.tabViernes.Name = "tabViernes";
-            this.tabViernes.Size = new System.Drawing.Size(768, 510);
-            this.tabViernes.TabIndex = 4;
-            this.tabViernes.Text = "Viernes";
-            this.tabViernes.UseVisualStyleBackColor = true;
-            // 
-            // dgvVi
-            // 
-            this.dgvVi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.fn,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.colRdistribuidorVi});
-            this.dgvVi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvVi.Location = new System.Drawing.Point(0, 0);
-            this.dgvVi.Name = "dgvVi";
-            this.dgvVi.Size = new System.Drawing.Size(768, 510);
-            this.dgvVi.TabIndex = 1;
-            // 
-            // tabSabado
-            // 
-            this.tabSabado.Controls.Add(this.dgvSa);
-            this.tabSabado.Location = new System.Drawing.Point(4, 22);
-            this.tabSabado.Name = "tabSabado";
-            this.tabSabado.Size = new System.Drawing.Size(768, 510);
-            this.tabSabado.TabIndex = 5;
-            this.tabSabado.Text = "Sabado";
-            this.tabSabado.UseVisualStyleBackColor = true;
-            // 
-            // dgvSa
-            // 
-            this.dgvSa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.kghd,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.colRdistribuidorSa});
-            this.dgvSa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvSa.Location = new System.Drawing.Point(0, 0);
-            this.dgvSa.Name = "dgvSa";
-            this.dgvSa.Size = new System.Drawing.Size(768, 510);
-            this.dgvSa.TabIndex = 1;
-            // 
-            // tabDomingo
-            // 
-            this.tabDomingo.Controls.Add(this.dgvDo);
-            this.tabDomingo.Location = new System.Drawing.Point(4, 22);
-            this.tabDomingo.Name = "tabDomingo";
-            this.tabDomingo.Size = new System.Drawing.Size(768, 510);
-            this.tabDomingo.TabIndex = 6;
-            this.tabDomingo.Text = "Domingo";
-            this.tabDomingo.UseVisualStyleBackColor = true;
-            // 
-            // dgvDo
-            // 
-            this.dgvDo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.hthdf,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30,
-            this.colRdistribuidorDo});
-            this.dgvDo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDo.Location = new System.Drawing.Point(0, 0);
-            this.dgvDo.Name = "dgvDo";
-            this.dgvDo.Size = new System.Drawing.Size(768, 510);
-            this.dgvDo.TabIndex = 1;
+            this.dgvMa.Size = new System.Drawing.Size(768, 470);
+            this.dgvMa.TabIndex = 63;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -2107,54 +2042,55 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Visible = false;
             // 
-            // colRdistribuidorMa
+            // dataGridViewComboBoxColumn1
             // 
-            this.colRdistribuidorMa.HeaderText = "Distribuidor";
-            this.colRdistribuidorMa.Name = "colRdistribuidorMa";
-            this.colRdistribuidorMa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRdistribuidorMa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxColumn1.HeaderText = "Distribuidor";
+            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
+            this.dataGridViewComboBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // colRIDcliente
+            // tabMiercoles
             // 
-            this.colRIDcliente.HeaderText = "Nº Cliente";
-            this.colRIDcliente.Name = "colRIDcliente";
-            this.colRIDcliente.Visible = false;
+            this.tabMiercoles.Controls.Add(this.btnSaveRepMi);
+            this.tabMiercoles.Controls.Add(this.dgvMi);
+            this.tabMiercoles.Location = new System.Drawing.Point(4, 22);
+            this.tabMiercoles.Name = "tabMiercoles";
+            this.tabMiercoles.Size = new System.Drawing.Size(768, 510);
+            this.tabMiercoles.TabIndex = 2;
+            this.tabMiercoles.Text = "Miercoles";
+            this.tabMiercoles.UseVisualStyleBackColor = true;
             // 
-            // colRcliente
+            // btnSaveRepMi
             // 
-            this.colRcliente.HeaderText = "Cliente";
-            this.colRcliente.Name = "colRcliente";
-            this.colRcliente.Visible = false;
+            this.btnSaveRepMi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRepMi.BackgroundImage")));
+            this.btnSaveRepMi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveRepMi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRepMi.Location = new System.Drawing.Point(734, 476);
+            this.btnSaveRepMi.Name = "btnSaveRepMi";
+            this.btnSaveRepMi.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveRepMi.TabIndex = 64;
+            this.btnSaveRepMi.UseVisualStyleBackColor = true;
             // 
-            // colIDdomicilio
+            // dgvMi
             // 
-            this.colIDdomicilio.HeaderText = "ID Domicilio";
-            this.colIDdomicilio.Name = "colIDdomicilio";
+            this.dgvMi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewComboBoxColumn2});
+            this.dgvMi.Location = new System.Drawing.Point(0, 0);
+            this.dgvMi.Name = "dgvMi";
+            this.dgvMi.Size = new System.Drawing.Size(768, 470);
+            this.dgvMi.TabIndex = 63;
             // 
-            // colRdomicilio
+            // dataGridViewTextBoxColumn6
             // 
-            this.colRdomicilio.HeaderText = "Domicilio";
-            this.colRdomicilio.Name = "colRdomicilio";
-            this.colRdomicilio.Width = 400;
-            // 
-            // colRIDdistribuidor
-            // 
-            this.colRIDdistribuidor.HeaderText = "Nº Distribuidor";
-            this.colRIDdistribuidor.Name = "colRIDdistribuidor";
-            this.colRIDdistribuidor.Visible = false;
-            // 
-            // colRdistribuidorLu
-            // 
-            this.colRdistribuidorLu.HeaderText = "Distribuidor";
-            this.colRdistribuidorLu.Name = "colRdistribuidorLu";
-            this.colRdistribuidorLu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRdistribuidorLu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // asd
-            // 
-            this.asd.HeaderText = "Nº Cliente";
-            this.asd.Name = "asd";
-            this.asd.Visible = false;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Nº Cliente";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Visible = false;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -2179,18 +2115,55 @@
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.Visible = false;
             // 
-            // colRdistribuidorMi
+            // dataGridViewComboBoxColumn2
             // 
-            this.colRdistribuidorMi.HeaderText = "Distribuidor";
-            this.colRdistribuidorMi.Name = "colRdistribuidorMi";
-            this.colRdistribuidorMi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRdistribuidorMi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxColumn2.HeaderText = "Distribuidor";
+            this.dataGridViewComboBoxColumn2.Name = "dataGridViewComboBoxColumn2";
+            this.dataGridViewComboBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // fdgdg
+            // tabJueves
             // 
-            this.fdgdg.HeaderText = "Nº Cliente";
-            this.fdgdg.Name = "fdgdg";
-            this.fdgdg.Visible = false;
+            this.tabJueves.Controls.Add(this.button14);
+            this.tabJueves.Controls.Add(this.dgvJu);
+            this.tabJueves.Location = new System.Drawing.Point(4, 22);
+            this.tabJueves.Name = "tabJueves";
+            this.tabJueves.Size = new System.Drawing.Size(768, 510);
+            this.tabJueves.TabIndex = 3;
+            this.tabJueves.Text = "Jueves";
+            this.tabJueves.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button14.BackgroundImage")));
+            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button14.Location = new System.Drawing.Point(734, 476);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(28, 28);
+            this.button14.TabIndex = 64;
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // dgvJu
+            // 
+            this.dgvJu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvJu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewComboBoxColumn3});
+            this.dgvJu.Location = new System.Drawing.Point(0, 0);
+            this.dgvJu.Name = "dgvJu";
+            this.dgvJu.Size = new System.Drawing.Size(768, 470);
+            this.dgvJu.TabIndex = 63;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "Nº Cliente";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Visible = false;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -2215,18 +2188,55 @@
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.Visible = false;
             // 
-            // colRdistribuidorJu
+            // dataGridViewComboBoxColumn3
             // 
-            this.colRdistribuidorJu.HeaderText = "Distribuidor";
-            this.colRdistribuidorJu.Name = "colRdistribuidorJu";
-            this.colRdistribuidorJu.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRdistribuidorJu.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxColumn3.HeaderText = "Distribuidor";
+            this.dataGridViewComboBoxColumn3.Name = "dataGridViewComboBoxColumn3";
+            this.dataGridViewComboBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // fn
+            // tabViernes
             // 
-            this.fn.HeaderText = "Nº Cliente";
-            this.fn.Name = "fn";
-            this.fn.Visible = false;
+            this.tabViernes.Controls.Add(this.button15);
+            this.tabViernes.Controls.Add(this.dgvVi);
+            this.tabViernes.Location = new System.Drawing.Point(4, 22);
+            this.tabViernes.Name = "tabViernes";
+            this.tabViernes.Size = new System.Drawing.Size(768, 510);
+            this.tabViernes.TabIndex = 4;
+            this.tabViernes.Text = "Viernes";
+            this.tabViernes.UseVisualStyleBackColor = true;
+            // 
+            // button15
+            // 
+            this.button15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button15.BackgroundImage")));
+            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button15.Location = new System.Drawing.Point(734, 476);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(28, 28);
+            this.button15.TabIndex = 64;
+            this.button15.UseVisualStyleBackColor = true;
+            // 
+            // dgvVi
+            // 
+            this.dgvVi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewComboBoxColumn4});
+            this.dgvVi.Location = new System.Drawing.Point(0, 0);
+            this.dgvVi.Name = "dgvVi";
+            this.dgvVi.Size = new System.Drawing.Size(768, 470);
+            this.dgvVi.TabIndex = 63;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.HeaderText = "Nº Cliente";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.Visible = false;
             // 
             // dataGridViewTextBoxColumn17
             // 
@@ -2251,18 +2261,55 @@
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
             this.dataGridViewTextBoxColumn20.Visible = false;
             // 
-            // colRdistribuidorVi
+            // dataGridViewComboBoxColumn4
             // 
-            this.colRdistribuidorVi.HeaderText = "Distribuidor";
-            this.colRdistribuidorVi.Name = "colRdistribuidorVi";
-            this.colRdistribuidorVi.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRdistribuidorVi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxColumn4.HeaderText = "Distribuidor";
+            this.dataGridViewComboBoxColumn4.Name = "dataGridViewComboBoxColumn4";
+            this.dataGridViewComboBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // kghd
+            // tabSabado
             // 
-            this.kghd.HeaderText = "Nº Cliente";
-            this.kghd.Name = "kghd";
-            this.kghd.Visible = false;
+            this.tabSabado.Controls.Add(this.button16);
+            this.tabSabado.Controls.Add(this.dgvSa);
+            this.tabSabado.Location = new System.Drawing.Point(4, 22);
+            this.tabSabado.Name = "tabSabado";
+            this.tabSabado.Size = new System.Drawing.Size(768, 510);
+            this.tabSabado.TabIndex = 5;
+            this.tabSabado.Text = "Sabado";
+            this.tabSabado.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            this.button16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button16.BackgroundImage")));
+            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button16.Location = new System.Drawing.Point(734, 476);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(28, 28);
+            this.button16.TabIndex = 64;
+            this.button16.UseVisualStyleBackColor = true;
+            // 
+            // dgvSa
+            // 
+            this.dgvSa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25,
+            this.dataGridViewComboBoxColumn5});
+            this.dgvSa.Location = new System.Drawing.Point(0, 0);
+            this.dgvSa.Name = "dgvSa";
+            this.dgvSa.Size = new System.Drawing.Size(768, 470);
+            this.dgvSa.TabIndex = 63;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.HeaderText = "Nº Cliente";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.Visible = false;
             // 
             // dataGridViewTextBoxColumn22
             // 
@@ -2287,18 +2334,55 @@
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
             this.dataGridViewTextBoxColumn25.Visible = false;
             // 
-            // colRdistribuidorSa
+            // dataGridViewComboBoxColumn5
             // 
-            this.colRdistribuidorSa.HeaderText = "Distribuidor";
-            this.colRdistribuidorSa.Name = "colRdistribuidorSa";
-            this.colRdistribuidorSa.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRdistribuidorSa.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxColumn5.HeaderText = "Distribuidor";
+            this.dataGridViewComboBoxColumn5.Name = "dataGridViewComboBoxColumn5";
+            this.dataGridViewComboBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // hthdf
+            // tabDomingo
             // 
-            this.hthdf.HeaderText = "Nº Cliente";
-            this.hthdf.Name = "hthdf";
-            this.hthdf.Visible = false;
+            this.tabDomingo.Controls.Add(this.button17);
+            this.tabDomingo.Controls.Add(this.dgvDo);
+            this.tabDomingo.Location = new System.Drawing.Point(4, 22);
+            this.tabDomingo.Name = "tabDomingo";
+            this.tabDomingo.Size = new System.Drawing.Size(768, 510);
+            this.tabDomingo.TabIndex = 6;
+            this.tabDomingo.Text = "Domingo";
+            this.tabDomingo.UseVisualStyleBackColor = true;
+            // 
+            // button17
+            // 
+            this.button17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button17.BackgroundImage")));
+            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button17.Location = new System.Drawing.Point(734, 476);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(28, 28);
+            this.button17.TabIndex = 64;
+            this.button17.UseVisualStyleBackColor = true;
+            // 
+            // dgvDo
+            // 
+            this.dgvDo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewTextBoxColumn27,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30,
+            this.dataGridViewComboBoxColumn6});
+            this.dgvDo.Location = new System.Drawing.Point(0, 0);
+            this.dgvDo.Name = "dgvDo";
+            this.dgvDo.Size = new System.Drawing.Size(768, 470);
+            this.dgvDo.TabIndex = 63;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.HeaderText = "Nº Cliente";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.Visible = false;
             // 
             // dataGridViewTextBoxColumn27
             // 
@@ -2323,12 +2407,12 @@
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
             this.dataGridViewTextBoxColumn30.Visible = false;
             // 
-            // colRdistribuidorDo
+            // dataGridViewComboBoxColumn6
             // 
-            this.colRdistribuidorDo.HeaderText = "Distribuidor";
-            this.colRdistribuidorDo.Name = "colRdistribuidorDo";
-            this.colRdistribuidorDo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colRdistribuidorDo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxColumn6.HeaderText = "Distribuidor";
+            this.dataGridViewComboBoxColumn6.Name = "dataGridViewComboBoxColumn6";
+            this.dataGridViewComboBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // formCliente
             // 
@@ -2366,13 +2450,12 @@
             this.groupBox13.PerformLayout();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
-            this.tabPage1.ResumeLayout(false);
-            this.tabDias.ResumeLayout(false);
+            this.tabVisita.ResumeLayout(false);
+            this.btnSaveRepJu.ResumeLayout(false);
             this.tabLunes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLu)).EndInit();
             this.tabMartes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabMiercoles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMi)).EndInit();
             this.tabJueves.ResumeLayout(false);
@@ -2531,65 +2614,72 @@
         public System.Windows.Forms.TabPage tabInformacionJ;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblEstadoPJ;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabControl tabDias;
+        private System.Windows.Forms.TabPage tabVisita;
+        private System.Windows.Forms.TabControl btnSaveRepJu;
         private System.Windows.Forms.TabPage tabLunes;
-        private System.Windows.Forms.DataGridView dgvLu;
         private System.Windows.Forms.TabPage tabMartes;
-        private System.Windows.Forms.DataGridView dgvMa;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TabPage tabMiercoles;
-        private System.Windows.Forms.DataGridView dgvMi;
         private System.Windows.Forms.TabPage tabJueves;
-        private System.Windows.Forms.DataGridView dgvJu;
         private System.Windows.Forms.TabPage tabViernes;
-        private System.Windows.Forms.DataGridView dgvVi;
         private System.Windows.Forms.TabPage tabSabado;
-        private System.Windows.Forms.DataGridView dgvSa;
         private System.Windows.Forms.TabPage tabDomingo;
-        private System.Windows.Forms.DataGridView dgvDo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRIDcliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRcliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDdomicilio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRdomicilio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRIDdistribuidor;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidorLu;
+        private System.Windows.Forms.Button btnSaveRepLu;
+        private System.Windows.Forms.DataGridView dgvLu;
+        private System.Windows.Forms.Button btnSaveRepMa;
+        private System.Windows.Forms.DataGridView dgvMa;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidorMa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn asd;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
+        private System.Windows.Forms.Button btnSaveRepMi;
+        private System.Windows.Forms.DataGridView dgvMi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidorMi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fdgdg;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn2;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.DataGridView dgvJu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidorJu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn3;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.DataGridView dgvVi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidorVi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kghd;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn4;
+        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.DataGridView dgvSa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidorSa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hthdf;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn5;
+        private System.Windows.Forms.Button button17;
+        private System.Windows.Forms.DataGridView dgvDo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colRdistribuidorDo;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVLucliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRcliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVLudomicilio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dfgdfgdfg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRIDdistribuidor;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colVLudistribuidor;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colVLuestado;
 
     }
 }
