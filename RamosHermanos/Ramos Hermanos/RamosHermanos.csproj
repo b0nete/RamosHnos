@@ -70,6 +70,7 @@
     <Compile Include="Capas\Entidades\FacturaEntity.cs" />
     <Compile Include="Capas\Entidades\InsumoEntity.cs" />
     <Compile Include="Capas\Entidades\itemFacturaEntity.cs" />
+    <Compile Include="Capas\Entidades\itemsRecorridoEntity.cs" />
     <Compile Include="Capas\Entidades\LocalidadEntity.cs" />
     <Compile Include="Capas\Entidades\MarcaEntity.cs" />
     <Compile Include="Capas\Entidades\MedidaEntity.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Capas\Entidades\ProductoEntity.cs" />
     <Compile Include="Capas\Entidades\ProveedorEntity.cs" />
     <Compile Include="Capas\Entidades\ProvinciaEntity.cs" />
+    <Compile Include="Capas\Entidades\RecorridoEntity.cs" />
     <Compile Include="Capas\Entidades\RolEntity.cs" />
     <Compile Include="Capas\Entidades\RubroEntity.cs" />
     <Compile Include="Capas\Entidades\SaldoEntity.cs" />
@@ -220,6 +222,7 @@
     <Compile Include="Capas\Negocio\ClienteB.cs" />
     <Compile Include="Capas\Negocio\ClienteJB.cs" />
     <Compile Include="Capas\Negocio\CalleB.cs" />
+    <Compile Include="Capas\Negocio\itemsRecorridoB.cs" />
     <Compile Include="Capas\Negocio\CostoB.cs" />
     <Compile Include="Capas\Negocio\DistribuidorB.cs" />
     <Compile Include="Capas\Negocio\DomicilioB.cs" />

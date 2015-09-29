@@ -137,8 +137,6 @@
             this.tabRecorrido = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.dgvRecorridoLu = new System.Windows.Forms.DataGridView();
             this.colIDcalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -151,6 +149,9 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSaveRecLu = new System.Windows.Forms.Button();
             this.tabDistribuidor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -1520,6 +1521,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnSaveRecLu);
             this.tabPage1.Controls.Add(this.btnDel);
             this.tabPage1.Controls.Add(this.btnAdd);
             this.tabPage1.Controls.Add(this.dgvRecorridoLu);
@@ -1530,29 +1532,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lunes";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // btnDel
-            // 
-            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
-            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDel.Location = new System.Drawing.Point(40, 6);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(28, 28);
-            this.btnDel.TabIndex = 91;
-            this.btnDel.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAdd.Location = new System.Drawing.Point(6, 6);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(28, 28);
-            this.btnAdd.TabIndex = 90;
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dgvRecorridoLu
             // 
@@ -1565,11 +1544,10 @@
             this.colDesde,
             this.colHasta,
             this.colREstado});
-            this.dgvRecorridoLu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvRecorridoLu.Location = new System.Drawing.Point(3, 40);
+            this.dgvRecorridoLu.Location = new System.Drawing.Point(0, 0);
             this.dgvRecorridoLu.Name = "dgvRecorridoLu";
             this.dgvRecorridoLu.ReadOnly = true;
-            this.dgvRecorridoLu.Size = new System.Drawing.Size(762, 466);
+            this.dgvRecorridoLu.Size = new System.Drawing.Size(768, 469);
             this.dgvRecorridoLu.TabIndex = 4;
             // 
             // colIDcalle
@@ -1658,6 +1636,39 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Domingo";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
+            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDel.Location = new System.Drawing.Point(40, 475);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(28, 28);
+            this.btnDel.TabIndex = 93;
+            this.btnDel.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAdd.Location = new System.Drawing.Point(6, 475);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(28, 28);
+            this.btnAdd.TabIndex = 92;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveRecLu
+            // 
+            this.btnSaveRecLu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecLu.BackgroundImage")));
+            this.btnSaveRecLu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveRecLu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRecLu.Location = new System.Drawing.Point(734, 475);
+            this.btnSaveRecLu.Name = "btnSaveRecLu";
+            this.btnSaveRecLu.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveRecLu.TabIndex = 94;
+            this.btnSaveRecLu.UseVisualStyleBackColor = true;
             // 
             // formDistribuidores
             // 
@@ -1823,13 +1834,14 @@
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnAdd;
         public System.Windows.Forms.DataGridView dgvRecorridoLu;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDcalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDesde;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHasta;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colREstado;
+        private System.Windows.Forms.Button btnSaveRecLu;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

@@ -1,0 +1,107 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Datos;
+
+namespace RamosHermanos.Capas.Negocio
+{
+    class itemsRecorridoB
+    {
+        public static itemFacturaEntity InsertItemFactura(itemFacturaEntity itemFactura, DataGridView dgv)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"INSERT INTO itemsFactura (factura, producto, cantidad, precioUnitario, subTotal) 
+                                 VALUES (@factura, @producto, @cantidad, @precioUnitario, @subTotal)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+
+                foreach (DataGridView row in dgv.Rows)
+                {
+                    cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
+                    cmd.Parameters.AddWithValue("@producto", itemFactura.producto);
+                    cmd.Parameters.AddWithValue("@cantidad", itemFactura.cantidad);
+                    cmd.Parameters.AddWithValue("@precioUnitario", itemFactura.precioUnitario);
+                    cmd.Parameters.AddWithValue("@subTotal", itemFactura.subTotal);
+
+                    cmd.ExecuteNonQuery();
+                }                
+
+                MySQL.DisconnectDB();
+
+                return itemFactura;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+//        public static void InsertItemFactura2(DataGridView dgv)
+//        {
+//            try
+//            {
+//                MySQL.ConnectDB();
+
+//                itemFacturaEntity itemFactura = new itemFacturaEntity();
+
+//                string query = @"INSERT INTO itemsFactura (factura, producto, cantidad, precioUnitario, subTotal) 
+//                                 VALUES (@factura, @producto, @cantidad, @precioUnitario, @subTotal)";
+
+//                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+//                cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
+//                cmd.Parameters.AddWithValue("@producto", itemFactura.producto);
+//                cmd.Parameters.AddWithValue("@cantidad", itemFactura.cantidad);
+//                cmd.Parameters.AddWithValue("@precioUnitario", itemFactura.precioUnitario);
+//                cmd.Parameters.AddWithValue("@subTotal", itemFactura.subTotal);                
+
+//                cmd.ExecuteNonQuery();
+
+//                //MessageBox.Show("Cliente Guardado!");
+//                MySQL.DisconnectDB();
+//            }
+
+//            catch (Exception ex)
+//            {
+//                MessageBox.Show("Error: " + ex);
+//                throw;
+//            }
+//        }
+
+        //private void btGuardar_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        SqlConnection conx = new SqlConnection(datosConx);
+        //        conx.Open();
+        //        SqlCommand cmd = new SqlCommand("INSERT INTO (FechaDatos) VALUES (@nombre)", conx);
+
+        //        foreach (DataGridViewRow row in datosVer.Rows)
+        //        {
+        //            cmd.Parameters.Clear();
+
+        //            string Nombre = row.Cells[0].Value.ToString();
+        //            cmd.Parameters.AddWithValue("@nombre", Nombre);
+
+        //            cmd.ExecuteNonQuery();
+
+        //        }
+        //    }
+        //    catch (Exception ed)
+        //    {
+        //        MessageBox.Show(ed.Message);
+        //    }
+        //}
+    }
+}

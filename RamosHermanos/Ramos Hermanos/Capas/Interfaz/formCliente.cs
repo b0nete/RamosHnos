@@ -1012,8 +1012,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button11_Click_1(object sender, EventArgs e)
         {
-            string strDia = "LU";
-            
+            string strDia = "LU";            
 
             foreach (DataGridViewRow row in dgvLu.Rows)
             {
