@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 using MySql.Data.MySqlClient;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Datos;
@@ -12,32 +13,30 @@ namespace RamosHermanos.Capas.Negocio
 {
     class itemsRecorridoB
     {
-        public static itemFacturaEntity InsertItemFactura(itemFacturaEntity itemFactura, DataGridView dgv)
+        public static itemRecorridoEntity InsertItemRecorrido(itemRecorridoEntity itemRecorrido, DataGridView dgv)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO itemsFactura (factura, producto, cantidad, precioUnitario, subTotal) 
-                                 VALUES (@factura, @producto, @cantidad, @precioUnitario, @subTotal)";
+                DeleteItemRecorrido(itemRecorrido);
+
+                string query = @"INSERT INTO itemsRecorrido (recorrido, calle, desde, hasta, estado) 
+                                 VALUES (@recorrido, @calle, @desde, @hasta, @estado)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
+                cmd.Parameters.AddWithValue("@recorrido", itemRecorrido.recorrido);
+                cmd.Parameters.AddWithValue("@calle", itemRecorrido.calle);
+                cmd.Parameters.AddWithValue("@desde", itemRecorrido.desde);
+                cmd.Parameters.AddWithValue("@hasta", itemRecorrido.hasta);
+                cmd.Parameters.AddWithValue("@estado", itemRecorrido.estado);
 
-                foreach (DataGridView row in dgv.Rows)
-                {
-                    cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
-                    cmd.Parameters.AddWithValue("@producto", itemFactura.producto);
-                    cmd.Parameters.AddWithValue("@cantidad", itemFactura.cantidad);
-                    cmd.Parameters.AddWithValue("@precioUnitario", itemFactura.precioUnitario);
-                    cmd.Parameters.AddWithValue("@subTotal", itemFactura.subTotal);
-
-                    cmd.ExecuteNonQuery();
-                }                
+                cmd.ExecuteNonQuery();             
 
                 MySQL.DisconnectDB();
 
-                return itemFactura;
+                return itemRecorrido;
             }
 
             catch (Exception ex)
@@ -47,61 +46,69 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-//        public static void InsertItemFactura2(DataGridView dgv)
-//        {
-//            try
-//            {
-//                MySQL.ConnectDB();
-
-//                itemFacturaEntity itemFactura = new itemFacturaEntity();
-
-//                string query = @"INSERT INTO itemsFactura (factura, producto, cantidad, precioUnitario, subTotal) 
-//                                 VALUES (@factura, @producto, @cantidad, @precioUnitario, @subTotal)";
-
-//                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-
-//                cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
-//                cmd.Parameters.AddWithValue("@producto", itemFactura.producto);
-//                cmd.Parameters.AddWithValue("@cantidad", itemFactura.cantidad);
-//                cmd.Parameters.AddWithValue("@precioUnitario", itemFactura.precioUnitario);
-//                cmd.Parameters.AddWithValue("@subTotal", itemFactura.subTotal);                
-
-//                cmd.ExecuteNonQuery();
-
-//                //MessageBox.Show("Cliente Guardado!");
-//                MySQL.DisconnectDB();
-//            }
-
-//            catch (Exception ex)
-//            {
-//                MessageBox.Show("Error: " + ex);
-//                throw;
-//            }
-//        }
-
-        //private void btGuardar_Click(object sender, EventArgs e)
+        //public static itemRecorridoEntity BuscarItemRecorrido(itemRecorridoEntity itemRecorrido)
         //{
         //    try
         //    {
-        //        SqlConnection conx = new SqlConnection(datosConx);
-        //        conx.Open();
-        //        SqlCommand cmd = new SqlCommand("INSERT INTO (FechaDatos) VALUES (@nombre)", conx);
+        //        MySQL.ConnectDB();
 
-        //        foreach (DataGridViewRow row in datosVer.Rows)
+        //        string query = "SELECT * FROM itemsRecorrido WHERE recorrido = @recorrido";
+
+        //        MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+        //        cmd.Parameters.AddWithValue("@recorrido", itemRecorrido.recorrido);
+
+        //        int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+        //        if (resultado != 0)
         //        {
-        //            cmd.Parameters.Clear();
+        //            DataTable dt = new DataTable();
+        //            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-        //            string Nombre = row.Cells[0].Value.ToString();
-        //            cmd.Parameters.AddWithValue("@nombre", Nombre);
+        //            da.Fill(dt);
 
-        //            cmd.ExecuteNonQuery();
+        //            DataRow row = dt.Rows[0];
 
+        //            recorrido.idRecorrido = Convert.ToInt32(row["idRecorrido"]);
+        //            recorrido.distribuidor = Convert.ToInt32(row["distribuidor"]);
+        //            recorrido.dia = Convert.ToString(row["dia"]);
+
+        //            txtIDrecorrido.Text = Convert.ToString(recorrido.idRecorrido);
+
+        //            MySQL.DisconnectDB();
         //        }
+
+        //        return recorrido;
         //    }
-        //    catch (Exception ed)
+
+        //    catch (Exception ex)
         //    {
-        //        MessageBox.Show(ed.Message);
+        //        MessageBox.Show("Error: " + ex);
+        //        throw;
         //    }
-        //}
+
+        public static void DeleteItemRecorrido(itemRecorridoEntity itemRecorrido)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"DELETE *
+                                 FROM itemsRecorrido
+                                 WHERE recorrido = @recorrido";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@recorrido", itemRecorrido.recorrido);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
     }
 }

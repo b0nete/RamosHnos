@@ -37,9 +37,13 @@ namespace RamosHermanos.Capas.Interfaz
                 case 0:
                     tabDistribuidor.SelectedTab = tabRecorrido;
                     break;
+                case 1:
+                    //tabDistribuidor.SelectedTab;
+                    break;
+                   
             }
             //Tabs Ocultos
-            tabDistribuidor.Controls.Remove(tabListado);
+            //tabDistribuidor.Controls.Remove(tabListado);
 
             //tabInformacion
             VehiculoB.CargarCB(cbVehiculo);
@@ -54,6 +58,49 @@ namespace RamosHermanos.Capas.Interfaz
             //tabVehiculos
             VehiculoB.CargarDGV(dgvVehiculos);
             CheckColor(cbEstadoVeh, lblEstadoVeh);
+        }
+        
+        //Tabs Cases
+        public void CaseListado()
+        {
+            tabDistribuidor.Controls.Remove(tabInformacion);
+            tabDistribuidor.Controls.Remove(tabVehiculos);
+            tabDistribuidor.Controls.Remove(tabHojaRuta);
+            tabDistribuidor.Controls.Remove(tabListado);
+            tabDistribuidor.Controls.Remove(tabRecorrido);
+            tabDistribuidor.Controls.Add(tabListado);
+        }
+
+        public void CaseNuevo()
+        {
+            tabDistribuidor.Controls.Remove(tabInformacion);
+            tabDistribuidor.Controls.Remove(tabVehiculos);
+            tabDistribuidor.Controls.Remove(tabHojaRuta);
+            tabDistribuidor.Controls.Remove(tabListado);
+            tabDistribuidor.Controls.Remove(tabRecorrido);
+            tabDistribuidor.Controls.Add(tabInformacion);           
+        }
+
+        public void CaseDistribuidor()
+        {
+            tabDistribuidor.Controls.Remove(tabInformacion);
+            tabDistribuidor.Controls.Remove(tabVehiculos);
+            tabDistribuidor.Controls.Remove(tabHojaRuta);
+            tabDistribuidor.Controls.Remove(tabListado);
+            tabDistribuidor.Controls.Remove(tabRecorrido);
+            tabDistribuidor.Controls.Add(tabInformacion);
+            tabDistribuidor.Controls.Add(tabHojaRuta);
+            tabDistribuidor.Controls.Add(tabRecorrido);
+        }
+
+        public void CaseVehiculo()
+        {
+            tabDistribuidor.Controls.Remove(tabInformacion);
+            tabDistribuidor.Controls.Remove(tabVehiculos);
+            tabDistribuidor.Controls.Remove(tabHojaRuta);
+            tabDistribuidor.Controls.Remove(tabListado);
+            tabDistribuidor.Controls.Remove(tabRecorrido);
+            tabDistribuidor.Controls.Add(tabVehiculos);
         }
 
         private void btnSaveVehi_Click(object sender, EventArgs e)
@@ -178,7 +225,13 @@ namespace RamosHermanos.Capas.Interfaz
                 EmailB.CargarTXT(txtEmail, txtIDdistribuidor, 3);
                 TelefonoB.CargarTXT(txtTel, txtIDdistribuidor, 3);
 
-                tabDistribuidor.SelectedTab = tabInformacion;
+                //Se completa el tabRecorrido
+                string strLu = "LU";
+                CargarRecorrido(strLu);
+                RecorridoB.BuscarRecorrido(recorrido, txtIDRecorridoLu);
+
+                //Case
+                CaseDistribuidor();
             }
         }
 
@@ -317,6 +370,23 @@ namespace RamosHermanos.Capas.Interfaz
             vehiculo.estado = cbEstado.Checked;
         }
 
+        RecorridoEntity recorrido = new RecorridoEntity();
+        private void CargarRecorrido(string strDia)
+        {
+            recorrido.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
+            recorrido.dia = strDia;
+        }
+
+        itemRecorridoEntity itemRecorrido = new itemRecorridoEntity();
+        private void CargarItemRecorrido()
+        {
+            itemRecorrido.recorrido =
+            itemRecorrido.calle = Convert.ToInt32(dgvRecorridoLu.CurrentRow.Cells["colLuIDcalle"].Value);
+            itemRecorrido.desde = Convert.ToString(dgvRecorridoLu.CurrentRow.Cells["colLuDesde"].Value);
+            itemRecorrido.hasta = Convert.ToString(dgvRecorridoLu.CurrentRow.Cells["colLuHasta"].Value);
+            itemRecorrido.estado = Convert.ToBoolean(dgvRecorridoLu.CurrentRow.Cells["colLuEstado"].Value);
+        }
+
         private void btnEmail_Click(object sender, EventArgs e)
         {
             if (txtIDdistribuidor.Text == string.Empty)
@@ -382,14 +452,6 @@ namespace RamosHermanos.Capas.Interfaz
             VehiculoB.CargarCB(cbVehiculo);
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            formDomicilio frm = new formDomicilio();
-            frm.tabVar = 0;
-            frm.DGVvar = 2;
-            frm.Show(this);
-        }
-
         // Contratos
 
         //#region IAddItem Members
@@ -407,6 +469,50 @@ namespace RamosHermanos.Capas.Interfaz
         interface IAddItem
         {
             void AddNewItem(DataGridViewRow row);
+        }
+
+        private void btnSaveRecLu_Click(object sender, EventArgs e)
+        {
+            //Validacion.
+            if (txtIDdistribuidor.Text == string.Empty)
+            {
+                MessageBox.Show("Ingrese un distribuidor!");
+            }
+
+            //Cargamos encabezado del recorrido.
+            string strDia = "LU";
+            CargarRecorrido(strDia);
+            RecorridoB.InsertRecorrido(recorrido, txtIDRecorridoLu);
+
+            //Cargamos las calles del recorrido
+            foreach (DataGridViewRow row in dgvRecorridoLu.Rows)
+            {
+                CargarItemRecorrido();
+                itemsRecorridoB.InsertItemRecorrido(itemRecorrido, dgvRecorridoLu);
+            }
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            formDomicilio frm = new formDomicilio();
+            frm.tabVar = 0;
+            frm.DGVvar = 2;
+            frm.Show(this);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tabDistribuidor.Controls.Add(tabVehiculos);
+            tabDistribuidor.SelectedTab = tabVehiculos;
+        }
+
+        private void tabDistribuidor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabDistribuidor.SelectedTab != tabVehiculos)
+            {
+                tabDistribuidor.Controls.Remove(tabVehiculos);     
+            }                   
         }
     }
 }

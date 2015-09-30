@@ -106,8 +106,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void distribuidoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formDistribuidores frm = new formDistribuidores();
-            frm.Show();
+
         }
 
         private void insumosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -169,6 +168,21 @@ namespace RamosHermanos.Capas.Interfaz
         {
             formFactura frm = new formFactura();
             frm.Show();
+        }
+
+        private void listadoToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            formDistribuidores frm = new formDistribuidores();
+            frm.Show();
+            frm.CaseListado();
+            
+        }
+
+        private void registrarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            formDistribuidores frm = new formDistribuidores();
+            frm.Show();
+            frm.CaseNuevo();
         }
 
        

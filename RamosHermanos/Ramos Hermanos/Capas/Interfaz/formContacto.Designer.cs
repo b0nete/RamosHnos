@@ -366,6 +366,7 @@
             this.cbCalle.Name = "cbCalle";
             this.cbCalle.Size = new System.Drawing.Size(238, 21);
             this.cbCalle.TabIndex = 112;
+            this.cbCalle.DropDown += new System.EventHandler(this.cbCalle_DropDown);
             this.cbCalle.SelectionChangeCommitted += new System.EventHandler(this.cbCalle_SelectionChangeCommitted);
             // 
             // lblEstadoDom

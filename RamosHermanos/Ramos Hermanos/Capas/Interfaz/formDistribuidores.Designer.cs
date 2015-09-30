@@ -137,21 +137,22 @@
             this.tabRecorrido = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.txtIDRecorridoLu = new System.Windows.Forms.TextBox();
+            this.btnSaveRecLu = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.dgvRecorridoLu = new System.Windows.Forms.DataGridView();
-            this.colIDcalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colREstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnSaveRecLu = new System.Windows.Forms.Button();
+            this.colLuIDcalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLuDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLuHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLuEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabDistribuidor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -198,6 +199,7 @@
             this.tabDistribuidor.SelectedIndex = 0;
             this.tabDistribuidor.Size = new System.Drawing.Size(784, 561);
             this.tabDistribuidor.TabIndex = 0;
+            this.tabDistribuidor.SelectedIndexChanged += new System.EventHandler(this.tabDistribuidor_SelectedIndexChanged);
             // 
             // tabInformacion
             // 
@@ -626,6 +628,7 @@
             this.button2.Size = new System.Drawing.Size(28, 28);
             this.button2.TabIndex = 89;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // cbVehiculo
             // 
@@ -1521,6 +1524,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.txtIDRecorridoLu);
             this.tabPage1.Controls.Add(this.btnSaveRecLu);
             this.tabPage1.Controls.Add(this.btnDel);
             this.tabPage1.Controls.Add(this.btnAdd);
@@ -1533,54 +1537,63 @@
             this.tabPage1.Text = "Lunes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // txtIDRecorridoLu
+            // 
+            this.txtIDRecorridoLu.Location = new System.Drawing.Point(74, 480);
+            this.txtIDRecorridoLu.Name = "txtIDRecorridoLu";
+            this.txtIDRecorridoLu.Size = new System.Drawing.Size(60, 20);
+            this.txtIDRecorridoLu.TabIndex = 95;
+            // 
+            // btnSaveRecLu
+            // 
+            this.btnSaveRecLu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecLu.BackgroundImage")));
+            this.btnSaveRecLu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveRecLu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRecLu.Location = new System.Drawing.Point(734, 475);
+            this.btnSaveRecLu.Name = "btnSaveRecLu";
+            this.btnSaveRecLu.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveRecLu.TabIndex = 94;
+            this.btnSaveRecLu.UseVisualStyleBackColor = true;
+            this.btnSaveRecLu.Click += new System.EventHandler(this.btnSaveRecLu_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
+            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDel.Location = new System.Drawing.Point(40, 475);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(28, 28);
+            this.btnDel.TabIndex = 93;
+            this.btnDel.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAdd.Location = new System.Drawing.Point(6, 475);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(28, 28);
+            this.btnAdd.TabIndex = 92;
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // dgvRecorridoLu
             // 
             this.dgvRecorridoLu.AllowUserToAddRows = false;
             this.dgvRecorridoLu.AllowUserToDeleteRows = false;
             this.dgvRecorridoLu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRecorridoLu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colIDcalle,
+            this.colLuIDcalle,
             this.colCalle,
-            this.colDesde,
-            this.colHasta,
-            this.colREstado});
+            this.colLuDesde,
+            this.colLuHasta,
+            this.colLuEstado});
             this.dgvRecorridoLu.Location = new System.Drawing.Point(0, 0);
             this.dgvRecorridoLu.Name = "dgvRecorridoLu";
-            this.dgvRecorridoLu.ReadOnly = true;
             this.dgvRecorridoLu.Size = new System.Drawing.Size(768, 469);
             this.dgvRecorridoLu.TabIndex = 4;
-            // 
-            // colIDcalle
-            // 
-            this.colIDcalle.HeaderText = "Nº Calle";
-            this.colIDcalle.Name = "colIDcalle";
-            this.colIDcalle.ReadOnly = true;
-            // 
-            // colCalle
-            // 
-            this.colCalle.HeaderText = "Calle";
-            this.colCalle.Name = "colCalle";
-            this.colCalle.ReadOnly = true;
-            // 
-            // colDesde
-            // 
-            this.colDesde.HeaderText = "Desde";
-            this.colDesde.Name = "colDesde";
-            this.colDesde.ReadOnly = true;
-            // 
-            // colHasta
-            // 
-            this.colHasta.HeaderText = "Hasta";
-            this.colHasta.Name = "colHasta";
-            this.colHasta.ReadOnly = true;
-            // 
-            // colREstado
-            // 
-            this.colREstado.HeaderText = "Estado";
-            this.colREstado.Name = "colREstado";
-            this.colREstado.ReadOnly = true;
-            this.colREstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colREstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tabPage2
             // 
@@ -1637,38 +1650,34 @@
             this.tabPage7.Text = "Domingo";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // btnDel
+            // colLuIDcalle
             // 
-            this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
-            this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDel.Location = new System.Drawing.Point(40, 475);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(28, 28);
-            this.btnDel.TabIndex = 93;
-            this.btnDel.UseVisualStyleBackColor = true;
+            this.colLuIDcalle.HeaderText = "Nº Calle";
+            this.colLuIDcalle.Name = "colLuIDcalle";
+            this.colLuIDcalle.ReadOnly = true;
             // 
-            // btnAdd
+            // colCalle
             // 
-            this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAdd.Location = new System.Drawing.Point(6, 475);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(28, 28);
-            this.btnAdd.TabIndex = 92;
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.colCalle.HeaderText = "Calle";
+            this.colCalle.Name = "colCalle";
+            this.colCalle.ReadOnly = true;
             // 
-            // btnSaveRecLu
+            // colLuDesde
             // 
-            this.btnSaveRecLu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecLu.BackgroundImage")));
-            this.btnSaveRecLu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveRecLu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecLu.Location = new System.Drawing.Point(734, 475);
-            this.btnSaveRecLu.Name = "btnSaveRecLu";
-            this.btnSaveRecLu.Size = new System.Drawing.Size(28, 28);
-            this.btnSaveRecLu.TabIndex = 94;
-            this.btnSaveRecLu.UseVisualStyleBackColor = true;
+            this.colLuDesde.HeaderText = "Desde";
+            this.colLuDesde.Name = "colLuDesde";
+            // 
+            // colLuHasta
+            // 
+            this.colLuHasta.HeaderText = "Hasta";
+            this.colLuHasta.Name = "colLuHasta";
+            // 
+            // colLuEstado
+            // 
+            this.colLuEstado.HeaderText = "Estado";
+            this.colLuEstado.Name = "colLuEstado";
+            this.colLuEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colLuEstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // formDistribuidores
             // 
@@ -1713,6 +1722,7 @@
             this.tabRecorrido.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecorridoLu)).EndInit();
             this.ResumeLayout(false);
 
@@ -1835,13 +1845,14 @@
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage7;
         public System.Windows.Forms.DataGridView dgvRecorridoLu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDcalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDesde;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHasta;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colREstado;
         private System.Windows.Forms.Button btnSaveRecLu;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.TextBox txtIDRecorridoLu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLuIDcalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLuDesde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLuHasta;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colLuEstado;
     }
 }

@@ -423,6 +423,11 @@ namespace RamosHermanos.Capas.Interfaz
             CalleB.CargarCB(cbCalle, cbBarrio);
         }
 
+        private void cbCalle_DropDown(object sender, EventArgs e)
+        {
+            CalleB.CargarCB(cbCalle, cbBarrio);
+        }
+
       
 
         

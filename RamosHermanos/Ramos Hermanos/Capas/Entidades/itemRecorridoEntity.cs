@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace RamosHermanos.Capas.Entidades
 {
-    class itemsRecorridoEntity
+    class itemRecorridoEntity
     {
         public int idCallesRecorrido { get; set; }
         public int recorrido { get; set; }
         public int calle { get; set; }
-        public int desde { get; set; }
-        public int hasta { get; set; }
+        public string desde { get; set; }
+        public string hasta { get; set; }
         public bool estado { get; set; }
     }
 }
