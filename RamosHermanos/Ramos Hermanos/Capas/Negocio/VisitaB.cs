@@ -171,5 +171,62 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void DeleteVisita(VisitaEntity visita)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"DELETE FROM Visitas
+                                 WHERE rol = @rol and idPersona = @idPersona";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@rol", visita.rol);
+                cmd.Parameters.AddWithValue("@idPersona", visita.idPersona);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static VisitaEntity GetListado(VisitaEntity visita)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT V.idPersona, V.domicilio
+FROM Visitas V
+INNER JOIN Domicilios D ON D.idDomicilio = V.domicilio
+INNER JOIN Calles C ON D.calle = C.idCalle
+INNER JOIN itemsRecorrido IR ON IR.calle = C.idCalle
+WHERE V.dia = 'LU' and V.distribuidor = '1' and D.numero >= IR.desde and D.numero <= IR.hasta";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@rol", visita.rol);
+                cmd.Parameters.AddWithValue("@idPersona", visita.idPersona);
+
+                cmd.ExecuteNonQuery();
+
+                //MessageBox.Show("Visita Guardada!");
+                MySQL.DisconnectDB();
+
+                return visita;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
     }
 }

@@ -919,16 +919,20 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         VisitaEntity visita = new VisitaEntity();
-        private void CargarVisita(string strDia, DataGridView dgv)
+        private void CargarVisita(DataGridView dgv)
         {
-            DataGridViewRow row = new DataGridViewRow();
-
             visita.rol = 1;
             visita.idPersona = Convert.ToInt32(dgv.CurrentRow.Cells["colVLucliente"].Value);
+        }
+
+        private void CargarItemsVisita(string strDia, DataGridViewRow row)
+        {
+            visita.rol = 1;
+            visita.idPersona = Convert.ToInt32(row.Cells["colVLucliente"].Value);
             visita.dia = strDia;
-            visita.domicilio = Convert.ToInt32(dgv.CurrentRow.Cells["colVLudomicilio"].Value);
-            visita.distribuidor = Convert.ToInt32(dgv.CurrentRow.Cells["colVLudistribuidor"].Value);
-            visita.estado = Convert.ToBoolean(dgv.CurrentRow.Cells["colVLuestado"].Value);
+            visita.domicilio = Convert.ToInt32(row.Cells["colVLudomicilio"].Value);
+            visita.distribuidor = Convert.ToInt32(row.Cells["colVLudistribuidor"].Value);
+            visita.estado = Convert.ToBoolean(row.Cells["colVLuestado"].Value);
         }
 
         private void groupBox9_Enter(object sender, EventArgs e)
@@ -1012,14 +1016,17 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button11_Click_1(object sender, EventArgs e)
         {
-            string strDia = "LU";            
+            //Borramos visita anterior
+            CargarVisita(dgvLu);
+            VisitaB.DeleteVisita(visita);
 
+            //Cargamos nuevamente los valores.
+            string strDia = "LU"; 
             foreach (DataGridViewRow row in dgvLu.Rows)
             {
-                CargarVisita(strDia, dgvLu);
+                CargarItemsVisita(strDia, row);
                 VisitaB.InsertVisita(visita, dgvLu);
             }
-            
         }
 
         

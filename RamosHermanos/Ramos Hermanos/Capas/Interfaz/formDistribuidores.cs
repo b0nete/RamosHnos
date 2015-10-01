@@ -230,6 +230,12 @@ namespace RamosHermanos.Capas.Interfaz
                 CargarRecorrido(strLu);
                 RecorridoB.BuscarRecorrido(recorrido, txtIDRecorridoLu);
 
+                if (txtIDRecorridoLu.Text != string.Empty)
+                {
+                    itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoLu.Text);
+                    itemsRecorridoB.BuscarItemRecorrido(itemRecorrido, dgvRecorridoLu);
+                }
+
                 //Case
                 CaseDistribuidor();
             }
@@ -378,13 +384,13 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         itemRecorridoEntity itemRecorrido = new itemRecorridoEntity();
-        private void CargarItemRecorrido()
+        private void CargarItemRecorrido(DataGridViewRow row)
         {
-            itemRecorrido.recorrido =
-            itemRecorrido.calle = Convert.ToInt32(dgvRecorridoLu.CurrentRow.Cells["colLuIDcalle"].Value);
-            itemRecorrido.desde = Convert.ToString(dgvRecorridoLu.CurrentRow.Cells["colLuDesde"].Value);
-            itemRecorrido.hasta = Convert.ToString(dgvRecorridoLu.CurrentRow.Cells["colLuHasta"].Value);
-            itemRecorrido.estado = Convert.ToBoolean(dgvRecorridoLu.CurrentRow.Cells["colLuEstado"].Value);
+            itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoLu.Text);
+            itemRecorrido.calle = Convert.ToInt32(row.Cells["colLuIDcalle"].Value);
+            itemRecorrido.desde = Convert.ToString(row.Cells["colLuDesde"].Value);
+            itemRecorrido.hasta = Convert.ToString(row.Cells["colLuHasta"].Value);
+            itemRecorrido.estado = Convert.ToBoolean(row.Cells["colLuEstado"].Value);
         }
 
         private void btnEmail_Click(object sender, EventArgs e)
@@ -473,10 +479,20 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSaveRecLu_Click(object sender, EventArgs e)
         {
+
             //Validacion.
             if (txtIDdistribuidor.Text == string.Empty)
             {
                 MessageBox.Show("Ingrese un distribuidor!");
+            }
+
+            //Borramos Recorrido e itemsRecorrido anteriores.
+            if (txtIDRecorridoLu.Text != string.Empty)
+            {
+                itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoLu.Text);
+                itemsRecorridoB.DeleteItemRecorrido(itemRecorrido);
+                recorrido.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
+                RecorridoB.DeleteRecorrido(recorrido);
             }
 
             //Cargamos encabezado del recorrido.
@@ -484,10 +500,10 @@ namespace RamosHermanos.Capas.Interfaz
             CargarRecorrido(strDia);
             RecorridoB.InsertRecorrido(recorrido, txtIDRecorridoLu);
 
-            //Cargamos las calles del recorrido
+            //Cargamos los nuevos items del recorrido
             foreach (DataGridViewRow row in dgvRecorridoLu.Rows)
             {
-                CargarItemRecorrido();
+                CargarItemRecorrido(row);
                 itemsRecorridoB.InsertItemRecorrido(itemRecorrido, dgvRecorridoLu);
             }
 

@@ -19,8 +19,6 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                DeleteItemRecorrido(itemRecorrido);
-
                 string query = @"INSERT INTO itemsRecorrido (recorrido, calle, desde, hasta, estado) 
                                  VALUES (@recorrido, @calle, @desde, @hasta, @estado)";
 
@@ -46,45 +44,46 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        //public static itemRecorridoEntity BuscarItemRecorrido(itemRecorridoEntity itemRecorrido)
-        //{
-        //    try
-        //    {
-        //        MySQL.ConnectDB();
+        public static itemRecorridoEntity BuscarItemRecorrido(itemRecorridoEntity itemRecorrido, DataGridView dgv)
+        {
+            try
+            {
+                MySQL.ConnectDB();
 
-        //        string query = "SELECT * FROM itemsRecorrido WHERE recorrido = @recorrido";
+                string query = @"SELECT  IR.idcallesRecorrido, IR.recorrido, IR.calle IDcalle, C.calle, IR.desde, IR.hasta, IR.estado
+                                 FROM itemsRecorrido IR
+                                 INNER JOIN Calles C ON IR.calle = C.idCalle
+                                 WHERE recorrido = @recorrido";
 
-        //        MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-        //        cmd.Parameters.AddWithValue("@recorrido", itemRecorrido.recorrido);
+                cmd.Parameters.AddWithValue("@recorrido", itemRecorrido.recorrido);
 
-        //        int resultado = Convert.ToInt32(cmd.ExecuteScalar());
-        //        if (resultado != 0)
-        //        {
-        //            DataTable dt = new DataTable();
-        //            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr = cmd.ExecuteReader();
 
-        //            da.Fill(dt);
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["IDcalle"]),
+                    Convert.ToString(dr["calle"]),
+                    Convert.ToString(dr["desde"]),
+                    Convert.ToString(dr["hasta"]),
+                    Convert.ToString(dr["estado"]));
+                }
 
-        //            DataRow row = dt.Rows[0];
+                dr.Close();
 
-        //            recorrido.idRecorrido = Convert.ToInt32(row["idRecorrido"]);
-        //            recorrido.distribuidor = Convert.ToInt32(row["distribuidor"]);
-        //            recorrido.dia = Convert.ToString(row["dia"]);
+                MySQL.DisconnectDB();
 
-        //            txtIDrecorrido.Text = Convert.ToString(recorrido.idRecorrido);
+                return itemRecorrido;
+            }
 
-        //            MySQL.DisconnectDB();
-        //        }
-
-        //        return recorrido;
-        //    }
-
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error: " + ex);
-        //        throw;
-        //    }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
 
         public static void DeleteItemRecorrido(itemRecorridoEntity itemRecorrido)
         {
@@ -92,8 +91,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"DELETE *
-                                 FROM itemsRecorrido
+                string query = @"DELETE FROM itemsRecorrido
                                  WHERE recorrido = @recorrido";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);

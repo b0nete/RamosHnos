@@ -84,6 +84,29 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static void DeleteRecorrido(RecorridoEntity recorrido)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"DELETE FROM Recorridos
+                                 WHERE distribuidor = @distribuidor ";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@distribuidor", recorrido.distribuidor);
+
+                cmd.ExecuteNonQuery();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
         
     }
 }

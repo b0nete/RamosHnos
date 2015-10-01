@@ -310,7 +310,6 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["numDoc"]),
                     Convert.ToString(dr["apellido"]),
                     Convert.ToString(dr["nombre"]));
-                    
                 }
 
                 dr.Close();
