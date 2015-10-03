@@ -147,10 +147,12 @@ namespace RamosHermanos.Capas.Interfaz
                     cargarInsumo();
                     if (InsumoB.ExisteInsumoID(insumo) == true)
                     {
+                        MessageBox.Show("El Insumo ya existe");
                         return;
                     }
                     else if ( InsumoB.ExisteInsumo(insumo) == true)
                     {
+                        MessageBox.Show("El Insumo ya existe");
                         return;
                     }
                     else

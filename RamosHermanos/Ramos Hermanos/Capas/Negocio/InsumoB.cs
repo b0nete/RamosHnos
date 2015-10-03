@@ -36,6 +36,55 @@ namespace RamosHermanos.Capas.Negocio
                 return true;
         
         }
+        public static InsumoEntity BuscarInsumosID(InsumoEntity insumo)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = "SELECT * FROM insumos WHERE idInsumo=@idInsumo";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idInsumo", insumo.idInsumo);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("El insumo NO existe!");
+
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    DataRow row = dt.Rows[0];
+
+                    insumo.idInsumo = Convert.ToInt32(row["idInsumo"]);
+                    insumo.estado = Convert.ToBoolean(row["estado"]);
+                    insumo.descripcion = Convert.ToString(row["descripcion"]);
+                    insumo.fecha = Convert.ToDateTime(row["fecha"]);
+                    insumo.insumo = Convert.ToString(row["insumo"]);
+                    insumo.marca = Convert.ToString(row["marca"]);
+                    insumo.proveedor = Convert.ToInt32(row["proveedor"]);
+                    insumo.rubro = Convert.ToString(row["rubro"]);
+                    insumo.stockMin = Convert.ToString(row["stockMin"]);
+
+                    MySQL.DisconnectDB();
+                }
+                return insumo;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
 
         public static InsumoEntity BuscarInsumos(InsumoEntity insumo)
         {
@@ -104,7 +153,6 @@ namespace RamosHermanos.Capas.Negocio
             }
             else
             {
-                MessageBox.Show("El ID de Insumo ya existe!");
                 return true;
             }
         }

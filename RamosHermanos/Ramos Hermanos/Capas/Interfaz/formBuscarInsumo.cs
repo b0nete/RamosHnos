@@ -34,7 +34,7 @@ namespace RamosHermanos.Capas.Interfaz
             if (txtInsumo.Text == "")
             {
                 frm.Show();
-                frm.tabMain.SelectedTab = frm.tabInformacion;
+                frm.tabMain.SelectedTab = frm.tabListado;
                 return;
             }
 
@@ -43,7 +43,7 @@ namespace RamosHermanos.Capas.Interfaz
             
             if (InsumoB.ExisteInsumo(insumo) == false)
             {
-                MessageBox.Show("El insumo no existe");
+                MessageBox.Show("El Insumo no existe");
                 return;
             }
             else
@@ -53,13 +53,46 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.Show();
                 frm.txtidInsumo.Text = Convert.ToString(insumo.idInsumo);
                 frm.txtInsumo.Text = Convert.ToString(insumo.insumo);
+                frm.txtDescripcion.Text = insumo.descripcion;
                 
+                return;
+            }
+        }
+
+        private void BuscarIDInsumo()
+        {
+
+            if (txtIDInsumo.Text == "")
+            {
+                frm.Show();
+                frm.tabMain.SelectedTab = frm.tabListado;
+                return;
+            }
+
+            //frm.cargarProv();
+            insumo.idInsumo = Convert.ToInt32(txtIDInsumo.Text);
+            
+            if (InsumoB.ExisteInsumoID(insumo) == false)
+            {
+                MessageBox.Show("El Insumo no existe");
+                return;
+            }
+            else
+            {
+                InsumoB.BuscarInsumosID(insumo);
+                txtInsumo.Text = "";
+                frm.Show();
+                frm.txtidInsumo.Text = Convert.ToString(insumo.idInsumo);
+                frm.txtInsumo.Text = Convert.ToString(insumo.insumo);
+                frm.txtDescripcion.Text = insumo.descripcion;
+
+                return;
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            BuscarNameInsumo();
+            BuscarIDInsumo();
         }
 
     }

@@ -862,6 +862,7 @@
             this.crvImpresion.Size = new System.Drawing.Size(776, 703);
             this.crvImpresion.TabIndex = 0;
             this.crvImpresion.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crvImpresion.Load += new System.EventHandler(this.crvImpresion_Load);
             // 
             // dsFactura
             // 

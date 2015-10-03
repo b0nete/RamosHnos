@@ -156,6 +156,11 @@ namespace RamosHermanos.Capas.Interfaz
         private void dgvPedido_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //itemsPedidoB.InsertIntoItemPedido(itemPedido, dgvPedido);
         }    
         }
 }

@@ -278,6 +278,11 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
+        private void crvImpresion_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 

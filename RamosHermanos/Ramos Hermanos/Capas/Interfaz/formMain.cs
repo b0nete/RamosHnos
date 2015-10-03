@@ -185,6 +185,12 @@ namespace RamosHermanos.Capas.Interfaz
             frm.CaseNuevo();
         }
 
+        private void nºInsumoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formBuscarInsumo frm = new formBuscarInsumo();
+            frm.Show();
+        }
+
        
        
        
