@@ -32,6 +32,13 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
+        itemPedidoEntity itempedido = new itemPedidoEntity();
+        public void cargaritemPedido()
+        {
+             
+                    
+        }
+
         private void formPedidos_Load(object sender, EventArgs e)
         {
             ProductoB.CargarDGV(dgvProducto);
@@ -142,6 +149,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             cargarPedido();
             PedidoB.InsertPedido(pedido);
+            itemsPedidoB.InsertIntoItemPedido(itempedido, dgvPedido);
             
         }
 

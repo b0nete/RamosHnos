@@ -52,7 +52,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (txtInsumo.Text == string.Empty)
             {
-                tabInsumo.SelectedTab = tabListado;
+                tabMain.SelectedTab = tabListado;
                 return;
             
             }
@@ -288,7 +288,7 @@ namespace RamosHermanos.Capas.Interfaz
                 txtRubro.Text = insumo.rubro;
                 cbMarca.Text = insumo.marca;
 
-                tabInsumo.SelectedTab = tabInformacion;
+                tabMain.SelectedTab = tabInformacion;
              
 
             }

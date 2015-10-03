@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formInsumos));
-            this.tabInsumo = new System.Windows.Forms.TabControl();
+            this.tabMain = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtStockActual = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
@@ -90,8 +91,7 @@
             this.colStockActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button11 = new System.Windows.Forms.Button();
-            this.tabInsumo.SuspendLayout();
+            this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -100,16 +100,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvinsumos)).BeginInit();
             this.SuspendLayout();
             // 
-            // tabInsumo
+            // tabMain
             // 
-            this.tabInsumo.Controls.Add(this.tabInformacion);
-            this.tabInsumo.Controls.Add(this.tabListado);
-            this.tabInsumo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabInsumo.Location = new System.Drawing.Point(0, 0);
-            this.tabInsumo.Name = "tabInsumo";
-            this.tabInsumo.SelectedIndex = 0;
-            this.tabInsumo.Size = new System.Drawing.Size(784, 561);
-            this.tabInsumo.TabIndex = 0;
+            this.tabMain.Controls.Add(this.tabInformacion);
+            this.tabMain.Controls.Add(this.tabListado);
+            this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabMain.Location = new System.Drawing.Point(0, 0);
+            this.tabMain.Name = "tabMain";
+            this.tabMain.SelectedIndex = 0;
+            this.tabMain.Size = new System.Drawing.Size(784, 561);
+            this.tabMain.TabIndex = 0;
             // 
             // tabInformacion
             // 
@@ -127,6 +127,18 @@
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.UseVisualStyleBackColor = true;
             this.tabInformacion.Click += new System.EventHandler(this.tabInformacion_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button11.Location = new System.Drawing.Point(740, 500);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(28, 28);
+            this.button11.TabIndex = 113;
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // groupBox3
             // 
@@ -792,28 +804,16 @@
             this.colMarca.Name = "colMarca";
             this.colMarca.ReadOnly = true;
             // 
-            // button11
-            // 
-            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button11.Location = new System.Drawing.Point(740, 500);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(28, 28);
-            this.button11.TabIndex = 113;
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
             // formInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.tabInsumo);
+            this.Controls.Add(this.tabMain);
             this.Name = "formInsumos";
             this.Text = "Insumos";
             this.Load += new System.EventHandler(this.formInsumos_Load);
-            this.tabInsumo.ResumeLayout(false);
+            this.tabMain.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -829,36 +829,24 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabInsumo;
-        private System.Windows.Forms.TabPage tabInformacion;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtStockActual;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtStockMin;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dtpFechaActualizacion;
-        private System.Windows.Forms.TextBox txtCostoAct;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cbMedida;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox txtidInsumo;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.ComboBox cbProv;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button3;
@@ -868,11 +856,8 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelInsumo;
-        private System.Windows.Forms.ComboBox cbRubro;
-        private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label txtRubro;
         private System.Windows.Forms.Button button1;
@@ -880,9 +865,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.TabPage tabListado;
         private System.Windows.Forms.DataGridView dgvinsumos;
-        private System.Windows.Forms.TextBox txtInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colidinsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProv;
@@ -891,5 +874,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
         private System.Windows.Forms.Button button11;
+        public System.Windows.Forms.TabControl tabMain;
+        public System.Windows.Forms.TextBox txtStockActual;
+        public System.Windows.Forms.TextBox txtStockMin;
+        public System.Windows.Forms.DateTimePicker dtpFechaActualizacion;
+        public System.Windows.Forms.TextBox txtCostoAct;
+        public System.Windows.Forms.TextBox txtCantidad;
+        public System.Windows.Forms.ComboBox cbMedida;
+        public System.Windows.Forms.DateTimePicker dtpFecha;
+        public System.Windows.Forms.ComboBox cbMarca;
+        public System.Windows.Forms.TextBox txtidInsumo;
+        public System.Windows.Forms.ComboBox cbProv;
+        public System.Windows.Forms.ComboBox cbRubro;
+        public System.Windows.Forms.CheckBox cbEstado;
+        public System.Windows.Forms.TextBox txtDescripcion;
+        public System.Windows.Forms.TextBox txtInsumo;
+        public System.Windows.Forms.TabPage tabInformacion;
+        public System.Windows.Forms.TabPage tabListado;
     }
 }
