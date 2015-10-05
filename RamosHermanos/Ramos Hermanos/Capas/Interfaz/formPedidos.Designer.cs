@@ -50,6 +50,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.mcAgenda = new System.Windows.Forms.MonthCalendar();
             this.groupbox = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
             this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +69,7 @@
             this.label27 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label22 = new System.Windows.Forms.Label();
-            this.txtidInsumo = new System.Windows.Forms.TextBox();
+            this.txtidpedido = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.tabRemito = new System.Windows.Forms.TabPage();
@@ -97,7 +98,6 @@
             this.colCondicionIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabReportePedido = new System.Windows.Forms.TabPage();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tabMain.SuspendLayout();
@@ -165,7 +165,7 @@
             this.groupBox1.Controls.Add(this.label27);
             this.groupBox1.Controls.Add(this.dtpFecha);
             this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.txtidInsumo);
+            this.groupBox1.Controls.Add(this.txtidpedido);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -334,6 +334,18 @@
             this.groupbox.TabStop = false;
             this.groupbox.Text = "Productos";
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(670, 320);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 28);
+            this.button1.TabIndex = 137;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // dgvPedido
             // 
             this.dgvPedido.AllowUserToAddRows = false;
@@ -380,13 +392,11 @@
             // 
             this.colCodigo.HeaderText = "Código";
             this.colCodigo.Name = "colCodigo";
-            this.colCodigo.ReadOnly = true;
             // 
             // colProducto
             // 
             this.colProducto.HeaderText = "Producto";
             this.colProducto.Name = "colProducto";
-            this.colProducto.ReadOnly = true;
             // 
             // colCantidad
             // 
@@ -397,13 +407,11 @@
             // 
             this.colPrecio.HeaderText = "Precio Unitario";
             this.colPrecio.Name = "colPrecio";
-            this.colPrecio.ReadOnly = true;
             // 
             // colSubTotal
             // 
             this.colSubTotal.HeaderText = "SubTotal";
             this.colSubTotal.Name = "colSubTotal";
-            this.colSubTotal.ReadOnly = true;
             // 
             // btnEliminarProducto
             // 
@@ -536,14 +544,13 @@
             this.label22.TabIndex = 104;
             this.label22.Text = "Fecha Pedido";
             // 
-            // txtidInsumo
+            // txtidpedido
             // 
-            this.txtidInsumo.Enabled = false;
-            this.txtidInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtidInsumo.Location = new System.Drawing.Point(114, 31);
-            this.txtidInsumo.Name = "txtidInsumo";
-            this.txtidInsumo.Size = new System.Drawing.Size(300, 20);
-            this.txtidInsumo.TabIndex = 96;
+            this.txtidpedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtidpedido.Location = new System.Drawing.Point(114, 31);
+            this.txtidpedido.Name = "txtidpedido";
+            this.txtidpedido.Size = new System.Drawing.Size(300, 20);
+            this.txtidpedido.TabIndex = 96;
             // 
             // label17
             // 
@@ -776,18 +783,6 @@
             this.coltipoCliente.Name = "coltipoCliente";
             this.coltipoCliente.ReadOnly = true;
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(670, 320);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 28);
-            this.button1.TabIndex = 137;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // tabReportePedido
             // 
             this.tabReportePedido.Controls.Add(this.crystalReportViewer1);
@@ -862,7 +857,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox txtidInsumo;
+        private System.Windows.Forms.TextBox txtidpedido;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TabPage tabRemito;

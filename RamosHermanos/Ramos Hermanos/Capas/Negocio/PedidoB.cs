@@ -27,12 +27,12 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@rol", pedido.rol);
-                //cmd.Parameters.AddWithValue("@domicilio", pedido.domicilio);
                 cmd.Parameters.AddWithValue("@fechaPedido", pedido.fechaPedido);
                 cmd.Parameters.AddWithValue("@fechaEntrega", pedido.fechaEntrega);
                 cmd.Parameters.AddWithValue("@observaciones", pedido.observaciones);
                 cmd.Parameters.AddWithValue("@total", pedido.total);
                 cmd.Parameters.AddWithValue("@estado", pedido.estado);
+                
 
                 cmd.ExecuteNonQuery();
 

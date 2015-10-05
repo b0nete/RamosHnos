@@ -13,21 +13,26 @@ namespace RamosHermanos.Capas.Negocio
 {
     class itemsPedidoB
     {
-        public static itemPedidoEntity InsertIntoItemPedido(itemPedidoEntity itemPedido, DataGridView dgv)
+        public static itemPedidoEntity InsertItemPedido(itemPedidoEntity itemPedido, DataGridView dgv)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO itemsPedido (idpedido,cantidad,preciounitario,subtotal) 
-                                 VALUES (@idpedido, @cantidad, @preciounitario, @subtotal)";
+                string query = @"INSERT INTO itemsPedido (pedido, producto, cantidad, precioUnitario, subTotal) 
+                                 VALUES (@factura, @producto, @cantidad, @precioUnitario, @subTotal)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
+
                 foreach (DataGridView row in dgv.Rows)
                 {
-                    itemPedidoEntity it = new itemPedidoEntity();
-                                                            
+                    cmd.Parameters.AddWithValue("@pedido", itemPedido.pedido);
+                    cmd.Parameters.AddWithValue("@producto", itemPedido.producto);
+                    cmd.Parameters.AddWithValue("@cantidad", itemPedido.cantidad);
+                    cmd.Parameters.AddWithValue("@precioUnitario", itemPedido.preciounitario);
+                    cmd.Parameters.AddWithValue("@subTotal", itemPedido.subtotal);
+
                     cmd.ExecuteNonQuery();
                 }
 

@@ -189,6 +189,12 @@
     <Compile Include="Capas\Interfaz\formRubro.Designer.cs">
       <DependentUpon>formRubro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaz\formSaldos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\formSaldos.Designer.cs">
+      <DependentUpon>formSaldos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\formtipoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -318,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formRubro.resx">
       <DependentUpon>formRubro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\formSaldos.resx">
+      <DependentUpon>formSaldos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formtipoCliente.resx">
       <DependentUpon>formtipoCliente.cs</DependentUpon>

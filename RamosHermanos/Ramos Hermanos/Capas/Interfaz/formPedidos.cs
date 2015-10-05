@@ -32,13 +32,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-        itemPedidoEntity itempedido = new itemPedidoEntity();
-        public void cargaritemPedido()
-        {
-             
-                    
-        }
-
+       
         private void formPedidos_Load(object sender, EventArgs e)
         {
             ProductoB.CargarDGV(dgvProducto);
@@ -145,11 +139,28 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
+        itemPedidoEntity itemPedido = new itemPedidoEntity();
+        private void CargarItemPedido()
+        {
+            DataGridViewRow row = new DataGridViewRow();
+            
+            itemPedido.pedido = Convert.ToInt32((row.Cells["colCodigo"].Value));
+            itemPedido.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
+            itemPedido.preciounitario = Convert.ToDouble(row.Cells["colPrecio"].Value);
+            itemPedido.subtotal = Convert.ToDouble(row.Cells["colSubTotal"].Value);
+
+        }
+
+        
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             cargarPedido();
             PedidoB.InsertPedido(pedido);
-            itemsPedidoB.InsertIntoItemPedido(itempedido, dgvPedido);
+
+            itemPedido.pedido = Convert.ToInt32(txtidpedido.Text);
+            CargarItemPedido();
+            itemsPedidoB.InsertItemPedido(itemPedido, dgvPedido);
+
             
         }
 
