@@ -121,7 +121,6 @@ namespace RamosHermanos.Capas.Interfaz
             itemFactura.factura = txtnumFactura.Text;
             CargarItemFactura();
             itemsFacturaB.InsertItemFactura(itemFactura, dgvFactura);
-
         }
 
         // Metodos

@@ -298,7 +298,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool ValidarCampos() //Verificar valores necesarios cargados.
         {
-            if (txtnumDoc.Text == string.Empty || txtNombre.Text == string.Empty || txtApellido.Text == string.Empty || txtCUIL.MaskFull == false)
+            if (txtnumDoc.Text == string.Empty || txtNombre.Text == string.Empty || txtApellido.Text == string.Empty || txtCUIL.MaskFull == false || cbVehiculo.SelectedValue == null)
             {
                 MessageBox.Show("Datos necesarios incompletos.");
                 return false;
@@ -467,7 +467,7 @@ namespace RamosHermanos.Capas.Interfaz
             string idCalle = row.Cells["colCIDcalle"].Value.ToString();
             string calle = row.Cells["colCCalle"].Value.ToString();
 
-            this.dgvRecorridoLu.Rows.Add(new[] { idCalle, calle });
+            this.dgvRecorridoLu.Rows.Add(new[] { idCalle, calle});
         }
 
         //#endregion

@@ -202,11 +202,11 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query = @"SELECT V.idPersona, V.domicilio
-FROM Visitas V
-INNER JOIN Domicilios D ON D.idDomicilio = V.domicilio
-INNER JOIN Calles C ON D.calle = C.idCalle
-INNER JOIN itemsRecorrido IR ON IR.calle = C.idCalle
-WHERE V.dia = 'LU' and V.distribuidor = '1' and D.numero >= IR.desde and D.numero <= IR.hasta";
+                                 FROM Visitas V
+                                 INNER JOIN Domicilios D ON D.idDomicilio = V.domicilio
+                                 INNER JOIN Calles C ON D.calle = C.idCalle
+                                 INNER JOIN itemsRecorrido IR ON IR.calle = C.idCalle
+                                 WHERE V.dia = 'LU' and V.distribuidor = '1' and D.numero >= IR.desde and D.numero <= IR.hasta";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 

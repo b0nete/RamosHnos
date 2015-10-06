@@ -160,7 +160,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void testToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            formPedidos frm = new formPedidos();
+            formFactura frm = new formFactura();
             frm.Show();
         }
 
