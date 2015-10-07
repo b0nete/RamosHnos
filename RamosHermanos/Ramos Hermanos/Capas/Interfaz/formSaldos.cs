@@ -16,5 +16,35 @@ namespace RamosHermanos.Capas.Interfaz
         {
             InitializeComponent();
         }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardarProv_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabClienteJ_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

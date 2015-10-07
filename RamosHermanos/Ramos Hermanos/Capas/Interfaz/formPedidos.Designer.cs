@@ -546,6 +546,7 @@
             // 
             // txtidpedido
             // 
+            this.txtidpedido.Enabled = false;
             this.txtidpedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtidpedido.Location = new System.Drawing.Point(114, 31);
             this.txtidpedido.Name = "txtidpedido";

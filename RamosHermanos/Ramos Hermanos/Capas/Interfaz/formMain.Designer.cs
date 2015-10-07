@@ -76,6 +76,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tmrHora = new System.Windows.Forms.Timer(this.components);
+            this.test1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msPrincipal.SuspendLayout();
             this.pnlInfo.SuspendLayout();
             this.SuspendLayout();
@@ -271,26 +272,26 @@
             this.nºInsumoToolStripMenuItem,
             this.listadoToolStripMenuItem3});
             this.buscarToolStripMenuItem3.Name = "buscarToolStripMenuItem3";
-            this.buscarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.buscarToolStripMenuItem3.Size = new System.Drawing.Size(116, 22);
             this.buscarToolStripMenuItem3.Text = "Buscar";
             // 
             // nºInsumoToolStripMenuItem
             // 
             this.nºInsumoToolStripMenuItem.Name = "nºInsumoToolStripMenuItem";
-            this.nºInsumoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nºInsumoToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.nºInsumoToolStripMenuItem.Text = "Nº Insumo";
             this.nºInsumoToolStripMenuItem.Click += new System.EventHandler(this.nºInsumoToolStripMenuItem_Click);
             // 
             // listadoToolStripMenuItem3
             // 
             this.listadoToolStripMenuItem3.Name = "listadoToolStripMenuItem3";
-            this.listadoToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.listadoToolStripMenuItem3.Size = new System.Drawing.Size(123, 22);
             this.listadoToolStripMenuItem3.Text = "Listado";
             // 
             // registrarToolStripMenuItem2
             // 
             this.registrarToolStripMenuItem2.Name = "registrarToolStripMenuItem2";
-            this.registrarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.registrarToolStripMenuItem2.Size = new System.Drawing.Size(116, 22);
             this.registrarToolStripMenuItem2.Text = "Registrar";
             // 
             // cajaToolStripMenuItem
@@ -364,6 +365,8 @@
             // 
             // testToolStripMenuItem
             // 
+            this.testToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.test1ToolStripMenuItem});
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
             this.testToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.testToolStripMenuItem.Text = "Test";
@@ -454,6 +457,13 @@
             this.tmrHora.Interval = 1000;
             this.tmrHora.Tick += new System.EventHandler(this.tmrHora_Tick);
             // 
+            // test1ToolStripMenuItem
+            // 
+            this.test1ToolStripMenuItem.Name = "test1ToolStripMenuItem";
+            this.test1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.test1ToolStripMenuItem.Text = "Test1";
+            this.test1ToolStripMenuItem.Click += new System.EventHandler(this.test1ToolStripMenuItem_Click);
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,5 +535,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem acercaDeRamosHnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem test1ToolStripMenuItem;
     }
 }

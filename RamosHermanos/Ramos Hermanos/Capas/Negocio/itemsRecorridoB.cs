@@ -44,6 +44,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        
         public static itemRecorridoEntity BuscarItemRecorrido(itemRecorridoEntity itemRecorrido, DataGridView dgv)
         {
             try

@@ -140,11 +140,10 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         itemPedidoEntity itemPedido = new itemPedidoEntity();
-        private void CargarItemPedido()
+        private void CargarItemPedido(DataGridViewRow row)
         {
-            DataGridViewRow row = new DataGridViewRow();
-            
             itemPedido.pedido = Convert.ToInt32((row.Cells["colCodigo"].Value));
+            itemPedido.producto = Convert.ToInt32((row.Cells["colProducto"].Value));
             itemPedido.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
             itemPedido.preciounitario = Convert.ToDouble(row.Cells["colPrecio"].Value);
             itemPedido.subtotal = Convert.ToDouble(row.Cells["colSubTotal"].Value);
@@ -157,9 +156,12 @@ namespace RamosHermanos.Capas.Interfaz
             cargarPedido();
             PedidoB.InsertPedido(pedido);
 
-            itemPedido.pedido = Convert.ToInt32(txtidpedido.Text);
-            CargarItemPedido();
-            itemsPedidoB.InsertItemPedido(itemPedido, dgvPedido);
+            foreach (DataGridViewRow row in dgvPedido.Rows)
+            {
+                CargarItemPedido(row);
+                itemsPedidoB.InsertItemPedido(itemPedido,dgvPedido);
+            }
+            MessageBox.Show("Pedido Guardado");
 
             
         }

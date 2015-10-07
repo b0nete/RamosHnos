@@ -20,21 +20,17 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query = @"INSERT INTO itemsPedido (pedido, producto, cantidad, precioUnitario, subTotal) 
-                                 VALUES (@factura, @producto, @cantidad, @precioUnitario, @subTotal)";
+                                 VALUES (@pedido, @producto, @cantidad, @precioUnitario, @subTotal)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
+                cmd.Parameters.AddWithValue("@pedido", itemPedido.pedido);
+                cmd.Parameters.AddWithValue("@producto", itemPedido.producto);
+                cmd.Parameters.AddWithValue("@cantidad", itemPedido.cantidad);
+                cmd.Parameters.AddWithValue("@precioUnitario", itemPedido.preciounitario);
+                cmd.Parameters.AddWithValue("@subTotal", itemPedido.subtotal);
 
-                foreach (DataGridView row in dgv.Rows)
-                {
-                    cmd.Parameters.AddWithValue("@pedido", itemPedido.pedido);
-                    cmd.Parameters.AddWithValue("@producto", itemPedido.producto);
-                    cmd.Parameters.AddWithValue("@cantidad", itemPedido.cantidad);
-                    cmd.Parameters.AddWithValue("@precioUnitario", itemPedido.preciounitario);
-                    cmd.Parameters.AddWithValue("@subTotal", itemPedido.subtotal);
-
-                    cmd.ExecuteNonQuery();
-                }
+                cmd.ExecuteNonQuery();
 
                 MySQL.DisconnectDB();
 

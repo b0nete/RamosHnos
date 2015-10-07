@@ -36,7 +36,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Guardado!");
+                
                 MySQL.DisconnectDB();
 
                 return pedido;
