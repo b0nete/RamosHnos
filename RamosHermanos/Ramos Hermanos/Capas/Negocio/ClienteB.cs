@@ -254,7 +254,8 @@ namespace RamosHermanos.Capas.Negocio
                 string query = @"SELECT C.idCliente, C.fechaAlta, C.tipoDoc as IDtipoDoc, TP.tipoDoc, C.numDoc, C.sexo, C.cuil, C.apellido, C.nombre, c.estadoCivil, c.condicionIVA, C.tipoCliente as IDtipoCliente, TC.tipocliente
                                  FROM Clientes C
                                  INNER JOIN tipoDocumento TP ON C.tipoDoc = TP.idTipoDoc
-                                 INNER JOIN tipoCliente TC ON C.tipoDoc = TC.idTipoCliente";
+                                 INNER JOIN tipoCliente TC ON C.tipoDoc = TC.idTipoCliente
+                                 WHERE C.tipoPersona = 'P'";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -264,15 +265,60 @@ namespace RamosHermanos.Capas.Negocio
                 {
                     dgv.Rows.Add(
                     Convert.ToString(dr["idCliente"]),
-                    Convert.ToDateTime(dr["fechaAlta"]).ToString("dd/MM/yyyy"),
+                    Convert.ToString(dr["apellido"]),
+                    Convert.ToString(dr["nombre"]),
                     Convert.ToString(dr["IDtipoDoc"]),
                     Convert.ToString(dr["tipoDoc"]),
                     Convert.ToString(dr["numDoc"]),
-                    Convert.ToString(dr["sexo"]),
                     Convert.ToString(dr["cuil"]),
-                    Convert.ToString(dr["apellido"]),
-                    Convert.ToString(dr["nombre"]),
+                    Convert.ToDateTime(dr["fechaAlta"]).ToString("dd/MM/yyyy"),
+                    Convert.ToString(dr["sexo"]),                  
                     Convert.ToString(dr["estadoCivil"]),
+                    Convert.ToString(dr["condicionIVA"]),
+                    Convert.ToString(dr["IDtipoCliente"]),
+                    Convert.ToString(dr["tipocliente"]));
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void CargarDGVPJ(DataGridView dgv)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"SELECT C.idCliente, C.fechaAlta, C.cuil, C.nombre, c.condicionIVA, c.tipoCliente as IDtipoCliente, TC.tipocliente
+                                 FROM Clientes C
+                                 INNER JOIN tipocliente TC ON C.tipoCliente = TC.idtipoCliente
+                                 WHERE tipoPersona = 'PJ'";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idCliente"]),
+                    Convert.ToString(""),
+                    Convert.ToString(dr["nombre"]),
+                    Convert.ToString(""),
+                    Convert.ToString(""),
+                    Convert.ToString(""),
+                    Convert.ToString(dr["cuil"]),
+                    Convert.ToDateTime(dr["fechaAlta"]).ToString("dd/MM/yyyy"),
+                    Convert.ToString(""),
+                    Convert.ToString(""),
                     Convert.ToString(dr["condicionIVA"]),
                     Convert.ToString(dr["IDtipoCliente"]),
                     Convert.ToString(dr["tipocliente"]));

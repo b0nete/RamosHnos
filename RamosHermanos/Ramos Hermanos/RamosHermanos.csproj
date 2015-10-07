@@ -227,7 +227,6 @@
     </Compile>
     <Compile Include="Capas\Negocio\BarrioB.cs" />
     <Compile Include="Capas\Negocio\ClienteB.cs" />
-    <Compile Include="Capas\Negocio\ClienteJB.cs" />
     <Compile Include="Capas\Negocio\CalleB.cs" />
     <Compile Include="Capas\Negocio\itemsPedidoB.cs" />
     <Compile Include="Capas\Negocio\RecorridoB.cs" />
@@ -263,6 +262,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crFactura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Capas\Reportes\crReparto.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crReparto.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Capas\Reportes\dsFactura.cs">
@@ -346,6 +351,10 @@
     <EmbeddedResource Include="Capas\Reportes\crFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crFactura.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Reportes\crReparto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crReparto.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

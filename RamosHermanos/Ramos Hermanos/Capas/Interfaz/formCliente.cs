@@ -25,10 +25,14 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formCliente_Load(object sender, EventArgs e)
         {
-            //Tabs Inutilizados.
+            
+            // Tabs Inutilizados.
             tabMain.Controls.Remove(tabAdicional);
             tabMain.Controls.Remove(tabFamilia);
             tabMain.Controls.Remove(tabSugerencias);
+
+            // Listado
+            CheckListado();
 
             // Casos de Inicio.            
             switch (caseSwitch)
@@ -50,30 +54,26 @@ namespace RamosHermanos.Capas.Interfaz
                     MessageBox.Show("Default case");
                     break;
             }
-
-            //Cargar ComboBoxs.
-            ClienteB.CargarDGV(dgvCliente);
+            // ----------------- Persona ----------------- //
+            // Cargar ComboBoxs.            
             tipoDocB.CargarTipoDoc(cbTipoDoc);
             tipoClienteB.CargarTipoCliente(cbTipoCliente);
 
-            //Cargar Ultimas ordenes de entrega.
-            //VisitaB.BuscarOrdenMAX(visita);
-            //{
-            //    txtLun.Text = Convert.ToString(visita.olunes + 1);
-            //    txtMar.Text = Convert.ToString(visita.omartes + 1);
-            //    txtMie.Text = Convert.ToString(visita.omiercoles + 1);
-            //    txtJue.Text = Convert.ToString(visita.ojueves + 1);
-            //    txtVie.Text = Convert.ToString(visita.oviernes + 1);
-            //    txtSab.Text = Convert.ToString(visita.osabado + 1);
-            //    txtDom.Text = Convert.ToString(visita.odomingo + 1);
-            //}
-
-            //Valores Iniciales
+            // Valores Iniciales
             cbSexo.SelectedIndex = 0;
             cbEstadoCivil.SelectedIndex = 0;
             cbIVA.SelectedIndex = 4;
 
             CheckColor(cbEstado, lblEstado);
+
+            // ----------------- Persona Juridica ----------------- //
+            // Cargar ComboBoxs.
+            tipoClienteB.CargarTipoCliente(cbtipoClientePJ);
+
+            // Valores Iniciales
+            cbIVAPJ.SelectedIndex = 0;
+
+            CheckColor(cbEstadoPJ, lblEstadoPJ);
         }
 
         private void gbCliente_Enter(object sender, EventArgs e)
@@ -397,6 +397,14 @@ namespace RamosHermanos.Capas.Interfaz
 
         // Metodos
 
+        private void CheckListado()
+        {
+            if (rbDGV.Checked == true)
+                ClienteB.CargarDGV(dgvCliente);
+            else
+                ClienteB.CargarDGVPJ(dgvCliente);
+        }
+
         private void BuscarCliente()
         {
             if (txtnumDoc.Text == "")
@@ -520,6 +528,16 @@ namespace RamosHermanos.Capas.Interfaz
         private bool ValidarCampos() //Verificar valores necesarios cargados.
         {
             if (txtnumDoc.Text == string.Empty || txtNombre.Text == string.Empty || txtApellido.Text == string.Empty || txtCUIL.MaskFull == false)
+            {
+                MessageBox.Show("Datos necesarios incompletos.");
+                return false;
+            }
+            return true;
+        }
+
+        private bool ValidarCamposPJ() //Verificar valores necesarios cargados.
+        {
+            if (txtCUILPJ.Text == string.Empty || txtNombrePJ.Text == string.Empty)
             {
                 MessageBox.Show("Datos necesarios incompletos.");
                 return false;
@@ -895,6 +913,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void CargarCliente()
         {
             cliente.rol = 1;
+            cliente.tipoPersona = "P";
             //cliente.idCliente = Convert.ToInt32(txtIDcliente.Text);
             cliente.fechaAlta = dtpFechaAlta.Value;
             cliente.tipoDoc = Convert.ToInt32(cbTipoDoc.SelectedValue);
@@ -907,6 +926,20 @@ namespace RamosHermanos.Capas.Interfaz
             cliente.condicionIVA = cbIVA.Text;
             cliente.tipoCliente = Convert.ToInt32(cbTipoCliente.SelectedValue);
             cliente.estado = cbEstado.Checked;
+        }
+
+        private void CargarClientePJ()
+        {
+            cliente.rol = 1;
+            cliente.tipoPersona = "PJ";
+            //cliente.idCliente = Convert.ToInt32(txtIDcliente.Text);
+            cliente.fechaAlta = dtpFechaAltaPJ.Value;
+            cliente.tipoDoc = 5;
+            cliente.cuil = txtCUILPJ.Text;
+            cliente.nombre = txtNombrePJ.Text;
+            cliente.condicionIVA = cbIVAPJ.Text;
+            cliente.tipoCliente = Convert.ToInt32(cbtipoClientePJ.SelectedValue);
+            cliente.estado = cbEstadoPJ.Checked;
         }
 
         SaldoEntity saldo = new SaldoEntity();
@@ -957,10 +990,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button10_Click(object sender, EventArgs e)
         {
-            //Tipo de Persona = Persona
-            cliente.tipoPersona = "PJ";
-
-            if (ValidarCampos() == false)
+            if (ValidarCamposPJ() == false)
             {
                 return;
             }
@@ -972,7 +1002,7 @@ namespace RamosHermanos.Capas.Interfaz
                     DialogResult result = MessageBox.Show("El cliente existe, desea actualizarlo con los datos ingresados?", "Cliente existente", MessageBoxButtons.OKCancel);
                     if (result == DialogResult.OK)
                     {
-                        CargarCliente();
+                        CargarClientePJ();
                         ClienteB.UpdateCliente(cliente);
 
                         CargarSaldo(txtIDcliente);
@@ -996,7 +1026,8 @@ namespace RamosHermanos.Capas.Interfaz
                 }
                 else if (ClienteB.ExisteCliente(cliente) == false)
                 {
-                    CargarCliente();
+                    CargarClientePJ();
+                    // Se cargan los valores que varian de un cliente P.
                     ClienteB.InsertCliente(cliente, txtIDcliente);
 
                     CargarSaldo(txtIDcliente);
@@ -1027,6 +1058,22 @@ namespace RamosHermanos.Capas.Interfaz
                 CargarItemsVisita(strDia, row);
                 VisitaB.InsertVisita(visita, dgvLu);
             }
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            formtipoCliente frm = new formtipoCliente();
+            frm.Show();
+        }
+
+        private void rbDGV_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckListado();
+        }
+
+        private void rbDGVPJ_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckListado();
         }
 
         

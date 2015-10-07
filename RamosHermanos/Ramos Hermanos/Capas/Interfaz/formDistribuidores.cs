@@ -466,8 +466,9 @@ namespace RamosHermanos.Capas.Interfaz
         {
             string idCalle = row.Cells["colCIDcalle"].Value.ToString();
             string calle = row.Cells["colCCalle"].Value.ToString();
+            string asd = "true";
 
-            this.dgvRecorridoLu.Rows.Add(new[] { idCalle, calle});
+            this.dgvRecorridoLu.Rows.Add(new[] {idCalle, calle, "", "", asd});
         }
 
         //#endregion

@@ -33,14 +33,14 @@
             this.tabListado = new System.Windows.Forms.TabPage();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coltipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNumDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCUIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCondicionIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -237,6 +237,8 @@
             this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewComboBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.rbDGV = new System.Windows.Forms.RadioButton();
+            this.rbDGVPJ = new System.Windows.Forms.RadioButton();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -283,6 +285,8 @@
             // 
             // tabListado
             // 
+            this.tabListado.Controls.Add(this.rbDGVPJ);
+            this.tabListado.Controls.Add(this.rbDGV);
             this.tabListado.Controls.Add(this.dgvCliente);
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
@@ -298,23 +302,22 @@
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDCliente,
-            this.colFechaAlta,
+            this.colApellido,
+            this.colNombre,
             this.colIDTipoDoc,
             this.coltipoDoc,
             this.colNumDoc,
-            this.colSexo,
             this.colCUIL,
-            this.colApellido,
-            this.colNombre,
+            this.colFechaAlta,
+            this.colSexo,
             this.colEstadoCivil,
             this.colCondicionIVA,
             this.colIDtipoCliente,
             this.coltipoCliente});
-            this.dgvCliente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCliente.Location = new System.Drawing.Point(0, 0);
+            this.dgvCliente.Location = new System.Drawing.Point(0, 30);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
-            this.dgvCliente.Size = new System.Drawing.Size(776, 536);
+            this.dgvCliente.Size = new System.Drawing.Size(776, 506);
             this.dgvCliente.TabIndex = 1;
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
             this.dgvCliente.SelectionChanged += new System.EventHandler(this.dgvCliente_SelectionChanged);
@@ -326,11 +329,17 @@
             this.colIDCliente.Name = "colIDCliente";
             this.colIDCliente.ReadOnly = true;
             // 
-            // colFechaAlta
+            // colApellido
             // 
-            this.colFechaAlta.HeaderText = "Fecha Alta";
-            this.colFechaAlta.Name = "colFechaAlta";
-            this.colFechaAlta.ReadOnly = true;
+            this.colApellido.HeaderText = "Apellido";
+            this.colApellido.Name = "colApellido";
+            this.colApellido.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
             // 
             // colIDTipoDoc
             // 
@@ -351,29 +360,23 @@
             this.colNumDoc.Name = "colNumDoc";
             this.colNumDoc.ReadOnly = true;
             // 
-            // colSexo
-            // 
-            this.colSexo.HeaderText = "Sexo";
-            this.colSexo.Name = "colSexo";
-            this.colSexo.ReadOnly = true;
-            // 
             // colCUIL
             // 
             this.colCUIL.HeaderText = "CUIL";
             this.colCUIL.Name = "colCUIL";
             this.colCUIL.ReadOnly = true;
             // 
-            // colApellido
+            // colFechaAlta
             // 
-            this.colApellido.HeaderText = "Apellido";
-            this.colApellido.Name = "colApellido";
-            this.colApellido.ReadOnly = true;
+            this.colFechaAlta.HeaderText = "Fecha Alta";
+            this.colFechaAlta.Name = "colFechaAlta";
+            this.colFechaAlta.ReadOnly = true;
             // 
-            // colNombre
+            // colSexo
             // 
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.ReadOnly = true;
+            this.colSexo.HeaderText = "Sexo";
+            this.colSexo.Name = "colSexo";
+            this.colSexo.ReadOnly = true;
             // 
             // colEstadoCivil
             // 
@@ -396,7 +399,7 @@
             // 
             // coltipoCliente
             // 
-            this.coltipoCliente.HeaderText = "Tipo Cliente";
+            this.coltipoCliente.HeaderText = "Categoria";
             this.coltipoCliente.Name = "coltipoCliente";
             this.coltipoCliente.ReadOnly = true;
             // 
@@ -1335,6 +1338,7 @@
             this.button5.Size = new System.Drawing.Size(28, 28);
             this.button5.TabIndex = 91;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // button6
             // 
@@ -2414,6 +2418,30 @@
             this.dataGridViewComboBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewComboBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // rbDGV
+            // 
+            this.rbDGV.AutoSize = true;
+            this.rbDGV.Checked = true;
+            this.rbDGV.Location = new System.Drawing.Point(8, 7);
+            this.rbDGV.Name = "rbDGV";
+            this.rbDGV.Size = new System.Drawing.Size(64, 17);
+            this.rbDGV.TabIndex = 2;
+            this.rbDGV.TabStop = true;
+            this.rbDGV.Text = "Persona";
+            this.rbDGV.UseVisualStyleBackColor = true;
+            this.rbDGV.CheckedChanged += new System.EventHandler(this.rbDGV_CheckedChanged);
+            // 
+            // rbDGVPJ
+            // 
+            this.rbDGVPJ.AutoSize = true;
+            this.rbDGVPJ.Location = new System.Drawing.Point(87, 7);
+            this.rbDGVPJ.Name = "rbDGVPJ";
+            this.rbDGVPJ.Size = new System.Drawing.Size(115, 17);
+            this.rbDGVPJ.TabIndex = 3;
+            this.rbDGVPJ.Text = "Personas Jurídicas";
+            this.rbDGVPJ.UseVisualStyleBackColor = true;
+            this.rbDGVPJ.CheckedChanged += new System.EventHandler(this.rbDGVPJ_CheckedChanged);
+            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2424,6 +2452,7 @@
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.formCliente_Load);
             this.tabListado.ResumeLayout(false);
+            this.tabListado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.tabInformacion.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
@@ -2473,19 +2502,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDTipoDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coltipoDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNumDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCUIL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoCivil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCondicionIVA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDtipoCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coltipoCliente;
         private System.Windows.Forms.TabPage tabFamilia;
         private System.Windows.Forms.TabPage tabSugerencias;
         private System.Windows.Forms.TabPage tabAdicional;
@@ -2680,6 +2696,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRIDdistribuidor;
         private System.Windows.Forms.DataGridViewComboBoxColumn colVLudistribuidor;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colVLuestado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDTipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coltipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNumDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCUIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoCivil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCondicionIVA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDtipoCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coltipoCliente;
+        private System.Windows.Forms.RadioButton rbDGVPJ;
+        private System.Windows.Forms.RadioButton rbDGV;
 
     }
 }
