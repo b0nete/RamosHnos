@@ -15,49 +15,40 @@ namespace RamosHermanos.Capas.Negocio
     class VisitaB
     {
 
-        public static VisitaEntity BuscarVisita(VisitaEntity visita)
+        public static VisitaEntity BuscarVisita(VisitaEntity visita, DataGridView dgv, string dia)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT * 
+                string query = @"SELECT D.rol, D.idPersona, D.idDomicilio, CONCAT(C.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto, V.distribuidor
                                  FROM Visitas V
-                                 INNER JOIN Dias D ON V.idVisita = D.idDias
-                                 INNER JOIN Orden O ON V.idVisita = O.idOrden
-                                 WHERE rol = @rol and idPersona = @idPersona";
+                                 INNER JOIN Domicilios D ON V.Domicilio = D.idDomicilio 
+                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
+                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
+                                 INNER JOIN Barrios B ON D.Barrio = B.idBarrio
+                                 INNER JOIN Calles C ON C.idCalle = D.Calle
+                                 WHERE D.rol = @rol and D.idPersona = @idPersona and dia = @dia";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@rol", visita.rol);
                 cmd.Parameters.AddWithValue("@idPersona", visita.idPersona);
+                cmd.Parameters.AddWithValue("@dia", visita.dia);
 
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr = cmd.ExecuteReader();
 
-                da.Fill(dt);
+                while (dr.Read())
+                {
+                    visita.idVisita = Convert.ToInt32(dr["idDomicilio"]);
+                    visita.dia = Convert.ToString(dr["domCompleto"]);
+                    visita.dia = Convert.ToString(dr["distribuidor"]);
+                    visita.estado = Convert.ToBoolean(dr["estado"]);
+                }
 
-                DataRow row = dt.Rows[0];
+                
 
-                //visita.idVisita = Convert.ToInt32(row["idVisita"]);
-                //visita.horarioVisitaA = Convert.ToString(row["horarioVisitaA"]);
-                //visita.horarioVisitaB = Convert.ToString(row["horarioVisitaB"]);
-                //// Dias
-                //visita.dlunes = Convert.ToBoolean(row["dlunes"]);
-                //visita.dmartes = Convert.ToBoolean(row["dmartes"]);
-                //visita.dmiercoles = Convert.ToBoolean(row["dmiercoles"]);
-                //visita.djueves = Convert.ToBoolean(row["djueves"]);
-                //visita.dviernes = Convert.ToBoolean(row["dviernes"]);
-                //visita.dsabado = Convert.ToBoolean(row["dsabado"]);
-                //visita.ddomingo = Convert.ToBoolean(row["ddomingo"]);
-                ////Orden
-                //visita.olunes = Convert.ToInt32(row["olunes"]);
-                //visita.omartes = Convert.ToInt32(row["omartes"]);
-                //visita.omiercoles = Convert.ToInt32(row["omiercoles"]);
-                //visita.ojueves = Convert.ToInt32(row["ojueves"]);
-                //visita.oviernes = Convert.ToInt32(row["oviernes"]);
-                //visita.osabado = Convert.ToInt32(row["osabado"]);
-                //visita.odomingo = Convert.ToInt32(row["odomingo"]);
+                dr.Close();
 
                 MySQL.DisconnectDB();
 

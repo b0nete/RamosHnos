@@ -211,7 +211,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 List<DistribuidorEntity> list = new List<DistribuidorEntity>();
 
-                string query = @"SELECT D.idDistribuidor, V.Patente
+                string query = @"SELECT D.idDistribuidor, CONCAT(D.nombre,' ', D.apellido) as nombre
                                  FROM Distribuidores D
                                  INNER JOIN Vehiculos V ON D.Vehiculo = V.idVehiculo";
 
@@ -223,7 +223,7 @@ namespace RamosHermanos.Capas.Negocio
                     DistribuidorEntity distribuidor = new DistribuidorEntity();
 
                     distribuidor.idDistribuidor = Convert.ToInt32(dr["idDistribuidor"]);
-                    distribuidor.nombre = Convert.ToString(dr["patente"]);
+                    distribuidor.nombre = Convert.ToString(dr["nombre"]);
 
                     list.Add(distribuidor);
                 }
@@ -237,25 +237,27 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void CargarDGVCB(ClienteEntity cliente, DataGridView dgv, string colDistribuidor)
+        public static void CargarDGVCB(ClienteEntity cliente, DataGridView dgv, string dia, string colDistribuidor)
         {
             try
             {
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT D.rol, D.idPersona, D.idDomicilio, CONCAT(C.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
-                                 FROM Domicilios D
+                string query = @"SELECT D.rol, D.idPersona, D.idDomicilio, CONCAT(C.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto, V.distribuidor
+                                 FROM Visitas V
+                                 INNER JOIN Domicilios D ON V.Domicilio = D.idDomicilio 
                                  INNER JOIN Provincias P ON P.idProvincia = D.Provincia
                                  INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
                                  INNER JOIN Barrios B ON D.Barrio = B.idBarrio
                                  INNER JOIN Calles C ON C.idCalle = D.Calle
-                                 WHERE D.rol = @rol and D.idPersona = @idPersona";
+                                 WHERE D.rol = @rol and D.idPersona = @idPersona and dia = @dia";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@rol", cliente.rol);
                 cmd.Parameters.AddWithValue("@idPersona", cliente.idCliente);
+                cmd.Parameters.AddWithValue("@dia", dia);
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -263,10 +265,11 @@ namespace RamosHermanos.Capas.Negocio
                 {
                     dgv.Rows.Add(
                     Convert.ToString(dr["idPersona"]),
-                    Convert.ToString(null),
+                    Convert.ToString(""),
                     Convert.ToString(dr["idDomicilio"]),
                     Convert.ToString(dr["domCompleto"]),
-                    Convert.ToString(null));
+                    Convert.ToString(""));
+                    //Convert.ToString(dr["distribuidor"]));
                 };
 
                 dr.Close();

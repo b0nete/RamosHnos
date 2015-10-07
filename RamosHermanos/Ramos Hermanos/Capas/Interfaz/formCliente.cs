@@ -400,9 +400,28 @@ namespace RamosHermanos.Capas.Interfaz
         private void CheckListado()
         {
             if (rbDGV.Checked == true)
+            {
+                // Mostramos columnas desabilitadas para mostrar una PJ.
+                dgvCliente.Columns[1].Visible = true;
+                dgvCliente.Columns[3].Visible = true;
+                dgvCliente.Columns[4].Visible = true;
+                dgvCliente.Columns[5].Visible = true;
+                dgvCliente.Columns[8].Visible = true;
+                dgvCliente.Columns[9].Visible = true;
                 ClienteB.CargarDGV(dgvCliente);
+            }
             else
+            {
+                // Ocultamos columnas innecesarias.
+                dgvCliente.Columns[1].Visible = false;
+                dgvCliente.Columns[3].Visible = false;
+                dgvCliente.Columns[4].Visible = false;
+                dgvCliente.Columns[5].Visible = false;
+                dgvCliente.Columns[8].Visible = false;
+                dgvCliente.Columns[9].Visible = false;
                 ClienteB.CargarDGVPJ(dgvCliente);
+            }
+                
         }
 
         private void BuscarCliente()
@@ -625,27 +644,11 @@ namespace RamosHermanos.Capas.Interfaz
                     txtCreditoMax.Text = Convert.ToString(saldo.creditoMax);
                     txtSaldo.Text = Convert.ToString(saldo.saldoActual);
 
-                    //CargarVisita(txtIDcliente);
-                    //VisitaB.BuscarVisita(visita);
-                    //txtIDVisita.Text = Convert.ToString(visita.idVisita);
-                    //dtpA.Text = visita.horarioVisitaA;
-                    //dtpB.Text = visita.horarioVisitaB;
-                    ////Dias
-                    //cbLunes.Checked = visita.dlunes;
-                    //cbMartes.Checked = visita.dmartes;
-                    //cbMiercoles.Checked = visita.dmiercoles;
-                    //cbJueves.Checked = visita.djueves;
-                    //cbViernes.Checked = visita.dviernes;
-                    //cbSabado.Checked = visita.dsabado;
-                    //cbDomingo.Checked = visita.ddomingo;
-                    //Orden
-                    //txtLun.Text = Convert.ToString(visita.olunes);
-                    //txtMar.Text = Convert.ToString(visita.omartes);
-                    //txtMie.Text = Convert.ToString(visita.omiercoles);
-                    //txtJue.Text = Convert.ToString(visita.ojueves);
-                    //txtVie.Text = Convert.ToString(visita.oviernes);
-                    //txtSab.Text = Convert.ToString(visita.osabado);
-                    //txtDom.Text = Convert.ToString(visita.odomingo);
+                    //Visita
+                    //visita.rol = 1;
+                    //visita.idPersona = Convert.ToInt32(txtIDcliente.Text);
+                    //string dia = "LU";
+                    //VisitaB.BuscarVisita(visita, dgvLu, dia);
 
                     //Contacto
                     DomicilioB.CargarTXT(txtDomic, txtIDcliente, 1);
@@ -657,8 +660,9 @@ namespace RamosHermanos.Capas.Interfaz
                     tabMain.Controls.Add(tabInformacion);
                     tabMain.Controls.Add(tabMovimientos);
 
-                    //Cargar tabReparto
-                    DistribuidorB.CargarDGVCB(cliente, dgvLu, "colVLudistribuidor");
+                    //Cargar Visita
+                    string dia = "LU";
+                    DistribuidorB.CargarDGVCB(cliente, dgvLu, dia,  "colVLudistribuidor");
                     //DistribuidorB.CargarDGVCB(cliente, dgvMa, "colVMadistribuidor");
                     //DistribuidorB.CargarDGVCB(cliente, dgvMi, "colVMidistribuidor");
                     //DistribuidorB.CargarDGVCB(cliente, dgvJu, "colVJudistribuidor");
@@ -1058,6 +1062,7 @@ namespace RamosHermanos.Capas.Interfaz
                 CargarItemsVisita(strDia, row);
                 VisitaB.InsertVisita(visita, dgvLu);
             }
+            MessageBox.Show("Guardado!");
         }
 
         private void button5_Click_1(object sender, EventArgs e)
@@ -1068,11 +1073,13 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void rbDGV_CheckedChanged(object sender, EventArgs e)
         {
+
             CheckListado();
         }
 
         private void rbDGVPJ_CheckedChanged(object sender, EventArgs e)
         {
+
             CheckListado();
         }
 

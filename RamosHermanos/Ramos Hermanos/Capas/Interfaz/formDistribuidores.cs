@@ -105,9 +105,16 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSaveVehi_Click(object sender, EventArgs e)
         {
-            CargarVehiculo();
-            VehiculoB.InsertVehiculo(vehiculo, txtIDvehiculo);
-            VehiculoB.CargarDGV(dgvVehiculos);
+            if (ValidarVehiculo() == false)
+            {
+                return;
+            }
+            else
+            {
+                CargarVehiculo();
+                VehiculoB.InsertVehiculo(vehiculo, txtIDvehiculo);
+                VehiculoB.CargarDGV(dgvVehiculos);
+            }           
         }
 
         private void btnUpdVeh_Click(object sender, EventArgs e)
@@ -306,6 +313,16 @@ namespace RamosHermanos.Capas.Interfaz
             return true;
         }
 
+        private bool ValidarVehiculo() //Verificar valores necesarios cargados.
+        {
+            if (cbMarca.SelectedText == "" || cbColor.SelectedValue == null || txtPatente.MaskFull == false)
+            {
+                MessageBox.Show("Datos necesarios incompletos.");
+                return false;
+            }
+            return true;
+        }
+
         private void BuscarDistribuidor()
         {
             if (txtnumDoc.Text == "")
@@ -466,9 +483,9 @@ namespace RamosHermanos.Capas.Interfaz
         {
             string idCalle = row.Cells["colCIDcalle"].Value.ToString();
             string calle = row.Cells["colCCalle"].Value.ToString();
-            string asd = "true";
+            string check = "true";
 
-            this.dgvRecorridoLu.Rows.Add(new[] {idCalle, calle, "", "", asd});
+            this.dgvRecorridoLu.Rows.Add(new[] {idCalle, calle, "", "", check});
         }
 
         //#endregion
