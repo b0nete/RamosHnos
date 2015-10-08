@@ -662,7 +662,11 @@ namespace RamosHermanos.Capas.Interfaz
 
                     //Cargar Visita
                     string dia = "LU";
-                    DistribuidorB.CargarDGVCB(cliente, dgvLu, dia,  "colVLudistribuidor");
+                    DistribuidorB.CargarDGVCB(cliente, dgvLu, dia, "colVLudistribuidor");
+                    visita.rol = 1;
+                    visita.idPersona = 4;
+                    visita.dia = "LU";
+                    VisitaB.BuscarVisita(visita, dgvLu, "colVLudistribuidor");
                     //DistribuidorB.CargarDGVCB(cliente, dgvMa, "colVMadistribuidor");
                     //DistribuidorB.CargarDGVCB(cliente, dgvMi, "colVMidistribuidor");
                     //DistribuidorB.CargarDGVCB(cliente, dgvJu, "colVJudistribuidor");

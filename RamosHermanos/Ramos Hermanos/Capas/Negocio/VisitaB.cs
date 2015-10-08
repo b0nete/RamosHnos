@@ -15,13 +15,13 @@ namespace RamosHermanos.Capas.Negocio
     class VisitaB
     {
 
-        public static VisitaEntity BuscarVisita(VisitaEntity visita, DataGridView dgv, string dia)
+        public static VisitaEntity BuscarVisita(VisitaEntity visita, DataGridView dgv, string colDistribuidor)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT D.rol, D.idPersona, D.idDomicilio, CONCAT(C.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto, V.distribuidor
+                string query = @"SELECT D.rol, D.idPersona, D.idDomicilio, CONCAT(C.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto, V.distribuidor, V.estado
                                  FROM Visitas V
                                  INNER JOIN Domicilios D ON V.Domicilio = D.idDomicilio 
                                  INNER JOIN Provincias P ON P.idProvincia = D.Provincia
@@ -38,15 +38,23 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
+                DataGridViewComboBoxColumn comboboxColumn = dgv.Columns[colDistribuidor] as DataGridViewComboBoxColumn;
+                
                 while (dr.Read())
                 {
-                    visita.idVisita = Convert.ToInt32(dr["idDomicilio"]);
-                    visita.dia = Convert.ToString(dr["domCompleto"]);
-                    visita.dia = Convert.ToString(dr["distribuidor"]);
-                    visita.estado = Convert.ToBoolean(dr["estado"]);
-                }
+                    for (int i = 0; dr.Read(); i++)
+                    {
+                        string idDom = Convert.ToString(dr["idDomicilio"]);
+                        string domCom = Convert.ToString(dr["domCompleto"]);
+                        string distrib = Convert.ToString(dr["distribuidor"]);
+                        bool estado = Convert.ToBoolean(dr["estado"]);
 
-                
+                        dgv.Rows[i].Cells[2].Value = idDom;
+                        dgv.Rows[i].Cells[3].Value = domCom;                        
+                        //comboboxColumn.ValueMember = distrib;
+                        dgv.Rows[i].Cells[6].Value = estado;
+                    }                    
+                }
 
                 dr.Close();
 
