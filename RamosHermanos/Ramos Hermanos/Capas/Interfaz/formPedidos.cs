@@ -22,8 +22,9 @@ namespace RamosHermanos.Capas.Interfaz
         PedidoEntity pedido = new PedidoEntity();
         public void cargarPedido()
         {
-            //pedido.persona = Convert.ToInt32(txtCliente.Text);
-            pedido.domicilio = cbDomicilio.Text;
+            pedido.rol = 1;
+            pedido.persona = Convert.ToInt32(txtidCliente.Text);
+            pedido.domicilio = Convert.ToString(cbDomicilio.SelectedValue);
             pedido.observaciones = txtObservaciones.Text;
             pedido.total = Convert.ToDouble(txtTotal.Text);
             pedido.estado = cbEstado.Text;
@@ -143,7 +144,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void CargarItemPedido(DataGridViewRow row)
         {
             itemPedido.pedido = Convert.ToInt32((row.Cells["colCodigo"].Value));
-            itemPedido.producto = Convert.ToInt32((row.Cells["colProducto"].Value));
+            itemPedido.producto = Convert.ToString((row.Cells["colProducto"].Value));
             itemPedido.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
             itemPedido.preciounitario = Convert.ToDouble(row.Cells["colPrecio"].Value);
             itemPedido.subtotal = Convert.ToDouble(row.Cells["colSubTotal"].Value);

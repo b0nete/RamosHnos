@@ -10,7 +10,7 @@ namespace RamosHermanos.Capas.Entidades
     {
         public int iditemsPedido { get; set; }
         public int pedido { get; set; }
-        public int producto { get; set; }
+        public string producto { get; set; }
         public int cantidad { get; set; }
         public Double preciounitario { get; set; }
         public Double subtotal { get; set; }
