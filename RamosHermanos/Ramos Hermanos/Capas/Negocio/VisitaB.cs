@@ -49,10 +49,10 @@ namespace RamosHermanos.Capas.Negocio
                         string distrib = Convert.ToString(dr["distribuidor"]);
                         bool estado = Convert.ToBoolean(dr["estado"]);
 
-                        dgv.Rows[i].Cells[2].Value = idDom;
-                        dgv.Rows[i].Cells[3].Value = domCom;                        
+                        dgv.Rows[i].Cells[1].Value = idDom;
+                        dgv.Rows[i].Cells[2].Value = domCom;                        
                         //comboboxColumn.ValueMember = distrib;
-                        dgv.Rows[i].Cells[6].Value = estado;
+                        dgv.Rows[i].Cells[4].Value = estado;
                     }                    
                 }
 

@@ -211,7 +211,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 List<DistribuidorEntity> list = new List<DistribuidorEntity>();
 
-                string query = @"SELECT D.idDistribuidor, CONCAT(D.nombre,' ', D.apellido) as nombre
+                string query = @"SELECT D.idDistribuidor, CONCAT(D.nombre,' ', D.apellido) as nombreCom
                                  FROM Distribuidores D
                                  INNER JOIN Vehiculos V ON D.Vehiculo = V.idVehiculo";
 
@@ -223,7 +223,7 @@ namespace RamosHermanos.Capas.Negocio
                     DistribuidorEntity distribuidor = new DistribuidorEntity();
 
                     distribuidor.idDistribuidor = Convert.ToInt32(dr["idDistribuidor"]);
-                    distribuidor.nombre = Convert.ToString(dr["nombre"]);
+                    distribuidor.nombreCompleto = Convert.ToString(dr["nombreCom"]);
 
                     list.Add(distribuidor);
                 }

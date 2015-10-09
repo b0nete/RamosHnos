@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCliente));
             this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.tabListado = new System.Windows.Forms.TabPage();
+            this.rbDGVPJ = new System.Windows.Forms.RadioButton();
+            this.rbDGV = new System.Windows.Forms.RadioButton();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -176,13 +178,6 @@
             this.tabLunes = new System.Windows.Forms.TabPage();
             this.btnSaveRepLu = new System.Windows.Forms.Button();
             this.dgvLu = new System.Windows.Forms.DataGridView();
-            this.colVLucliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRcliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVLudomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dfgdfgdfg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRIDdistribuidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVLudistribuidor = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colVLuestado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabMartes = new System.Windows.Forms.TabPage();
             this.btnSaveRepMa = new System.Windows.Forms.Button();
             this.dgvMa = new System.Windows.Forms.DataGridView();
@@ -237,8 +232,11 @@
             this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewComboBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.rbDGV = new System.Windows.Forms.RadioButton();
-            this.rbDGVPJ = new System.Windows.Forms.RadioButton();
+            this.colVLucliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVLudomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dfgdfgdfg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVLudistribuidor = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colVLuestado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -294,6 +292,30 @@
             this.tabListado.TabIndex = 5;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
+            // 
+            // rbDGVPJ
+            // 
+            this.rbDGVPJ.AutoSize = true;
+            this.rbDGVPJ.Location = new System.Drawing.Point(87, 7);
+            this.rbDGVPJ.Name = "rbDGVPJ";
+            this.rbDGVPJ.Size = new System.Drawing.Size(115, 17);
+            this.rbDGVPJ.TabIndex = 3;
+            this.rbDGVPJ.Text = "Personas Jurídicas";
+            this.rbDGVPJ.UseVisualStyleBackColor = true;
+            this.rbDGVPJ.CheckedChanged += new System.EventHandler(this.rbDGVPJ_CheckedChanged);
+            // 
+            // rbDGV
+            // 
+            this.rbDGV.AutoSize = true;
+            this.rbDGV.Checked = true;
+            this.rbDGV.Location = new System.Drawing.Point(8, 7);
+            this.rbDGV.Name = "rbDGV";
+            this.rbDGV.Size = new System.Drawing.Size(64, 17);
+            this.rbDGV.TabIndex = 2;
+            this.rbDGV.TabStop = true;
+            this.rbDGV.Text = "Persona";
+            this.rbDGV.UseVisualStyleBackColor = true;
+            this.rbDGV.CheckedChanged += new System.EventHandler(this.rbDGV_CheckedChanged);
             // 
             // dgvCliente
             // 
@@ -1920,64 +1942,17 @@
             // 
             // dgvLu
             // 
-            this.dgvLu.AllowUserToAddRows = false;
-            this.dgvLu.AllowUserToDeleteRows = false;
             this.dgvLu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colVLucliente,
-            this.colRcliente,
             this.colVLudomicilio,
             this.dfgdfgdfg,
-            this.colRIDdistribuidor,
             this.colVLudistribuidor,
             this.colVLuestado});
             this.dgvLu.Location = new System.Drawing.Point(0, 0);
             this.dgvLu.Name = "dgvLu";
             this.dgvLu.Size = new System.Drawing.Size(768, 470);
             this.dgvLu.TabIndex = 1;
-            // 
-            // colVLucliente
-            // 
-            this.colVLucliente.HeaderText = "Nº Cliente";
-            this.colVLucliente.Name = "colVLucliente";
-            this.colVLucliente.Visible = false;
-            // 
-            // colRcliente
-            // 
-            this.colRcliente.HeaderText = "Cliente";
-            this.colRcliente.Name = "colRcliente";
-            this.colRcliente.Visible = false;
-            // 
-            // colVLudomicilio
-            // 
-            this.colVLudomicilio.HeaderText = "ID Domicilio";
-            this.colVLudomicilio.Name = "colVLudomicilio";
-            // 
-            // dfgdfgdfg
-            // 
-            this.dfgdfgdfg.HeaderText = "Domicilio";
-            this.dfgdfgdfg.Name = "dfgdfgdfg";
-            this.dfgdfgdfg.Width = 400;
-            // 
-            // colRIDdistribuidor
-            // 
-            this.colRIDdistribuidor.HeaderText = "Nº Distribuidor";
-            this.colRIDdistribuidor.Name = "colRIDdistribuidor";
-            this.colRIDdistribuidor.Visible = false;
-            // 
-            // colVLudistribuidor
-            // 
-            this.colVLudistribuidor.HeaderText = "Distribuidor";
-            this.colVLudistribuidor.Name = "colVLudistribuidor";
-            this.colVLudistribuidor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colVLudistribuidor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colVLuestado
-            // 
-            this.colVLuestado.HeaderText = "Estado";
-            this.colVLuestado.Name = "colVLuestado";
-            this.colVLuestado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colVLuestado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tabMartes
             // 
@@ -2418,29 +2393,42 @@
             this.dataGridViewComboBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewComboBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // rbDGV
+            // colVLucliente
             // 
-            this.rbDGV.AutoSize = true;
-            this.rbDGV.Checked = true;
-            this.rbDGV.Location = new System.Drawing.Point(8, 7);
-            this.rbDGV.Name = "rbDGV";
-            this.rbDGV.Size = new System.Drawing.Size(64, 17);
-            this.rbDGV.TabIndex = 2;
-            this.rbDGV.TabStop = true;
-            this.rbDGV.Text = "Persona";
-            this.rbDGV.UseVisualStyleBackColor = true;
-            this.rbDGV.CheckedChanged += new System.EventHandler(this.rbDGV_CheckedChanged);
+            this.colVLucliente.HeaderText = "Nº Cliente";
+            this.colVLucliente.Name = "colVLucliente";
+            this.colVLucliente.ReadOnly = true;
+            this.colVLucliente.Visible = false;
             // 
-            // rbDGVPJ
+            // colVLudomicilio
             // 
-            this.rbDGVPJ.AutoSize = true;
-            this.rbDGVPJ.Location = new System.Drawing.Point(87, 7);
-            this.rbDGVPJ.Name = "rbDGVPJ";
-            this.rbDGVPJ.Size = new System.Drawing.Size(115, 17);
-            this.rbDGVPJ.TabIndex = 3;
-            this.rbDGVPJ.Text = "Personas Jurídicas";
-            this.rbDGVPJ.UseVisualStyleBackColor = true;
-            this.rbDGVPJ.CheckedChanged += new System.EventHandler(this.rbDGVPJ_CheckedChanged);
+            this.colVLudomicilio.HeaderText = "ID Domicilio";
+            this.colVLudomicilio.Name = "colVLudomicilio";
+            this.colVLudomicilio.ReadOnly = true;
+            // 
+            // dfgdfgdfg
+            // 
+            this.dfgdfgdfg.HeaderText = "Domicilio";
+            this.dfgdfgdfg.Name = "dfgdfgdfg";
+            this.dfgdfgdfg.ReadOnly = true;
+            this.dfgdfgdfg.Width = 400;
+            // 
+            // colVLudistribuidor
+            // 
+            this.colVLudistribuidor.DataPropertyName = "idDistribuidor";
+            this.colVLudistribuidor.HeaderText = "Distribuidor";
+            this.colVLudistribuidor.Name = "colVLudistribuidor";
+            this.colVLudistribuidor.ReadOnly = true;
+            this.colVLudistribuidor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colVLudistribuidor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colVLuestado
+            // 
+            this.colVLuestado.HeaderText = "Estado";
+            this.colVLuestado.Name = "colVLuestado";
+            this.colVLuestado.ReadOnly = true;
+            this.colVLuestado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colVLuestado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // formCliente
             // 
@@ -2689,13 +2677,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVLucliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRcliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVLudomicilio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dfgdfgdfg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRIDdistribuidor;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colVLudistribuidor;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colVLuestado;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
@@ -2711,6 +2692,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn coltipoCliente;
         private System.Windows.Forms.RadioButton rbDGVPJ;
         private System.Windows.Forms.RadioButton rbDGV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVLucliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVLudomicilio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dfgdfgdfg;
+        private System.Windows.Forms.DataGridViewComboBoxColumn colVLudistribuidor;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colVLuestado;
 
     }
 }

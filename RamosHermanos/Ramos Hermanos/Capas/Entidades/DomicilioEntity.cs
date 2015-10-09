@@ -21,5 +21,8 @@ namespace RamosHermanos.Capas.Entidades
         public string dpto { get; set; }
         public string CP { get; set; }
         public bool estado { get; set; }
+
+        // Atributos Extra
+        public string domCompleto { get; set; }
     }
 }

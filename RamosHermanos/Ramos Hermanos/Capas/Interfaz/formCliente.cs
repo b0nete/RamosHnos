@@ -397,6 +397,20 @@ namespace RamosHermanos.Capas.Interfaz
 
         // Metodos
 
+        private void CargarDGVV(DataGridView dgv, string colDistribuidor, DomicilioEntity domicilio)
+        {
+            DataGridViewComboBoxColumn comboboxColumn = dgv.Columns[colDistribuidor] as DataGridViewComboBoxColumn;
+
+            comboboxColumn.DataSource = DistribuidorB.ListDistribuidores();
+            comboboxColumn.ValueMember = "idDistribuidor";
+            comboboxColumn.DisplayMember = "nombreCompleto";
+
+            //
+
+            dgv.AutoGenerateColumns = false;
+            dgv.DataSource = DomicilioB.ListDomicilios(domicilio);
+        }
+
         private void CheckListado()
         {
             if (rbDGV.Checked == true)
@@ -661,12 +675,20 @@ namespace RamosHermanos.Capas.Interfaz
                     tabMain.Controls.Add(tabMovimientos);
 
                     //Cargar Visita
-                    string dia = "LU";
-                    DistribuidorB.CargarDGVCB(cliente, dgvLu, dia, "colVLudistribuidor");
-                    visita.rol = 1;
-                    visita.idPersona = 4;
-                    visita.dia = "LU";
-                    VisitaB.BuscarVisita(visita, dgvLu, "colVLudistribuidor");
+                    //string dia = "LU";
+                    //DistribuidorB.CargarDGVCB(cliente, dgvLu, dia, "colVLudistribuidor");
+                    //Asignamos valores.
+                    domicilio.rol = 1;
+                    if (txtIDcliente.Text != string.Empty)
+                        domicilio.idPersona = Convert.ToInt32(txtIDcliente.Text);
+                    else
+                        domicilio.idPersona = Convert.ToInt32(txtIDclientePJ.Text);
+                    CargarDGVV(dgvLu, "colVLudistribuidor", domicilio);
+
+                    //visita.rol = 1;
+                    //visita.idPersona = 4;
+                    //visita.dia = "LU";
+                    //VisitaB.BuscarVisita(visita, dgvLu, "colVLudistribuidor");
                     //DistribuidorB.CargarDGVCB(cliente, dgvMa, "colVMadistribuidor");
                     //DistribuidorB.CargarDGVCB(cliente, dgvMi, "colVMidistribuidor");
                     //DistribuidorB.CargarDGVCB(cliente, dgvJu, "colVJudistribuidor");
@@ -916,6 +938,8 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         // Entidades
+
+        DomicilioEntity domicilio = new DomicilioEntity();
 
         ClienteEntity cliente = new ClienteEntity();
         private void CargarCliente()

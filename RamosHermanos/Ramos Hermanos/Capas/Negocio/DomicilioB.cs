@@ -222,6 +222,53 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
-        
+
+        public static List<DomicilioEntity> ListDomicilios(DomicilioEntity domicilio)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                List<DomicilioEntity> list = new List<DomicilioEntity>();
+
+                string query = @"SELECT D.idPersona, D.idDomicilio, CONCAT(C.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
+                                 FROM Domicilios D
+                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
+                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
+                                 INNER JOIN Barrios B ON D.Barrio = B.idBarrio
+                                 INNER JOIN Calles C ON C.idCalle = D.Calle
+                                 WHERE D.rol = @rol and D.idPersona = @idPersona";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@rol", domicilio.rol);
+                cmd.Parameters.AddWithValue("@idPersona", domicilio.idPersona);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    list.Add(LoadDomicilio(dr));
+                }
+
+                return list;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        private static DomicilioEntity LoadDomicilio(IDataReader dr)
+        {
+            DomicilioEntity domicilio = new DomicilioEntity();
+
+            domicilio.idPersona = Convert.ToInt32(dr["idPersona"]);
+            domicilio.idDomicilio = Convert.ToInt32(dr["idDomicilio"]);
+            domicilio.domCompleto = Convert.ToString(dr["domCompleto"]);
+
+            return domicilio;
+        }
     }
 }

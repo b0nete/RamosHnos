@@ -21,5 +21,8 @@ namespace RamosHermanos.Capas.Entidades
         public string estadoCivil { get; set; }
         public bool estado { get; set; }
         public int vehiculo { get; set; }
+
+        // Atributos EXTRA.
+        public string nombreCompleto { get; set; }
     }
 }
