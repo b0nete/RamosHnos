@@ -143,7 +143,7 @@
             this.txtNombrePJ = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.txtSaldoActualPJ = new System.Windows.Forms.TextBox();
+            this.txtSaldoPJ = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
             this.txtCreditoMaxPJ = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
@@ -178,6 +178,11 @@
             this.tabLunes = new System.Windows.Forms.TabPage();
             this.btnSaveRepLu = new System.Windows.Forms.Button();
             this.dgvLu = new System.Windows.Forms.DataGridView();
+            this.colVLucliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVLudomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dfgdfgdfg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVLudistribuidor = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colVLuestado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabMartes = new System.Windows.Forms.TabPage();
             this.btnSaveRepMa = new System.Windows.Forms.Button();
             this.dgvMa = new System.Windows.Forms.DataGridView();
@@ -232,11 +237,6 @@
             this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewComboBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colVLucliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVLudomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dfgdfgdfg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVLudistribuidor = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colVLuestado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -1556,7 +1556,7 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.txtSaldoActualPJ);
+            this.groupBox10.Controls.Add(this.txtSaldoPJ);
             this.groupBox10.Controls.Add(this.label51);
             this.groupBox10.Controls.Add(this.txtCreditoMaxPJ);
             this.groupBox10.Controls.Add(this.label52);
@@ -1568,15 +1568,15 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Saldo";
             // 
-            // txtSaldoActualPJ
+            // txtSaldoPJ
             // 
-            this.txtSaldoActualPJ.Enabled = false;
-            this.txtSaldoActualPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtSaldoActualPJ.Location = new System.Drawing.Point(84, 43);
-            this.txtSaldoActualPJ.Name = "txtSaldoActualPJ";
-            this.txtSaldoActualPJ.Size = new System.Drawing.Size(174, 20);
-            this.txtSaldoActualPJ.TabIndex = 62;
-            this.txtSaldoActualPJ.Text = "00,00";
+            this.txtSaldoPJ.Enabled = false;
+            this.txtSaldoPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtSaldoPJ.Location = new System.Drawing.Point(84, 43);
+            this.txtSaldoPJ.Name = "txtSaldoPJ";
+            this.txtSaldoPJ.Size = new System.Drawing.Size(174, 20);
+            this.txtSaldoPJ.TabIndex = 62;
+            this.txtSaldoPJ.Text = "00,00";
             // 
             // label51
             // 
@@ -1953,6 +1953,43 @@
             this.dgvLu.Name = "dgvLu";
             this.dgvLu.Size = new System.Drawing.Size(768, 470);
             this.dgvLu.TabIndex = 1;
+            // 
+            // colVLucliente
+            // 
+            this.colVLucliente.HeaderText = "Nº Cliente";
+            this.colVLucliente.Name = "colVLucliente";
+            this.colVLucliente.ReadOnly = true;
+            this.colVLucliente.Visible = false;
+            // 
+            // colVLudomicilio
+            // 
+            this.colVLudomicilio.HeaderText = "ID Domicilio";
+            this.colVLudomicilio.Name = "colVLudomicilio";
+            this.colVLudomicilio.ReadOnly = true;
+            // 
+            // dfgdfgdfg
+            // 
+            this.dfgdfgdfg.HeaderText = "Domicilio";
+            this.dfgdfgdfg.Name = "dfgdfgdfg";
+            this.dfgdfgdfg.ReadOnly = true;
+            this.dfgdfgdfg.Width = 400;
+            // 
+            // colVLudistribuidor
+            // 
+            this.colVLudistribuidor.DataPropertyName = "idDistribuidor";
+            this.colVLudistribuidor.HeaderText = "Distribuidor";
+            this.colVLudistribuidor.Name = "colVLudistribuidor";
+            this.colVLudistribuidor.ReadOnly = true;
+            this.colVLudistribuidor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colVLudistribuidor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colVLuestado
+            // 
+            this.colVLuestado.HeaderText = "Estado";
+            this.colVLuestado.Name = "colVLuestado";
+            this.colVLuestado.ReadOnly = true;
+            this.colVLuestado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colVLuestado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tabMartes
             // 
@@ -2393,43 +2430,6 @@
             this.dataGridViewComboBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewComboBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // colVLucliente
-            // 
-            this.colVLucliente.HeaderText = "Nº Cliente";
-            this.colVLucliente.Name = "colVLucliente";
-            this.colVLucliente.ReadOnly = true;
-            this.colVLucliente.Visible = false;
-            // 
-            // colVLudomicilio
-            // 
-            this.colVLudomicilio.HeaderText = "ID Domicilio";
-            this.colVLudomicilio.Name = "colVLudomicilio";
-            this.colVLudomicilio.ReadOnly = true;
-            // 
-            // dfgdfgdfg
-            // 
-            this.dfgdfgdfg.HeaderText = "Domicilio";
-            this.dfgdfgdfg.Name = "dfgdfgdfg";
-            this.dfgdfgdfg.ReadOnly = true;
-            this.dfgdfgdfg.Width = 400;
-            // 
-            // colVLudistribuidor
-            // 
-            this.colVLudistribuidor.DataPropertyName = "idDistribuidor";
-            this.colVLudistribuidor.HeaderText = "Distribuidor";
-            this.colVLudistribuidor.Name = "colVLudistribuidor";
-            this.colVLudistribuidor.ReadOnly = true;
-            this.colVLudistribuidor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colVLudistribuidor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colVLuestado
-            // 
-            this.colVLuestado.HeaderText = "Estado";
-            this.colVLuestado.Name = "colVLuestado";
-            this.colVLuestado.ReadOnly = true;
-            this.colVLuestado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colVLuestado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2581,7 +2581,7 @@
         private System.Windows.Forms.TextBox txtNombrePJ;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.TextBox txtSaldoActualPJ;
+        private System.Windows.Forms.TextBox txtSaldoPJ;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.TextBox txtCreditoMaxPJ;
         private System.Windows.Forms.Label label52;

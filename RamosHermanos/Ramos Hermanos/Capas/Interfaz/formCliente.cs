@@ -28,8 +28,8 @@ namespace RamosHermanos.Capas.Interfaz
             
             // Tabs Inutilizados.
             tabMain.Controls.Remove(tabAdicional);
-            tabMain.Controls.Remove(tabFamilia);
             tabMain.Controls.Remove(tabSugerencias);
+            tabMain.Controls.Remove(tabFamilia);            
 
             // Listado
             CheckListado();
@@ -38,8 +38,7 @@ namespace RamosHermanos.Capas.Interfaz
             switch (caseSwitch)
             {
                 case 1:
-                    tabMain.Controls.Remove(tabInformacionJ);
-                    tabMain.Controls.Remove(tabListado);
+                    
                     break;
                 case 2:
                     tabMain.Controls.Remove(tabInformacion);
@@ -670,9 +669,7 @@ namespace RamosHermanos.Capas.Interfaz
                     TelefonoB.CargarTXT(txtTel, txtIDcliente, 1);
 
                     //Tabs
-                    tabMain.Controls.Remove(tabListado);
-                    tabMain.Controls.Add(tabInformacion);
-                    tabMain.Controls.Add(tabMovimientos);
+                    CasePersona();
 
                     //Cargar Visita
                     //string dia = "LU";
@@ -699,7 +696,32 @@ namespace RamosHermanos.Capas.Interfaz
                 }
                 else if (cliente.tipoPersona == "PJ")
                 {
-                    MessageBox.Show(cliente.tipoPersona);
+                    txtIDclientePJ.Text = Convert.ToString(cliente.idCliente);
+                    dtpFechaAltaPJ.Value = cliente.fechaAlta;
+                    txtCUILPJ.Text = cliente.cuil;
+                    txtNombrePJ.Text = cliente.nombre;
+                    cbIVAPJ.Text = cliente.condicionIVA;
+                    cbtipoClientePJ.SelectedValue = cliente.tipoCliente;
+                    cbEstadoPJ.Checked = cliente.estado;
+
+                    CargarSaldo(txtIDclientePJ);
+                    SaldoB.BuscarSaldo(saldo);
+                    txtCreditoMaxPJ.Text = Convert.ToString(saldo.creditoMax);
+                    txtSaldoPJ.Text = Convert.ToString(saldo.saldoActual);
+
+                    //Visita
+                    //visita.rol = 1;
+                    //visita.idPersona = Convert.ToInt32(txtIDcliente.Text);
+                    //string dia = "LU";
+                    //VisitaB.BuscarVisita(visita, dgvLu, dia);
+
+                    //Contacto
+                    DomicilioB.CargarTXT(txtDomic, txtIDcliente, 1);
+                    EmailB.CargarTXT(txtEmail, txtIDcliente, 1);
+                    TelefonoB.CargarTXT(txtTel, txtIDcliente, 1);
+
+                    //Tabs
+                    CasePersonaJuridica();
                 }
                 
             }
@@ -1109,6 +1131,41 @@ namespace RamosHermanos.Capas.Interfaz
         {
 
             CheckListado();
+        }
+
+        // TabCases
+        private void CaseListado()
+        {
+            tabMain.Controls.Remove(tabInformacion);
+            tabMain.Controls.Remove(tabInformacionJ);
+            tabMain.Controls.Remove(tabListado);
+            tabMain.Controls.Remove(tabMovimientos);
+            tabMain.Controls.Remove(tabVisita);
+            tabMain.Controls.Add(tabListado);
+        }
+
+        private void CasePersona()
+        {
+            tabMain.Controls.Remove(tabInformacion);
+            tabMain.Controls.Remove(tabInformacionJ);
+            tabMain.Controls.Remove(tabListado);
+            tabMain.Controls.Remove(tabMovimientos);
+            tabMain.Controls.Remove(tabVisita);
+            tabMain.Controls.Add(tabInformacion);
+            tabMain.Controls.Add(tabMovimientos);
+            tabMain.Controls.Add(tabVisita);
+        }
+
+        private void CasePersonaJuridica()
+        {
+            tabMain.Controls.Remove(tabInformacion);
+            tabMain.Controls.Remove(tabInformacionJ);
+            tabMain.Controls.Remove(tabListado);
+            tabMain.Controls.Remove(tabMovimientos);
+            tabMain.Controls.Remove(tabVisita);
+            tabMain.Controls.Add(tabInformacionJ);
+            tabMain.Controls.Add(tabMovimientos);
+            tabMain.Controls.Add(tabVisita);
         }
 
         

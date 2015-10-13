@@ -16,14 +16,14 @@ namespace RamosHermanos.Capas.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class crReparto : ReportClass {
+    public class crRepartoLUNES : ReportClass {
         
-        public crReparto() {
+        public crRepartoLUNES() {
         }
         
         public override string ResourceName {
             get {
-                return "crReparto.rpt";
+                return "crRepartoLUNES.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace RamosHermanos.Capas.Reportes {
         
         public override string FullResourceName {
             get {
-                return "RamosHermanos.Capas.Reportes.crReparto.rpt";
+                return "RamosHermanos.Capas.Reportes.crRepartoLUNES.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace RamosHermanos.Capas.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedcrReparto : Component, ICachedReport {
+    public class CachedcrRepartoLUNES : Component, ICachedReport {
         
-        public CachedcrReparto() {
+        public CachedcrRepartoLUNES() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace RamosHermanos.Capas.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            crReparto rpt = new crReparto();
+            crRepartoLUNES rpt = new crRepartoLUNES();
             rpt.Site = this.Site;
             return rpt;
         }

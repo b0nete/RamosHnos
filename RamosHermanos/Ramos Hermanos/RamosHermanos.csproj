@@ -264,10 +264,10 @@
       <DependentUpon>crFactura.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Capas\Reportes\crReparto.cs">
+    <Compile Include="Capas\Reportes\crRepartoLUNES.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>crReparto.rpt</DependentUpon>
+      <DependentUpon>crRepartoLUNES.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Capas\Reportes\dsFactura.cs">
@@ -352,9 +352,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crFactura.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Reportes\crReparto.rpt">
+    <EmbeddedResource Include="Capas\Reportes\crRepartoLUNES.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crReparto.cs</LastGenOutput>
+      <LastGenOutput>crRepartoLUNES.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
