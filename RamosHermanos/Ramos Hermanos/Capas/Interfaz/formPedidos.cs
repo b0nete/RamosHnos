@@ -38,6 +38,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             ProductoB.CargarDGV(dgvProducto);
             ClienteB.CargarDGV(dgvCliente);
+            this.reportViewer1.RefreshReport();
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
@@ -143,8 +144,8 @@ namespace RamosHermanos.Capas.Interfaz
         itemPedidoEntity itemPedido = new itemPedidoEntity();
         private void CargarItemPedido(DataGridViewRow row)
         {
-            itemPedido.pedido = Convert.ToInt32((row.Cells["colCodigo"].Value));
-            itemPedido.producto = Convert.ToString((row.Cells["colProducto"].Value));
+            itemPedido.codProducto = Convert.ToInt32((row.Cells["colCodigo"].Value));
+            itemPedido.pedido = Convert.ToInt32(txtidpedido.Text);
             itemPedido.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
             itemPedido.preciounitario = Convert.ToDouble(row.Cells["colPrecio"].Value);
             itemPedido.subtotal = Convert.ToDouble(row.Cells["colSubTotal"].Value);
@@ -155,12 +156,12 @@ namespace RamosHermanos.Capas.Interfaz
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             cargarPedido();
-            PedidoB.InsertPedido(pedido);
+            PedidoB.InsertPedido(pedido,txtidpedido);
 
             foreach (DataGridViewRow row in dgvPedido.Rows)
             {
                 CargarItemPedido(row);
-                itemsPedidoB.InsertItemPedido(itemPedido,dgvPedido);
+                itemsPedidoB.InsertItemPedido(itemPedido, dgvPedido);
             }
             MessageBox.Show("Pedido Guardado");
 

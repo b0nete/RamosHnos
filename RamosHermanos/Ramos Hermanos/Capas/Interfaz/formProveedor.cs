@@ -50,7 +50,7 @@ namespace RamosHermanos.Capas.Interfaz
 
             saldo.rol = 2;
             saldo.idPersona = Convert.ToInt32(txt.Text);
-            saldo.creditoMax = Convert.ToDouble(txtDebmax.Text);
+            //saldo.creditoMax = Convert.ToDouble(txtDebmax.Text);
             //saldo.saldoActual = Convert.ToDouble(txtSaldoActual.Text);
 
         }
@@ -151,16 +151,16 @@ namespace RamosHermanos.Capas.Interfaz
                 txtidprov.Text = Convert.ToString(proveedor.idProveedor);
                 txtRazonSocial.Text = proveedor.razsocial;
                 txtcuit.Text = proveedor.cuit;
-                txtDebmax.Text = Convert.ToString(proveedor.debMAX);
+                //txtDebmax.Text = Convert.ToString(proveedor.debMAX);
                 dtpFechaAlta.Value = proveedor.fecha;
                 cbIVA.SelectedValue = proveedor.condicioniva;
 
-                //Cargar Saldos
+                ////Cargar Saldos
 
-                cargarSaldo(txtidprov);
-                SaldoB.BuscarSaldo(saldo);
-                txtDebmax.Text = Convert.ToString(saldo.creditoMax);
-                //txtSaldoActual.Text = Convert.ToString(saldo.saldoActual);
+                //cargarSaldo(txtidprov);
+                //SaldoB.BuscarSaldo(saldo);
+                ////txtDebmax.Text = Convert.ToString(saldo.creditoMax);
+                ////txtSaldoActual.Text = Convert.ToString(saldo.saldoActual);
 
 
                 EmailB.CargarTXT(txtEmail, txtidprov, 2);
@@ -175,7 +175,7 @@ namespace RamosHermanos.Capas.Interfaz
         private bool VerificarCampos()
         {
 
-            if (txtcuit.MaskFull == false || txtRazonSocial.Text == string.Empty || txtDebmax.Text == string.Empty)
+            if (txtcuit.MaskFull == false || txtRazonSocial.Text == string.Empty)
             {
 
                 MessageBox.Show("Campos obligatorios incompletos");
@@ -253,10 +253,10 @@ namespace RamosHermanos.Capas.Interfaz
 
 
                 //Saldo
-                saldo.rol = 2;
-                saldo.idPersona = Convert.ToInt32(txtidprov.Text);
-                SaldoB.BuscarSaldo(saldo);
-                txtDebmax.Text = Convert.ToString(saldo.creditoMax);
+                //saldo.rol = 2;
+                //saldo.idPersona = Convert.ToInt32(txtidprov.Text);
+                //SaldoB.BuscarSaldo(saldo);
+                //txtDebmax.Text = Convert.ToString(saldo.creditoMax);
                 //txtSaldoActual.Text = Convert.ToString(saldo.saldoActual);
 
 
@@ -346,11 +346,9 @@ namespace RamosHermanos.Capas.Interfaz
 
             txtRazonSocial.Text = "";
             txtcuit.Text = "";
-            txtDebmax.Text = "";
             txtDomicilio.Text = "";
             txtEmail.Text = "";
             txtidprov.Text = "";
-            txtSaldoActual.Text = "";
             txtTel.Text = "";
             cbIVA.SelectedIndex = 0;
                    
@@ -459,35 +457,7 @@ namespace RamosHermanos.Capas.Interfaz
         
 }
 
-        private void txtDebmax_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 8)
-            {
-                e.Handled = false;
-                return;
-            }
-            bool IsDec = false;
-            int nroDec = 0;
-
-            for (int i = 0; i < txtDebmax.Text.Length; i++)
-            {
-                if (txtDebmax.Text[i] == '.')
-                    IsDec = true;
-
-                if (IsDec && nroDec++ >= 2)
-                {
-                    e.Handled = true;
-                    return;
-                }
-            }
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
-                e.Handled = false;
-            else if (e.KeyChar == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
-                e.Handled = true; 
-        }
-
+     
         private void CheckColor()
         {
             if (cbEstado.Checked == true)

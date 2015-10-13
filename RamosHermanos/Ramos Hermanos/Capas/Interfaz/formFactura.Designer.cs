@@ -866,8 +866,6 @@
             // 
             // dsFactura
             // 
-            this.dsFactura.DataSetName = "dsFactura";
-            this.dsFactura.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // formFactura
             // 

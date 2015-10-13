@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formSaldos));
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabCliente = new System.Windows.Forms.TabPage();
+            this.btnClose = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -49,6 +50,10 @@
             this.txtidCliente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabClienteJ = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -63,7 +68,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.tabProveedor = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -78,15 +86,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.tabProveedor = new System.Windows.Forms.TabPage();
             this.tabMain.SuspendLayout();
             this.tabCliente.SuspendLayout();
             this.tabClienteJ.SuspendLayout();
@@ -132,6 +132,17 @@
             this.tabCliente.Text = "Cliente";
             this.tabCliente.UseVisualStyleBackColor = true;
             this.tabCliente.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnClose.Location = new System.Drawing.Point(421, 188);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(28, 28);
+            this.btnClose.TabIndex = 185;
+            this.btnClose.UseVisualStyleBackColor = true;
             // 
             // button7
             // 
@@ -332,11 +343,55 @@
             this.tabClienteJ.Controls.Add(this.label12);
             this.tabClienteJ.Location = new System.Drawing.Point(4, 22);
             this.tabClienteJ.Name = "tabClienteJ";
-            this.tabClienteJ.Size = new System.Drawing.Size(452, 219);
+            this.tabClienteJ.Size = new System.Drawing.Size(456, 219);
             this.tabClienteJ.TabIndex = 2;
             this.tabClienteJ.Text = "ClienteJ";
             this.tabClienteJ.UseVisualStyleBackColor = true;
             this.tabClienteJ.Click += new System.EventHandler(this.tabClienteJ_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button3.Location = new System.Drawing.Point(422, 188);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(28, 28);
+            this.button3.TabIndex = 189;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(320, 188);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(28, 28);
+            this.button5.TabIndex = 188;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button6.Location = new System.Drawing.Point(388, 188);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(28, 28);
+            this.button6.TabIndex = 187;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(354, 188);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(28, 28);
+            this.button10.TabIndex = 186;
+            this.button10.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
@@ -481,33 +536,49 @@
             this.label12.TabIndex = 165;
             this.label12.Text = "Cliente";
             // 
-            // tabProveedor
+            // button4
             // 
-            this.tabProveedor.Controls.Add(this.button4);
-            this.tabProveedor.Controls.Add(this.button11);
-            this.tabProveedor.Controls.Add(this.button12);
-            this.tabProveedor.Controls.Add(this.button13);
-            this.tabProveedor.Controls.Add(this.dateTimePicker2);
-            this.tabProveedor.Controls.Add(this.label14);
-            this.tabProveedor.Controls.Add(this.textBox7);
-            this.tabProveedor.Controls.Add(this.label15);
-            this.tabProveedor.Controls.Add(this.label16);
-            this.tabProveedor.Controls.Add(this.label17);
-            this.tabProveedor.Controls.Add(this.textBox8);
-            this.tabProveedor.Controls.Add(this.label18);
-            this.tabProveedor.Controls.Add(this.textBox9);
-            this.tabProveedor.Controls.Add(this.label19);
-            this.tabProveedor.Controls.Add(this.textBox10);
-            this.tabProveedor.Controls.Add(this.button2);
-            this.tabProveedor.Controls.Add(this.textBox11);
-            this.tabProveedor.Controls.Add(this.label21);
-            this.tabProveedor.Location = new System.Drawing.Point(4, 22);
-            this.tabProveedor.Name = "tabProveedor";
-            this.tabProveedor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProveedor.Size = new System.Drawing.Size(452, 219);
-            this.tabProveedor.TabIndex = 1;
-            this.tabProveedor.Text = "Proveedor";
-            this.tabProveedor.UseVisualStyleBackColor = true;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button4.Location = new System.Drawing.Point(422, 188);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(28, 28);
+            this.button4.TabIndex = 189;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(320, 188);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(28, 28);
+            this.button11.TabIndex = 188;
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button12
+            // 
+            this.button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button12.BackgroundImage")));
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button12.Location = new System.Drawing.Point(388, 188);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(28, 28);
+            this.button12.TabIndex = 187;
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button13
+            // 
+            this.button13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button13.BackgroundImage")));
+            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button13.Location = new System.Drawing.Point(354, 188);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(28, 28);
+            this.button13.TabIndex = 186;
+            this.button13.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker2
             // 
@@ -652,110 +723,39 @@
             this.label21.TabIndex = 165;
             this.label21.Text = "Proveedor";
             // 
-            // btnClose
+            // tabProveedor
             // 
-            this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnClose.Location = new System.Drawing.Point(421, 188);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(28, 28);
-            this.btnClose.TabIndex = 185;
-            this.btnClose.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button3.Location = new System.Drawing.Point(422, 188);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 189;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(320, 188);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(28, 28);
-            this.button5.TabIndex = 188;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button6.Location = new System.Drawing.Point(388, 188);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(28, 28);
-            this.button6.TabIndex = 187;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(354, 188);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(28, 28);
-            this.button10.TabIndex = 186;
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(422, 188);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(28, 28);
-            this.button4.TabIndex = 189;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(320, 188);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(28, 28);
-            this.button11.TabIndex = 188;
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button12.BackgroundImage")));
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button12.Location = new System.Drawing.Point(388, 188);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(28, 28);
-            this.button12.TabIndex = 187;
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button13
-            // 
-            this.button13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button13.BackgroundImage")));
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(354, 188);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(28, 28);
-            this.button13.TabIndex = 186;
-            this.button13.UseVisualStyleBackColor = true;
+            this.tabProveedor.Controls.Add(this.button4);
+            this.tabProveedor.Controls.Add(this.button11);
+            this.tabProveedor.Controls.Add(this.button12);
+            this.tabProveedor.Controls.Add(this.button13);
+            this.tabProveedor.Controls.Add(this.dateTimePicker2);
+            this.tabProveedor.Controls.Add(this.label14);
+            this.tabProveedor.Controls.Add(this.textBox7);
+            this.tabProveedor.Controls.Add(this.label15);
+            this.tabProveedor.Controls.Add(this.label16);
+            this.tabProveedor.Controls.Add(this.label17);
+            this.tabProveedor.Controls.Add(this.textBox8);
+            this.tabProveedor.Controls.Add(this.label18);
+            this.tabProveedor.Controls.Add(this.textBox9);
+            this.tabProveedor.Controls.Add(this.label19);
+            this.tabProveedor.Controls.Add(this.textBox10);
+            this.tabProveedor.Controls.Add(this.button2);
+            this.tabProveedor.Controls.Add(this.textBox11);
+            this.tabProveedor.Controls.Add(this.label21);
+            this.tabProveedor.Location = new System.Drawing.Point(4, 22);
+            this.tabProveedor.Name = "tabProveedor";
+            this.tabProveedor.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProveedor.Size = new System.Drawing.Size(456, 219);
+            this.tabProveedor.TabIndex = 1;
+            this.tabProveedor.Text = "Proveedor";
+            this.tabProveedor.UseVisualStyleBackColor = true;
             // 
             // formSaldos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 249);
+            this.ClientSize = new System.Drawing.Size(462, 253);
             this.Controls.Add(this.tabMain);
             this.Name = "formSaldos";
             this.Text = "formSaldos";
@@ -774,7 +774,6 @@
 
         private System.Windows.Forms.TabControl tabMain;
         private System.Windows.Forms.TabPage tabCliente;
-        private System.Windows.Forms.TabPage tabProveedor;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.TextBox txtidCliente;
@@ -830,5 +829,6 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.TabPage tabProveedor;
     }
 }

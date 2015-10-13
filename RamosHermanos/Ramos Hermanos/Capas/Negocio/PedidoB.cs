@@ -13,7 +13,7 @@ namespace RamosHermanos.Capas.Negocio
 {
     class PedidoB
     {
-        public static PedidoEntity InsertPedido(PedidoEntity pedido)
+        public static PedidoEntity InsertPedido(PedidoEntity pedido, TextBox txtid)
         {
             try
             {
@@ -33,7 +33,8 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@observaciones", pedido.observaciones);
                 cmd.Parameters.AddWithValue("@total", pedido.total);
                 cmd.Parameters.AddWithValue("@estado", pedido.estado);
-                
+
+                txtid.Text = Convert.ToString(cmd.ExecuteScalar());
 
                 cmd.ExecuteNonQuery();
 

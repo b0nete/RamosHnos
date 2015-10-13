@@ -73,7 +73,7 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtidprov.Text = Convert.ToString(proveedor.idProveedor);
                 frm.txtRazonSocial.Text = proveedor.razsocial;
                 frm.txtcuit.Text = proveedor.cuit;
-                frm.txtDebmax.Text = Convert.ToString(proveedor.debMAX);
+                //frm.txtDebmax.Text = Convert.ToString(proveedor.debMAX);
                 frm.dtpFechaAlta.Value = proveedor.fecha;
                 frm.cbIVA.SelectedValue = proveedor.condicioniva;
 
@@ -105,7 +105,6 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.Show();
                 frm.tabProveedor.SelectedTab = frm.tabListado;
                 frm.tabProveedor.Controls.Add(frm.tabListado);
-
                 return;
             }
 
@@ -125,7 +124,7 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtidprov.Text = Convert.ToString(proveedor.idProveedor);
                 frm.txtRazonSocial.Text = proveedor.razsocial;
                 frm.txtcuit.Text = proveedor.cuit;
-                frm.txtDebmax.Text = Convert.ToString(proveedor.debMAX);
+                //frm.txtDebmax.Text = Convert.ToString(proveedor.debMAX);
                 frm.dtpFechaAlta.Value = proveedor.fecha;
                 frm.cbIVA.SelectedValue = proveedor.condicioniva;
 
@@ -177,7 +176,7 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtidprov.Text = Convert.ToString(proveedor.idProveedor);
                 frm.txtRazonSocial.Text = proveedor.razsocial;
                 frm.txtcuit.Text = proveedor.cuit;
-                frm.txtDebmax.Text = Convert.ToString(proveedor.debMAX);
+                //frm.txtDebmax.Text = Convert.ToString(proveedor.debMAX);
                 frm.dtpFechaAlta.Value = proveedor.fecha;
                 frm.cbIVA.SelectedValue = proveedor.condicioniva;
 
