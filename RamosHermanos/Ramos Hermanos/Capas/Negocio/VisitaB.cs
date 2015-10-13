@@ -15,20 +15,16 @@ namespace RamosHermanos.Capas.Negocio
     class VisitaB
     {
 
-        public static VisitaEntity BuscarVisita(VisitaEntity visita, DataGridView dgv, string colDistribuidor)
+        public static VisitaEntity BuscarDistribuidorVisita(VisitaEntity visita, DataGridView dgv, string colDistribuidor)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT D.rol, D.idPersona, D.idDomicilio, CONCAT(C.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto, V.distribuidor, V.estado
-                                 FROM Visitas V
-                                 INNER JOIN Domicilios D ON V.Domicilio = D.idDomicilio 
-                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
-                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
-                                 INNER JOIN Barrios B ON D.Barrio = B.idBarrio
-                                 INNER JOIN Calles C ON C.idCalle = D.Calle
-                                 WHERE D.rol = @rol and D.idPersona = @idPersona and dia = @dia";
+                string query = @"SELECT V.distribuidor, CONCAT(D.nombre,' ', D.apellido) as nombreCom
+FROM Visitas V
+INNER JOIN Distribuidores D ON V.distribuidor = D.idDistribuidor
+WHERE V.rol = 1 and V.idPersona = 4 and dia = 'LU'";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -39,22 +35,20 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlDataReader dr = cmd.ExecuteReader();
 
                 DataGridViewComboBoxColumn comboboxColumn = dgv.Columns[colDistribuidor] as DataGridViewComboBoxColumn;
+
+                //int i = 0;
+
                 
+
                 while (dr.Read())
                 {
-                    for (int i = 0; dr.Read(); i++)
-                    {
-                        string idDom = Convert.ToString(dr["idDomicilio"]);
-                        string domCom = Convert.ToString(dr["domCompleto"]);
-                        string distrib = Convert.ToString(dr["distribuidor"]);
-                        bool estado = Convert.ToBoolean(dr["estado"]);
-
-                        dgv.Rows[i].Cells[1].Value = idDom;
-                        dgv.Rows[i].Cells[2].Value = domCom;                        
-                        //comboboxColumn.ValueMember = distrib;
-                        dgv.Rows[i].Cells[4].Value = estado;
-                    }                    
+                    string nombreCom = Convert.ToString(dr["nombreCom"]);
+                //    foreach (DataGridViewRow row in dgv.Rows)
+                //    {
+                    comboboxColumn.DataPropertyName = nombreCom;
+                //    }
                 }
+
 
                 dr.Close();
 

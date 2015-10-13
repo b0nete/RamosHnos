@@ -178,11 +178,6 @@
             this.tabLunes = new System.Windows.Forms.TabPage();
             this.btnSaveRepLu = new System.Windows.Forms.Button();
             this.dgvLu = new System.Windows.Forms.DataGridView();
-            this.colVLucliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVLudomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dfgdfgdfg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVLudistribuidor = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colVLuestado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabMartes = new System.Windows.Forms.TabPage();
             this.btnSaveRepMa = new System.Windows.Forms.Button();
             this.dgvMa = new System.Windows.Forms.DataGridView();
@@ -237,6 +232,11 @@
             this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewComboBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colVLucliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVLudomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dfgdfgdfg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVLudistribuidor = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.colVLuestado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -1954,43 +1954,6 @@
             this.dgvLu.Size = new System.Drawing.Size(768, 470);
             this.dgvLu.TabIndex = 1;
             // 
-            // colVLucliente
-            // 
-            this.colVLucliente.HeaderText = "Nº Cliente";
-            this.colVLucliente.Name = "colVLucliente";
-            this.colVLucliente.ReadOnly = true;
-            this.colVLucliente.Visible = false;
-            // 
-            // colVLudomicilio
-            // 
-            this.colVLudomicilio.HeaderText = "ID Domicilio";
-            this.colVLudomicilio.Name = "colVLudomicilio";
-            this.colVLudomicilio.ReadOnly = true;
-            // 
-            // dfgdfgdfg
-            // 
-            this.dfgdfgdfg.HeaderText = "Domicilio";
-            this.dfgdfgdfg.Name = "dfgdfgdfg";
-            this.dfgdfgdfg.ReadOnly = true;
-            this.dfgdfgdfg.Width = 400;
-            // 
-            // colVLudistribuidor
-            // 
-            this.colVLudistribuidor.DataPropertyName = "idDistribuidor";
-            this.colVLudistribuidor.HeaderText = "Distribuidor";
-            this.colVLudistribuidor.Name = "colVLudistribuidor";
-            this.colVLudistribuidor.ReadOnly = true;
-            this.colVLudistribuidor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colVLudistribuidor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colVLuestado
-            // 
-            this.colVLuestado.HeaderText = "Estado";
-            this.colVLuestado.Name = "colVLuestado";
-            this.colVLuestado.ReadOnly = true;
-            this.colVLuestado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colVLuestado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // tabMartes
             // 
             this.tabMartes.Controls.Add(this.btnSaveRepMa);
@@ -2429,6 +2392,38 @@
             this.dataGridViewComboBoxColumn6.Name = "dataGridViewComboBoxColumn6";
             this.dataGridViewComboBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewComboBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colVLucliente
+            // 
+            this.colVLucliente.HeaderText = "Nº Cliente";
+            this.colVLucliente.Name = "colVLucliente";
+            this.colVLucliente.Visible = false;
+            // 
+            // colVLudomicilio
+            // 
+            this.colVLudomicilio.HeaderText = "ID Domicilio";
+            this.colVLudomicilio.Name = "colVLudomicilio";
+            // 
+            // dfgdfgdfg
+            // 
+            this.dfgdfgdfg.HeaderText = "Domicilio";
+            this.dfgdfgdfg.Name = "dfgdfgdfg";
+            this.dfgdfgdfg.Width = 400;
+            // 
+            // colVLudistribuidor
+            // 
+            this.colVLudistribuidor.DataPropertyName = "nombreCom";
+            this.colVLudistribuidor.HeaderText = "Distribuidor";
+            this.colVLudistribuidor.Name = "colVLudistribuidor";
+            this.colVLudistribuidor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colVLudistribuidor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // colVLuestado
+            // 
+            this.colVLuestado.HeaderText = "Estado";
+            this.colVLuestado.Name = "colVLuestado";
+            this.colVLuestado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colVLuestado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // formCliente
             // 

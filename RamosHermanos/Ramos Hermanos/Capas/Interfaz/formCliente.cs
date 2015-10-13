@@ -398,6 +398,10 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void CargarDGVV(DataGridView dgv, string colDistribuidor, DomicilioEntity domicilio)
         {
+            DomicilioB.CargarDGVVisita(dgvLu, domicilio);
+
+            //
+
             DataGridViewComboBoxColumn comboboxColumn = dgv.Columns[colDistribuidor] as DataGridViewComboBoxColumn;
 
             comboboxColumn.DataSource = DistribuidorB.ListDistribuidores();
@@ -406,8 +410,8 @@ namespace RamosHermanos.Capas.Interfaz
 
             //
 
-            dgv.AutoGenerateColumns = false;
-            dgv.DataSource = DomicilioB.ListDomicilios(domicilio);
+            //dgv.AutoGenerateColumns = false;
+            //dgv.DataSource = DomicilioB.ListDomicilios(domicilio);
         }
 
         private void CheckListado()
@@ -675,12 +679,23 @@ namespace RamosHermanos.Capas.Interfaz
                     //string dia = "LU";
                     //DistribuidorB.CargarDGVCB(cliente, dgvLu, dia, "colVLudistribuidor");
                     //Asignamos valores.
+                    ////domicilio.rol = 1;
+                    ////if (txtIDcliente.Text != string.Empty)
+                    ////    domicilio.idPersona = Convert.ToInt32(txtIDcliente.Text);
+                    ////else
+                    ////    domicilio.idPersona = Convert.ToInt32(txtIDclientePJ.Text);
+                    ////CargarDGVV(dgvLu, "colVLudistribuidor", domicilio);
+
                     domicilio.rol = 1;
+                    domicilio.idPersona = 4;
                     if (txtIDcliente.Text != string.Empty)
                         domicilio.idPersona = Convert.ToInt32(txtIDcliente.Text);
                     else
                         domicilio.idPersona = Convert.ToInt32(txtIDclientePJ.Text);
+
                     CargarDGVV(dgvLu, "colVLudistribuidor", domicilio);
+
+                    VisitaB.BuscarDistribuidorVisita(visita, dgvLu, "colVLudistribuidor");
 
                     //visita.rol = 1;
                     //visita.idPersona = 4;

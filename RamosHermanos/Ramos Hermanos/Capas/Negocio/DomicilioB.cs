@@ -157,6 +157,48 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+
+        public static void CargarDGVVisita(DataGridView dgv, DomicilioEntity domicilio)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"SELECT D.idPersona, D.idDomicilio, CONCAT(C.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
+                                 FROM Domicilios D
+                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
+                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
+                                 INNER JOIN Barrios B ON D.Barrio = B.idBarrio
+                                 INNER JOIN Calles C ON C.idCalle = D.Calle
+                                 WHERE D.rol = @rol and D.idPersona = @idPersona";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@rol", domicilio.rol);
+                cmd.Parameters.AddWithValue("@idPersona", domicilio.idPersona);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idPersona"]),
+                    Convert.ToString(dr["idDomicilio"]),
+                    Convert.ToString(dr["domCompleto"]));
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static void CargarCB(ComboBox cb, TextBox txt)
         {
             try

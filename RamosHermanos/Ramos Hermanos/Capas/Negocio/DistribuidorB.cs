@@ -212,8 +212,7 @@ namespace RamosHermanos.Capas.Negocio
                 List<DistribuidorEntity> list = new List<DistribuidorEntity>();
 
                 string query = @"SELECT D.idDistribuidor, CONCAT(D.nombre,' ', D.apellido) as nombreCom
-                                 FROM Distribuidores D
-                                 INNER JOIN Vehiculos V ON D.Vehiculo = V.idVehiculo";
+                                 FROM Distribuidores D";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
                 MySqlDataReader dr = cmd.ExecuteReader();
