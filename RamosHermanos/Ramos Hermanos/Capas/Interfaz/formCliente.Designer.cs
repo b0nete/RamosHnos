@@ -174,69 +174,18 @@
             this.label61 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.tabVisita = new System.Windows.Forms.TabPage();
-            this.btnSaveRepJu = new System.Windows.Forms.TabControl();
-            this.tabLunes = new System.Windows.Forms.TabPage();
-            this.btnSaveRepLu = new System.Windows.Forms.Button();
-            this.dgvLu = new System.Windows.Forms.DataGridView();
-            this.tabMartes = new System.Windows.Forms.TabPage();
-            this.btnSaveRepMa = new System.Windows.Forms.Button();
-            this.dgvMa = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tabMiercoles = new System.Windows.Forms.TabPage();
-            this.btnSaveRepMi = new System.Windows.Forms.Button();
-            this.dgvMi = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tabJueves = new System.Windows.Forms.TabPage();
-            this.button14 = new System.Windows.Forms.Button();
-            this.dgvJu = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tabViernes = new System.Windows.Forms.TabPage();
-            this.button15 = new System.Windows.Forms.Button();
-            this.dgvVi = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tabSabado = new System.Windows.Forms.TabPage();
-            this.button16 = new System.Windows.Forms.Button();
-            this.dgvSa = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tabDomingo = new System.Windows.Forms.TabPage();
-            this.button17 = new System.Windows.Forms.Button();
-            this.dgvDo = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colVLucliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVLudomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dfgdfgdfg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colVLudistribuidor = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.colVLuestado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.cbDomicilioLunes = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.cbDistribuidorLunes = new System.Windows.Forms.ComboBox();
+            this.button11 = new System.Windows.Forms.Button();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -255,21 +204,7 @@
             this.groupBox13.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.tabVisita.SuspendLayout();
-            this.btnSaveRepJu.SuspendLayout();
-            this.tabLunes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLu)).BeginInit();
-            this.tabMartes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMa)).BeginInit();
-            this.tabMiercoles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMi)).BeginInit();
-            this.tabJueves.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJu)).BeginInit();
-            this.tabViernes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVi)).BeginInit();
-            this.tabSabado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSa)).BeginInit();
-            this.tabDomingo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDo)).BeginInit();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMovimientos
@@ -1892,7 +1827,14 @@
             // 
             // tabVisita
             // 
-            this.tabVisita.Controls.Add(this.btnSaveRepJu);
+            this.tabVisita.Controls.Add(this.button11);
+            this.tabVisita.Controls.Add(this.groupBox19);
+            this.tabVisita.Controls.Add(this.groupBox18);
+            this.tabVisita.Controls.Add(this.groupBox17);
+            this.tabVisita.Controls.Add(this.groupBox16);
+            this.tabVisita.Controls.Add(this.groupBox15);
+            this.tabVisita.Controls.Add(this.groupBox8);
+            this.tabVisita.Controls.Add(this.groupBox7);
             this.tabVisita.Location = new System.Drawing.Point(4, 22);
             this.tabVisita.Name = "tabVisita";
             this.tabVisita.Size = new System.Drawing.Size(776, 536);
@@ -1900,530 +1842,128 @@
             this.tabVisita.Text = "Visita";
             this.tabVisita.UseVisualStyleBackColor = true;
             // 
-            // btnSaveRepJu
-            // 
-            this.btnSaveRepJu.Controls.Add(this.tabLunes);
-            this.btnSaveRepJu.Controls.Add(this.tabMartes);
-            this.btnSaveRepJu.Controls.Add(this.tabMiercoles);
-            this.btnSaveRepJu.Controls.Add(this.tabJueves);
-            this.btnSaveRepJu.Controls.Add(this.tabViernes);
-            this.btnSaveRepJu.Controls.Add(this.tabSabado);
-            this.btnSaveRepJu.Controls.Add(this.tabDomingo);
-            this.btnSaveRepJu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSaveRepJu.Location = new System.Drawing.Point(0, 0);
-            this.btnSaveRepJu.Name = "btnSaveRepJu";
-            this.btnSaveRepJu.SelectedIndex = 0;
-            this.btnSaveRepJu.Size = new System.Drawing.Size(776, 536);
-            this.btnSaveRepJu.TabIndex = 1;
-            // 
-            // tabLunes
-            // 
-            this.tabLunes.Controls.Add(this.btnSaveRepLu);
-            this.tabLunes.Controls.Add(this.dgvLu);
-            this.tabLunes.Location = new System.Drawing.Point(4, 22);
-            this.tabLunes.Name = "tabLunes";
-            this.tabLunes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLunes.Size = new System.Drawing.Size(768, 510);
-            this.tabLunes.TabIndex = 0;
-            this.tabLunes.Text = "Lunes";
-            this.tabLunes.UseVisualStyleBackColor = true;
-            // 
-            // btnSaveRepLu
-            // 
-            this.btnSaveRepLu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRepLu.BackgroundImage")));
-            this.btnSaveRepLu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveRepLu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRepLu.Location = new System.Drawing.Point(734, 476);
-            this.btnSaveRepLu.Name = "btnSaveRepLu";
-            this.btnSaveRepLu.Size = new System.Drawing.Size(28, 28);
-            this.btnSaveRepLu.TabIndex = 62;
-            this.btnSaveRepLu.UseVisualStyleBackColor = true;
-            this.btnSaveRepLu.Click += new System.EventHandler(this.button11_Click_1);
-            // 
-            // dgvLu
-            // 
-            this.dgvLu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colVLucliente,
-            this.colVLudomicilio,
-            this.dfgdfgdfg,
-            this.colVLudistribuidor,
-            this.colVLuestado});
-            this.dgvLu.Location = new System.Drawing.Point(0, 0);
-            this.dgvLu.Name = "dgvLu";
-            this.dgvLu.Size = new System.Drawing.Size(768, 470);
-            this.dgvLu.TabIndex = 1;
-            // 
-            // tabMartes
-            // 
-            this.tabMartes.Controls.Add(this.btnSaveRepMa);
-            this.tabMartes.Controls.Add(this.dgvMa);
-            this.tabMartes.Location = new System.Drawing.Point(4, 22);
-            this.tabMartes.Name = "tabMartes";
-            this.tabMartes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMartes.Size = new System.Drawing.Size(768, 510);
-            this.tabMartes.TabIndex = 1;
-            this.tabMartes.Text = "Martes";
-            this.tabMartes.UseVisualStyleBackColor = true;
-            // 
-            // btnSaveRepMa
-            // 
-            this.btnSaveRepMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRepMa.BackgroundImage")));
-            this.btnSaveRepMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveRepMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRepMa.Location = new System.Drawing.Point(734, 476);
-            this.btnSaveRepMa.Name = "btnSaveRepMa";
-            this.btnSaveRepMa.Size = new System.Drawing.Size(28, 28);
-            this.btnSaveRepMa.TabIndex = 64;
-            this.btnSaveRepMa.UseVisualStyleBackColor = true;
-            // 
-            // dgvMa
-            // 
-            this.dgvMa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewComboBoxColumn1});
-            this.dgvMa.Location = new System.Drawing.Point(0, 0);
-            this.dgvMa.Name = "dgvMa";
-            this.dgvMa.Size = new System.Drawing.Size(768, 470);
-            this.dgvMa.TabIndex = 63;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nº Cliente";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Cliente";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "ID Domicilio";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Domicilio";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 400;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Nº Distribuidor";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Visible = false;
-            // 
-            // dataGridViewComboBoxColumn1
-            // 
-            this.dataGridViewComboBoxColumn1.HeaderText = "Distribuidor";
-            this.dataGridViewComboBoxColumn1.Name = "dataGridViewComboBoxColumn1";
-            this.dataGridViewComboBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // tabMiercoles
-            // 
-            this.tabMiercoles.Controls.Add(this.btnSaveRepMi);
-            this.tabMiercoles.Controls.Add(this.dgvMi);
-            this.tabMiercoles.Location = new System.Drawing.Point(4, 22);
-            this.tabMiercoles.Name = "tabMiercoles";
-            this.tabMiercoles.Size = new System.Drawing.Size(768, 510);
-            this.tabMiercoles.TabIndex = 2;
-            this.tabMiercoles.Text = "Miercoles";
-            this.tabMiercoles.UseVisualStyleBackColor = true;
-            // 
-            // btnSaveRepMi
-            // 
-            this.btnSaveRepMi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRepMi.BackgroundImage")));
-            this.btnSaveRepMi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveRepMi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRepMi.Location = new System.Drawing.Point(734, 476);
-            this.btnSaveRepMi.Name = "btnSaveRepMi";
-            this.btnSaveRepMi.Size = new System.Drawing.Size(28, 28);
-            this.btnSaveRepMi.TabIndex = 64;
-            this.btnSaveRepMi.UseVisualStyleBackColor = true;
-            // 
-            // dgvMi
-            // 
-            this.dgvMi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewComboBoxColumn2});
-            this.dgvMi.Location = new System.Drawing.Point(0, 0);
-            this.dgvMi.Name = "dgvMi";
-            this.dgvMi.Size = new System.Drawing.Size(768, 470);
-            this.dgvMi.TabIndex = 63;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Nº Cliente";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Cliente";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "ID Domicilio";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Domicilio";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 400;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "Nº Distribuidor";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Visible = false;
-            // 
-            // dataGridViewComboBoxColumn2
-            // 
-            this.dataGridViewComboBoxColumn2.HeaderText = "Distribuidor";
-            this.dataGridViewComboBoxColumn2.Name = "dataGridViewComboBoxColumn2";
-            this.dataGridViewComboBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // tabJueves
-            // 
-            this.tabJueves.Controls.Add(this.button14);
-            this.tabJueves.Controls.Add(this.dgvJu);
-            this.tabJueves.Location = new System.Drawing.Point(4, 22);
-            this.tabJueves.Name = "tabJueves";
-            this.tabJueves.Size = new System.Drawing.Size(768, 510);
-            this.tabJueves.TabIndex = 3;
-            this.tabJueves.Text = "Jueves";
-            this.tabJueves.UseVisualStyleBackColor = true;
-            // 
-            // button14
-            // 
-            this.button14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button14.BackgroundImage")));
-            this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(734, 476);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(28, 28);
-            this.button14.TabIndex = 64;
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // dgvJu
-            // 
-            this.dgvJu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvJu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewComboBoxColumn3});
-            this.dgvJu.Location = new System.Drawing.Point(0, 0);
-            this.dgvJu.Name = "dgvJu";
-            this.dgvJu.Size = new System.Drawing.Size(768, 470);
-            this.dgvJu.TabIndex = 63;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.HeaderText = "Nº Cliente";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.HeaderText = "Cliente";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.HeaderText = "ID Domicilio";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.HeaderText = "Domicilio";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.Width = 400;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.HeaderText = "Nº Distribuidor";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.Visible = false;
-            // 
-            // dataGridViewComboBoxColumn3
-            // 
-            this.dataGridViewComboBoxColumn3.HeaderText = "Distribuidor";
-            this.dataGridViewComboBoxColumn3.Name = "dataGridViewComboBoxColumn3";
-            this.dataGridViewComboBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // tabViernes
-            // 
-            this.tabViernes.Controls.Add(this.button15);
-            this.tabViernes.Controls.Add(this.dgvVi);
-            this.tabViernes.Location = new System.Drawing.Point(4, 22);
-            this.tabViernes.Name = "tabViernes";
-            this.tabViernes.Size = new System.Drawing.Size(768, 510);
-            this.tabViernes.TabIndex = 4;
-            this.tabViernes.Text = "Viernes";
-            this.tabViernes.UseVisualStyleBackColor = true;
-            // 
-            // button15
-            // 
-            this.button15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button15.BackgroundImage")));
-            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(734, 476);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(28, 28);
-            this.button15.TabIndex = 64;
-            this.button15.UseVisualStyleBackColor = true;
-            // 
-            // dgvVi
-            // 
-            this.dgvVi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewComboBoxColumn4});
-            this.dgvVi.Location = new System.Drawing.Point(0, 0);
-            this.dgvVi.Name = "dgvVi";
-            this.dgvVi.Size = new System.Drawing.Size(768, 470);
-            this.dgvVi.TabIndex = 63;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.HeaderText = "Nº Cliente";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.HeaderText = "Cliente";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.HeaderText = "ID Domicilio";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.HeaderText = "Domicilio";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.Width = 400;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.HeaderText = "Nº Distribuidor";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.Visible = false;
-            // 
-            // dataGridViewComboBoxColumn4
-            // 
-            this.dataGridViewComboBoxColumn4.HeaderText = "Distribuidor";
-            this.dataGridViewComboBoxColumn4.Name = "dataGridViewComboBoxColumn4";
-            this.dataGridViewComboBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // tabSabado
-            // 
-            this.tabSabado.Controls.Add(this.button16);
-            this.tabSabado.Controls.Add(this.dgvSa);
-            this.tabSabado.Location = new System.Drawing.Point(4, 22);
-            this.tabSabado.Name = "tabSabado";
-            this.tabSabado.Size = new System.Drawing.Size(768, 510);
-            this.tabSabado.TabIndex = 5;
-            this.tabSabado.Text = "Sabado";
-            this.tabSabado.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            this.button16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button16.BackgroundImage")));
-            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.Location = new System.Drawing.Point(734, 476);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(28, 28);
-            this.button16.TabIndex = 64;
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // dgvSa
-            // 
-            this.dgvSa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSa.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewComboBoxColumn5});
-            this.dgvSa.Location = new System.Drawing.Point(0, 0);
-            this.dgvSa.Name = "dgvSa";
-            this.dgvSa.Size = new System.Drawing.Size(768, 470);
-            this.dgvSa.TabIndex = 63;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.HeaderText = "Nº Cliente";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.HeaderText = "Cliente";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.HeaderText = "ID Domicilio";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.HeaderText = "Domicilio";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.Width = 400;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.HeaderText = "Nº Distribuidor";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.Visible = false;
-            // 
-            // dataGridViewComboBoxColumn5
-            // 
-            this.dataGridViewComboBoxColumn5.HeaderText = "Distribuidor";
-            this.dataGridViewComboBoxColumn5.Name = "dataGridViewComboBoxColumn5";
-            this.dataGridViewComboBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // tabDomingo
-            // 
-            this.tabDomingo.Controls.Add(this.button17);
-            this.tabDomingo.Controls.Add(this.dgvDo);
-            this.tabDomingo.Location = new System.Drawing.Point(4, 22);
-            this.tabDomingo.Name = "tabDomingo";
-            this.tabDomingo.Size = new System.Drawing.Size(768, 510);
-            this.tabDomingo.TabIndex = 6;
-            this.tabDomingo.Text = "Domingo";
-            this.tabDomingo.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button17.BackgroundImage")));
-            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.Location = new System.Drawing.Point(734, 476);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(28, 28);
-            this.button17.TabIndex = 64;
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // dgvDo
-            // 
-            this.dgvDo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30,
-            this.dataGridViewComboBoxColumn6});
-            this.dgvDo.Location = new System.Drawing.Point(0, 0);
-            this.dgvDo.Name = "dgvDo";
-            this.dgvDo.Size = new System.Drawing.Size(768, 470);
-            this.dgvDo.TabIndex = 63;
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.HeaderText = "Nº Cliente";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.HeaderText = "Cliente";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.HeaderText = "ID Domicilio";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.HeaderText = "Domicilio";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.Width = 400;
-            // 
-            // dataGridViewTextBoxColumn30
-            // 
-            this.dataGridViewTextBoxColumn30.HeaderText = "Nº Distribuidor";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            this.dataGridViewTextBoxColumn30.Visible = false;
-            // 
-            // dataGridViewComboBoxColumn6
-            // 
-            this.dataGridViewComboBoxColumn6.HeaderText = "Distribuidor";
-            this.dataGridViewComboBoxColumn6.Name = "dataGridViewComboBoxColumn6";
-            this.dataGridViewComboBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewComboBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colVLucliente
-            // 
-            this.colVLucliente.HeaderText = "Nº Cliente";
-            this.colVLucliente.Name = "colVLucliente";
-            this.colVLucliente.Visible = false;
-            // 
-            // colVLudomicilio
-            // 
-            this.colVLudomicilio.HeaderText = "ID Domicilio";
-            this.colVLudomicilio.Name = "colVLudomicilio";
-            // 
-            // dfgdfgdfg
-            // 
-            this.dfgdfgdfg.HeaderText = "Domicilio";
-            this.dfgdfgdfg.Name = "dfgdfgdfg";
-            this.dfgdfgdfg.Width = 400;
-            // 
-            // colVLudistribuidor
-            // 
-            this.colVLudistribuidor.DataPropertyName = "nombreCom";
-            this.colVLudistribuidor.HeaderText = "Distribuidor";
-            this.colVLudistribuidor.Name = "colVLudistribuidor";
-            this.colVLudistribuidor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colVLudistribuidor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // colVLuestado
-            // 
-            this.colVLuestado.HeaderText = "Estado";
-            this.colVLuestado.Name = "colVLuestado";
-            this.colVLuestado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colVLuestado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label30);
+            this.groupBox7.Controls.Add(this.label21);
+            this.groupBox7.Controls.Add(this.cbDomicilioLunes);
+            this.groupBox7.Controls.Add(this.cbDistribuidorLunes);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.Location = new System.Drawing.Point(8, 3);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(760, 65);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Lunes";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(8, 74);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(754, 65);
+            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Martes";
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox15.Location = new System.Drawing.Point(8, 145);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(754, 65);
+            this.groupBox15.TabIndex = 1;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Miercoles";
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox16.Location = new System.Drawing.Point(8, 216);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(754, 65);
+            this.groupBox16.TabIndex = 1;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Jueves";
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox17.Location = new System.Drawing.Point(8, 287);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(754, 65);
+            this.groupBox17.TabIndex = 1;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Viernes";
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox18.Location = new System.Drawing.Point(8, 358);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(754, 65);
+            this.groupBox18.TabIndex = 1;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "Sabado";
+            // 
+            // groupBox19
+            // 
+            this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox19.Location = new System.Drawing.Point(8, 429);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(754, 65);
+            this.groupBox19.TabIndex = 1;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "Domingo";
+            // 
+            // cbDomicilioLunes
+            // 
+            this.cbDomicilioLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDomicilioLunes.FormattingEnabled = true;
+            this.cbDomicilioLunes.Location = new System.Drawing.Point(61, 19);
+            this.cbDomicilioLunes.Name = "cbDomicilioLunes";
+            this.cbDomicilioLunes.Size = new System.Drawing.Size(416, 21);
+            this.cbDomicilioLunes.TabIndex = 0;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(6, 22);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(49, 13);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Domicilio";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(513, 22);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(59, 13);
+            this.label30.TabIndex = 4;
+            this.label30.Text = "Distribuidor";
+            // 
+            // cbDistribuidorLunes
+            // 
+            this.cbDistribuidorLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDistribuidorLunes.FormattingEnabled = true;
+            this.cbDistribuidorLunes.Location = new System.Drawing.Point(578, 19);
+            this.cbDistribuidorLunes.Name = "cbDistribuidorLunes";
+            this.cbDistribuidorLunes.Size = new System.Drawing.Size(176, 21);
+            this.cbDistribuidorLunes.TabIndex = 3;
+            // 
+            // button11
+            // 
+            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(740, 500);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(28, 28);
+            this.button11.TabIndex = 72;
+            this.button11.UseVisualStyleBackColor = true;
             // 
             // formCliente
             // 
@@ -2463,21 +2003,8 @@
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.tabVisita.ResumeLayout(false);
-            this.btnSaveRepJu.ResumeLayout(false);
-            this.tabLunes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvLu)).EndInit();
-            this.tabMartes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMa)).EndInit();
-            this.tabMiercoles.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMi)).EndInit();
-            this.tabJueves.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvJu)).EndInit();
-            this.tabViernes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVi)).EndInit();
-            this.tabSabado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSa)).EndInit();
-            this.tabDomingo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDo)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2614,64 +2141,6 @@
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblEstadoPJ;
         private System.Windows.Forms.TabPage tabVisita;
-        private System.Windows.Forms.TabControl btnSaveRepJu;
-        private System.Windows.Forms.TabPage tabLunes;
-        private System.Windows.Forms.TabPage tabMartes;
-        private System.Windows.Forms.TabPage tabMiercoles;
-        private System.Windows.Forms.TabPage tabJueves;
-        private System.Windows.Forms.TabPage tabViernes;
-        private System.Windows.Forms.TabPage tabSabado;
-        private System.Windows.Forms.TabPage tabDomingo;
-        private System.Windows.Forms.Button btnSaveRepLu;
-        private System.Windows.Forms.DataGridView dgvLu;
-        private System.Windows.Forms.Button btnSaveRepMa;
-        private System.Windows.Forms.DataGridView dgvMa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn1;
-        private System.Windows.Forms.Button btnSaveRepMi;
-        private System.Windows.Forms.DataGridView dgvMi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn2;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.DataGridView dgvJu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn3;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.DataGridView dgvVi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn4;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.DataGridView dgvSa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn5;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.DataGridView dgvDo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
@@ -2687,11 +2156,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn coltipoCliente;
         private System.Windows.Forms.RadioButton rbDGVPJ;
         private System.Windows.Forms.RadioButton rbDGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVLucliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVLudomicilio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dfgdfgdfg;
-        private System.Windows.Forms.DataGridViewComboBoxColumn colVLudistribuidor;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colVLuestado;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.GroupBox groupBox19;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox cbDomicilioLunes;
+        private System.Windows.Forms.ComboBox cbDistribuidorLunes;
 
     }
 }

@@ -41,8 +41,7 @@ namespace RamosHermanos.Capas.Interfaz
                     
                     break;
                 case 2:
-                    tabMain.Controls.Remove(tabInformacion);
-                    tabMain.Controls.Remove(tabListado);
+                    CaseListado();
                     break;
                 case 3:
                     tabMain.Controls.Remove(tabInformacion);
@@ -73,6 +72,11 @@ namespace RamosHermanos.Capas.Interfaz
             cbIVAPJ.SelectedIndex = 0;
 
             CheckColor(cbEstadoPJ, lblEstadoPJ);
+
+            
+
+
+
         }
 
         private void gbCliente_Enter(object sender, EventArgs e)
@@ -396,24 +400,6 @@ namespace RamosHermanos.Capas.Interfaz
 
         // Metodos
 
-        private void CargarDGVV(DataGridView dgv, string colDistribuidor, DomicilioEntity domicilio)
-        {
-            DomicilioB.CargarDGVVisita(dgvLu, domicilio);
-
-            //
-
-            DataGridViewComboBoxColumn comboboxColumn = dgv.Columns[colDistribuidor] as DataGridViewComboBoxColumn;
-
-            comboboxColumn.DataSource = DistribuidorB.ListDistribuidores();
-            comboboxColumn.ValueMember = "idDistribuidor";
-            comboboxColumn.DisplayMember = "nombreCompleto";
-
-            //
-
-            //dgv.AutoGenerateColumns = false;
-            //dgv.DataSource = DomicilioB.ListDomicilios(domicilio);
-        }
-
         private void CheckListado()
         {
             if (rbDGV.Checked == true)
@@ -675,38 +661,8 @@ namespace RamosHermanos.Capas.Interfaz
                     //Tabs
                     CasePersona();
 
-                    //Cargar Visita
-                    //string dia = "LU";
-                    //DistribuidorB.CargarDGVCB(cliente, dgvLu, dia, "colVLudistribuidor");
-                    //Asignamos valores.
-                    ////domicilio.rol = 1;
-                    ////if (txtIDcliente.Text != string.Empty)
-                    ////    domicilio.idPersona = Convert.ToInt32(txtIDcliente.Text);
-                    ////else
-                    ////    domicilio.idPersona = Convert.ToInt32(txtIDclientePJ.Text);
-                    ////CargarDGVV(dgvLu, "colVLudistribuidor", domicilio);
-
-                    domicilio.rol = 1;
-                    domicilio.idPersona = 4;
-                    if (txtIDcliente.Text != string.Empty)
-                        domicilio.idPersona = Convert.ToInt32(txtIDcliente.Text);
-                    else
-                        domicilio.idPersona = Convert.ToInt32(txtIDclientePJ.Text);
-
-                    CargarDGVV(dgvLu, "colVLudistribuidor", domicilio);
-
-                    VisitaB.BuscarDistribuidorVisita(visita, dgvLu, "colVLudistribuidor");
-
-                    //visita.rol = 1;
-                    //visita.idPersona = 4;
-                    //visita.dia = "LU";
-                    //VisitaB.BuscarVisita(visita, dgvLu, "colVLudistribuidor");
-                    //DistribuidorB.CargarDGVCB(cliente, dgvMa, "colVMadistribuidor");
-                    //DistribuidorB.CargarDGVCB(cliente, dgvMi, "colVMidistribuidor");
-                    //DistribuidorB.CargarDGVCB(cliente, dgvJu, "colVJudistribuidor");
-                    //DistribuidorB.CargarDGVCB(cliente, dgvVi, "colVVidistribuidor");
-                    //DistribuidorB.CargarDGVCB(cliente, dgvSa, "colVSadistribuidor");
-                    //DistribuidorB.CargarDGVCB(cliente, dgvDo, "colVDodistribuidor");
+                    // ----------------- Cargas Visita ----------------- //
+                    DomicilioB.CargarCB(cbDomicilioLunes, txtIDcliente);
 
                 }
                 else if (cliente.tipoPersona == "PJ")
@@ -1114,21 +1070,21 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-        private void button11_Click_1(object sender, EventArgs e)
-        {
-            //Borramos visita anterior
-            CargarVisita(dgvLu);
-            VisitaB.DeleteVisita(visita);
+        //private void button11_Click_1(object sender, EventArgs e)
+        //{
+        //    //Borramos visita anterior
+        //    CargarVisita(dgvLu);
+        //    VisitaB.DeleteVisita(visita);
 
-            //Cargamos nuevamente los valores.
-            string strDia = "LU"; 
-            foreach (DataGridViewRow row in dgvLu.Rows)
-            {
-                CargarItemsVisita(strDia, row);
-                VisitaB.InsertVisita(visita, dgvLu);
-            }
-            MessageBox.Show("Guardado!");
-        }
+        //    //Cargamos nuevamente los valores.
+        //    string strDia = "LU"; 
+        //    foreach (DataGridViewRow row in dgvLu.Rows)
+        //    {
+        //        CargarItemsVisita(strDia, row);
+        //        VisitaB.InsertVisita(visita, dgvLu);
+        //    }
+        //    MessageBox.Show("Guardado!");
+        //}
 
         private void button5_Click_1(object sender, EventArgs e)
         {

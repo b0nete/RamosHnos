@@ -1770,7 +1770,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ComboBox cbVehiculo;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnDomicilio;
@@ -1859,5 +1858,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colLuDesde;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLuHasta;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colLuEstado;
+        public System.Windows.Forms.ComboBox cbVehiculo;
     }
 }

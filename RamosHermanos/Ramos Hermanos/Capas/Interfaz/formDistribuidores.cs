@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Interfaz.Contratos;
+using RamosHermanos.Capas.Interfaz.ABMs;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -405,8 +406,16 @@ namespace RamosHermanos.Capas.Interfaz
         {
             itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoLu.Text);
             itemRecorrido.calle = Convert.ToInt32(row.Cells["colLuIDcalle"].Value);
-            itemRecorrido.desde = Convert.ToString(row.Cells["colLuDesde"].Value);
-            itemRecorrido.hasta = Convert.ToString(row.Cells["colLuHasta"].Value);
+            itemRecorrido.desde = Convert.ToInt32(row.Cells["colLuDesde"].Value);
+
+            if (itemRecorrido.desde < itemRecorrido.hasta)
+                // "M" = Mano
+                itemRecorrido.sentido = "M";
+            else
+                // "CM" = ContraMano
+                itemRecorrido.sentido = "CM";
+
+            itemRecorrido.hasta = Convert.ToInt32(row.Cells["colLuHasta"].Value);
             itemRecorrido.estado = Convert.ToBoolean(row.Cells["colLuEstado"].Value);
         }
 
@@ -533,12 +542,19 @@ namespace RamosHermanos.Capas.Interfaz
             frm.tabVar = 0;
             frm.DGVvar = 2;
             frm.Show(this);
+
+            //Valores Predeterminados
+            frm.cbProvinciaCalle.SelectedValue = 5; // Cordoba
+            frm.cbLocalidadesCalle.SelectedValue = 26; // Cordoba Capital.
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            tabDistribuidor.Controls.Add(tabVehiculos);
-            tabDistribuidor.SelectedTab = tabVehiculos;
+            formVehiculo frm = new formVehiculo();
+            frm.Show();
+            
+            //tabDistribuidor.Controls.Add(tabVehiculos);
+            //tabDistribuidor.SelectedTab = tabVehiculos;
         }
 
         private void tabDistribuidor_SelectedIndexChanged(object sender, EventArgs e)

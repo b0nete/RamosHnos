@@ -19,8 +19,8 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO itemsRecorrido (recorrido, calle, desde, hasta, estado) 
-                                 VALUES (@recorrido, @calle, @desde, @hasta, @estado)";
+                string query = @"INSERT INTO itemsRecorrido (recorrido, calle, desde, sentido, hasta, estado) 
+                                 VALUES (@recorrido, @calle, @desde, @hasta, @sentido, @estado)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -28,6 +28,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@calle", itemRecorrido.calle);
                 cmd.Parameters.AddWithValue("@desde", itemRecorrido.desde);
                 cmd.Parameters.AddWithValue("@hasta", itemRecorrido.hasta);
+                cmd.Parameters.AddWithValue("@sentido", itemRecorrido.sentido);
                 cmd.Parameters.AddWithValue("@estado", itemRecorrido.estado);
 
                 cmd.ExecuteNonQuery();             

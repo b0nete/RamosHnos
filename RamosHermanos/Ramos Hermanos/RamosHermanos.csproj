@@ -92,6 +92,12 @@
     <Compile Include="Capas\Entidades\UsuarioEntity.cs" />
     <Compile Include="Capas\Entidades\VehiculoEntity.cs" />
     <Compile Include="Capas\Entidades\VisitaEntity.cs" />
+    <Compile Include="Capas\Interfaz\ABMs\formVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\ABMs\formVehiculo.Designer.cs">
+      <DependentUpon>formVehiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\Contratos\IAddItem.cs" />
     <Compile Include="Capas\Interfaz\formBuscarInsumo.cs">
       <SubType>Form</SubType>
@@ -282,6 +288,9 @@
     <Compile Include="Libs\InputBox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Capas\Interfaz\ABMs\formVehiculo.resx">
+      <DependentUpon>formVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formBuscarInsumo.resx">
       <DependentUpon>formBuscarInsumo.cs</DependentUpon>
     </EmbeddedResource>
