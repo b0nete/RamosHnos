@@ -155,6 +155,7 @@ namespace RamosHermanos.Capas.Interfaz
                 {
                     CargarDistribuidor();
                     DistribuidorB.InsertDistribuidores(distribuidor, txtIDdistribuidor);
+                    CaseDistribuidor();
 
                     DistribuidorB.CargarDGV(dgvDistribuidores);
                 }
@@ -407,15 +408,15 @@ namespace RamosHermanos.Capas.Interfaz
             itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoLu.Text);
             itemRecorrido.calle = Convert.ToInt32(row.Cells["colLuIDcalle"].Value);
             itemRecorrido.desde = Convert.ToInt32(row.Cells["colLuDesde"].Value);
+            itemRecorrido.hasta = Convert.ToInt32(row.Cells["colLuHasta"].Value);
 
             if (itemRecorrido.desde < itemRecorrido.hasta)
                 // "M" = Mano
                 itemRecorrido.sentido = "M";
-            else
-                // "CM" = ContraMano
-                itemRecorrido.sentido = "CM";
+            else if (itemRecorrido.desde > itemRecorrido.hasta)
+                // "C" = ContraMano
+                itemRecorrido.sentido = "C";
 
-            itemRecorrido.hasta = Convert.ToInt32(row.Cells["colLuHasta"].Value);
             itemRecorrido.estado = Convert.ToBoolean(row.Cells["colLuEstado"].Value);
         }
 
@@ -564,5 +565,48 @@ namespace RamosHermanos.Capas.Interfaz
                 tabDistribuidor.Controls.Remove(tabVehiculos);     
             }                   
         }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            DataGridView grid = dgvRecorridoLu;
+            try
+            {
+                int totalRows = grid.Rows.Count;
+                int idx = grid.SelectedCells[0].OwningRow.Index;
+                if (idx == 0)
+                    return;
+                int col = grid.SelectedCells[0].OwningColumn.Index;
+                DataGridViewRowCollection rows = grid.Rows;
+                DataGridViewRow row = rows[idx];
+                rows.Remove(row);
+                rows.Insert(idx - 1, row);
+                grid.ClearSelection();
+                grid.Rows[idx - 1].Cells[col].Selected = true;
+
+            }
+            catch { }
+        }
+
+        private void btnDown_Click(object sender, EventArgs e)
+        {
+            DataGridView grid = dgvRecorridoLu;
+            try
+            {
+                int totalRows = grid.Rows.Count;
+                int idx = grid.SelectedCells[0].OwningRow.Index;
+                if (idx == totalRows - 2)
+                    return;
+                int col = grid.SelectedCells[0].OwningColumn.Index;
+                DataGridViewRowCollection rows = grid.Rows;
+                DataGridViewRow row = rows[idx];
+                rows.Remove(row);
+                rows.Insert(idx + 1, row);
+                grid.ClearSelection();
+                grid.Rows[idx + 1].Cells[col].Selected = true;
+            }
+            catch { }
+        }
+
+
     }
 }

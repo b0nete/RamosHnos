@@ -511,6 +511,7 @@
             this.Controls.Add(this.groupBox2);
             this.Name = "formVehiculo";
             this.Text = "Registrar Vehiculo";
+            this.Load += new System.EventHandler(this.formVehiculo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

@@ -59,7 +59,8 @@ namespace RamosHermanos.Capas.Interfaz.ABMs
 
         private bool ValidarVehiculo() //Verificar valores necesarios cargados.
         {
-            if (cbMarca.SelectedText == "" || cbColor.SelectedValue == null || txtPatente.MaskFull == false)
+            // cbMarca.SelectedText == "" || cbColor.SelectedItem == null || txtPatente.MaskFull == fals
+            if (cbMarca.SelectedText == null || cbColor.SelectedItem == null || txtPatente.MaskFull == false)
             {
                 MessageBox.Show("Datos necesarios incompletos.");
                 return false;
@@ -83,6 +84,27 @@ namespace RamosHermanos.Capas.Interfaz.ABMs
             Color colour = Color.FromName(clr);
 
             btnColor.BackColor = colour;
+        }
+
+        private void formVehiculo_Load(object sender, EventArgs e)
+        {
+            //tabVehiculos
+            VehiculoB.CargarDGV(dgvVehiculos);
+            CheckColor(cbEstadoVeh, lblEstadoVeh);
+        }
+
+        private void CheckColor(CheckBox cb, Label lbl)
+        {
+            if (cb.Checked == true)
+            {
+                lbl.BackColor = Color.Green;
+                lbl.Text = "Habilitado";
+            }
+            else
+            {
+                lbl.BackColor = Color.Red;
+                lbl.Text = "Desabilitado";
+            }
         }
 
     }

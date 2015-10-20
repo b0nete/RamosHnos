@@ -19,7 +19,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO itemsRecorrido (recorrido, calle, desde, sentido, hasta, estado) 
+                string query = @"INSERT INTO itemsRecorrido (recorrido, calle, desde, hasta, sentido, estado) 
                                  VALUES (@recorrido, @calle, @desde, @hasta, @sentido, @estado)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
