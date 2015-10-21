@@ -264,16 +264,31 @@
     <Compile Include="Capas\Negocio\UsuarioB.cs" />
     <Compile Include="Capas\Negocio\VehiculoB.cs" />
     <Compile Include="Capas\Negocio\VisitaB.cs" />
-    <Compile Include="Capas\Reportes\crFactura.cs">
+    <Compile Include="Capas\Reportes\Hojas de Ruta\dsHojaRuta.cs">
+      <DependentUpon>dsHojaRuta.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Capas\Reportes\Hojas de Ruta\dsHojaRuta.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsHojaRuta.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Reportes\Hojas de Ruta\formPrueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Reportes\Hojas de Ruta\formPrueba.Designer.cs">
+      <DependentUpon>formPrueba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="obj\crFactura.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crFactura.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Capas\Reportes\crRepartoLUNES.cs">
+    <Compile Include="Capas\Reportes\Hojas de Ruta\crHojaRuta.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>crRepartoLUNES.rpt</DependentUpon>
+      <DependentUpon>crHojaRuta.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Capas\Reportes\dsFactura.cs">
@@ -357,13 +372,16 @@
     <EmbeddedResource Include="Capas\Interfaz\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Reportes\crFactura.rpt">
+    <EmbeddedResource Include="Capas\Reportes\Hojas de Ruta\formPrueba.resx">
+      <DependentUpon>formPrueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\crFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crFactura.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Reportes\crRepartoLUNES.rpt">
+    <EmbeddedResource Include="Capas\Reportes\Hojas de Ruta\crHojaRuta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crRepartoLUNES.cs</LastGenOutput>
+      <LastGenOutput>crHojaRuta.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -385,6 +403,17 @@
     </None>
     <None Include="Capas\Reportes\dsFactura.xss">
       <DependentUpon>dsFactura.xsd</DependentUpon>
+    </None>
+    <None Include="Capas\Reportes\Hojas de Ruta\dsHojaRuta.xsc">
+      <DependentUpon>dsHojaRuta.xsd</DependentUpon>
+    </None>
+    <None Include="Capas\Reportes\Hojas de Ruta\dsHojaRuta.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsHojaRuta.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Capas\Reportes\Hojas de Ruta\dsHojaRuta.xss">
+      <DependentUpon>dsHojaRuta.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\RamosHermanos.Capas.Interfaz.formFactura.datasource" />
     <None Include="Properties\Settings.settings">

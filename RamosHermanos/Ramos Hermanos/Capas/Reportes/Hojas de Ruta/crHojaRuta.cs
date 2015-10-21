@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RamosHermanos.Capas.Reportes {
+namespace RamosHermanos.Capas.Reportes.Hojas_de_Ruta {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace RamosHermanos.Capas.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class crRepartoLUNES : ReportClass {
+    public class crHojaRuta : ReportClass {
         
-        public crRepartoLUNES() {
+        public crHojaRuta() {
         }
         
         public override string ResourceName {
             get {
-                return "crRepartoLUNES.rpt";
+                return "crHojaRuta.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace RamosHermanos.Capas.Reportes {
         
         public override string FullResourceName {
             get {
-                return "RamosHermanos.Capas.Reportes.crRepartoLUNES.rpt";
+                return "RamosHermanos.Capas.Reportes.Hojas de Ruta.crHojaRuta.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace RamosHermanos.Capas.Reportes {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedcrRepartoLUNES : Component, ICachedReport {
+    public class CachedcrHojaRuta : Component, ICachedReport {
         
-        public CachedcrRepartoLUNES() {
+        public CachedcrHojaRuta() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace RamosHermanos.Capas.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            crRepartoLUNES rpt = new crRepartoLUNES();
+            crHojaRuta rpt = new crHojaRuta();
             rpt.Site = this.Site;
             return rpt;
         }
