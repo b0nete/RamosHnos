@@ -137,24 +137,26 @@
             this.tabRecorrido = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
+            this.btnDown = new System.Windows.Forms.Button();
             this.txtIDRecorridoLu = new System.Windows.Forms.TextBox();
             this.btnSaveRecLu = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvRecorridoLu = new System.Windows.Forms.DataGridView();
+            this.colLuIDcalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLuDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLuHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLuEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.btnDown = new System.Windows.Forms.Button();
-            this.btnUp = new System.Windows.Forms.Button();
-            this.colLuIDcalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLuDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLuHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLuEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.crvHojaRuta = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tabDistribuidor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -1529,6 +1531,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.crvHojaRuta);
+            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.btnUp);
             this.tabPage1.Controls.Add(this.btnDown);
             this.tabPage1.Controls.Add(this.txtIDRecorridoLu);
@@ -1543,6 +1547,42 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lunes";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(700, 475);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(28, 28);
+            this.button3.TabIndex = 98;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // btnUp
+            // 
+            this.btnUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUp.BackgroundImage")));
+            this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUp.Location = new System.Drawing.Point(329, 475);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(28, 28);
+            this.btnUp.TabIndex = 97;
+            this.btnUp.UseVisualStyleBackColor = true;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
+            // 
+            // btnDown
+            // 
+            this.btnDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDown.BackgroundImage")));
+            this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDown.Location = new System.Drawing.Point(363, 475);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(28, 28);
+            this.btnDown.TabIndex = 96;
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
             // txtIDRecorridoLu
             // 
@@ -1603,6 +1643,37 @@
             this.dgvRecorridoLu.Size = new System.Drawing.Size(756, 463);
             this.dgvRecorridoLu.TabIndex = 4;
             // 
+            // colLuIDcalle
+            // 
+            this.colLuIDcalle.HeaderText = "Nº Calle";
+            this.colLuIDcalle.Name = "colLuIDcalle";
+            this.colLuIDcalle.ReadOnly = true;
+            this.colLuIDcalle.Visible = false;
+            // 
+            // colCalle
+            // 
+            this.colCalle.HeaderText = "Calle";
+            this.colCalle.Name = "colCalle";
+            this.colCalle.ReadOnly = true;
+            // 
+            // colLuDesde
+            // 
+            this.colLuDesde.HeaderText = "Desde";
+            this.colLuDesde.Name = "colLuDesde";
+            // 
+            // colLuHasta
+            // 
+            this.colLuHasta.HeaderText = "Hasta";
+            this.colLuHasta.Name = "colLuHasta";
+            // 
+            // colLuEstado
+            // 
+            this.colLuEstado.HeaderText = "Estado";
+            this.colLuEstado.IndeterminateValue = "True";
+            this.colLuEstado.Name = "colLuEstado";
+            this.colLuEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colLuEstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -1658,60 +1729,16 @@
             this.tabPage7.Text = "Domingo";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // btnDown
+            // crvHojaRuta
             // 
-            this.btnDown.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDown.BackgroundImage")));
-            this.btnDown.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDown.Location = new System.Drawing.Point(363, 475);
-            this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(28, 28);
-            this.btnDown.TabIndex = 96;
-            this.btnDown.UseVisualStyleBackColor = true;
-            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
-            // 
-            // btnUp
-            // 
-            this.btnUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUp.BackgroundImage")));
-            this.btnUp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUp.Location = new System.Drawing.Point(329, 475);
-            this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(28, 28);
-            this.btnUp.TabIndex = 97;
-            this.btnUp.UseVisualStyleBackColor = true;
-            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
-            // 
-            // colLuIDcalle
-            // 
-            this.colLuIDcalle.HeaderText = "Nº Calle";
-            this.colLuIDcalle.Name = "colLuIDcalle";
-            this.colLuIDcalle.ReadOnly = true;
-            this.colLuIDcalle.Visible = false;
-            // 
-            // colCalle
-            // 
-            this.colCalle.HeaderText = "Calle";
-            this.colCalle.Name = "colCalle";
-            this.colCalle.ReadOnly = true;
-            // 
-            // colLuDesde
-            // 
-            this.colLuDesde.HeaderText = "Desde";
-            this.colLuDesde.Name = "colLuDesde";
-            // 
-            // colLuHasta
-            // 
-            this.colLuHasta.HeaderText = "Hasta";
-            this.colLuHasta.Name = "colLuHasta";
-            // 
-            // colLuEstado
-            // 
-            this.colLuEstado.HeaderText = "Estado";
-            this.colLuEstado.IndeterminateValue = "True";
-            this.colLuEstado.Name = "colLuEstado";
-            this.colLuEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colLuEstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.crvHojaRuta.ActiveViewIndex = -1;
+            this.crvHojaRuta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crvHojaRuta.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crvHojaRuta.Location = new System.Drawing.Point(15, 32);
+            this.crvHojaRuta.Name = "crvHojaRuta";
+            this.crvHojaRuta.Size = new System.Drawing.Size(737, 417);
+            this.crvHojaRuta.TabIndex = 99;
+            this.crvHojaRuta.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // formDistribuidores
             // 
@@ -1890,5 +1917,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colLuDesde;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLuHasta;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colLuEstado;
+        private System.Windows.Forms.Button button3;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crvHojaRuta;
     }
 }

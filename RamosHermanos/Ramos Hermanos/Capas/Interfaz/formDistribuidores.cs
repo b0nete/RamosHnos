@@ -7,10 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization; //CultureInfo
+using System.Threading;
+using CrystalDecisions.CrystalReports.Engine;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Interfaz.Contratos;
 using RamosHermanos.Capas.Interfaz.ABMs;
+using RamosHermanos.Capas.Reportes.HojasRuta;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -605,6 +609,53 @@ namespace RamosHermanos.Capas.Interfaz
                 grid.Rows[idx + 1].Cells[col].Selected = true;
             }
             catch { }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
+            string rep = @"\Capas\Reportes\HojasRuta\crHojaRuta.rpt";
+
+            // dsHojaRuta contiene dtRecorrido y dtItemsRecorrido
+            dsHojasRuta ds = new dsHojasRuta();            
+
+            string fecha;
+            string dia;
+            GetFecha(out fecha, out dia); //Llenamos los strings fecha y dia de acuerdo a lo devuelto en GetFecha.  
+            string distribuidor = Convert.ToString(txtNombre.Text + ' ' + txtApellido.Text);
+
+            //dtRecorrido - fechaRecorrido, dia, distribuidor, numHoja
+            ds.Tables["dtRecorrido"].Rows.Add
+            (
+            fecha,
+            dia,
+            distribuidor
+            );
+
+            //dtItemsRecorrido
+
+
+            ReportDocument rd = new ReportDocument();
+            rd.Load(ruta + rep);
+            //rd.Load("C:/Users/b0nete/Documents/GitHub/RamosHnos/RamosHermanos/Ramos Hermanos/Capas/Reportes/crFactura.rpt");
+            rd.SetDataSource(ds);
+            crvHojaRuta.ReportSource = rd;
+        }
+
+        private void GetFecha(out string fechaRecorrido, out string diaSemana)
+        {
+            // Change current culture to fr-FR
+            CultureInfo originalCulture = Thread.CurrentThread.CurrentCulture;
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("Es-Es");
+
+            DateTime dateValue = new DateTime();
+            dateValue = DateTime.Today;
+            // Display the DayOfWeek string representation
+            fechaRecorrido = Convert.ToString(dateValue);
+            diaSemana = dateValue.ToString("dddd",
+                              new CultureInfo("es-ES"));    
+            // Restore original current culture
+            Thread.CurrentThread.CurrentCulture = originalCulture;
         }
 
 

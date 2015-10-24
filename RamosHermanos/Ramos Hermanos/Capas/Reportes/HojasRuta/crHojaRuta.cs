@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RamosHermanos.Capas.Reportes.Hojas_de_Ruta {
+namespace RamosHermanos.Capas.Reportes.HojasRuta {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace RamosHermanos.Capas.Reportes.Hojas_de_Ruta {
         
         public override string FullResourceName {
             get {
-                return "RamosHermanos.Capas.Reportes.Hojas de Ruta.crHojaRuta.rpt";
+                return "RamosHermanos.Capas.Reportes.HojasRuta.crHojaRuta.rpt";
             }
             set {
                 // Do nothing
