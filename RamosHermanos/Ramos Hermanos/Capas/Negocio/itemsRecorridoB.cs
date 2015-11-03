@@ -13,7 +13,7 @@ namespace RamosHermanos.Capas.Negocio
 {
     class itemsRecorridoB
     {
-        public static itemRecorridoEntity InsertItemRecorrido(itemRecorridoEntity itemRecorrido, DataGridView dgv)
+        public static itemRecorridoEntity InsertItemRecorrido(itemRecorridoEntity itemRecorrido)
         {
             try
             {
@@ -109,6 +109,55 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static DataTable GetItemsRecorrido(DataGridView dgv, TextBox txt)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT CONCAT(C.nombre, ' ', C.apellido) as nombreCompleto, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) domicilioCompleto
+                                FROM itemsRecorrido IR
+                                INNER JOIN Domicilios D ON D.calle = IR.calle
+                                INNER JOIN Clientes C ON C.idCliente = D.idPersona
+                                INNER JOIN Recorridos R ON R.idRecorrido = IR.recorrido
+                                INNER JOIN Calles CC ON D.Calle = CC.idCalle
+                                WHERE idRecorrido = @idRecorrido and D.calle = @calle
+                                ORDER BY D.numero ";
+                           
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);                
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dtItemsRecorrido = new DataTable();
+                DataTable dtItemsRecorridoFULL = new DataTable();                
+
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    cmd.Parameters.AddWithValue("@idRecorrido", txt.Text);
+                    cmd.Parameters.AddWithValue("@calle", Convert.ToInt32(row.Cells["colLuIDcalle"].Value));
+
+                    // Se Llena el dtItemsRecorrido
+                    da.Fill(dtItemsRecorrido);
+                    // Agregamos al DataTable principal
+                    dtItemsRecorridoFULL.Merge(dtItemsRecorrido);
+
+                    cmd.Parameters.Clear();
+                }
+
+                //foreach (DataRow dtRow in dtItemsRecorridoFULL.Rows)
+                //{
+                //    MessageBox.Show(Convert.ToString(dtRow));
+                //}
+
+                return dtItemsRecorrido;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        
 
     }
 }

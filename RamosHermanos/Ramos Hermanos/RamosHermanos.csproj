@@ -201,6 +201,12 @@
     <Compile Include="Capas\Interfaz\formSaldos.Designer.cs">
       <DependentUpon>formSaldos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaz\formTestDGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\formTestDGV.Designer.cs">
+      <DependentUpon>formTestDGV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\formtipoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,10 +270,20 @@
     <Compile Include="Capas\Negocio\UsuarioB.cs" />
     <Compile Include="Capas\Negocio\VehiculoB.cs" />
     <Compile Include="Capas\Negocio\VisitaB.cs" />
+    <Compile Include="Capas\Reportes\formReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Reportes\formReports.Designer.cs">
+      <DependentUpon>formReports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Reportes\HojasRuta\crHojaRuta.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crHojaRuta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Capas\Reportes\HojasRuta\dsHojasRuta.cs">
+      <DependentUpon>dsHojasRuta.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Capas\Reportes\HojasRuta\dsHojasRuta.Designer.cs">
@@ -347,6 +363,9 @@
     <EmbeddedResource Include="Capas\Interfaz\formSaldos.resx">
       <DependentUpon>formSaldos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\formTestDGV.resx">
+      <DependentUpon>formTestDGV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formtipoCliente.resx">
       <DependentUpon>formtipoCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -361,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Reportes\formReports.resx">
+      <DependentUpon>formReports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Reportes\HojasRuta\crHojaRuta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

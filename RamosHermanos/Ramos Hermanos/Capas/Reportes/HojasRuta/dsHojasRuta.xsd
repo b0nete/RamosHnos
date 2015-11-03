@@ -24,6 +24,10 @@
         </xs:element>
         <xs:element name="dtItemsRecorrido" msprop:Generator_TableClassName="dtItemsRecorridoDataTable" msprop:Generator_TableVarName="tabledtItemsRecorrido" msprop:Generator_RowChangedName="dtItemsRecorridoRowChanged" msprop:Generator_TablePropName="dtItemsRecorrido" msprop:Generator_RowDeletingName="dtItemsRecorridoRowDeleting" msprop:Generator_RowChangingName="dtItemsRecorridoRowChanging" msprop:Generator_RowEvHandlerName="dtItemsRecorridoRowChangeEventHandler" msprop:Generator_RowDeletedName="dtItemsRecorridoRowDeleted" msprop:Generator_RowClassName="dtItemsRecorridoRow" msprop:Generator_UserTableName="dtItemsRecorrido" msprop:Generator_RowEvArgName="dtItemsRecorridoRowChangeEvent">
           <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="domicilio" msprop:Generator_ColumnVarNameInTable="columndomicilio" msprop:Generator_ColumnPropNameInRow="domicilio" msprop:Generator_ColumnPropNameInTable="domicilioColumn" msprop:Generator_UserColumnName="domicilio" type="xs:string" minOccurs="0" />
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>

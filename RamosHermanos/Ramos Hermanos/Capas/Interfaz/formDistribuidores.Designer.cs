@@ -156,7 +156,7 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.crvHojaRuta = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.button5 = new System.Windows.Forms.Button();
             this.tabDistribuidor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -1531,7 +1531,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.crvHojaRuta);
+            this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.btnUp);
             this.tabPage1.Controls.Add(this.btnDown);
@@ -1729,16 +1729,17 @@
             this.tabPage7.Text = "Domingo";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // crvHojaRuta
+            // button5
             // 
-            this.crvHojaRuta.ActiveViewIndex = -1;
-            this.crvHojaRuta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crvHojaRuta.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crvHojaRuta.Location = new System.Drawing.Point(15, 32);
-            this.crvHojaRuta.Name = "crvHojaRuta";
-            this.crvHojaRuta.Size = new System.Drawing.Size(737, 417);
-            this.crvHojaRuta.TabIndex = 99;
-            this.crvHojaRuta.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(666, 475);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(28, 28);
+            this.button5.TabIndex = 99;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // formDistribuidores
             // 
@@ -1918,6 +1919,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colLuHasta;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colLuEstado;
         private System.Windows.Forms.Button button3;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crvHojaRuta;
+        private System.Windows.Forms.Button button5;
     }
 }

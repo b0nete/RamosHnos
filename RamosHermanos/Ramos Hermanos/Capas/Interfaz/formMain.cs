@@ -201,6 +201,12 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
+        private void testDGVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formTestDGV frm = new formTestDGV();
+            frm.Show();
+        }
+
        
        
        

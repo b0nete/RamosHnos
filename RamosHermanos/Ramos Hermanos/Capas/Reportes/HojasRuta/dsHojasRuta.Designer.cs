@@ -603,6 +603,10 @@ namespace RamosHermanos.Capas.Reportes.HojasRuta {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class dtItemsRecorridoDataTable : global::System.Data.TypedTableBase<dtItemsRecorridoRow> {
             
+            private global::System.Data.DataColumn columnnombre;
+            
+            private global::System.Data.DataColumn columndomicilio;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtItemsRecorridoDataTable() {
@@ -634,6 +638,22 @@ namespace RamosHermanos.Capas.Reportes.HojasRuta {
             protected dtItemsRecorridoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nombreColumn {
+                get {
+                    return this.columnnombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn domicilioColumn {
+                get {
+                    return this.columndomicilio;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -673,9 +693,11 @@ namespace RamosHermanos.Capas.Reportes.HojasRuta {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtItemsRecorridoRow AdddtItemsRecorridoRow() {
+            public dtItemsRecorridoRow AdddtItemsRecorridoRow(string nombre, string domicilio) {
                 dtItemsRecorridoRow rowdtItemsRecorridoRow = ((dtItemsRecorridoRow)(this.NewRow()));
-                object[] columnValuesArray = new object[0];
+                object[] columnValuesArray = new object[] {
+                        nombre,
+                        domicilio};
                 rowdtItemsRecorridoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtItemsRecorridoRow);
                 return rowdtItemsRecorridoRow;
@@ -698,11 +720,17 @@ namespace RamosHermanos.Capas.Reportes.HojasRuta {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnnombre = base.Columns["nombre"];
+                this.columndomicilio = base.Columns["domicilio"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
+                this.columndomicilio = new global::System.Data.DataColumn("domicilio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndomicilio);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -968,6 +996,62 @@ namespace RamosHermanos.Capas.Reportes.HojasRuta {
             internal dtItemsRecorridoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tabledtItemsRecorrido = ((dtItemsRecorridoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombre {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtItemsRecorrido.nombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre\' de la tabla \'dtItemsRecorrido\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtItemsRecorrido.nombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string domicilio {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtItemsRecorrido.domicilioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'domicilio\' de la tabla \'dtItemsRecorrido\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtItemsRecorrido.domicilioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnombreNull() {
+                return this.IsNull(this.tabledtItemsRecorrido.nombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnombreNull() {
+                this[this.tabledtItemsRecorrido.nombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdomicilioNull() {
+                return this.IsNull(this.tabledtItemsRecorrido.domicilioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdomicilioNull() {
+                this[this.tabledtItemsRecorrido.domicilioColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -14,6 +14,7 @@ using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Interfaz.Contratos;
 using RamosHermanos.Capas.Interfaz.ABMs;
+using RamosHermanos.Capas.Reportes;
 using RamosHermanos.Capas.Reportes.HojasRuta;
 
 namespace RamosHermanos.Capas.Interfaz
@@ -536,7 +537,7 @@ namespace RamosHermanos.Capas.Interfaz
             foreach (DataGridViewRow row in dgvRecorridoLu.Rows)
             {
                 CargarItemRecorrido(row);
-                itemsRecorridoB.InsertItemRecorrido(itemRecorrido, dgvRecorridoLu);
+                itemsRecorridoB.InsertItemRecorrido(itemRecorrido);
             }
 
         }
@@ -613,6 +614,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button3_Click(object sender, EventArgs e)
         {
+            // Tutorial: https://www.youtube.com/watch?v=Ax4dLk9xPec
+
             string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
             string rep = @"\Capas\Reportes\HojasRuta\crHojaRuta.rpt";
 
@@ -621,7 +624,7 @@ namespace RamosHermanos.Capas.Interfaz
 
             string fecha;
             string dia;
-            GetFecha(out fecha, out dia); //Llenamos los strings fecha y dia de acuerdo a lo devuelto en GetFecha.  
+            GetFecha(out fecha, out dia); //Llenamos los strings fecha y dia de acuerdo a lo devuelto por el método GetFecha.  
             string distribuidor = Convert.ToString(txtNombre.Text + ' ' + txtApellido.Text);
 
             //dtRecorrido - fechaRecorrido, dia, distribuidor, numHoja
@@ -633,13 +636,31 @@ namespace RamosHermanos.Capas.Interfaz
             );
 
             //dtItemsRecorrido
+            DataTable dtItemsRecorridoTest = itemsRecorridoB.GetItemsRecorrido(dgvRecorridoLu, txtIDdistribuidor);
+
+            int rows = dtItemsRecorridoTest.Rows.Count;
+
+            for (int i = 0; i <= rows - 1; i++)
+            {
+                ds.Tables["dtItemsRecorrido"].Rows.Add
+                (
+                new object[]
+                {
+                    dtItemsRecorridoTest.Rows[i][0].ToString(),
+                    dtItemsRecorridoTest.Rows[i][1].ToString()
+                }
+                );
+            }
 
 
+            //Cargar Reporte
+            formReports frm = new formReports();
+            frm.Show();
             ReportDocument rd = new ReportDocument();
             rd.Load(ruta + rep);
             //rd.Load("C:/Users/b0nete/Documents/GitHub/RamosHnos/RamosHermanos/Ramos Hermanos/Capas/Reportes/crFactura.rpt");
             rd.SetDataSource(ds);
-            crvHojaRuta.ReportSource = rd;
+            frm.crvReporte.ReportSource = rd;
         }
 
         private void GetFecha(out string fechaRecorrido, out string diaSemana)
@@ -656,6 +677,11 @@ namespace RamosHermanos.Capas.Interfaz
                               new CultureInfo("es-ES"));    
             // Restore original current culture
             Thread.CurrentThread.CurrentCulture = originalCulture;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            itemsRecorridoB.GetItemsRecorrido(dgvRecorridoLu, txtIDRecorridoLu);
         }
 
 
