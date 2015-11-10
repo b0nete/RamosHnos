@@ -291,12 +291,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsHojasRuta.xsd</DependentUpon>
     </Compile>
-    <Compile Include="obj\crFactura.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>crFactura.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Capas\Reportes\dsFactura.cs">
       <DependentUpon>dsFactura.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -388,10 +382,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crHojaRuta.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\crFactura.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crFactura.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -444,7 +434,9 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="obj\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

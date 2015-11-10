@@ -409,18 +409,18 @@ namespace RamosHermanos.Capas.Interfaz
 
         itemRecorridoEntity itemRecorrido = new itemRecorridoEntity();
         private void CargarItemRecorrido(DataGridViewRow row)
-        {
+       { 
             itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoLu.Text);
             itemRecorrido.calle = Convert.ToInt32(row.Cells["colLuIDcalle"].Value);
             itemRecorrido.desde = Convert.ToInt32(row.Cells["colLuDesde"].Value);
             itemRecorrido.hasta = Convert.ToInt32(row.Cells["colLuHasta"].Value);
 
-            if (itemRecorrido.desde < itemRecorrido.hasta)
-                // "M" = Mano
-                itemRecorrido.sentido = "M";
-            else if (itemRecorrido.desde > itemRecorrido.hasta)
-                // "C" = ContraMano
-                itemRecorrido.sentido = "C";
+            //if (itemRecorrido.desde < itemRecorrido.hasta)
+            //    // "M" = Mano
+            //    itemRecorrido.sentido = "M";
+            //else if (itemRecorrido.desde > itemRecorrido.hasta)
+            //    // "C" = ContraMano
+            //    itemRecorrido.sentido = "C";
 
             itemRecorrido.estado = Convert.ToBoolean(row.Cells["colLuEstado"].Value);
         }
@@ -636,7 +636,7 @@ namespace RamosHermanos.Capas.Interfaz
             );
 
             //dtItemsRecorrido
-            DataTable dtItemsRecorridoTest = itemsRecorridoB.GetItemsRecorrido(dgvRecorridoLu, txtIDdistribuidor);
+            DataTable dtItemsRecorridoTest = itemsRecorridoB.GetItemsRecorrido(dgvRecorridoLu, txtIDRecorridoLu);
 
             int rows = dtItemsRecorridoTest.Rows.Count;
 
@@ -682,6 +682,10 @@ namespace RamosHermanos.Capas.Interfaz
         private void button5_Click(object sender, EventArgs e)
         {
             itemsRecorridoB.GetItemsRecorrido(dgvRecorridoLu, txtIDRecorridoLu);
+            
+            //DataTable dtItemsRecorridoTest = itemsRecorridoB.GetItemsRecorrido(dgvRecorridoLu, txtIDdistribuidor);
+            //int roww = dtItemsRecorridoTest.Rows.Count;
+            //MessageBox.Show("ROWS: " + roww);
         }
 
 

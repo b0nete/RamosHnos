@@ -34,19 +34,6 @@
             this.rbDGVPJ = new System.Windows.Forms.RadioButton();
             this.rbDGV = new System.Windows.Forms.RadioButton();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
-            this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIDTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coltipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNumDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCUIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCondicionIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabFamilia = new System.Windows.Forms.TabPage();
             this.tabSugerencias = new System.Windows.Forms.TabPage();
             this.tabAdicional = new System.Windows.Forms.TabPage();
@@ -174,18 +161,31 @@
             this.label61 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.tabVisita = new System.Windows.Forms.TabPage();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.cbDomicilioLunes = new System.Windows.Forms.ComboBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.cbDistribuidorLunes = new System.Windows.Forms.ComboBox();
             this.button11 = new System.Windows.Forms.Button();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cbDomicilioLunes = new System.Windows.Forms.ComboBox();
+            this.cbDistribuidorLunes = new System.Windows.Forms.ComboBox();
+            this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDTipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltipoDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNumDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCUIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCondicionIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -274,91 +274,12 @@
             this.dgvCliente.Location = new System.Drawing.Point(0, 30);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
+            this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCliente.Size = new System.Drawing.Size(776, 506);
             this.dgvCliente.TabIndex = 1;
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
             this.dgvCliente.SelectionChanged += new System.EventHandler(this.dgvCliente_SelectionChanged);
             this.dgvCliente.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCliente_MouseDoubleClick);
-            // 
-            // colIDCliente
-            // 
-            this.colIDCliente.HeaderText = "Nº Cliente";
-            this.colIDCliente.Name = "colIDCliente";
-            this.colIDCliente.ReadOnly = true;
-            // 
-            // colApellido
-            // 
-            this.colApellido.HeaderText = "Apellido";
-            this.colApellido.Name = "colApellido";
-            this.colApellido.ReadOnly = true;
-            // 
-            // colNombre
-            // 
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.ReadOnly = true;
-            // 
-            // colIDTipoDoc
-            // 
-            this.colIDTipoDoc.HeaderText = "ID Tipo Doc";
-            this.colIDTipoDoc.Name = "colIDTipoDoc";
-            this.colIDTipoDoc.ReadOnly = true;
-            this.colIDTipoDoc.Visible = false;
-            // 
-            // coltipoDoc
-            // 
-            this.coltipoDoc.HeaderText = "Tipo Documento";
-            this.coltipoDoc.Name = "coltipoDoc";
-            this.coltipoDoc.ReadOnly = true;
-            // 
-            // colNumDoc
-            // 
-            this.colNumDoc.HeaderText = "Nº Documento";
-            this.colNumDoc.Name = "colNumDoc";
-            this.colNumDoc.ReadOnly = true;
-            // 
-            // colCUIL
-            // 
-            this.colCUIL.HeaderText = "CUIL";
-            this.colCUIL.Name = "colCUIL";
-            this.colCUIL.ReadOnly = true;
-            // 
-            // colFechaAlta
-            // 
-            this.colFechaAlta.HeaderText = "Fecha Alta";
-            this.colFechaAlta.Name = "colFechaAlta";
-            this.colFechaAlta.ReadOnly = true;
-            // 
-            // colSexo
-            // 
-            this.colSexo.HeaderText = "Sexo";
-            this.colSexo.Name = "colSexo";
-            this.colSexo.ReadOnly = true;
-            // 
-            // colEstadoCivil
-            // 
-            this.colEstadoCivil.HeaderText = "Estado Civil";
-            this.colEstadoCivil.Name = "colEstadoCivil";
-            this.colEstadoCivil.ReadOnly = true;
-            // 
-            // colCondicionIVA
-            // 
-            this.colCondicionIVA.HeaderText = "Condicion IVA";
-            this.colCondicionIVA.Name = "colCondicionIVA";
-            this.colCondicionIVA.ReadOnly = true;
-            // 
-            // colIDtipoCliente
-            // 
-            this.colIDtipoCliente.HeaderText = "ID Tipo Cliente";
-            this.colIDtipoCliente.Name = "colIDtipoCliente";
-            this.colIDtipoCliente.ReadOnly = true;
-            this.colIDtipoCliente.Visible = false;
-            // 
-            // coltipoCliente
-            // 
-            this.coltipoCliente.HeaderText = "Categoria";
-            this.coltipoCliente.Name = "coltipoCliente";
-            this.coltipoCliente.ReadOnly = true;
             // 
             // tabFamilia
             // 
@@ -1842,6 +1763,77 @@
             this.tabVisita.Text = "Visita";
             this.tabVisita.UseVisualStyleBackColor = true;
             // 
+            // button11
+            // 
+            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(740, 500);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(28, 28);
+            this.button11.TabIndex = 72;
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // groupBox19
+            // 
+            this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox19.Location = new System.Drawing.Point(8, 429);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(754, 65);
+            this.groupBox19.TabIndex = 1;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "Domingo";
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox18.Location = new System.Drawing.Point(8, 358);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(754, 65);
+            this.groupBox18.TabIndex = 1;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "Sabado";
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox17.Location = new System.Drawing.Point(8, 287);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(754, 65);
+            this.groupBox17.TabIndex = 1;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Viernes";
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox16.Location = new System.Drawing.Point(8, 216);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(754, 65);
+            this.groupBox16.TabIndex = 1;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Jueves";
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox15.Location = new System.Drawing.Point(8, 145);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(754, 65);
+            this.groupBox15.TabIndex = 1;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Miercoles";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(8, 74);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(754, 65);
+            this.groupBox8.TabIndex = 1;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Martes";
+            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.label30);
@@ -1856,74 +1848,15 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Lunes";
             // 
-            // groupBox8
+            // label30
             // 
-            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(8, 74);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(754, 65);
-            this.groupBox8.TabIndex = 1;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Martes";
-            // 
-            // groupBox15
-            // 
-            this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox15.Location = new System.Drawing.Point(8, 145);
-            this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(754, 65);
-            this.groupBox15.TabIndex = 1;
-            this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Miercoles";
-            // 
-            // groupBox16
-            // 
-            this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox16.Location = new System.Drawing.Point(8, 216);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(754, 65);
-            this.groupBox16.TabIndex = 1;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Jueves";
-            // 
-            // groupBox17
-            // 
-            this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox17.Location = new System.Drawing.Point(8, 287);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(754, 65);
-            this.groupBox17.TabIndex = 1;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Viernes";
-            // 
-            // groupBox18
-            // 
-            this.groupBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox18.Location = new System.Drawing.Point(8, 358);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(754, 65);
-            this.groupBox18.TabIndex = 1;
-            this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "Sabado";
-            // 
-            // groupBox19
-            // 
-            this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox19.Location = new System.Drawing.Point(8, 429);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(754, 65);
-            this.groupBox19.TabIndex = 1;
-            this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "Domingo";
-            // 
-            // cbDomicilioLunes
-            // 
-            this.cbDomicilioLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDomicilioLunes.FormattingEnabled = true;
-            this.cbDomicilioLunes.Location = new System.Drawing.Point(61, 19);
-            this.cbDomicilioLunes.Name = "cbDomicilioLunes";
-            this.cbDomicilioLunes.Size = new System.Drawing.Size(416, 21);
-            this.cbDomicilioLunes.TabIndex = 0;
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(513, 22);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(59, 13);
+            this.label30.TabIndex = 4;
+            this.label30.Text = "Distribuidor";
             // 
             // label21
             // 
@@ -1935,15 +1868,14 @@
             this.label21.TabIndex = 2;
             this.label21.Text = "Domicilio";
             // 
-            // label30
+            // cbDomicilioLunes
             // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(513, 22);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(59, 13);
-            this.label30.TabIndex = 4;
-            this.label30.Text = "Distribuidor";
+            this.cbDomicilioLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDomicilioLunes.FormattingEnabled = true;
+            this.cbDomicilioLunes.Location = new System.Drawing.Point(61, 19);
+            this.cbDomicilioLunes.Name = "cbDomicilioLunes";
+            this.cbDomicilioLunes.Size = new System.Drawing.Size(416, 21);
+            this.cbDomicilioLunes.TabIndex = 0;
             // 
             // cbDistribuidorLunes
             // 
@@ -1954,16 +1886,85 @@
             this.cbDistribuidorLunes.Size = new System.Drawing.Size(176, 21);
             this.cbDistribuidorLunes.TabIndex = 3;
             // 
-            // button11
+            // colIDCliente
             // 
-            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(740, 500);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(28, 28);
-            this.button11.TabIndex = 72;
-            this.button11.UseVisualStyleBackColor = true;
+            this.colIDCliente.HeaderText = "Nº Cliente";
+            this.colIDCliente.Name = "colIDCliente";
+            this.colIDCliente.ReadOnly = true;
+            // 
+            // colApellido
+            // 
+            this.colApellido.HeaderText = "Apellido";
+            this.colApellido.Name = "colApellido";
+            this.colApellido.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colIDTipoDoc
+            // 
+            this.colIDTipoDoc.HeaderText = "ID Tipo Doc";
+            this.colIDTipoDoc.Name = "colIDTipoDoc";
+            this.colIDTipoDoc.ReadOnly = true;
+            this.colIDTipoDoc.Visible = false;
+            // 
+            // coltipoDoc
+            // 
+            this.coltipoDoc.HeaderText = "Tipo Documento";
+            this.coltipoDoc.Name = "coltipoDoc";
+            this.coltipoDoc.ReadOnly = true;
+            // 
+            // colNumDoc
+            // 
+            this.colNumDoc.HeaderText = "Nº Documento";
+            this.colNumDoc.Name = "colNumDoc";
+            this.colNumDoc.ReadOnly = true;
+            // 
+            // colCUIL
+            // 
+            this.colCUIL.HeaderText = "CUIL";
+            this.colCUIL.Name = "colCUIL";
+            this.colCUIL.ReadOnly = true;
+            // 
+            // colFechaAlta
+            // 
+            this.colFechaAlta.HeaderText = "Fecha Alta";
+            this.colFechaAlta.Name = "colFechaAlta";
+            this.colFechaAlta.ReadOnly = true;
+            // 
+            // colSexo
+            // 
+            this.colSexo.HeaderText = "Sexo";
+            this.colSexo.Name = "colSexo";
+            this.colSexo.ReadOnly = true;
+            // 
+            // colEstadoCivil
+            // 
+            this.colEstadoCivil.HeaderText = "Estado Civil";
+            this.colEstadoCivil.Name = "colEstadoCivil";
+            this.colEstadoCivil.ReadOnly = true;
+            // 
+            // colCondicionIVA
+            // 
+            this.colCondicionIVA.HeaderText = "Condicion IVA";
+            this.colCondicionIVA.Name = "colCondicionIVA";
+            this.colCondicionIVA.ReadOnly = true;
+            // 
+            // colIDtipoCliente
+            // 
+            this.colIDtipoCliente.HeaderText = "ID Tipo Cliente";
+            this.colIDtipoCliente.Name = "colIDtipoCliente";
+            this.colIDtipoCliente.ReadOnly = true;
+            this.colIDtipoCliente.Visible = false;
+            // 
+            // coltipoCliente
+            // 
+            this.coltipoCliente.HeaderText = "Categoria";
+            this.coltipoCliente.Name = "coltipoCliente";
+            this.coltipoCliente.ReadOnly = true;
             // 
             // formCliente
             // 
@@ -2141,19 +2142,6 @@
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblEstadoPJ;
         private System.Windows.Forms.TabPage tabVisita;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDTipoDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coltipoDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNumDoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCUIL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoCivil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCondicionIVA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colIDtipoCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coltipoCliente;
         private System.Windows.Forms.RadioButton rbDGVPJ;
         private System.Windows.Forms.RadioButton rbDGV;
         private System.Windows.Forms.Button button11;
@@ -2168,6 +2156,19 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox cbDomicilioLunes;
         private System.Windows.Forms.ComboBox cbDistribuidorLunes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDTipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coltipoDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNumDoc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCUIL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoCivil;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCondicionIVA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDtipoCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn coltipoCliente;
 
     }
 }

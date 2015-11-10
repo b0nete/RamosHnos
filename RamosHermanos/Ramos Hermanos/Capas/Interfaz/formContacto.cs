@@ -57,6 +57,8 @@ namespace RamosHermanos.Capas.Interfaz
             cbLocalidad.SelectedValue = 26;
             BarrioB.CargarCB(cbBarrio, cbLocalidad);
             CalleB.CargarCB(cbCalle, cbBarrio);
+
+            CargarDGVs();
         }
 
         public void CargarDGVs()

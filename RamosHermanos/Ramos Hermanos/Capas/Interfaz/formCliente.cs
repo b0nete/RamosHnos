@@ -13,7 +13,10 @@ using RamosHermanos.Capas.Negocio;
 namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formCliente : Form
-    {    
+    {
+        private int oldIndex = 0; // Variable para validar Textbox como double.
+        private string oldText = String.Empty; // Variable para validar Textbox como double.
+
         public formCliente()
         {
             InitializeComponent();
@@ -24,12 +27,12 @@ namespace RamosHermanos.Capas.Interfaz
         public int caseSwitch = 0;
 
         private void formCliente_Load(object sender, EventArgs e)
-        {
-            
+        {            
             // Tabs Inutilizados.
             tabMain.Controls.Remove(tabAdicional);
             tabMain.Controls.Remove(tabSugerencias);
-            tabMain.Controls.Remove(tabFamilia);            
+            tabMain.Controls.Remove(tabFamilia);
+            tabMain.Controls.Remove(tabVisita);
 
             // Listado
             CheckListado();
@@ -38,12 +41,15 @@ namespace RamosHermanos.Capas.Interfaz
             switch (caseSwitch)
             {
                 case 1:
-                    
+                    CasePersona();
                     break;
                 case 2:
+                    CasePersonaJuridica();
+                    break;                   
+                case 3:
                     CaseListado();
                     break;
-                case 3:
+                case 4:
                     tabMain.Controls.Remove(tabInformacion);
                     tabMain.Controls.Remove(tabInformacionJ);
                     tabMain.Controls.Remove(tabMovimientos);
@@ -72,11 +78,6 @@ namespace RamosHermanos.Capas.Interfaz
             cbIVAPJ.SelectedIndex = 0;
 
             CheckColor(cbEstadoPJ, lblEstadoPJ);
-
-            
-
-
-
         }
 
         private void gbCliente_Enter(object sender, EventArgs e)
@@ -150,7 +151,14 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void txtCreditoMax_TextChanged(object sender, EventArgs e)
         {
-
+            //double val;
+            //if (!Double.TryParse(txtCreditoMax.Text, out val))
+            //{
+            //    txtCreditoMax.TextChanged -= txtCreditoMax_TextChanged;
+            //    txtCreditoMax.Text = oldText;
+            //    txtCreditoMax.CaretIndex = oldIndex;
+            //    txtCreditoMax.TextChanged += txtCreditoMax_TextChanged;
+            //}
         }
 
         private void btnDomicilio_Click(object sender, EventArgs e)
@@ -163,9 +171,9 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 formContacto frm = new formContacto();
                 frm.tabVar = 0;
-                frm.txtIDALL.Text = txtIDcliente.Text;
+                frm.txtIDALL.Text = txtIDcliente.Text;                 
                 frm.Show();
-                frm.cbRolALL.SelectedValue = 1;                
+                frm.cbRolALL.SelectedValue = 1;          
                 frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
                 frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
                 frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
@@ -406,7 +414,6 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 // Mostramos columnas desabilitadas para mostrar una PJ.
                 dgvCliente.Columns[1].Visible = true;
-                dgvCliente.Columns[3].Visible = true;
                 dgvCliente.Columns[4].Visible = true;
                 dgvCliente.Columns[5].Visible = true;
                 dgvCliente.Columns[8].Visible = true;
@@ -417,7 +424,6 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 // Ocultamos columnas innecesarias.
                 dgvCliente.Columns[1].Visible = false;
-                dgvCliente.Columns[3].Visible = false;
                 dgvCliente.Columns[4].Visible = false;
                 dgvCliente.Columns[5].Visible = false;
                 dgvCliente.Columns[8].Visible = false;
