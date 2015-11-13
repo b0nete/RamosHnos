@@ -808,6 +808,7 @@
             this.dgvCalle.ReadOnly = true;
             this.dgvCalle.Size = new System.Drawing.Size(491, 167);
             this.dgvCalle.TabIndex = 101;
+            this.dgvCalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCalle_CellContentClick);
             this.dgvCalle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCalle_MouseDoubleClick);
             // 
             // colCIDProvincia

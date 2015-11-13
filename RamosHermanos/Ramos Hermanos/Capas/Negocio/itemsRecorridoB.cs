@@ -52,7 +52,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT  IR.idcallesRecorrido, IR.recorrido, IR.calle IDcalle, C.calle, IR.desde, IR.hasta, IR.estado
+                string query = @"SELECT  IR.idcallesRecorrido, IR.recorrido, IR.calle IDcalle, C.calle, IR.desde, IR.hasta, IR.sentido, IR.estado
                                  FROM itemsRecorrido IR
                                  INNER JOIN Calles C ON IR.calle = C.idCalle
                                  WHERE recorrido = @recorrido";
@@ -70,6 +70,7 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["calle"]),
                     Convert.ToString(dr["desde"]),
                     Convert.ToString(dr["hasta"]),
+                    Convert.ToString(dr["sentido"]),
                     Convert.ToString(dr["estado"]));
                 }
 
@@ -133,14 +134,17 @@ namespace RamosHermanos.Capas.Negocio
                                 INNER JOIN Calles CC ON D.Calle = CC.idCalle
                                 WHERE idRecorrido = @idRecorrido and D.calle = @calle
                                 ORDER BY D.numero DESC";
-                           
-                MySqlCommand cmd = new MySqlCommand(queryM, MySQL.sqlcnx);                
+
+
+                //MySqlCommand cmd = new MySqlCommand(queryM, MySQL.sqlcnx); 
+                MySqlCommand cmd = new MySqlCommand(queryM, MySQL.sqlcnx);  
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dtItemsRecorrido = new DataTable();
                 DataTable dtItemsRecorridoFULL = new DataTable();                
 
                 foreach (DataGridViewRow row in dgv.Rows)
                 {
+                    
                     cmd.Parameters.AddWithValue("@sentido", Convert.ToInt32(row.Cells["colLuSentido"].Value));
                     cmd.Parameters.AddWithValue("@idRecorrido", txt.Text);
                     cmd.Parameters.AddWithValue("@calle", Convert.ToInt32(row.Cells["colLuIDcalle"].Value));
@@ -154,7 +158,7 @@ namespace RamosHermanos.Capas.Negocio
                     cmd.Parameters.Clear();
                     dtItemsRecorrido.Clear();
                 }
-                                
+
                 return dtItemsRecorridoFULL;
             }
             catch (Exception ex)

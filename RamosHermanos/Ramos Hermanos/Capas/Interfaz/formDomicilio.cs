@@ -258,6 +258,11 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
+        private void dgvCalle_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
 
     }
 }

@@ -500,7 +500,7 @@ namespace RamosHermanos.Capas.Interfaz
             string calle = row.Cells["colCCalle"].Value.ToString();
             string check = "true";
 
-            this.dgvRecorridoLu.Rows.Add(new[] {idCalle, calle, "", "", check});
+            this.dgvRecorridoLu.Rows.Add(new[] {idCalle, calle, "", "", "", check});
         }
 
         //#endregion
@@ -686,6 +686,22 @@ namespace RamosHermanos.Capas.Interfaz
             //DataTable dtItemsRecorridoTest = itemsRecorridoB.GetItemsRecorrido(dgvRecorridoLu, txtIDdistribuidor);
             //int roww = dtItemsRecorridoTest.Rows.Count;
             //MessageBox.Show("ROWS: " + roww);
+        }
+
+        private void dgvRecorridoLu_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvRecorridoLu.Rows)
+            {
+                // Se ejecutan las operaciones solo si la columna cantidad y precio tienen algún valor, ya que de lo contrario nos dará un error.
+                if (Convert.ToInt32(row.Cells["colLuDesde"].Value) > Convert.ToInt32(row.Cells["colLuHasta"].Value))
+                {
+                    row.Cells["colLuSentido"].Value = "M";
+                }
+                else
+                {
+                    row.Cells["colLuSentido"].Value = "C";
+                }
+            }
         }
 
 
