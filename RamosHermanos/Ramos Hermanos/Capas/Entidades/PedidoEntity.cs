@@ -9,10 +9,10 @@ namespace RamosHermanos.Capas.Entidades
     class PedidoEntity
     {
         public int idPedido { get; set; }
+        public int idPersona { get; set; }
         public int rol { get; set; }
         public DateTime fechaPedido { get; set; }
         public DateTime fechaEntrega { get; set; }
-        public int persona { get; set; }
         public string domicilio { get; set; }
         public int tipoPedido { get; set; }
         public string observaciones { get; set; }

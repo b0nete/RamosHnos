@@ -19,15 +19,16 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT into Pedidos (rol,domicilio,fechaPedido,fechaEntrega,observaciones, total, estado)
-                             VALUES (@rol,@domicilio,@fechaPedido,@fechaEntrega,@observaciones,@total,@estado);
+                string query = @"INSERT into Pedidos (rol,idPersona,domicilio,fechaPedido,fechaEntrega,observaciones, total, estado)
+                             VALUES (@rol,@idPersona,@domicilio,@fechaPedido,@fechaEntrega,@observaciones,@total,@estado);
                              SELECT LAST_INSERT_ID();";
 
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@rol", pedido.rol);
-                cmd.Parameters.AddWithValue("domicilio", pedido.domicilio);
+                cmd.Parameters.AddWithValue("@idPersona", pedido.idPersona);
+                cmd.Parameters.AddWithValue("@domicilio", pedido.domicilio);
                 cmd.Parameters.AddWithValue("@fechaPedido", pedido.fechaPedido);
                 cmd.Parameters.AddWithValue("@fechaEntrega", pedido.fechaEntrega);
                 cmd.Parameters.AddWithValue("@observaciones", pedido.observaciones);
@@ -38,20 +39,57 @@ namespace RamosHermanos.Capas.Negocio
 
                 cmd.ExecuteNonQuery();
 
-                
+
                 MySQL.DisconnectDB();
 
                 return pedido;
 
-                
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("ERROR" + ex);
                 throw;
-            } 
-        
-        
+            }
         }
-    }
-}
+        
+        public static void cargardgvPedido (DataGridView dgv)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                dgv.Rows.Clear();
+
+                string query = @"Select P.idPedidos , P.fechaPedido , P.fechaEntrega ,P.total ,P.estado
+                               FROM pedidos P";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToInt32(dr["idPedidos"]),
+                    Convert.ToDateTime(dr["fechaPedido"]).ToString("dd/MM/yyyy"),
+                    Convert.ToDateTime(dr["fechaEntrega"]).ToString("dd/MM/yyyy"),
+                    Convert.ToDouble(dr["total"]),
+                    Convert.ToString(dr["estado"]));
+                                       
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        }
+   }
+

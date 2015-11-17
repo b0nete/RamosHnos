@@ -1,0 +1,62 @@
+Alcances.
+1.	Registrar usuarios. SI
+2.	Consultar usuarios. SI
+3.	Listar usuarios. SI
+4.	Registrar cargos. NO
+5.	Registrar pedidos. SI
+6.	Modificar pedidos. NO
+7.	Consultar pedidos. NO.
+8.	Listar pedidos. NO
+9.	Registrar pedido entregado. NO
+10.	Registrar medios de pago. NO
+11.	Registrar cobro efectivo. NO
+12.	Generar factura. BETA
+13.	Generar recibo. BETA
+14.	Consultar cobros. NO
+15.	Registrar clientes. SI
+16.	Consultar clientes. SI
+17.	Listar clientes. SI
+18.	Registrar proveedores. SI
+19.	Consultar proveedores. SI
+20.	Listar proveedores.SI
+21.	Consultar saldo proveedores. NO
+22.	Consultar saldo clientes. NO
+23.	Generar listado de insumos faltantes. NO
+24.	Generar pedido de insumos faltantes. NO
+25.	Registrar insumos entrantes. SI
+26.	Generar listado de productos faltantes. NO
+27.	Generar pedido de productos faltantes. NO
+28.	Registrar productos elaborados. SI
+29.	Registrar cobro en efectivo. NO
+30.	Consultar cobros. NO
+31.	Listar cobros. NO
+32.	Registrar pagos. NO
+33.	Consultar pagos. NO
+34.	Listar pagos. NO
+35.	Registrar insumos. SI
+36.	Consultar insumos. SI
+37.	Listar insumos. SI
+38.	Registrar productos. SI
+39.	Consultar productos. SI
+40.	Listar productos. SI
+41.	Registrar rubros. SI
+42.	Consultar rubros. NO
+43.	Listar rubros. SI
+44.	Registrar stock inicial. SI
+45.	Generar stock. NO
+46.	Registrar stock mínimo. SI
+47.	Actualizar stock. NO
+48.	Consultar stock. NO
+49.	Listar stock.NO
+50.	Listar ventas.NO
+51.	Listar compras.NO
+52.	Consultar ventas.NO
+53.	Emitir informe de compras. NO
+54.	Emitir informe de ventas. NO
+55.	Emitir informe de stock.NO
+56.	Listar movimientos de caja.NO
+57.	Generar agenda.NO
+58.	Generar cuenta corriente proveedores. NO
+59.	Generar cuenta corrientes clientes. NO
+60.	Generar listado de Reparto. SI
+///61.	Generar mapa de distribución. 

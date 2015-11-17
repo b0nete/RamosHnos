@@ -99,7 +99,7 @@
             this.tabProveedor.Location = new System.Drawing.Point(0, 0);
             this.tabProveedor.Name = "tabProveedor";
             this.tabProveedor.SelectedIndex = 0;
-            this.tabProveedor.Size = new System.Drawing.Size(784, 561);
+            this.tabProveedor.Size = new System.Drawing.Size(784, 378);
             this.tabProveedor.TabIndex = 0;
             // 
             // tabInformacion
@@ -113,7 +113,7 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(776, 535);
+            this.tabInformacion.Size = new System.Drawing.Size(776, 352);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.UseVisualStyleBackColor = true;
@@ -537,7 +537,7 @@
             // 
             this.tabAdicional.Location = new System.Drawing.Point(4, 22);
             this.tabAdicional.Name = "tabAdicional";
-            this.tabAdicional.Size = new System.Drawing.Size(776, 364);
+            this.tabAdicional.Size = new System.Drawing.Size(776, 535);
             this.tabAdicional.TabIndex = 2;
             this.tabAdicional.Text = "Adicional";
             this.tabAdicional.UseVisualStyleBackColor = true;
@@ -548,7 +548,7 @@
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(776, 364);
+            this.tabListado.Size = new System.Drawing.Size(776, 535);
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
@@ -612,7 +612,7 @@
             // 
             this.tabMovimientos.Location = new System.Drawing.Point(4, 22);
             this.tabMovimientos.Name = "tabMovimientos";
-            this.tabMovimientos.Size = new System.Drawing.Size(776, 364);
+            this.tabMovimientos.Size = new System.Drawing.Size(776, 535);
             this.tabMovimientos.TabIndex = 3;
             this.tabMovimientos.Text = "Movimientos";
             this.tabMovimientos.UseVisualStyleBackColor = true;
@@ -621,7 +621,7 @@
             // 
             this.tabPedido.Location = new System.Drawing.Point(4, 22);
             this.tabPedido.Name = "tabPedido";
-            this.tabPedido.Size = new System.Drawing.Size(776, 364);
+            this.tabPedido.Size = new System.Drawing.Size(776, 535);
             this.tabPedido.TabIndex = 4;
             this.tabPedido.Text = "Pedido";
             this.tabPedido.UseVisualStyleBackColor = true;
@@ -630,7 +630,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(784, 378);
             this.Controls.Add(this.tabProveedor);
             this.Name = "formProveedor";
             this.Text = "Proveedor";

@@ -23,7 +23,7 @@ namespace RamosHermanos.Capas.Interfaz
         public void cargarPedido()
         {
             pedido.rol = 1;
-            pedido.persona = Convert.ToInt32(txtidCliente.Text);
+            pedido.idPersona = Convert.ToInt32(txtidCliente.Text);
             pedido.domicilio = Convert.ToString(cbDomicilio.SelectedValue);
             pedido.observaciones = txtObservaciones.Text;
             pedido.total = Convert.ToDouble(txtTotal.Text);
@@ -38,6 +38,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             ProductoB.CargarDGV(dgvProducto);
             ClienteB.CargarDGV(dgvCliente);
+            PedidoB.cargardgvPedido(dgvListadoPedidos);
             this.reportViewer1.RefreshReport();
         }
 
