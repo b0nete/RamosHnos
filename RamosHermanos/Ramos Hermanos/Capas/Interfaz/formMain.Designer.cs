@@ -69,6 +69,7 @@
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.test1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testDGVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mcAgenda = new System.Windows.Forms.MonthCalendar();
             this.pnlInfo = new System.Windows.Forms.Panel();
             this.lblSesion = new System.Windows.Forms.Label();
@@ -78,7 +79,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tmrHora = new System.Windows.Forms.Timer(this.components);
-            this.testDGVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msPrincipal.SuspendLayout();
             this.pnlInfo.SuspendLayout();
             this.SuspendLayout();
@@ -118,20 +118,20 @@
             this.dNIToolStripMenuItem,
             this.listadoToolStripMenuItem});
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.buscarToolStripMenuItem.Text = "Buscar";
             // 
             // dNIToolStripMenuItem
             // 
             this.dNIToolStripMenuItem.Name = "dNIToolStripMenuItem";
-            this.dNIToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.dNIToolStripMenuItem.Text = "Nº Cliente";
+            this.dNIToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.dNIToolStripMenuItem.Text = "Parámetro";
             this.dNIToolStripMenuItem.Click += new System.EventHandler(this.dNIToolStripMenuItem_Click);
             // 
             // listadoToolStripMenuItem
             // 
             this.listadoToolStripMenuItem.Name = "listadoToolStripMenuItem";
-            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.listadoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.listadoToolStripMenuItem.Text = "Listado";
             this.listadoToolStripMenuItem.Click += new System.EventHandler(this.listadoToolStripMenuItem_Click);
             // 
@@ -141,7 +141,7 @@
             this.personaToolStripMenuItem,
             this.personaJurídicaToolStripMenuItem});
             this.registrarToolStripMenuItem.Name = "registrarToolStripMenuItem";
-            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.registrarToolStripMenuItem.Text = "Registrar";
             // 
             // personaToolStripMenuItem
@@ -198,26 +198,26 @@
             this.nºDistribuidorToolStripMenuItem,
             this.listadoToolStripMenuItem4});
             this.buscarToolStripMenuItem4.Name = "buscarToolStripMenuItem4";
-            this.buscarToolStripMenuItem4.Size = new System.Drawing.Size(116, 22);
+            this.buscarToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
             this.buscarToolStripMenuItem4.Text = "Buscar";
             // 
             // nºDistribuidorToolStripMenuItem
             // 
             this.nºDistribuidorToolStripMenuItem.Name = "nºDistribuidorToolStripMenuItem";
-            this.nºDistribuidorToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.nºDistribuidorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nºDistribuidorToolStripMenuItem.Text = "Nº Distribuidor";
             // 
             // listadoToolStripMenuItem4
             // 
             this.listadoToolStripMenuItem4.Name = "listadoToolStripMenuItem4";
-            this.listadoToolStripMenuItem4.Size = new System.Drawing.Size(141, 22);
+            this.listadoToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
             this.listadoToolStripMenuItem4.Text = "Listado";
             this.listadoToolStripMenuItem4.Click += new System.EventHandler(this.listadoToolStripMenuItem4_Click);
             // 
             // registrarToolStripMenuItem3
             // 
             this.registrarToolStripMenuItem3.Name = "registrarToolStripMenuItem3";
-            this.registrarToolStripMenuItem3.Size = new System.Drawing.Size(116, 22);
+            this.registrarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.registrarToolStripMenuItem3.Text = "Registrar";
             this.registrarToolStripMenuItem3.Click += new System.EventHandler(this.registrarToolStripMenuItem3_Click);
             // 
@@ -379,16 +379,23 @@
             // test1ToolStripMenuItem
             // 
             this.test1ToolStripMenuItem.Name = "test1ToolStripMenuItem";
-            this.test1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.test1ToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.test1ToolStripMenuItem.Text = "Test1";
             this.test1ToolStripMenuItem.Click += new System.EventHandler(this.test1ToolStripMenuItem_Click);
             // 
             // testFacturaToolStripMenuItem
             // 
             this.testFacturaToolStripMenuItem.Name = "testFacturaToolStripMenuItem";
-            this.testFacturaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.testFacturaToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.testFacturaToolStripMenuItem.Text = "testFactura";
             this.testFacturaToolStripMenuItem.Click += new System.EventHandler(this.testFacturaToolStripMenuItem_Click);
+            // 
+            // testDGVToolStripMenuItem
+            // 
+            this.testDGVToolStripMenuItem.Name = "testDGVToolStripMenuItem";
+            this.testDGVToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.testDGVToolStripMenuItem.Text = "testDGV";
+            this.testDGVToolStripMenuItem.Click += new System.EventHandler(this.testDGVToolStripMenuItem_Click);
             // 
             // mcAgenda
             // 
@@ -474,13 +481,6 @@
             this.tmrHora.Enabled = true;
             this.tmrHora.Interval = 1000;
             this.tmrHora.Tick += new System.EventHandler(this.tmrHora_Tick);
-            // 
-            // testDGVToolStripMenuItem
-            // 
-            this.testDGVToolStripMenuItem.Name = "testDGVToolStripMenuItem";
-            this.testDGVToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.testDGVToolStripMenuItem.Text = "testDGV";
-            this.testDGVToolStripMenuItem.Click += new System.EventHandler(this.testDGVToolStripMenuItem_Click);
             // 
             // formMain
             // 

@@ -14,9 +14,6 @@ namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formCliente : Form
     {
-        private int oldIndex = 0; // Variable para validar Textbox como double.
-        private string oldText = String.Empty; // Variable para validar Textbox como double.
-
         public formCliente()
         {
             InitializeComponent();

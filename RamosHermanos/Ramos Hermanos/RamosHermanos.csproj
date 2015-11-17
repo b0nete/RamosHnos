@@ -92,6 +92,12 @@
     <Compile Include="Capas\Entidades\UsuarioEntity.cs" />
     <Compile Include="Capas\Entidades\VehiculoEntity.cs" />
     <Compile Include="Capas\Entidades\VisitaEntity.cs" />
+    <Compile Include="Capas\Interfaz\ABMs\formBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\ABMs\formBuscarCliente.Designer.cs">
+      <DependentUpon>formBuscarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\ABMs\formVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,10 +111,10 @@
     <Compile Include="Capas\Interfaz\formBuscarInsumo.Designer.cs">
       <DependentUpon>formBuscarInsumo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Capas\Interfaz\formBuscarProv.cs">
+    <Compile Include="Capas\Interfaz\ABMs\formBuscarProv.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Capas\Interfaz\formBuscarProv.Designer.cs">
+    <Compile Include="Capas\Interfaz\ABMs\formBuscarProv.Designer.cs">
       <DependentUpon>formBuscarProv.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Interfaz\formCliente.cs">
@@ -303,13 +309,16 @@
     <Compile Include="Libs\InputBox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Capas\Interfaz\ABMs\formBuscarCliente.resx">
+      <DependentUpon>formBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\ABMs\formVehiculo.resx">
       <DependentUpon>formVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formBuscarInsumo.resx">
       <DependentUpon>formBuscarInsumo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Interfaz\formBuscarProv.resx">
+    <EmbeddedResource Include="Capas\Interfaz\ABMs\formBuscarProv.resx">
       <DependentUpon>formBuscarProv.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formCliente.resx">

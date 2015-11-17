@@ -117,7 +117,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string queryM = @"SELECT CONCAT(C.nombre, ' ', C.apellido) as nombreCompleto, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) domicilioCompleto
+                string query = @"SELECT CONCAT(C.nombre, ' ', C.apellido) as nombreCompleto, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) domicilioCompleto
                                 FROM itemsRecorrido IR
                                 INNER JOIN Domicilios D ON D.calle = IR.calle
                                 INNER JOIN Clientes C ON C.idCliente = D.idPersona
@@ -126,26 +126,20 @@ namespace RamosHermanos.Capas.Negocio
                                 WHERE idRecorrido = @idRecorrido and D.calle = @calle
                                 ORDER BY D.numero";
 
-                string queryC = @"SELECT CONCAT(C.nombre, ' ', C.apellido) as nombreCompleto, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) domicilioCompleto
-                                FROM itemsRecorrido IR
-                                INNER JOIN Domicilios D ON D.calle = IR.calle
-                                INNER JOIN Clientes C ON C.idCliente = D.idPersona
-                                INNER JOIN Recorridos R ON R.idRecorrido = IR.recorrido
-                                INNER JOIN Calles CC ON D.Calle = CC.idCalle
-                                WHERE idRecorrido = @idRecorrido and D.calle = @calle
-                                ORDER BY D.numero DESC";
-
-
                 //MySqlCommand cmd = new MySqlCommand(queryM, MySQL.sqlcnx); 
-                MySqlCommand cmd = new MySqlCommand(queryM, MySQL.sqlcnx);  
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);  
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dtItemsRecorrido = new DataTable();
                 DataTable dtItemsRecorridoFULL = new DataTable();                
 
                 foreach (DataGridViewRow row in dgv.Rows)
                 {
+                    if(row.Cells["colLuSentido"].Value.ToString() == "C")
+                    {
+                        cmd.CommandText = query + " DESC";
+                    }		
                     
-                    cmd.Parameters.AddWithValue("@sentido", Convert.ToInt32(row.Cells["colLuSentido"].Value));
+                    cmd.Parameters.AddWithValue("@sentido", Convert.ToString(row.Cells["colLuSentido"].Value));
                     cmd.Parameters.AddWithValue("@idRecorrido", txt.Text);
                     cmd.Parameters.AddWithValue("@calle", Convert.ToInt32(row.Cells["colLuIDcalle"].Value));
 
