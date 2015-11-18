@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Negocio;
+using RamosHermanos.Capas.Interfaz.Listados;
 
 namespace RamosHermanos.Capas.Interfaz.ABMs
 {
@@ -82,6 +84,8 @@ namespace RamosHermanos.Capas.Interfaz.ABMs
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            listClientes frm = new listClientes();
+
             if (rbApellido.Checked == true)
             {
                 
@@ -102,12 +106,14 @@ namespace RamosHermanos.Capas.Interfaz.ABMs
             }
             else if (rbIDCliente.Checked == true)
             {
-                txtApellido.Enabled = false;
-                txtNombre.Enabled = false;
-                txtCUIL.Enabled = false;
-                txtIDCliente.Enabled = true;
+                cliente.idCliente = Convert.ToInt32(txtIDCliente.Text);
+                string cmdText =  " and idCliente = @idCliente" ;
+                ClienteB.CargarDGVParametros(frm.dgvCliente, cliente, cmdText);
             }     
         }
+
+        // Entidades 
+        ClienteEntity cliente = new ClienteEntity();
 
 
     }

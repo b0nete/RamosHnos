@@ -360,7 +360,55 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read())
-                {
+                {                    
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idCliente"]),
+                    Convert.ToString(dr["apellido"]),
+                    Convert.ToString(dr["nombre"]),
+                    Convert.ToString(dr["IDtipoDoc"]),
+                    Convert.ToString(dr["tipoDoc"]),
+                    Convert.ToString(dr["numDoc"]),
+                    Convert.ToString(dr["cuil"]),
+                    Convert.ToDateTime(dr["fechaAlta"]).ToString("dd/MM/yyyy"),
+                    Convert.ToString(dr["sexo"]),                  
+                    Convert.ToString(dr["estadoCivil"]),
+                    Convert.ToString(dr["condicionIVA"]),
+                    Convert.ToString(dr["IDtipoCliente"]),
+                    Convert.ToString(dr["tipocliente"]));
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void CargarDGVParametros(DataGridView dgv, ClienteEntity cliente, string cmdText)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"SELECT C.idCliente, C.fechaAlta, C.tipoDoc as IDtipoDoc, TP.tipoDoc, C.numDoc, C.sexo, C.cuil, C.apellido, C.nombre, c.estadoCivil, c.condicionIVA, C.tipoCliente as IDtipoCliente, TC.tipocliente
+                                 FROM Clientes C
+                                 INNER JOIN tipoDocumento TP ON C.tipoDoc = TP.idTipoDoc
+                                 INNER JOIN tipoCliente TC ON C.tipoDoc = TC.idTipoCliente
+                                 WHERE C.tipoPersona = 'P'";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                cmd.CommandText = query + cmdText;
+                cmd.Parameters.AddWithValue("@idCliente", cliente.idCliente);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {                    
                     dgv.Rows.Add(
                     Convert.ToString(dr["idCliente"]),
                     Convert.ToString(dr["apellido"]),

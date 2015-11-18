@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formBuscarCliente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbIDCliente = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtIDCliente = new System.Windows.Forms.TextBox();
+            this.txtCUIL = new System.Windows.Forms.MaskedTextBox();
+            this.rbNombre = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.rbCUIL = new System.Windows.Forms.RadioButton();
             this.rbApellido = new System.Windows.Forms.RadioButton();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.rbNombre = new System.Windows.Forms.RadioButton();
-            this.txtCUIL = new System.Windows.Forms.MaskedTextBox();
-            this.rbIDCliente = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtIDCliente = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,73 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // rbIDCliente
+            // 
+            this.rbIDCliente.AutoSize = true;
+            this.rbIDCliente.Checked = true;
+            this.rbIDCliente.Location = new System.Drawing.Point(254, 22);
+            this.rbIDCliente.Name = "rbIDCliente";
+            this.rbIDCliente.Size = new System.Drawing.Size(14, 13);
+            this.rbIDCliente.TabIndex = 102;
+            this.rbIDCliente.TabStop = true;
+            this.rbIDCliente.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(34, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 13);
+            this.label3.TabIndex = 101;
+            this.label3.Text = "Nª Cliente";
+            // 
+            // txtIDCliente
+            // 
+            this.txtIDCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDCliente.Location = new System.Drawing.Point(94, 19);
+            this.txtIDCliente.Name = "txtIDCliente";
+            this.txtIDCliente.Size = new System.Drawing.Size(154, 20);
+            this.txtIDCliente.TabIndex = 100;
+            // 
+            // txtCUIL
+            // 
+            this.txtCUIL.Enabled = false;
+            this.txtCUIL.Location = new System.Drawing.Point(94, 98);
+            this.txtCUIL.Mask = "00-00000000-0";
+            this.txtCUIL.Name = "txtCUIL";
+            this.txtCUIL.Size = new System.Drawing.Size(154, 20);
+            this.txtCUIL.TabIndex = 99;
+            // 
+            // rbNombre
+            // 
+            this.rbNombre.AutoSize = true;
+            this.rbNombre.Location = new System.Drawing.Point(254, 74);
+            this.rbNombre.Name = "rbNombre";
+            this.rbNombre.Size = new System.Drawing.Size(14, 13);
+            this.rbNombre.TabIndex = 98;
+            this.rbNombre.UseVisualStyleBackColor = true;
+            this.rbNombre.CheckedChanged += new System.EventHandler(this.rbNombre_CheckedChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(44, 74);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.TabIndex = 97;
+            this.label4.Text = "Nombre";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Enabled = false;
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(94, 71);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(154, 20);
+            this.txtNombre.TabIndex = 96;
             // 
             // rbCUIL
             // 
@@ -130,71 +197,6 @@
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "CUIL/CUIT";
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Enabled = false;
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(94, 71);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(154, 20);
-            this.txtNombre.TabIndex = 96;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(44, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
-            this.label4.TabIndex = 97;
-            this.label4.Text = "Nombre";
-            // 
-            // rbNombre
-            // 
-            this.rbNombre.AutoSize = true;
-            this.rbNombre.Location = new System.Drawing.Point(254, 74);
-            this.rbNombre.Name = "rbNombre";
-            this.rbNombre.Size = new System.Drawing.Size(14, 13);
-            this.rbNombre.TabIndex = 98;
-            this.rbNombre.UseVisualStyleBackColor = true;
-            this.rbNombre.CheckedChanged += new System.EventHandler(this.rbNombre_CheckedChanged);
-            // 
-            // txtCUIL
-            // 
-            this.txtCUIL.Enabled = false;
-            this.txtCUIL.Location = new System.Drawing.Point(94, 98);
-            this.txtCUIL.Mask = "00-00000000-0";
-            this.txtCUIL.Name = "txtCUIL";
-            this.txtCUIL.Size = new System.Drawing.Size(154, 20);
-            this.txtCUIL.TabIndex = 99;
-            // 
-            // rbIDCliente
-            // 
-            this.rbIDCliente.AutoSize = true;
-            this.rbIDCliente.Location = new System.Drawing.Point(254, 22);
-            this.rbIDCliente.Name = "rbIDCliente";
-            this.rbIDCliente.Size = new System.Drawing.Size(14, 13);
-            this.rbIDCliente.TabIndex = 102;
-            this.rbIDCliente.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(34, 22);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
-            this.label3.TabIndex = 101;
-            this.label3.Text = "Nª Cliente";
-            // 
-            // txtIDCliente
-            // 
-            this.txtIDCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDCliente.Location = new System.Drawing.Point(94, 19);
-            this.txtIDCliente.Name = "txtIDCliente";
-            this.txtIDCliente.Size = new System.Drawing.Size(154, 20);
-            this.txtIDCliente.TabIndex = 100;
             // 
             // formBuscarCliente
             // 
