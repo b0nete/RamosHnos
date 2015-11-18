@@ -28,7 +28,7 @@ namespace RamosHermanos.Capas.Interfaz
           insumo.insumo= Convert.ToString(txtInsumo.Text);
           insumo.marca = cbMarca.Text;
           insumo.proveedor = Convert.ToInt32(cbProv.SelectedValue);
-          insumo.rubro = Convert.ToString(cbRubro.SelectedValue);
+          insumo.rubro = Convert.ToString(cbRubr.SelectedValue);
           insumo.stockMin = Convert.ToString(txtStockMin.Text);
           
                 
@@ -39,7 +39,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool VerificarCampos()
         {
-            if (cbProv.SelectedValue == null || cbRubro.SelectedValue == null || cbMarca.SelectedValue == null || labelInsumo.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null || txtStockMin.Text == string.Empty || txtCostoAct.Text == string.Empty )
+            if (cbProv.SelectedValue == null || cbRubr.SelectedValue == null || cbMarca.SelectedValue == null || labelInsumo.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null || txtStockMin.Text == string.Empty || txtCostoAct.Text == string.Empty )
             {
                 MessageBox.Show("Complete los campos Obligatorios");
 
@@ -85,7 +85,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void formInsumos_Load(object sender, EventArgs e)
         {
             ProveedorB.CargarProv(cbProv);
-            RubroB.CargarRubro(cbRubro);
+            RubroB.CargarRubro(cbRubr);
             MarcaB.CargarCB(cbMarca);
             MedidaB.CargarCB(cbMedida);
             InsumoB.cargardgvInsumo(dgvinsumos);
@@ -320,7 +320,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void cbRubro_DropDown(object sender, EventArgs e)
         {
             
-            RubroB.CargarRubro(cbRubro);
+            RubroB.CargarRubro(cbRubr);
             
         }
 

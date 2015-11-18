@@ -95,5 +95,10 @@ namespace RamosHermanos.Capas.Interfaz
             BuscarIDInsumo();
         }
 
+        private void formBuscarInsumo_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

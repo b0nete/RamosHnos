@@ -86,43 +86,22 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
+            
             formBuscarCliente frm1 = new formBuscarCliente();
             frm1.Show();
             frm1.Location = new Point(100, 100);
 
             formCliente frm2 = new formCliente();
-            frm2.caseSwitch = 3;
+            frm2.switchcase = 3;
             frm2.Show();
+            frm2.caseSwitch = 1;
             int w = frm1.Width;
             frm2.Location = new Point(Convert.ToInt32(90 + w), 100);
         }
 
         private void dgvCliente_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            DataGridViewCell cell = null;
-            foreach (DataGridViewCell selectedCell in dgvCliente.SelectedCells)
-            {
-                cell = selectedCell;
-                break;
-            }
-            if (cell != null)
-            {
-                DataGridViewRow row = cell.OwningRow;
-
-                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
-
-                cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
-
-                ClienteB.BuscarClienteID(cliente);
-
-                txtidCliente.Text = Convert.ToString(cliente.idCliente);
-                txtNombre.Text = cliente.apellido + ',' + cliente.nombre;
-
-                DomicilioB.CargarCB(cbDomicilio, txtidCliente);
-
-                tabMain.SelectedTab = tabPedido;
-            }
-
+            
         }
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)

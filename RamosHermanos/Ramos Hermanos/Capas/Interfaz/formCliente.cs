@@ -12,8 +12,11 @@ using RamosHermanos.Capas.Negocio;
 
 namespace RamosHermanos.Capas.Interfaz
 {
+    
     public partial class formCliente : Form
     {
+        public int switchcase = 0;
+
         public formCliente()
         {
             InitializeComponent();
@@ -35,7 +38,7 @@ namespace RamosHermanos.Capas.Interfaz
             CheckListado();
 
             // Casos de Inicio.            
-            switch (caseSwitch)
+            switch (switchcase)
             {
                 case 1:
                     CasePersona();
@@ -143,7 +146,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            BuscarCliente();
+           BuscarCliente();
         }
 
         private void txtCreditoMax_TextChanged(object sender, EventArgs e)
@@ -377,9 +380,46 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
+        formPedidos frmP = new formPedidos();
+
         private void dgvCliente_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            SeleccionarDGV();
+            switch (caseSwitch)
+            {
+                case 1:
+                    DataGridViewCell cell = null;
+                    foreach (DataGridViewCell selectedCell in dgvCliente.SelectedCells)
+                    {
+                        cell = selectedCell;
+                        break;
+                    }
+                    if (cell != null)
+                    {
+                        DataGridViewRow row = cell.OwningRow;
+
+                        //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+
+                        cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
+
+                        ClienteB.BuscarClienteID(cliente);
+                        frmP.txtidCliente.Text = Convert.ToString(cliente.idCliente);
+                        frmP.txtNombre.Text = cliente.apellido + ',' + cliente.nombre;
+
+                        DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente);
+
+                        frmP.tabMain.SelectedTab = frmP.tabPedido;
+
+                        frmP.Show();
+                        
+                    }
+                    break;
+
+                case 2:
+                    {
+                        SeleccionarDGV();
+                    }
+                    break;
+                    }
         }
 
         private void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1004,17 +1044,17 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button11_Click(object sender, EventArgs e)
         {
-            caseSwitch = 1;
+            switchcase = 1;
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            caseSwitch = 2;
+            switchcase = 2;
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            caseSwitch = 3;
+            switchcase = 3;
         }
 
         private void button10_Click(object sender, EventArgs e)
