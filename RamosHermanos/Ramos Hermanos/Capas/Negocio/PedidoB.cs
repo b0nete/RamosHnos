@@ -37,7 +37,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 txtid.Text = Convert.ToString(cmd.ExecuteScalar());
 
-                cmd.ExecuteNonQuery();
+                //cmd.ExecuteNonQuery();
 
 
                 MySQL.DisconnectDB();

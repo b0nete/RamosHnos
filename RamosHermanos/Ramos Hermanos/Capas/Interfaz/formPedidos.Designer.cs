@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPedidos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabPedido = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -41,7 +41,6 @@
             this.txtidpedido = new System.Windows.Forms.TextBox();
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.BtnAgregarDomicilio = new System.Windows.Forms.Button();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -178,7 +177,6 @@
             this.groupBox2.Controls.Add(this.txtidpedido);
             this.groupBox2.Controls.Add(this.cbDomicilio);
             this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.BtnAgregarDomicilio);
             this.groupBox2.Controls.Add(this.dtpFecha);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.label27);
@@ -199,7 +197,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label17.Location = new System.Drawing.Point(53, 22);
+            this.label17.Location = new System.Drawing.Point(591, 130);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(55, 13);
             this.label17.TabIndex = 95;
@@ -209,7 +207,7 @@
             // 
             this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtNombre.Location = new System.Drawing.Point(199, 45);
+            this.txtNombre.Location = new System.Drawing.Point(199, 19);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(212, 20);
             this.txtNombre.TabIndex = 136;
@@ -218,9 +216,9 @@
             // 
             this.txtidpedido.Enabled = false;
             this.txtidpedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtidpedido.Location = new System.Drawing.Point(111, 19);
+            this.txtidpedido.Location = new System.Drawing.Point(649, 127);
             this.txtidpedido.Name = "txtidpedido";
-            this.txtidpedido.Size = new System.Drawing.Size(300, 20);
+            this.txtidpedido.Size = new System.Drawing.Size(117, 20);
             this.txtidpedido.TabIndex = 96;
             // 
             // cbDomicilio
@@ -228,7 +226,7 @@
             this.cbDomicilio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDomicilio.FormattingEnabled = true;
-            this.cbDomicilio.Location = new System.Drawing.Point(111, 71);
+            this.cbDomicilio.Location = new System.Drawing.Point(112, 45);
             this.cbDomicilio.Name = "cbDomicilio";
             this.cbDomicilio.Size = new System.Drawing.Size(301, 21);
             this.cbDomicilio.TabIndex = 135;
@@ -237,30 +235,18 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label22.Location = new System.Drawing.Point(34, 101);
+            this.label22.Location = new System.Drawing.Point(35, 75);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(73, 13);
             this.label22.TabIndex = 104;
             this.label22.Text = "Fecha Pedido";
-            // 
-            // BtnAgregarDomicilio
-            // 
-            this.BtnAgregarDomicilio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtnAgregarDomicilio.BackgroundImage")));
-            this.BtnAgregarDomicilio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnAgregarDomicilio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregarDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnAgregarDomicilio.Location = new System.Drawing.Point(418, 71);
-            this.BtnAgregarDomicilio.Name = "BtnAgregarDomicilio";
-            this.BtnAgregarDomicilio.Size = new System.Drawing.Size(28, 28);
-            this.BtnAgregarDomicilio.TabIndex = 128;
-            this.BtnAgregarDomicilio.UseVisualStyleBackColor = true;
             // 
             // dtpFecha
             // 
             this.dtpFecha.Enabled = false;
             this.dtpFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(112, 98);
+            this.dtpFecha.Location = new System.Drawing.Point(113, 72);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(299, 20);
             this.dtpFecha.TabIndex = 105;
@@ -269,7 +255,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label1.Location = new System.Drawing.Point(57, 75);
+            this.label1.Location = new System.Drawing.Point(58, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 134;
@@ -282,7 +268,7 @@
             this.label27.BackColor = System.Drawing.Color.Transparent;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label27.ForeColor = System.Drawing.Color.Red;
-            this.label27.Location = new System.Drawing.Point(24, 98);
+            this.label27.Location = new System.Drawing.Point(25, 72);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(11, 13);
             this.label27.TabIndex = 119;
@@ -292,7 +278,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label6.Location = new System.Drawing.Point(16, 127);
+            this.label6.Location = new System.Drawing.Point(17, 101);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(92, 13);
             this.label6.TabIndex = 122;
@@ -302,7 +288,7 @@
             // 
             this.dtpEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpEntrega.Location = new System.Drawing.Point(112, 124);
+            this.dtpEntrega.Location = new System.Drawing.Point(113, 98);
             this.dtpEntrega.Name = "dtpEntrega";
             this.dtpEntrega.Size = new System.Drawing.Size(300, 20);
             this.dtpEntrega.TabIndex = 123;
@@ -314,7 +300,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(5, 124);
+            this.label4.Location = new System.Drawing.Point(6, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(11, 13);
             this.label4.TabIndex = 124;
@@ -324,7 +310,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(67, 48);
+            this.label2.Location = new System.Drawing.Point(67, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 126;
@@ -334,7 +320,7 @@
             // 
             this.txtidCliente.Enabled = false;
             this.txtidCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtidCliente.Location = new System.Drawing.Point(112, 45);
+            this.txtidCliente.Location = new System.Drawing.Point(112, 19);
             this.txtidCliente.Name = "txtidCliente";
             this.txtidCliente.Size = new System.Drawing.Size(81, 20);
             this.txtidCliente.TabIndex = 127;
@@ -344,7 +330,7 @@
             this.btnBuscarCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBuscarCliente.BackgroundImage")));
             this.btnBuscarCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBuscarCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnBuscarCliente.Location = new System.Drawing.Point(418, 40);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(417, 14);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(28, 28);
             this.btnBuscarCliente.TabIndex = 128;
@@ -463,14 +449,14 @@
             // 
             this.dgvPedido.AllowUserToAddRows = false;
             this.dgvPedido.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colCodigo,
@@ -478,24 +464,24 @@
             this.colCantidad,
             this.colPrecio,
             this.colSubTotal});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPedido.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPedido.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPedido.Location = new System.Drawing.Point(6, 19);
             this.dgvPedido.Name = "dgvPedido";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPedido.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPedido.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPedido.Size = new System.Drawing.Size(760, 295);
             this.dgvPedido.TabIndex = 144;
             this.dgvPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellContentClick);
@@ -911,7 +897,6 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TabPage tabRemito;
-        private System.Windows.Forms.Button BtnAgregarDomicilio;
         private System.Windows.Forms.TabPage tabProducto;
         private System.Windows.Forms.DataGridView dgvProducto;
         private System.Windows.Forms.TabPage tabClientes;

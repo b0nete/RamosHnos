@@ -195,7 +195,7 @@ namespace RamosHermanos.Capas.Interfaz
 
             }
         }
-
+        
 
         private void formBuscarProv_Load(object sender, EventArgs e)
         {

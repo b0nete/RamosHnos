@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Negocio;
+using RamosHermanos.Capas.Interfaz.ABMs;
 
 namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formPedidos : Form
     {
+      
         public formPedidos()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-       
+
         private void formPedidos_Load(object sender, EventArgs e)
         {
             ProductoB.CargarDGV(dgvProducto);
@@ -55,8 +57,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         ClienteEntity cliente = new ClienteEntity();
         private void CargarCliente()
-        { 
-               
+        {
+
         }
 
         private void dgvProducto_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -74,16 +76,25 @@ namespace RamosHermanos.Capas.Interfaz
                 //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el producto para cargarlo en tabInformación.
 
                 producto.idProducto = Convert.ToInt32(row.Cells["colIDProducto"].Value.ToString());
-               
+
                 ProductoB.AddProductoDGV(dgvPedido, producto);
 
                 tabMain.SelectedTab = tabPedido;
             }
         }
 
+
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            tabMain.SelectedTab = tabClientes;
+            formBuscarCliente frm1 = new formBuscarCliente();
+            frm1.Show();
+            frm1.Location = new Point(100, 100);
+
+            formCliente frm2 = new formCliente();
+            frm2.caseSwitch = 3;
+            frm2.Show();
+            int w = frm1.Width;
+            frm2.Location = new Point(Convert.ToInt32(90 + w), 100);
         }
 
         private void dgvCliente_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -103,7 +114,7 @@ namespace RamosHermanos.Capas.Interfaz
                 cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
 
                 ClienteB.BuscarClienteID(cliente);
-                
+
                 txtidCliente.Text = Convert.ToString(cliente.idCliente);
                 txtNombre.Text = cliente.apellido + ',' + cliente.nombre;
 
@@ -153,11 +164,11 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-        
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             cargarPedido();
-            PedidoB.InsertPedido(pedido,txtidpedido);
+            PedidoB.InsertPedido(pedido, txtidpedido);
 
             foreach (DataGridViewRow row in dgvPedido.Rows)
             {
@@ -166,7 +177,7 @@ namespace RamosHermanos.Capas.Interfaz
             }
             MessageBox.Show("Pedido Guardado");
 
-            
+
         }
 
         private void dgvPedido_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -177,6 +188,13 @@ namespace RamosHermanos.Capas.Interfaz
         private void button1_Click(object sender, EventArgs e)
         {
             //itemsPedidoB.InsertIntoItemPedido(itemPedido, dgvPedido);
-        }    
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        
+    }
 }
