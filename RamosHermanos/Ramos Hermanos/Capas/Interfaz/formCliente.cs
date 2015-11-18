@@ -593,6 +593,7 @@ namespace RamosHermanos.Capas.Interfaz
             txt20LT.Text = "";
             txt25LT.Text = "";
             txtRetornable.Text = "";
+            txtDomic.Text = "";
             //cbLunes.Checked = false;
             //cbMartes.Checked = false;
             //cbMiercoles.Checked = false;
@@ -1140,6 +1141,12 @@ namespace RamosHermanos.Capas.Interfaz
             tabMain.Controls.Add(tabInformacionJ);
             tabMain.Controls.Add(tabMovimientos);
             tabMain.Controls.Add(tabVisita);
+        }
+
+        private void btnPedido_Click(object sender, EventArgs e)
+        {
+            formPedidos frm = new formPedidos();
+            frm.Show();
         }
 
         

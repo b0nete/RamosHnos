@@ -11,6 +11,7 @@ using System.Diagnostics;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Interfaz.ABMs;
 using RamosHermanos.Libs;
+using RamosHermanos.Capas.Interfaz.Listados;
 
 
 namespace RamosHermanos.Capas.Interfaz
@@ -214,6 +215,17 @@ namespace RamosHermanos.Capas.Interfaz
         {
             formTestDGV frm = new formTestDGV();
             frm.Show();
+        }
+
+        private void listadoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            formParametros frm1 = new formParametros();
+            frm1.Show();
+            frm1.Location = new Point(100, 100);
+
+            listCaja frm2 = new listCaja();
+            frm2.Show();
+            frm2.Location = new Point(Convert.ToInt32(90 + frm1.Width), 100);
         }
 
        
