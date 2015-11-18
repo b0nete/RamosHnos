@@ -226,10 +226,12 @@ namespace RamosHermanos.Capas.Interfaz
             frm1.Show();
             frm1.Location = new Point(100, 100);
 
-            listClientes frm2 = new listClientes();
+            formCliente frm2 = new formCliente();
+            frm2.switchcase = 3;
+            frm2.caseSwitch = 2;
             frm2.Show();
             int w = frm1.Width;
-            frm2.Location = new Point(Convert.ToInt32(90 + w), 100);
+            frm2.Location = new Point(Convert.ToInt32(90 + w) , 100);
         }
 
        
