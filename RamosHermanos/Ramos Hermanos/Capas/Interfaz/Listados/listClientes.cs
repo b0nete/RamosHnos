@@ -60,7 +60,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
         private void listClientes_Load(object sender, EventArgs e)
         {
-            CheckListado();
+            //CheckListado();
         }
     }
 }

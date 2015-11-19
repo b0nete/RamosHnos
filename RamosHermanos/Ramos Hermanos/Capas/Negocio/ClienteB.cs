@@ -402,8 +402,7 @@ namespace RamosHermanos.Capas.Negocio
                                  WHERE C.tipoPersona = 'P'";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-                cmd.CommandText = query + cmdText;
-                cmd.Parameters.AddWithValue("@idCliente", cliente.idCliente);
+                //cmd.Parameters.AddWithValue("@idCliente", cliente.idCliente);
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -425,6 +424,9 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["tipocliente"]));
                 }
 
+                //int asd = dgv.Rows.Count;
+                //MessageBox.Show("CANTIDAD: " + asd);
+                
                 dr.Close();
                 MySQL.DisconnectDB();
             }

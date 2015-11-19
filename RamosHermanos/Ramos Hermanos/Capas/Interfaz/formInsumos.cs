@@ -90,8 +90,6 @@ namespace RamosHermanos.Capas.Interfaz
             MedidaB.CargarCB(cbMedida);
             InsumoB.cargardgvInsumo(dgvinsumos);
             checkcolor();
-
-            
         }
 
         

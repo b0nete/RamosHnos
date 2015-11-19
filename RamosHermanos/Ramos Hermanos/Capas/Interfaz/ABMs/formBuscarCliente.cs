@@ -106,9 +106,10 @@ namespace RamosHermanos.Capas.Interfaz.ABMs
             }
             else if (rbIDCliente.Checked == true)
             {
-                cliente.idCliente = Convert.ToInt32(txtIDCliente.Text);
-                string cmdText =  " and idCliente = @idCliente" ;
-                ClienteB.CargarDGVParametros(frm.dgvCliente, cliente, cmdText);
+                //cliente.idCliente = Convert.ToInt32(txtIDCliente.Text);
+                //string cmdText =  " and idCliente = @idCliente" ;
+                frm.Show();
+                ClienteB.CargarDGV(frm.dgvCliente);
             }     
         }
 
