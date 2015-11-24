@@ -52,7 +52,67 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
-        
+
+        public static PedidoEntity UpdatePedido(PedidoEntity pedido)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"UPDATE pedidos
+                               SET fechaPedido = @fechaPedido, fechaEntrega= @fechaEntrega domicilio = @domicilio, estado = @estado,observaciones =@observaciones,total=@total
+                               WHERE idPedidos = @idPedidos";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@fechaPedido", pedido.fechaPedido);
+                cmd.Parameters.AddWithValue("@idPedidos", pedido.idPedido);
+                cmd.Parameters.AddWithValue("@fechaEntrega", pedido.fechaEntrega);
+                cmd.Parameters.AddWithValue("@domicilio", pedido.domicilio);
+                cmd.Parameters.AddWithValue("@estado", pedido.estado);
+                cmd.Parameters.AddWithValue("@observaciones", pedido.observaciones);
+                cmd.Parameters.AddWithValue("@total", pedido.total);
+
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Pedido Actualizado");
+
+                return pedido;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR  " + ex);
+                throw;
+            }
+
+
+        }
+
+        public static bool ExistePedido(PedidoEntity pedido)
+        {
+
+            MySQL.ConnectDB();
+
+            string query = @"Select COUNT(*) from pedidos
+                            where idPedidos = @idPedidos";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+            cmd.Parameters.AddWithValue("@idPedidos", pedido.idPedido);
+
+            int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (resultado == 0)
+
+                return false;
+
+            else
+
+                return true;
+
+
+        }
         public static void cargardgvPedido (DataGridView dgv)
         {
             try
@@ -61,7 +121,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 dgv.Rows.Clear();
 
-                string query = @"Select P.idPedidos , P.fechaPedido , P.fechaEntrega ,P.total ,P.estado
+                string query = @"Select P.idPedidos , P.fechaPedido , P.fechaEntrega ,P.total ,P.estado, p.idPersona
                                FROM pedidos P";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -72,6 +132,7 @@ namespace RamosHermanos.Capas.Negocio
                 {
                     dgv.Rows.Add(
                     Convert.ToInt32(dr["idPedidos"]),
+                    Convert.ToString(dr["idPersona"]),
                     Convert.ToDateTime(dr["fechaPedido"]).ToString("dd/MM/yyyy"),
                     Convert.ToDateTime(dr["fechaEntrega"]).ToString("dd/MM/yyyy"),
                     Convert.ToDouble(dr["total"]),
