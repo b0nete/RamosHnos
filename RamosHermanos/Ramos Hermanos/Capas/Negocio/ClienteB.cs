@@ -388,7 +388,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void CargarDGVParametros(DataGridView dgv, ClienteEntity cliente, string cmdText)
+        public static void CargarDGVParametros(DataGridView dgv, string parametro)
         {
             try
             {
@@ -399,10 +399,10 @@ namespace RamosHermanos.Capas.Negocio
                                  FROM Clientes C
                                  INNER JOIN tipoDocumento TP ON C.tipoDoc = TP.idTipoDoc
                                  INNER JOIN tipoCliente TC ON C.tipoDoc = TC.idTipoCliente
-                                 WHERE C.tipoPersona = 'P'";
+                                 WHERE C.tipoPersona = 'P' and C.apellido = @apellido";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-                //cmd.Parameters.AddWithValue("@idCliente", cliente.idCliente);
+                cmd.Parameters.AddWithValue("@apellido", parametro);
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Interfaz.Listados;
+using RamosHermanos.Capas.Interfaz.Contratos;
 
 namespace RamosHermanos.Capas.Interfaz.ABMs
 {
@@ -86,7 +87,7 @@ namespace RamosHermanos.Capas.Interfaz.ABMs
         {
             listClientes frm = new listClientes();
 
-            if (rbApellido.Checked == true)
+            if (rbNombre.Checked == true)
             {
                 
             }
@@ -106,10 +107,17 @@ namespace RamosHermanos.Capas.Interfaz.ABMs
             }
             else if (rbIDCliente.Checked == true)
             {
-                //cliente.idCliente = Convert.ToInt32(txtIDCliente.Text);
-                //string cmdText =  " and idCliente = @idCliente" ;
-                frm.Show();
-                ClienteB.CargarDGV(frm.dgvCliente);
+                //frm.Show();
+                //ClienteB.CargarDGVParametros(frm.dgvCliente, txtApellido);
+                //TextBox txt = txtIDCliente as TextBox;
+
+                //GetParametro parameter = this.Owner as GetParametro;
+                //parameter.AddParametro(txt);
+
+                //DataGridViewRow rowA = this.dgvCalle.CurrentRow as DataGridViewRow;
+
+                //IAddItem parent = this.Owner as IAddItem;
+                //parent.AddNewItem(rowA);
             }     
         }
 

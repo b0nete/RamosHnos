@@ -505,10 +505,10 @@ namespace RamosHermanos.Capas.Interfaz
 
         //#endregion
 
-        interface IAddItem
-        {
-            void AddNewItem(DataGridViewRow row);
-        }
+        //interface IAddItem
+        //{
+        //    void AddNewItem(DataGridViewRow row);
+        //}
 
         private void btnSaveRecLu_Click(object sender, EventArgs e)
         {

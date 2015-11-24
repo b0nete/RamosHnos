@@ -228,6 +228,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.RadioButton rbIDCliente;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtIDCliente;
+        public System.Windows.Forms.TextBox txtIDCliente;
     }
 }

@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Negocio;
+using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Interfaz.Contratos;
+using RamosHermanos.Capas.Interfaz.ABMs;
 
 namespace RamosHermanos.Capas.Interfaz.Listados
 {
@@ -60,7 +63,47 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
         private void listClientes_Load(object sender, EventArgs e)
         {
+            cbParametro.SelectedIndex = 3;
             //CheckListado();
+        }
+
+        //#region IAddItem Members
+
+        //public void AddParametro(TextBox text)
+        //{
+        //    formBuscarCliente frm = new formBuscarCliente();
+        //    cliente.idCliente = Convert.ToInt32(frm.txtIDCliente.Text);
+
+        //    ClienteB.CargarDGVParametros(dgvCliente, cliente);
+        //}
+
+        //public void AddNewItem(DataGridViewRow row)
+        //{
+        //    string idCalle = row.Cells["colCIDcalle"].Value.ToString();
+        //    string calle = row.Cells["colCCalle"].Value.ToString();
+        //    string check = "true";
+
+        //    this.dgvRecorridoLu.Rows.Add(new[] { idCalle, calle, "", "", "", check });
+        //}
+
+        //#endregion
+
+        //Entidades
+        ClienteEntity cliente = new ClienteEntity();
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            formBuscarCliente frm = new formBuscarCliente();
+            frm.Show(this);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            if (cbParametro.SelectedIndex == 3)
+            {
+                string parametro = txtParametro.Text;
+                ClienteB.CargarDGVParametros(dgvCliente, parametro);
+            }
         }
     }
 }
