@@ -408,7 +408,7 @@ namespace RamosHermanos.Capas.Interfaz
                         DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente);
 
                         frmP.tabMain.SelectedTab = frmP.tabPedido;
-
+                        Close();
                         frmP.Show();
                         
                     }

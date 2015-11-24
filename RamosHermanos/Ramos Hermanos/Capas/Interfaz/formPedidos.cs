@@ -55,6 +55,64 @@ namespace RamosHermanos.Capas.Interfaz
             //producto.idProducto;
         }
 
+        private void SavePedido()
+        {
+            if (VerificarCampos() == false)
+            {
+                return;
+
+            }
+            else
+            {
+                pedido.idPedido = Convert.ToInt32(txtidpedido.Text);
+                if (PedidoB.ExistePedido(pedido) == true)
+                {
+                    DialogResult result = MessageBox.Show("El pedido existe, desea actualizarlo con los datos ingresados?", "Pedido Existente", MessageBoxButtons.OKCancel);
+                    if (result == DialogResult.OK)
+                    {
+                        cargarPedido();
+                        PedidoB.UpdatePedido(pedido);
+                        //CargarItemPedido(row);
+                        //itemsPedidoB.UpdateItemPedido(itemPedido, dgv);
+                        
+                        return;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else if (PedidoB.ExistePedido(pedido) == false)
+                {
+                    cargarPedido();
+                    PedidoB.InsertPedido(pedido, txtidpedido);
+
+                    foreach (DataGridViewRow row in dgvPedido.Rows)
+                    {
+                        CargarItemPedido(row);
+                        itemsPedidoB.InsertItemPedido(itemPedido, dgvPedido);
+                    }
+                    MessageBox.Show("Pedido Guardado");
+
+                                        
+                }
+            }
+        }
+
+        private bool VerificarCampos()
+        {
+            if (txtNombre.Text == string.Empty || txtTotal.Text == string.Empty)
+            {
+                MessageBox.Show("Campos Obligatorios Incompletos");
+                return false;
+
+
+            }
+            return true;
+
+        }
+
+
         ClienteEntity cliente = new ClienteEntity();
         private void CargarCliente()
         {
@@ -97,6 +155,7 @@ namespace RamosHermanos.Capas.Interfaz
             frm2.caseSwitch = 1;
             int w = frm1.Width;
             frm2.Location = new Point(Convert.ToInt32(90 + w), 100);
+            Close();
         }
 
         private void dgvCliente_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -133,7 +192,8 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         itemPedidoEntity itemPedido = new itemPedidoEntity();
-        private void CargarItemPedido(DataGridViewRow row)
+        
+        public void CargarItemPedido(DataGridViewRow row)
         {
             itemPedido.codProducto = Convert.ToInt32((row.Cells["colCodigo"].Value));
             itemPedido.pedido = Convert.ToInt32(txtidpedido.Text);
@@ -146,15 +206,16 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            cargarPedido();
-            PedidoB.InsertPedido(pedido, txtidpedido);
+            SavePedido();
+            //cargarPedido();
+            //PedidoB.InsertPedido(pedido, txtidpedido);
 
-            foreach (DataGridViewRow row in dgvPedido.Rows)
-            {
-                CargarItemPedido(row);
-                itemsPedidoB.InsertItemPedido(itemPedido, dgvPedido);
-            }
-            MessageBox.Show("Pedido Guardado");
+            //foreach (DataGridViewRow row in dgvPedido.Rows)
+            //{
+            //    CargarItemPedido(row);
+            //    itemsPedidoB.InsertItemPedido(itemPedido, dgvPedido);
+            //}
+            //MessageBox.Show("Pedido Guardado");
 
 
         }
@@ -172,6 +233,12 @@ namespace RamosHermanos.Capas.Interfaz
         private void button1_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            cargarPedido();
+            PedidoB.UpdatePedido(pedido);
         }
 
         
