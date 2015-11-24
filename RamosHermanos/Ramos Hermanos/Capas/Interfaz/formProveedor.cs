@@ -276,18 +276,7 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-        ////VisitaEntity visita = new VisitaEntity();
-        ////private void cargarVisita(TextBox text )
-        ////{
-        ////     visita.rol = 2;
-        ////     visita.idPersona = Convert.ToInt32(txtidprov.Text);
-        ////     visita.horarioVisitaA  = Convert.ToString(dtpA.Text);
-        ////     visita.horarioVisitaB  = Convert.ToString(dtpB.Text);   
-                 
-        
-        ////}
-
-    
+      
         private void GuardarProveedor()
         {
             if (VerificarCampos() == false)

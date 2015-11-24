@@ -8,6 +8,7 @@ using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Negocio;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Data;
 
 namespace RamosHermanos.Capas.Negocio
 {
@@ -113,7 +114,7 @@ namespace RamosHermanos.Capas.Negocio
 
 
         }
-        public static void cargardgvPedido (DataGridView dgv)
+        public static void cargardgvPedido(DataGridView dgv)
         {
             try
             {
@@ -137,7 +138,7 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToDateTime(dr["fechaEntrega"]).ToString("dd/MM/yyyy"),
                     Convert.ToDouble(dr["total"]),
                     Convert.ToString(dr["estado"]));
-                                       
+
                 }
 
                 dr.Close();
@@ -150,7 +151,62 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+        public static PedidoEntity BuscarIdPedido(PedidoEntity pedido)
+        {
 
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"Select P.idPedidos ,P.idPersona, P.fechaPedido, P.fechaEntrega, p.Observaciones,P.rol, P.estado, P.total,
+                               C.Nombre, C.Apellido, D.idDomicilio
+                               FROM pedidos P
+                               INNER JOIN clientes C on C.idCliente = P.idPersona
+                               INNER JOIN domicilios D on D.idDomicilio = P.domicilio
+                               WHERE idpedidos = 33";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idPedido", pedido.idPedido);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("El Pedido NO existe!");
+
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    DataRow row = dt.Rows[0];
+
+                    pedido.idPedido = Convert.ToInt32(row["idPedidos"]);
+                    pedido.idPersona = Convert.ToInt32(row["idPersona"]);
+                    
+                    pedido.fechaPedido = Convert.ToDateTime(row["FechaPedido"]);
+                    pedido.fechaEntrega = Convert.ToDateTime(row["FechaEntrega"]);
+                    pedido.observaciones = Convert.ToString(row["observaciones"]);
+                    pedido.rol = Convert.ToInt32(row["rol"]);
+                    pedido.total = Convert.ToDouble(row["total"]);
+                    pedido.estado = Convert.ToString(row["estado"]);
+                    
+
+                    MySQL.DisconnectDB();
+                }
+                return pedido;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
         }
-   }
+          
+    }
+}
 

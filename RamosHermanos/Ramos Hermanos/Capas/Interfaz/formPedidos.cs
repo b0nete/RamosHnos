@@ -35,6 +35,34 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
+        private void SeleccionarDgv()
+        {
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvListadoPedidos.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+
+                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el pedido para cargarlo.
+                pedido.idPedido = Convert.ToInt32(row.Cells["colIDpedido"].Value.ToString());
+                PedidoB.BuscarIdPedido(pedido);
+                txtidpedido.Text = Convert.ToString(pedido.idPedido);
+                txtidCliente.Text = Convert.ToString(pedido.idPersona);
+                dtpFecha.Value = pedido.fechaPedido;
+                dtpEntrega.Value = pedido.fechaEntrega;
+                cbEstado.SelectedItem = pedido.estado;
+                txtObservaciones.Text = Convert.ToString(pedido.observaciones);
+                txtTotal.Text = Convert.ToString(pedido.total);
+                
+                tabMain.SelectedTab = tabPedido;
+                
+            }
+        }
+
 
         private void formPedidos_Load(object sender, EventArgs e)
         {
@@ -241,6 +269,33 @@ namespace RamosHermanos.Capas.Interfaz
             PedidoB.UpdatePedido(pedido);
         }
 
-        
+        private void dgvListadoPedidos_DoubleClick(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void dgvListadoPedidos_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            SeleccionarDgv();
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            clean();
+        }
+
+        private void clean()
+        {
+            txtidCliente.Text = "";
+            txtidpedido.Text = "";
+            txtNombre.Text = "";
+            txtObservaciones.Text = "";
+            txtTotal.Text = "";
+            cbDomicilio.DataSource = null;
+            cbEstado.SelectedIndex = -1;
+            dgvPedido.Rows.Clear();          
+
+
+        }
     }
 }

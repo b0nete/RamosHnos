@@ -6,7 +6,7 @@ Alcances.
 5.	Registrar pedidos. SI
 6.	Modificar pedidos. NO
 7.	Consultar pedidos. NO.
-8.	Listar pedidos. NO
+8.	Listar pedidos. SI
 9.	Registrar pedido entregado. NO
 10.	Registrar medios de pago. NO
 11.	Registrar cobro efectivo. NO

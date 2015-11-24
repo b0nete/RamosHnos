@@ -265,6 +265,7 @@
     <Compile Include="Capas\Negocio\ClienteB.cs" />
     <Compile Include="Capas\Negocio\CalleB.cs" />
     <Compile Include="Capas\Negocio\itemsPedidoB.cs" />
+    <Compile Include="Capas\Negocio\PedidoB.cs" />
     <Compile Include="Capas\Negocio\RecorridoB.cs" />
     <Compile Include="Capas\Negocio\itemsRecorridoB.cs" />
     <Compile Include="Capas\Negocio\CostoB.cs" />
@@ -277,7 +278,6 @@
     <Compile Include="Capas\Negocio\LocalidadB.cs" />
     <Compile Include="Capas\Negocio\MarcaB.cs" />
     <Compile Include="Capas\Negocio\MedidaB.cs" />
-    <Compile Include="Capas\Negocio\PedidoB.cs" />
     <Compile Include="Capas\Negocio\PrecioB.cs" />
     <Compile Include="Capas\Negocio\PrivilegiosB.cs" />
     <Compile Include="Capas\Negocio\ProductoB.cs" />
