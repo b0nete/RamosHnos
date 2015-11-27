@@ -46,10 +46,10 @@
             this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.cbParametro = new System.Windows.Forms.ComboBox();
-            this.txtParametro = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtParametro = new System.Windows.Forms.MaskedTextBox();
+            this.cbParametro = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,9 +57,9 @@
             // rbDGVPJ
             // 
             this.rbDGVPJ.AutoSize = true;
-            this.rbDGVPJ.Location = new System.Drawing.Point(82, 65);
+            this.rbDGVPJ.Location = new System.Drawing.Point(82, 20);
             this.rbDGVPJ.Name = "rbDGVPJ";
-            this.rbDGVPJ.Size = new System.Drawing.Size(105, 17);
+            this.rbDGVPJ.Size = new System.Drawing.Size(121, 17);
             this.rbDGVPJ.TabIndex = 6;
             this.rbDGVPJ.Text = "Persona Jurídica";
             this.rbDGVPJ.UseVisualStyleBackColor = true;
@@ -69,9 +69,9 @@
             // 
             this.rbDGV.AutoSize = true;
             this.rbDGV.Checked = true;
-            this.rbDGV.Location = new System.Drawing.Point(12, 65);
+            this.rbDGV.Location = new System.Drawing.Point(12, 20);
             this.rbDGV.Name = "rbDGV";
-            this.rbDGV.Size = new System.Drawing.Size(64, 17);
+            this.rbDGV.Size = new System.Drawing.Size(71, 17);
             this.rbDGV.TabIndex = 5;
             this.rbDGV.TabStop = true;
             this.rbDGV.Text = "Persona";
@@ -98,11 +98,11 @@
             this.colIDtipoCliente,
             this.coltipoCliente});
             this.dgvCliente.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvCliente.Location = new System.Drawing.Point(0, 88);
+            this.dgvCliente.Location = new System.Drawing.Point(0, 62);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCliente.Size = new System.Drawing.Size(784, 473);
+            this.dgvCliente.Size = new System.Drawing.Size(784, 499);
             this.dgvCliente.TabIndex = 4;
             // 
             // colIDCliente
@@ -188,16 +188,54 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.rbDGVPJ);
             this.groupBox1.Controls.Add(this.txtParametro);
+            this.groupBox1.Controls.Add(this.rbDGV);
             this.groupBox1.Controls.Add(this.cbParametro);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(0, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(784, 55);
+            this.groupBox1.Size = new System.Drawing.Size(784, 52);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda Parametrizada";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(226, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Buscar por";
+            // 
+            // txtParametro
+            // 
+            this.txtParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtParametro.Location = new System.Drawing.Point(445, 19);
+            this.txtParametro.Name = "txtParametro";
+            this.txtParametro.Size = new System.Drawing.Size(299, 20);
+            this.txtParametro.TabIndex = 108;
+            this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
+            // 
+            // cbParametro
+            // 
+            this.cbParametro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbParametro.FormattingEnabled = true;
+            this.cbParametro.Items.AddRange(new object[] {
+            "Nº Cliente",
+            "DNI",
+            "CUIL/CUIT",
+            "Apellido",
+            "Nombre"});
+            this.cbParametro.Location = new System.Drawing.Point(290, 19);
+            this.cbParametro.Name = "cbParametro";
+            this.cbParametro.Size = new System.Drawing.Size(133, 21);
+            this.cbParametro.TabIndex = 107;
+            this.cbParametro.SelectedIndexChanged += new System.EventHandler(this.cbParametro_SelectedIndexChanged);
             // 
             // btnSearch
             // 
@@ -211,46 +249,12 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // cbParametro
-            // 
-            this.cbParametro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbParametro.FormattingEnabled = true;
-            this.cbParametro.Items.AddRange(new object[] {
-            "Nº Cliente",
-            "DNI",
-            "CUIL/CUIT",
-            "Apellido",
-            "Nombre"});
-            this.cbParametro.Location = new System.Drawing.Point(70, 19);
-            this.cbParametro.Name = "cbParametro";
-            this.cbParametro.Size = new System.Drawing.Size(133, 21);
-            this.cbParametro.TabIndex = 107;
-            // 
-            // txtParametro
-            // 
-            this.txtParametro.Location = new System.Drawing.Point(315, 19);
-            this.txtParametro.Name = "txtParametro";
-            this.txtParametro.Size = new System.Drawing.Size(429, 20);
-            this.txtParametro.TabIndex = 108;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Buscar por";
-            // 
             // listClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.rbDGVPJ);
-            this.Controls.Add(this.rbDGV);
             this.Controls.Add(this.dgvCliente);
             this.Name = "listClientes";
             this.Text = "Listado Clientes";
@@ -259,7 +263,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

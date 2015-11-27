@@ -35,6 +35,13 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         {
             if (rbDGV.Checked == true)
             {
+                cbParametro.Items.Clear();
+                cbParametro.Items.Add("Nº Cliente");
+                cbParametro.Items.Add("DNI");
+                cbParametro.Items.Add("CUIL/CUIT");
+                cbParametro.Items.Add("Apellido");
+                cbParametro.Items.Add("Nombre");
+
                 // Mostramos columnas desabilitadas para mostrar una PJ.
                 dgvCliente.Columns[1].Visible = true;
                 dgvCliente.Columns[4].Visible = true;
@@ -45,6 +52,11 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             }
             else
             {
+                cbParametro.Items.Clear();
+                cbParametro.Items.Add("Nº Cliente");
+                cbParametro.Items.Add("CUIL/CUIT");
+                cbParametro.Items.Add("Nombre");
+                 
                 // Ocultamos columnas innecesarias.
                 dgvCliente.Columns[1].Visible = false;
                 dgvCliente.Columns[4].Visible = false;
@@ -99,10 +111,38 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if (cbParametro.SelectedIndex == 3)
+            SearchParametro();
+        }
+
+        private void SearchParametro()
+        {
+            if (rbDGV.Checked == true)
+            {    
+                string parametro = '%' + txtParametro.Text + '%';
+                ClienteB.CargarDGVParametros(dgvCliente, cbParametro, parametro);
+            }
+            else
             {
-                string parametro = txtParametro.Text;
-                ClienteB.CargarDGVParametros(dgvCliente, parametro);
+                string parametro = '%' + txtParametro.Text + '%';
+                ClienteB.CargarDGVParametrosJ(dgvCliente, cbParametro, parametro);
+            }
+            
+        }
+
+        private void txtParametro_TextChanged(object sender, EventArgs e)
+        {
+            SearchParametro();
+        }
+
+        private void cbParametro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbParametro.SelectedIndex == 2)
+            {
+                txtParametro.Mask = "00-00000000-00";
+            }
+            else
+            {
+                txtParametro.Mask = "";
             }
         }
     }

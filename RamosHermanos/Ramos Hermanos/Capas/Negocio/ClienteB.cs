@@ -388,7 +388,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void CargarDGVParametros(DataGridView dgv, string parametro)
+        public static void CargarDGVParametros(DataGridView dgv, ComboBox cb, string parametro)
         {
             try
             {
@@ -399,10 +399,35 @@ namespace RamosHermanos.Capas.Negocio
                                  FROM Clientes C
                                  INNER JOIN tipoDocumento TP ON C.tipoDoc = TP.idTipoDoc
                                  INNER JOIN tipoCliente TC ON C.tipoDoc = TC.idTipoCliente
-                                 WHERE C.tipoPersona = 'P' and C.apellido = @apellido";
+                                 WHERE C.tipoPersona = 'P'";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                cmd.Parameters.AddWithValue("@idCliente", parametro);
+                cmd.Parameters.AddWithValue("@numDoc", parametro);
+                cmd.Parameters.AddWithValue("@cuil", parametro);
                 cmd.Parameters.AddWithValue("@apellido", parametro);
+                cmd.Parameters.AddWithValue("@nombre", parametro);
+
+                if (cb.SelectedIndex == 0)
+                {
+                    cmd.CommandText = query + " and C.idCliente LIKE @idCliente";
+                }
+                if (cb.SelectedIndex == 1)
+                {
+                    cmd.CommandText = query + " and C.numDoc LIKE @numDoc";
+                }
+                if (cb.SelectedIndex == 2)
+                {
+                    cmd.CommandText = query + " and C.cuil LIKE @cuil";
+                }
+                if (cb.SelectedIndex == 3)
+                {
+                    cmd.CommandText = query + " and C.apellido LIKE @apellido";
+                }
+                if (cb.SelectedIndex == 4)
+                {
+                    cmd.CommandText = query + " and C.nombre LIKE @nombre";
+                }
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -423,9 +448,78 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["IDtipoCliente"]),
                     Convert.ToString(dr["tipocliente"]));
                 }
+                
+                dr.Close();
+                MySQL.DisconnectDB();
+            }
 
-                //int asd = dgv.Rows.Count;
-                //MessageBox.Show("CANTIDAD: " + asd);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void CargarDGVParametrosJ(DataGridView dgv, ComboBox cb, string parametro)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"SELECT C.idCliente, C.fechaAlta, C.tipoDoc as IDtipoDoc, TP.tipoDoc, C.numDoc, C.sexo, C.cuil, C.apellido, C.nombre, c.estadoCivil, c.condicionIVA, C.tipoCliente as IDtipoCliente, TC.tipocliente
+                                 FROM Clientes C
+                                 INNER JOIN tipoDocumento TP ON C.tipoDoc = TP.idTipoDoc
+                                 INNER JOIN tipoCliente TC ON C.tipoDoc = TC.idTipoCliente
+                                 WHERE C.tipoPersona = 'PJ'";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                cmd.Parameters.AddWithValue("@idCliente", parametro);
+                cmd.Parameters.AddWithValue("@numDoc", parametro);
+                cmd.Parameters.AddWithValue("@cuil", parametro);
+                cmd.Parameters.AddWithValue("@apellido", parametro);
+                cmd.Parameters.AddWithValue("@nombre", parametro);
+
+                if (cb.SelectedIndex == 0)
+                {
+                    cmd.CommandText = query + " and C.idCliente LIKE @idCliente";
+                }
+                if (cb.SelectedIndex == 1)
+                {
+                    cmd.CommandText = query + " and C.numDoc LIKE @numDoc";
+                }
+                if (cb.SelectedIndex == 2)
+                {
+                    cmd.CommandText = query + " and C.cuil LIKE @cuil";
+                }
+                if (cb.SelectedIndex == 3)
+                {
+                    cmd.CommandText = query + " and C.apellido LIKE @apellido";
+                }
+                if (cb.SelectedIndex == 4)
+                {
+                    cmd.CommandText = query + " and C.nombre LIKE @nombre";
+                }
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {                    
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idCliente"]),
+                    Convert.ToString(dr["apellido"]),
+                    Convert.ToString(dr["nombre"]),
+                    Convert.ToString(dr["IDtipoDoc"]),
+                    Convert.ToString(dr["tipoDoc"]),
+                    Convert.ToString(dr["numDoc"]),
+                    Convert.ToString(dr["cuil"]),
+                    Convert.ToDateTime(dr["fechaAlta"]).ToString("dd/MM/yyyy"),
+                    Convert.ToString(dr["sexo"]),                  
+                    Convert.ToString(dr["estadoCivil"]),
+                    Convert.ToString(dr["condicionIVA"]),
+                    Convert.ToString(dr["IDtipoCliente"]),
+                    Convert.ToString(dr["tipocliente"]));
+                }
                 
                 dr.Close();
                 MySQL.DisconnectDB();
@@ -482,6 +576,7 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
         public static ClienteEntity AddClienteDGV(DataGridView dgv, ClienteEntity cliente)
         {
             try
