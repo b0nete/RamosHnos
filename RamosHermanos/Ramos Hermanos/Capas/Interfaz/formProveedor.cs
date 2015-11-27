@@ -133,6 +133,7 @@ namespace RamosHermanos.Capas.Interfaz
                 tabProveedor.Controls.Remove(tabMovimientos);
                 tabProveedor.Controls.Remove(tabPedido);
                 tabProveedor.SelectedTab = tabListado;
+
                 return;
 
             }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Interfaz.ABMs;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -200,7 +201,7 @@ namespace RamosHermanos.Capas.Interfaz
 
                             producto.idProducto = Convert.ToInt32(row.Cells["colIDProducto"].Value.ToString());
 
-                            ProductoB.BuscarProducto(producto);
+                            ProductoB.BuscarIdProducto(producto);
                             txtIDProd.Text = Convert.ToString(producto.idProducto);
                             dtpFechaAlta.Value = Convert.ToDateTime(producto.fechaAlta);
                             cbTipoProducto.SelectedValue = producto.tipoProducto;
@@ -209,8 +210,7 @@ namespace RamosHermanos.Capas.Interfaz
                             txtDescripcion.Text = producto.descripcion;
                             txtCantidad.Text = Convert.ToString(producto.cantidad);
                             cbMedida.SelectedValue = producto.medida;
-                            txtStockMin.Text = Convert.ToString(producto.stockMin);
-                            txtStockActual.Text = Convert.ToString(producto.stockActual);
+                           
 
                             precio.producto = producto.idProducto;
                             PrecioB.BuscarPrecio(precio);
@@ -237,7 +237,7 @@ namespace RamosHermanos.Capas.Interfaz
 
                             producto.idProducto = Convert.ToInt32(row.Cells["colIDProducto"].Value.ToString());
 
-                            ProductoB.BuscarProducto(producto);
+                            ProductoB.BuscarIdProducto(producto);
                             txtIDProd.Text = Convert.ToString(producto.idProducto);
                             dtpFechaAlta.Value = Convert.ToDateTime(producto.fechaAlta);
                             cbTipoProducto.SelectedValue = producto.tipoProducto;
@@ -246,8 +246,7 @@ namespace RamosHermanos.Capas.Interfaz
                             txtDescripcion.Text = producto.descripcion;
                             txtCantidad.Text = Convert.ToString(producto.cantidad);
                             cbMedida.SelectedValue = producto.medida;
-                            txtStockMin.Text = Convert.ToString(producto.stockMin);
-                            txtStockActual.Text = Convert.ToString(producto.stockActual);
+                           
 
                             precio.producto = producto.idProducto;
                             PrecioB.BuscarPrecio(precio);
@@ -289,7 +288,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool ValidarCampos()
         {
-            if (cbTipoProducto.SelectedValue == null || cbMarca.SelectedValue == null || txtProducto.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null || txtStockMin.Text == string.Empty || txtPrecioActual.Text == string.Empty)
+            if (cbTipoProducto.SelectedValue == null || cbMarca.SelectedValue == null || txtProducto.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null || txtPrecioActual.Text == string.Empty)
             {
                 MessageBox.Show("Campos necesarios incompletos!");
                 return true;
@@ -309,7 +308,6 @@ namespace RamosHermanos.Capas.Interfaz
             txtDescripcion.Text = "";
             txtCantidad.Text = "";
             cbMedida.SelectedIndex = 0;
-            txtStockMin.Text = "";
             txtPrecioActual.Text = "";
             txtFechaActualizacion.Text = "";
         }
@@ -326,7 +324,7 @@ namespace RamosHermanos.Capas.Interfaz
             producto.descripcion = txtDescripcion.Text;
             producto.cantidad = Convert.ToDouble(txtCantidad.Text);
             producto.medida = Convert.ToInt32(cbMedida.SelectedValue);
-            producto.stockMin = Convert.ToInt32(txtStockMin.Text);
+            producto.costo = Convert.ToDouble(txtPrecioActual.Text);
             producto.estado = cbEstado.Checked;
         }
 
@@ -345,6 +343,19 @@ namespace RamosHermanos.Capas.Interfaz
         private void button1_Click_1(object sender, EventArgs e)
         {
            
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            formStock frm = new formStock();
+            frm.Show();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            formBuscarProducto frm = new formBuscarProducto();
+            frm.Show();
+            Close();
         }
 
 

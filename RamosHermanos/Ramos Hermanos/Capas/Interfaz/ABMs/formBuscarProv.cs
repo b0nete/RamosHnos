@@ -201,8 +201,8 @@ namespace RamosHermanos.Capas.Interfaz
         {
             RBrazonsocial.Checked = true;
             txtRazonSocial.Enabled = true;
-            txtCuit.Enabled = false;
             txtNproveedor.Enabled = false;
+            txtCuit.Enabled = false;
                        
         }
 
@@ -210,10 +210,10 @@ namespace RamosHermanos.Capas.Interfaz
         {
             caseSwitch = 1;
             txtRazonSocial.Enabled = true;
-            txtCuit.Text = "";
-            txtCuit.Enabled = false;
             txtNproveedor.Text = "";
             txtNproveedor.Enabled = false;
+            txtCuit.Text = "";
+            txtCuit.Enabled = false;
         }
 
         private void RBcuit_CheckedChanged(object sender, EventArgs e)
@@ -221,9 +221,9 @@ namespace RamosHermanos.Capas.Interfaz
             caseSwitch = 2;
             txtRazonSocial.Text = "";
             txtRazonSocial.Enabled = false;
-            txtCuit.Enabled = true;
-            txtNproveedor.Text = "";
-            txtNproveedor.Enabled = false;
+            txtNproveedor.Enabled = true;
+            txtCuit.Text = "";
+            txtCuit.Enabled = false;
         }
 
         
@@ -232,9 +232,9 @@ namespace RamosHermanos.Capas.Interfaz
             caseSwitch = 3;
             txtRazonSocial.Enabled = false;
             txtRazonSocial.Text = "";
-            txtCuit.Enabled = false;
-            txtCuit.Text = "";
-            txtNproveedor.Enabled = true;
+            txtNproveedor.Enabled = false;
+            txtNproveedor.Text = "";
+            txtCuit.Enabled = true;
 
         }
 

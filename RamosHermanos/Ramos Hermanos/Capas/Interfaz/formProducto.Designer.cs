@@ -32,13 +32,6 @@
             this.tabProducto = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.dgvClean = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtStockActual = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtStockMin = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtFechaActualizacion = new System.Windows.Forms.TextBox();
             this.txtPrecioActual = new System.Windows.Forms.TextBox();
@@ -62,8 +55,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.txtIDProd = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -91,9 +82,12 @@
             this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtTipo = new System.Windows.Forms.Label();
+            this.cbRubro = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabListado.SuspendLayout();
@@ -104,17 +98,17 @@
             // 
             this.tabProducto.Controls.Add(this.tabInformacion);
             this.tabProducto.Controls.Add(this.tabListado);
-            this.tabProducto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabProducto.Location = new System.Drawing.Point(0, 0);
+            this.tabProducto.Location = new System.Drawing.Point(3, 33);
             this.tabProducto.Name = "tabProducto";
             this.tabProducto.SelectedIndex = 0;
-            this.tabProducto.Size = new System.Drawing.Size(760, 561);
+            this.tabProducto.Size = new System.Drawing.Size(760, 424);
             this.tabProducto.TabIndex = 0;
             // 
             // tabInformacion
             // 
+            this.tabInformacion.BackColor = System.Drawing.SystemColors.Control;
+            this.tabInformacion.Controls.Add(this.button1);
             this.tabInformacion.Controls.Add(this.dgvClean);
-            this.tabInformacion.Controls.Add(this.groupBox3);
             this.tabInformacion.Controls.Add(this.groupBox2);
             this.tabInformacion.Controls.Add(this.groupBox1);
             this.tabInformacion.Controls.Add(this.btnSave);
@@ -122,102 +116,21 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(752, 535);
+            this.tabInformacion.Size = new System.Drawing.Size(752, 398);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Información";
-            this.tabInformacion.UseVisualStyleBackColor = true;
             // 
             // dgvClean
             // 
             this.dgvClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dgvClean.BackgroundImage")));
             this.dgvClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dgvClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvClean.Location = new System.Drawing.Point(326, 499);
+            this.dgvClean.Location = new System.Drawing.Point(325, 362);
             this.dgvClean.Name = "dgvClean";
             this.dgvClean.Size = new System.Drawing.Size(28, 28);
             this.dgvClean.TabIndex = 111;
             this.dgvClean.UseVisualStyleBackColor = true;
             this.dgvClean.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.txtStockActual);
-            this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.txtStockMin);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(8, 340);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(415, 75);
-            this.groupBox3.TabIndex = 110;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Stock";
-            // 
-            // txtStockActual
-            // 
-            this.txtStockActual.Enabled = false;
-            this.txtStockActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtStockActual.Location = new System.Drawing.Point(115, 45);
-            this.txtStockActual.Name = "txtStockActual";
-            this.txtStockActual.Size = new System.Drawing.Size(261, 20);
-            this.txtStockActual.TabIndex = 98;
-            // 
-            // label16
-            // 
-            this.label16.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(33, 48);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(11, 13);
-            this.label16.TabIndex = 99;
-            this.label16.Text = "*";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label19.Location = new System.Drawing.Point(41, 48);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(68, 13);
-            this.label19.TabIndex = 97;
-            this.label19.Text = "Stock Actual";
-            // 
-            // label11
-            // 
-            this.label11.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(28, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(11, 13);
-            this.label11.TabIndex = 91;
-            this.label11.Text = "*";
-            // 
-            // txtStockMin
-            // 
-            this.txtStockMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtStockMin.Location = new System.Drawing.Point(115, 19);
-            this.txtStockMin.Name = "txtStockMin";
-            this.txtStockMin.Size = new System.Drawing.Size(261, 20);
-            this.txtStockMin.TabIndex = 90;
-            this.txtStockMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStockMin_KeyPress);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label13.Location = new System.Drawing.Point(36, 22);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 13);
-            this.label13.TabIndex = 89;
-            this.label13.Text = "Stock Mínimo";
             // 
             // groupBox2
             // 
@@ -227,7 +140,7 @@
             this.groupBox2.Controls.Add(this.label24);
             this.groupBox2.Controls.Add(this.label23);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(8, 420);
+            this.groupBox2.Location = new System.Drawing.Point(8, 282);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(415, 74);
             this.groupBox2.TabIndex = 108;
@@ -269,9 +182,9 @@
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label24.Location = new System.Drawing.Point(38, 20);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(70, 13);
+            this.label24.Size = new System.Drawing.Size(37, 13);
             this.label24.TabIndex = 106;
-            this.label24.Text = "Precio Actual";
+            this.label24.Text = "Precio";
             // 
             // label23
             // 
@@ -292,7 +205,11 @@
             this.groupBox1.Controls.Add(this.txtCantidad);
             this.groupBox1.Controls.Add(this.label25);
             this.groupBox1.Controls.Add(this.label26);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.txtProducto);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.button5);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.cbMedida);
             this.groupBox1.Controls.Add(this.label3);
@@ -304,16 +221,10 @@
             this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.txtIDProd);
             this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtProducto);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cbTipoProducto);
             this.groupBox1.Controls.Add(this.cbEstado);
             this.groupBox1.Controls.Add(this.label1);
@@ -324,7 +235,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(8, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(415, 328);
+            this.groupBox1.Size = new System.Drawing.Size(415, 270);
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Producto";
@@ -341,7 +252,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtCantidad.Location = new System.Drawing.Point(85, 263);
+            this.txtCantidad.Location = new System.Drawing.Point(85, 236);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(117, 20);
             this.txtCantidad.TabIndex = 118;
@@ -354,7 +265,7 @@
             this.label25.BackColor = System.Drawing.Color.Transparent;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(24, 265);
+            this.label25.Location = new System.Drawing.Point(24, 238);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(11, 13);
             this.label25.TabIndex = 117;
@@ -365,7 +276,7 @@
             this.label26.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label26.Location = new System.Drawing.Point(32, 266);
+            this.label26.Location = new System.Drawing.Point(32, 239);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(49, 13);
             this.label26.TabIndex = 116;
@@ -376,7 +287,7 @@
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(349, 260);
+            this.button5.Location = new System.Drawing.Point(349, 233);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(28, 28);
             this.button5.TabIndex = 112;
@@ -389,7 +300,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(219, 266);
+            this.label10.Location = new System.Drawing.Point(219, 239);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(11, 13);
             this.label10.TabIndex = 111;
@@ -400,7 +311,7 @@
             this.cbMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbMedida.FormattingEnabled = true;
-            this.cbMedida.Location = new System.Drawing.Point(274, 263);
+            this.cbMedida.Location = new System.Drawing.Point(274, 236);
             this.cbMedida.Name = "cbMedida";
             this.cbMedida.Size = new System.Drawing.Size(71, 21);
             this.cbMedida.TabIndex = 110;
@@ -411,7 +322,7 @@
             this.label3.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(226, 266);
+            this.label3.Location = new System.Drawing.Point(226, 239);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 109;
@@ -503,28 +414,6 @@
             this.label17.TabIndex = 95;
             this.label17.Text = "Nº Producto";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(85, 97);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(261, 21);
-            this.comboBox1.TabIndex = 94;
-            this.comboBox1.Visible = false;
-            // 
-            // label9
-            // 
-            this.label9.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(23, 100);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 13);
-            this.label9.TabIndex = 92;
-            this.label9.Text = "Proveedor";
-            this.label9.Visible = false;
-            // 
             // button3
             // 
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
@@ -544,7 +433,7 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(9, 207);
+            this.label18.Location = new System.Drawing.Point(9, 180);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(11, 13);
             this.label18.TabIndex = 86;
@@ -568,11 +457,12 @@
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSearch.Location = new System.Drawing.Point(349, 175);
+            this.btnSearch.Location = new System.Drawing.Point(349, 93);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 79;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label8
             // 
@@ -594,7 +484,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(21, 178);
+            this.label5.Location = new System.Drawing.Point(21, 98);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(11, 13);
             this.label5.TabIndex = 61;
@@ -603,7 +493,7 @@
             // txtProducto
             // 
             this.txtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtProducto.Location = new System.Drawing.Point(85, 178);
+            this.txtProducto.Location = new System.Drawing.Point(85, 98);
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(261, 20);
             this.txtProducto.TabIndex = 60;
@@ -613,7 +503,7 @@
             this.label6.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label6.Location = new System.Drawing.Point(29, 181);
+            this.label6.Location = new System.Drawing.Point(29, 101);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 59;
@@ -668,7 +558,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtDescripcion.Location = new System.Drawing.Point(85, 204);
+            this.txtDescripcion.Location = new System.Drawing.Point(85, 177);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(261, 53);
@@ -678,7 +568,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(16, 207);
+            this.label2.Location = new System.Drawing.Point(16, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 28;
@@ -700,7 +590,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(360, 499);
+            this.btnSave.Location = new System.Drawing.Point(359, 362);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 74;
@@ -712,7 +602,7 @@
             this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnEdit.Location = new System.Drawing.Point(394, 499);
+            this.btnEdit.Location = new System.Drawing.Point(393, 362);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(28, 28);
             this.btnEdit.TabIndex = 76;
@@ -721,19 +611,22 @@
             // 
             // tabListado
             // 
+            this.tabListado.BackColor = System.Drawing.SystemColors.Control;
+            this.tabListado.Controls.Add(this.cbRubro);
+            this.tabListado.Controls.Add(this.txtTipo);
             this.tabListado.Controls.Add(this.dgvProducto);
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(752, 535);
+            this.tabListado.Size = new System.Drawing.Size(752, 398);
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Listado";
-            this.tabListado.UseVisualStyleBackColor = true;
             // 
             // dgvProducto
             // 
             this.dgvProducto.AllowUserToAddRows = false;
             this.dgvProducto.AllowUserToDeleteRows = false;
+            this.dgvProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDProducto,
@@ -744,11 +637,10 @@
             this.colMedida,
             this.colStock,
             this.colPrecio});
-            this.dgvProducto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvProducto.Location = new System.Drawing.Point(3, 3);
+            this.dgvProducto.Location = new System.Drawing.Point(0, 37);
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.ReadOnly = true;
-            this.dgvProducto.Size = new System.Drawing.Size(746, 529);
+            this.dgvProducto.Size = new System.Drawing.Size(746, 355);
             this.dgvProducto.TabIndex = 52;
             this.dgvProducto.DoubleClick += new System.EventHandler(this.dgvProducto_DoubleClick_1);
             // 
@@ -801,24 +693,66 @@
             this.colPrecio.Name = "colPrecio";
             this.colPrecio.ReadOnly = true;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(291, 362);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 28);
+            this.button1.TabIndex = 112;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // txtTipo
+            // 
+            this.txtTipo.AutoSize = true;
+            this.txtTipo.Location = new System.Drawing.Point(4, 13);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(36, 13);
+            this.txtTipo.TabIndex = 53;
+            this.txtTipo.Text = "Rubro";
+            // 
+            // cbRubro
+            // 
+            this.cbRubro.FormattingEnabled = true;
+            this.cbRubro.Location = new System.Drawing.Point(46, 10);
+            this.cbRubro.Name = "cbRubro";
+            this.cbRubro.Size = new System.Drawing.Size(121, 21);
+            this.cbRubro.TabIndex = 54;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(760, 30);
+            this.label7.TabIndex = 103;
+            this.label7.Text = "Productos";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // formProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 561);
+            this.ClientSize = new System.Drawing.Size(760, 461);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.tabProducto);
             this.Name = "formProducto";
             this.Text = "Producto";
             this.Load += new System.EventHandler(this.formProducto_Load);
             this.tabProducto.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabListado.ResumeLayout(false);
+            this.tabListado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             this.ResumeLayout(false);
 
@@ -826,9 +760,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabProducto;
-        private System.Windows.Forms.TabPage tabInformacion;
-        private System.Windows.Forms.TabPage tabListado;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label18;
@@ -839,46 +770,26 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbTipoProducto;
         private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox txtIDProd;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cbMedida;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.DateTimePicker dtpFechaAlta;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox txtPrecioActual;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtStockActual;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtStockMin;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.TextBox txtFechaActualizacion;
-        private System.Windows.Forms.DataGridView dgvProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
@@ -888,5 +799,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.Button dgvClean;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox txtIDProd;
+        public System.Windows.Forms.TextBox txtProducto;
+        public System.Windows.Forms.ComboBox cbTipoProducto;
+        public System.Windows.Forms.TextBox txtDescripcion;
+        public System.Windows.Forms.ComboBox cbMarca;
+        public System.Windows.Forms.ComboBox cbMedida;
+        public System.Windows.Forms.DateTimePicker dtpFechaAlta;
+        public System.Windows.Forms.TextBox txtPrecioActual;
+        public System.Windows.Forms.TextBox txtCantidad;
+        public System.Windows.Forms.TextBox txtFechaActualizacion;
+        private System.Windows.Forms.ComboBox cbRubro;
+        private System.Windows.Forms.Label txtTipo;
+        public System.Windows.Forms.TabControl tabProducto;
+        public System.Windows.Forms.TabPage tabInformacion;
+        public System.Windows.Forms.TabPage tabListado;
+        public System.Windows.Forms.DataGridView dgvProducto;
+        private System.Windows.Forms.Label label7;
     }
 }

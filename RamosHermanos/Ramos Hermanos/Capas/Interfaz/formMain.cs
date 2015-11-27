@@ -65,12 +65,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            formProducto frm = new formProducto();
-            frm.Show();
-        }
-
+        
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formUsuario frm = new formUsuario();
@@ -224,6 +219,23 @@ namespace RamosHermanos.Capas.Interfaz
         {
             listClientes frm2 = new listClientes();
             frm2.Show();
+        }
+
+        private void nºProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buscarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            formBuscarProducto frm = new formBuscarProducto();
+            frm.Show();
+        }
+
+        private void regsitrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formProducto frm = new formProducto();
+            frm.Show();
         }
 
        

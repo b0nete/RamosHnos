@@ -35,7 +35,6 @@ namespace RamosHermanos.Capas.Negocio
             }
             else
             {
-                MessageBox.Show("El producto ya existe!");
                 return true;                
             }
         }
@@ -58,7 +57,6 @@ namespace RamosHermanos.Capas.Negocio
             }
             else
             {
-                MessageBox.Show("El ID producto ya existe!");
                 return true;
             }
         }
@@ -70,7 +68,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query = @"UPDATE Productos
-                                 SET tipoProducto = @tipoProducto, marca = @marca, producto = @producto, descripcion = @descripcion, cantidad = @cantidad, medida = @medida, stockMin = @stockMin, estado = @estado
+                                 SET tipoProducto = @tipoProducto, marca = @marca, producto = @producto, descripcion = @descripcion, cantidad = @cantidad, medida = @medida, estado = @estado
                                  WHERE idProducto = @idProducto";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -82,7 +80,6 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@descripcion", producto.descripcion);
                 cmd.Parameters.AddWithValue("@cantidad", producto.cantidad);
                 cmd.Parameters.AddWithValue("@medida", producto.medida);
-                cmd.Parameters.AddWithValue("@stockMin", producto.stockMin);
                 cmd.Parameters.AddWithValue("@estado", producto.estado);
 
                 cmd.ExecuteNonQuery();
@@ -119,7 +116,6 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@descripcion", producto.descripcion);
                 cmd.Parameters.AddWithValue("@cantidad", producto.cantidad);
                 cmd.Parameters.AddWithValue("@medida", producto.medida);
-                cmd.Parameters.AddWithValue("@stockMin", producto.stockMin);
                 cmd.Parameters.AddWithValue("@estado", producto.estado);
 
                 producto.idProducto = Convert.ToInt32(cmd.ExecuteScalar());
@@ -138,7 +134,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static ProductoEntity BuscarProducto(ProductoEntity producto)
+        public static ProductoEntity BuscarIdProducto(ProductoEntity producto)
         {
             try
             {
@@ -153,7 +149,7 @@ namespace RamosHermanos.Capas.Negocio
                 int resultado = Convert.ToInt32(cmd.ExecuteScalar());
                 if (resultado == 0)
                 {
-                    MessageBox.Show("El Producto no existe!");
+                    MessageBox.Show("El Producto Existe");
                 }
                 else
                 {
@@ -171,8 +167,7 @@ namespace RamosHermanos.Capas.Negocio
                     producto.descripcion = Convert.ToString(row["descripcion"]);
                     producto.cantidad = Convert.ToDouble(row["cantidad"]);
                     producto.medida = Convert.ToInt32(row["medida"]);
-                    producto.stockMin = Convert.ToInt32(row["stockMin"]);
-                    producto.stockActual = Convert.ToInt32(row["stockActual"]);
+                   
 
                     MySQL.DisconnectDB();
                 }
@@ -185,6 +180,8 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+
 
         public static void CargarDGV(DataGridView dgv)
         {

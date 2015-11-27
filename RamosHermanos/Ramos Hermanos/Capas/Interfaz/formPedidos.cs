@@ -56,9 +56,11 @@ namespace RamosHermanos.Capas.Interfaz
                 dtpEntrega.Value = pedido.fechaEntrega;
                 cbEstado.SelectedItem = pedido.estado;
                 txtObservaciones.Text = Convert.ToString(pedido.observaciones);
-                txtTotal.Text = Convert.ToString(pedido.total);
-                
+                txtNombre.Text = Convert.ToString(pedido.nombre) + " " + Convert.ToString(pedido.apellido);
+                txtTotal.Text = Convert.ToString(pedido.total);                
                 tabMain.SelectedTab = tabPedido;
+                //itemsPedidoB.CargarDgvPedido(item, dgvPedido);
+                DomicilioB.CargarCB(cbDomicilio, txtidCliente);
                 
             }
         }
@@ -92,8 +94,9 @@ namespace RamosHermanos.Capas.Interfaz
             }
             else
             {
-                pedido.idPedido = Convert.ToInt32(txtidpedido.Text);
-                if (PedidoB.ExistePedido(pedido) == true)
+                //pedido.idPedido = Convert.ToInt32(txtidpedido.Text); 
+                
+                if ((txtidpedido.Text !=null && PedidoB.ExistePedido(pedido) == true))
                 {
                     DialogResult result = MessageBox.Show("El pedido existe, desea actualizarlo con los datos ingresados?", "Pedido Existente", MessageBoxButtons.OKCancel);
                     if (result == DialogResult.OK)
@@ -295,6 +298,11 @@ namespace RamosHermanos.Capas.Interfaz
             cbEstado.SelectedIndex = -1;
             dgvPedido.Rows.Clear();          
 
+
+        }
+
+        private void iditem(object sender, EventArgs e)
+        {
 
         }
     }

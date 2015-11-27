@@ -18,5 +18,12 @@ namespace RamosHermanos.Capas.Entidades
         public string observaciones { get; set; }
         public double total { get; set; }
         public string estado { get; set; }
+        public int numPedido { get; set; }
+
+        //Atributos Extras
+
+        public string nombre { get; set; }
+        public string apellido { get; set; }
+        public string calle { get; set; }
     }
 }

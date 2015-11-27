@@ -84,6 +84,7 @@
     <Compile Include="Capas\Entidades\RolEntity.cs" />
     <Compile Include="Capas\Entidades\RubroEntity.cs" />
     <Compile Include="Capas\Entidades\SaldoEntity.cs" />
+    <Compile Include="Capas\Entidades\StockEntity.cs" />
     <Compile Include="Capas\Entidades\TelefonoEntity.cs" />
     <Compile Include="Capas\Entidades\tipoClienteEntity.cs" />
     <Compile Include="Capas\Entidades\tipoDocEntity.cs" />
@@ -97,6 +98,12 @@
     </Compile>
     <Compile Include="Capas\Interfaz\ABMs\formBuscarCliente.Designer.cs">
       <DependentUpon>formBuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaz\ABMs\formBuscarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\ABMs\formBuscarProducto.Designer.cs">
+      <DependentUpon>formBuscarProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Interfaz\ABMs\formVehiculo.cs">
       <SubType>Form</SubType>
@@ -207,6 +214,12 @@
     <Compile Include="Capas\Interfaz\formSaldos.Designer.cs">
       <DependentUpon>formSaldos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaz\formStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\formStock.Designer.cs">
+      <DependentUpon>formStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\formTestDGV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +299,7 @@
     <Compile Include="Capas\Negocio\RolB.cs" />
     <Compile Include="Capas\Negocio\RubroB.cs" />
     <Compile Include="Capas\Negocio\SaldoB.cs" />
+    <Compile Include="Capas\Negocio\StockB.cs" />
     <Compile Include="Capas\Negocio\TelefonoB.cs" />
     <Compile Include="Capas\Negocio\tipoClienteB.cs" />
     <Compile Include="Capas\Negocio\tipoDocB.cs" />
@@ -329,6 +343,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Capas\Interfaz\ABMs\formBuscarCliente.resx">
       <DependentUpon>formBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\ABMs\formBuscarProducto.resx">
+      <DependentUpon>formBuscarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\ABMs\formVehiculo.resx">
       <DependentUpon>formVehiculo.cs</DependentUpon>
@@ -383,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formSaldos.resx">
       <DependentUpon>formSaldos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\formStock.resx">
+      <DependentUpon>formStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formTestDGV.resx">
       <DependentUpon>formTestDGV.cs</DependentUpon>

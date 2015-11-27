@@ -20,8 +20,8 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT into Pedidos (rol,idPersona,domicilio,fechaPedido,fechaEntrega,observaciones, total, estado)
-                             VALUES (@rol,@idPersona,@domicilio,@fechaPedido,@fechaEntrega,@observaciones,@total,@estado);
+                string query = @"INSERT into Pedidos (rol,idPersona,numPedido,domicilio,fechaPedido,fechaEntrega,observaciones, total, estado)
+                             VALUES (@rol,@idPersona,@numPedido,@domicilio,@fechaPedido,@fechaEntrega,@observaciones,@total,@estado);
                              SELECT LAST_INSERT_ID();";
 
 
@@ -29,6 +29,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 cmd.Parameters.AddWithValue("@rol", pedido.rol);
                 cmd.Parameters.AddWithValue("@idPersona", pedido.idPersona);
+                cmd.Parameters.AddWithValue("@numPedido", pedido.numPedido);
                 cmd.Parameters.AddWithValue("@domicilio", pedido.domicilio);
                 cmd.Parameters.AddWithValue("@fechaPedido", pedido.fechaPedido);
                 cmd.Parameters.AddWithValue("@fechaEntrega", pedido.fechaEntrega);
@@ -61,13 +62,13 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query = @"UPDATE pedidos
-                               SET fechaPedido = @fechaPedido, fechaEntrega= @fechaEntrega domicilio = @domicilio, estado = @estado,observaciones =@observaciones,total=@total
-                               WHERE idPedidos = @idPedidos";
+                               SET fechaPedido = @fechaPedido, fechaEntrega= @fechaEntrega ,domicilio = @domicilio, estado = @estado,observaciones =@observaciones,total=@total
+                               WHERE numPedido = @numPedido";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@fechaPedido", pedido.fechaPedido);
-                cmd.Parameters.AddWithValue("@idPedidos", pedido.idPedido);
+                cmd.Parameters.AddWithValue("@numPedido", pedido.idPedido);
                 cmd.Parameters.AddWithValue("@fechaEntrega", pedido.fechaEntrega);
                 cmd.Parameters.AddWithValue("@domicilio", pedido.domicilio);
                 cmd.Parameters.AddWithValue("@estado", pedido.estado);
@@ -91,16 +92,17 @@ namespace RamosHermanos.Capas.Negocio
 
         }
 
+       
         public static bool ExistePedido(PedidoEntity pedido)
         {
 
             MySQL.ConnectDB();
 
             string query = @"Select COUNT(*) from pedidos
-                            where idPedidos = @idPedidos";
+                            where idPedidos=@idPedido";
 
             MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-            cmd.Parameters.AddWithValue("@idPedidos", pedido.idPedido);
+            cmd.Parameters.AddWithValue("@idPedido", pedido.idPedido);
 
             int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -114,6 +116,28 @@ namespace RamosHermanos.Capas.Negocio
 
 
         }
+
+//        public static PedidoEntity sumarPedido(PedidoEntity pedido, TextBox txtSum)
+//        {
+
+//            MySQL.ConnectDB();
+
+//            string query = @"Select * from pedidos
+//                            where numPedido = @numPedido";
+
+//            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+//            cmd.Parameters.AddWithValue("@numPedido", pedido.numPedido);
+
+//            txtSum.Text = Convert.ToString(cmd.ExecuteScalar());
+
+//            MySQL.DisconnectDB();
+
+//            return pedido;
+
+            
+
+//        }
         public static void cargardgvPedido(DataGridView dgv)
         {
             try
@@ -122,8 +146,9 @@ namespace RamosHermanos.Capas.Negocio
 
                 dgv.Rows.Clear();
 
-                string query = @"Select P.idPedidos , P.fechaPedido , P.fechaEntrega ,P.total ,P.estado, p.idPersona
-                               FROM pedidos P";
+                string query = @"Select P.idPedidos , P.fechaPedido , P.fechaEntrega ,P.total ,P.estado, P.idPersona, C.nombre, C.apellido 
+                               FROM pedidos P, clientes C
+                               WHERE idCliente= P.idPersona";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -134,6 +159,8 @@ namespace RamosHermanos.Capas.Negocio
                     dgv.Rows.Add(
                     Convert.ToInt32(dr["idPedidos"]),
                     Convert.ToString(dr["idPersona"]),
+                    Convert.ToString(dr["nombre"]),
+                    Convert.ToString(dr["apellido"]),
                     Convert.ToDateTime(dr["fechaPedido"]).ToString("dd/MM/yyyy"),
                     Convert.ToDateTime(dr["fechaEntrega"]).ToString("dd/MM/yyyy"),
                     Convert.ToDouble(dr["total"]),
@@ -151,6 +178,8 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        
         public static PedidoEntity BuscarIdPedido(PedidoEntity pedido)
         {
 
@@ -159,11 +188,11 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query = @"Select P.idPedidos ,P.idPersona, P.fechaPedido, P.fechaEntrega, p.Observaciones,P.rol, P.estado, P.total,
-                               C.Nombre, C.Apellido, D.idDomicilio
+                               C.Nombre, C.Apellido, D.idDomicilio, D.calle, D.numero
                                FROM pedidos P
                                INNER JOIN clientes C on C.idCliente = P.idPersona
                                INNER JOIN domicilios D on D.idDomicilio = P.domicilio
-                               WHERE idpedidos = 33";
+                               WHERE idpedidos = @idPedido";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -186,12 +215,16 @@ namespace RamosHermanos.Capas.Negocio
 
                     pedido.idPedido = Convert.ToInt32(row["idPedidos"]);
                     pedido.idPersona = Convert.ToInt32(row["idPersona"]);
-                    
                     pedido.fechaPedido = Convert.ToDateTime(row["FechaPedido"]);
+                    pedido.calle = Convert.ToString(row["nombre"]);
                     pedido.fechaEntrega = Convert.ToDateTime(row["FechaEntrega"]);
                     pedido.observaciones = Convert.ToString(row["observaciones"]);
                     pedido.rol = Convert.ToInt32(row["rol"]);
                     pedido.total = Convert.ToDouble(row["total"]);
+                    pedido.nombre = Convert.ToString(row["Nombre"]);
+                    pedido.apellido = Convert.ToString(row["Apellido"]);
+                    pedido.domicilio = Convert.ToString(row["idDomicilio"]);
+                    pedido.calle = Convert.ToString(row["calle"]);
                     pedido.estado = Convert.ToString(row["estado"]);
                     
 
