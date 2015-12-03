@@ -54,9 +54,6 @@ namespace RamosHermanos.Capas.Interfaz
                     tabMain.Controls.Remove(tabInformacionJ);
                     tabMain.Controls.Remove(tabMovimientos);
                     break;                    
-                default:
-                    MessageBox.Show("Default case");
-                    break;
             }
             // ----------------- Persona ----------------- //
             // Cargar ComboBoxs.            
@@ -380,10 +377,12 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-        formPedidos frmP = new formPedidos();
+        
 
         private void dgvCliente_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            formPedidos frmP = new formPedidos();
+
             switch (caseSwitch)
             {
                 case 1:
@@ -1159,7 +1158,7 @@ namespace RamosHermanos.Capas.Interfaz
             tabMain.Controls.Add(tabListado);
         }
 
-        private void CasePersona()
+        public void CasePersona()
         {
             tabMain.Controls.Remove(tabInformacion);
             tabMain.Controls.Remove(tabInformacionJ);
@@ -1171,7 +1170,7 @@ namespace RamosHermanos.Capas.Interfaz
             tabMain.Controls.Add(tabVisita);
         }
 
-        private void CasePersonaJuridica()
+        public void CasePersonaJuridica()
         {
             tabMain.Controls.Remove(tabInformacion);
             tabMain.Controls.Remove(tabInformacionJ);
@@ -1189,6 +1188,18 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
+        public void CargarTXTSaldo()
+        {
+            //Se creo el método ya que ejecutando el método de otro form no se llenaba la entidad.
+            if (txtIDcliente.Text != string.Empty)            
+                CargarSaldo(txtIDcliente);            
+            else
+                CargarSaldo(txtIDclientePJ);
+            
+            SaldoB.BuscarSaldo(saldo);
+            txtCreditoMax.Text = Convert.ToString(saldo.creditoMax);
+            txtSaldo.Text = Convert.ToString(saldo.saldoActual);
+        }
         
     }
 }

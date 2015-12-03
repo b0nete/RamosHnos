@@ -51,6 +51,7 @@
             this.tabSugerencias = new System.Windows.Forms.TabPage();
             this.tabAdicional = new System.Windows.Forms.TabPage();
             this.tabInformacion = new System.Windows.Forms.TabPage();
+            this.btnPedido = new System.Windows.Forms.Button();
             this.btnClean = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -186,7 +187,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.cbDomicilioLunes = new System.Windows.Forms.ComboBox();
             this.cbDistribuidorLunes = new System.Windows.Forms.ComboBox();
-            this.btnPedido = new System.Windows.Forms.Button();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -408,6 +408,18 @@
             this.tabInformacion.Size = new System.Drawing.Size(776, 536);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
+            // 
+            // btnPedido
+            // 
+            this.btnPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPedido.BackgroundImage")));
+            this.btnPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPedido.Location = new System.Drawing.Point(640, 498);
+            this.btnPedido.Name = "btnPedido";
+            this.btnPedido.Size = new System.Drawing.Size(28, 28);
+            this.btnPedido.TabIndex = 71;
+            this.btnPedido.UseVisualStyleBackColor = true;
+            this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);
             // 
             // btnClean
             // 
@@ -1968,18 +1980,6 @@
             this.cbDistribuidorLunes.Size = new System.Drawing.Size(176, 21);
             this.cbDistribuidorLunes.TabIndex = 3;
             // 
-            // btnPedido
-            // 
-            this.btnPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPedido.BackgroundImage")));
-            this.btnPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPedido.Location = new System.Drawing.Point(640, 498);
-            this.btnPedido.Name = "btnPedido";
-            this.btnPedido.Size = new System.Drawing.Size(28, 28);
-            this.btnPedido.TabIndex = 71;
-            this.btnPedido.UseVisualStyleBackColor = true;
-            this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);
-            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2035,21 +2035,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtnumDoc;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbSexo;
-        private System.Windows.Forms.ComboBox cbTipoCliente;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ComboBox cbIVA;
-        private System.Windows.Forms.ComboBox cbEstadoCivil;
-        private System.Windows.Forms.DateTimePicker dtpFechaAlta;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.MaskedTextBox txtCUIL;
         public System.Windows.Forms.TextBox txtIDcliente;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
@@ -2058,16 +2050,11 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox cbTipoDoc;
-        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox txtSaldo;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox txtCreditoMax;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -2088,11 +2075,8 @@
         private System.Windows.Forms.Button btnDomicilio;
         private System.Windows.Forms.Button btnEmail;
         private System.Windows.Forms.Button btnTelefono;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtDomic;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClean;
@@ -2101,26 +2085,17 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ComboBox cbtipoClientePJ;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.ComboBox cbIVAPJ;
-        private System.Windows.Forms.DateTimePicker dtpFechaAltaPJ;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.CheckBox cbEstadoPJ;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.MaskedTextBox txtCUILPJ;
         public System.Windows.Forms.TextBox txtIDclientePJ;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox txtNombrePJ;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.TextBox txtSaldoPJ;
         private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.TextBox txtCreditoMaxPJ;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.GroupBox groupBox12;
@@ -2141,11 +2116,8 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox txtEmailPJ;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.TextBox txtTelefonoPJ;
         private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.TextBox txtDomicilioPJ;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.Button button10;
         public System.Windows.Forms.TabControl tabMain;
@@ -2184,6 +2156,34 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDtipoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn coltipoCliente;
         private System.Windows.Forms.Button btnPedido;
+        public System.Windows.Forms.TextBox txtnumDoc;
+        public System.Windows.Forms.ComboBox cbSexo;
+        public System.Windows.Forms.ComboBox cbTipoCliente;
+        public System.Windows.Forms.ComboBox cbIVA;
+        public System.Windows.Forms.ComboBox cbEstadoCivil;
+        public System.Windows.Forms.DateTimePicker dtpFechaAlta;
+        public System.Windows.Forms.CheckBox cbEstado;
+        public System.Windows.Forms.MaskedTextBox txtCUIL;
+        public System.Windows.Forms.ComboBox cbTipoDoc;
+        public System.Windows.Forms.TextBox txtApellido;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtSaldo;
+        public System.Windows.Forms.TextBox txtCreditoMax;
+        public System.Windows.Forms.TextBox txtEmail;
+        public System.Windows.Forms.TextBox txtTel;
+        public System.Windows.Forms.TextBox txtDomic;
+        public System.Windows.Forms.ComboBox cbtipoClientePJ;
+        public System.Windows.Forms.ComboBox cbIVAPJ;
+        public System.Windows.Forms.DateTimePicker dtpFechaAltaPJ;
+        public System.Windows.Forms.CheckBox cbEstadoPJ;
+        public System.Windows.Forms.MaskedTextBox txtCUILPJ;
+        public System.Windows.Forms.TextBox txtNombrePJ;
+        public System.Windows.Forms.GroupBox groupBox10;
+        public System.Windows.Forms.TextBox txtSaldoPJ;
+        public System.Windows.Forms.TextBox txtCreditoMaxPJ;
+        public System.Windows.Forms.TextBox txtEmailPJ;
+        public System.Windows.Forms.TextBox txtTelefonoPJ;
+        public System.Windows.Forms.TextBox txtDomicilioPJ;
 
     }
 }

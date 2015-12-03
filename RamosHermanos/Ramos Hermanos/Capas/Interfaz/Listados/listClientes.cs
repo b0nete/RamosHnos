@@ -35,12 +35,15 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         {
             if (rbDGV.Checked == true)
             {
+                //Agregamos Elementos
                 cbParametro.Items.Clear();
                 cbParametro.Items.Add("Nº Cliente");
                 cbParametro.Items.Add("DNI");
                 cbParametro.Items.Add("CUIL/CUIT");
                 cbParametro.Items.Add("Apellido");
                 cbParametro.Items.Add("Nombre");
+                //Establecemos valor por defecto
+                cbParametro.SelectedIndex = 3;
 
                 // Mostramos columnas desabilitadas para mostrar una PJ.
                 dgvCliente.Columns[1].Visible = true;
@@ -52,10 +55,13 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             }
             else
             {
+                //Agregamos Elementos
                 cbParametro.Items.Clear();
                 cbParametro.Items.Add("Nº Cliente");
                 cbParametro.Items.Add("CUIL/CUIT");
                 cbParametro.Items.Add("Nombre");
+                //Establecemos valor por defecto
+                cbParametro.SelectedIndex = 2;
                  
                 // Ocultamos columnas innecesarias.
                 dgvCliente.Columns[1].Visible = false;
@@ -76,7 +82,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         private void listClientes_Load(object sender, EventArgs e)
         {
             cbParametro.SelectedIndex = 3;
-            //CheckListado();
+            CheckListado();
         }
 
         //#region IAddItem Members
@@ -136,7 +142,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
         private void cbParametro_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbParametro.SelectedIndex == 2)
+            if (rbDGV.Checked == true && cbParametro.SelectedIndex == 2 || rbDGVPJ.Checked == true && cbParametro.SelectedIndex == 1)
             {
                 txtParametro.Mask = "00-00000000-00";
             }
@@ -144,6 +150,97 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             {
                 txtParametro.Mask = "";
             }
+        }
+
+        private void SeleccionarDGV()
+        {
+            //Instanciamos Interfaces
+            formCliente frm = new formCliente();
+            formContacto frmContacto = new formContacto();
+            //Instanciamos Entidades
+            SaldoEntity saldo = new SaldoEntity();
+
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvCliente.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+
+                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+
+                cliente.rol = 1;
+                cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
+
+                ClienteB.BuscarClienteID(cliente);
+
+                if (cliente.tipoPersona == "P")
+                {
+                    this.Close();
+                    frm.Show();                    
+
+                    frm.txtIDcliente.Text = Convert.ToString(cliente.idCliente);
+                    frm.dtpFechaAlta.Value = cliente.fechaAlta;
+                    frm.cbTipoDoc.SelectedValue = cliente.tipoDoc;
+                    frm.txtnumDoc.Text = cliente.numDoc;
+                    frm.cbSexo.Text = cliente.sexo;
+                    frm.txtCUIL.Text = cliente.cuil;
+                    frm.txtApellido.Text = cliente.apellido;
+                    frm.txtNombre.Text = cliente.nombre;
+                    frm.cbEstadoCivil.Text = cliente.estadoCivil;
+                    frm.cbIVA.Text = cliente.condicionIVA;
+                    frm.cbTipoCliente.SelectedValue = cliente.tipoCliente;
+                    frm.cbEstado.Checked = cliente.estado;
+
+                    frm.CargarTXTSaldo();
+
+                    //Contacto
+                    DomicilioB.CargarTXT(frm.txtDomic, frm.txtIDcliente, 1);
+                    EmailB.CargarTXT(frm.txtEmail, frm.txtIDcliente, 1);
+                    TelefonoB.CargarTXT(frm.txtTel, frm.txtIDcliente, 1);
+
+                    //Tabs
+                    frm.CasePersona();
+                }
+                else if (cliente.tipoPersona == "PJ")
+                {
+                    this.Close();
+                    frm.Show(); 
+
+                    frm.txtIDclientePJ.Text = Convert.ToString(cliente.idCliente);
+                    frm.dtpFechaAltaPJ.Value = cliente.fechaAlta;
+                    frm.txtCUILPJ.Text = cliente.cuil;
+                    frm.txtNombrePJ.Text = cliente.nombre;
+                    frm.cbIVAPJ.Text = cliente.condicionIVA;
+                    frm.cbtipoClientePJ.SelectedValue = cliente.tipoCliente;
+                    frm.cbEstadoPJ.Checked = cliente.estado;
+
+                    frm.CargarTXTSaldo();
+
+                    //Visita
+                    //visita.rol = 1;
+                    //visita.idPersona = Convert.ToInt32(txtIDcliente.Text);
+                    //string dia = "LU";
+                    //VisitaB.BuscarVisita(visita, dgvLu, dia);
+
+                    //Contacto
+                    DomicilioB.CargarTXT(frm.txtDomic, frm.txtIDcliente, 1);
+                    EmailB.CargarTXT(frm.txtEmail, frm.txtIDcliente, 1);
+                    TelefonoB.CargarTXT(frm.txtTel, frm.txtIDcliente, 1);
+
+                    //Tabs
+                    frm.CasePersonaJuridica();
+                }
+
+            }
+        }
+
+        private void dgvCliente_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            SeleccionarDGV();
         }
     }
 }

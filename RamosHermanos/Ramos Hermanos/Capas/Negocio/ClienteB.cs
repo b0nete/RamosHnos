@@ -467,17 +467,14 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT C.idCliente, C.fechaAlta, C.tipoDoc as IDtipoDoc, TP.tipoDoc, C.numDoc, C.sexo, C.cuil, C.apellido, C.nombre, c.estadoCivil, c.condicionIVA, C.tipoCliente as IDtipoCliente, TC.tipocliente
+                string query = @"SELECT C.idCliente, C.fechaAlta, C.cuil, C.nombre, c.condicionIVA, c.tipoCliente as IDtipoCliente, TC.tipoCliente
                                  FROM Clientes C
-                                 INNER JOIN tipoDocumento TP ON C.tipoDoc = TP.idTipoDoc
-                                 INNER JOIN tipoCliente TC ON C.tipoDoc = TC.idTipoCliente
+                                 INNER JOIN tipoCliente TC ON C.tipoCliente = TC.idTipoCliente
                                  WHERE C.tipoPersona = 'PJ'";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
                 cmd.Parameters.AddWithValue("@idCliente", parametro);
-                cmd.Parameters.AddWithValue("@numDoc", parametro);
                 cmd.Parameters.AddWithValue("@cuil", parametro);
-                cmd.Parameters.AddWithValue("@apellido", parametro);
                 cmd.Parameters.AddWithValue("@nombre", parametro);
 
                 if (cb.SelectedIndex == 0)
@@ -486,17 +483,9 @@ namespace RamosHermanos.Capas.Negocio
                 }
                 if (cb.SelectedIndex == 1)
                 {
-                    cmd.CommandText = query + " and C.numDoc LIKE @numDoc";
-                }
-                if (cb.SelectedIndex == 2)
-                {
                     cmd.CommandText = query + " and C.cuil LIKE @cuil";
                 }
-                if (cb.SelectedIndex == 3)
-                {
-                    cmd.CommandText = query + " and C.apellido LIKE @apellido";
-                }
-                if (cb.SelectedIndex == 4)
+                if (cb.SelectedIndex == 2)
                 {
                     cmd.CommandText = query + " and C.nombre LIKE @nombre";
                 }
@@ -507,15 +496,15 @@ namespace RamosHermanos.Capas.Negocio
                 {                    
                     dgv.Rows.Add(
                     Convert.ToString(dr["idCliente"]),
-                    Convert.ToString(dr["apellido"]),
+                    Convert.ToString(dr["nombre"]), //Se completa con cualquier valor ya que es un campo no visible en el DGV.
                     Convert.ToString(dr["nombre"]),
-                    Convert.ToString(dr["IDtipoDoc"]),
-                    Convert.ToString(dr["tipoDoc"]),
-                    Convert.ToString(dr["numDoc"]),
+                    Convert.ToString(dr["nombre"]),//Se completa con cualquier valor ya que es un campo no visible en el DGV.
+                    Convert.ToString(dr["nombre"]),//Se completa con cualquier valor ya que es un campo no visible en el DGV.
+                    Convert.ToString(dr["nombre"]),//Se completa con cualquier valor ya que es un campo no visible en el DGV.
                     Convert.ToString(dr["cuil"]),
                     Convert.ToDateTime(dr["fechaAlta"]).ToString("dd/MM/yyyy"),
-                    Convert.ToString(dr["sexo"]),                  
-                    Convert.ToString(dr["estadoCivil"]),
+                    Convert.ToString(dr["nombre"]),//Se completa con cualquier valor ya que es un campo no visible en el DGV.
+                    Convert.ToString(dr["nombre"]),//Se completa con cualquier valor ya que es un campo no visible en el DGV.
                     Convert.ToString(dr["condicionIVA"]),
                     Convert.ToString(dr["IDtipoCliente"]),
                     Convert.ToString(dr["tipocliente"]));
