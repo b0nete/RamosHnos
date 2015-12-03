@@ -5,6 +5,11 @@ RamosHermanos/Ramos Hermanos/bin/*
 RamosHermanos/Ramos Hermanos/RamosHermanos.csproj
 RamosHermanos/Ramos Hermanos/RamosHermanos.csproj.user
 
+# C# 
+*.csproj
+*.csproj.user
+*suo
+
 
 # Windows image file caches
 Thumbs.db
