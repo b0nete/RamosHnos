@@ -34,8 +34,7 @@ namespace RamosHermanos.Capas.Interfaz.ABMs
             {
                 frm.tabProducto.Controls.Remove(frm.tabInformacion);
                 frm.Show();
-                frm.tabProducto.SelectedTab = frm.tabListado;
-                
+                                
                 return;
             }
 

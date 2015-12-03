@@ -17,6 +17,6 @@ namespace RamosHermanos.Capas.Entidades
         public double cantidad { get; set; }
         public int medida { get; set; }
         public bool estado { get; set; }
-        public double costo { get; set; }
+        public double precio { get; set; }
     }
 }

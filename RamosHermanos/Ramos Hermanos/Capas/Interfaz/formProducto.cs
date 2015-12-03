@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Interfaz.Listados;
 using RamosHermanos.Capas.Interfaz.ABMs;
 
 namespace RamosHermanos.Capas.Interfaz
@@ -22,22 +23,9 @@ namespace RamosHermanos.Capas.Interfaz
 
         //Eventos
 
-        public int caseSwitch = 0;
-
+        
         private void formProducto_Load(object sender, EventArgs e)
         {
-            //Cargas iniciales de CB
-            
-            switch (caseSwitch)
-            {
-                case 1:
-                    tabProducto.Controls.Remove(tabListado);
-                    break;
-                case 2:
-                    tabProducto.Controls.Remove(tabInformacion);
-                    break;
-            }
-            ProductoB.CargarDGV(dgvProducto);
             tipoProductoB.CargarCB(cbTipoProducto);
             MarcaB.CargarCB(cbMarca);
             MedidaB.CargarCB(cbMedida);
@@ -99,26 +87,7 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-
-            if (ch == 44 && ch == 46 && txtPrecioActual.Text.IndexOf(',') != -1)
-            {
-                e.Handled = true;
-                return;
-            }
-
-            if (!Char.IsDigit(ch) && ch != 8 && ch != 44 && ch != 46)
-            {
-                e.Handled = true;
-            }
-
-            if (e.KeyChar == '.')
-            {
-                e.KeyChar = ',';
-            }
-        }
+       
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -136,16 +105,12 @@ namespace RamosHermanos.Capas.Interfaz
                 }
                 else if (ProductoB.ExisteProducto(producto) == true) // Verificamos si los datos coinciden con los de otro producto.
                 {
+                    ProductoB.UpdateProducto(producto);
                     return;
                 }
                 else
                 {
                     ProductoB.InsertProducto(producto, txtIDProd);
-
-                    CargarPrecio(txtIDProd);
-                    PrecioB.InsertPrecio(precio);
-
-                    ProductoB.CargarDGV(dgvProducto);
                 }
             }
         }
@@ -159,13 +124,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             CargarProducto();
             ProductoB.UpdateProducto(producto);
-
-            precio.producto = Convert.ToInt32(txtIDProd.Text); //Asignamos el ID del producto para desabilitar los precios anteriores.
-            PrecioB.DisablePrecio(precio);//Método para desabilitar los precios.
-            CargarPrecio(txtIDProd); //Cargamos los atributos de la entidad para pasarlos al método que realiza la carga en la DB.
-            PrecioB.InsertPrecio(precio); //Método para cargar pasar los datos de la entidad a la DB.
-
-            ProductoB.CargarDGV(dgvProducto);
+                       
         }
 
         private void dgvProducto_DoubleClick(object sender, EventArgs e)
@@ -178,92 +137,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-        formPedidos frmP = new formPedidos();
-        public int caseSwitchProducto = 1;
-
-        private void dgvProducto_DoubleClick_1(object sender, EventArgs e)
-        {
-            switch (caseSwitchProducto)
-            {
-                case 1:
-                    {
-                        DataGridViewCell cell = null;
-                        foreach (DataGridViewCell selectedCell in dgvProducto.SelectedCells)
-                        {
-                            cell = selectedCell;
-                            break;
-                        }
-                        if (cell != null)
-                        {
-                            DataGridViewRow row = cell.OwningRow;
-
-                            //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
-
-                            producto.idProducto = Convert.ToInt32(row.Cells["colIDProducto"].Value.ToString());
-
-                            ProductoB.BuscarIdProducto(producto);
-                            txtIDProd.Text = Convert.ToString(producto.idProducto);
-                            dtpFechaAlta.Value = Convert.ToDateTime(producto.fechaAlta);
-                            cbTipoProducto.SelectedValue = producto.tipoProducto;
-                            cbMarca.SelectedValue = producto.marca;
-                            txtProducto.Text = producto.producto;
-                            txtDescripcion.Text = producto.descripcion;
-                            txtCantidad.Text = Convert.ToString(producto.cantidad);
-                            cbMedida.SelectedValue = producto.medida;
-                           
-
-                            precio.producto = producto.idProducto;
-                            PrecioB.BuscarPrecio(precio);
-                            txtPrecioActual.Text = Convert.ToString(precio.precio);
-                            txtFechaActualizacion.Text = Convert.ToString(precio.fechaActualizacion);
-
-                            tabProducto.SelectedTab = tabInformacion;
-                        }
-                    }
-                    break;
-                    case 2:
-                    {
-                        DataGridViewCell cell = null;
-                        foreach (DataGridViewCell selectedCell in dgvProducto.SelectedCells)
-                        {
-                            cell = selectedCell;
-                            break;
-                        }
-                        if (cell != null)
-                        {
-                            DataGridViewRow row = cell.OwningRow;
-
-                            //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
-
-                            producto.idProducto = Convert.ToInt32(row.Cells["colIDProducto"].Value.ToString());
-
-                            ProductoB.BuscarIdProducto(producto);
-                            txtIDProd.Text = Convert.ToString(producto.idProducto);
-                            dtpFechaAlta.Value = Convert.ToDateTime(producto.fechaAlta);
-                            cbTipoProducto.SelectedValue = producto.tipoProducto;
-                            cbMarca.SelectedValue = producto.marca;
-                            txtProducto.Text = producto.producto;
-                            txtDescripcion.Text = producto.descripcion;
-                            txtCantidad.Text = Convert.ToString(producto.cantidad);
-                            cbMedida.SelectedValue = producto.medida;
-                           
-
-                            precio.producto = producto.idProducto;
-                            PrecioB.BuscarPrecio(precio);
-                            txtPrecioActual.Text = Convert.ToString(precio.precio);
-                            txtFechaActualizacion.Text = Convert.ToString(precio.fechaActualizacion);
-
-                            tabProducto.SelectedTab = tabInformacion;
-                        }
-                    }
-                    break;      
-                
-        }
-                   
-
-                    
-                  
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -288,7 +162,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool ValidarCampos()
         {
-            if (cbTipoProducto.SelectedValue == null || cbMarca.SelectedValue == null || txtProducto.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null || txtPrecioActual.Text == string.Empty)
+            if (cbTipoProducto.SelectedValue == null || cbMarca.SelectedValue == null || txtProducto.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null)
             {
                 MessageBox.Show("Campos necesarios incompletos!");
                 return true;
@@ -308,8 +182,7 @@ namespace RamosHermanos.Capas.Interfaz
             txtDescripcion.Text = "";
             txtCantidad.Text = "";
             cbMedida.SelectedIndex = 0;
-            txtPrecioActual.Text = "";
-            txtFechaActualizacion.Text = "";
+            
         }
 
         // Entidades
@@ -324,17 +197,11 @@ namespace RamosHermanos.Capas.Interfaz
             producto.descripcion = txtDescripcion.Text;
             producto.cantidad = Convert.ToDouble(txtCantidad.Text);
             producto.medida = Convert.ToInt32(cbMedida.SelectedValue);
-            producto.costo = Convert.ToDouble(txtPrecioActual.Text);
+            //producto.precio = Convert.ToDouble(txtPrecioActual.Text);
             producto.estado = cbEstado.Checked;
         }
 
-        PrecioEntity precio = new PrecioEntity();
-        private void CargarPrecio(TextBox txt)
-        {
-            precio.producto = Convert.ToInt32(txt.Text);
-            precio.precio = Convert.ToDouble(txtPrecioActual.Text);
-        }
-
+       
         private void cbMedida_DropDown(object sender, EventArgs e)
         {
             MedidaB.CargarCB(cbMedida);
@@ -357,6 +224,19 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
             Close();
         }
+
+        private void tabListado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            listProductos frm = new listProductos();
+            frm.Show();
+        }
+
+       
 
 
         

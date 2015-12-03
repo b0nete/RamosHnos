@@ -61,31 +61,31 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static ProductoEntity UpdateProducto(ProductoEntity producto)
+        public static ProductoEntity UpdateProducto(ProductoEntity prod)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = @"UPDATE Productos
+                string query = @"UPDATE productos
                                  SET tipoProducto = @tipoProducto, marca = @marca, producto = @producto, descripcion = @descripcion, cantidad = @cantidad, medida = @medida, estado = @estado
                                  WHERE idProducto = @idProducto";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@idProducto", producto.idProducto);
-                cmd.Parameters.AddWithValue("@tipoProducto", producto.tipoProducto);
-                cmd.Parameters.AddWithValue("@marca", producto.marca);
-                cmd.Parameters.AddWithValue("@producto", producto.producto);
-                cmd.Parameters.AddWithValue("@descripcion", producto.descripcion);
-                cmd.Parameters.AddWithValue("@cantidad", producto.cantidad);
-                cmd.Parameters.AddWithValue("@medida", producto.medida);
-                cmd.Parameters.AddWithValue("@estado", producto.estado);
-
+                cmd.Parameters.AddWithValue("@idProducto", prod.idProducto);
+                cmd.Parameters.AddWithValue("@tipoProducto", prod.tipoProducto);
+                cmd.Parameters.AddWithValue("@marca", prod.marca);
+                cmd.Parameters.AddWithValue("@producto", prod.producto);
+                cmd.Parameters.AddWithValue("@descripcion", prod.descripcion);
+                cmd.Parameters.AddWithValue("@cantidad", prod.cantidad);
+                cmd.Parameters.AddWithValue("@medida", prod.medida);
+                cmd.Parameters.AddWithValue("@estado", prod.estado);
+                
                 cmd.ExecuteNonQuery();
-
+                                
                 MessageBox.Show("Producto Actualizado!");
-                return producto;
+                return prod;
             }
 
             catch (Exception ex)
@@ -103,8 +103,8 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
 
-                string query = @"INSERT INTO Productos(fechaAlta, tipoProducto, marca, producto, descripcion, cantidad, medida, stockMin, estado)
-                                 VALUES (@fechaAlta, @tipoProducto, @marca, @producto, @descripcion, @cantidad, @medida, @stockMin, @estado);
+                string query = @"INSERT INTO Productos(fechaAlta, tipoProducto, marca, producto, descripcion, cantidad, medida, estado)
+                                 VALUES (@fechaAlta, @tipoProducto, @marca, @producto, @descripcion, @cantidad, @medida, @estado);
                                  SELECT LAST_INSERT_ID();";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -140,7 +140,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = "SELECT * FROM Productos WHERE idProducto = @idProducto";
+                string query = "SELECT * FROM productos WHERE idProducto = @idProducto";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -159,7 +159,7 @@ namespace RamosHermanos.Capas.Negocio
                     da.Fill(dt);
 
                     DataRow row = dt.Rows[0];
-
+                    producto.idProducto = Convert.ToInt32(row["idProducto"]);
                     producto.fechaAlta = Convert.ToDateTime(row["fechaAlta"]);
                     producto.tipoProducto = Convert.ToInt32(row["tipoProducto"]);
                     producto.marca = Convert.ToInt32(row["marca"]); 
@@ -190,13 +190,12 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT idProducto, TP.tipoProducto, M.marca, P.producto, cantidad, MM.medida, stockActual, PP.Precio
+                string query = @"SELECT idProducto, TP.tipoProducto, M.marca, P.producto, cantidad, MM.medida, stockActual
                                  FROM Productos P
                                  INNER JOIN TipoProducto TP ON TP.idTipoProducto = P.tipoProducto
                                  INNER JOIN Marcas M ON M.idMarca = P.Marca
                                  INNER JOIN Medidas MM ON MM.idMedida = P.Medida
-                                 INNER JOIN precioProductos PP ON PP.Producto = P.idProducto
-                                 WHERE PP.estado = 1";
+                                 WHERE P.estado = 1";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -211,8 +210,8 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["producto"]),
                     Convert.ToString(dr["cantidad"]),
                     Convert.ToString(dr["medida"]),
-                    Convert.ToString(dr["stockActual"]),
-                    Convert.ToString(dr["precio"]));
+                    Convert.ToString(dr["stockActual"]));
+                    
                 }
 
                 dr.Close();
