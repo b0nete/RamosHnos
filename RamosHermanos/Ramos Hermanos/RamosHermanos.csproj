@@ -112,12 +112,6 @@
       <DependentUpon>formVehiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Interfaz\Contratos\IAddItem.cs" />
-    <Compile Include="Capas\Interfaz\formAbout.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Capas\Interfaz\formAbout.Designer.cs">
-      <DependentUpon>formAbout.cs</DependentUpon>
-    </Compile>
     <Compile Include="Capas\Interfaz\formBuscarInsumo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -268,6 +262,12 @@
     <Compile Include="Capas\Interfaz\Listados\listClientes.Designer.cs">
       <DependentUpon>listClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaz\Listados\listProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\Listados\listProductos.Designer.cs">
+      <DependentUpon>listProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\PruebaReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,9 +356,6 @@
     <EmbeddedResource Include="Capas\Interfaz\ABMs\formVehiculo.resx">
       <DependentUpon>formVehiculo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Interfaz\formAbout.resx">
-      <DependentUpon>formAbout.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formBuscarInsumo.resx">
       <DependentUpon>formBuscarInsumo.cs</DependentUpon>
     </EmbeddedResource>
@@ -433,6 +430,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\Listados\listClientes.resx">
       <DependentUpon>listClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\Listados\listProductos.resx">
+      <DependentUpon>listProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\PruebaReporte.resx">
       <DependentUpon>PruebaReporte.cs</DependentUpon>
