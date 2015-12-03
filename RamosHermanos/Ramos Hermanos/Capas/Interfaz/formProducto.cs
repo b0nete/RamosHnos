@@ -236,6 +236,12 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+            listProductos frm = new listProductos();
+            frm.Show();
+        }
+
        
 
 

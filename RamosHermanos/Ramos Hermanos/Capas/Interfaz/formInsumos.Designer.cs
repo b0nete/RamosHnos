@@ -45,6 +45,11 @@
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtInsumo = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelInsumo = new System.Windows.Forms.Label();
+            this.cbRubro = new System.Windows.Forms.ComboBox();
             this.lblEstado = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.label27 = new System.Windows.Forms.Label();
@@ -86,11 +91,6 @@
             this.colStockActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbRubro = new System.Windows.Forms.ComboBox();
-            this.txtInsumo = new System.Windows.Forms.TextBox();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.labelInsumo = new System.Windows.Forms.Label();
             this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -108,11 +108,12 @@
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(759, 561);
+            this.tabMain.Size = new System.Drawing.Size(419, 561);
             this.tabMain.TabIndex = 0;
             // 
             // tabInformacion
             // 
+            this.tabInformacion.BackColor = System.Drawing.SystemColors.Control;
             this.tabInformacion.Controls.Add(this.button11);
             this.tabInformacion.Controls.Add(this.groupBox3);
             this.tabInformacion.Controls.Add(this.groupBox2);
@@ -122,10 +123,9 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(751, 535);
+            this.tabInformacion.Size = new System.Drawing.Size(411, 535);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
-            this.tabInformacion.UseVisualStyleBackColor = true;
             this.tabInformacion.Click += new System.EventHandler(this.tabInformacion_Click);
             // 
             // button11
@@ -317,6 +317,59 @@
             this.groupBox1.TabIndex = 111;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Insumo";
+            // 
+            // txtInsumo
+            // 
+            this.txtInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtInsumo.Location = new System.Drawing.Point(86, 68);
+            this.txtInsumo.Name = "txtInsumo";
+            this.txtInsumo.Size = new System.Drawing.Size(261, 20);
+            this.txtInsumo.TabIndex = 126;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSearch.Location = new System.Drawing.Point(350, 67);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(28, 28);
+            this.btnSearch.TabIndex = 125;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label5.ForeColor = System.Drawing.Color.Red;
+            this.label5.Location = new System.Drawing.Point(22, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(11, 13);
+            this.label5.TabIndex = 124;
+            this.label5.Text = "*";
+            // 
+            // labelInsumo
+            // 
+            this.labelInsumo.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.labelInsumo.AutoSize = true;
+            this.labelInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.labelInsumo.Location = new System.Drawing.Point(30, 71);
+            this.labelInsumo.Name = "labelInsumo";
+            this.labelInsumo.Size = new System.Drawing.Size(41, 13);
+            this.labelInsumo.TabIndex = 123;
+            this.labelInsumo.Text = "Insumo";
+            // 
+            // cbRubro
+            // 
+            this.cbRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbRubro.FormattingEnabled = true;
+            this.cbRubro.Location = new System.Drawing.Point(87, 147);
+            this.cbRubro.Name = "cbRubro";
+            this.cbRubro.Size = new System.Drawing.Size(261, 21);
+            this.cbRubro.TabIndex = 122;
             // 
             // lblEstado
             // 
@@ -749,64 +802,11 @@
             this.colMarca.Name = "colMarca";
             this.colMarca.ReadOnly = true;
             // 
-            // cbRubro
-            // 
-            this.cbRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbRubro.FormattingEnabled = true;
-            this.cbRubro.Location = new System.Drawing.Point(87, 147);
-            this.cbRubro.Name = "cbRubro";
-            this.cbRubro.Size = new System.Drawing.Size(261, 21);
-            this.cbRubro.TabIndex = 122;
-            // 
-            // txtInsumo
-            // 
-            this.txtInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtInsumo.Location = new System.Drawing.Point(86, 68);
-            this.txtInsumo.Name = "txtInsumo";
-            this.txtInsumo.Size = new System.Drawing.Size(261, 20);
-            this.txtInsumo.TabIndex = 126;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSearch.Location = new System.Drawing.Point(350, 67);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(28, 28);
-            this.btnSearch.TabIndex = 125;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(22, 68);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(11, 13);
-            this.label5.TabIndex = 124;
-            this.label5.Text = "*";
-            // 
-            // labelInsumo
-            // 
-            this.labelInsumo.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.labelInsumo.AutoSize = true;
-            this.labelInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.labelInsumo.Location = new System.Drawing.Point(30, 71);
-            this.labelInsumo.Name = "labelInsumo";
-            this.labelInsumo.Size = new System.Drawing.Size(41, 13);
-            this.labelInsumo.TabIndex = 123;
-            this.labelInsumo.Text = "Insumo";
-            // 
             // formInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(759, 561);
+            this.ClientSize = new System.Drawing.Size(419, 561);
             this.Controls.Add(this.tabMain);
             this.Name = "formInsumos";
             this.Text = "Insumos";

@@ -67,6 +67,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -78,7 +79,7 @@
             this.tabProducto.Location = new System.Drawing.Point(3, 33);
             this.tabProducto.Name = "tabProducto";
             this.tabProducto.SelectedIndex = 0;
-            this.tabProducto.Size = new System.Drawing.Size(760, 424);
+            this.tabProducto.Size = new System.Drawing.Size(435, 338);
             this.tabProducto.TabIndex = 0;
             // 
             // tabInformacion
@@ -92,7 +93,7 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(752, 398);
+            this.tabInformacion.Size = new System.Drawing.Size(427, 312);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Información";
             // 
@@ -134,6 +135,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.lblEstado);
             this.groupBox1.Controls.Add(this.txtCantidad);
             this.groupBox1.Controls.Add(this.label25);
@@ -530,6 +532,18 @@
             this.label7.Text = "Productos";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSearch.Location = new System.Drawing.Point(349, 92);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(27, 28);
+            this.btnSearch.TabIndex = 119;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
+            // 
             // formProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -588,5 +602,6 @@
         public System.Windows.Forms.TabPage tabInformacion;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Button btnSearch;
     }
 }

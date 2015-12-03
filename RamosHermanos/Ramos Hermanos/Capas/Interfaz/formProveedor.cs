@@ -23,7 +23,6 @@ namespace RamosHermanos.Capas.Interfaz
         private void formProveedor_Load(object sender, EventArgs e)
         {
             cbIVA.SelectedIndex = 0;
-            RubroB.CargarDGVproveedor(dgvRubro);
             tabProveedor.Controls.Remove(tabListado);
             ProveedorB.cargardgv(dgvProveedor);
             CheckColor();

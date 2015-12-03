@@ -108,8 +108,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void insumosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formInsumos frm = new formInsumos();
-            frm.Show();
+            
         }
 
         private void listadoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -162,7 +161,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void ingresarGastoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            formFactura frm = new formFactura();
+            frm.Show();
         }
 
         private void listadoToolStripMenuItem4_Click(object sender, EventArgs e)
@@ -235,6 +235,47 @@ namespace RamosHermanos.Capas.Interfaz
         private void regsitrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formProducto frm = new formProducto();
+            frm.Show();
+        }
+
+        private void cajaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void categorizaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formtipoCliente frm = new formtipoCliente();
+            frm.Show();
+        }
+
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            formUsuario frm = new formUsuario();
+            frm.Show();
+        }
+
+        private void acercaDeRamosHnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAbout frm = new formAbout();
+            frm.Show();
+        }
+
+        private void registrarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            formInsumos frm = new formInsumos();
+            frm.Show();
+        }
+
+        private void generarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formPedidos frm = new formPedidos();
+            frm.Show();
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formAbout frm = new formAbout();
             frm.Show();
         }
 

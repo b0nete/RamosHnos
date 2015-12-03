@@ -50,11 +50,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dgvRubro = new System.Windows.Forms.DataGridView();
-            this.idColRub = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSeleccion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDomicilio = new System.Windows.Forms.Button();
             this.btnEmail = new System.Windows.Forms.Button();
@@ -81,8 +76,6 @@
             this.tabProveedor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRubro)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
@@ -90,16 +83,16 @@
             // 
             // tabProveedor
             // 
-            this.tabProveedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabProveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tabProveedor.Controls.Add(this.tabInformacion);
             this.tabProveedor.Controls.Add(this.tabAdicional);
             this.tabProveedor.Controls.Add(this.tabListado);
             this.tabProveedor.Controls.Add(this.tabMovimientos);
             this.tabProveedor.Controls.Add(this.tabPedido);
-            this.tabProveedor.Location = new System.Drawing.Point(5, 44);
+            this.tabProveedor.Location = new System.Drawing.Point(3, 42);
             this.tabProveedor.Name = "tabProveedor";
             this.tabProveedor.SelectedIndex = 0;
-            this.tabProveedor.Size = new System.Drawing.Size(796, 415);
+            this.tabProveedor.Size = new System.Drawing.Size(512, 371);
             this.tabProveedor.TabIndex = 0;
             // 
             // tabInformacion
@@ -107,13 +100,12 @@
             this.tabInformacion.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabInformacion.Controls.Add(this.btnClean);
             this.tabInformacion.Controls.Add(this.groupBox6);
-            this.tabInformacion.Controls.Add(this.groupBox2);
             this.tabInformacion.Controls.Add(this.groupBox1);
             this.tabInformacion.Controls.Add(this.btnGuardarProv);
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(788, 389);
+            this.tabInformacion.Size = new System.Drawing.Size(504, 345);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             // 
@@ -122,7 +114,7 @@
             this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
             this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(706, 307);
+            this.btnClean.Location = new System.Drawing.Point(438, 311);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
             this.btnClean.TabIndex = 71;
@@ -353,50 +345,6 @@
             this.label1.TabIndex = 71;
             this.label1.Text = "Razon Social";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dgvRubro);
-            this.groupBox2.Location = new System.Drawing.Point(511, 6);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(265, 298);
-            this.groupBox2.TabIndex = 66;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Rubros";
-            // 
-            // dgvRubro
-            // 
-            this.dgvRubro.AllowUserToAddRows = false;
-            this.dgvRubro.AllowUserToDeleteRows = false;
-            this.dgvRubro.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idColRub,
-            this.colRubro,
-            this.colSeleccion});
-            this.dgvRubro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRubro.Location = new System.Drawing.Point(3, 16);
-            this.dgvRubro.Name = "dgvRubro";
-            this.dgvRubro.Size = new System.Drawing.Size(259, 279);
-            this.dgvRubro.TabIndex = 0;
-            this.dgvRubro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRubro_CellContentClick);
-            // 
-            // idColRub
-            // 
-            this.idColRub.HeaderText = "IdRubro";
-            this.idColRub.Name = "idColRub";
-            this.idColRub.Visible = false;
-            // 
-            // colRubro
-            // 
-            this.colRubro.HeaderText = "Rubro";
-            this.colRubro.Name = "colRubro";
-            // 
-            // colSeleccion
-            // 
-            this.colSeleccion.HeaderText = "Seleccion";
-            this.colSeleccion.Name = "colSeleccion";
-            this.colSeleccion.ReadOnly = true;
-            this.colSeleccion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colSeleccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnDomicilio);
@@ -513,7 +461,7 @@
             this.btnGuardarProv.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardarProv.BackgroundImage")));
             this.btnGuardarProv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGuardarProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarProv.Location = new System.Drawing.Point(740, 307);
+            this.btnGuardarProv.Location = new System.Drawing.Point(472, 311);
             this.btnGuardarProv.Name = "btnGuardarProv";
             this.btnGuardarProv.Size = new System.Drawing.Size(28, 28);
             this.btnGuardarProv.TabIndex = 61;
@@ -524,7 +472,7 @@
             // 
             this.tabAdicional.Location = new System.Drawing.Point(4, 22);
             this.tabAdicional.Name = "tabAdicional";
-            this.tabAdicional.Size = new System.Drawing.Size(788, 393);
+            this.tabAdicional.Size = new System.Drawing.Size(788, 389);
             this.tabAdicional.TabIndex = 2;
             this.tabAdicional.Text = "Adicional";
             this.tabAdicional.UseVisualStyleBackColor = true;
@@ -535,7 +483,7 @@
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(788, 389);
+            this.tabListado.Size = new System.Drawing.Size(504, 345);
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
@@ -558,7 +506,7 @@
             this.dgvProveedor.Location = new System.Drawing.Point(3, 3);
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.ReadOnly = true;
-            this.dgvProveedor.Size = new System.Drawing.Size(779, 528);
+            this.dgvProveedor.Size = new System.Drawing.Size(495, 484);
             this.dgvProveedor.TabIndex = 0;
             this.dgvProveedor.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvProveedor_MouseDoubleClick);
             // 
@@ -602,7 +550,7 @@
             // 
             this.tabMovimientos.Location = new System.Drawing.Point(4, 22);
             this.tabMovimientos.Name = "tabMovimientos";
-            this.tabMovimientos.Size = new System.Drawing.Size(788, 393);
+            this.tabMovimientos.Size = new System.Drawing.Size(788, 389);
             this.tabMovimientos.TabIndex = 3;
             this.tabMovimientos.Text = "Movimientos";
             this.tabMovimientos.UseVisualStyleBackColor = true;
@@ -611,7 +559,7 @@
             // 
             this.tabPedido.Location = new System.Drawing.Point(4, 22);
             this.tabPedido.Name = "tabPedido";
-            this.tabPedido.Size = new System.Drawing.Size(788, 393);
+            this.tabPedido.Size = new System.Drawing.Size(788, 389);
             this.tabPedido.TabIndex = 4;
             this.tabPedido.Text = "Pedido";
             this.tabPedido.UseVisualStyleBackColor = true;
@@ -624,7 +572,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(796, 39);
+            this.label2.Size = new System.Drawing.Size(517, 39);
             this.label2.TabIndex = 73;
             this.label2.Text = "Proveedores";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -633,7 +581,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(796, 471);
+            this.ClientSize = new System.Drawing.Size(517, 428);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tabProveedor);
             this.Name = "formProveedor";
@@ -642,8 +590,6 @@
             this.tabInformacion.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRubro)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabListado.ResumeLayout(false);
@@ -697,11 +643,6 @@
         public System.Windows.Forms.TextBox txtEmail;
         public System.Windows.Forms.TextBox txtTel;
         public System.Windows.Forms.TextBox txtDomicilio;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dgvRubro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idColRub;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colSeleccion;
         private System.Windows.Forms.Label label2;
     }
 }
