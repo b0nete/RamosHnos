@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Interfaz.ABMs;
+using RamosHermanos.Capas.Interfaz.Listados;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -176,17 +177,10 @@ namespace RamosHermanos.Capas.Interfaz
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             
-            formBuscarCliente frm1 = new formBuscarCliente();
-            frm1.Show();
-            frm1.Location = new Point(100, 100);
-
-            formCliente frm2 = new formCliente();
-            frm2.switchcase = 3;
-            frm2.Show();
-            frm2.caseSwitch = 1;
-            int w = frm1.Width;
-            frm2.Location = new Point(Convert.ToInt32(90 + w), 100);
-            Close();
+            listClientes frm = new listClientes();
+            frm.Show();
+            frm.caseSwitch = 1;
+            this.Close();
         }
 
         private void dgvCliente_MouseDoubleClick(object sender, MouseEventArgs e)

@@ -16,15 +16,14 @@ namespace RamosHermanos.Capas.Interfaz
     public partial class formCliente : Form
     {
         public int switchcase = 0;
+        public int caseSwitch = 0;
 
         public formCliente()
         {
             InitializeComponent();
         }
 
-        // Eventos
-
-        public int caseSwitch = 0;
+        // Eventos        
 
         private void formCliente_Load(object sender, EventArgs e)
         {            

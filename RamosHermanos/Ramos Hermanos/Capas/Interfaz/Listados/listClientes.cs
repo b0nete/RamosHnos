@@ -16,6 +16,9 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 {
     public partial class listClientes : Form
     {
+        // Globales.
+        public int caseSwitch = 2;
+
         public listClientes()
         {
             InitializeComponent();
@@ -240,7 +243,44 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
         private void dgvCliente_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            SeleccionarDGV();
+            formPedidos frmP = new formPedidos();
+
+            switch (caseSwitch)
+            {
+                case 1:
+                    DataGridViewCell cell = null;
+                    foreach (DataGridViewCell selectedCell in dgvCliente.SelectedCells)
+                    {
+                        cell = selectedCell;
+                        break;
+                    }
+                    if (cell != null)
+                    {
+                        DataGridViewRow row = cell.OwningRow;
+
+                        //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+
+                        cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
+
+                        ClienteB.BuscarClienteID(cliente);
+                        frmP.txtidCliente.Text = Convert.ToString(cliente.idCliente);
+                        frmP.txtNombre.Text = cliente.apellido + ',' + cliente.nombre;
+
+                        DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente);
+
+                        frmP.tabMain.SelectedTab = frmP.tabPedido;
+                        Close();
+                        frmP.Show();
+
+                    }
+                    break;
+
+                case 2:
+                    {
+                        SeleccionarDGV();
+                    }
+                    break;
+            }
         }
     }
 }

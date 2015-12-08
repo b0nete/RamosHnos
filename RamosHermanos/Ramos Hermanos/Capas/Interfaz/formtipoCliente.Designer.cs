@@ -392,6 +392,7 @@
             this.dgvtipoCliente.Location = new System.Drawing.Point(12, 201);
             this.dgvtipoCliente.Name = "dgvtipoCliente";
             this.dgvtipoCliente.ReadOnly = true;
+            this.dgvtipoCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvtipoCliente.Size = new System.Drawing.Size(600, 205);
             this.dgvtipoCliente.TabIndex = 1;
             this.dgvtipoCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvtipoCliente_CellContentClick);
