@@ -11,7 +11,7 @@ using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Interfaz.ABMs;
 using RamosHermanos.Capas.Interfaz.Listados;
-
+using RamosHermanos.Capas.Interfaz.Contratos;
 namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formPedidos : Form

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formBuscarProducto));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtIDproducto = new System.Windows.Forms.TextBox();
             this.RBnproveedor = new System.Windows.Forms.RadioButton();
             this.RBcuit = new System.Windows.Forms.RadioButton();
             this.RBrazonsocial = new System.Windows.Forms.RadioButton();
@@ -39,7 +40,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtIDproducto = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +63,14 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda";
+            // 
+            // txtIDproducto
+            // 
+            this.txtIDproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDproducto.Location = new System.Drawing.Point(64, 48);
+            this.txtIDproducto.Name = "txtIDproducto";
+            this.txtIDproducto.Size = new System.Drawing.Size(154, 20);
+            this.txtIDproducto.TabIndex = 96;
             // 
             // RBnproveedor
             // 
@@ -152,14 +160,6 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Número";
             // 
-            // txtIDproducto
-            // 
-            this.txtIDproducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDproducto.Location = new System.Drawing.Point(64, 48);
-            this.txtIDproducto.Name = "txtIDproducto";
-            this.txtIDproducto.Size = new System.Drawing.Size(154, 20);
-            this.txtIDproducto.TabIndex = 96;
-            // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -182,6 +182,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "formBuscarProducto";
             this.Text = "formBuscarProducto";
+            this.Load += new System.EventHandler(this.formBuscarProducto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

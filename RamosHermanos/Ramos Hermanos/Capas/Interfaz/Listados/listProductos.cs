@@ -26,6 +26,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
         private void listProductos_Load(object sender, EventArgs e)
         {
+            cbParametro.SelectedIndex = 0;
             ProductoB.CargarDGV(dgvProducto);
         }
 
@@ -54,9 +55,30 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 frmPro.txtDescripcion.Text = producto.descripcion;
                 frmPro.txtCantidad.Text = Convert.ToString(producto.cantidad);
                 frmPro.cbMedida.SelectedValue = producto.medida;
-                
+
             }
 
+        }
+
+        private void txtParametro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void SearchParametro()
+        {
+            string parametro = '%' + txtParametro.Text + '%';
+            ProductoB.CargarDGVParametros(dgvProducto, cbParametro, parametro);
+        }
+
+        private void txtParametro_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void txtParametro_TextChanged(object sender, EventArgs e)
+        {
+            SearchParametro();
         }
     }
 

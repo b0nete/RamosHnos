@@ -77,12 +77,19 @@
             this.txtParametro.Name = "txtParametro";
             this.txtParametro.Size = new System.Drawing.Size(299, 20);
             this.txtParametro.TabIndex = 108;
+            this.txtParametro.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtParametro_MaskInputRejected);
+            this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
             // 
             // cbParametro
             // 
             this.cbParametro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbParametro.FormattingEnabled = true;
+            this.cbParametro.Items.AddRange(new object[] {
+            "ID",
+            "Tipo Producto",
+            "Marca",
+            "Nombre"});
             this.cbParametro.Location = new System.Drawing.Point(73, 23);
             this.cbParametro.Name = "cbParametro";
             this.cbParametro.Size = new System.Drawing.Size(133, 21);
@@ -124,7 +131,6 @@
             this.colIDProducto.HeaderText = "Nº Producto";
             this.colIDProducto.Name = "colIDProducto";
             this.colIDProducto.ReadOnly = true;
-            this.colIDProducto.Visible = false;
             // 
             // colTipo
             // 

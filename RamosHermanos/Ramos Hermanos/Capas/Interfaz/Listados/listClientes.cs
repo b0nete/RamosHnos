@@ -282,5 +282,10 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     break;
             }
         }
+
+        private void txtParametro_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

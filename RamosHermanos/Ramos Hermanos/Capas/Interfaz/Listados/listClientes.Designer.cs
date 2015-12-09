@@ -219,6 +219,7 @@
             this.txtParametro.Name = "txtParametro";
             this.txtParametro.Size = new System.Drawing.Size(299, 20);
             this.txtParametro.TabIndex = 108;
+            this.txtParametro.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtParametro_MaskInputRejected);
             this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
             // 
             // cbParametro

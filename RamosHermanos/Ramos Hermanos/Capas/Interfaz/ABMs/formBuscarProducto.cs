@@ -60,6 +60,11 @@ namespace RamosHermanos.Capas.Interfaz.ABMs
                 frm.Show();
             }
         }
+
+        private void formBuscarProducto_Load(object sender, EventArgs e)
+        {
+
+        }
         
     }
 

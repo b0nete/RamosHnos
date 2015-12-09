@@ -264,5 +264,72 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static void CargarDGVParametros(DataGridView dgv, ComboBox cb, string parametro)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"SELECT P.idProducto, P.producto, T.tipoProducto, MA.marca, M.medida
+                                 FROM productos P
+                                 INNER JOIN tipoProducto T ON P.tipoProducto = T.idTipoProducto
+                                 INNER JOIN marcas MA ON P.marca = MA.idmarca
+                                 INNER JOIN medidas M ON P.medida = M.idMedida
+                                 WHERE";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                cmd.Parameters.AddWithValue("@idProducto", parametro);
+                cmd.Parameters.AddWithValue("@tipoProducto", parametro);
+                cmd.Parameters.AddWithValue("@marca", parametro);
+                cmd.Parameters.AddWithValue("@producto", parametro);
+                cmd.Parameters.AddWithValue("@medida", parametro);
+
+                if (cb.SelectedIndex == 0)
+                {
+                    cmd.CommandText = query + " idProducto LIKE @idProducto";
+                }
+                if (cb.SelectedIndex == 1)
+                {
+                    cmd.CommandText = query + " tipoProducto LIKE @tipoProducto";
+                }
+                if (cb.SelectedIndex == 2)
+                {
+                    cmd.CommandText = query + " marca LIKE @marca";
+                }
+                if (cb.SelectedIndex == 3)
+                {
+                    cmd.CommandText = query + " producto LIKE @producto";
+                }
+                if (cb.SelectedIndex == 4)
+                {
+                    cmd.CommandText = query + " medida LIKE @medida";
+                }
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {                    
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idProducto"]),
+                    Convert.ToString(dr["Tipo"]),
+                    Convert.ToString(dr["Marca"]),
+                    Convert.ToString(dr["Producto"]),
+                    Convert.ToString(dr["Cantidad"]),
+                    Convert.ToString(dr["Medida"]));
+                }
+                
+                dr.Close();
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+        
     }
 }
