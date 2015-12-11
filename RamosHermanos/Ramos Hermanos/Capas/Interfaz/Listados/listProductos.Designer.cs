@@ -39,9 +39,7 @@
             this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             this.SuspendLayout();
@@ -116,9 +114,7 @@
             this.colTipo,
             this.colMarca,
             this.colProducto,
-            this.colCantidad,
-            this.colMedida,
-            this.colStock});
+            this.colMedida});
             this.dgvProducto.Location = new System.Drawing.Point(4, 70);
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.ReadOnly = true;
@@ -150,23 +146,11 @@
             this.colProducto.Name = "colProducto";
             this.colProducto.ReadOnly = true;
             // 
-            // colCantidad
-            // 
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            this.colCantidad.ReadOnly = true;
-            // 
             // colMedida
             // 
             this.colMedida.HeaderText = "Medida";
             this.colMedida.Name = "colMedida";
             this.colMedida.ReadOnly = true;
-            // 
-            // colStock
-            // 
-            this.colStock.HeaderText = "Stock";
-            this.colStock.Name = "colStock";
-            this.colStock.ReadOnly = true;
             // 
             // listProductos
             // 
@@ -197,8 +181,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMedida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
     }
 }

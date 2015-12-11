@@ -29,7 +29,7 @@ namespace RamosHermanos.Capas.Negocio
                   MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                   da.Fill(dt);
 
-                  cb.DisplayMember = "tipoProducto";
+                  cb.DisplayMember = "tipoProductos";
                   cb.ValueMember = "idtipoProducto";
                   cb.DataSource = dt;
 
