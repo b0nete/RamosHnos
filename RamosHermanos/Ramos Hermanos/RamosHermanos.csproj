@@ -320,6 +320,12 @@
     <Compile Include="Capas\Negocio\UsuarioB.cs" />
     <Compile Include="Capas\Negocio\VehiculoB.cs" />
     <Compile Include="Capas\Negocio\VisitaB.cs" />
+    <Compile Include="Capas\Reportes\CargasDescargas\CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Capas\Reportes\formReports.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -448,6 +454,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Reportes\CargasDescargas\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Reportes\formReports.resx">
       <DependentUpon>formReports.cs</DependentUpon>
