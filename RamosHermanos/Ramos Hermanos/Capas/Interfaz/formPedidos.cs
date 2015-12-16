@@ -7,11 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RamosHermanos.Capas.Entidades;
+using System.Globalization; //CultureInfo
+using System.Threading;
+using CrystalDecisions.CrystalReports.Engine;
 using RamosHermanos.Capas.Negocio;
-using RamosHermanos.Capas.Interfaz.ABMs;
-using RamosHermanos.Capas.Interfaz.Listados;
+using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Interfaz.Contratos;
+using RamosHermanos.Capas.Interfaz.ABMs;
+using RamosHermanos.Capas.Reportes;
+using RamosHermanos.Capas.Reportes.Comprobante;
+using RamosHermanos.Capas.Interfaz.Listados;
+
+
 namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formPedidos : Form
@@ -134,7 +141,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool VerificarCampos()
         {
-            if (txtNombre.Text == string.Empty || txtTotal.Text == string.Empty)
+            if (txtNombre.Text == string.Empty)
             {
                 MessageBox.Show("Campos Obligatorios Incompletos");
                 return false;
@@ -303,7 +310,35 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnImprimir_Click(object sender, EventArgs e)
         {
-            
+            string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
+            string rep = @"\Capas\Reportes\Comprobante\crComprobante.rpt";
+
+            dsComprobante ds = new dsComprobante();
+
+            int filas = dgvPedido.Rows.Count;
+
+            for (int i = 0; i <= filas - 2; i++ )
+            {
+
+                ds.Tables[0].Rows.Add
+
+                    (new object[] {
+                        dgvPedido[0,i].Value.ToString(),
+                        dgvPedido[1,i].Value.ToString(),
+                        dgvPedido[2,i].Value.ToString(),
+                        dgvPedido[3,i].Value.ToString(),
+                        dgvPedido[4,i].Value.ToString(),
+                        dgvPedido[5,i].Value.ToString()                 
+
+                 });
+            }
+
+            formReports frm = new formReports();
+            frm.Show();
+            ReportDocument oRep = new ReportDocument();
+            oRep.Load(ruta + rep);
+            oRep.SetDataSource(ds);
+            frm.crvReporte.ReportSource = oRep;
         }
     }
 }

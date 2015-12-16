@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RamosHermanos.Capas.Reportes {
+namespace RamosHermanos.Capas.Reportes.Comprobante {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace RamosHermanos.Capas.Reportes {
         
         public override string FullResourceName {
             get {
-                return "RamosHermanos.Capas.Reportes.crComprobante.rpt";
+                return "RamosHermanos.Capas.Reportes.Comprobante.crComprobante.rpt";
             }
             set {
                 // Do nothing

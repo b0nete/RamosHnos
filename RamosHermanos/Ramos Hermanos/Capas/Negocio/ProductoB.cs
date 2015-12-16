@@ -230,10 +230,9 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT P.idProducto, P.producto, PP.Precio
+                string query = @"SELECT P.idProducto, P.producto
                                  FROM Productos P
-                                 INNER JOIN precioProductos PP ON PP.Producto = P.idProducto
-                                 WHERE P.idProducto = @idProducto and PP.estado = 1";
+                                 WHERE P.idProducto = @idProducto";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -247,7 +246,7 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["idProducto"]),
                     Convert.ToString(dr["producto"]),
                     Convert.ToString(null),
-                    Convert.ToString(dr["precio"]),
+                    //Convert.ToString(dr["precio"]),
                     Convert.ToString(null));
                 }
 

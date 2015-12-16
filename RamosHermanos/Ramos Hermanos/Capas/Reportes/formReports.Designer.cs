@@ -51,6 +51,7 @@
             this.Controls.Add(this.crvReporte);
             this.Name = "formReports";
             this.Text = "Reporte";
+            this.Load += new System.EventHandler(this.formReports_Load);
             this.ResumeLayout(false);
 
         }

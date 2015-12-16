@@ -20,8 +20,8 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT into Pedidos (rol,idPersona,numPedido,domicilio,fechaPedido,fechaEntrega,observaciones, total, estado)
-                             VALUES (@rol,@idPersona,@numPedido,@domicilio,@fechaPedido,@fechaEntrega,@observaciones,@total,@estado);
+                string query = @"INSERT into Pedidos (rol,idPersona,domicilio,fechaPedido,fechaEntrega,observaciones, total, estado)
+                             VALUES (@rol,@idPersona,@domicilio,@fechaPedido,@fechaEntrega,@observaciones,@total,@estado);
                              SELECT LAST_INSERT_ID();";
 
 
@@ -29,7 +29,6 @@ namespace RamosHermanos.Capas.Negocio
 
                 cmd.Parameters.AddWithValue("@rol", pedido.rol);
                 cmd.Parameters.AddWithValue("@idPersona", pedido.idPersona);
-                cmd.Parameters.AddWithValue("@numPedido", pedido.numPedido);
                 cmd.Parameters.AddWithValue("@domicilio", pedido.domicilio);
                 cmd.Parameters.AddWithValue("@fechaPedido", pedido.fechaPedido);
                 cmd.Parameters.AddWithValue("@fechaEntrega", pedido.fechaEntrega);
@@ -63,12 +62,11 @@ namespace RamosHermanos.Capas.Negocio
 
                 string query = @"UPDATE pedidos
                                SET fechaPedido = @fechaPedido, fechaEntrega= @fechaEntrega ,domicilio = @domicilio, estado = @estado,observaciones =@observaciones,total=@total
-                               WHERE numPedido = @numPedido";
+                               WHERE idPedido = @idPedido";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@fechaPedido", pedido.fechaPedido);
-                cmd.Parameters.AddWithValue("@numPedido", pedido.idPedido);
                 cmd.Parameters.AddWithValue("@fechaEntrega", pedido.fechaEntrega);
                 cmd.Parameters.AddWithValue("@domicilio", pedido.domicilio);
                 cmd.Parameters.AddWithValue("@estado", pedido.estado);

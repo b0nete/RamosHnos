@@ -326,10 +326,16 @@
       <DependentUpon>crCargaDescarga.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Capas\Reportes\crComprobante.cs">
+    <Compile Include="Capas\Reportes\Comprobante\crComprobante.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crComprobante.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Capas\Reportes\Comprobante\dsComprobante.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsComprobante.xsd</DependentUpon>
     </Compile>
     <Compile Include="Capas\Reportes\formReports.cs">
       <SubType>Form</SubType>
@@ -464,7 +470,7 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crCargaDescarga.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Reportes\crComprobante.rpt">
+    <EmbeddedResource Include="Capas\Reportes\Comprobante\crComprobante.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crComprobante.cs</LastGenOutput>
     </EmbeddedResource>
@@ -485,6 +491,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Capas\Reportes\Comprobante\dsComprobante.xsc">
+      <DependentUpon>dsComprobante.xsd</DependentUpon>
+    </None>
+    <None Include="Capas\Reportes\Comprobante\dsComprobante.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsComprobante.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Capas\Reportes\Comprobante\dsComprobante.xss">
+      <DependentUpon>dsComprobante.xsd</DependentUpon>
+    </None>
     <None Include="Capas\Reportes\dsFactura.xsc">
       <DependentUpon>dsFactura.xsd</DependentUpon>
     </None>

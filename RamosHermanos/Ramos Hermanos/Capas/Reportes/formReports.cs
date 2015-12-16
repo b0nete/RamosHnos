@@ -16,5 +16,10 @@ namespace RamosHermanos.Capas.Reportes
         {
             InitializeComponent();
         }
+
+        private void formReports_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
