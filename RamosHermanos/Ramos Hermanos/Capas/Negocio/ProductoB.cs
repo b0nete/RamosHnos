@@ -181,6 +181,43 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void CargarRubroCB(ComboBox cb)
+        {
+//            try
+//            {
+//                MySQL.ConnectDB();
+//                dgv.Rows.Clear();
+
+//                string query = @"SELECT *
+//                                 FROM rubrosProductos";
+
+//                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+//                MySqlDataReader dr = cmd.ExecuteReader();
+
+//                while (dr.Read())
+//                {
+//                    dgv.Rows.Add(
+//                    Convert.ToString(dr["idProducto"]),
+//                    Convert.ToString(dr["tipoproductos"]),
+//                    Convert.ToString(dr["marca"]),
+//                    Convert.ToString(dr["producto"]),
+//                    Convert.ToString(dr["cantidad"]),
+//                    Convert.ToString(dr["medida"]));
+
+//                }
+
+//                dr.Close();
+//                MySQL.DisconnectDB();
+//            }
+
+//            catch (Exception ex)
+//            {
+//                MessageBox.Show("Error: " + ex);
+//                throw;
+//            }
+        }
+
 
 
         public static void CargarDGV(DataGridView dgv)

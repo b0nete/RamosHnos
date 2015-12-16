@@ -320,10 +320,10 @@
     <Compile Include="Capas\Negocio\UsuarioB.cs" />
     <Compile Include="Capas\Negocio\VehiculoB.cs" />
     <Compile Include="Capas\Negocio\VisitaB.cs" />
-    <Compile Include="Capas\Reportes\CargasDescargas\CrystalReport1.cs">
+    <Compile Include="Capas\Reportes\CargasDescargas\crCargaDescarga.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>crCargaDescarga.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Capas\Reportes\formReports.cs">
@@ -332,7 +332,7 @@
     <Compile Include="Capas\Reportes\formReports.Designer.cs">
       <DependentUpon>formReports.cs</DependentUpon>
     </Compile>
-    <Compile Include="Capas\Reportes\HojasRuta\crHojaRuta.cs">
+    <Compile Include="Libs\crHojaRuta.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crHojaRuta.rpt</DependentUpon>
@@ -455,14 +455,14 @@
     <EmbeddedResource Include="Capas\Interfaz\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Reportes\CargasDescargas\CrystalReport1.rpt">
+    <EmbeddedResource Include="Capas\Reportes\CargasDescargas\crCargaDescarga.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+      <LastGenOutput>crCargaDescarga.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Reportes\formReports.resx">
       <DependentUpon>formReports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Reportes\HojasRuta\crHojaRuta.rpt">
+    <EmbeddedResource Include="Libs\crHojaRuta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crHojaRuta.cs</LastGenOutput>
     </EmbeddedResource>
