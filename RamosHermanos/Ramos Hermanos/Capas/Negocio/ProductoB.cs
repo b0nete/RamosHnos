@@ -181,43 +181,6 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void CargarRubroCB(ComboBox cb)
-        {
-//            try
-//            {
-//                MySQL.ConnectDB();
-//                dgv.Rows.Clear();
-
-//                string query = @"SELECT *
-//                                 FROM rubrosProductos";
-
-//                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-
-//                MySqlDataReader dr = cmd.ExecuteReader();
-
-//                while (dr.Read())
-//                {
-//                    dgv.Rows.Add(
-//                    Convert.ToString(dr["idProducto"]),
-//                    Convert.ToString(dr["tipoproductos"]),
-//                    Convert.ToString(dr["marca"]),
-//                    Convert.ToString(dr["producto"]),
-//                    Convert.ToString(dr["cantidad"]),
-//                    Convert.ToString(dr["medida"]));
-
-//                }
-
-//                dr.Close();
-//                MySQL.DisconnectDB();
-//            }
-
-//            catch (Exception ex)
-//            {
-//                MessageBox.Show("Error: " + ex);
-//                throw;
-//            }
-        }
-
 
 
         public static void CargarDGV(DataGridView dgv)
@@ -308,9 +271,9 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT P.idProducto, P.producto, T.tipoproductos, MA.marca, M.medida
+                string query = @"SELECT P.idProducto, P.producto, T.tipoproducto, MA.marca, M.medida
                                  FROM productos P
-                                 INNER JOIN tipoProducto T ON P.tipoProducto = T.idTipoProducto
+                                 INNER JOIN tipoproductos T ON P.tipoProducto = T.idTipoProducto
                                  INNER JOIN marcas MA ON P.marca = MA.idmarca
                                  INNER JOIN medidas M ON P.medida = M.idMedida
                                  WHERE";
@@ -318,7 +281,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@idProducto", parametro);
-                cmd.Parameters.AddWithValue("@tipoProducto", parametro);
+                cmd.Parameters.AddWithValue("@tipoProductos", parametro);
                 cmd.Parameters.AddWithValue("@marcas", parametro);
                 cmd.Parameters.AddWithValue("@producto", parametro);
                 cmd.Parameters.AddWithValue("@medida", parametro);
@@ -351,7 +314,7 @@ namespace RamosHermanos.Capas.Negocio
                     dgv.Rows.Add(
                     Convert.ToString(dr["idProducto"]),
                     Convert.ToString(dr["tipoproductos"]),
-                    Convert.ToString(dr["marcas"]),
+                    Convert.ToString(dr["marca"]),
                     Convert.ToString(dr["Producto"]),
                     Convert.ToString(dr["Medida"]));
                 }

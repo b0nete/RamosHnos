@@ -73,6 +73,7 @@ namespace RamosHermanos.Capas.Interfaz
             ClienteB.CargarDGV(dgvCliente);
             PedidoB.cargardgvPedido(dgvListadoPedidos);
             this.reportViewer1.RefreshReport();
+            
         }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
@@ -298,6 +299,11 @@ namespace RamosHermanos.Capas.Interfaz
         private void iditem(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
