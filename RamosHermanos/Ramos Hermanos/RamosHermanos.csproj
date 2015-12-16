@@ -326,6 +326,11 @@
       <DependentUpon>crCargaDescarga.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Capas\Reportes\crComprobante.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crComprobante.rpt</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Reportes\formReports.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -458,6 +463,10 @@
     <EmbeddedResource Include="Capas\Reportes\CargasDescargas\crCargaDescarga.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crCargaDescarga.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Reportes\crComprobante.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crComprobante.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Reportes\formReports.resx">
       <DependentUpon>formReports.cs</DependentUpon>
