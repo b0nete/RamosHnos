@@ -76,7 +76,7 @@
     <Compile Include="Capas\Entidades\MarcaEntity.cs" />
     <Compile Include="Capas\Entidades\MedidaEntity.cs" />
     <Compile Include="Capas\Entidades\PedidoEntity.cs" />
-    <Compile Include="Capas\Entidades\PrecioEntity.cs" />
+    <Compile Include="Capas\Entidades\PrecioProductoEntity.cs" />
     <Compile Include="Capas\Entidades\ProductoEntity.cs" />
     <Compile Include="Capas\Entidades\ProveedorEntity.cs" />
     <Compile Include="Capas\Entidades\ProvinciaEntity.cs" />
@@ -303,7 +303,7 @@
     <Compile Include="Capas\Negocio\LocalidadB.cs" />
     <Compile Include="Capas\Negocio\MarcaB.cs" />
     <Compile Include="Capas\Negocio\MedidaB.cs" />
-    <Compile Include="Capas\Negocio\PrecioB.cs" />
+    <Compile Include="Capas\Negocio\PrecioProductosB.cs" />
     <Compile Include="Capas\Negocio\PrivilegiosB.cs" />
     <Compile Include="Capas\Negocio\ProductoB.cs" />
     <Compile Include="Capas\Negocio\ProveedorB.cs" />

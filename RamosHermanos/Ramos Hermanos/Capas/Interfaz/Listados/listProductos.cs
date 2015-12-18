@@ -49,7 +49,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 ProductoB.BuscarIdProducto(producto);
                 frmPro.txtIDProd.Text = Convert.ToString(producto.idProducto);
                 frmPro.dtpFechaAlta.Value = Convert.ToDateTime(producto.fechaAlta);
-                frmPro.cbTipoProducto.SelectedValue = producto.tipoProducto;
+                //frmPro.cbTipoProducto.SelectedValue = producto.tipoProducto;
                 frmPro.cbMarca.SelectedValue = producto.marca;
                 frmPro.txtProducto.Text = producto.producto;
                 frmPro.txtDescripcion.Text = producto.descripcion;

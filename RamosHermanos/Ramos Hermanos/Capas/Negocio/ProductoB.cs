@@ -19,10 +19,10 @@ namespace RamosHermanos.Capas.Negocio
             MySQL.ConnectDB();
 
             string query = @"SELECT COUNT(*) FROM Productos
-                             WHERE tipoProducto = @tipoProducto and marca = @marca and cantidad = @cantidad and medida = @medida";
+                             WHERE rubro = @rubro and marca = @marca and cantidad = @cantidad and medida = @medida";
 
             MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-            cmd.Parameters.AddWithValue("@tipoProducto", producto.tipoProducto);
+            cmd.Parameters.AddWithValue("@rubro", producto.tipoProducto);
             cmd.Parameters.AddWithValue("@marca", producto.marca);
             cmd.Parameters.AddWithValue("@cantidad", producto.cantidad);
             cmd.Parameters.AddWithValue("@medida", producto.medida);
@@ -103,14 +103,14 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
 
-                string query = @"INSERT INTO Productos(fechaAlta, tipoProducto, marca, producto, descripcion, cantidad, medida, estado)
-                                 VALUES (@fechaAlta, @tipoProducto, @marca, @producto, @descripcion, @cantidad, @medida, @estado);
+                string query = @"INSERT INTO Productos(fechaAlta, rubro, marca, producto, descripcion, cantidad, medida, estado)
+                                 VALUES (@fechaAlta, @rubro, @marca, @producto, @descripcion, @cantidad, @medida, @estado);
                                  SELECT LAST_INSERT_ID();";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@fechaAlta", producto.fechaAlta);
-                cmd.Parameters.AddWithValue("@tipoProducto", producto.tipoProducto);
+                cmd.Parameters.AddWithValue("@rubro", producto.tipoProducto);
                 cmd.Parameters.AddWithValue("@marca", producto.marca);
                 cmd.Parameters.AddWithValue("@producto", producto.producto);
                 cmd.Parameters.AddWithValue("@descripcion", producto.descripcion);
@@ -205,7 +205,7 @@ namespace RamosHermanos.Capas.Negocio
                 {
                     dgv.Rows.Add(
                     Convert.ToString(dr["idProducto"]),
-                    Convert.ToString(dr["tipoproductos"]),
+                    Convert.ToString(dr["rubro"]),
                     Convert.ToString(dr["marca"]),
                     Convert.ToString(dr["producto"]),
                     Convert.ToString(dr["cantidad"]),
@@ -221,6 +221,74 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MessageBox.Show("Error: " + ex);
                 throw;
+            }
+        }
+
+        public static void CargarRubros(ComboBox cb)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQL.ConnectDB();
+
+                string query = @"SELECT * FROM rubrosProductos 
+                                 WHERE idRubroFK IS NULL";  
+
+                ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                  MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                  da.Fill(dt);
+
+                  cb.DataSource = dt;
+                  cb.DisplayMember = "rubro";
+                  cb.ValueMember = "idRubro";
+
+                  MySQL.DisconnectDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR" + ex);
+            }
+        }
+
+        public static void CargarSubRubros(ComboBox cb, ComboBox cb2)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQL.ConnectDB();
+
+                string query = @"SELECT * FROM rubrosProductos 
+                                 WHERE idRubroFK = @rubro";  
+
+                ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                  cmd.Parameters.AddWithValue("@rubro", cb2.SelectedValue);
+
+                  MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                  da.Fill(dt);
+
+                  int rows = dt.Rows.Count;
+
+                  if (rows > 0)
+                  {
+                      cb.DataSource = dt;
+                      cb.DisplayMember = "rubro";
+                      cb.ValueMember = "idRubro";
+                      cb.Visible = true;
+                  }
+
+                  else
+                  {
+                      cb.Visible = false;
+                  }
+
+
+                  MySQL.DisconnectDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR" + ex);
             }
         }
 

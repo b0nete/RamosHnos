@@ -11,9 +11,9 @@ using RamosHermanos.Capas.Datos;
 
 namespace RamosHermanos.Capas.Negocio
 {
-    class PrecioB
+    class PrecioProductosB
     {
-        public static void DisablePrecio(PrecioEntity precio)
+        public static void DisablePrecio(int idProducto)
         {
             try
             {
@@ -21,11 +21,11 @@ namespace RamosHermanos.Capas.Negocio
 
                 string query = @"UPDATE precioProductos
                                  SET estado = 0
-                                 WHERE producto = @producto";
+                                 WHERE idProducto = @idProducto";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@producto", precio.producto);
+                cmd.Parameters.AddWithValue("@producto", idProducto);
                 
                 cmd.ExecuteNonQuery();
             }
@@ -37,7 +37,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static PrecioEntity InsertPrecio(PrecioEntity precio)
+        public static PrecioProductoEntity InsertPrecio(PrecioProductoEntity precio)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@producto", precio.producto);
-                cmd.Parameters.AddWithValue("@fechaActualizacion", precio.fechaActualizacion);
+                //cmd.Parameters.AddWithValue("@fechaActualizacion", precio.fechaActualizacion);
                 cmd.Parameters.AddWithValue("@precio", precio.precio);
 
                 cmd.ExecuteNonQuery();
@@ -67,7 +67,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static PrecioEntity UpdatePrecio(PrecioEntity precio)
+        public static PrecioProductoEntity UpdatePrecio(PrecioProductoEntity precio)
         {
             try
             {
@@ -96,7 +96,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static PrecioEntity BuscarPrecio(PrecioEntity precio)
+        public static PrecioProductoEntity BuscarPrecio(PrecioProductoEntity precio)
         {
             try
             {

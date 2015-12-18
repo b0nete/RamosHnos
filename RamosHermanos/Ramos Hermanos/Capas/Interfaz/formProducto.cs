@@ -26,11 +26,13 @@ namespace RamosHermanos.Capas.Interfaz
         
         private void formProducto_Load(object sender, EventArgs e)
         {
-            tipoProductoB.CargarCB(cbTipoProducto);
+            tipoProductoB.CargarCB(cbRubro);
             MarcaB.CargarCB(cbMarca);
             MedidaB.CargarCB(cbMedida);
 
             CheckColor();
+
+            ProductoB.CargarRubros(cbRubro);
         }
 
         private void cbEstado_CheckedChanged(object sender, EventArgs e)
@@ -162,7 +164,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool ValidarCampos()
         {
-            if (cbTipoProducto.SelectedValue == null || cbMarca.SelectedValue == null || txtProducto.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null)
+            if (cbRubro.SelectedValue == null || cbMarca.SelectedValue == null || txtProducto.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null)
             {
                 MessageBox.Show("Campos necesarios incompletos!");
                 return true;
@@ -176,7 +178,7 @@ namespace RamosHermanos.Capas.Interfaz
             producto.idProducto = Convert.ToInt32(null);
             cbEstado.Checked = true;
             txtIDProd.Text = "";
-            cbTipoProducto.SelectedIndex = 0;
+            cbRubro.SelectedIndex = 0;
             cbMarca.SelectedIndex = 0;
             txtProducto.Text = "";
             txtDescripcion.Text = "";
@@ -191,7 +193,16 @@ namespace RamosHermanos.Capas.Interfaz
         private void CargarProducto()
         {
             producto.fechaAlta = dtpFechaAlta.Value;
-            producto.tipoProducto = Convert.ToInt32(cbTipoProducto.SelectedValue);
+
+            if (cbSubRubro2.SelectedValue != null)
+                producto.tipoProducto = Convert.ToInt32(cbSubRubro2.SelectedValue);
+            else if (cbSubRubro1.SelectedValue != null)
+                producto.tipoProducto = Convert.ToInt32(cbSubRubro1.SelectedValue);
+            else if (cbRubro.SelectedValue != null)
+                producto.tipoProducto = Convert.ToInt32(cbRubro.SelectedValue);
+            else
+                MessageBox.Show("Rubro no asignado");           
+
             producto.marca = Convert.ToInt32(cbMarca.SelectedValue);
             producto.producto = txtProducto.Text;
             producto.descripcion = txtDescripcion.Text;
@@ -242,8 +253,36 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
-       
+        private void cbRubro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // 
+        }
 
+        private void cbSubRubro1_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cbRubro_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            ProductoB.CargarSubRubros(cbSubRubro1, cbRubro);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            //Desabilitamos todos los precios anteriores del mismo producto.
+            int idProducto = Convert.ToInt32(txtIDProd);
+            PrecioProductosB.DisablePrecio(idProducto);
+
+            //Insertamos el nuevo precio.
+            precio.producto = Convert.ToInt32(txtIDProd.Text);
+            precio.precio = Convert.ToDouble(txtnewPrecio.Text);
+            PrecioProductosB.InsertPrecio(precio);
+        }
+
+       // Entidades
+        PrecioProductoEntity precio = new PrecioProductoEntity();
+        
 
         
 

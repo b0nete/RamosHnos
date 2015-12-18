@@ -51,7 +51,7 @@ namespace RamosHermanos.Capas.Interfaz.ABMs
                 frm.txtIDProd.Text = Convert.ToString(producto.idProducto);
                 frm.dtpFechaAlta.Value = producto.fechaAlta;
                 frm.txtProducto.Text = producto.producto;
-                frm.cbTipoProducto.SelectedValue = producto.tipoProducto;
+                //frm.cbTipoProducto.SelectedValue = producto.tipoProducto;
                 frm.cbMarca.SelectedValue = producto.marca;
                 frm.cbMedida.SelectedValue = producto.medida;
                 frm.txtDescripcion.Text = producto.descripcion;
