@@ -40,6 +40,9 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             }
             if (cell != null)
             {
+
+                frmPro.Show();
+
                 DataGridViewRow row = cell.OwningRow;
 
                 //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
@@ -56,8 +59,8 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 frmPro.txtCantidad.Text = Convert.ToString(producto.cantidad);
                 frmPro.cbMedida.SelectedValue = producto.medida;
 
+                PrecioProductosB.UltimoPrecioDGV(frmPro.dgvPrecios);
             }
-
         }
 
         private void txtParametro_KeyPress(object sender, KeyPressEventArgs e)

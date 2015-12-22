@@ -25,7 +25,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@producto", idProducto);
+                cmd.Parameters.AddWithValue("@idProducto", idProducto);
                 
                 cmd.ExecuteNonQuery();
             }
@@ -44,12 +44,12 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
 
-                string query = @"INSERT INTO precioProductos (producto, fechaActualizacion, precio, estado) 
-                                 VALUES (@producto, NOW(), @precio, 1)";
+                string query = @"INSERT INTO precioProductos (idProducto, fechaActualizacion, precio, estado) 
+                                 VALUES (@idProducto, NOW(), @precio, 1)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@producto", precio.producto);
+                cmd.Parameters.AddWithValue("@idProducto", precio.producto);
                 //cmd.Parameters.AddWithValue("@fechaActualizacion", precio.fechaActualizacion);
                 cmd.Parameters.AddWithValue("@precio", precio.precio);
 
@@ -128,6 +128,41 @@ namespace RamosHermanos.Capas.Negocio
                     MySQL.DisconnectDB();
                 }
                 return precio;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void UltimoPrecioDGV(DataGridView dgv)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"SELECT precio, fechaActualizacion
+                                    FROM precioProductos
+                                    WHERE idProducto = 1
+                                    ORDER BY fechaActualizacion DESC";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["precio"]),
+                    Convert.ToString(dr["fechaActualizacion"]));
+
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
             }
 
             catch (Exception ex)

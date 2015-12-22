@@ -271,17 +271,46 @@ namespace RamosHermanos.Capas.Interfaz
         private void button9_Click(object sender, EventArgs e)
         {
             //Desabilitamos todos los precios anteriores del mismo producto.
-            int idProducto = Convert.ToInt32(txtIDProd);
+            int idProducto = Convert.ToInt32(txtIDProd.Text);
             PrecioProductosB.DisablePrecio(idProducto);
 
             //Insertamos el nuevo precio.
             precio.producto = Convert.ToInt32(txtIDProd.Text);
             precio.precio = Convert.ToDouble(txtnewPrecio.Text);
             PrecioProductosB.InsertPrecio(precio);
+
+            //Actualizamos DGV
+            PrecioProductosB.UltimoPrecioDGV(dgvPrecios);
         }
 
        // Entidades
         PrecioProductoEntity precio = new PrecioProductoEntity();
+
+        private void txtnewPrecio_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtnewPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (ch == 44 && ch == 46 && txtnewPrecio.Text.IndexOf(',') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 44 && ch != 46)
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '.')
+            {
+                e.KeyChar = ',';
+            }
+        }
         
 
         

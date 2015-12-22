@@ -95,12 +95,12 @@
             this.button9 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvPrecios = new System.Windows.Forms.DataGridView();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtnewPrecio = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -875,24 +875,15 @@
             this.dgvPrecios.Size = new System.Drawing.Size(403, 225);
             this.dgvPrecios.TabIndex = 0;
             // 
-            // colPrecio
-            // 
-            this.colPrecio.HeaderText = "Precio";
-            this.colPrecio.Name = "colPrecio";
-            // 
-            // colFecha
-            // 
-            this.colFecha.HeaderText = "Fecha Actualización";
-            this.colFecha.Name = "colFecha";
-            // 
             // txtnewPrecio
             // 
-            this.txtnewPrecio.Enabled = false;
             this.txtnewPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtnewPrecio.Location = new System.Drawing.Point(117, 19);
             this.txtnewPrecio.Name = "txtnewPrecio";
             this.txtnewPrecio.Size = new System.Drawing.Size(140, 20);
             this.txtnewPrecio.TabIndex = 60;
+            this.txtnewPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnewPrecio_KeyPress);
+            this.txtnewPrecio.Leave += new System.EventHandler(this.txtnewPrecio_Leave);
             // 
             // label19
             // 
@@ -930,6 +921,17 @@
             this.label7.TabIndex = 103;
             this.label7.Text = "Productos";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.HeaderText = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            // 
+            // colFecha
+            // 
+            this.colFecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colFecha.HeaderText = "Fecha Actualización";
+            this.colFecha.Name = "colFecha";
             // 
             // formProducto
             // 
@@ -1019,9 +1021,6 @@
         private System.Windows.Forms.TabPage tabPrecio;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dgvPrecios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
         public System.Windows.Forms.TextBox txtnewPrecio;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label27;
@@ -1035,5 +1034,8 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button9;
+        public System.Windows.Forms.DataGridView dgvPrecios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
     }
 }

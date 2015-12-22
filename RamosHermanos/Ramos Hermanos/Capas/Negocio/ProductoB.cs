@@ -161,7 +161,7 @@ namespace RamosHermanos.Capas.Negocio
                     DataRow row = dt.Rows[0];
                     producto.idProducto = Convert.ToInt32(row["idProducto"]);
                     producto.fechaAlta = Convert.ToDateTime(row["fechaAlta"]);
-                    producto.tipoProducto = Convert.ToInt32(row["tipoProducto"]);
+                    producto.tipoProducto = Convert.ToInt32(row["rubro"]);
                     producto.marca = Convert.ToInt32(row["marca"]); 
                     producto.producto = Convert.ToString(row["producto"]);
                     producto.descripcion = Convert.ToString(row["descripcion"]);
@@ -190,9 +190,8 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT idProducto, TP.tipoproductos, M.marca, P.producto, cantidad, MM.medida
+                string query = @"SELECT idProducto, M.marca, P.producto, cantidad, MM.medida
                                  FROM Productos P
-                                 INNER JOIN tipoProducto TP ON TP.idTipoProducto = P.tipoProducto
                                  INNER JOIN Marcas M ON M.idMarca = P.Marca
                                  INNER JOIN Medidas MM ON MM.idMedida = P.Medida
                                  WHERE P.estado = 1";
@@ -205,7 +204,6 @@ namespace RamosHermanos.Capas.Negocio
                 {
                     dgv.Rows.Add(
                     Convert.ToString(dr["idProducto"]),
-                    Convert.ToString(dr["rubro"]),
                     Convert.ToString(dr["marca"]),
                     Convert.ToString(dr["producto"]),
                     Convert.ToString(dr["cantidad"]),

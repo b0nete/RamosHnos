@@ -36,7 +36,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.colIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,7 +110,6 @@
             this.dgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDProducto,
-            this.colTipo,
             this.colMarca,
             this.colProducto,
             this.colMedida});
@@ -127,12 +125,6 @@
             this.colIDProducto.HeaderText = "Nº Producto";
             this.colIDProducto.Name = "colIDProducto";
             this.colIDProducto.ReadOnly = true;
-            // 
-            // colTipo
-            // 
-            this.colTipo.HeaderText = "Tipo";
-            this.colTipo.Name = "colTipo";
-            this.colTipo.ReadOnly = true;
             // 
             // colMarca
             // 
@@ -178,7 +170,6 @@
         private System.Windows.Forms.Button btnSearch;
         public System.Windows.Forms.DataGridView dgvProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMedida;
