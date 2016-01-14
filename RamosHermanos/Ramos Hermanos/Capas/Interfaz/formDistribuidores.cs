@@ -693,6 +693,11 @@ namespace RamosHermanos.Capas.Interfaz
             foreach (DataGridViewRow row in dgvRecorridoLu.Rows)
             {
                 // Se ejecutan las operaciones solo si la columna cantidad y precio tienen algún valor, ya que de lo contrario nos dará un error.
+                if (Convert.ToString(row.Cells["colLuDesde"].Value) == "" || Convert.ToString(row.Cells["colLuHasta"].Value) == "")
+                {
+                    return;
+                }
+                
                 if (Convert.ToInt32(row.Cells["colLuDesde"].Value) > Convert.ToInt32(row.Cells["colLuHasta"].Value))
                 {
                     row.Cells["colLuSentido"].Value = "M";
@@ -702,6 +707,11 @@ namespace RamosHermanos.Capas.Interfaz
                     row.Cells["colLuSentido"].Value = "C";
                 }
             }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
 
 

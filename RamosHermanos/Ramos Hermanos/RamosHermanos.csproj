@@ -343,6 +343,17 @@
     <Compile Include="Capas\Reportes\formReports.Designer.cs">
       <DependentUpon>formReports.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Reportes\Recorridos\crRecorridos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crRecorridos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Capas\Reportes\Recorridos\dsRecorridos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRecorridos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Libs\crHojaRuta.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -477,6 +488,10 @@
     <EmbeddedResource Include="Capas\Reportes\formReports.resx">
       <DependentUpon>formReports.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Reportes\Recorridos\crRecorridos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crRecorridos.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Libs\crHojaRuta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crHojaRuta.cs</LastGenOutput>
@@ -523,6 +538,17 @@
     </None>
     <None Include="Capas\Reportes\HojasRuta\dsHojasRuta.xss">
       <DependentUpon>dsHojasRuta.xsd</DependentUpon>
+    </None>
+    <None Include="Capas\Reportes\Recorridos\dsRecorridos.xsc">
+      <DependentUpon>dsRecorridos.xsd</DependentUpon>
+    </None>
+    <None Include="Capas\Reportes\Recorridos\dsRecorridos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRecorridos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Capas\Reportes\Recorridos\dsRecorridos.xss">
+      <DependentUpon>dsRecorridos.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\RamosHermanos.Capas.Interfaz.formFactura.datasource" />
     <None Include="Properties\Settings.settings">
