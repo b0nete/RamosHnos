@@ -14,15 +14,14 @@ namespace RamosHermanos.Capas.Negocio
     class ProveedorB
     {
         public static ProveedorEntity InsertProveedor(ProveedorEntity prov, TextBox txtid)
-        
-        { 
+        {
             MySQL.ConnectDB();
 
             string query = @"Insert into proveedores (rol,razonSocial,cuit,estado,condicionIVA,fechaAlta)
                           VALUES (@rol,@razonSocial,@cuit,@estado,@condicionIVA,@fechaAlta);
                           Select last_insert_id();";
 
-            MySqlCommand cmd = new MySqlCommand (query, MySQL.sqlcnx);
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
             cmd.Parameters.AddWithValue("@rol", prov.rol);
             cmd.Parameters.AddWithValue("@razonSocial", prov.razsocial);
@@ -30,11 +29,11 @@ namespace RamosHermanos.Capas.Negocio
             cmd.Parameters.AddWithValue("@estado", prov.estado);
             cmd.Parameters.AddWithValue("@condicionIVA", prov.condicioniva);
             cmd.Parameters.AddWithValue("@fechaAlta", prov.fecha);
-                               
-            txtid.Text= Convert.ToString(cmd.ExecuteScalar());
+
+            txtid.Text = Convert.ToString(cmd.ExecuteScalar());
 
             MessageBox.Show("Guardado");
-            
+
             return prov;
 
         }
@@ -43,25 +42,25 @@ namespace RamosHermanos.Capas.Negocio
         {
 
             MySQL.ConnectDB();
-           
+
             string query = @"Select COUNT(*) from proveedores
-                            where razonSocial = @razonSocial" ;
-            
-            MySqlCommand cmd = new MySqlCommand (query, MySQL.sqlcnx);
+                            where razonSocial = @razonSocial";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
             cmd.Parameters.AddWithValue("@razonSocial", prov.razsocial);
 
             int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
             if (resultado == 0)
-           
+
                 return false;
 
             else
-          
+
                 return true;
-            
-            
-            }
+
+
+        }
 
         public static bool ProveedorCuit(ProveedorEntity prov)
         {
@@ -143,8 +142,8 @@ namespace RamosHermanos.Capas.Negocio
                 MessageBox.Show("ERROR  " + ex);
                 throw;
             }
-        
-        
+
+
         }
 
         public static ProveedorEntity BuscarIdProv(ProveedorEntity proveedor)
@@ -194,8 +193,8 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
-          
-       
+
+
         public static ProveedorEntity BuscarProvRazonsocial(ProveedorEntity proveedor)
         {
             try
@@ -331,7 +330,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void cargardgv (DataGridView dgv)
+        public static void cargardgv(DataGridView dgv)
         {
             try
             {
@@ -351,10 +350,12 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["idProveedor"]),
                     Convert.ToString(dr["razonSocial"]),
                     Convert.ToString(dr["cuit"]),
-                    Convert.ToString(dr["estado"]),
+                    Convert.ToString(dr["fechaAlta"]),
                     Convert.ToString(dr["condicionIVA"]),
-                    Convert.ToString(dr["fechaAlta"]));
-                                       
+                    Convert.ToString(dr["estado"]));
+
+
+
                 }
 
                 dr.Close();
@@ -394,11 +395,68 @@ namespace RamosHermanos.Capas.Negocio
                 MessageBox.Show("ERROR" + ex);
             }
         }
+        public static void CargarDGVParametros(DataGridView dgv, ComboBox cb, string parametro)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"SELECT P.idProveedor, P.razonSocial, P.cuit, P.fechaAlta, P.condicionIva, P.estado
+                                 FROM proveedores P
+                                 WHERE";
+                
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idProveedor", parametro);
+                //cmd.Parameters.AddWithValue("@tipoproductos", parametro);
+                cmd.Parameters.AddWithValue("@razonSocial", parametro);
+                cmd.Parameters.AddWithValue("@cuit", parametro);
+                               
+                if (cb.SelectedIndex == 0)
+                {
+                    cmd.CommandText = query + " P.idProveedor LIKE @idProveedor";
+                }
+                //if (cb.SelectedIndex == 1)
+                //{
+                //    cmd.CommandText = query + " tipoproductos LIKE @tipoproductos";
+                //}
+                if (cb.SelectedIndex == 1)
+                {
+                    cmd.CommandText = query + " P.razonSocial LIKE @razonSocial";
+                }
+                if (cb.SelectedIndex == 2)
+                {
+                    cmd.CommandText = query + " P.cuit LIKE @cuit";
+                }
+                
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idProveedor"]),
+                        //Convert.ToString(dr["tipoproductos"]),
+                    Convert.ToString(dr["razonSocial"]),
+                    Convert.ToString(dr["cuit"]),
+                    Convert.ToString(dr["fechaAlta"]),
+                    Convert.ToString(dr["condicionIva"]),
+                    Convert.ToString(dr["estado"]));
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
         }
 
-
-
-
- }
+    }
+}
  
 

@@ -354,24 +354,26 @@ namespace RamosHermanos.Capas.Negocio
 
                 if (cb.SelectedIndex == 0)
                 {
-                    cmd.CommandText = query + " idProducto LIKE @idProducto";
+                    cmd.CommandText = query + " P.idProducto LIKE @idProducto";
                 }
                 //if (cb.SelectedIndex == 1)
                 //{
                 //    cmd.CommandText = query + " tipoproductos LIKE @tipoproductos";
                 //}
+                if (cb.SelectedIndex == 1)
+                {
+                    cmd.CommandText = query + " P.producto LIKE @producto";
+                }
+
                 if (cb.SelectedIndex == 2)
                 {
-                    cmd.CommandText = query + " marca LIKE @marcas";
+                    cmd.CommandText = query + " P.marca LIKE @marcas";
                 }
-                if (cb.SelectedIndex == 3)
-                {
-                    cmd.CommandText = query + " producto LIKE @producto";
-                }
-                if (cb.SelectedIndex == 4)
-                {
-                    cmd.CommandText = query + " medida LIKE @medida";
-                }
+                
+                //if (cb.SelectedIndex == 3)
+                //{
+                //    cmd.CommandText = query + " P.medida LIKE @medida";
+                //}
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
