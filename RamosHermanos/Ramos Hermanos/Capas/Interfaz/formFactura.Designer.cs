@@ -103,7 +103,6 @@
             this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabImpresion = new System.Windows.Forms.TabPage();
             this.crvImpresion = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.dsFactura = new RamosHermanos.Capas.Reportes.dsFactura();
             this.tabMain.SuspendLayout();
             this.tabFactura.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
@@ -115,7 +114,6 @@
             this.tabClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabImpresion.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFactura)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMain
@@ -169,7 +167,6 @@
             this.btnPrint.Size = new System.Drawing.Size(28, 28);
             this.btnPrint.TabIndex = 92;
             this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // cbEstado
             // 
@@ -891,7 +888,6 @@
             this.tabClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.tabImpresion.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dsFactura)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -971,7 +967,6 @@
         private System.Windows.Forms.ComboBox cbDomicilio;
         private System.Windows.Forms.TabPage tabImpresion;
         private System.Windows.Forms.Button btnPrint;
-        private Reportes.dsFactura dsFactura;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crvImpresion;
 
     }

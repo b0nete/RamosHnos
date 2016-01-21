@@ -321,7 +321,7 @@ namespace RamosHermanos.Capas.Interfaz
             for (int i = 0; i <= filas - 2; i++ )
             {
 
-                ds.Tables[0].Rows.Add
+                ds.Tables["dgvPedido"].Rows.Add
 
                     (
                     new object[] {

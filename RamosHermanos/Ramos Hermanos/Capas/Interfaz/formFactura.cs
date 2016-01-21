@@ -213,54 +213,54 @@ namespace RamosHermanos.Capas.Interfaz
             tabMain.SelectedTab = tabClientes;
         }
 
-        private void btnPrint_Click(object sender, EventArgs e)
-        {
-            string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
-            string rep = @"\Capas\Reportes\crFactura.rpt";
+        //private void btnPrint_Click(object sender, EventArgs e)
+        //{
+        //    string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
+        //    string rep = @"\Capas\Reportes\crFactura.rpt";
 
-            dsFactura ds = new dsFactura();
-            //Cargamos DetalleFactura al DS.
-            ds.Tables[1].Rows.Add
-                (
-                txtnumFactura.Text
-                //dgvFactura[0, 1].Value.ToString(),
-                //dgvFactura[0, 2].Value.ToString(),
-                //dgvFactura[0, 3].Value.ToString(),
-                //dgvFactura[0, 4].Value.ToString(),
-                //dgvFactura[0, 5].Value.ToString(),
-                //dgvFactura[0, 6].Value.ToString(),
-                //dgvFactura[0, 7].Value.ToString(),
-                //dgvFactura[0, 8].Value.ToString(),
-                //dgvFactura[0, 9].Value.ToString(),
-                //dgvFactura[0, 10].Value.ToString()
-                );
+        //    //dsFactura ds = new dsFactura();
+        //    ////Cargamos DetalleFactura al DS.
+        //    //ds.Tables[1].Rows.Add
+        //        (
+        //        txtnumFactura.Text
+        //        //dgvFactura[0, 1].Value.ToString(),
+        //        //dgvFactura[0, 2].Value.ToString(),
+        //        //dgvFactura[0, 3].Value.ToString(),
+        //        //dgvFactura[0, 4].Value.ToString(),
+        //        //dgvFactura[0, 5].Value.ToString(),
+        //        //dgvFactura[0, 6].Value.ToString(),
+        //        //dgvFactura[0, 7].Value.ToString(),
+        //        //dgvFactura[0, 8].Value.ToString(),
+        //        //dgvFactura[0, 9].Value.ToString(),
+        //        //dgvFactura[0, 10].Value.ToString()
+        //        );
 
 
 
-            //Cargamos ItemsFactura al DS.
-            int rows = dgvFactura.Rows.Count;
+        //    //Cargamos ItemsFactura al DS.
+        //    int rows = dgvFactura.Rows.Count;
 
-            for (int i = 0; i <= rows - 1; i++)
-            {
-                ds.Tables[0].Rows.Add
-                (
-                new object[]
-                {
-                    dgvFactura[0,i].Value.ToString(),
-                    dgvFactura[1,i].Value.ToString(),
-                    dgvFactura[2,i].Value.ToString(),
-                    dgvFactura[3,i].Value.ToString(),
-                    dgvFactura[4,i].Value.ToString(),
-                }
-                );
+        //    for (int i = 0; i <= rows - 1; i++)
+        //    {
+        //        ds.Tables[0].Rows.Add
+        //        (
+        //        new object[]
+        //        {
+        //            dgvFactura[0,i].Value.ToString(),
+        //            dgvFactura[1,i].Value.ToString(),
+        //            dgvFactura[2,i].Value.ToString(),
+        //            dgvFactura[3,i].Value.ToString(),
+        //            dgvFactura[4,i].Value.ToString(),
+        //        }
+        //        );
 
-                ReportDocument rd = new ReportDocument();
-                rd.Load(ruta + rep);
-                //rd.Load("C:/Users/b0nete/Documents/GitHub/RamosHnos/RamosHermanos/Ramos Hermanos/Capas/Reportes/crFactura.rpt");
-                rd.SetDataSource(ds);
-                crvImpresion.ReportSource = rd;
-            }     
-        }
+        //        ReportDocument rd = new ReportDocument();
+        //        rd.Load(ruta + rep);
+        //        //rd.Load("C:/Users/b0nete/Documents/GitHub/RamosHnos/RamosHermanos/Ramos Hermanos/Capas/Reportes/crFactura.rpt");
+        //        rd.SetDataSource(ds);
+        //        crvImpresion.ReportSource = rd;
+        //    }     
+        //}
 
         private void dgvProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
