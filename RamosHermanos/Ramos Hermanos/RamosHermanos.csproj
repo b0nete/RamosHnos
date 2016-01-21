@@ -320,12 +320,6 @@
     <Compile Include="Capas\Negocio\UsuarioB.cs" />
     <Compile Include="Capas\Negocio\VehiculoB.cs" />
     <Compile Include="Capas\Negocio\VisitaB.cs" />
-    <Compile Include="Capas\Reportes\CargasDescargas\crCargaDescarga.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>crCargaDescarga.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Capas\Reportes\Comprobante\crComprobante.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -359,24 +353,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>crHojaRuta.rpt</DependentUpon>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Capas\Reportes\HojasRuta\dsHojasRuta.cs">
-      <DependentUpon>dsHojasRuta.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Capas\Reportes\HojasRuta\dsHojasRuta.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsHojasRuta.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="Capas\Reportes\dsFactura.cs">
-      <DependentUpon>dsFactura.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Capas\Reportes\dsFactura.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dsFactura.xsd</DependentUpon>
     </Compile>
     <Compile Include="Libs\InputBox.cs" />
     <Compile Include="Program.cs" />
@@ -477,10 +453,6 @@
     <EmbeddedResource Include="Capas\Interfaz\Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Reportes\CargasDescargas\crCargaDescarga.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>crCargaDescarga.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Reportes\Comprobante\crComprobante.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crComprobante.cs</LastGenOutput>
@@ -516,28 +488,6 @@
     </None>
     <None Include="Capas\Reportes\Comprobante\dsComprobante.xss">
       <DependentUpon>dsComprobante.xsd</DependentUpon>
-    </None>
-    <None Include="Capas\Reportes\dsFactura.xsc">
-      <DependentUpon>dsFactura.xsd</DependentUpon>
-    </None>
-    <None Include="Capas\Reportes\dsFactura.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsFactura.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Capas\Reportes\dsFactura.xss">
-      <DependentUpon>dsFactura.xsd</DependentUpon>
-    </None>
-    <None Include="Capas\Reportes\HojasRuta\dsHojasRuta.xsc">
-      <DependentUpon>dsHojasRuta.xsd</DependentUpon>
-    </None>
-    <None Include="Capas\Reportes\HojasRuta\dsHojasRuta.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dsHojasRuta.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Capas\Reportes\HojasRuta\dsHojasRuta.xss">
-      <DependentUpon>dsHojasRuta.xsd</DependentUpon>
     </None>
     <None Include="Capas\Reportes\Recorridos\dsRecorridos.xsc">
       <DependentUpon>dsRecorridos.xsd</DependentUpon>

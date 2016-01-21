@@ -15,7 +15,7 @@ using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Interfaz.Contratos;
 using RamosHermanos.Capas.Interfaz.ABMs;
 using RamosHermanos.Capas.Reportes;
-using RamosHermanos.Capas.Reportes.HojasRuta;
+using RamosHermanos.Capas.Reportes.Recorridos;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -617,10 +617,10 @@ namespace RamosHermanos.Capas.Interfaz
             // Tutorial: https://www.youtube.com/watch?v=Ax4dLk9xPec
 
             string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
-            string rep = @"\Capas\Reportes\HojasRuta\crHojaRuta.rpt";
+            string rep = @"\Capas\Reportes\Recorridos\crRecorridos.rpt";
 
             // dsHojaRuta contiene dtRecorrido y dtItemsRecorrido
-            dsHojasRuta ds = new dsHojasRuta();            
+            dsRecorridos ds = new dsRecorridos();            
 
             string fecha;
             string dia;
@@ -658,7 +658,7 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
             ReportDocument rd = new ReportDocument();
             rd.Load(ruta + rep);
-            //rd.Load("C:/Users/b0nete/Documents/GitHub/RamosHnos/RamosHermanos/Ramos Hermanos/Capas/Reportes/crFactura.rpt");
+            //rd.Load("C:/Users/b0nete/Documents/GitHub/RamosHnos/RamosHermanos/Ramos Hermanos/Capas/Reportes/Recorridos/crFactura.rpt");
             rd.SetDataSource(ds);
             frm.crvReporte.ReportSource = rd;
         }
