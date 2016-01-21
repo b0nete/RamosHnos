@@ -296,14 +296,14 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT P.idProducto, P.producto
-                                 FROM Productos P
-                                 WHERE P.idProducto = @idProducto";
+                string query = @"SELECT P.idProducto, P.producto,PRE.idPrecioProducto, PRE.precio
+                                 FROM productos P, precioproductos PRE
+                                 WHERE P.idProducto = 1 and PRE.idPrecioProducto = (SELECT MAX(idPrecioProducto) from precioproductos);";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@idProducto", producto.idProducto);
-
+              
                 MySqlDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read())
@@ -312,7 +312,7 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["idProducto"]),
                     Convert.ToString(dr["producto"]),
                     Convert.ToString(null),
-                    //Convert.ToString(dr["precio"]),
+                    Convert.ToString(dr["precio"]),
                     Convert.ToString(null));
                 }
 

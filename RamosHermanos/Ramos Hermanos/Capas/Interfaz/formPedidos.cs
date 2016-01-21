@@ -316,12 +316,14 @@ namespace RamosHermanos.Capas.Interfaz
 
             dsComprobante ds = new dsComprobante();
 
+            //DataTable dtItemsPedido = PedidoB....
+
             int filas = dgvPedido.Rows.Count;
 
             for (int i = 0; i <= filas - 2; i++ )
             {
 
-                ds.Tables["dgvPedido"].Rows.Add
+                ds.Tables["DataTable1"].Rows.Add
 
                     (
                     new object[] {

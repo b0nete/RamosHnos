@@ -144,7 +144,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 dgv.Rows.Clear();
 
-                string query = @"Select P.idPedidos , P.fechaPedido , P.fechaEntrega ,P.total ,P.estado, P.idPersona, C.nombre, C.apellido 
+                string query = @"Select P.idPedidos , P.fechaPedido , P.fechaEntrega ,P.total ,P.estado, P.idPersona, C.nombre, C.apellido
                                FROM pedidos P, clientes C
                                WHERE idCliente= P.idPersona";
 
@@ -237,8 +237,7 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
-
-          
+         
           
     }
 }
