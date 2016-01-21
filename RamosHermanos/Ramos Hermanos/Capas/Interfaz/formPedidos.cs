@@ -311,6 +311,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
+
             string rep = @"\Capas\Reportes\Comprobante\crComprobante.rpt";
 
             dsComprobante ds = new dsComprobante();
@@ -322,7 +323,8 @@ namespace RamosHermanos.Capas.Interfaz
 
                 ds.Tables[0].Rows.Add
 
-                    (new object[] {
+                    (
+                    new object[] {
                         dgvPedido[0,i].Value.ToString(),
                         dgvPedido[1,i].Value.ToString(),
                         dgvPedido[2,i].Value.ToString(),

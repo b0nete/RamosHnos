@@ -5,12 +5,12 @@ Alcances.
 4.	Registrar cargos. NO
 5.	Registrar pedidos. SI
 6.	Modificar pedidos. NO
-7.	Consultar pedidos. NO.
+7.	Consultar pedidos. SI.
 8.	Listar pedidos. SI
 9.	Registrar pedido entregado. NO
 10.	Registrar medios de pago. NO
 11.	Registrar cobro efectivo. NO
-12.	Generar factura. BETA
+12.	Generar comprobante. BETA
 13.	Generar recibo. BETA
 14.	Consultar cobros. NO
 15.	Registrar clientes. SI
@@ -59,4 +59,4 @@ Alcances.
 58.	Generar cuenta corriente proveedores. NO
 59.	Generar cuenta corrientes clientes. NO
 60.	Generar listado de Reparto. SI
-///61.	Generar mapa de distribución. 
+61.	Generar mapa de distribución. SI 

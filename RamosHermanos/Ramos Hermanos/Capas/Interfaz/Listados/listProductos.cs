@@ -83,6 +83,16 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         {
             SearchParametro();
         }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 }                     

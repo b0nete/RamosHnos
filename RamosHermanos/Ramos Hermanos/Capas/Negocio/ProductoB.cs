@@ -336,41 +336,44 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT P.idProducto, P.producto, T.tipoproducto, MA.marca, M.medida
+                string query = @"SELECT P.idProducto, P.producto, MA.marca, M.medida
                                  FROM productos P
-                                 INNER JOIN tipoproductos T ON P.tipoProducto = T.idTipoProducto
                                  INNER JOIN marcas MA ON P.marca = MA.idmarca
                                  INNER JOIN medidas M ON P.medida = M.idMedida
                                  WHERE";
+                 //T.tipoproducto,
+                //INNER JOIN tipoProducto T ON P.tipoProducto = T.idTipoProducto
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@idProducto", parametro);
-                cmd.Parameters.AddWithValue("@tipoProductos", parametro);
+                //cmd.Parameters.AddWithValue("@tipoproductos", parametro);
                 cmd.Parameters.AddWithValue("@marcas", parametro);
                 cmd.Parameters.AddWithValue("@producto", parametro);
                 cmd.Parameters.AddWithValue("@medida", parametro);
 
                 if (cb.SelectedIndex == 0)
                 {
-                    cmd.CommandText = query + " idProducto LIKE @idProducto";
+                    cmd.CommandText = query + " P.idProducto LIKE @idProducto";
                 }
+                //if (cb.SelectedIndex == 1)
+                //{
+                //    cmd.CommandText = query + " tipoproductos LIKE @tipoproductos";
+                //}
                 if (cb.SelectedIndex == 1)
                 {
-                    cmd.CommandText = query + " tipoproductos LIKE @tipoproductos";
+                    cmd.CommandText = query + " P.producto LIKE @producto";
                 }
+
                 if (cb.SelectedIndex == 2)
                 {
-                    cmd.CommandText = query + " marca LIKE @marcas";
+                    cmd.CommandText = query + " P.marca LIKE @marcas";
                 }
-                if (cb.SelectedIndex == 3)
-                {
-                    cmd.CommandText = query + " producto LIKE @producto";
-                }
-                if (cb.SelectedIndex == 4)
-                {
-                    cmd.CommandText = query + " medida LIKE @medida";
-                }
+                
+                //if (cb.SelectedIndex == 3)
+                //{
+                //    cmd.CommandText = query + " P.medida LIKE @medida";
+                //}
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -378,7 +381,7 @@ namespace RamosHermanos.Capas.Negocio
                 {                    
                     dgv.Rows.Add(
                     Convert.ToString(dr["idProducto"]),
-                    Convert.ToString(dr["tipoproductos"]),
+                    //Convert.ToString(dr["tipoproductos"]),
                     Convert.ToString(dr["marca"]),
                     Convert.ToString(dr["Producto"]),
                     Convert.ToString(dr["Medida"]));
