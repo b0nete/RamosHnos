@@ -681,12 +681,52 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button5_Click(object sender, EventArgs e)
         {
-            itemsRecorridoB.GetItemsRecorrido(dgvRecorridoLu, txtIDRecorridoLu);
-            
-            //DataTable dtItemsRecorridoTest = itemsRecorridoB.GetItemsRecorrido(dgvRecorridoLu, txtIDdistribuidor);
-            //int roww = dtItemsRecorridoTest.Rows.Count;
-            //MessageBox.Show("ROWS: " + roww);
+            DataSet ds = LlenarDS();
+
+            formRepartos frm = new formRepartos();
+            frm.Show();  
+
+            frm.dgvRepartos.DataSource = ds;            
         }
+
+        private DataSet LlenarDS()
+        {
+            dsRecorridos ds = new dsRecorridos();
+
+            string fecha;
+            string dia;
+            GetFecha(out fecha, out dia); //Llenamos los strings fecha y dia de acuerdo a lo devuelto por el método GetFecha.  
+            string distribuidor = Convert.ToString(txtNombre.Text + ' ' + txtApellido.Text);
+
+            //dtRecorrido - fechaRecorrido, dia, distribuidor, numHoja
+            ds.Tables["dtRecorrido"].Rows.Add
+            (
+            fecha,
+            dia,
+            distribuidor
+            );
+
+            //dtItemsRecorrido
+            DataTable dtItemsRecorridoTest = itemsRecorridoB.GetItemsRecorrido(dgvRecorridoLu, txtIDRecorridoLu);
+
+            int rows = dtItemsRecorridoTest.Rows.Count;
+
+            for (int i = 0; i <= rows - 1; i++)
+            {
+                ds.Tables["dtItemsRecorrido"].Rows.Add
+                (
+                new object[]
+                {
+                    dtItemsRecorridoTest.Rows[i][0].ToString(),
+                    dtItemsRecorridoTest.Rows[i][1].ToString()
+                }
+                );
+            }
+
+            return ds;
+        }
+
+        
 
         private void dgvRecorridoLu_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
