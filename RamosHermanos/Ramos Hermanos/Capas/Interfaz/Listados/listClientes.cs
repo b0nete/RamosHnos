@@ -204,7 +204,8 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     DomicilioB.CargarTXT(frm.txtDomic, frm.txtIDcliente, 1);
                     EmailB.CargarTXT(frm.txtEmail, frm.txtIDcliente, 1);
                     TelefonoB.CargarTXT(frm.txtTel, frm.txtIDcliente, 1);
-
+                    DomicilioB.CargarCB(frm.cbDomicilio, frm.txtIDcliente);
+                    DistribuidorB.CargarCB(frm.cbDistribuidor, frm.txtIDcliente);
                     //Tabs
                     frm.CasePersona();
                 }
@@ -267,7 +268,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                         frmP.txtNombre.Text = cliente.apellido + ',' + cliente.nombre;
 
                         DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente);
-
+                        
                         frmP.tabMain.SelectedTab = frmP.tabPedido;
                         Close();
                         frmP.Show();

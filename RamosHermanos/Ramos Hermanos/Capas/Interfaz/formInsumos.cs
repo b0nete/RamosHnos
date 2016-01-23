@@ -337,6 +337,11 @@ namespace RamosHermanos.Capas.Interfaz
         {
             this.Close();
         }
+
+        private void cbRubro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     
           
     }

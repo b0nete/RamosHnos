@@ -289,5 +289,41 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static void CargarCB(ComboBox cb, TextBox txt)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT D.idDistribuidor, CONCAT(D.apellido,' ',D.nombre,' -', ' Vehículo:',' ', V.marca,', ',
+                                 'Modelo: ', V.modelo,', ', 'Patente: ', V.patente) distrCompleto                                                            
+                                 FROM distribuidores D
+                                 INNER JOIN Vehiculos V on V.idVehiculo = D.vehiculo";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                //cmd.Parameters.AddWithValue("@rol", 1);
+                cmd.Parameters.AddWithValue("@idDistribuidor", txt.Text);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                cb.DataSource = dt;
+                cb.ValueMember = "idDistribuidor";
+                cb.DisplayMember = "distrCompleto";
+
+
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
     }
 }
