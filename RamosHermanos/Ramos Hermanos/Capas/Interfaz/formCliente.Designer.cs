@@ -195,6 +195,8 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
+            this.txtidDistri = new System.Windows.Forms.TextBox();
+            this.i = new System.Windows.Forms.Label();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -2050,6 +2052,8 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.i);
+            this.groupBox7.Controls.Add(this.txtidDistri);
             this.groupBox7.Controls.Add(this.label32);
             this.groupBox7.Controls.Add(this.label21);
             this.groupBox7.Controls.Add(this.cbDomicilio);
@@ -2094,6 +2098,23 @@
             this.cbDomicilio.TabIndex = 0;
             this.cbDomicilio.DropDown += new System.EventHandler(this.cbDomicilio_DropDown);
             this.cbDomicilio.SelectedIndexChanged += new System.EventHandler(this.cbDomicilio_SelectedIndexChanged);
+            // 
+            // txtidDistri
+            // 
+            this.txtidDistri.Location = new System.Drawing.Point(654, 19);
+            this.txtidDistri.Name = "txtidDistri";
+            this.txtidDistri.Size = new System.Drawing.Size(100, 20);
+            this.txtidDistri.TabIndex = 96;
+            // 
+            // i
+            // 
+            this.i.AutoSize = true;
+            this.i.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.i.Location = new System.Drawing.Point(612, 22);
+            this.i.Name = "i";
+            this.i.Size = new System.Drawing.Size(36, 13);
+            this.i.TabIndex = 75;
+            this.i.Text = "idDistr";
             // 
             // formCliente
             // 
@@ -2312,6 +2333,8 @@
         private System.Windows.Forms.Label label34;
         public System.Windows.Forms.CheckBox cbEstadoVisita;
         private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label i;
+        public System.Windows.Forms.TextBox txtidDistri;
 
     }
 }

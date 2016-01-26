@@ -62,10 +62,11 @@ namespace RamosHermanos.Capas.Negocio
 
                 string query = @"UPDATE pedidos
                                SET fechaPedido = @fechaPedido, fechaEntrega= @fechaEntrega ,domicilio = @domicilio, estado = @estado,observaciones =@observaciones,total=@total
-                               WHERE idPedido = @idPedido";
+                               WHERE idPersona = @idPersona";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
+                cmd.Parameters.AddWithValue("@idPersona", pedido.idPersona);
                 cmd.Parameters.AddWithValue("@fechaPedido", pedido.fechaPedido);
                 cmd.Parameters.AddWithValue("@fechaEntrega", pedido.fechaEntrega);
                 cmd.Parameters.AddWithValue("@domicilio", pedido.domicilio);

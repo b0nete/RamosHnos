@@ -279,6 +279,12 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
+        private void buscarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            listInsumos frm = new listInsumos();
+            frm.Show();
+        }
+
        
        
        
