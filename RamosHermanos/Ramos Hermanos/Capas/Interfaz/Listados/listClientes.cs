@@ -197,7 +197,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     frm.cbIVA.Text = cliente.condicionIVA;
                     frm.cbTipoCliente.SelectedValue = cliente.tipoCliente;
                     frm.cbEstado.Checked = cliente.estado;
-
+                    
                     frm.CargarTXTSaldo();
 
                     //Contacto

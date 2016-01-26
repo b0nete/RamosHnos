@@ -136,6 +136,7 @@ namespace RamosHermanos.Capas.Interfaz
                     //VisitaB.InsertOrden(visita);
 
                     ClienteB.CargarDGV(dgvCliente);
+                    
                 }
             }
         }
@@ -1029,6 +1030,7 @@ namespace RamosHermanos.Capas.Interfaz
             visita.idPersona = Convert.ToInt32(dgv.CurrentRow.Cells["colVLucliente"].Value);
         }
 
+        
         private void CargarItemsVisita(string strDia, DataGridViewRow row)
         {
             visita.rol = 1;
@@ -1231,6 +1233,78 @@ namespace RamosHermanos.Capas.Interfaz
         {
             DomicilioB.CargarCB(cbDomicilio, txtIDcliente);
         }
-        
-    }
+
+        VisitaEntity v = new VisitaEntity();
+        public void cargarVisita()
+        {
+            v.rol = 1;
+            v.idPersona = Convert.ToInt32(txtIDcliente.Text);
+            v.domicilio = Convert.ToInt32(cbDomicilio.SelectedValue);
+            v.estado = cbEstadoVisita.Checked;
+            v.distribuidor = Convert.ToInt32(cbDomicilio.SelectedValue);
+         
+            
+        }
+
+        private void btnSaveVisita_Click(object sender, EventArgs e)
+        {
+            cargarVisita();
+            VisitaB.DeleteVisita(v);
+            if (checkLu.Checked == true)
+            {
+                v.dia = "Lu";
+                cargarVisita();
+                VisitaB.InsertVisitaCliente(v);
+                
+            }
+            if (checkMa.Checked == true)
+            {
+                v.dia = "Ma";
+                cargarVisita();
+                VisitaB.InsertVisitaCliente(v);
+                
+            }
+            if (checkMi.Checked == true)
+            {
+                v.dia = "Mi";
+                cargarVisita();
+                VisitaB.InsertVisitaCliente(v);
+                
+            }
+            if (checkJu.Checked == true)
+            {
+                v.dia = "Ju";
+                cargarVisita();
+                VisitaB.InsertVisitaCliente(v);
+                
+            }
+            if (checkVi.Checked == true)
+            {
+                v.dia = "Vi";
+                cargarVisita();
+                VisitaB.InsertVisitaCliente(v);
+                
+            }
+            if (checkSa.Checked == true)
+            {
+                v.dia = "Sa";
+                cargarVisita();
+                VisitaB.InsertVisitaCliente(v);
+                
+            }
+            if (checkDo.Checked == true)
+            {
+                v.dia = "Do";
+                cargarVisita();
+                VisitaB.InsertVisitaCliente(v);
+                
+            }
+            
+        }
+
+          
 }
+
+}
+        
+ 

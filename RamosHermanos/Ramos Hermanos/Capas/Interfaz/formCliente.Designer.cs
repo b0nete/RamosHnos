@@ -175,6 +175,9 @@
             this.label61 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.tabVisita = new System.Windows.Forms.TabPage();
+            this.label34 = new System.Windows.Forms.Label();
+            this.cbEstadoVisita = new System.Windows.Forms.CheckBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
@@ -187,7 +190,7 @@
             this.checkMa = new System.Windows.Forms.CheckBox();
             this.checkJu = new System.Windows.Forms.CheckBox();
             this.checkMi = new System.Windows.Forms.CheckBox();
-            this.button11 = new System.Windows.Forms.Button();
+            this.btnSaveVisita = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -1850,9 +1853,12 @@
             // tabVisita
             // 
             this.tabVisita.BackColor = System.Drawing.Color.Transparent;
+            this.tabVisita.Controls.Add(this.label34);
+            this.tabVisita.Controls.Add(this.cbEstadoVisita);
+            this.tabVisita.Controls.Add(this.label37);
             this.tabVisita.Controls.Add(this.groupBox15);
             this.tabVisita.Controls.Add(this.groupBox8);
-            this.tabVisita.Controls.Add(this.button11);
+            this.tabVisita.Controls.Add(this.btnSaveVisita);
             this.tabVisita.Controls.Add(this.groupBox7);
             this.tabVisita.Location = new System.Drawing.Point(4, 22);
             this.tabVisita.Name = "tabVisita";
@@ -1861,13 +1867,42 @@
             this.tabVisita.Text = "Visita";
             this.tabVisita.Click += new System.EventHandler(this.tabVisita_Click);
             // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(74, 14);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(0, 13);
+            this.label34.TabIndex = 95;
+            // 
+            // cbEstadoVisita
+            // 
+            this.cbEstadoVisita.AutoSize = true;
+            this.cbEstadoVisita.Checked = true;
+            this.cbEstadoVisita.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEstadoVisita.Location = new System.Drawing.Point(53, 14);
+            this.cbEstadoVisita.Name = "cbEstadoVisita";
+            this.cbEstadoVisita.Size = new System.Drawing.Size(15, 14);
+            this.cbEstadoVisita.TabIndex = 94;
+            this.cbEstadoVisita.UseVisualStyleBackColor = true;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label37.Location = new System.Drawing.Point(10, 14);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(40, 13);
+            this.label37.TabIndex = 93;
+            this.label37.Text = "Estado";
+            // 
             // groupBox15
             // 
             this.groupBox15.Controls.Add(this.label33);
             this.groupBox15.Controls.Add(this.label30);
             this.groupBox15.Controls.Add(this.cbDistribuidor);
             this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox15.Location = new System.Drawing.Point(8, 73);
+            this.groupBox15.Location = new System.Drawing.Point(8, 95);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(760, 55);
             this.groupBox15.TabIndex = 3;
@@ -1916,7 +1951,7 @@
             this.groupBox8.Controls.Add(this.checkJu);
             this.groupBox8.Controls.Add(this.checkMi);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(8, 134);
+            this.groupBox8.Location = new System.Drawing.Point(8, 156);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(760, 53);
             this.groupBox8.TabIndex = 73;
@@ -2001,16 +2036,17 @@
             this.checkMi.Text = "Miércoles";
             this.checkMi.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // btnSaveVisita
             // 
-            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(740, 193);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(28, 28);
-            this.button11.TabIndex = 72;
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnSaveVisita.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveVisita.BackgroundImage")));
+            this.btnSaveVisita.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveVisita.Location = new System.Drawing.Point(740, 215);
+            this.btnSaveVisita.Name = "btnSaveVisita";
+            this.btnSaveVisita.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveVisita.TabIndex = 72;
+            this.btnSaveVisita.UseVisualStyleBackColor = true;
+            this.btnSaveVisita.Click += new System.EventHandler(this.btnSaveVisita_Click);
             // 
             // groupBox7
             // 
@@ -2018,7 +2054,7 @@
             this.groupBox7.Controls.Add(this.label21);
             this.groupBox7.Controls.Add(this.cbDomicilio);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(8, 12);
+            this.groupBox7.Location = new System.Drawing.Point(8, 34);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(760, 55);
             this.groupBox7.TabIndex = 0;
@@ -2097,6 +2133,7 @@
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.tabVisita.ResumeLayout(false);
+            this.tabVisita.PerformLayout();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
             this.groupBox8.ResumeLayout(false);
@@ -2213,7 +2250,7 @@
         private System.Windows.Forms.TabPage tabVisita;
         private System.Windows.Forms.RadioButton rbDGVPJ;
         private System.Windows.Forms.RadioButton rbDGV;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button btnSaveVisita;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
@@ -2272,6 +2309,9 @@
         public System.Windows.Forms.ComboBox cbDomicilio;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label34;
+        public System.Windows.Forms.CheckBox cbEstadoVisita;
+        private System.Windows.Forms.Label label37;
 
     }
 }

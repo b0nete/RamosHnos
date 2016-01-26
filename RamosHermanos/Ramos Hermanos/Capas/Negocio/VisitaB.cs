@@ -171,13 +171,12 @@ WHERE V.rol = 1 and V.idPersona = 4 and dia = 'LU'";
                 MySQL.ConnectDB();
 
                 string query = @"DELETE FROM Visitas
-                                 WHERE rol = @rol and idPersona = @idPersona";
+                                 WHERE idPersona = @idPersona";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@rol", visita.rol);
                 cmd.Parameters.AddWithValue("@idPersona", visita.idPersona);
-
+                
                 cmd.ExecuteNonQuery();
             }
 
@@ -212,6 +211,74 @@ WHERE V.rol = 1 and V.idPersona = 4 and dia = 'LU'";
                 MySQL.DisconnectDB();
 
                 return visita;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static VisitaEntity InsertVisitaCliente(VisitaEntity visitas)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"INSERT INTO visitas (idVisita, idPersona, dia, domicilio, distribuidor, estado) 
+                                 VALUES (@idVisita, @idPersona, @dia, @domicilio, @distribuidor, @estado)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idVisita", visitas.idVisita);
+                //cmd.Parameters.AddWithValue("@rol", visita.rol);
+                cmd.Parameters.AddWithValue("@idPersona", visitas.idPersona);
+                cmd.Parameters.AddWithValue("@dia", visitas.dia);
+                cmd.Parameters.AddWithValue("@domicilio", visitas.domicilio);
+                cmd.Parameters.AddWithValue("@distribuidor", visitas.distribuidor);
+                cmd.Parameters.AddWithValue("@estado", visitas.estado);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Visita Guardada!");
+                MySQL.DisconnectDB();
+
+                return visitas;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static VisitaEntity DeleteAllVisitaCliente(VisitaEntity visitas)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"DELETE from visitas (idVisita, idPersona, dia, domicilio, distribuidor, estado) 
+                                 VALUES (@idVisita, @idPersona, @dia, @domicilio, @distribuidor, @estado)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idVisita", visitas.idVisita);
+                //cmd.Parameters.AddWithValue("@rol", visita.rol);
+                cmd.Parameters.AddWithValue("@idPersona", visitas.idPersona);
+                cmd.Parameters.AddWithValue("@dia", visitas.dia);
+                cmd.Parameters.AddWithValue("@domicilio", visitas.domicilio);
+                cmd.Parameters.AddWithValue("@distribuidor", visitas.distribuidor);
+                cmd.Parameters.AddWithValue("@estado", visitas.estado);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Visita Actualizada!");
+                MySQL.DisconnectDB();
+
+                return visitas;
             }
 
             catch (Exception ex)
