@@ -206,6 +206,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     TelefonoB.CargarTXT(frm.txtTel, frm.txtIDcliente, 1);
                     DomicilioB.CargarCB(frm.cbDomicilio, frm.txtIDcliente);
                     DistribuidorB.CargarCB(frm.cbDistribuidor, frm.txtIDcliente);
+                    
                     //Tabs
                     frm.CasePersona();
                 }

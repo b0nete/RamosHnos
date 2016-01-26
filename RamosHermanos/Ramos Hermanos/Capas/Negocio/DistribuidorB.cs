@@ -325,5 +325,40 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static void CargarCBVisita(ComboBox cb, TextBox txt)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT V.distribuidor                                                         
+                                 FROM visitas V 
+                                 WHERE distribuidor=@distribuidor";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                //cmd.Parameters.AddWithValue("@rol", 1);
+                cmd.Parameters.AddWithValue("@distribuidor", txt.Text);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                cb.DataSource = dt;
+                cb.ValueMember = "distribuidor";
+                //cb.DisplayMember = "distrCompleto";
+
+
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
     }
 }
