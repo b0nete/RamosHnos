@@ -370,6 +370,7 @@
             this.cbRubro.Name = "cbRubro";
             this.cbRubro.Size = new System.Drawing.Size(261, 21);
             this.cbRubro.TabIndex = 122;
+            this.cbRubro.SelectedIndexChanged += new System.EventHandler(this.cbRubro_SelectedIndexChanged);
             // 
             // lblEstado
             // 
@@ -735,7 +736,7 @@
             this.tabListado.Controls.Add(this.dgvinsumos);
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
-            this.tabListado.Size = new System.Drawing.Size(751, 535);
+            this.tabListado.Size = new System.Drawing.Size(411, 535);
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;

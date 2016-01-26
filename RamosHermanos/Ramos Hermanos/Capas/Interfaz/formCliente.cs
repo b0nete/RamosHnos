@@ -31,8 +31,7 @@ namespace RamosHermanos.Capas.Interfaz
             tabMain.Controls.Remove(tabAdicional);
             tabMain.Controls.Remove(tabSugerencias);
             tabMain.Controls.Remove(tabFamilia);
-            tabMain.Controls.Remove(tabVisita);
-
+            
             // Listado
             CheckListado();
 
@@ -58,6 +57,7 @@ namespace RamosHermanos.Capas.Interfaz
             // Cargar ComboBoxs.            
             tipoDocB.CargarTipoDoc(cbTipoDoc);
             tipoClienteB.CargarTipoCliente(cbTipoCliente);
+            DistribuidorB.CargarCB(cbDistribuidor, txtIDcliente);
 
             // Valores Iniciales
             cbSexo.SelectedIndex = 0;
@@ -136,6 +136,7 @@ namespace RamosHermanos.Capas.Interfaz
                     //VisitaB.InsertOrden(visita);
 
                     ClienteB.CargarDGV(dgvCliente);
+                    
                 }
             }
         }
@@ -530,6 +531,10 @@ namespace RamosHermanos.Capas.Interfaz
                 DomicilioB.CargarTXT(txtDomic, txtIDcliente, 1);
                 EmailB.CargarTXT(txtEmail, txtIDcliente, 1);
                 TelefonoB.CargarTXT(txtTel, txtIDcliente, 1);
+
+                //Visita
+                //DomicilioB.CargarCB(cbDomicilio, txtIDcliente);
+
             }
 
             CheckColor(cbEstado, lblEstado);
@@ -704,7 +709,7 @@ namespace RamosHermanos.Capas.Interfaz
                     CasePersona();
 
                     // ----------------- Cargas Visita ----------------- //
-                    DomicilioB.CargarCB(cbDomicilioLunes, txtIDcliente);
+                    DomicilioB.CargarCB(cbDomicilio, txtIDcliente);
 
                 }
                 else if (cliente.tipoPersona == "PJ")
@@ -1025,6 +1030,7 @@ namespace RamosHermanos.Capas.Interfaz
             visita.idPersona = Convert.ToInt32(dgv.CurrentRow.Cells["colVLucliente"].Value);
         }
 
+        
         private void CargarItemsVisita(string strDia, DataGridViewRow row)
         {
             visita.rol = 1;
@@ -1199,6 +1205,106 @@ namespace RamosHermanos.Capas.Interfaz
             txtCreditoMax.Text = Convert.ToString(saldo.creditoMax);
             txtSaldo.Text = Convert.ToString(saldo.saldoActual);
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox8_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabVisita_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbDomicilio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
         
-    }
+          
+
+        private void cbDomicilio_DropDown(object sender, EventArgs e)
+        {
+            DomicilioB.CargarCB(cbDomicilio, txtIDcliente);
+        }
+
+        VisitaEntity v = new VisitaEntity();
+        public void cargarVisita()
+        {
+            v.rol = 1;
+            v.idPersona = Convert.ToInt32(txtIDcliente.Text);
+            v.domicilio = Convert.ToInt32(cbDomicilio.SelectedValue);
+            v.estado = cbEstadoVisita.Checked;
+            v.distribuidor = Convert.ToInt32(cbDomicilio.SelectedValue);
+         
+            
+        }
+
+        private void btnSaveVisita_Click(object sender, EventArgs e)
+        {
+            cargarVisita();
+            VisitaB.DeleteVisita(v);
+            if (checkLu.Checked == true)
+            {
+                v.dia = "Lu";
+                cargarVisita();
+                VisitaB.InsertVisitaCliente(v);
+                
+            }
+            if (checkMa.Checked == true)
+            {
+                v.dia = "Ma";
+                cargarVisita();
+                VisitaB.InsertVisitaCliente(v);
+                
+            }
+            if (checkMi.Checked == true)
+            {
+                v.dia = "Mi";
+                cargarVisita();
+                VisitaB.InsertVisitaCliente(v);
+                
+            }
+            if (checkJu.Checked == true)
+            {
+                v.dia = "Ju";
+                cargarVisita();
+                VisitaB.InsertVisitaCliente(v);
+                
+            }
+            if (checkVi.Checked == true)
+            {
+                v.dia = "Vi";
+                cargarVisita();
+                VisitaB.InsertVisitaCliente(v);
+                
+            }
+            if (checkSa.Checked == true)
+            {
+                v.dia = "Sa";
+                cargarVisita();
+                VisitaB.InsertVisitaCliente(v);
+                
+            }
+            if (checkDo.Checked == true)
+            {
+                v.dia = "Do";
+                cargarVisita();
+                VisitaB.InsertVisitaCliente(v);
+                
+            }
+            
+        }
+
+          
 }
+
+}
+        
+ 

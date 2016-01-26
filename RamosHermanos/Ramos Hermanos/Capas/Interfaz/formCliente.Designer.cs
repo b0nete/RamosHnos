@@ -175,18 +175,26 @@
             this.label61 = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.tabVisita = new System.Windows.Forms.TabPage();
-            this.button11 = new System.Windows.Forms.Button();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.cbEstadoVisita = new System.Windows.Forms.CheckBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label33 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
+            this.cbDistribuidor = new System.Windows.Forms.ComboBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.checkDo = new System.Windows.Forms.CheckBox();
+            this.checkSa = new System.Windows.Forms.CheckBox();
+            this.checkLu = new System.Windows.Forms.CheckBox();
+            this.checkVi = new System.Windows.Forms.CheckBox();
+            this.checkMa = new System.Windows.Forms.CheckBox();
+            this.checkJu = new System.Windows.Forms.CheckBox();
+            this.checkMi = new System.Windows.Forms.CheckBox();
+            this.btnSaveVisita = new System.Windows.Forms.Button();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label32 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.cbDomicilioLunes = new System.Windows.Forms.ComboBox();
-            this.cbDistribuidorLunes = new System.Windows.Forms.ComboBox();
+            this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -205,6 +213,8 @@
             this.groupBox13.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.tabVisita.SuspendLayout();
+            this.groupBox15.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -1842,143 +1852,248 @@
             // 
             // tabVisita
             // 
-            this.tabVisita.Controls.Add(this.button11);
-            this.tabVisita.Controls.Add(this.groupBox19);
-            this.tabVisita.Controls.Add(this.groupBox18);
-            this.tabVisita.Controls.Add(this.groupBox17);
-            this.tabVisita.Controls.Add(this.groupBox16);
+            this.tabVisita.BackColor = System.Drawing.Color.Transparent;
+            this.tabVisita.Controls.Add(this.label34);
+            this.tabVisita.Controls.Add(this.cbEstadoVisita);
+            this.tabVisita.Controls.Add(this.label37);
             this.tabVisita.Controls.Add(this.groupBox15);
             this.tabVisita.Controls.Add(this.groupBox8);
+            this.tabVisita.Controls.Add(this.btnSaveVisita);
             this.tabVisita.Controls.Add(this.groupBox7);
             this.tabVisita.Location = new System.Drawing.Point(4, 22);
             this.tabVisita.Name = "tabVisita";
             this.tabVisita.Size = new System.Drawing.Size(776, 536);
             this.tabVisita.TabIndex = 7;
             this.tabVisita.Text = "Visita";
-            this.tabVisita.UseVisualStyleBackColor = true;
+            this.tabVisita.Click += new System.EventHandler(this.tabVisita_Click);
             // 
-            // button11
+            // label34
             // 
-            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(740, 500);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(28, 28);
-            this.button11.TabIndex = 72;
-            this.button11.UseVisualStyleBackColor = true;
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(74, 14);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(0, 13);
+            this.label34.TabIndex = 95;
             // 
-            // groupBox19
+            // cbEstadoVisita
             // 
-            this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox19.Location = new System.Drawing.Point(8, 429);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(754, 65);
-            this.groupBox19.TabIndex = 1;
-            this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "Domingo";
+            this.cbEstadoVisita.AutoSize = true;
+            this.cbEstadoVisita.Checked = true;
+            this.cbEstadoVisita.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEstadoVisita.Location = new System.Drawing.Point(53, 14);
+            this.cbEstadoVisita.Name = "cbEstadoVisita";
+            this.cbEstadoVisita.Size = new System.Drawing.Size(15, 14);
+            this.cbEstadoVisita.TabIndex = 94;
+            this.cbEstadoVisita.UseVisualStyleBackColor = true;
             // 
-            // groupBox18
+            // label37
             // 
-            this.groupBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox18.Location = new System.Drawing.Point(8, 358);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(754, 65);
-            this.groupBox18.TabIndex = 1;
-            this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "Sabado";
-            // 
-            // groupBox17
-            // 
-            this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox17.Location = new System.Drawing.Point(8, 287);
-            this.groupBox17.Name = "groupBox17";
-            this.groupBox17.Size = new System.Drawing.Size(754, 65);
-            this.groupBox17.TabIndex = 1;
-            this.groupBox17.TabStop = false;
-            this.groupBox17.Text = "Viernes";
-            // 
-            // groupBox16
-            // 
-            this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox16.Location = new System.Drawing.Point(8, 216);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(754, 65);
-            this.groupBox16.TabIndex = 1;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Jueves";
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label37.Location = new System.Drawing.Point(10, 14);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(40, 13);
+            this.label37.TabIndex = 93;
+            this.label37.Text = "Estado";
             // 
             // groupBox15
             // 
+            this.groupBox15.Controls.Add(this.label33);
+            this.groupBox15.Controls.Add(this.label30);
+            this.groupBox15.Controls.Add(this.cbDistribuidor);
             this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox15.Location = new System.Drawing.Point(8, 145);
+            this.groupBox15.Location = new System.Drawing.Point(8, 95);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(754, 65);
-            this.groupBox15.TabIndex = 1;
+            this.groupBox15.Size = new System.Drawing.Size(760, 55);
+            this.groupBox15.TabIndex = 3;
             this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "Miercoles";
+            this.groupBox15.Text = "Distribuidor";
             // 
-            // groupBox8
+            // label33
             // 
-            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(8, 74);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(754, 65);
-            this.groupBox8.TabIndex = 1;
-            this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Martes";
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.label30);
-            this.groupBox7.Controls.Add(this.label21);
-            this.groupBox7.Controls.Add(this.cbDomicilioLunes);
-            this.groupBox7.Controls.Add(this.cbDistribuidorLunes);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(8, 3);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(760, 65);
-            this.groupBox7.TabIndex = 0;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Lunes";
+            this.label33.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.Transparent;
+            this.label33.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Red;
+            this.label33.Location = new System.Drawing.Point(2, 16);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(12, 15);
+            this.label33.TabIndex = 74;
+            this.label33.Text = "*";
             // 
             // label30
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(513, 22);
+            this.label30.Location = new System.Drawing.Point(10, 22);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(59, 13);
-            this.label30.TabIndex = 4;
-            this.label30.Text = "Distribuidor";
+            this.label30.Size = new System.Drawing.Size(63, 13);
+            this.label30.TabIndex = 2;
+            this.label30.Text = "Seleccionar";
+            // 
+            // cbDistribuidor
+            // 
+            this.cbDistribuidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDistribuidor.FormattingEnabled = true;
+            this.cbDistribuidor.Location = new System.Drawing.Point(79, 19);
+            this.cbDistribuidor.Name = "cbDistribuidor";
+            this.cbDistribuidor.Size = new System.Drawing.Size(416, 21);
+            this.cbDistribuidor.TabIndex = 0;
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.checkDo);
+            this.groupBox8.Controls.Add(this.checkSa);
+            this.groupBox8.Controls.Add(this.checkLu);
+            this.groupBox8.Controls.Add(this.checkVi);
+            this.groupBox8.Controls.Add(this.checkMa);
+            this.groupBox8.Controls.Add(this.checkJu);
+            this.groupBox8.Controls.Add(this.checkMi);
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(8, 156);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(760, 53);
+            this.groupBox8.TabIndex = 73;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Día de Visita";
+            this.groupBox8.Enter += new System.EventHandler(this.groupBox8_Enter);
+            // 
+            // checkDo
+            // 
+            this.checkDo.AutoSize = true;
+            this.checkDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkDo.Location = new System.Drawing.Point(483, 19);
+            this.checkDo.Name = "checkDo";
+            this.checkDo.Size = new System.Drawing.Size(68, 17);
+            this.checkDo.TabIndex = 81;
+            this.checkDo.Text = "Domingo";
+            this.checkDo.UseVisualStyleBackColor = true;
+            // 
+            // checkSa
+            // 
+            this.checkSa.AutoSize = true;
+            this.checkSa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkSa.Location = new System.Drawing.Point(414, 19);
+            this.checkSa.Name = "checkSa";
+            this.checkSa.Size = new System.Drawing.Size(63, 17);
+            this.checkSa.TabIndex = 80;
+            this.checkSa.Text = "Sábado";
+            this.checkSa.UseVisualStyleBackColor = true;
+            // 
+            // checkLu
+            // 
+            this.checkLu.AutoSize = true;
+            this.checkLu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkLu.Location = new System.Drawing.Point(79, 19);
+            this.checkLu.Name = "checkLu";
+            this.checkLu.Size = new System.Drawing.Size(55, 17);
+            this.checkLu.TabIndex = 75;
+            this.checkLu.Text = "Lunes";
+            this.checkLu.UseVisualStyleBackColor = true;
+            // 
+            // checkVi
+            // 
+            this.checkVi.AutoSize = true;
+            this.checkVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkVi.Location = new System.Drawing.Point(347, 19);
+            this.checkVi.Name = "checkVi";
+            this.checkVi.Size = new System.Drawing.Size(61, 17);
+            this.checkVi.TabIndex = 79;
+            this.checkVi.Text = "Viernes";
+            this.checkVi.UseVisualStyleBackColor = true;
+            // 
+            // checkMa
+            // 
+            this.checkMa.AutoSize = true;
+            this.checkMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkMa.Location = new System.Drawing.Point(140, 19);
+            this.checkMa.Name = "checkMa";
+            this.checkMa.Size = new System.Drawing.Size(58, 17);
+            this.checkMa.TabIndex = 76;
+            this.checkMa.Text = "Martes";
+            this.checkMa.UseVisualStyleBackColor = true;
+            // 
+            // checkJu
+            // 
+            this.checkJu.AutoSize = true;
+            this.checkJu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkJu.Location = new System.Drawing.Point(281, 19);
+            this.checkJu.Name = "checkJu";
+            this.checkJu.Size = new System.Drawing.Size(60, 17);
+            this.checkJu.TabIndex = 78;
+            this.checkJu.Text = "Jueves";
+            this.checkJu.UseVisualStyleBackColor = true;
+            // 
+            // checkMi
+            // 
+            this.checkMi.AutoSize = true;
+            this.checkMi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkMi.Location = new System.Drawing.Point(204, 19);
+            this.checkMi.Name = "checkMi";
+            this.checkMi.Size = new System.Drawing.Size(71, 17);
+            this.checkMi.TabIndex = 77;
+            this.checkMi.Text = "Miércoles";
+            this.checkMi.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveVisita
+            // 
+            this.btnSaveVisita.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveVisita.BackgroundImage")));
+            this.btnSaveVisita.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveVisita.Location = new System.Drawing.Point(740, 215);
+            this.btnSaveVisita.Name = "btnSaveVisita";
+            this.btnSaveVisita.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveVisita.TabIndex = 72;
+            this.btnSaveVisita.UseVisualStyleBackColor = true;
+            this.btnSaveVisita.Click += new System.EventHandler(this.btnSaveVisita_Click);
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label32);
+            this.groupBox7.Controls.Add(this.label21);
+            this.groupBox7.Controls.Add(this.cbDomicilio);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.Location = new System.Drawing.Point(8, 34);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(760, 55);
+            this.groupBox7.TabIndex = 0;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Domicilio";
+            // 
+            // label32
+            // 
+            this.label32.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label32.AutoSize = true;
+            this.label32.BackColor = System.Drawing.Color.Transparent;
+            this.label32.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.ForeColor = System.Drawing.Color.Red;
+            this.label32.Location = new System.Drawing.Point(2, 17);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(12, 15);
+            this.label32.TabIndex = 74;
+            this.label32.Text = "*";
             // 
             // label21
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(6, 22);
+            this.label21.Location = new System.Drawing.Point(10, 22);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(49, 13);
+            this.label21.Size = new System.Drawing.Size(63, 13);
             this.label21.TabIndex = 2;
-            this.label21.Text = "Domicilio";
+            this.label21.Text = "Seleccionar";
             // 
-            // cbDomicilioLunes
+            // cbDomicilio
             // 
-            this.cbDomicilioLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDomicilioLunes.FormattingEnabled = true;
-            this.cbDomicilioLunes.Location = new System.Drawing.Point(61, 19);
-            this.cbDomicilioLunes.Name = "cbDomicilioLunes";
-            this.cbDomicilioLunes.Size = new System.Drawing.Size(416, 21);
-            this.cbDomicilioLunes.TabIndex = 0;
-            // 
-            // cbDistribuidorLunes
-            // 
-            this.cbDistribuidorLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDistribuidorLunes.FormattingEnabled = true;
-            this.cbDistribuidorLunes.Location = new System.Drawing.Point(578, 19);
-            this.cbDistribuidorLunes.Name = "cbDistribuidorLunes";
-            this.cbDistribuidorLunes.Size = new System.Drawing.Size(176, 21);
-            this.cbDistribuidorLunes.TabIndex = 3;
+            this.cbDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDomicilio.FormattingEnabled = true;
+            this.cbDomicilio.Location = new System.Drawing.Point(79, 19);
+            this.cbDomicilio.Name = "cbDomicilio";
+            this.cbDomicilio.Size = new System.Drawing.Size(416, 21);
+            this.cbDomicilio.TabIndex = 0;
+            this.cbDomicilio.DropDown += new System.EventHandler(this.cbDomicilio_DropDown);
+            this.cbDomicilio.SelectedIndexChanged += new System.EventHandler(this.cbDomicilio_SelectedIndexChanged);
             // 
             // formCliente
             // 
@@ -2018,6 +2133,11 @@
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.tabVisita.ResumeLayout(false);
+            this.tabVisita.PerformLayout();
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.ResumeLayout(false);
@@ -2130,18 +2250,7 @@
         private System.Windows.Forms.TabPage tabVisita;
         private System.Windows.Forms.RadioButton rbDGVPJ;
         private System.Windows.Forms.RadioButton rbDGV;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.GroupBox groupBox19;
-        private System.Windows.Forms.GroupBox groupBox18;
-        private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.GroupBox groupBox16;
-        private System.Windows.Forms.GroupBox groupBox15;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox cbDomicilioLunes;
-        private System.Windows.Forms.ComboBox cbDistribuidorLunes;
+        private System.Windows.Forms.Button btnSaveVisita;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
@@ -2184,6 +2293,25 @@
         public System.Windows.Forms.TextBox txtEmailPJ;
         public System.Windows.Forms.TextBox txtTelefonoPJ;
         public System.Windows.Forms.TextBox txtDomicilioPJ;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.CheckBox checkDo;
+        private System.Windows.Forms.CheckBox checkSa;
+        private System.Windows.Forms.CheckBox checkLu;
+        private System.Windows.Forms.CheckBox checkVi;
+        private System.Windows.Forms.CheckBox checkMa;
+        private System.Windows.Forms.CheckBox checkJu;
+        private System.Windows.Forms.CheckBox checkMi;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.Label label30;
+        public System.Windows.Forms.ComboBox cbDistribuidor;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label21;
+        public System.Windows.Forms.ComboBox cbDomicilio;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label34;
+        public System.Windows.Forms.CheckBox cbEstadoVisita;
+        private System.Windows.Forms.Label label37;
 
     }
 }

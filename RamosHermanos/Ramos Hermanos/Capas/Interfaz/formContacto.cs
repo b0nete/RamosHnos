@@ -151,6 +151,7 @@ namespace RamosHermanos.Capas.Interfaz
             BarrioB.CargarCB(cbBarrio, cbLocalidad);
         }
 
+        
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (ValidarDomicilio() == false)
@@ -163,6 +164,7 @@ namespace RamosHermanos.Capas.Interfaz
                 CargarDomicilio();
                 DomicilioB.InsertDomicilio(domicilio);
                 DomicilioB.CargarDGV(dgvDomicilio, cbRolALL, txtIDALL);
+                
             }
             
         }
