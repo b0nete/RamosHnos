@@ -158,6 +158,8 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabDistribuidor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -1279,6 +1281,9 @@
             this.dgvLun.AllowUserToAddRows = false;
             this.dgvLun.AllowUserToDeleteRows = false;
             this.dgvLun.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLun.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colCliente,
+            this.colDomicilio});
             this.dgvLun.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvLun.Location = new System.Drawing.Point(3, 3);
             this.dgvLun.Name = "dgvLun";
@@ -1750,6 +1755,18 @@
             this.tabPage7.Text = "Domingo";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
+            // colCliente
+            // 
+            this.colCliente.HeaderText = "Cliente";
+            this.colCliente.Name = "colCliente";
+            this.colCliente.ReadOnly = true;
+            // 
+            // colDomicilio
+            // 
+            this.colDomicilio.HeaderText = "Domicilio";
+            this.colDomicilio.Name = "colDomicilio";
+            this.colDomicilio.ReadOnly = true;
+            // 
             // formDistribuidores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1930,5 +1947,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colLuHasta;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLuSentido;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colLuEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDomicilio;
     }
 }

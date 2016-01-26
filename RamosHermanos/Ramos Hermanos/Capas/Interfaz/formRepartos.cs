@@ -16,5 +16,23 @@ namespace RamosHermanos.Capas.Interfaz
         {
             InitializeComponent();
         }
+
+        private void dgvRepartos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void formRepartos_Load(object sender, EventArgs e)
+        {
+            dgvRepartos.AutoGenerateColumns = false;
+        }
+
+        public void setRowNumber(DataGridView dgv)
+        {
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                row.Cells["colOrden"].Value = (row.Index + 1).ToString();
+            }
+        }
     }
 }

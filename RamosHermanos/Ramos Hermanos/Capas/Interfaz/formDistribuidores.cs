@@ -686,7 +686,19 @@ namespace RamosHermanos.Capas.Interfaz
             formRepartos frm = new formRepartos();
             frm.Show();  
 
-            frm.dgvRepartos.DataSource = ds;            
+            frm.dgvRepartos.DataSource = ds;
+            frm.dgvRepartos.DataMember = "dtItemsRecorrido";
+            frm.setRowNumber(frm.dgvRepartos);
+
+            //DataTable dt = ds.Tables["dtItemsRecorrido"];
+
+            //foreach (DataRow drow in dt.Rows)
+            //{
+            //    MessageBox.Show(Convert.ToString(drow["cliente"]));
+
+            //    //CargarItemRecorrido(row);
+            //    //itemsRecorridoB.InsertItemRecorrido(itemRecorrido);
+            //}
         }
 
         private DataSet LlenarDS()
