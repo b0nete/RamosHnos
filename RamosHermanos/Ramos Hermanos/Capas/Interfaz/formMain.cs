@@ -269,8 +269,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void generarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formPedidos frm = new formPedidos();
-            frm.Show();
+            //formPedidos frm = new formPedidos();
+            //frm.Show();
         }
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -282,6 +282,17 @@ namespace RamosHermanos.Capas.Interfaz
         private void buscarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             listInsumos frm = new listInsumos();
+            frm.Show();
+        }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buscarToolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            listPedidos frm = new listPedidos();
             frm.Show();
         }
 

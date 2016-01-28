@@ -75,6 +75,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tmrHora = new System.Windows.Forms.Timer(this.components);
+            this.pedidosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msPrincipal.SuspendLayout();
             this.pnlInfo.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +94,8 @@
             this.cajaToolStripMenuItem,
             this.administraciónToolStripMenuItem,
             this.testToolStripMenuItem,
-            this.acercaDeToolStripMenuItem});
+            this.acercaDeToolStripMenuItem,
+            this.pedidosToolStripMenuItem});
             this.msPrincipal.Location = new System.Drawing.Point(0, 0);
             this.msPrincipal.Name = "msPrincipal";
             this.msPrincipal.Size = new System.Drawing.Size(784, 24);
@@ -113,14 +117,14 @@
             // buscarToolStripMenuItem
             // 
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.buscarToolStripMenuItem.Text = "Buscar";
             this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
             // 
             // generarPedidoToolStripMenuItem
             // 
             this.generarPedidoToolStripMenuItem.Name = "generarPedidoToolStripMenuItem";
-            this.generarPedidoToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.generarPedidoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.generarPedidoToolStripMenuItem.Text = "Generar Pedido";
             this.generarPedidoToolStripMenuItem.Click += new System.EventHandler(this.generarPedidoToolStripMenuItem_Click);
             // 
@@ -130,7 +134,7 @@
             this.personaToolStripMenuItem,
             this.personaJurídicaToolStripMenuItem});
             this.registrarToolStripMenuItem.Name = "registrarToolStripMenuItem";
-            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.registrarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.registrarToolStripMenuItem.Text = "Registrar";
             // 
             // personaToolStripMenuItem
@@ -222,14 +226,14 @@
             // buscarToolStripMenuItem2
             // 
             this.buscarToolStripMenuItem2.Name = "buscarToolStripMenuItem2";
-            this.buscarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.buscarToolStripMenuItem2.Size = new System.Drawing.Size(116, 22);
             this.buscarToolStripMenuItem2.Text = "Buscar";
             this.buscarToolStripMenuItem2.Click += new System.EventHandler(this.buscarToolStripMenuItem2_Click);
             // 
             // regsitrarToolStripMenuItem
             // 
             this.regsitrarToolStripMenuItem.Name = "regsitrarToolStripMenuItem";
-            this.regsitrarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.regsitrarToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.regsitrarToolStripMenuItem.Text = "Registrar";
             this.regsitrarToolStripMenuItem.Click += new System.EventHandler(this.regsitrarToolStripMenuItem_Click);
             // 
@@ -246,14 +250,14 @@
             // buscarToolStripMenuItem3
             // 
             this.buscarToolStripMenuItem3.Name = "buscarToolStripMenuItem3";
-            this.buscarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.buscarToolStripMenuItem3.Size = new System.Drawing.Size(116, 22);
             this.buscarToolStripMenuItem3.Text = "Buscar";
             this.buscarToolStripMenuItem3.Click += new System.EventHandler(this.buscarToolStripMenuItem3_Click);
             // 
             // registrarToolStripMenuItem2
             // 
             this.registrarToolStripMenuItem2.Name = "registrarToolStripMenuItem2";
-            this.registrarToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.registrarToolStripMenuItem2.Size = new System.Drawing.Size(116, 22);
             this.registrarToolStripMenuItem2.Text = "Registrar";
             this.registrarToolStripMenuItem2.Click += new System.EventHandler(this.registrarToolStripMenuItem2_Click);
             // 
@@ -454,6 +458,29 @@
             this.tmrHora.Interval = 1000;
             this.tmrHora.Tick += new System.EventHandler(this.tmrHora_Tick);
             // 
+            // pedidosToolStripMenuItem
+            // 
+            this.pedidosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buscarToolStripMenuItem5,
+            this.generarToolStripMenuItem});
+            this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
+            this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.pedidosToolStripMenuItem.Text = "Pedidos";
+            this.pedidosToolStripMenuItem.Click += new System.EventHandler(this.pedidosToolStripMenuItem_Click);
+            // 
+            // buscarToolStripMenuItem5
+            // 
+            this.buscarToolStripMenuItem5.Name = "buscarToolStripMenuItem5";
+            this.buscarToolStripMenuItem5.Size = new System.Drawing.Size(152, 22);
+            this.buscarToolStripMenuItem5.Text = "Buscar";
+            this.buscarToolStripMenuItem5.Click += new System.EventHandler(this.buscarToolStripMenuItem5_Click);
+            // 
+            // generarToolStripMenuItem
+            // 
+            this.generarToolStripMenuItem.Name = "generarToolStripMenuItem";
+            this.generarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.generarToolStripMenuItem.Text = "Generar";
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -524,5 +551,8 @@
         private System.Windows.Forms.ToolStripMenuItem listadoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem generarPedidoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pedidosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem generarToolStripMenuItem;
     }
 }
