@@ -43,40 +43,9 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-        private void SeleccionarDgv()
-        {
-            DataGridViewCell cell = null;
-            foreach (DataGridViewCell selectedCell in dgvListadoPedidos.SelectedCells)
-            {
-                cell = selectedCell;
-                break;
-            }
-            if (cell != null)
-            {
-                DataGridViewRow row = cell.OwningRow;
-
-                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el pedido para cargarlo.
-                pedido.idPedido = Convert.ToInt32(row.Cells["colIDpedido"].Value.ToString());
-                PedidoB.BuscarIdPedido(pedido);
-                txtidpedido.Text = Convert.ToString(pedido.idPedido);
-                txtidCliente.Text = Convert.ToString(pedido.idPersona);
-                dtpFecha.Value = pedido.fechaPedido;
-                dtpEntrega.Value = pedido.fechaEntrega;
-                cbEstado.SelectedItem = pedido.estado;
-                txtObservaciones.Text = Convert.ToString(pedido.observaciones);
-                txtNombre.Text = Convert.ToString(pedido.nombre) + " " + Convert.ToString(pedido.apellido);
-                txtTotal.Text = Convert.ToString(pedido.total);                
-                tabMain.SelectedTab = tabPedido;
-                //itemsPedidoB.CargarDgvPedido(item, dgvPedido);
-                DomicilioB.CargarCB(cbDomicilio, txtidCliente);
-                
-            }
-        }
-
-
         private void formPedidos_Load(object sender, EventArgs e)
         {
-            ProductoB.CargarDGV(dgvProducto);
+            ProductoB.CargarDGV(dgvListadoPedidos);
             ClienteB.CargarDGV(dgvCliente);
             PedidoB.cargardgvPedido(dgvListadoPedidos);
             this.reportViewer1.RefreshReport();
@@ -281,7 +250,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvListadoPedidos_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            SeleccionarDgv();
+            //SeleccionarDgv();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -323,7 +292,7 @@ namespace RamosHermanos.Capas.Interfaz
             for (int i = 0; i <= filas - 2; i++ )
             {
 
-                ds.Tables["DataTable1"].Rows.Add
+                ds.Tables[0].Rows.Add
 
                     (
                     new object[] {
@@ -343,6 +312,7 @@ namespace RamosHermanos.Capas.Interfaz
             oRep.Load(ruta + rep);
             oRep.SetDataSource(ds);
             frm.crvReporte.ReportSource = oRep;
+         
         }
     }
 }

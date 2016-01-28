@@ -238,7 +238,69 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
-         
+
+        public static void CargarDGVParametros(DataGridView dgv, ComboBox cb, string parametro)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"SELECT P.idPedidos, C.idCliente, C.apellido, C.nombre, P.fechaPedido, P.estado
+                                 FROM pedidos P
+                                 INNER JOIN clientes C on P.idPersona = C.idCliente
+                                 WHERE";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idPedidos", parametro);
+                cmd.Parameters.AddWithValue("@idCliente", parametro);
+                cmd.Parameters.AddWithValue("@apellido", parametro);
+                cmd.Parameters.AddWithValue("@nombre", parametro);
+                cmd.Parameters.AddWithValue("@fechaPedido", parametro);
+                cmd.Parameters.AddWithValue("@estado", parametro);
+
+                if(cb.SelectedIndex == 0)
+                {
+                    cmd.CommandText = query + " P.idPedidos LIKE @idPedidos";
+                    
+                }
+                if (cb.SelectedIndex == 1)
+                {
+                    cmd.CommandText = query + " C.idCliente LIKE @idCliente";
+
+                }
+                if (cb.SelectedIndex == 2)
+                {
+                    cmd.CommandText = query + " P.fechaPedido LIKE @fechaPedido";
+
+                }
+                
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idPedidos"]),
+                    Convert.ToString(dr["idCliente"]),
+                    Convert.ToString(dr["apellido"]),
+                    Convert.ToString(dr["nombre"]),
+                    Convert.ToString(dr["fechaPedido"]),
+                    Convert.ToString(dr["estado"]));
+                 }
+                dr.Close();
+                MySQL.DisconnectDB();
+
+            }
+            catch (Exception ex)
+                
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            } 
+        
+        
+        }
           
     }
 }

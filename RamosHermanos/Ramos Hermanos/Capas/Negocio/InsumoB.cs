@@ -283,10 +283,10 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT I.idInsumo, P.razonSocial, MA.marca, I.Fecha, I.estado
-                                 FROM Insumos I
-                                 INNER JOIN marcas MA ON I.marca = MA.idmarca
-                                 INNER JOIN proveedores P on I.proveedor = P.razonSocial
+                string query = @"SELECT I.idInsumo, I.insumo, P.razonSocial, I.marca, I.fecha, I.estado, R.rubro
+                                 FROM insumos I
+                                 INNER JOIN proveedores P on I.proveedor = P.idProveedor
+                                 INNER JOIN rubros R on I.rubro = R.idRubro
                                  WHERE";
                 //T.tipoproducto,
                 //INNER JOIN tipoProducto T ON P.tipoProducto = T.idTipoProducto
@@ -294,10 +294,10 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@idInsumo", parametro);
-                //cmd.Parameters.AddWithValue("@tipoproductos", parametro);
+                cmd.Parameters.AddWithValue("@insumo", parametro);
                 cmd.Parameters.AddWithValue("@proveedor", parametro);
                 cmd.Parameters.AddWithValue("@marca", parametro);
-                cmd.Parameters.AddWithValue("@medida", parametro);
+                cmd.Parameters.AddWithValue("@rubro", parametro);
                 cmd.Parameters.AddWithValue("@fecha", parametro);
                 cmd.Parameters.AddWithValue("@estado", parametro);
 
@@ -305,24 +305,21 @@ namespace RamosHermanos.Capas.Negocio
                 {
                     cmd.CommandText = query + " I.idInsumo LIKE @idInsumo";
                 }
-                //if (cb.SelectedIndex == 1)
-                //{
-                //    cmd.CommandText = query + " tipoproductos LIKE @tipoproductos";
-                //}
-                //if (cb.SelectedIndex == 1)
-                //{
-                //    cmd.CommandText = query + " P.producto LIKE @producto";
-                //}
 
-                //if (cb.SelectedIndex == 2)
-                //{
-                //    cmd.CommandText = query + " P.marca LIKE @marcas";
-                //}
+                if (cb.SelectedIndex == 1)
+                {
+                    cmd.CommandText = query + " I.insumo LIKE @insumo";
+                }
 
-                ////if (cb.SelectedIndex == 3)
-                ////{
-                ////    cmd.CommandText = query + " P.medida LIKE @medida";
-                ////}
+                if (cb.SelectedIndex == 2)
+                {
+                    cmd.CommandText = query + " P.razonSocial LIKE @proveedor";
+                }
+
+                if (cb.SelectedIndex == 3)
+                {
+                    cmd.CommandText = query + " R.rubro LIKE @rubro";
+                }
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -330,10 +327,10 @@ namespace RamosHermanos.Capas.Negocio
                 {
                     dgv.Rows.Add(
                     Convert.ToString(dr["idInsumo"]),
-                        //Convert.ToString(dr["tipoproductos"]),
-                        Convert.ToString(dr["proveedor"]),
+                    Convert.ToString(dr["insumo"]),
+                    Convert.ToString(dr["razonSocial"]),
+                    Convert.ToString(dr["rubro"]),
                     Convert.ToString(dr["marca"]),
-                    Convert.ToString(dr["medida"]),
                     Convert.ToString(dr["fecha"]),
                     Convert.ToString(dr["estado"]));
                 }
