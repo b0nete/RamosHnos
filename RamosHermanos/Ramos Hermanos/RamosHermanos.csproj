@@ -274,6 +274,12 @@
     <Compile Include="Capas\Interfaz\Listados\listClientes.Designer.cs">
       <DependentUpon>listClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaz\Listados\listInsumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\Listados\listInsumos.Designer.cs">
+      <DependentUpon>listInsumos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\Listados\listProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -458,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\Listados\listClientes.resx">
       <DependentUpon>listClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\Listados\listInsumos.resx">
+      <DependentUpon>listInsumos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\Listados\listProductos.resx">
       <DependentUpon>listProductos.cs</DependentUpon>

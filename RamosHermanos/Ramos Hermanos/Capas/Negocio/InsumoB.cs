@@ -241,7 +241,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"Select I.idInsumo , I.insumo , I.fecha , P.razonSocial ,I.StockMin, R.rubro, I.marca
+                string query = @"Select I.idInsumo , I.insumo , I.fecha , I.estado, P.razonSocial ,I.StockMin, R.rubro, I.marca
                                 FROM insumos I
                                 INNER JOIN proveedores P ON I.proveedor = P.idProveedor
                                 INNER JOIN rubros R on I.rubro = R.idRubro ";
@@ -256,13 +256,86 @@ namespace RamosHermanos.Capas.Negocio
                 {
                     dgv.Rows.Add(
                     Convert.ToString(dr["idInsumo"]),
-                    Convert.ToString(dr["fecha"]),
+                    Convert.ToString(dr["insumo"]),
                     Convert.ToString(dr["razonSocial"]),
-                    Convert.ToString(dr["insumo"]),                   
-                    Convert.ToString(dr["stockMin"]),
-                    Convert.ToString(dr["rubro"]),
-                    Convert.ToString(dr["marca"]));
+                    Convert.ToString(dr["rubro"]),                   
+                    Convert.ToString(dr["marca"]),
+                    Convert.ToString(dr["fecha"]),
+                    Convert.ToString(dr["estado"]));
 
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void CargarDGVParametros(DataGridView dgv, ComboBox cb, string parametro)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"SELECT I.idInsumo, P.razonSocial, MA.marca, I.Fecha, I.estado
+                                 FROM Insumos I
+                                 INNER JOIN marcas MA ON I.marca = MA.idmarca
+                                 INNER JOIN proveedores P on I.proveedor = P.razonSocial
+                                 WHERE";
+                //T.tipoproducto,
+                //INNER JOIN tipoProducto T ON P.tipoProducto = T.idTipoProducto
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idInsumo", parametro);
+                //cmd.Parameters.AddWithValue("@tipoproductos", parametro);
+                cmd.Parameters.AddWithValue("@proveedor", parametro);
+                cmd.Parameters.AddWithValue("@marca", parametro);
+                cmd.Parameters.AddWithValue("@medida", parametro);
+                cmd.Parameters.AddWithValue("@fecha", parametro);
+                cmd.Parameters.AddWithValue("@estado", parametro);
+
+                if (cb.SelectedIndex == 0)
+                {
+                    cmd.CommandText = query + " I.idInsumo LIKE @idInsumo";
+                }
+                //if (cb.SelectedIndex == 1)
+                //{
+                //    cmd.CommandText = query + " tipoproductos LIKE @tipoproductos";
+                //}
+                //if (cb.SelectedIndex == 1)
+                //{
+                //    cmd.CommandText = query + " P.producto LIKE @producto";
+                //}
+
+                //if (cb.SelectedIndex == 2)
+                //{
+                //    cmd.CommandText = query + " P.marca LIKE @marcas";
+                //}
+
+                ////if (cb.SelectedIndex == 3)
+                ////{
+                ////    cmd.CommandText = query + " P.medida LIKE @medida";
+                ////}
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idInsumo"]),
+                        //Convert.ToString(dr["tipoproductos"]),
+                        Convert.ToString(dr["proveedor"]),
+                    Convert.ToString(dr["marca"]),
+                    Convert.ToString(dr["medida"]),
+                    Convert.ToString(dr["fecha"]),
+                    Convert.ToString(dr["estado"]));
                 }
 
                 dr.Close();

@@ -4,7 +4,7 @@ Alcances.
 3.	Listar usuarios. SI
 4.	Registrar cargos. NO
 5.	Registrar pedidos. SI
-6.	Modificar pedidos. NO
+6.	Modificar pedidos. BETA
 7.	Consultar pedidos. SI.
 8.	Listar pedidos. SI
 9.	Registrar pedido entregado. NO
@@ -36,6 +36,7 @@ Alcances.
 35.	Registrar insumos. SI
 36.	Consultar insumos. SI
 37.	Listar insumos. SI
+38.     Buscar Insumos. NO
 38.	Registrar productos. SI
 39.	Consultar productos. SI
 40.	Listar productos. SI
