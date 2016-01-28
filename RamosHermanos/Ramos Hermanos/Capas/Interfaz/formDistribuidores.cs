@@ -684,7 +684,7 @@ namespace RamosHermanos.Capas.Interfaz
             DataSet ds = LlenarDS();
 
             formRepartos frm = new formRepartos();
-            frm.Show();  
+            frm.Show();
 
             frm.dgvRepartos.DataSource = ds;
             frm.dgvRepartos.DataMember = "dtItemsRecorrido";

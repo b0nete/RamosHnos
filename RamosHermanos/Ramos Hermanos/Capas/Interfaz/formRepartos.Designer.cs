@@ -30,6 +30,29 @@
         {
             this.tabRepartos = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -61,33 +84,10 @@
             this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tabRepartos.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRepartos)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRepartos)).BeginInit();
             this.SuspendLayout();
             // 
             // tabRepartos
@@ -116,238 +116,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(223, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Distribuidor:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(291, 5);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Fecha:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(53, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 1;
-            // 
-            // dgvRepartos
-            // 
-            this.dgvRepartos.AllowUserToAddRows = false;
-            this.dgvRepartos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRepartos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colOrden,
-            this.colCliente,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17,
-            this.Column18,
-            this.Column19,
-            this.Column20,
-            this.Column21,
-            this.Column22,
-            this.Column23,
-            this.Column24,
-            this.Column25});
-            this.dgvRepartos.Location = new System.Drawing.Point(3, 31);
-            this.dgvRepartos.Name = "dgvRepartos";
-            this.dgvRepartos.Size = new System.Drawing.Size(994, 642);
-            this.dgvRepartos.TabIndex = 0;
-            this.dgvRepartos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellContentClick);
-            // 
-            // colOrden
-            // 
-            this.colOrden.HeaderText = "Nº";
-            this.colOrden.Name = "colOrden";
-            this.colOrden.Width = 30;
-            // 
-            // colCliente
-            // 
-            this.colCliente.DataPropertyName = "cliente";
-            this.colCliente.HeaderText = "Cliente";
-            this.colCliente.Name = "colCliente";
-            this.colCliente.Width = 270;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "domicilio";
-            this.Column3.HeaderText = "Domicilio";
-            this.Column3.Name = "Column3";
-            this.Column3.Visible = false;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "S";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 25;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "A";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 25;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "C";
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 25;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "C";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 25;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "P";
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 25;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "D";
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 25;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Saldo CC";
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 50;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "S";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 25;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "A";
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 25;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "C";
-            this.Column13.Name = "Column13";
-            this.Column13.Width = 25;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "C";
-            this.Column14.Name = "Column14";
-            this.Column14.Width = 25;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "P";
-            this.Column15.Name = "Column15";
-            this.Column15.Width = 25;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "D";
-            this.Column16.Name = "Column16";
-            this.Column16.Width = 25;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "S";
-            this.Column17.Name = "Column17";
-            this.Column17.Width = 25;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "A";
-            this.Column18.Name = "Column18";
-            this.Column18.Width = 25;
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "C";
-            this.Column19.Name = "Column19";
-            this.Column19.Width = 25;
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "C";
-            this.Column20.Name = "Column20";
-            this.Column20.Width = 25;
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "P";
-            this.Column21.Name = "Column21";
-            this.Column21.Width = 25;
-            // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "D";
-            this.Column22.Name = "Column22";
-            this.Column22.Width = 25;
-            // 
-            // Column23
-            // 
-            this.Column23.HeaderText = "Venta";
-            this.Column23.Name = "Column23";
-            this.Column23.Width = 50;
-            // 
-            // Column24
-            // 
-            this.Column24.HeaderText = "Cobro";
-            this.Column24.Name = "Column24";
-            this.Column24.Width = 50;
-            // 
-            // Column25
-            // 
-            this.Column25.HeaderText = "Saldo CC";
-            this.Column25.Name = "Column25";
-            this.Column25.Width = 50;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1000, 703);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -532,6 +300,241 @@
             this.textBox2.Size = new System.Drawing.Size(22, 20);
             this.textBox2.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(223, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Distribuidor:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(291, 5);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 8);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Fecha:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(53, 5);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // dgvRepartos
+            // 
+            this.dgvRepartos.AllowUserToAddRows = false;
+            this.dgvRepartos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRepartos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colOrden,
+            this.colCliente,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13,
+            this.Column14,
+            this.Column15,
+            this.Column16,
+            this.Column17,
+            this.Column18,
+            this.Column19,
+            this.Column20,
+            this.Column21,
+            this.Column22,
+            this.Column23,
+            this.Column24,
+            this.Column25});
+            this.dgvRepartos.Location = new System.Drawing.Point(3, 31);
+            this.dgvRepartos.Name = "dgvRepartos";
+            this.dgvRepartos.Size = new System.Drawing.Size(994, 642);
+            this.dgvRepartos.TabIndex = 0;
+            this.dgvRepartos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellContentClick);
+            this.dgvRepartos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellEnter);
+            this.dgvRepartos.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvRepartos_EditingControlShowing_1);
+            this.dgvRepartos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_RowEnter);
+            // 
+            // colOrden
+            // 
+            this.colOrden.HeaderText = "Nº";
+            this.colOrden.Name = "colOrden";
+            this.colOrden.Width = 30;
+            // 
+            // colCliente
+            // 
+            this.colCliente.DataPropertyName = "cliente";
+            this.colCliente.HeaderText = "Cliente";
+            this.colCliente.Name = "colCliente";
+            this.colCliente.Width = 270;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "domicilio";
+            this.Column3.HeaderText = "Domicilio";
+            this.Column3.Name = "Column3";
+            this.Column3.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "S";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 25;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "A";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 25;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "C";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 25;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "C";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 25;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "P";
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 25;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "D";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 25;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Saldo CC";
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 50;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "S";
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 25;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "A";
+            this.Column12.Name = "Column12";
+            this.Column12.Width = 25;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "C";
+            this.Column13.Name = "Column13";
+            this.Column13.Width = 25;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "C";
+            this.Column14.Name = "Column14";
+            this.Column14.Width = 25;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "P";
+            this.Column15.Name = "Column15";
+            this.Column15.Width = 25;
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "D";
+            this.Column16.Name = "Column16";
+            this.Column16.Width = 25;
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "S";
+            this.Column17.Name = "Column17";
+            this.Column17.Width = 25;
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "A";
+            this.Column18.Name = "Column18";
+            this.Column18.Width = 25;
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "C";
+            this.Column19.Name = "Column19";
+            this.Column19.Width = 25;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "C";
+            this.Column20.Name = "Column20";
+            this.Column20.Width = 25;
+            // 
+            // Column21
+            // 
+            this.Column21.HeaderText = "P";
+            this.Column21.Name = "Column21";
+            this.Column21.Width = 25;
+            // 
+            // Column22
+            // 
+            this.Column22.HeaderText = "D";
+            this.Column22.Name = "Column22";
+            this.Column22.Width = 25;
+            // 
+            // Column23
+            // 
+            this.Column23.HeaderText = "Venta";
+            this.Column23.Name = "Column23";
+            this.Column23.Width = 50;
+            // 
+            // Column24
+            // 
+            this.Column24.HeaderText = "Cobro";
+            this.Column24.Name = "Column24";
+            this.Column24.Width = 50;
+            // 
+            // Column25
+            // 
+            this.Column25.HeaderText = "Saldo CC";
+            this.Column25.Name = "Column25";
+            this.Column25.Width = 50;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1000, 703);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // formRepartos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,9 +547,9 @@
             this.tabRepartos.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRepartos)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRepartos)).EndInit();
             this.ResumeLayout(false);
 
         }

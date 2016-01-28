@@ -130,6 +130,12 @@
     <Compile Include="Capas\Interfaz\ABMs\formBuscarProv.Designer.cs">
       <DependentUpon>formBuscarProv.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaz\formCargaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\formCargaPedido.Designer.cs">
+      <DependentUpon>formCargaPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\formCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -380,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\ABMs\formBuscarProv.resx">
       <DependentUpon>formBuscarProv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\formCargaPedido.resx">
+      <DependentUpon>formCargaPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formCliente.resx">
       <DependentUpon>formCliente.cs</DependentUpon>
