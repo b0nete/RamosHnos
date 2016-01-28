@@ -109,6 +109,8 @@
             this.tabDias = new System.Windows.Forms.TabControl();
             this.tabLunes = new System.Windows.Forms.TabPage();
             this.dgvLun = new System.Windows.Forms.DataGridView();
+            this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMartes = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabMiercoles = new System.Windows.Forms.TabPage();
@@ -158,8 +160,6 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabDistribuidor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -1291,6 +1291,18 @@
             this.dgvLun.Size = new System.Drawing.Size(762, 503);
             this.dgvLun.TabIndex = 0;
             // 
+            // colCliente
+            // 
+            this.colCliente.HeaderText = "Cliente";
+            this.colCliente.Name = "colCliente";
+            this.colCliente.ReadOnly = true;
+            // 
+            // colDomicilio
+            // 
+            this.colDomicilio.HeaderText = "Domicilio";
+            this.colDomicilio.Name = "colDomicilio";
+            this.colDomicilio.ReadOnly = true;
+            // 
             // tabMartes
             // 
             this.tabMartes.Controls.Add(this.dataGridView1);
@@ -1633,6 +1645,7 @@
             this.btnDel.Size = new System.Drawing.Size(28, 28);
             this.btnDel.TabIndex = 93;
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnAdd
             // 
@@ -1754,18 +1767,6 @@
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Domingo";
             this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // colCliente
-            // 
-            this.colCliente.HeaderText = "Cliente";
-            this.colCliente.Name = "colCliente";
-            this.colCliente.ReadOnly = true;
-            // 
-            // colDomicilio
-            // 
-            this.colDomicilio.HeaderText = "Domicilio";
-            this.colDomicilio.Name = "colDomicilio";
-            this.colDomicilio.ReadOnly = true;
             // 
             // formDistribuidores
             // 

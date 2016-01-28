@@ -16,5 +16,10 @@ namespace RamosHermanos.Capas.Interfaz
         {
             InitializeComponent();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

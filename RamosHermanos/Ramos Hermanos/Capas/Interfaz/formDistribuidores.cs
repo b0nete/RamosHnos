@@ -414,6 +414,7 @@ namespace RamosHermanos.Capas.Interfaz
             itemRecorrido.calle = Convert.ToInt32(row.Cells["colLuIDcalle"].Value);
             itemRecorrido.desde = Convert.ToInt32(row.Cells["colLuDesde"].Value);
             itemRecorrido.hasta = Convert.ToInt32(row.Cells["colLuHasta"].Value);
+            itemRecorrido.sentido = Convert.ToString(row.Cells["colLuSentido"].Value);
 
             //if (itemRecorrido.desde < itemRecorrido.hasta)
             //    // "M" = Mano
@@ -646,8 +647,9 @@ namespace RamosHermanos.Capas.Interfaz
                 (
                 new object[]
                 {
-                    dtItemsRecorridoTest.Rows[i][0].ToString(),
-                    dtItemsRecorridoTest.Rows[i][1].ToString()
+                    dtItemsRecorridoTest.Rows[i][0].ToString(), //clienteCompleto
+                    dtItemsRecorridoTest.Rows[i][1].ToString(), //idDomicilio
+                    dtItemsRecorridoTest.Rows[i][2].ToString() //domicilioCompleto
                 }
                 );
             }
@@ -729,8 +731,9 @@ namespace RamosHermanos.Capas.Interfaz
                 (
                 new object[]
                 {
-                    dtItemsRecorridoTest.Rows[i][0].ToString(),
-                    dtItemsRecorridoTest.Rows[i][1].ToString()
+                    dtItemsRecorridoTest.Rows[i][0].ToString(), //clienteCompleto
+                    dtItemsRecorridoTest.Rows[i][1].ToString(), //idDomicilio
+                    dtItemsRecorridoTest.Rows[i][2].ToString() //domicilioCompleto
                 }
                 );
             }
@@ -762,6 +765,11 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
         {
 
         }

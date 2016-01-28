@@ -640,6 +640,8 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             
             private global::System.Data.DataColumn columncliente;
             
+            private global::System.Data.DataColumn columnidDomicilio;
+            
             private global::System.Data.DataColumn columndomicilio;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -680,6 +682,14 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             public global::System.Data.DataColumn clienteColumn {
                 get {
                     return this.columncliente;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idDomicilioColumn {
+                get {
+                    return this.columnidDomicilio;
                 }
             }
             
@@ -728,10 +738,11 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtItemsRecorridoRow AdddtItemsRecorridoRow(string cliente, string domicilio) {
+            public dtItemsRecorridoRow AdddtItemsRecorridoRow(string cliente, string idDomicilio, string domicilio) {
                 dtItemsRecorridoRow rowdtItemsRecorridoRow = ((dtItemsRecorridoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         cliente,
+                        idDomicilio,
                         domicilio};
                 rowdtItemsRecorridoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtItemsRecorridoRow);
@@ -756,6 +767,7 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columncliente = base.Columns["cliente"];
+                this.columnidDomicilio = base.Columns["idDomicilio"];
                 this.columndomicilio = base.Columns["domicilio"];
             }
             
@@ -764,6 +776,8 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             private void InitClass() {
                 this.columncliente = new global::System.Data.DataColumn("cliente", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncliente);
+                this.columnidDomicilio = new global::System.Data.DataColumn("idDomicilio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidDomicilio);
                 this.columndomicilio = new global::System.Data.DataColumn("domicilio", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndomicilio);
             }
@@ -1368,6 +1382,22 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string idDomicilio {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtItemsRecorrido.idDomicilioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'idDomicilio\' de la tabla \'dtItemsRecorrido\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtItemsRecorrido.idDomicilioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string domicilio {
                 get {
                     try {
@@ -1392,6 +1422,18 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetclienteNull() {
                 this[this.tabledtItemsRecorrido.clienteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsidDomicilioNull() {
+                return this.IsNull(this.tabledtItemsRecorrido.idDomicilioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetidDomicilioNull() {
+                this[this.tabledtItemsRecorrido.idDomicilioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

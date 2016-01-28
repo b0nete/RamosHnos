@@ -35,20 +35,6 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-        void text_KeyUp(object sender, KeyEventArgs e)
-        {
-            //int rowIndex = ((System.Windows.Forms.DataGridViewTextBoxEditingControl)(sender)).EditingControlRowIndex;
-
-            //if (e.KeyCode == Keys.Enter)
-            //{
-            //    if (dgvRepartos.CurrentCell.RowIndex == 4)
-            //    {
-            //        formCargaPedido frm = new formCargaPedido();
-            //        frm.Show();
-            //    }                
-            //}
-        }
-
         private void dgvRepartos_EditingControlShowing_1(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
             //DataGridViewTextBoxEditingControl dText = (DataGridViewTextBoxEditingControl)e.Control;
@@ -57,26 +43,23 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         private void dgvRepartos_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {            
-            //dgvRepartos.BeginEdit(true);
-
-            //if (dgvRepartos.CurrentCell.RowIndex == 4)
-            //{
-            //    formCargaPedido frm = new formCargaPedido();
-            //    frm.Show();
-            //}    
+        {
+            //dgvRepartos.BeginEdit(false); 
         }
 
         private void dgvRepartos_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            //if (dgvRepartos.CurrentCell.RowIndex == 4)
+            
+        }
+
+        void text_KeyUp(object sender, KeyEventArgs e)
+        {
+            //int rowIndex = Convert.ToInt32(dgvRepartos.CurrentRow);
+
+            //if (e.KeyCode == Keys.Enter)
             //{
             //    formCargaPedido frm = new formCargaPedido();
             //    frm.Show();
-            //} 
-            //else
-            //{
-            //    return;
             //}
         }
     }
