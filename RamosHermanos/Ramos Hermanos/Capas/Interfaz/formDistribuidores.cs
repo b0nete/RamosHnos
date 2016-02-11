@@ -621,39 +621,7 @@ namespace RamosHermanos.Capas.Interfaz
             string rep = @"\Capas\Reportes\Recorridos\crRecorridos.rpt";
 
             // dsHojaRuta contiene dtRecorrido y dtItemsRecorrido
-            dsRecorridos ds = new dsRecorridos();            
-
-            string fecha;
-            string dia;
-            GetFecha(out fecha, out dia); //Llenamos los strings fecha y dia de acuerdo a lo devuelto por el método GetFecha.  
-            string distribuidor = Convert.ToString(txtNombre.Text + ' ' + txtApellido.Text);
-
-            //dtRecorrido - fechaRecorrido, dia, distribuidor, numHoja
-            ds.Tables["dtRecorrido"].Rows.Add
-            (
-            fecha,
-            dia,
-            distribuidor
-            );
-
-            //dtItemsRecorrido
-            DataTable dtItemsRecorridoTest = itemsRecorridoB.GetItemsRecorrido(dgvRecorridoLu, txtIDRecorridoLu);
-
-            int rows = dtItemsRecorridoTest.Rows.Count;
-
-            for (int i = 0; i <= rows - 1; i++)
-            {
-                ds.Tables["dtItemsRecorrido"].Rows.Add
-                (
-                new object[]
-                {
-                    dtItemsRecorridoTest.Rows[i][0].ToString(), //clienteCompleto
-                    dtItemsRecorridoTest.Rows[i][1].ToString(), //idDomicilio
-                    dtItemsRecorridoTest.Rows[i][2].ToString() //domicilioCompleto
-                }
-                );
-            }
-
+            DataSet ds = GenerarReparto(); 
 
             //Cargar Reporte
             formReports frm = new formReports();
@@ -683,7 +651,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button5_Click(object sender, EventArgs e)
         {
-            DataSet ds = LlenarDS();
+            DataSet ds = GenerarReparto();
 
             formRepartos frm = new formRepartos();
             frm.Show();
@@ -692,18 +660,22 @@ namespace RamosHermanos.Capas.Interfaz
             frm.dgvRepartos.DataMember = "dtItemsRecorrido";
             frm.setRowNumber(frm.dgvRepartos);
 
-            //DataTable dt = ds.Tables["dtItemsRecorrido"];
+            //Obtenemos el numero del último comprobante.  
+            foreach (DataGridViewRow row in frm.dgvRepartos.Rows)
+            {
+                int ultFactura = FacturaB.UltimaFactura() + 1;
+                row.Cells["colComprobante"].Value = (ultFactura).ToString();
 
-            //foreach (DataRow drow in dt.Rows)
-            //{
-            //    MessageBox.Show(Convert.ToString(drow["cliente"]));
+                factura.idFactura = ultFactura;
+                factura.cliente = Convert.ToInt32(row.Cells["colIDCliente"].Value);
 
-            //    //CargarItemRecorrido(row);
-            //    //itemsRecorridoB.InsertItemRecorrido(itemRecorrido);
-            //}
+                FacturaB.InsertFactura(factura);
+            }
+
+            frm.chkGuardado.Checked = true; //Guardamos el estado del Recorrido para saber si buscarlo o volver a cargarlo.
         }
 
-        private DataSet LlenarDS()
+        private DataSet GenerarReparto()
         {
             dsRecorridos ds = new dsRecorridos();
 
@@ -731,9 +703,10 @@ namespace RamosHermanos.Capas.Interfaz
                 (
                 new object[]
                 {
-                    dtItemsRecorridoTest.Rows[i][0].ToString(), //clienteCompleto
-                    dtItemsRecorridoTest.Rows[i][1].ToString(), //idDomicilio
-                    dtItemsRecorridoTest.Rows[i][2].ToString() //domicilioCompleto
+                    dtItemsRecorridoTest.Rows[i][0].ToString(), //idCliente
+                    dtItemsRecorridoTest.Rows[i][1].ToString(), //clienteCompleto
+                    dtItemsRecorridoTest.Rows[i][2].ToString(), //idDomicilio
+                    dtItemsRecorridoTest.Rows[i][3].ToString() //domicilioCompleto
                 }
                 );
             }
@@ -773,6 +746,9 @@ namespace RamosHermanos.Capas.Interfaz
         {
 
         }
+
+        //Entidades
+        FacturaEntity factura = new FacturaEntity();
 
 
     }

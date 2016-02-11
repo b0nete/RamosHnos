@@ -50,6 +50,66 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static int UltimaFactura()
+        {
+            try
+            {
+                int idFactura;
+
+                MySQL.ConnectDB();
+
+                string query = @"SELECT MAX(idFactura) as idFactura
+                                 FROM facturas;";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                idFactura = Convert.ToInt32(cmd.ExecuteScalar());
+
+                MySQL.DisconnectDB();
+
+                return idFactura;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static FacturaEntity InsertIDFactura(FacturaEntity factura, DataGridView dgv)
+        {
+            try
+            {                
+                MySQL.ConnectDB();
+
+                string query = @"INSERT INTO Facturas (tipoFactura, numFactura, fechaFactura, fechaVencimiento, fechaEntrega, formaPago, cliente, observaciones, total, estado) 
+                                 VALUES (@tipoFactura, @numFactura, @fechaFactura, @fechaVencimiento, @fechaEntrega, @formaPago, @cliente, @observaciones, @total, @estado);
+                                 SELECT LAST_INSERT_ID();";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+
+                foreach (DataGridView row in dgv.Rows)
+                {
+                    cmd.Parameters.AddWithValue("@numFactura", factura.numFactura);
+                    cmd.Parameters.AddWithValue("@cliente", factura.cliente);
+
+                    cmd.ExecuteNonQuery();
+                }
+
+                MySQL.DisconnectDB();
+
+                return factura;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         
     }
 }

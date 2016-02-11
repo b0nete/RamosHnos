@@ -51,7 +51,7 @@
             this.dtpEntrega = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtidCliente = new System.Windows.Forms.TextBox();
+            this.txtdniCliente = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.cbEstado = new System.Windows.Forms.ComboBox();
@@ -64,6 +64,11 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.groupbox = new System.Windows.Forms.GroupBox();
             this.dgvPedido = new System.Windows.Forms.DataGridView();
+            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.lblEstado = new System.Windows.Forms.Label();
@@ -105,11 +110,6 @@
             this.colFechaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMain.SuspendLayout();
             this.tabPedido.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -203,7 +203,7 @@
             this.groupBox2.Controls.Add(this.dtpEntrega);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtidCliente);
+            this.groupBox2.Controls.Add(this.txtdniCliente);
             this.groupBox2.Controls.Add(this.btnBuscarCliente);
             this.groupBox2.Location = new System.Drawing.Point(3, 52);
             this.groupBox2.Name = "groupBox2";
@@ -353,14 +353,14 @@
             this.label2.TabIndex = 126;
             this.label2.Text = "Cliente";
             // 
-            // txtidCliente
+            // txtdniCliente
             // 
-            this.txtidCliente.Enabled = false;
-            this.txtidCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtidCliente.Location = new System.Drawing.Point(112, 19);
-            this.txtidCliente.Name = "txtidCliente";
-            this.txtidCliente.Size = new System.Drawing.Size(81, 20);
-            this.txtidCliente.TabIndex = 127;
+            this.txtdniCliente.Enabled = false;
+            this.txtdniCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtdniCliente.Location = new System.Drawing.Point(112, 19);
+            this.txtdniCliente.Name = "txtdniCliente";
+            this.txtdniCliente.Size = new System.Drawing.Size(81, 20);
+            this.txtdniCliente.TabIndex = 127;
             // 
             // btnBuscarCliente
             // 
@@ -525,6 +525,35 @@
             this.dgvPedido.TabIndex = 144;
             this.dgvPedido.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedido_CellContentClick);
             this.dgvPedido.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvPedido_CellStateChanged);
+            // 
+            // colCodigo
+            // 
+            this.colCodigo.HeaderText = "Código";
+            this.colCodigo.Name = "colCodigo";
+            this.colCodigo.ReadOnly = true;
+            // 
+            // colProducto
+            // 
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.HeaderText = "Precio Unitario";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
+            // 
+            // colSubTotal
+            // 
+            this.colSubTotal.HeaderText = "SubTotal";
+            this.colSubTotal.Name = "colSubTotal";
+            this.colSubTotal.ReadOnly = true;
             // 
             // btnEliminarProducto
             // 
@@ -871,35 +900,6 @@
             this.colEstado.ReadOnly = true;
             this.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // colCodigo
-            // 
-            this.colCodigo.HeaderText = "Código";
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.ReadOnly = true;
-            // 
-            // colProducto
-            // 
-            this.colProducto.HeaderText = "Producto";
-            this.colProducto.Name = "colProducto";
-            this.colProducto.ReadOnly = true;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.HeaderText = "Precio Unitario";
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.ReadOnly = true;
-            // 
-            // colSubTotal
-            // 
-            this.colSubTotal.HeaderText = "SubTotal";
-            this.colSubTotal.Name = "colSubTotal";
-            this.colSubTotal.ReadOnly = true;
-            // 
             // formPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -983,7 +983,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.DataGridView dgvListadoPedidos;
-        public System.Windows.Forms.TextBox txtidCliente;
+        public System.Windows.Forms.TextBox txtdniCliente;
         public System.Windows.Forms.ComboBox cbDomicilio;
         public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.TabControl tabMain;

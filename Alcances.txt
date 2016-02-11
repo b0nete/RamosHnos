@@ -36,7 +36,7 @@ Alcances.
 35.	Registrar insumos. SI
 36.	Consultar insumos. SI
 37.	Listar insumos. SI
-38.     Buscar Insumos. NO
+38.     Buscar Insumos. SI
 38.	Registrar productos. SI
 39.	Consultar productos. SI
 40.	Listar productos. SI

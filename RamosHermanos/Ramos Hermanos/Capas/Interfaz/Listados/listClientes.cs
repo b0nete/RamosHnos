@@ -265,10 +265,10 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                         cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
 
                         ClienteB.BuscarClienteID(cliente);
-                        frmP.txtidCliente.Text = Convert.ToString(cliente.idCliente);
+                        frmP.txtdniCliente.Text = Convert.ToString(cliente.numDoc);
                         frmP.txtNombre.Text = cliente.apellido + ',' + cliente.nombre;
 
-                        DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente);
+                        DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtdniCliente);
                         
                         frmP.tabMain.SelectedTab = frmP.tabPedido;
                         Close();

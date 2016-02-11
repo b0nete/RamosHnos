@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCargaPedido));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt4 = new System.Windows.Forms.TextBox();
+            this.txt10 = new System.Windows.Forms.TextBox();
+            this.txt12 = new System.Windows.Forms.TextBox();
+            this.txt20 = new System.Windows.Forms.TextBox();
+            this.txt25 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,11 +47,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnSave);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txt4);
+            this.groupBox1.Controls.Add(this.txt10);
+            this.groupBox1.Controls.Add(this.txt12);
+            this.groupBox1.Controls.Add(this.txt20);
+            this.groupBox1.Controls.Add(this.txt25);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -76,40 +76,40 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // textBox5
+            // txt4
             // 
-            this.textBox5.Location = new System.Drawing.Point(73, 111);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(66, 20);
-            this.textBox5.TabIndex = 9;
+            this.txt4.Location = new System.Drawing.Point(73, 111);
+            this.txt4.Name = "txt4";
+            this.txt4.Size = new System.Drawing.Size(66, 20);
+            this.txt4.TabIndex = 9;
             // 
-            // textBox4
+            // txt10
             // 
-            this.textBox4.Location = new System.Drawing.Point(73, 89);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(66, 20);
-            this.textBox4.TabIndex = 8;
+            this.txt10.Location = new System.Drawing.Point(73, 89);
+            this.txt10.Name = "txt10";
+            this.txt10.Size = new System.Drawing.Size(66, 20);
+            this.txt10.TabIndex = 8;
             // 
-            // textBox3
+            // txt12
             // 
-            this.textBox3.Location = new System.Drawing.Point(73, 67);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(66, 20);
-            this.textBox3.TabIndex = 7;
+            this.txt12.Location = new System.Drawing.Point(73, 67);
+            this.txt12.Name = "txt12";
+            this.txt12.Size = new System.Drawing.Size(66, 20);
+            this.txt12.TabIndex = 7;
             // 
-            // textBox2
+            // txt20
             // 
-            this.textBox2.Location = new System.Drawing.Point(73, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(66, 20);
-            this.textBox2.TabIndex = 6;
+            this.txt20.Location = new System.Drawing.Point(73, 45);
+            this.txt20.Name = "txt20";
+            this.txt20.Size = new System.Drawing.Size(66, 20);
+            this.txt20.TabIndex = 6;
             // 
-            // textBox1
+            // txt25
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(66, 20);
-            this.textBox1.TabIndex = 5;
+            this.txt25.Location = new System.Drawing.Point(73, 23);
+            this.txt25.Name = "txt25";
+            this.txt25.Size = new System.Drawing.Size(66, 20);
+            this.txt25.TabIndex = 5;
             // 
             // label5
             // 
@@ -164,6 +164,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "formCargaPedido";
             this.Text = "formCargaPedido";
+            this.Load += new System.EventHandler(this.formCargaPedido_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -175,11 +176,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt4;
+        private System.Windows.Forms.TextBox txt10;
+        private System.Windows.Forms.TextBox txt12;
+        private System.Windows.Forms.TextBox txt20;
+        private System.Windows.Forms.TextBox txt25;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

@@ -33,7 +33,7 @@ namespace RamosHermanos.Capas.Interfaz
         public void cargarPedido()
         {
             pedido.rol = 1;
-            pedido.idPersona = Convert.ToInt32(txtidCliente.Text);
+            pedido.idPersona = Convert.ToInt32(txtdniCliente.Text);
             pedido.domicilio = Convert.ToString(cbDomicilio.SelectedValue);
             pedido.observaciones = txtObservaciones.Text;
             pedido.total = Convert.ToDouble(txtTotal.Text);
@@ -45,7 +45,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formPedidos_Load(object sender, EventArgs e)
         {
-            ProductoB.CargarDGV(dgvListadoPedidos);
+            ProductoB.CargarDGV(dgvProducto);
             ClienteB.CargarDGV(dgvCliente);
             PedidoB.cargardgvPedido(dgvListadoPedidos);
             this.reportViewer1.RefreshReport();
@@ -54,7 +54,15 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            tabMain.SelectedTab = tabProducto;
+            if (txtNombre.Text == "" && txtdniCliente.Text == "") 
+            {
+                MessageBox.Show("Por favor, ingrese un cliente");
+            }
+            else
+            {
+                tabMain.SelectedTab = tabProducto;
+            }
+            
         }
 
         ProductoEntity producto = new ProductoEntity();
@@ -81,6 +89,7 @@ namespace RamosHermanos.Capas.Interfaz
                     {
                         cargarPedido();
                         PedidoB.UpdatePedido(pedido);
+                        clean();
                         //CargarItemPedido(row);
                         //itemsPedidoB.UpdateItemPedido(itemPedido, dgv);
                         
@@ -102,6 +111,7 @@ namespace RamosHermanos.Capas.Interfaz
                         itemsPedidoB.InsertItemPedido(itemPedido, dgvPedido);
                     }
                     MessageBox.Show("Pedido Guardado");
+                    clean();
 
                                         
                 }
@@ -260,7 +270,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void clean()
         {
-            txtidCliente.Text = "";
+            txtdniCliente.Text = "";
             txtidpedido.Text = "";
             txtNombre.Text = "";
             txtObservaciones.Text = "";

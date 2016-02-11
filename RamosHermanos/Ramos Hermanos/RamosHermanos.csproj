@@ -112,6 +112,7 @@
       <DependentUpon>formVehiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Interfaz\Contratos\IAddItem.cs" />
+    <Compile Include="Capas\Interfaz\Contratos\IForm.cs" />
     <Compile Include="Capas\Interfaz\formAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,11 +161,11 @@
     <Compile Include="Capas\Interfaz\formDomicilio.Designer.cs">
       <DependentUpon>formDomicilio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Capas\Interfaz\formFactura.cs">
+    <Compile Include="Capas\Interfaz\formComprobante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Capas\Interfaz\formFactura.Designer.cs">
-      <DependentUpon>formFactura.cs</DependentUpon>
+    <Compile Include="Capas\Interfaz\formComprobante.Designer.cs">
+      <DependentUpon>formComprobante.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Interfaz\formInsumos.cs">
       <SubType>Form</SubType>
@@ -314,6 +315,7 @@
     <Compile Include="Capas\Negocio\ClienteB.cs" />
     <Compile Include="Capas\Negocio\CalleB.cs" />
     <Compile Include="Capas\Negocio\itemsPedidoB.cs" />
+    <Compile Include="Capas\Negocio\itemsRepartoB.cs" />
     <Compile Include="Capas\Negocio\PedidoB.cs" />
     <Compile Include="Capas\Negocio\RecorridoB.cs" />
     <Compile Include="Capas\Negocio\itemsRecorridoB.cs" />
@@ -332,6 +334,7 @@
     <Compile Include="Capas\Negocio\ProductoB.cs" />
     <Compile Include="Capas\Negocio\ProveedorB.cs" />
     <Compile Include="Capas\Negocio\ProvinciaB.cs" />
+    <Compile Include="Capas\Negocio\RepartoB.cs" />
     <Compile Include="Capas\Negocio\RolB.cs" />
     <Compile Include="Capas\Negocio\RubroB.cs" />
     <Compile Include="Capas\Negocio\SaldoB.cs" />
@@ -365,6 +368,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crRecorridos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Capas\Reportes\Recorridos\dsRecorridos.cs">
+      <DependentUpon>dsRecorridos.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Capas\Reportes\Recorridos\dsRecorridos.Designer.cs">
@@ -414,8 +421,8 @@
     <EmbeddedResource Include="Capas\Interfaz\formDomicilio.resx">
       <DependentUpon>formDomicilio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capas\Interfaz\formFactura.resx">
-      <DependentUpon>formFactura.cs</DependentUpon>
+    <EmbeddedResource Include="Capas\Interfaz\formComprobante.resx">
+      <DependentUpon>formComprobante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formInsumos.resx">
       <DependentUpon>formInsumos.cs</DependentUpon>

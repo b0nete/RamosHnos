@@ -16,5 +16,5 @@ namespace RamosHermanos.Capas.Interfaz.Contratos
     interface GetParametro
     {
         void AddParametro(TextBox text);
-    }
+    }    
 }

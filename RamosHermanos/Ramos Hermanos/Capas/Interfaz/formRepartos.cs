@@ -7,15 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RamosHermanos.Capas.Interfaz.Contratos;
 
 namespace RamosHermanos.Capas.Interfaz
 {
-    public partial class formRepartos : Form
+    public partial class formRepartos : Form, IForm
     {
+        public string hablar;
+
+        public int row;
+        public int column;
+        //public int total;
+
         public formRepartos()
         {
             InitializeComponent();
         }
+
+        #region IForm Members
+
+        public void CompletarCelda(string total)
+        {
+            dgvRepartos[column, row].Value = Convert.ToString(Convert.ToString(total));
+        }
+
+        #endregion
 
         private void dgvRepartos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -44,7 +60,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvRepartos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            //dgvRepartos.BeginEdit(false); 
+            
         }
 
         private void dgvRepartos_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -62,5 +78,62 @@ namespace RamosHermanos.Capas.Interfaz
             //    frm.Show();
             //}
         }
+
+        private void dgvRepartos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        public void dgvRepartos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (e.KeyChar == 13)
+            //{
+            //    formCargaPedido frm = new formCargaPedido();
+
+            //    column = dgvRepartos.CurrentCell.ColumnIndex;
+            //    row = dgvRepartos.CurrentCell.RowIndex;
+
+            //    frm.Show(this);
+            //}
+        }
+
+        private void dgvRepartos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                SendKeys.Send("{TAB}");
+
+                Ejec();
+            }            
+        }
+
+        private void Ejec()
+        {
+            formCargaPedido frm = new formCargaPedido();
+
+            column = dgvRepartos.CurrentCell.ColumnIndex;
+            row = dgvRepartos.CurrentCell.RowIndex;
+
+            frm.Show(this);
+        }
+
+        private void Ejec2(KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void dgvRepartos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            // SendKeys.Send("{UP}");
+            // SendKeys.Send("{TAB}");
+        }
+
+        
+
+
     }
 }

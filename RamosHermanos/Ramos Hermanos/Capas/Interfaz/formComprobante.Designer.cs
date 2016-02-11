@@ -1,6 +1,6 @@
 ﻿namespace RamosHermanos.Capas.Interfaz
 {
-    partial class formFactura
+    partial class formComprobante
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formFactura));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formComprobante));
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabFactura = new System.Windows.Forms.TabPage();
             this.btnPrint = new System.Windows.Forms.Button();
@@ -861,17 +861,14 @@
             this.crvImpresion.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             this.crvImpresion.Load += new System.EventHandler(this.crvImpresion_Load);
             // 
-            // dsFactura
-            // 
-            // 
-            // formFactura
+            // formComprobante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 729);
             this.Controls.Add(this.tabMain);
-            this.Name = "formFactura";
-            this.Text = "Factura";
+            this.Name = "formComprobante";
+            this.Text = "Comprobante";
             this.Load += new System.EventHandler(this.formFactura_Load);
             this.tabMain.ResumeLayout(false);
             this.tabFactura.ResumeLayout(false);

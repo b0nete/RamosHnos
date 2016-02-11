@@ -15,9 +15,9 @@ using RamosHermanos.Capas.Reportes;
 
 namespace RamosHermanos.Capas.Interfaz
 {
-    public partial class formFactura : Form
+    public partial class formComprobante : Form
     {
-        public formFactura()
+        public formComprobante()
         {
             InitializeComponent();
         }

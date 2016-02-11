@@ -41,7 +41,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //formInsumos frm = new formInsumos();
-            formFactura frm = new formFactura();
+            formComprobante frm = new formComprobante();
             frm.Show();
               //Test frm = new Test();
               //frm.Show();
@@ -161,7 +161,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void ingresarGastoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formFactura frm = new formFactura();
+            formComprobante frm = new formComprobante();
             frm.Show();
         }
 
@@ -194,7 +194,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void testFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formFactura frm = new formFactura();
+            formComprobante frm = new formComprobante();
             frm.Show();
         }
 

@@ -30,6 +30,7 @@
         {
             this.tabRepartos = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.chkGuardado = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
@@ -58,8 +59,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dgvRepartos = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.colOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,7 +72,7 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colACarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,6 +86,8 @@
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabRepartos.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -104,6 +107,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.chkGuardado);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.comboBox2);
@@ -117,6 +121,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // chkGuardado
+            // 
+            this.chkGuardado.AutoSize = true;
+            this.chkGuardado.Location = new System.Drawing.Point(921, 7);
+            this.chkGuardado.Name = "chkGuardado";
+            this.chkGuardado.Size = new System.Drawing.Size(73, 17);
+            this.chkGuardado.TabIndex = 8;
+            this.chkGuardado.Text = "Guardado";
+            this.chkGuardado.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -341,6 +355,7 @@
             this.dgvRepartos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRepartos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colOrden,
+            this.colIDCliente,
             this.colCliente,
             this.colIDDomicilio,
             this.Column3,
@@ -352,7 +367,7 @@
             this.Column9,
             this.Column10,
             this.Column11,
-            this.Column12,
+            this.colACarga,
             this.Column13,
             this.Column14,
             this.Column15,
@@ -365,31 +380,32 @@
             this.Column22,
             this.Column23,
             this.Column24,
-            this.Column25});
+            this.Column25,
+            this.colComprobante});
             this.dgvRepartos.Location = new System.Drawing.Point(3, 31);
             this.dgvRepartos.Name = "dgvRepartos";
             this.dgvRepartos.Size = new System.Drawing.Size(994, 642);
             this.dgvRepartos.TabIndex = 0;
             this.dgvRepartos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellContentClick);
+            this.dgvRepartos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellDoubleClick);
+            this.dgvRepartos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellEndEdit);
             this.dgvRepartos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellEnter);
             this.dgvRepartos.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvRepartos_EditingControlShowing_1);
             this.dgvRepartos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_RowEnter);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1000, 703);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.dgvRepartos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvRepartos_KeyDown);
+            this.dgvRepartos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvRepartos_KeyPress);
             // 
             // colOrden
             // 
             this.colOrden.HeaderText = "Nº";
             this.colOrden.Name = "colOrden";
             this.colOrden.Width = 30;
+            // 
+            // colIDCliente
+            // 
+            this.colIDCliente.DataPropertyName = "idCliente";
+            this.colIDCliente.HeaderText = "ID Cliente";
+            this.colIDCliente.Name = "colIDCliente";
             // 
             // colCliente
             // 
@@ -460,11 +476,11 @@
             this.Column11.Name = "Column11";
             this.Column11.Width = 25;
             // 
-            // Column12
+            // colACarga
             // 
-            this.Column12.HeaderText = "A";
-            this.Column12.Name = "Column12";
-            this.Column12.Width = 25;
+            this.colACarga.HeaderText = "A";
+            this.colACarga.Name = "colACarga";
+            this.colACarga.Width = 25;
             // 
             // Column13
             // 
@@ -544,6 +560,21 @@
             this.Column25.Name = "Column25";
             this.Column25.Width = 50;
             // 
+            // colComprobante
+            // 
+            this.colComprobante.HeaderText = "Comprobante";
+            this.colComprobante.Name = "colComprobante";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1000, 703);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // formRepartos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -597,6 +628,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOrden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDDomicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -608,7 +640,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colACarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
@@ -622,5 +654,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colComprobante;
+        public System.Windows.Forms.CheckBox chkGuardado;
     }
 }
