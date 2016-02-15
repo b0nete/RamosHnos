@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Interfaz.Contratos;
+using RamosHermanos.Capas.Negocio;
+using RamosHermanos.Capas.Entidades;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -41,6 +43,29 @@ namespace RamosHermanos.Capas.Interfaz
         private void formRepartos_Load(object sender, EventArgs e)
         {
             dgvRepartos.AutoGenerateColumns = false;
+
+            if (chkGuardado.Checked == false)
+            {
+                foreach (DataGridViewRow row in dgvRepartos.Rows)
+                {
+                    // Buscamos el ultimo ID de factura y generamos los IDs para las nuevas facturas.
+                    int ultFactura = FacturaB.UltimaFactura() + 1;
+                    row.Cells["colComprobante"].Value = (ultFactura).ToString();
+
+                    factura.idFactura = ultFactura;
+                    factura.cliente = Convert.ToInt32(row.Cells["colIDCliente"].Value);
+
+                    //Guardamos en la DB los numeros de las facturas
+                    FacturaB.InsertFactura(factura);
+                }
+
+                //Guardamos los datos reparto del DataGridView en la DB para guardar el Reparto generado.
+                RepartoB.InsertReparto(reparto, txtReparto);
+
+                //Guardamos los items del reparto
+               // itemsRepartoB.InsertItemReparto(itemsReparto);
+
+            }
         }
 
         public void setRowNumber(DataGridView dgv)
@@ -132,8 +157,12 @@ namespace RamosHermanos.Capas.Interfaz
             // SendKeys.Send("{TAB}");
         }
 
-        
+        // Entidades
+        FacturaEntity factura = new FacturaEntity();
 
+        RepartoEntity reparto = new RepartoEntity();
+
+        itemsRepartoEntity itemsReparto = new itemsRepartoEntity();
 
     }
 }

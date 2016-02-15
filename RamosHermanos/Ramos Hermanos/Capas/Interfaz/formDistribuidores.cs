@@ -672,12 +672,14 @@ namespace RamosHermanos.Capas.Interfaz
                 FacturaB.InsertFactura(factura);
             }
 
+
             frm.chkGuardado.Checked = true; //Guardamos el estado del Recorrido para saber si buscarlo o volver a cargarlo.
         }
 
         private DataSet GenerarReparto()
         {
             dsRecorridos ds = new dsRecorridos();
+            formRepartos frm = new formRepartos();
 
             string fecha;
             string dia;
@@ -692,6 +694,11 @@ namespace RamosHermanos.Capas.Interfaz
             distribuidor
             );
 
+            //Guardamos los datos como encabezado del Reparto
+            reparto.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
+            reparto.fecha = DateTime.Today;
+            RepartoB.InsertReparto(reparto, frm.txtReparto);
+
             //dtItemsRecorrido
             DataTable dtItemsRecorridoTest = itemsRecorridoB.GetItemsRecorrido(dgvRecorridoLu, txtIDRecorridoLu);
 
@@ -703,13 +710,20 @@ namespace RamosHermanos.Capas.Interfaz
                 (
                 new object[]
                 {
-                    dtItemsRecorridoTest.Rows[i][0].ToString(), //idCliente
-                    dtItemsRecorridoTest.Rows[i][1].ToString(), //clienteCompleto
-                    dtItemsRecorridoTest.Rows[i][2].ToString(), //idDomicilio
+                    dtItemsRecorridoTest.Rows[i][0].ToString(),//idCliente
+                    dtItemsRecorridoTest.Rows[i][1].ToString(),//clienteCompleto
+                    dtItemsRecorridoTest.Rows[i][2].ToString(),//idDomicilio
                     dtItemsRecorridoTest.Rows[i][3].ToString() //domicilioCompleto
                 }
                 );
             }
+
+            //Guardamos los items del Reparto
+            foreach (DataRow dr in ds.Tables["dtItemsRecorrido"].Rows)
+            {
+                //itemsRepartoB.InsertItemReparto(itemsReparto);
+            }
+
 
             return ds;
         }
@@ -749,6 +763,10 @@ namespace RamosHermanos.Capas.Interfaz
 
         //Entidades
         FacturaEntity factura = new FacturaEntity();
+
+        RepartoEntity reparto = new RepartoEntity();
+
+        itemsRepartoEntity itemsReparto = new itemsRepartoEntity();
 
 
     }

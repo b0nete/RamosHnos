@@ -30,6 +30,8 @@
         {
             this.tabRepartos = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtReparto = new System.Windows.Forms.TextBox();
             this.chkGuardado = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox23 = new System.Windows.Forms.TextBox();
@@ -107,6 +109,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.txtReparto);
             this.tabPage1.Controls.Add(this.chkGuardado);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.label2);
@@ -121,6 +125,22 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(513, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Reparto:";
+            // 
+            // txtReparto
+            // 
+            this.txtReparto.Location = new System.Drawing.Point(567, 4);
+            this.txtReparto.Name = "txtReparto";
+            this.txtReparto.Size = new System.Drawing.Size(100, 20);
+            this.txtReparto.TabIndex = 9;
             // 
             // chkGuardado
             // 
@@ -656,5 +676,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
         private System.Windows.Forms.DataGridViewTextBoxColumn colComprobante;
         public System.Windows.Forms.CheckBox chkGuardado;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtReparto;
     }
 }

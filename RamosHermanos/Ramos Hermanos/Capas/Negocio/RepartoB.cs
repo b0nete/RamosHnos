@@ -7,11 +7,42 @@ using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using RamosHermanos.Capas.Datos;
-
+using RamosHermanos.Capas.Entidades;
 namespace RamosHermanos.Capas.Negocio
 {
     class RepartoB
     {
+        public static RepartoEntity InsertReparto(RepartoEntity reparto, TextBox txtReparto)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"INSERT INTO Repartos (distribuidor, fecha, turno) 
+                                 VALUES (distribuidor, fecha, turno);
+                                 SELECT LAST_INSERT_ID();";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@distribuidor", reparto.distribuidor);
+                cmd.Parameters.AddWithValue("@fecha", reparto.fecha);
+                cmd.Parameters.AddWithValue("@turno", reparto.turno);
+                
+                txtReparto.Text = Convert.ToString(cmd.ExecuteScalar());
+
+                MessageBox.Show("Guardado!");
+                MySQL.DisconnectDB();
+
+                return reparto;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static DataTable GenerarReparto(DataGridView dgv, TextBox txt)
         {
             try
