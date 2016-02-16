@@ -4,7 +4,7 @@ Alcances.
 3.	Listar usuarios. SI
 4.	Registrar cargos. NO
 5.	Registrar pedidos. SI
-6.	Modificar pedidos. BETA
+6.	Modificar pedidos. SI
 7.	Consultar pedidos. SI.
 8.	Listar pedidos. SI
 9.	Registrar pedido entregado. NO

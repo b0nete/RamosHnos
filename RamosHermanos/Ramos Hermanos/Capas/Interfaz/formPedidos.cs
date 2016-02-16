@@ -80,7 +80,7 @@ namespace RamosHermanos.Capas.Interfaz
             }
             else
             {
-                //pedido.idPedido = Convert.ToInt32(txtidpedido.Text); 
+                pedido.idPedido = Convert.ToInt32(txtidpedido.Text); 
                 
                 if ((txtidpedido.Text !=null && PedidoB.ExistePedido(pedido) == true))
                 {
@@ -258,7 +258,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvListadoPedidos_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //SeleccionarDgv();
+            
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

@@ -53,11 +53,11 @@ namespace RamosHermanos.Capas.Negocio
                 string query = @"SELECT I.iditemsPedido, I.pedido, I.producto, I.cantidad, I.precioUnitario, I.subTotal , P.producto
                                 FROM itemspedido I
                                 INNER JOIN productos P on P.idProducto = I.producto
-                                WHERE iditemsPedido = @iditemsPedido";
+                                WHERE I.pedido = @pedido";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@iditemsPedido", item.iditemsPedido);
+                cmd.Parameters.AddWithValue("@pedido", item.pedido);
 
                 int resultado = Convert.ToInt32(cmd.ExecuteScalar());
                 if (resultado != 0)
@@ -69,8 +69,12 @@ namespace RamosHermanos.Capas.Negocio
 
                     DataRow row = dt.Rows[0];
 
-                    item.codProducto = Convert.ToInt32(row["codProducto"]);
+                    //item.codProducto = Convert.ToInt32(row["codProducto"]);
                     item.cantidad = Convert.ToInt32(row["cantidad"]);
+                    item.pedido = Convert.ToInt32(row["pedido"]);
+                    item.preciounitario = Convert.ToDouble(row["precioUnitario"]);
+                    item.subtotal = Convert.ToDouble(row["subTotal"]);
+
                     //cliente.idCliente = Convert.ToInt32(row["idCliente"]);
                     //cliente.fechaAlta = Convert.ToDateTime(row["fechaAlta"]);
                     //cliente.tipoDoc = Convert.ToInt32(row["tipoDoc"]);

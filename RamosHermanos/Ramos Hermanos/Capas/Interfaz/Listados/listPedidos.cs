@@ -34,10 +34,12 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             
         }
 
+        itemPedidoEntity itemPedido = new itemPedidoEntity();
 
+        
         formPedidos frmP = new formPedidos();
         PedidoEntity pedido = new PedidoEntity();
-
+        itemPedidoEntity item = new itemPedidoEntity();
         private void SeleccionarDgv()
         {
             DataGridViewCell cell = null;
@@ -61,10 +63,13 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 frmP.txtObservaciones.Text = Convert.ToString(pedido.observaciones);
                 frmP.txtNombre.Text = Convert.ToString(pedido.nombre) + " " + Convert.ToString(pedido.apellido);
                 frmP.txtTotal.Text = Convert.ToString(pedido.total);
-                frmP.tabMain.SelectedTab = frmP.tabPedido;
-                //itemsPedidoB.CargarDgvPedido(item, dgvPedido);
+                item.iditemsPedido = 1;
+                
+                //itemsPedidoB.CargarDgvPedido(item, frmP.dgvPedido);
+                //CargarItemPedido(frmP.dgvPedido);
                 DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente);
-
+                frmP.Show();
+                frmP.tabMain.SelectedTab = frmP.tabPedido;
             }
         }
 

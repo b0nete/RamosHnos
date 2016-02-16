@@ -973,7 +973,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridView dgvPedido;
         private System.Windows.Forms.TabPage tabReportePedido;
         private System.Windows.Forms.GroupBox groupBox2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
@@ -1007,6 +1006,7 @@
         public System.Windows.Forms.DateTimePicker dtpEntrega;
         public System.Windows.Forms.DateTimePicker dtpFecha;
         public System.Windows.Forms.TextBox txtidpedido;
+        public System.Windows.Forms.DataGridView dgvPedido;
 
 
     }
