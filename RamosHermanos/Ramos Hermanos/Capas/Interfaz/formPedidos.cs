@@ -33,7 +33,7 @@ namespace RamosHermanos.Capas.Interfaz
         public void cargarPedido()
         {
             pedido.rol = 1;
-            pedido.idPersona = Convert.ToInt32(txtdniCliente.Text);
+            pedido.idPersona = Convert.ToInt32(txtidCliente.Text);
             pedido.domicilio = Convert.ToString(cbDomicilio.SelectedValue);
             pedido.observaciones = txtObservaciones.Text;
             pedido.total = Convert.ToDouble(txtTotal.Text);
@@ -54,7 +54,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "" && txtdniCliente.Text == "") 
+            if (txtNombre.Text == "" && txtidCliente.Text == "") 
             {
                 MessageBox.Show("Por favor, ingrese un cliente");
             }
@@ -189,8 +189,6 @@ namespace RamosHermanos.Capas.Interfaz
                 // Se recorre cada fila del DGV.
                 foreach (DataGridViewRow row in dgvPedido.Rows)
                 {
-
-                    // Se ejecutan las operaciones solo si la columna cantidad y precio tienen algún valor, ya que de lo contrario nos dará un error.
                     if (row.Cells["colCantidad"].ToString() != string.Empty && row.Cells["colPrecio"].ToString() != string.Empty)
                     {
                         row.Cells["colSubTotal"].Value = Convert.ToInt32(row.Cells["colCantidad"].Value) * Convert.ToDouble(row.Cells["colPrecio"].Value);
@@ -270,7 +268,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void clean()
         {
-            txtdniCliente.Text = "";
+            txtidCliente.Text = "";
             txtidpedido.Text = "";
             txtNombre.Text = "";
             txtObservaciones.Text = "";

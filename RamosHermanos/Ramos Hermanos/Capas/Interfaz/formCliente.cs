@@ -401,10 +401,10 @@ namespace RamosHermanos.Capas.Interfaz
                         cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
 
                         ClienteB.BuscarClienteID(cliente);
-                        frmP.txtdniCliente.Text = Convert.ToString(cliente.idCliente);
+                        frmP.txtidCliente.Text = Convert.ToString(cliente.idCliente);
                         frmP.txtNombre.Text = cliente.apellido + ',' + cliente.nombre;
 
-                        DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtdniCliente);
+                        DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente);
 
                         frmP.tabMain.SelectedTab = frmP.tabPedido;
                         Close();

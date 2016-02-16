@@ -269,8 +269,11 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void generarPedidoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //formPedidos frm = new formPedidos();
-            //frm.Show();
+            MessageBox.Show("Seleccione un Cliente");
+            listClientes frm = new listClientes();
+            frm.Show();
+            frm.caseSwitch = 1;
+           
         }
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)

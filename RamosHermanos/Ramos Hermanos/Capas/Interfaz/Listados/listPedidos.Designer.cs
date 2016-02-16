@@ -121,6 +121,7 @@
             this.dgvListadoPedidos.ReadOnly = true;
             this.dgvListadoPedidos.Size = new System.Drawing.Size(746, 686);
             this.dgvListadoPedidos.TabIndex = 55;
+            this.dgvListadoPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoPedidos_CellContentClick);
             this.dgvListadoPedidos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvListadoPedidos_MouseDoubleClick);
             // 
             // colIDpedido

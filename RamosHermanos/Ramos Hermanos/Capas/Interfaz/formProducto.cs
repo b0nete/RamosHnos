@@ -269,18 +269,26 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         private void button9_Click(object sender, EventArgs e)
+        
         {
-            //Desabilitamos todos los precios anteriores del mismo producto.
-            int idProducto = Convert.ToInt32(txtIDProd.Text);
-            PrecioProductosB.DisablePrecio(idProducto);
+            if (txtnewPrecio.Text == "")
+            {
+                MessageBox.Show("Por favor, ingrese un precio");
+            }
+            else
+            {
+                //Desabilitamos todos los precios anteriores del mismo producto.
+                int idProducto = Convert.ToInt32(txtIDProd.Text);
+                PrecioProductosB.DisablePrecio(idProducto);
 
-            //Insertamos el nuevo precio.
-            precio.producto = Convert.ToInt32(txtIDProd.Text);
-            precio.precio = Convert.ToDouble(txtnewPrecio.Text);
-            PrecioProductosB.InsertPrecio(precio);
+                //Insertamos el nuevo precio.
+                precio.producto = Convert.ToInt32(txtIDProd.Text);
+                precio.precio = Convert.ToDouble(txtnewPrecio.Text);
+                PrecioProductosB.InsertPrecio(precio);
 
-            //Actualizamos DGV
-            PrecioProductosB.UltimoPrecioDGV(dgvPrecios);
+                //Actualizamos DGV
+                PrecioProductosB.UltimoPrecioDGV(dgvPrecios);
+            }
         }
 
        // Entidades

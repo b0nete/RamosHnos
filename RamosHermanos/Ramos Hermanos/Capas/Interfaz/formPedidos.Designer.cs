@@ -51,7 +51,7 @@
             this.dtpEntrega = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtdniCliente = new System.Windows.Forms.TextBox();
+            this.txtidCliente = new System.Windows.Forms.TextBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.cbEstado = new System.Windows.Forms.ComboBox();
@@ -203,7 +203,7 @@
             this.groupBox2.Controls.Add(this.dtpEntrega);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.txtdniCliente);
+            this.groupBox2.Controls.Add(this.txtidCliente);
             this.groupBox2.Controls.Add(this.btnBuscarCliente);
             this.groupBox2.Location = new System.Drawing.Point(3, 52);
             this.groupBox2.Name = "groupBox2";
@@ -353,14 +353,14 @@
             this.label2.TabIndex = 126;
             this.label2.Text = "Cliente";
             // 
-            // txtdniCliente
+            // txtidCliente
             // 
-            this.txtdniCliente.Enabled = false;
-            this.txtdniCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtdniCliente.Location = new System.Drawing.Point(112, 19);
-            this.txtdniCliente.Name = "txtdniCliente";
-            this.txtdniCliente.Size = new System.Drawing.Size(81, 20);
-            this.txtdniCliente.TabIndex = 127;
+            this.txtidCliente.Enabled = false;
+            this.txtidCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtidCliente.Location = new System.Drawing.Point(112, 19);
+            this.txtidCliente.Name = "txtidCliente";
+            this.txtidCliente.Size = new System.Drawing.Size(81, 20);
+            this.txtidCliente.TabIndex = 127;
             // 
             // btnBuscarCliente
             // 
@@ -932,11 +932,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnGuardar;
@@ -946,11 +943,9 @@
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dtpEntrega;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TabPage tabProducto;
@@ -983,7 +978,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.DataGridView dgvListadoPedidos;
-        public System.Windows.Forms.TextBox txtdniCliente;
+        public System.Windows.Forms.TextBox txtidCliente;
         public System.Windows.Forms.ComboBox cbDomicilio;
         public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.TabControl tabMain;
@@ -1001,12 +996,17 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtiditem;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox txtidpedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
+        public System.Windows.Forms.ComboBox cbEstado;
+        public System.Windows.Forms.TextBox txtObservaciones;
+        public System.Windows.Forms.TextBox txtTotal;
+        public System.Windows.Forms.DateTimePicker dtpEntrega;
+        public System.Windows.Forms.DateTimePicker dtpFecha;
+        public System.Windows.Forms.TextBox txtidpedido;
 
 
     }

@@ -882,7 +882,6 @@
             this.txtnewPrecio.Name = "txtnewPrecio";
             this.txtnewPrecio.Size = new System.Drawing.Size(140, 20);
             this.txtnewPrecio.TabIndex = 60;
-            this.txtnewPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnewPrecio_KeyPress);
             this.txtnewPrecio.Leave += new System.EventHandler(this.txtnewPrecio_Leave);
             // 
             // label19

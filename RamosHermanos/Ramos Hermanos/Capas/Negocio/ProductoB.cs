@@ -298,7 +298,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 string query = @"SELECT P.idProducto, P.producto,PRE.idPrecioProducto, PRE.precio
                                  FROM productos P, precioproductos PRE
-                                 WHERE P.idProducto = 1 and PRE.idPrecioProducto = (SELECT MAX(idPrecioProducto) from precioproductos);";
+                                 WHERE P.idProducto = @idProducto and PRE.idPrecioProducto = (SELECT MAX(idPrecioProducto) from precioproductos);";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 

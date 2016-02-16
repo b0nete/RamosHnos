@@ -146,8 +146,7 @@ namespace RamosHermanos.Capas.Negocio
                 dgv.Rows.Clear();
 
                 string query = @"Select P.idPedidos , P.fechaPedido , P.fechaEntrega ,P.total ,P.estado, P.idPersona, C.nombre, C.apellido
-                               FROM pedidos P, clientes C
-                               WHERE idCliente= P.idPersona";
+                               FROM pedidos P, clientes C";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -191,7 +190,7 @@ namespace RamosHermanos.Capas.Negocio
                                FROM pedidos P
                                INNER JOIN clientes C on C.idCliente = P.idPersona
                                INNER JOIN domicilios D on D.idDomicilio = P.domicilio
-                               WHERE idpedidos = @idPedido";
+                               WHERE P.idpedidos = @idPedido";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
