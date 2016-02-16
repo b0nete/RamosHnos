@@ -44,5 +44,34 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static int UltimoComprobante()
+        {
+            try
+            {
+                int idComprobante;
+
+                MySQL.ConnectDB();
+
+                string query = @"SELECT MAX(idComprobante) + 1 as idComprobante
+                                 FROM itemsReparto;";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                idComprobante = Convert.ToInt32(cmd.ExecuteScalar());
+
+                //idComprobante = idComprobante == DBNull.Value ? 0 : idComprobante;
+
+                MySQL.DisconnectDB();
+
+                return idComprobante;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
     }
 }

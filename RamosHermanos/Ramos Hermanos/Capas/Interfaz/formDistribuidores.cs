@@ -660,20 +660,20 @@ namespace RamosHermanos.Capas.Interfaz
             frm.dgvRepartos.DataMember = "dtItemsRecorrido";
             frm.setRowNumber(frm.dgvRepartos);
 
-            //Obtenemos el numero del último comprobante.  
-            foreach (DataGridViewRow row in frm.dgvRepartos.Rows)
-            {
-                int ultFactura = FacturaB.UltimaFactura() + 1;
-                row.Cells["colComprobante"].Value = (ultFactura).ToString();
+            ////Obtenemos el numero del último comprobante.  
+            //foreach (DataGridViewRow row in frm.dgvRepartos.Rows)
+            //{
+            //    int ultFactura = FacturaB.UltimaFactura() + 1;
+            //    row.Cells["colComprobante"].Value = (ultFactura).ToString();
 
-                factura.idFactura = ultFactura;
-                factura.cliente = Convert.ToInt32(row.Cells["colIDCliente"].Value);
+            //    factura.idFactura = ultFactura;
+            //    factura.cliente = Convert.ToInt32(row.Cells["colIDCliente"].Value);
 
-                FacturaB.InsertFactura(factura);
-            }
+            //    FacturaB.InsertFactura(factura);
+            //}
 
 
-            frm.chkGuardado.Checked = true; //Guardamos el estado del Recorrido para saber si buscarlo o volver a cargarlo.
+            //frm.chkGuardado.Checked = true; //Guardamos el estado del Recorrido para saber si buscarlo o volver a cargarlo.
         }
 
         private DataSet GenerarReparto()
@@ -695,10 +695,11 @@ namespace RamosHermanos.Capas.Interfaz
             );
 
             //Guardamos los datos como encabezado del Reparto
+            //reparto.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
             reparto.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
             reparto.fecha = DateTime.Today;
-            RepartoB.InsertReparto(reparto, frm.txtReparto);
-
+            int numReparto = RepartoB.InsertReparto(reparto);
+            
             //dtItemsRecorrido
             DataTable dtItemsRecorridoTest = itemsRecorridoB.GetItemsRecorrido(dgvRecorridoLu, txtIDRecorridoLu);
 
@@ -721,9 +722,15 @@ namespace RamosHermanos.Capas.Interfaz
             //Guardamos los items del Reparto
             foreach (DataRow dr in ds.Tables["dtItemsRecorrido"].Rows)
             {
-                //itemsRepartoB.InsertItemReparto(itemsReparto);
-            }
+                itemsReparto.reparto = numReparto;
+                itemsReparto.cliente = Convert.ToInt32(dr["idCliente"].ToString());
+                itemsReparto.domicilio = Convert.ToInt32(dr["idDomicilio"].ToString());
+                itemsReparto.idComprobante = itemsRepartoB.UltimoComprobante();
+                itemsRepartoB.InsertItemReparto(itemsReparto);
 
+                factura.numFactura = itemsRepartoB.UltimoComprobante();
+                FacturaB.InsertFactura(factura);
+            }
 
             return ds;
         }

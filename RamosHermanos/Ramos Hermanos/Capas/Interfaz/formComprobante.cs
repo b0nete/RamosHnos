@@ -143,7 +143,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void CargarFactura()
         {
             factura.tipoFactura = cbTipoFactura.Text;
-            factura.numFactura = txtnumFactura.Text;
+            factura.numFactura = Convert.ToInt32(txtnumFactura.Text);
             factura.fechaFactura = dtpfechaFactura.Value;
             factura.fechaVencimiento = dtpVencimiento.Value;
             factura.fechaEntrega = dtpfechaEntrega.Value;

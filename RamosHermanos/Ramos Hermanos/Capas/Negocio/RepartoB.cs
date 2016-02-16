@@ -12,15 +12,17 @@ namespace RamosHermanos.Capas.Negocio
 {
     class RepartoB
     {
-        public static RepartoEntity InsertReparto(RepartoEntity reparto, TextBox txtReparto)
+        public static int InsertReparto(RepartoEntity reparto)
         {
             try
             {
+                int idReparto;
+
                 MySQL.ConnectDB();
 
                 string query = @"INSERT INTO Repartos (distribuidor, fecha, turno) 
-                                 VALUES (distribuidor, fecha, turno);
-                                 SELECT LAST_INSERT_ID();";
+                                 VALUES (@distribuidor, @fecha, @turno);
+                                 SELECT LAST_INSERT_ID()";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -28,12 +30,12 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@fecha", reparto.fecha);
                 cmd.Parameters.AddWithValue("@turno", reparto.turno);
                 
-                txtReparto.Text = Convert.ToString(cmd.ExecuteScalar());
+                idReparto = Convert.ToInt32(cmd.ExecuteScalar());
 
                 MessageBox.Show("Guardado!");
                 MySQL.DisconnectDB();
 
-                return reparto;
+                return idReparto;
             }
 
             catch (Exception ex)

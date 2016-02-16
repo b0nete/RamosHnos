@@ -60,7 +60,7 @@ namespace RamosHermanos.Capas.Interfaz
                 }
 
                 //Guardamos los datos reparto del DataGridView en la DB para guardar el Reparto generado.
-                RepartoB.InsertReparto(reparto, txtReparto);
+                //RepartoB.InsertReparto(reparto, txtReparto);
 
                 //Guardamos los items del reparto
                // itemsRepartoB.InsertItemReparto(itemsReparto);

@@ -58,12 +58,15 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySQL.ConnectDB();
 
-                string query = @"SELECT MAX(idFactura) as idFactura
+                string query = @"SELECT ISNULL(MAX(idFactura)) + 1 as idFactura
                                  FROM facturas;";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-
+                                
                 idFactura = Convert.ToInt32(cmd.ExecuteScalar());
+
+                if (idFactura == 1)
+                    idFactura = 0;
 
                 MySQL.DisconnectDB();
 

@@ -10,7 +10,7 @@ namespace RamosHermanos.Capas.Entidades
     {
         public int idFactura { get; set; }
         public string tipoFactura { get; set; }
-        public string numFactura { get; set; }
+        public int numFactura { get; set; }
         public DateTime fechaFactura { get; set; }
         public DateTime fechaVencimiento { get; set; }
         public DateTime fechaEntrega { get; set; }
