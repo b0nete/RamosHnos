@@ -42,22 +42,23 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formRepartos_Load(object sender, EventArgs e)
         {
+            DistribuidorB.CargarCBDistrib(cbDistribuidores);
             dgvRepartos.AutoGenerateColumns = false;
 
             if (chkGuardado.Checked == false)
             {
-                foreach (DataGridViewRow row in dgvRepartos.Rows)
-                {
-                    // Buscamos el ultimo ID de factura y generamos los IDs para las nuevas facturas.
-                    int ultFactura = FacturaB.UltimaFactura() + 1;
-                    row.Cells["colComprobante"].Value = (ultFactura).ToString();
+                //foreach (DataGridViewRow row in dgvRepartos.Rows)
+                //{
+                //    // Buscamos el ultimo ID de factura y generamos los IDs para las nuevas facturas.
+                //    int ultFactura = FacturaB.UltimaFactura() + 1;
+                //    row.Cells["colComprobante"].Value = (ultFactura).ToString();
 
-                    factura.idFactura = ultFactura;
-                    factura.cliente = Convert.ToInt32(row.Cells["colIDCliente"].Value);
+                //    factura.idFactura = ultFactura;
+                //    factura.cliente = Convert.ToInt32(row.Cells["colIDCliente"].Value);
 
-                    //Guardamos en la DB los numeros de las facturas
-                    FacturaB.InsertFactura(factura);
-                }
+                //    //Guardamos en la DB los numeros de las facturas
+                //    FacturaB.InsertFactura(factura);
+                //}
 
                 //Guardamos los datos reparto del DataGridView en la DB para guardar el Reparto generado.
                 //RepartoB.InsertReparto(reparto, txtReparto);

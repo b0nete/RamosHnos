@@ -53,14 +53,15 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySQL.ConnectDB();
 
-                string query = @"SELECT MAX(idComprobante) + 1 as idComprobante
+                string query = @"SELECT MAX(idComprobante) as idComprobante
                                  FROM itemsReparto;";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                idComprobante = Convert.ToInt32(cmd.ExecuteScalar());
+                //idComprobante = Convert.ToInt32(cmd.ExecuteScalar());
+                //visita.olunes = reader["olunes"] == DBNull.Value ? 0 : Convert.ToInt32(reader["olunes"]);
 
-                //idComprobante = idComprobante == DBNull.Value ? 0 : idComprobante;
+                idComprobante = cmd.ExecuteScalar() == DBNull.Value ? 0 : Convert.ToInt32(cmd.ExecuteScalar());
 
                 MySQL.DisconnectDB();
 

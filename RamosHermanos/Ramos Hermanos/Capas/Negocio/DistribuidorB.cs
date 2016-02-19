@@ -326,6 +326,32 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void CargarCBDistrib(ComboBox cb)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQL.ConnectDB();
+
+                string query = "SELECT idDistribuidor, CONCAT(apellido,' ',nombre) as nombreCompleto FROM Distribuidores";  
+
+                ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                  MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                  da.Fill(dt);
+
+                  cb.DataSource = dt;
+                  cb.DisplayMember = "nombreComplet";
+                  cb.ValueMember = "idDistribuidor";
+
+                  MySQL.DisconnectDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR" + ex);
+            }
+        }
+
         
         
     }

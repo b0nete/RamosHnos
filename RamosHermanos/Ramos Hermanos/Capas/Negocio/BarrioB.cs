@@ -29,7 +29,6 @@ namespace RamosHermanos.Capas.Negocio
                 return false;
             else
                 return true;
-
         }
 
         public static BarrioEntity UpdateBarrio(BarrioEntity barrio)

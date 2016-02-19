@@ -12,5 +12,6 @@ namespace RamosHermanos.Capas.Entidades
         public int distribuidor { get; set; }
         public DateTime fecha { get; set; }
         public string turno { get; set; }
+        public bool generado { get; set; }
     }
 }

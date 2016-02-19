@@ -1573,7 +1573,7 @@
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(666, 475);
+            this.button5.Location = new System.Drawing.Point(700, 475);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(28, 28);
             this.button5.TabIndex = 99;
@@ -1585,7 +1585,7 @@
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(700, 475);
+            this.button3.Location = new System.Drawing.Point(478, 472);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(28, 28);
             this.button3.TabIndex = 98;
@@ -1622,6 +1622,7 @@
             this.txtIDRecorridoLu.Name = "txtIDRecorridoLu";
             this.txtIDRecorridoLu.Size = new System.Drawing.Size(60, 20);
             this.txtIDRecorridoLu.TabIndex = 95;
+            this.txtIDRecorridoLu.Visible = false;
             // 
             // btnSaveRecLu
             // 

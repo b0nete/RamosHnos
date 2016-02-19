@@ -651,29 +651,27 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button5_Click(object sender, EventArgs e)
         {
-            DataSet ds = GenerarReparto();
-
             formRepartos frm = new formRepartos();
             frm.Show();
 
-            frm.dgvRepartos.DataSource = ds;
-            frm.dgvRepartos.DataMember = "dtItemsRecorrido";
-            frm.setRowNumber(frm.dgvRepartos);
+            // Verificamos que ya no se haya generado un reparto para ese mismo día y el mismo distribuidor.
+            reparto.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
+            reparto.fecha = DateTime.Today;
 
-            ////Obtenemos el numero del último comprobante.  
-            //foreach (DataGridViewRow row in frm.dgvRepartos.Rows)
-            //{
-            //    int ultFactura = FacturaB.UltimaFactura() + 1;
-            //    row.Cells["colComprobante"].Value = (ultFactura).ToString();
+            if (RepartoB.ExisteReparto(reparto) == true)
+            {
+                RepartoB.BuscarReparto(reparto);
 
-            //    factura.idFactura = ultFactura;
-            //    factura.cliente = Convert.ToInt32(row.Cells["colIDCliente"].Value);
+                
+            }
+            else
+            {
+                DataSet ds = GenerarReparto();
 
-            //    FacturaB.InsertFactura(factura);
-            //}
-
-
-            //frm.chkGuardado.Checked = true; //Guardamos el estado del Recorrido para saber si buscarlo o volver a cargarlo.
+                frm.dgvRepartos.DataSource = ds;
+                frm.dgvRepartos.DataMember = "dtItemsRecorrido";
+                frm.setRowNumber(frm.dgvRepartos);
+            }
         }
 
         private DataSet GenerarReparto()
@@ -698,6 +696,7 @@ namespace RamosHermanos.Capas.Interfaz
             //reparto.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
             reparto.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
             reparto.fecha = DateTime.Today;
+            reparto.generado = true;
             int numReparto = RepartoB.InsertReparto(reparto);
             
             //dtItemsRecorrido
@@ -725,10 +724,11 @@ namespace RamosHermanos.Capas.Interfaz
                 itemsReparto.reparto = numReparto;
                 itemsReparto.cliente = Convert.ToInt32(dr["idCliente"].ToString());
                 itemsReparto.domicilio = Convert.ToInt32(dr["idDomicilio"].ToString());
-                itemsReparto.idComprobante = itemsRepartoB.UltimoComprobante();
+                itemsReparto.idComprobante = itemsRepartoB.UltimoComprobante() + 1;
                 itemsRepartoB.InsertItemReparto(itemsReparto);
 
-                factura.numFactura = itemsRepartoB.UltimoComprobante();
+                factura.numFactura = itemsRepartoB.UltimoComprobante() + 1;
+                factura.cliente = Convert.ToInt32(dr["idCliente"].ToString());
                 FacturaB.InsertFactura(factura);
             }
 

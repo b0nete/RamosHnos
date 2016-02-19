@@ -12,6 +12,26 @@ namespace RamosHermanos.Capas.Negocio
 {
     class RepartoB
     {
+        public static bool ExisteReparto(RepartoEntity reparto)
+        {
+            MySQL.ConnectDB();
+
+            string query = @"SELECT COUNT(*) FROM Repartos
+                             WHERE distribuidor = @distribuidor and fecha = @fecha";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+            cmd.Parameters.AddWithValue("@fecha", reparto.fecha);
+            cmd.Parameters.AddWithValue("@distribuidor", reparto.distribuidor);
+
+            int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (resultado == 0)
+                return false;
+            else
+                return true;
+        }
+
         public static int InsertReparto(RepartoEntity reparto)
         {
             try
@@ -29,7 +49,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@distribuidor", reparto.distribuidor);
                 cmd.Parameters.AddWithValue("@fecha", reparto.fecha);
                 cmd.Parameters.AddWithValue("@turno", reparto.turno);
-                
+
                 idReparto = Convert.ToInt32(cmd.ExecuteScalar());
 
                 MessageBox.Show("Guardado!");
@@ -95,5 +115,46 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static RepartoEntity BuscarReparto(RepartoEntity reparto)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = "SELECT * FROM Repartos WHERE fecha = @fecha and distribuidor = @distribuidor";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@fecha", reparto.fecha);
+                cmd.Parameters.AddWithValue("@distribuidor", reparto.distribuidor);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado != 0)
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    DataRow row = dt.Rows[0];
+
+                    reparto.fecha = Convert.ToDateTime(row["fecha"]);
+                    reparto.distribuidor = Convert.ToInt32(row["distribuidor"]);
+
+                    MySQL.DisconnectDB();
+                }
+
+                return reparto;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+
     }
 }
