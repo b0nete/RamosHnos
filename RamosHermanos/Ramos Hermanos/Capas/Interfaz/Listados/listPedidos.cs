@@ -27,6 +27,14 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                         
         }
 
+        public void CargarItemPedido(DataGridViewRow row)
+        {
+            itemPedido.pedido = Convert.ToInt32((row.Cells["colIDpedido"].Value));
+            //itemPedido.iditemsPedido = Convert.ToInt32(row.Cells["colIdClient"].Value);
+            //itemPedido.preciounitario = Convert.ToDouble(row.Cells["colPrecio"].Value);
+            //itemPedido.subtotal = Convert.ToDouble(row.Cells["colSubTotal"].Value);
+
+        }
         private void SearchParametro()
         {
             string parametro = '%' + txtParametro.Text + '%';
@@ -63,10 +71,10 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 frmP.txtObservaciones.Text = Convert.ToString(pedido.observaciones);
                 frmP.txtNombre.Text = Convert.ToString(pedido.nombre) + " " + Convert.ToString(pedido.apellido);
                 frmP.txtTotal.Text = Convert.ToString(pedido.total);
-                item.iditemsPedido = 1;
                 
-                //itemsPedidoB.CargarDgvPedido(item, frmP.dgvPedido);
-                //CargarItemPedido(frmP.dgvPedido);
+                CargarItemPedido(row);
+                itemsPedidoB.CargarDgvPedido(item , frmP.dgvPedido);
+                
                 DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente);
                 frmP.Show();
                 frmP.tabMain.SelectedTab = frmP.tabPedido;

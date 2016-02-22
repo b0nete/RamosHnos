@@ -120,12 +120,11 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool VerificarCampos()
         {
-            if (txtNombre.Text == string.Empty)
+            if (txtNombre.Text == string.Empty )
             {
                 MessageBox.Show("Campos Obligatorios Incompletos");
                 return false;
-
-
+                
             }
             return true;
 
