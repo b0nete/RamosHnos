@@ -661,8 +661,12 @@ namespace RamosHermanos.Capas.Interfaz
             if (RepartoB.ExisteReparto(reparto) == true)
             {
                 RepartoB.BuscarReparto(reparto);
+                frm.dtpFechaReparto.Value = reparto.fecha;
+                frm.cbDistribuidores.SelectedValue = reparto.distribuidor;
+                frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
 
-                
+                itemsReparto.reparto = reparto.idReparto;
+                frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
             }
             else
             {

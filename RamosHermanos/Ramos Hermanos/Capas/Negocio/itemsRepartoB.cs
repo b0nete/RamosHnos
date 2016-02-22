@@ -74,5 +74,37 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static DataTable BuscarItemsReparto(itemsRepartoEntity itemsReparto)
+        {
+            try
+            {                
+                MySQL.ConnectDB();
+                DataTable dt = new DataTable();
+
+                string query = @"SELECT IR.cliente as idCliente, CONCAT(C.nombre, ' ', C.apellido) as clienteCompleto, IR.domicilio as idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) as domicilioCompleto, IR.idComprobante
+                                 FROM itemsReparto IR
+                                 INNER JOIN Clientes C ON C.idCliente = IR.cliente
+                                 INNER JOIN Domicilios D ON D.idDomicilio = IR.domicilio
+                                 INNER JOIN Calles CC ON D.Calle = CC.idCalle
+                                 WHERE reparto = @reparto";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@reparto", itemsReparto.reparto);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+
+                MySQL.DisconnectDB();
+                return dt;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
     }
 }

@@ -341,7 +341,7 @@ namespace RamosHermanos.Capas.Negocio
                   da.Fill(dt);
 
                   cb.DataSource = dt;
-                  cb.DisplayMember = "nombreComplet";
+                  cb.DisplayMember = "nombreCompleto";
                   cb.ValueMember = "idDistribuidor";
 
                   MySQL.DisconnectDB();

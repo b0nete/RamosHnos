@@ -141,6 +141,7 @@ namespace RamosHermanos.Capas.Negocio
 
                     reparto.fecha = Convert.ToDateTime(row["fecha"]);
                     reparto.distribuidor = Convert.ToInt32(row["distribuidor"]);
+                    reparto.idReparto = Convert.ToInt32(row["idReparto"]);
 
                     MySQL.DisconnectDB();
                 }

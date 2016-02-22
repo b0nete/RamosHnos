@@ -30,6 +30,7 @@
         {
             this.tabRepartos = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dtpFechaReparto = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.txtReparto = new System.Windows.Forms.TextBox();
             this.chkGuardado = new System.Windows.Forms.CheckBox();
@@ -60,6 +61,7 @@
             this.cbDistribuidores = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvRepartos = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.colOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,8 +90,6 @@
             this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabRepartos.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -109,7 +109,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.dateTimePicker1);
+            this.tabPage1.Controls.Add(this.dtpFechaReparto);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.txtReparto);
             this.tabPage1.Controls.Add(this.chkGuardado);
@@ -125,6 +125,14 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dtpFechaReparto
+            // 
+            this.dtpFechaReparto.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaReparto.Location = new System.Drawing.Point(55, 4);
+            this.dtpFechaReparto.Name = "dtpFechaReparto";
+            this.dtpFechaReparto.Size = new System.Drawing.Size(127, 20);
+            this.dtpFechaReparto.TabIndex = 11;
             // 
             // label3
             // 
@@ -407,6 +415,16 @@
             this.dgvRepartos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvRepartos_KeyDown);
             this.dgvRepartos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvRepartos_KeyPress);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1000, 703);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // colOrden
             // 
             this.colOrden.HeaderText = "Nº";
@@ -421,7 +439,7 @@
             // 
             // colCliente
             // 
-            this.colCliente.DataPropertyName = "cliente";
+            this.colCliente.DataPropertyName = "clienteCompleto";
             this.colCliente.HeaderText = "Cliente";
             this.colCliente.Name = "colCliente";
             this.colCliente.Width = 270;
@@ -435,7 +453,7 @@
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "domicilio";
+            this.Column3.DataPropertyName = "domicilioCompleto";
             this.Column3.HeaderText = "Domicilio";
             this.Column3.Name = "Column3";
             this.Column3.Visible = false;
@@ -574,26 +592,9 @@
             // 
             // colComprobante
             // 
+            this.colComprobante.DataPropertyName = "idComprobante";
             this.colComprobante.HeaderText = "Comprobante";
             this.colComprobante.Name = "colComprobante";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1000, 703);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(55, 4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(127, 20);
-            this.dateTimePicker1.TabIndex = 11;
             // 
             // formRepartos
             // 
@@ -620,7 +621,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cbDistribuidores;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.DataGridView dgvRepartos;
         private System.Windows.Forms.Panel panel1;
@@ -646,6 +646,11 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.CheckBox chkGuardado;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtReparto;
+        public System.Windows.Forms.ComboBox cbDistribuidores;
+        public System.Windows.Forms.DateTimePicker dtpFechaReparto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOrden;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCliente;
@@ -674,9 +679,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
         private System.Windows.Forms.DataGridViewTextBoxColumn colComprobante;
-        public System.Windows.Forms.CheckBox chkGuardado;
-        private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox txtReparto;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
