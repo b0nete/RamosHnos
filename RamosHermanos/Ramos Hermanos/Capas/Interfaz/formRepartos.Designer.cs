@@ -436,6 +436,7 @@
             this.colIDCliente.DataPropertyName = "idCliente";
             this.colIDCliente.HeaderText = "ID Cliente";
             this.colIDCliente.Name = "colIDCliente";
+            this.colIDCliente.Visible = false;
             // 
             // colCliente
             // 

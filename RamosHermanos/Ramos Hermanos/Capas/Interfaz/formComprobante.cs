@@ -118,9 +118,12 @@ namespace RamosHermanos.Capas.Interfaz
             CargarFactura();
             FacturaB.InsertFactura(factura);
 
-            itemFactura.factura = txtnumFactura.Text;
-            CargarItemFactura();
-            itemsFacturaB.InsertItemFactura(itemFactura, dgvFactura);
+            foreach (DataGridViewRow row in dgvFactura.Rows)
+            {
+                itemFactura.factura = txtnumFactura.Text;
+                CargarItemFactura(row);
+                itemsFacturaB.InsertItemFactura(itemFactura, dgvFactura);
+            }
         }
 
         // Metodos
@@ -155,10 +158,8 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         itemFacturaEntity itemFactura = new itemFacturaEntity();
-        private void CargarItemFactura()
+        private void CargarItemFactura(DataGridViewRow row)
         {
-            DataGridViewRow row = new DataGridViewRow();
-
             itemFactura.producto = Convert.ToInt32(row.Cells["colCodigo"].Value);
             itemFactura.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
             itemFactura.precioUnitario = Convert.ToDouble(row.Cells["colPrecio"].Value);
