@@ -14,6 +14,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 {
     public partial class listProveedores : Form
     {
+        public int caseSwitch = 2;
         public listProveedores()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 
         formProveedor frmP = new formProveedor();
         ProveedorEntity proveedor = new ProveedorEntity();
+
 
         private void SeleccionarDGV()
         {
@@ -64,6 +66,38 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             }
         }
 
+        formCompras frm = new formCompras();
+        
+        private void SeleccionarDGVCompras()
+        {
+
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvProveedores.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+                //frm.Show();
+                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+                proveedor.idProveedor = Convert.ToInt32(row.Cells["colIDProveedor"].Value.ToString());
+                ProveedorB.BuscarIdProv(proveedor);
+                frm.txtIDproveedor.Text= Convert.ToString(proveedor.idProveedor);
+                frm.txtNameProveedor.Text = proveedor.razsocial;
+                frm.txtCuil.Text = proveedor.cuit;
+                frm.txtCondicionIva.Text = proveedor.condicioniva;
+                DomicilioB.CargarCB(frm.cbDomicilio, frm.txtIDproveedor, "2");
+                //EmailB.CargarTXT(frmP.txtEmail, frmP.txtidprov, 2);
+                TelefonoB.CargarTXT(frm.txtTel, frm.txtIDproveedor, 2);
+
+                //frmP.tabProveedor.SelectedTab = frmP.tabInformacion;
+                Close();
+            }
+        }
+
+
         private void listProveedores_Load(object sender, EventArgs e)
         {
             ProveedorB.cargardgv(dgvProveedores);
@@ -77,7 +111,19 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
         private void dgvProveedores_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            SeleccionarDGV();
+            switch (caseSwitch)
+            {
+                case 1:
+                    SeleccionarDGVCompras();
+                    break;
+                case 2:
+                    SeleccionarDGV();
+                    break;
+                default:
+                    Console.WriteLine("Default case");
+                    break;
+            }
+            
         }
 
         private void txtParametro_TextChanged(object sender, EventArgs e)

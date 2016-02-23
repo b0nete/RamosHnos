@@ -404,7 +404,7 @@ namespace RamosHermanos.Capas.Interfaz
                         frmP.txtidCliente.Text = Convert.ToString(cliente.idCliente);
                         frmP.txtNombre.Text = cliente.apellido + ',' + cliente.nombre;
 
-                        DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente);
+                        DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente, "1");
 
                         frmP.tabMain.SelectedTab = frmP.tabPedido;
                         Close();
@@ -709,7 +709,7 @@ namespace RamosHermanos.Capas.Interfaz
                     CasePersona();
 
                     // ----------------- Cargas Visita ----------------- //
-                    DomicilioB.CargarCB(cbDomicilio, txtIDcliente);
+                    DomicilioB.CargarCB(cbDomicilio, txtIDcliente, "1");
 
                 }
                 else if (cliente.tipoPersona == "PJ")
@@ -1231,7 +1231,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void cbDomicilio_DropDown(object sender, EventArgs e)
         {
-            DomicilioB.CargarCB(cbDomicilio, txtIDcliente);
+            DomicilioB.CargarCB(cbDomicilio, txtIDcliente, "1");
         }
 
         VisitaEntity v = new VisitaEntity();

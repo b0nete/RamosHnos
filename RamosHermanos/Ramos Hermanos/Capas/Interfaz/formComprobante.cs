@@ -80,7 +80,7 @@ namespace RamosHermanos.Capas.Interfaz
                 txtIVA.Text = cliente.condicionIVA;
                 //txtDomicilio.Text
 
-                DomicilioB.CargarCB(cbDomicilio, txtIDcliente);
+                DomicilioB.CargarCB(cbDomicilio, txtIDcliente, "1");
 
                 tabMain.SelectedTab = tabFactura;
             }

@@ -199,7 +199,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void CargarCB(ComboBox cb, TextBox txt)
+        public static void CargarCB(ComboBox cb, TextBox txt, string rol)
         {
             try
             {
@@ -214,7 +214,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@rol", 1);
+                cmd.Parameters.AddWithValue("@rol", rol);
                 cmd.Parameters.AddWithValue("@idPersona", txt.Text);
 
                 DataTable dt = new DataTable();

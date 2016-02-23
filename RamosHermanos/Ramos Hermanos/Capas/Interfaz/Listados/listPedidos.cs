@@ -75,7 +75,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 CargarItemPedido(row);
                 itemsPedidoB.CargarDgvPedido(item , frmP.dgvPedido);
                 
-                DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente);
+                DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente, "1");
                 frmP.Show();
                 frmP.tabMain.SelectedTab = frmP.tabPedido;
             }
