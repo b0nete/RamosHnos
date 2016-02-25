@@ -90,7 +90,8 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
-        public static void CargarDGV (DataGridView DGV)
+
+        public static void CargarDGVRubro (DataGridView DGV)
         {
             DGV.Rows.Clear();
             MySQL.ConnectDB();
@@ -108,7 +109,6 @@ namespace RamosHermanos.Capas.Negocio
                 Convert.ToString(DR["estado"]));
             }
               DR.Close();
- 
         }
 
         public static void CargarDGVproveedor(DataGridView DGV)
@@ -158,6 +158,97 @@ namespace RamosHermanos.Capas.Negocio
                 MessageBox.Show("ERROR" + ex);
             }
         }
+
+        public static void CargarSubRubro1(ComboBox cbRubro, Label lblSubRubro1, Label lblSubRubro2, ComboBox cbSubRubro1, ComboBox cbSubRubro2)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQL.ConnectDB();
+
+                string query = @"SELECT *
+                                 FROM SubRubro1Productos
+                                 WHERE rubro = @rubro";  
+                
+                ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                  cmd.Parameters.AddWithValue("@rubro", cbRubro.SelectedValue);
+
+                  int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+                  if (resultado == 0)
+                  {
+                      lblSubRubro1.Visible = false;
+                      cbSubRubro1.Visible = false;
+
+                      lblSubRubro2.Visible = false;
+                      cbSubRubro2.Visible = false;
+                  }
+                  else
+                  {
+                      MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                      da.Fill(dt);
+
+                      lblSubRubro1.Visible = true;
+                      cbSubRubro1.Visible = true;
+
+                      cbSubRubro1.DataSource = dt;
+                      cbSubRubro1.DisplayMember = "SubRubro1";
+                      cbSubRubro1.ValueMember = "idSubRubro1";
+                  }
+
+                  MySQL.DisconnectDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR" + ex);
+            }
+        }
+
+        public static void CargarSubRubro2(ComboBox cbSubRubro1, Label lblSubRubro2, ComboBox cbSubRubro2)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                MySQL.ConnectDB();
+
+                string query = @"SELECT *
+                                 FROM SubRubro2Productos
+                                 WHERE rubro = @rubro";  
+                
+                ﻿﻿MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                  cmd.Parameters.AddWithValue("@rubro", cbSubRubro1.SelectedValue);
+
+                  int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+                  if (resultado == 0)
+                  {
+                      lblSubRubro2.Visible = false;
+                      cbSubRubro2.Visible = false;
+                  }
+                  else
+                  {
+                      MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                      da.Fill(dt);
+
+                      lblSubRubro2.Visible = true;
+                      cbSubRubro2.Visible = true;
+
+                      cbSubRubro2.DataSource = dt;
+                      cbSubRubro2.DisplayMember = "SubRubro2";
+                      cbSubRubro2.ValueMember = "idSubRubro2";
+                  }
+
+                  MySQL.DisconnectDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR" + ex);
+            }
+        }
+
+        
 
 
     }

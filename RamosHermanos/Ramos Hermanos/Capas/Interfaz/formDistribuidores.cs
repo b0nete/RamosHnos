@@ -651,30 +651,37 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button5_Click(object sender, EventArgs e)
         {
-            formRepartos frm = new formRepartos();
-            frm.Show();
-
-            // Verificamos que ya no se haya generado un reparto para ese mismo día y el mismo distribuidor.
-            reparto.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
-            reparto.fecha = DateTime.Today;
-
-            if (RepartoB.ExisteReparto(reparto) == true)
+            if (dgvRecorridoLu.Rows.Count == 0)
             {
-                RepartoB.BuscarReparto(reparto);
-                frm.dtpFechaReparto.Value = reparto.fecha;
-                frm.cbDistribuidores.SelectedValue = reparto.distribuidor;
-                frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
-
-                itemsReparto.reparto = reparto.idReparto;
-                frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
+                MessageBox.Show("No existe ningun recorrido!");
             }
             else
             {
-                DataSet ds = GenerarReparto();
+                formRepartos frm = new formRepartos();
+                frm.Show();
 
-                frm.dgvRepartos.DataSource = ds;
-                frm.dgvRepartos.DataMember = "dtItemsRecorrido";
-                frm.setRowNumber(frm.dgvRepartos);
+                // Verificamos que ya no se haya generado un reparto para ese mismo día y el mismo distribuidor.
+                reparto.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
+                reparto.fecha = DateTime.Today;
+
+                if (RepartoB.ExisteReparto(reparto) == true)
+                {
+                    RepartoB.BuscarReparto(reparto);
+                    frm.dtpFechaReparto.Value = reparto.fecha;
+                    frm.cbDistribuidores.SelectedValue = reparto.distribuidor;
+                    frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
+
+                    itemsReparto.reparto = reparto.idReparto;
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
+                }
+                else
+                {
+                    DataSet ds = GenerarReparto();
+
+                    frm.dgvRepartos.DataSource = ds;
+                    frm.dgvRepartos.DataMember = "dtItemsRecorrido";
+                    frm.setRowNumber(frm.dgvRepartos);
+                }
             }
         }
 
@@ -751,7 +758,7 @@ namespace RamosHermanos.Capas.Interfaz
                     return;
                 }
                 
-                if (Convert.ToInt32(row.Cells["colLuDesde"].Value) > Convert.ToInt32(row.Cells["colLuHasta"].Value))
+                if (Convert.ToInt32(row.Cells["colLuDesde"].Value) < Convert.ToInt32(row.Cells["colLuHasta"].Value))
                 {
                     row.Cells["colLuSentido"].Value = "M";
                 }

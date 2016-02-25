@@ -260,12 +260,12 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void cbSubRubro1_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            
+            RubroB.CargarSubRubro2(cbSubRubro1, lblSubRubro2, cbSubRubro2);
         }
 
         private void cbRubro_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            ProductoB.CargarSubRubros(cbSubRubro1, cbRubro);
+            RubroB.CargarSubRubro1(cbRubro, lblSubRubro1, lblSubRubro2, cbSubRubro1, cbSubRubro2);
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -319,7 +319,22 @@ namespace RamosHermanos.Capas.Interfaz
                 e.KeyChar = ',';
             }
         }
-        
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            CargarStock();
+            StockB.InsertStock(stock);
+        }
+
+        // Entidades
+        StockEntity stock = new StockEntity();
+        private void CargarStock()
+        {
+            stock.productoInsumo = "P";
+            stock.idProductoInsumo = txtIDProd.Text;
+            stock.stockMinimo = Convert.ToInt32(txtStockMin.Text);
+            stock.stockMaximo = Convert.ToInt32(txtStockMax.Text);
+        }
 
         
 

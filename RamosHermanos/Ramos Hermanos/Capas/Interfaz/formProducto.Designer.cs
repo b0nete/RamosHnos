@@ -33,12 +33,10 @@
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.cbSubRubro2 = new System.Windows.Forms.ComboBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lblSubRubro2 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.cbSubRubro1 = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lblSubRubro1 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
             this.cbRubro = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -85,7 +83,7 @@
             this.colFechaComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtStockMax = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -95,12 +93,15 @@
             this.button9 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvPrecios = new System.Windows.Forms.DataGridView();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtnewPrecio = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtStockMin = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -145,12 +146,10 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.cbSubRubro2);
-            this.groupBox6.Controls.Add(this.label24);
-            this.groupBox6.Controls.Add(this.label28);
+            this.groupBox6.Controls.Add(this.lblSubRubro2);
             this.groupBox6.Controls.Add(this.button7);
             this.groupBox6.Controls.Add(this.cbSubRubro1);
-            this.groupBox6.Controls.Add(this.label16);
-            this.groupBox6.Controls.Add(this.label23);
+            this.groupBox6.Controls.Add(this.lblSubRubro1);
             this.groupBox6.Controls.Add(this.button6);
             this.groupBox6.Controls.Add(this.cbRubro);
             this.groupBox6.Controls.Add(this.label4);
@@ -163,6 +162,7 @@
             this.groupBox6.TabIndex = 114;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Rubro";
+            this.groupBox6.Visible = false;
             // 
             // cbSubRubro2
             // 
@@ -175,29 +175,16 @@
             this.cbSubRubro2.TabIndex = 94;
             this.cbSubRubro2.Visible = false;
             // 
-            // label24
+            // lblSubRubro2
             // 
-            this.label24.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label24.Location = new System.Drawing.Point(14, 82);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(67, 13);
-            this.label24.TabIndex = 92;
-            this.label24.Text = "Sub Rubro 2";
-            // 
-            // label28
-            // 
-            this.label28.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.Transparent;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label28.ForeColor = System.Drawing.Color.Red;
-            this.label28.Location = new System.Drawing.Point(6, 81);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(11, 13);
-            this.label28.TabIndex = 93;
-            this.label28.Text = "*";
+            this.lblSubRubro2.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.lblSubRubro2.AutoSize = true;
+            this.lblSubRubro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblSubRubro2.Location = new System.Drawing.Point(14, 82);
+            this.lblSubRubro2.Name = "lblSubRubro2";
+            this.lblSubRubro2.Size = new System.Drawing.Size(67, 13);
+            this.lblSubRubro2.TabIndex = 92;
+            this.lblSubRubro2.Text = "Sub Rubro 2";
             // 
             // button7
             // 
@@ -223,29 +210,16 @@
             this.cbSubRubro1.Visible = false;
             this.cbSubRubro1.SelectionChangeCommitted += new System.EventHandler(this.cbSubRubro1_SelectionChangeCommitted);
             // 
-            // label16
+            // lblSubRubro1
             // 
-            this.label16.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label16.Location = new System.Drawing.Point(14, 55);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(67, 13);
-            this.label16.TabIndex = 88;
-            this.label16.Text = "Sub Rubro 1";
-            // 
-            // label23
-            // 
-            this.label23.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label23.ForeColor = System.Drawing.Color.Red;
-            this.label23.Location = new System.Drawing.Point(6, 54);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(11, 13);
-            this.label23.TabIndex = 89;
-            this.label23.Text = "*";
+            this.lblSubRubro1.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.lblSubRubro1.AutoSize = true;
+            this.lblSubRubro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblSubRubro1.Location = new System.Drawing.Point(14, 55);
+            this.lblSubRubro1.Name = "lblSubRubro1";
+            this.lblSubRubro1.Size = new System.Drawing.Size(67, 13);
+            this.lblSubRubro1.TabIndex = 88;
+            this.lblSubRubro1.Text = "Sub Rubro 1";
             // 
             // button6
             // 
@@ -703,8 +677,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button8);
+            this.groupBox2.Controls.Add(this.txtStockMin);
+            this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txtStockMax);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.label14);
@@ -766,20 +743,20 @@
             this.colStock.HeaderText = "Stock";
             this.colStock.Name = "colStock";
             // 
-            // textBox3
+            // txtStockMax
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox3.Location = new System.Drawing.Point(113, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(81, 20);
-            this.textBox3.TabIndex = 120;
+            this.txtStockMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtStockMax.Location = new System.Drawing.Point(313, 45);
+            this.txtStockMax.Name = "txtStockMax";
+            this.txtStockMax.Size = new System.Drawing.Size(81, 20);
+            this.txtStockMax.TabIndex = 120;
             // 
             // label9
             // 
             this.label9.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(33, 48);
+            this.label9.Location = new System.Drawing.Point(233, 48);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 13);
             this.label9.TabIndex = 119;
@@ -875,6 +852,17 @@
             this.dgvPrecios.Size = new System.Drawing.Size(403, 225);
             this.dgvPrecios.TabIndex = 0;
             // 
+            // colPrecio
+            // 
+            this.colPrecio.HeaderText = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            // 
+            // colFecha
+            // 
+            this.colFecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colFecha.HeaderText = "Fecha Actualización";
+            this.colFecha.Name = "colFecha";
+            // 
             // txtnewPrecio
             // 
             this.txtnewPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -921,16 +909,36 @@
             this.label7.Text = "Productos";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // colPrecio
+            // txtStockMin
             // 
-            this.colPrecio.HeaderText = "Precio";
-            this.colPrecio.Name = "colPrecio";
+            this.txtStockMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtStockMin.Location = new System.Drawing.Point(313, 19);
+            this.txtStockMin.Name = "txtStockMin";
+            this.txtStockMin.Size = new System.Drawing.Size(81, 20);
+            this.txtStockMin.TabIndex = 124;
             // 
-            // colFecha
+            // label11
             // 
-            this.colFecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colFecha.HeaderText = "Fecha Actualización";
-            this.colFecha.Name = "colFecha";
+            this.label11.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label11.Location = new System.Drawing.Point(234, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 13);
+            this.label11.TabIndex = 123;
+            this.label11.Text = "Stock Mínimo";
+            // 
+            // button8
+            // 
+            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(687, 40);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(28, 28);
+            this.button8.TabIndex = 125;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // formProducto
             // 
@@ -1012,7 +1020,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaComprobante;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
-        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.TextBox txtStockMax;
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label14;
@@ -1025,16 +1033,17 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.GroupBox groupBox6;
         public System.Windows.Forms.ComboBox cbSubRubro2;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lblSubRubro2;
         private System.Windows.Forms.Button button7;
         public System.Windows.Forms.ComboBox cbSubRubro1;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblSubRubro1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button9;
         public System.Windows.Forms.DataGridView dgvPrecios;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
+        public System.Windows.Forms.TextBox txtStockMin;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button8;
     }
 }
