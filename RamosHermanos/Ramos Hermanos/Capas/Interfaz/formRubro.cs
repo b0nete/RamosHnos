@@ -22,7 +22,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void btnSave_Click(object sender, EventArgs e)
         {
             GuardarRubro();
-            RubroB.CargarDGV(dgvRubro);
+            RubroB.CargarDGVRubro(dgvRubro);
             txtidRubro.Text = "";
             txtRubro.Text = "";
         }
@@ -84,7 +84,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             
             cbEstado.Checked = true;
-            RubroB.CargarDGV(dgvRubro);
+            RubroB.CargarDGVRubro(dgvRubro);
             txtidRubro.Text = "";
             txtRubro.Text = "";
 
