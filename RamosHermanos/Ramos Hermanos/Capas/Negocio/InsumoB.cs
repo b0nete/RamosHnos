@@ -346,6 +346,49 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static InsumoEntity AdddInsumoDGV(DataGridView dgv, InsumoEntity insumo)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT I.idInsumo, I.insumo, I.marca, I.stockMin, P.idProveedor, R.rubro
+						    FROM insumos I
+							INNER JOIN proveedores P on P.idProveedor = I.proveedor
+							INNER JOIN rubros R on R.idRubro = I.rubro
+						    WHERE I.idInsumo = @idInsumo";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idInsumo", insumo.idInsumo);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idInsumo"]),
+                    Convert.ToString(dr["Insumo"]),
+                    Convert.ToString(dr["Rubro"]),
+                    Convert.ToString(dr["Marca"]),
+                    Convert.ToString(null),
+                    Convert.ToString(null),
+                    Convert.ToString(null));
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
+
+                return insumo;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
 
     }
 }

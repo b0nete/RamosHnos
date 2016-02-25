@@ -80,7 +80,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             if (cell != null)
             {
                 DataGridViewRow row = cell.OwningRow;
-                //frm.Show();
+                frm.Show();
                 //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
                 proveedor.idProveedor = Convert.ToInt32(row.Cells["colIDProveedor"].Value.ToString());
                 ProveedorB.BuscarIdProv(proveedor);

@@ -33,6 +33,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void button2_Click(object sender, EventArgs e)
         {
             listInsumos frm = new listInsumos();
+            frm.caseSwitch = 1;
             frm.Show();
         }
 

@@ -40,6 +40,7 @@
             this.txtnumFactura = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtCondicionIva = new System.Windows.Forms.TextBox();
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.txtNameProveedor = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -71,7 +72,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtCondicionIva = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
@@ -211,6 +211,15 @@
             this.groupBox1.TabIndex = 79;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles";
+            // 
+            // txtCondicionIva
+            // 
+            this.txtCondicionIva.Enabled = false;
+            this.txtCondicionIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCondicionIva.Location = new System.Drawing.Point(75, 95);
+            this.txtCondicionIva.Name = "txtCondicionIva";
+            this.txtCondicionIva.Size = new System.Drawing.Size(331, 20);
+            this.txtCondicionIva.TabIndex = 92;
             // 
             // cbDomicilio
             // 
@@ -512,15 +521,6 @@
             this.label16.TabIndex = 133;
             this.label16.Text = "Total General";
             // 
-            // txtCondicionIva
-            // 
-            this.txtCondicionIva.Enabled = false;
-            this.txtCondicionIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCondicionIva.Location = new System.Drawing.Point(75, 95);
-            this.txtCondicionIva.Name = "txtCondicionIva";
-            this.txtCondicionIva.Size = new System.Drawing.Size(331, 20);
-            this.txtCondicionIva.TabIndex = 92;
-            // 
             // formCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -567,7 +567,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvCompra;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnGuardar;
@@ -595,5 +594,6 @@
         public System.Windows.Forms.ComboBox cbTipoFactura;
         public System.Windows.Forms.ComboBox cbDomicilio;
         public System.Windows.Forms.TextBox txtCondicionIva;
+        public System.Windows.Forms.DataGridView dgvCompra;
     }
 }

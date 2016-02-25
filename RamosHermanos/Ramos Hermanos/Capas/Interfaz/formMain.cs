@@ -190,6 +190,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void test1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formCompras frm = new formCompras();
+           
             frm.Show();
         }
 
@@ -286,6 +287,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void buscarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             listInsumos frm = new listInsumos();
+            frm.caseSwitch = 2;
             frm.Show();
         }
 
