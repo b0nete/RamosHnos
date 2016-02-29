@@ -72,7 +72,7 @@
             this.btnSave.Location = new System.Drawing.Point(145, 106);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
-            this.btnSave.TabIndex = 62;
+            this.btnSave.TabIndex = 6;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -81,35 +81,35 @@
             this.txt4.Location = new System.Drawing.Point(73, 111);
             this.txt4.Name = "txt4";
             this.txt4.Size = new System.Drawing.Size(66, 20);
-            this.txt4.TabIndex = 9;
+            this.txt4.TabIndex = 5;
             // 
             // txt10
             // 
             this.txt10.Location = new System.Drawing.Point(73, 89);
             this.txt10.Name = "txt10";
             this.txt10.Size = new System.Drawing.Size(66, 20);
-            this.txt10.TabIndex = 8;
+            this.txt10.TabIndex = 4;
             // 
             // txt12
             // 
             this.txt12.Location = new System.Drawing.Point(73, 67);
             this.txt12.Name = "txt12";
             this.txt12.Size = new System.Drawing.Size(66, 20);
-            this.txt12.TabIndex = 7;
+            this.txt12.TabIndex = 3;
             // 
             // txt20
             // 
             this.txt20.Location = new System.Drawing.Point(73, 45);
             this.txt20.Name = "txt20";
             this.txt20.Size = new System.Drawing.Size(66, 20);
-            this.txt20.TabIndex = 6;
+            this.txt20.TabIndex = 2;
             // 
             // txt25
             // 
             this.txt25.Location = new System.Drawing.Point(73, 23);
             this.txt25.Name = "txt25";
             this.txt25.Size = new System.Drawing.Size(66, 20);
-            this.txt25.TabIndex = 5;
+            this.txt25.TabIndex = 1;
             // 
             // label5
             // 
@@ -117,7 +117,7 @@
             this.label5.Location = new System.Drawing.Point(21, 114);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
-            this.label5.TabIndex = 4;
+            this.label5.TabIndex = 1;
             this.label5.Text = "1 (4LTs)";
             // 
             // label4
@@ -126,7 +126,7 @@
             this.label4.Location = new System.Drawing.Point(6, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 3;
+            this.label4.TabIndex = 4;
             this.label4.Text = "2.5 (10LTs)";
             // 
             // label3
@@ -135,7 +135,7 @@
             this.label3.Location = new System.Drawing.Point(15, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 2;
+            this.label3.TabIndex = 3;
             this.label3.Text = "3 (12LTs)";
             // 
             // label2
@@ -144,7 +144,7 @@
             this.label2.Location = new System.Drawing.Point(15, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 2;
             this.label2.Text = "4 (20LTs)";
             // 
             // label1

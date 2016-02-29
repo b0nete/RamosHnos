@@ -19,6 +19,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         public int row;
         public int column;
+        public int comprobante;
         //public int total;
 
         public formRepartos()
@@ -104,7 +105,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvRepartos_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colACarga"].Selected)
             {
                 e.SuppressKeyPress = true;
                 SendKeys.Send("{TAB}");
@@ -119,6 +120,7 @@ namespace RamosHermanos.Capas.Interfaz
 
             column = dgvRepartos.CurrentCell.ColumnIndex;
             row = dgvRepartos.CurrentCell.RowIndex;
+            frm.comprobante = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value);
 
             frm.Show(this);
         }

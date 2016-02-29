@@ -23,7 +23,6 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-
                 cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
                 cmd.Parameters.AddWithValue("@producto", itemFactura.producto);
                 cmd.Parameters.AddWithValue("@cantidad", itemFactura.cantidad);
@@ -41,6 +40,35 @@ namespace RamosHermanos.Capas.Negocio
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void InsertCargaFactura(itemFacturaEntity itemFactura, DataGridView dgv)
+        {
+            try
+            {
+                 MySQL.ConnectDB();
+
+                string query = @"UPDATE itemsFactura
+                                 SET (@factura, @producto, @cantidad, @precioUnitario, @subTotal)
+                                 WHERE factura = @factura";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                
+                cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
+                cmd.Parameters.AddWithValue("@producto", itemFactura.producto);
+                cmd.Parameters.AddWithValue("@cantidad", itemFactura.cantidad);
+                cmd.Parameters.AddWithValue("@precioUnitario", itemFactura.precioUnitario);
+                cmd.Parameters.AddWithValue("@subTotal", itemFactura.subTotal);
+
+                cmd.ExecuteNonQuery();
+                                
+                MySQL.DisconnectDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex); 
                 throw;
             }
         }

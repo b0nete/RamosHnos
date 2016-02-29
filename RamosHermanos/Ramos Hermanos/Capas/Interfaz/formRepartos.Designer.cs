@@ -31,9 +31,6 @@
             this.tabRepartos = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dtpFechaReparto = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtReparto = new System.Windows.Forms.TextBox();
-            this.chkGuardado = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
@@ -62,6 +59,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvRepartos = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.txtReparto = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.colOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,7 +111,6 @@
             this.tabPage1.Controls.Add(this.dtpFechaReparto);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.txtReparto);
-            this.tabPage1.Controls.Add(this.chkGuardado);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.cbDistribuidores);
@@ -133,32 +131,6 @@
             this.dtpFechaReparto.Name = "dtpFechaReparto";
             this.dtpFechaReparto.Size = new System.Drawing.Size(127, 20);
             this.dtpFechaReparto.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(513, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Reparto:";
-            // 
-            // txtReparto
-            // 
-            this.txtReparto.Location = new System.Drawing.Point(567, 4);
-            this.txtReparto.Name = "txtReparto";
-            this.txtReparto.Size = new System.Drawing.Size(100, 20);
-            this.txtReparto.TabIndex = 9;
-            // 
-            // chkGuardado
-            // 
-            this.chkGuardado.AutoSize = true;
-            this.chkGuardado.Location = new System.Drawing.Point(921, 7);
-            this.chkGuardado.Name = "chkGuardado";
-            this.chkGuardado.Size = new System.Drawing.Size(73, 17);
-            this.chkGuardado.TabIndex = 8;
-            this.chkGuardado.Text = "Guardado";
-            this.chkGuardado.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -425,6 +397,22 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // txtReparto
+            // 
+            this.txtReparto.Location = new System.Drawing.Point(567, 4);
+            this.txtReparto.Name = "txtReparto";
+            this.txtReparto.Size = new System.Drawing.Size(100, 20);
+            this.txtReparto.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(513, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Reparto:";
+            // 
             // colOrden
             // 
             this.colOrden.HeaderText = "Nº";
@@ -647,11 +635,10 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        public System.Windows.Forms.CheckBox chkGuardado;
-        private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox txtReparto;
         public System.Windows.Forms.ComboBox cbDistribuidores;
         public System.Windows.Forms.DateTimePicker dtpFechaReparto;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txtReparto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOrden;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCliente;

@@ -8,11 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Interfaz.Contratos;
+using RamosHermanos.Capas.Negocio;
 
 namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formCargaPedido : Form
     {
+
+        public int comprobante; 
 
         public formCargaPedido()
         {
@@ -24,6 +27,11 @@ namespace RamosHermanos.Capas.Interfaz
             formRepartos frm = new formRepartos();
 
             int total = Suma();
+
+            //if (txt25.Text != string.Empty)
+            //{
+            //    itemsFacturaB.InsertItemFactura(
+            //}
 
             // Tutorial Interfaz formularios desacoplados
             // http://ltuttini.blogspot.com.ar/2009/09/c-comunicar-formularios-de-forma.html

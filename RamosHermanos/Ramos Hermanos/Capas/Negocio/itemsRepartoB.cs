@@ -82,7 +82,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 DataTable dt = new DataTable();
 
-                string query = @"SELECT IR.cliente as idCliente, CONCAT(C.nombre, ' ', C.apellido) as clienteCompleto, IR.domicilio as idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) as domicilioCompleto, IR.idComprobante
+                string query = @"SELECT IR.cliente as idCliente, CONCAT(C.nombre, ' ', C.apellido) as clienteCompleto, IR.domicilio as idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) as domicilioCompleto, idComprobante
                                  FROM itemsReparto IR
                                  INNER JOIN Clientes C ON C.idCliente = IR.cliente
                                  INNER JOIN Domicilios D ON D.idDomicilio = IR.domicilio
