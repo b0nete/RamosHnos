@@ -31,6 +31,8 @@
             this.tabRepartos = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dtpFechaReparto = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtReparto = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
@@ -59,8 +61,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvRepartos = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.txtReparto = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.colOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,7 +80,7 @@
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colADescarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -131,6 +131,22 @@
             this.dtpFechaReparto.Name = "dtpFechaReparto";
             this.dtpFechaReparto.Size = new System.Drawing.Size(127, 20);
             this.dtpFechaReparto.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(513, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Reparto:";
+            // 
+            // txtReparto
+            // 
+            this.txtReparto.Location = new System.Drawing.Point(567, 4);
+            this.txtReparto.Name = "txtReparto";
+            this.txtReparto.Size = new System.Drawing.Size(100, 20);
+            this.txtReparto.TabIndex = 9;
             // 
             // panel1
             // 
@@ -365,7 +381,7 @@
             this.Column15,
             this.Column16,
             this.Column17,
-            this.Column18,
+            this.colADescarga,
             this.Column19,
             this.Column20,
             this.Column21,
@@ -396,22 +412,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // txtReparto
-            // 
-            this.txtReparto.Location = new System.Drawing.Point(567, 4);
-            this.txtReparto.Name = "txtReparto";
-            this.txtReparto.Size = new System.Drawing.Size(100, 20);
-            this.txtReparto.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(513, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Reparto:";
             // 
             // colOrden
             // 
@@ -531,11 +531,11 @@
             this.Column17.Name = "Column17";
             this.Column17.Width = 25;
             // 
-            // Column18
+            // colADescarga
             // 
-            this.Column18.HeaderText = "A";
-            this.Column18.Name = "Column18";
-            this.Column18.Width = 25;
+            this.colADescarga.HeaderText = "A";
+            this.colADescarga.Name = "colADescarga";
+            this.colADescarga.Width = 25;
             // 
             // Column19
             // 
@@ -658,7 +658,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colADescarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column21;

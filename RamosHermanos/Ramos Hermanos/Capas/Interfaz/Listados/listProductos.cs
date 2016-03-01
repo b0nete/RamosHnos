@@ -59,7 +59,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 frmPro.txtCantidad.Text = Convert.ToString(producto.cantidad);
                 frmPro.cbMedida.SelectedValue = producto.medida;
 
-                PrecioProductosB.UltimoPrecioDGV(frmPro.dgvPrecios);
+                PrecioProductosB.UltimoPrecioDGV(frmPro.dgvPrecios, frmPro.txtIDProd);
             }
         }
 

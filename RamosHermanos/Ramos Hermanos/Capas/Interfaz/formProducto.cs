@@ -287,7 +287,7 @@ namespace RamosHermanos.Capas.Interfaz
                 PrecioProductosB.InsertPrecio(precio);
 
                 //Actualizamos DGV
-                PrecioProductosB.UltimoPrecioDGV(dgvPrecios);
+                PrecioProductosB.UltimoPrecioDGV(dgvPrecios, txtIDProd);
             }
         }
 

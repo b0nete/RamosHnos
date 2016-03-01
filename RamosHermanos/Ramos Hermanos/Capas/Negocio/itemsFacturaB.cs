@@ -18,8 +18,8 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO itemsFactura (factura, producto, cantidad, precioUnitario, subTotal, @favor) 
-                                 VALUES (@factura, @producto, @cantidad, @precioUnitario, @subTotal, @favor)";
+                string query = @"INSERT INTO itemsFactura (factura, producto, cantidad, precioUnitario, subTotal, carga) 
+                                 VALUES (@factura, @producto, @cantidad, @precioUnitario, @subTotal, @carga)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -28,10 +28,9 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@cantidad", itemFactura.cantidad);
                 cmd.Parameters.AddWithValue("@precioUnitario", itemFactura.precioUnitario);
                 cmd.Parameters.AddWithValue("@subTotal", itemFactura.subTotal);
-                cmd.Parameters.AddWithValue("@favor", itemFactura.favor);
+                cmd.Parameters.AddWithValue("@carga", itemFactura.carga);
 
-                    cmd.ExecuteNonQuery();
-                                
+                cmd.ExecuteNonQuery();                                
 
                 MySQL.DisconnectDB();
 

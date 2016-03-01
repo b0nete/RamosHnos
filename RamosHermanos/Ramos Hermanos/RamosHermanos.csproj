@@ -151,6 +151,12 @@
     <Compile Include="Capas\Interfaz\formContacto.Designer.cs">
       <DependentUpon>formContacto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaz\formDescargaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\formDescargaPedido.Designer.cs">
+      <DependentUpon>formDescargaPedido.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\formDistribuidores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -422,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formContacto.resx">
       <DependentUpon>formContacto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\formDescargaPedido.resx">
+      <DependentUpon>formDescargaPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formDistribuidores.resx">
       <DependentUpon>formDistribuidores.cs</DependentUpon>

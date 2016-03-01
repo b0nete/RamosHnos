@@ -14,6 +14,6 @@ namespace RamosHermanos.Capas.Entidades
         public int cantidad { get; set; }
         public double precioUnitario { get; set; }
         public double subTotal { get; set; }
-        public string favor { get; set; }
+        public string carga { get; set; }
     }
 }

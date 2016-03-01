@@ -110,13 +110,32 @@ namespace RamosHermanos.Capas.Interfaz
                 e.SuppressKeyPress = true;
                 SendKeys.Send("{TAB}");
 
-                Ejec();
-            }            
+                EjecCarga();
+            }
+
+            if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colADescarga"].Selected)
+            {
+                e.SuppressKeyPress = true;
+                SendKeys.Send("{TAB}");
+
+                EjecDescarga();
+            }          
         }
 
-        private void Ejec()
+        private void EjecCarga()
         {
             formCargaPedido frm = new formCargaPedido();
+
+            column = dgvRepartos.CurrentCell.ColumnIndex;
+            row = dgvRepartos.CurrentCell.RowIndex;
+            frm.comprobante = Convert.ToString(dgvRepartos.CurrentRow.Cells["colComprobante"].Value);
+
+            frm.Show(this);
+        }
+
+        private void EjecDescarga()
+        {
+            formDescargaPedido frm = new formDescargaPedido();
 
             column = dgvRepartos.CurrentCell.ColumnIndex;
             row = dgvRepartos.CurrentCell.RowIndex;

@@ -166,7 +166,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void UltimoPrecioDGV(DataGridView dgv)
+        public static void UltimoPrecioDGV(DataGridView dgv, TextBox idProducto)
         {
             try
             {
@@ -175,10 +175,12 @@ namespace RamosHermanos.Capas.Negocio
 
                 string query = @"SELECT precio, fechaActualizacion
                                     FROM precioProductos
-                                    WHERE idProducto = 1
+                                    WHERE idProducto = @idProducto
                                     ORDER BY fechaActualizacion DESC";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("idProducto", idProducto.Text);
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
