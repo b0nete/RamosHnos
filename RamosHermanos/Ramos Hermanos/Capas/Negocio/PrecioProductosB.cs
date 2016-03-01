@@ -96,6 +96,35 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static double UltimoPrecio(int producto)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                double precio;
+
+                string query = @"SELECT precio
+                                 FROM precioProductos
+                                 WHERE idProducto = @idProducto
+                                 ORDER BY fechaActualizacion DESC LIMIT 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idProducto", producto);
+
+                precio = Convert.ToDouble(cmd.ExecuteScalar());
+
+                return precio;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static PrecioProductoEntity BuscarPrecio(PrecioProductoEntity precio)
         {
             try

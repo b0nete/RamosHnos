@@ -82,6 +82,7 @@
             this.txt4.Name = "txt4";
             this.txt4.Size = new System.Drawing.Size(66, 20);
             this.txt4.TabIndex = 5;
+            this.txt4.Text = "0";
             // 
             // txt10
             // 
@@ -89,6 +90,7 @@
             this.txt10.Name = "txt10";
             this.txt10.Size = new System.Drawing.Size(66, 20);
             this.txt10.TabIndex = 4;
+            this.txt10.Text = "0";
             // 
             // txt12
             // 
@@ -96,6 +98,7 @@
             this.txt12.Name = "txt12";
             this.txt12.Size = new System.Drawing.Size(66, 20);
             this.txt12.TabIndex = 3;
+            this.txt12.Text = "0";
             // 
             // txt20
             // 
@@ -103,6 +106,7 @@
             this.txt20.Name = "txt20";
             this.txt20.Size = new System.Drawing.Size(66, 20);
             this.txt20.TabIndex = 2;
+            this.txt20.Text = "0";
             // 
             // txt25
             // 
@@ -110,6 +114,7 @@
             this.txt25.Name = "txt25";
             this.txt25.Size = new System.Drawing.Size(66, 20);
             this.txt25.TabIndex = 1;
+            this.txt25.Text = "0";
             // 
             // label5
             // 

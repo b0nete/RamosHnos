@@ -120,7 +120,7 @@ namespace RamosHermanos.Capas.Interfaz
 
             column = dgvRepartos.CurrentCell.ColumnIndex;
             row = dgvRepartos.CurrentCell.RowIndex;
-            frm.comprobante = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value);
+            frm.comprobante = Convert.ToString(dgvRepartos.CurrentRow.Cells["colComprobante"].Value);
 
             frm.Show(this);
         }

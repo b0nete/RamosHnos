@@ -12,14 +12,14 @@ namespace RamosHermanos.Capas.Negocio
 {
     class itemsFacturaB
     {
-        public static itemFacturaEntity InsertItemFactura(itemFacturaEntity itemFactura, DataGridView dgv)
+        public static itemFacturaEntity InsertItemFactura(itemFacturaEntity itemFactura)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO itemsFactura (factura, producto, cantidad, precioUnitario, subTotal) 
-                                 VALUES (@factura, @producto, @cantidad, @precioUnitario, @subTotal)";
+                string query = @"INSERT INTO itemsFactura (factura, producto, cantidad, precioUnitario, subTotal, @favor) 
+                                 VALUES (@factura, @producto, @cantidad, @precioUnitario, @subTotal, @favor)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -28,6 +28,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@cantidad", itemFactura.cantidad);
                 cmd.Parameters.AddWithValue("@precioUnitario", itemFactura.precioUnitario);
                 cmd.Parameters.AddWithValue("@subTotal", itemFactura.subTotal);
+                cmd.Parameters.AddWithValue("@favor", itemFactura.favor);
 
                     cmd.ExecuteNonQuery();
                                 

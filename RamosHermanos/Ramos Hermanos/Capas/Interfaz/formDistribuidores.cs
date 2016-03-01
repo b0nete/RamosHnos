@@ -737,6 +737,10 @@ namespace RamosHermanos.Capas.Interfaz
                 itemsReparto.domicilio = Convert.ToInt32(dr["idDomicilio"].ToString());
                 itemsReparto.idComprobante = itemsRepartoB.UltimoComprobante() + 1;
                 itemsRepartoB.InsertItemReparto(itemsReparto);
+
+                factura.cliente = itemsReparto.cliente;
+                factura.numFactura = FacturaB.UltimaFactura() + 1;
+                FacturaB.InsertFactura(factura);
             }
 
             return ds;
