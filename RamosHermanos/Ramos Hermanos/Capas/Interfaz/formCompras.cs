@@ -7,9 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using RamosHermanos.Capas.Interfaz.Listados;
+using System.Globalization; //CultureInfo
+using System.Threading;
+using CrystalDecisions.CrystalReports.Engine;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Interfaz.Listados;
+
 namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formCompras : Form
@@ -28,7 +32,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formCompras_Load(object sender, EventArgs e)
         {
-            txtIngreso.Text = DateTime.Now.ToString("G");
+            txtIngreso.Text = DateTime.Now.ToString("hh:mm:ss");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -72,13 +76,33 @@ namespace RamosHermanos.Capas.Interfaz
             compras.proveedor = Convert.ToInt32(txtIDproveedor.Text);
             compras.total = Convert.ToDouble(txtTotal.Text);
             compras.estado = cbEstado.Text;
+            compras.numfactura = Convert.ToInt32(txtnumFactura.Text);
+            compras.tipofactura = Convert.ToString(cbTipoFactura.SelectedValue);
+            
         }
 
+
+        
+        itemComprasEntity itemcompra = new itemComprasEntity();
+       
+        private void cargarItemCompra(DataGridView row)
+        {
+            
+            //itemcompra.idInsumo = Convert.ToInt32
+
+        }
+        
         ComprasEntity compras = new ComprasEntity();
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             CargarCompras();
             ComprasB.InsertCompras(compras, txtidCompras);
+
+        }
+
+        private void txtIngreso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
             
        

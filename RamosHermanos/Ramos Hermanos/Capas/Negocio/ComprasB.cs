@@ -30,8 +30,7 @@ namespace RamosHermanos.Capas.Negocio
                     cmd.Parameters.AddWithValue("@observaciones", compras.observaciones);
                     cmd.Parameters.AddWithValue("@total", compras.total);
                     cmd.Parameters.AddWithValue("@estado", compras.estado);
-                    
-
+                                       
                     txtid.Text = Convert.ToString(cmd.ExecuteScalar());
 
                     //cmd.ExecuteNonQuery();

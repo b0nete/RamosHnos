@@ -15,6 +15,8 @@ namespace RamosHermanos.Capas.Entidades
         public string observaciones { get; set; }
         public double total { get; set; }
         public string estado { get; set; }
+        public int numfactura { get; set; }
+        public string tipofactura { get; set; }
 
     }
 }

@@ -128,6 +128,7 @@
             this.txtIngreso.Size = new System.Drawing.Size(253, 20);
             this.txtIngreso.TabIndex = 62;
             this.txtIngreso.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtIngreso.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtIngreso_MaskInputRejected);
             // 
             // dtpfechaFactura
             // 
@@ -143,7 +144,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label7.Location = new System.Drawing.Point(1, 102);
+            this.label7.Location = new System.Drawing.Point(0, 98);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 13);
             this.label7.TabIndex = 8;

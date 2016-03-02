@@ -70,6 +70,7 @@
     <Compile Include="Capas\Entidades\EmailEntity.cs" />
     <Compile Include="Capas\Entidades\FacturaEntity.cs" />
     <Compile Include="Capas\Entidades\InsumoEntity.cs" />
+    <Compile Include="Capas\Entidades\itemComprasEntity.cs" />
     <Compile Include="Capas\Entidades\itemFacturaEntity.cs" />
     <Compile Include="Capas\Entidades\itemPedidoEntity.cs" />
     <Compile Include="Capas\Entidades\itemRecorridoEntity.cs" />
@@ -330,6 +331,7 @@
     <Compile Include="Capas\Negocio\ClienteB.cs" />
     <Compile Include="Capas\Negocio\CalleB.cs" />
     <Compile Include="Capas\Negocio\ComprasB.cs" />
+    <Compile Include="Capas\Negocio\itemCompraB.cs" />
     <Compile Include="Capas\Negocio\itemsPedidoB.cs" />
     <Compile Include="Capas\Negocio\itemsRepartoB.cs" />
     <Compile Include="Capas\Negocio\PedidoB.cs" />

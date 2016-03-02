@@ -201,7 +201,6 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         itemPedidoEntity itemPedido = new itemPedidoEntity();
-        
         public void CargarItemPedido(DataGridViewRow row)
         {
             itemPedido.codProducto = Convert.ToInt32((row.Cells["colCodigo"].Value));
