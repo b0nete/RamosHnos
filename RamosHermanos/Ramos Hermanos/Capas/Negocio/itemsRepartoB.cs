@@ -82,6 +82,8 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 DataTable dt = new DataTable();
+                DataTable dtEncabezado = new DataTable();
+                DataTable dtCargas = new DataTable();
 
                 //Encabezado
                 string query = @"SELECT IR.cliente as idCliente, CONCAT(C.nombre, ' ', C.apellido) as clienteCompleto, IR.domicilio as idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) as domicilioCompleto, idComprobante
@@ -96,7 +98,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@reparto", itemsReparto.reparto);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                da.Fill(dt);
+                da.Fill(dtEncabezado);
 
                 //Cargas
                 string queryCargas = @"SELECT SUM(cantidad) as colACarga
@@ -106,7 +108,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlCommand cmd2 = new MySqlCommand(queryCargas, MySQL.sqlcnx);
 
                 MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
-                da2.Fill(dt);
+                da2.Fill(dtCargas);
 
                 MySQL.DisconnectDB();
                 return dt;
