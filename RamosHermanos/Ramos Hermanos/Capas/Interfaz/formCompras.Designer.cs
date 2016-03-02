@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCompras));
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtidCompras = new System.Windows.Forms.TextBox();
             this.txtIngreso = new System.Windows.Forms.MaskedTextBox();
             this.dtpfechaFactura = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
@@ -93,6 +94,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtidCompras);
             this.groupBox3.Controls.Add(this.txtIngreso);
             this.groupBox3.Controls.Add(this.dtpfechaFactura);
             this.groupBox3.Controls.Add(this.label7);
@@ -108,6 +110,15 @@
             this.groupBox3.TabIndex = 81;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Soderia";
+            // 
+            // txtidCompras
+            // 
+            this.txtidCompras.Enabled = false;
+            this.txtidCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtidCompras.Location = new System.Drawing.Point(207, 13);
+            this.txtidCompras.Name = "txtidCompras";
+            this.txtidCompras.Size = new System.Drawing.Size(61, 20);
+            this.txtidCompras.TabIndex = 93;
             // 
             // txtIngreso
             // 
@@ -419,6 +430,7 @@
             this.btnGuardar.Size = new System.Drawing.Size(28, 28);
             this.btnGuardar.TabIndex = 125;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // button3
             // 
@@ -504,7 +516,6 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Enabled = false;
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotal.Location = new System.Drawing.Point(621, 32);
             this.txtTotal.Name = "txtTotal";
@@ -595,5 +606,6 @@
         public System.Windows.Forms.ComboBox cbDomicilio;
         public System.Windows.Forms.TextBox txtCondicionIva;
         public System.Windows.Forms.DataGridView dgvCompra;
+        public System.Windows.Forms.TextBox txtidCompras;
     }
 }

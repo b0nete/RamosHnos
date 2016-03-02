@@ -63,6 +63,7 @@
     <Compile Include="Capas\Entidades\ClienteEntity.cs" />
     <Compile Include="Capas\Entidades\ClienteJEntity.cs" />
     <Compile Include="Capas\Entidades\CalleEntity.cs" />
+    <Compile Include="Capas\Entidades\ComprasEntity.cs" />
     <Compile Include="Capas\Entidades\CostoEntity.cs" />
     <Compile Include="Capas\Entidades\DistribuidorEntity.cs" />
     <Compile Include="Capas\Entidades\DomicilioEntity.cs" />
@@ -328,6 +329,7 @@
     <Compile Include="Capas\Negocio\BarrioB.cs" />
     <Compile Include="Capas\Negocio\ClienteB.cs" />
     <Compile Include="Capas\Negocio\CalleB.cs" />
+    <Compile Include="Capas\Negocio\ComprasB.cs" />
     <Compile Include="Capas\Negocio\itemsPedidoB.cs" />
     <Compile Include="Capas\Negocio\itemsRepartoB.cs" />
     <Compile Include="Capas\Negocio\PedidoB.cs" />

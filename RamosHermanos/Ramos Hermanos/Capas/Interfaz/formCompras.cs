@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Interfaz.Listados;
-
+using RamosHermanos.Capas.Negocio;
+using RamosHermanos.Capas.Entidades;
 namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formCompras : Form
@@ -64,7 +65,23 @@ namespace RamosHermanos.Capas.Interfaz
         {
 
         }
+        private void CargarCompras()
+        {
+            compras.fecha = dtpfechaFactura.Value;
+            compras.observaciones = txtObservaciones.Text;
+            compras.proveedor = Convert.ToInt32(txtIDproveedor.Text);
+            compras.total = Convert.ToDouble(txtTotal.Text);
+            compras.estado = cbEstado.Text;
+        }
+
+        ComprasEntity compras = new ComprasEntity();
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            CargarCompras();
+            ComprasB.InsertCompras(compras, txtidCompras);
+        }
             
        
     }
 }
+
