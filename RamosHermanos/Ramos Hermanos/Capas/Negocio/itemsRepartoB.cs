@@ -78,10 +78,12 @@ namespace RamosHermanos.Capas.Negocio
         public static DataTable BuscarItemsReparto(itemsRepartoEntity itemsReparto)
         {
             try
-            {                
+            {
                 MySQL.ConnectDB();
+
                 DataTable dt = new DataTable();
 
+                //Encabezado
                 string query = @"SELECT IR.cliente as idCliente, CONCAT(C.nombre, ' ', C.apellido) as clienteCompleto, IR.domicilio as idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) as domicilioCompleto, idComprobante
                                  FROM itemsReparto IR
                                  INNER JOIN Clientes C ON C.idCliente = IR.cliente
@@ -95,6 +97,16 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 da.Fill(dt);
+
+                //Cargas
+                string queryCargas = @"SELECT SUM(cantidad) as colACarga
+                                       FROM itemsFactura
+                                       WHERE factura = 1 and carga = 'D'";
+
+                MySqlCommand cmd2 = new MySqlCommand(queryCargas, MySQL.sqlcnx);
+
+                MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
+                da2.Fill(dt);
 
                 MySQL.DisconnectDB();
                 return dt;
