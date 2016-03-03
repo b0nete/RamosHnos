@@ -81,7 +81,41 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                DataTable dt = new DataTable();
+                DataTable dtMerge = new DataTable();
+
+                dtMerge.Columns.Add("colOrden");
+                dtMerge.Columns.Add("idCliente");
+                dtMerge.Columns.Add("clienteCompleto");
+                dtMerge.Columns.Add("idDomicilio");
+                dtMerge.Columns.Add("domicilioCompleto");
+                //Saldo
+                dtMerge.Columns.Add("colSSaldo");
+                dtMerge.Columns.Add("colASaldo");
+                dtMerge.Columns.Add("colCSaldo");
+                dtMerge.Columns.Add("colCCSaldo");
+                dtMerge.Columns.Add("colPSaldo");
+                dtMerge.Columns.Add("colDSaldo");
+                dtMerge.Columns.Add("colSCCSaldo");
+                //Carga
+                dtMerge.Columns.Add("colSCarga");
+                dtMerge.Columns.Add("colACarga");
+                dtMerge.Columns.Add("colCCarga");
+                dtMerge.Columns.Add("colCCCarga");
+                dtMerge.Columns.Add("colPCarga");
+                dtMerge.Columns.Add("colDCarga");
+                //Descarga
+                dtMerge.Columns.Add("colSDescarga");
+                dtMerge.Columns.Add("colADescarga");
+                dtMerge.Columns.Add("colCDescarga");
+                dtMerge.Columns.Add("colCCDescarga");
+                dtMerge.Columns.Add("colPDescarga");
+                dtMerge.Columns.Add("colDDescarga");
+                //
+                dtMerge.Columns.Add("colVenta");
+                dtMerge.Columns.Add("colCobro");
+                dtMerge.Columns.Add("colSaldoCC");
+                dtMerge.Columns.Add("idComprobante");
+
                 DataTable dtEncabezado = new DataTable();
                 DataTable dtCargas = new DataTable();
 
@@ -110,8 +144,28 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
                 da2.Fill(dtCargas);
 
+                foreach (DataRow row in dtEncabezado.Rows)
+                {
+                    DataRow newRow = dtMerge.NewRow();
+                    newRow["idCliente"] = row["idCliente"];
+                    newRow["clienteCompleto"] = row["clienteCompleto"];
+                    newRow["idDomicilio"] = row["idDomicilio"];
+                    newRow["domicilioCompleto"] = row["domicilioCompleto"];
+                    newRow["idComprobante"] = row["idComprobante"];
+
+                    dtMerge.ImportRow(row);
+                }
+
+                for (int i = 0; i <= dtCargas.Rows.Count - 1; i++)
+                {
+                    DataRow rowMerge = dtMerge.Rows[i];
+                    DataRow roworigen = dtCargas.Rows[i];
+
+                    rowMerge["colACarga"] = roworigen["colACarga"];
+                }
+
                 MySQL.DisconnectDB();
-                return dt;
+                return dtMerge;
             }
 
             catch (Exception ex)

@@ -449,132 +449,154 @@
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "colSSaldo";
             this.Column4.HeaderText = "S";
             this.Column4.Name = "Column4";
             this.Column4.Width = 25;
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "colASaldo";
             this.Column5.HeaderText = "A";
             this.Column5.Name = "Column5";
             this.Column5.Width = 25;
             // 
             // Column6
             // 
+            this.Column6.DataPropertyName = "colCSaldo";
             this.Column6.HeaderText = "C";
             this.Column6.Name = "Column6";
             this.Column6.Width = 25;
             // 
             // Column7
             // 
+            this.Column7.DataPropertyName = "colCCSaldo";
             this.Column7.HeaderText = "C";
             this.Column7.Name = "Column7";
             this.Column7.Width = 25;
             // 
             // Column8
             // 
+            this.Column8.DataPropertyName = "colPSaldo";
             this.Column8.HeaderText = "P";
             this.Column8.Name = "Column8";
             this.Column8.Width = 25;
             // 
             // Column9
             // 
+            this.Column9.DataPropertyName = "colDSaldo";
             this.Column9.HeaderText = "D";
             this.Column9.Name = "Column9";
             this.Column9.Width = 25;
             // 
             // Column10
             // 
+            this.Column10.DataPropertyName = "colSCCSaldo";
             this.Column10.HeaderText = "Saldo CC";
             this.Column10.Name = "Column10";
             this.Column10.Width = 50;
             // 
             // Column11
             // 
+            this.Column11.DataPropertyName = "colSCarga";
             this.Column11.HeaderText = "S";
             this.Column11.Name = "Column11";
             this.Column11.Width = 25;
             // 
             // colACarga
             // 
+            this.colACarga.DataPropertyName = "colACarga";
             this.colACarga.HeaderText = "A";
             this.colACarga.Name = "colACarga";
             this.colACarga.Width = 25;
             // 
             // Column13
             // 
+            this.Column13.DataPropertyName = "colCCarga";
             this.Column13.HeaderText = "C";
             this.Column13.Name = "Column13";
             this.Column13.Width = 25;
             // 
             // Column14
             // 
+            this.Column14.DataPropertyName = "colCCCarga";
             this.Column14.HeaderText = "C";
             this.Column14.Name = "Column14";
             this.Column14.Width = 25;
             // 
             // Column15
             // 
+            this.Column15.DataPropertyName = "colPCarga";
             this.Column15.HeaderText = "P";
             this.Column15.Name = "Column15";
             this.Column15.Width = 25;
             // 
             // Column16
             // 
+            this.Column16.DataPropertyName = "colDCarga";
             this.Column16.HeaderText = "D";
             this.Column16.Name = "Column16";
             this.Column16.Width = 25;
             // 
             // Column17
             // 
+            this.Column17.DataPropertyName = "colSDescarga";
             this.Column17.HeaderText = "S";
             this.Column17.Name = "Column17";
             this.Column17.Width = 25;
             // 
             // colADescarga
             // 
+            this.colADescarga.DataPropertyName = "colADescarga";
             this.colADescarga.HeaderText = "A";
             this.colADescarga.Name = "colADescarga";
             this.colADescarga.Width = 25;
             // 
             // Column19
             // 
+            this.Column19.DataPropertyName = "colCDescarga";
             this.Column19.HeaderText = "C";
             this.Column19.Name = "Column19";
             this.Column19.Width = 25;
             // 
             // Column20
             // 
+            this.Column20.DataPropertyName = "colCCDescarga";
             this.Column20.HeaderText = "C";
             this.Column20.Name = "Column20";
             this.Column20.Width = 25;
             // 
             // Column21
             // 
+            this.Column21.DataPropertyName = "colPDescarga";
             this.Column21.HeaderText = "P";
             this.Column21.Name = "Column21";
             this.Column21.Width = 25;
             // 
             // Column22
             // 
+            this.Column22.DataPropertyName = "colDDescarga";
             this.Column22.HeaderText = "D";
             this.Column22.Name = "Column22";
             this.Column22.Width = 25;
             // 
             // Column23
             // 
+            this.Column23.DataPropertyName = "colVenta";
             this.Column23.HeaderText = "Venta";
             this.Column23.Name = "Column23";
             this.Column23.Width = 50;
             // 
             // Column24
             // 
+            this.Column24.DataPropertyName = "colCobro";
             this.Column24.HeaderText = "Cobro";
             this.Column24.Name = "Column24";
             this.Column24.Width = 50;
             // 
             // Column25
             // 
+            this.Column25.DataPropertyName = "colSaldoCC";
             this.Column25.HeaderText = "Saldo CC";
             this.Column25.Name = "Column25";
             this.Column25.Width = 50;
