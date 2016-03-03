@@ -203,7 +203,7 @@ namespace RamosHermanos.Capas.Interfaz
         itemPedidoEntity itemPedido = new itemPedidoEntity();
         public void CargarItemPedido(DataGridViewRow row)
         {
-            itemPedido.codProducto = Convert.ToInt32((row.Cells["colCodigo"].Value));
+            itemPedido.codProducto = Convert.ToInt32(row.Cells["colCodigo"].Value);
             itemPedido.pedido = Convert.ToInt32(txtidpedido.Text);
             itemPedido.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
             itemPedido.preciounitario = Convert.ToDouble(row.Cells["colPrecio"].Value);

@@ -85,22 +85,41 @@ namespace RamosHermanos.Capas.Interfaz
         
         itemComprasEntity itemcompra = new itemComprasEntity();
        
-        private void cargarItemCompra(DataGridView row)
+        private void cargarItemCompra(DataGridViewRow row)
         {
-            
-            //itemcompra.idInsumo = Convert.ToInt32
+
+            itemcompra.idInsumo = Convert.ToInt32(row.Cells["colIDInsumo"].Value);
+            itemcompra.idRubro = Convert.ToInt32(row.Cells["colIDRubro"].Value);
+            itemcompra.marca = Convert.ToString(row.Cells["colMarca"].Value);
+            itemcompra.precioUnitario = Convert.ToDouble(row.Cells["colPrecioCompra"].Value);
+            itemcompra.subTotal = Convert.ToDouble(row.Cells["colSubTotal"].Value);
+            itemcompra.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
+
 
         }
         
         ComprasEntity compras = new ComprasEntity();
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            CargarCompras();
-            ComprasB.InsertCompras(compras, txtidCompras);
+            //CargarCompras();
+            //ComprasB.InsertCompras(compras, txtidCompras);
+            
+            foreach (DataGridViewRow row in dgvCompra.Rows)
+            {
+                cargarItemCompra(row);
+                itemCompraB.InsertItemCompras(itemcompra, dgvCompra);
+            }
+
+            MessageBox.Show("guardado");
 
         }
 
         private void txtIngreso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
         {
 
         }

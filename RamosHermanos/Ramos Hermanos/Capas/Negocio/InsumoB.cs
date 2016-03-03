@@ -352,7 +352,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT I.idInsumo, I.insumo, I.marca, I.stockMin, P.idProveedor, R.rubro
+                string query = @"SELECT I.idInsumo, I.insumo, I.marca, I.stockMin, P.idProveedor, R.rubro, R.idRubro
 						    FROM insumos I
 							INNER JOIN proveedores P on P.idProveedor = I.proveedor
 							INNER JOIN rubros R on R.idRubro = I.rubro
@@ -371,6 +371,7 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["Insumo"]),
                     Convert.ToString(dr["Rubro"]),
                     Convert.ToString(dr["Marca"]),
+                    Convert.ToInt32(dr["idRubro"]),
                     Convert.ToString(null),
                     Convert.ToString(null),
                     Convert.ToString(null));
