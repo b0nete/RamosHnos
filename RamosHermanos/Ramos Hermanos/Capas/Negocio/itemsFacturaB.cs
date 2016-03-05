@@ -24,7 +24,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
-                cmd.Parameters.AddWithValue("@producto", itemFactura.producto);
+                    cmd.Parameters.AddWithValue("@producto", itemFactura.producto);
                 cmd.Parameters.AddWithValue("@cantidad", itemFactura.cantidad);
                 cmd.Parameters.AddWithValue("@precioUnitario", itemFactura.precioUnitario);
                 cmd.Parameters.AddWithValue("@subTotal", itemFactura.subTotal);

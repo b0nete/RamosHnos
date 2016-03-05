@@ -73,7 +73,7 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colACarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -374,7 +374,7 @@
             this.Column8,
             this.Column9,
             this.Column10,
-            this.Column11,
+            this.colSCarga,
             this.colACarga,
             this.Column13,
             this.Column14,
@@ -394,10 +394,12 @@
             this.dgvRepartos.Name = "dgvRepartos";
             this.dgvRepartos.Size = new System.Drawing.Size(994, 642);
             this.dgvRepartos.TabIndex = 0;
+            this.dgvRepartos.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvRepartos_CellBeginEdit);
             this.dgvRepartos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellContentClick);
             this.dgvRepartos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellDoubleClick);
             this.dgvRepartos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellEndEdit);
             this.dgvRepartos.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellEnter);
+            this.dgvRepartos.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellLeave);
             this.dgvRepartos.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvRepartos_EditingControlShowing_1);
             this.dgvRepartos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_RowEnter);
             this.dgvRepartos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvRepartos_KeyDown);
@@ -496,12 +498,12 @@
             this.Column10.Name = "Column10";
             this.Column10.Width = 50;
             // 
-            // Column11
+            // colSCarga
             // 
-            this.Column11.DataPropertyName = "colSCarga";
-            this.Column11.HeaderText = "S";
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 25;
+            this.colSCarga.DataPropertyName = "colSCarga";
+            this.colSCarga.HeaderText = "S";
+            this.colSCarga.Name = "colSCarga";
+            this.colSCarga.Width = 25;
             // 
             // colACarga
             // 
@@ -673,7 +675,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSCarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn colACarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
