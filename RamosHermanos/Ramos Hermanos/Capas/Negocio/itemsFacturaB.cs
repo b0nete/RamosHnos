@@ -12,6 +12,25 @@ namespace RamosHermanos.Capas.Negocio
 {
     class itemsFacturaB
     {
+        public static bool ExisteItemFactura(itemFacturaEntity itemFactura)
+        {
+            MySQL.ConnectDB();
+
+            string query = @"SELECT COUNT(*) FROM itemsFactura
+                             WHERE producto = @producto and factura = @factura";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+            cmd.Parameters.AddWithValue("@producto", itemFactura.producto);
+            cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
+
+            int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (resultado == 0)
+                return false;
+            else
+                return true;
+        }
+
         public static itemFacturaEntity InsertItemFactura(itemFacturaEntity itemFactura)
         {
             try
@@ -24,13 +43,46 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
-                    cmd.Parameters.AddWithValue("@producto", itemFactura.producto);
+                cmd.Parameters.AddWithValue("@producto", itemFactura.producto);
                 cmd.Parameters.AddWithValue("@cantidad", itemFactura.cantidad);
                 cmd.Parameters.AddWithValue("@precioUnitario", itemFactura.precioUnitario);
                 cmd.Parameters.AddWithValue("@subTotal", itemFactura.subTotal);
                 cmd.Parameters.AddWithValue("@carga", itemFactura.carga);
 
                 cmd.ExecuteNonQuery();                                
+
+                MySQL.DisconnectDB();
+
+                return itemFactura;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static itemFacturaEntity UpdateItemFactura(itemFacturaEntity itemFactura)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"UPDATE itemsFactura
+                                 SET cantidad = @cantidad, precioUnitario = @precioUnitario, subTotal = @subTotal
+                                 WHERE producto = @producto and factura = @factura";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
+                cmd.Parameters.AddWithValue("@producto", itemFactura.producto);
+                cmd.Parameters.AddWithValue("@cantidad", itemFactura.cantidad);
+                cmd.Parameters.AddWithValue("@precioUnitario", itemFactura.precioUnitario);
+                cmd.Parameters.AddWithValue("@subTotal", itemFactura.subTotal);
+                cmd.Parameters.AddWithValue("@carga", itemFactura.carga);
+
+                cmd.ExecuteNonQuery();
 
                 MySQL.DisconnectDB();
 

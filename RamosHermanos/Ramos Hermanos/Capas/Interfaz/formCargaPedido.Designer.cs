@@ -105,7 +105,7 @@
             this.txt20.Location = new System.Drawing.Point(73, 45);
             this.txt20.Name = "txt20";
             this.txt20.Size = new System.Drawing.Size(66, 20);
-            this.txt20.TabIndex = 2;
+            this.txt20.TabIndex = 6;
             this.txt20.Text = "0";
             // 
             // txt25
@@ -122,7 +122,7 @@
             this.label5.Location = new System.Drawing.Point(21, 114);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
-            this.label5.TabIndex = 1;
+            this.label5.TabIndex = 7;
             this.label5.Text = "1 (4LTs)";
             // 
             // label4
@@ -131,7 +131,7 @@
             this.label4.Location = new System.Drawing.Point(6, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 4;
+            this.label4.TabIndex = 8;
             this.label4.Text = "2.5 (10LTs)";
             // 
             // label3
@@ -140,7 +140,7 @@
             this.label3.Location = new System.Drawing.Point(15, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 3;
+            this.label3.TabIndex = 9;
             this.label3.Text = "3 (12LTs)";
             // 
             // label2
@@ -149,7 +149,7 @@
             this.label2.Location = new System.Drawing.Point(15, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 10;
             this.label2.Text = "4 (20LTs)";
             // 
             // label1
