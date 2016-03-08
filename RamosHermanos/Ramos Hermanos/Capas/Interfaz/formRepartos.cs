@@ -154,8 +154,50 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvRepartos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            // SendKeys.Send("{UP}");
-            // SendKeys.Send("{TAB}");
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSCarga")
+            {
+                //Soda
+                itemFactura.producto = 7;
+                itemFactura.carga = "C";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                    UpdateFactura("colSCarga");                    
+                else
+                    InsertFactura("colSCarga");
+                    
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCarga")
+            {
+                //Cajon
+                itemFactura.producto = 8;
+                itemFactura.carga = "C";
+                InsertFactura("colCCarga");
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCCarga")
+            {
+                //Canasta
+                itemFactura.producto = 9;
+                itemFactura.carga = "C";
+                InsertFactura("colCCCarga");
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colPCarga")
+            {
+                //Pie
+                itemFactura.producto = 10;
+                itemFactura.carga = "C";
+                InsertFactura("colPCarga");
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colDCarga")
+            {
+                //Dispenser
+                itemFactura.producto = 11;
+                itemFactura.carga = "C";
+                InsertFactura("colDCarga");
+            } 
+               
         }
 
         // Entidades
@@ -169,54 +211,14 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvRepartos_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSCarga")
+            if (dgvRepartos.CurrentCell.Value == DBNull.Value)
             {
-                //Soda
-                itemFactura.producto = 7;
-                itemFactura.carga = "C";
-                InsertFactura("colSCarga");
+                dgvRepartos.CurrentCell.Value = "0";
             }
-
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSCarga")
-            {
-                //Cajon
-                itemFactura.producto = 8;
-                itemFactura.carga = "C";
-                InsertFactura("colSCarga");
-            }
-
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSCarga")
-            {
-                //Canasta
-                itemFactura.producto = 9;
-                itemFactura.carga = "C";
-                InsertFactura("colSCarga");
-            }
-
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSCarga")
-            {
-                //Pie
-                itemFactura.producto = 10;
-                itemFactura.carga = "C";
-                InsertFactura("colSCarga");
-            }
-
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSCarga")
-            {
-                //Dispenser
-                itemFactura.producto = 11;
-                itemFactura.carga = "C";
-                InsertFactura("colSCarga");
-            } 
         }
 
         private void InsertFactura(string nombreColumna)
         {
-            if (dgvRepartos.CurrentCell.Value.ToString() == string.Empty)
-            {
-                dgvRepartos.CurrentCell.Value = "0";
-            }
-
             if (dgvRepartos.CurrentCell.Value.ToString() != string.Empty)
             {
                 itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
@@ -228,10 +230,22 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
+        private void UpdateFactura(string nombreColumna)
+        {
+            if (dgvRepartos.CurrentCell.Value.ToString() != string.Empty)
+            {
+                itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+                itemFactura.cantidad = Convert.ToInt32(dgvRepartos.CurrentRow.Cells[nombreColumna].Value.ToString());
+                itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
+                itemFactura.subTotal = itemFactura.precioUnitario * itemFactura.cantidad;
+
+                itemsFacturaB.UpdateItemFactura(itemFactura);
+            }
+        }
+
         private void dgvRepartos_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            dgvRepartos.Columns[e.ColumnIndex].Selected = true;
-            string nombrecolumna = dgvRepartos.Columns[e.ColumnIndex].Name;
+
         }
 
     }

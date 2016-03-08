@@ -28,8 +28,12 @@ namespace RamosHermanos.Capas.Interfaz
             formRepartos frm = new formRepartos();
 
             int total = Suma();
-
+            
             CargaTXT(txt25, 6);
+            CargaTXT(txt20, 5);
+            CargaTXT(txt12, 4);
+            CargaTXT(txt10, 3);
+            CargaTXT(txt4, 1);
 
             // Tutorial Interfaz formularios desacoplados
             // http://ltuttini.blogspot.com.ar/2009/09/c-comunicar-formularios-de-forma.html
@@ -58,6 +62,7 @@ namespace RamosHermanos.Capas.Interfaz
             if (txt.Text == string.Empty)
             {
                 txt.Text = "0";
+                return;
             }
 
             if (txt.Text != string.Empty)
