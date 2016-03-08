@@ -283,7 +283,7 @@ namespace RamosHermanos.Capas.Interfaz
 
                 //Insertamos el nuevo precio.
                 precio.producto = Convert.ToInt32(txtIDProd.Text);
-                precio.precio = Convert.ToDouble(txtnewPrecio.Text);
+                precio.precio = Convert.ToDecimal(txtnewPrecio.Text);
                 PrecioProductosB.InsertPrecio(precio);
 
                 //Actualizamos DGV
@@ -296,7 +296,30 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void txtnewPrecio_Leave(object sender, EventArgs e)
         {
-            
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            //
+            decimal numero = default(decimal);
+            bool bln = decimal.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
+            {
+                // No es un valor decimal válido; limpiamos el control.
+                tb.Clear();
+                return;
+            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:C2}", numero);
+
+
         }
 
         private void txtnewPrecio_KeyPress(object sender, KeyPressEventArgs e)
@@ -334,6 +357,11 @@ namespace RamosHermanos.Capas.Interfaz
             stock.idProductoInsumo = txtIDProd.Text;
             stock.stockMinimo = Convert.ToInt32(txtStockMin.Text);
             stock.stockMaximo = Convert.ToInt32(txtStockMax.Text);
+        }
+
+        private void txtnewPrecio_TextChanged(object sender, EventArgs e)
+        {
+           
         }
 
         
