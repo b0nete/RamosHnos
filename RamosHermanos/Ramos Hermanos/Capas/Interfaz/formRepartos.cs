@@ -154,16 +154,17 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvRepartos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSCarga")
             {
                 //Soda
-                itemFactura.producto = 7;
+                itemFactura.producto = 7;                
                 itemFactura.carga = "C";
                 if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
                     UpdateFactura("colSCarga");                    
                 else
                     InsertFactura("colSCarga");
-                    
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCarga")

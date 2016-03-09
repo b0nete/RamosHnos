@@ -75,7 +75,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static DataTable BuscarItemsReparto(itemsRepartoEntity itemsReparto)
+        public static DataTable BuscarItemsReparto(itemsRepartoEntity itemsReparto, DataGridView dgv)
         {
             try
             {
@@ -118,6 +118,8 @@ namespace RamosHermanos.Capas.Negocio
 
                 DataTable dtEncabezado = new DataTable();
                 DataTable dtCargas = new DataTable();
+                DataTable dtCargas2 = new DataTable();
+
 
                 //Encabezado
                 string query = @"SELECT IR.cliente as idCliente, CONCAT(C.nombre, ' ', C.apellido) as clienteCompleto, IR.domicilio as idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) as domicilioCompleto, idComprobante
@@ -134,15 +136,44 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 da.Fill(dtEncabezado);
 
-                //Cargas
-                string queryCargas = @"SELECT SUM(cantidad) as colACarga
-                                       FROM itemsFactura
-                                       WHERE factura = 1 and carga = 'D'";
+                ////Cargas                
+                foreach (DataRow dRow in dtEncabezado.Rows)
+                {
+                    //Aguas
+                    //dtCargas.Clear();
+                    itemFacturaEntity itemFactura = new itemFacturaEntity();
 
-                MySqlCommand cmd2 = new MySqlCommand(queryCargas, MySQL.sqlcnx);
+                    string queryACarga = @"SELECT SUM(cantidad) as colACarga
+                                            FROM itemsFactura
+                                            WHERE factura = @factura and carga = 'C' 
+                                            and (producto = 1 
+                                            or producto = 2 
+                                            or producto = 3 
+                                            or producto = 4
+                                            or producto = 5 
+                                            or producto = 6)";
 
-                MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
-                da2.Fill(dtCargas);
+                    MySqlCommand cmd2 = new MySqlCommand(queryACarga, MySQL.sqlcnx);
+
+                    cmd2.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
+
+                    MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
+                    da2.Fill(dtCargas);
+
+                    //Sodas
+                    //dtCargas2.Clear();
+                    string querySCarga = @"SELECT SUM(cantidad) as colSCarga
+                                            FROM itemsFactura
+                                            WHERE producto = 7 and factura = @factura and carga = 'C'";
+
+                    MySqlCommand cmd3 = new MySqlCommand(querySCarga, MySQL.sqlcnx);
+
+                    cmd3.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
+                    MessageBox.Show(Convert.ToString(dRow["idComprobante"]));
+
+                    MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
+                    da3.Fill(dtCargas2);
+                }
 
                 foreach (DataRow row in dtEncabezado.Rows)
                 {
@@ -160,8 +191,10 @@ namespace RamosHermanos.Capas.Negocio
                 {
                     DataRow rowMerge = dtMerge.Rows[i];
                     DataRow roworigen = dtCargas.Rows[i];
+                    DataRow roworigen2 = dtCargas2.Rows[i];
 
                     rowMerge["colACarga"] = roworigen["colACarga"];
+                    rowMerge["colSCarga"] = roworigen2["colSCarga"];
                 }
 
                 MySQL.DisconnectDB();

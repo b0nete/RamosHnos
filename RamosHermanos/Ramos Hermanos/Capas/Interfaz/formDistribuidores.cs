@@ -672,7 +672,7 @@ namespace RamosHermanos.Capas.Interfaz
                     frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
 
                     itemsReparto.reparto = reparto.idReparto;
-                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
                 }
                 else
                 {
