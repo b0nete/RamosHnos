@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
-
+using RamosHermanos.Capas.Interfaz.Contratos;
 namespace RamosHermanos.Capas.Interfaz.Listados
 {
     public partial class listInsumos : Form
@@ -24,7 +24,9 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         private void listInsumos_Load(object sender, EventArgs e)
         {
             cbParametro.SelectedIndex = 0;
-            InsumoB.cargardgvInsumo(dgvInsumos);   
+            InsumoB.cargardgvInsumo(dgvInsumos); 
+            if(datos.HasValue)
+            txtdatos.Text = Convert.ToString(datos);
         }
 
         private void SearchParametro()
@@ -110,17 +112,28 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             }
             if (cell != null)
             {
-                DataGridViewRow row = cell.OwningRow;
-
+                DataGridViewRow row = this.dgvInsumos.CurrentRow as DataGridViewRow;
+                
                 //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el producto para cargarlo en tabInformación.
                 insumo.idInsumo = Convert.ToInt32(row.Cells["colIDInsumo"].Value.ToString());
 
                 InsumoB.AdddInsumoDGV(frmP.dgvCompra, insumo);
 
-                frmP.Show();
+                IAddItem parent = this.Owner as IAddItem;
+                parent.AddNewItem(row);
+                this.Close();
+
             }
         
         
         }
-    }
-}
+        private int? datos = null;
+        public listInsumos(int datos) : this()
+        { 
+            this.datos = datos; 
+        }
+          
+      }
+       
+         
+ }

@@ -13,6 +13,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Interfaz.Listados;
+using RamosHermanos.Capas.Interfaz.Contratos;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -24,7 +25,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             InitializeComponent();
         }
-        
+
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
@@ -46,7 +47,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             listProveedores frm = new listProveedores();
             frm.caseSwitch = 1;
-            frm.Show();
+            frm.Show(this);
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -119,11 +120,29 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-        private void groupBox3_Enter(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            listInsumos form = new listInsumos();
+            form.Show(this);
+ 
         }
+
+        #region IAddItem Members
+
+        public void AddNewItem(DataGridViewRow row)
+        {
+            string idinsumo = row.Cells["IDinsumo"].Value.ToString();
+            string insumo = row.Cells["Insumo"].Value.ToString();
+
+            this.dgvCompra.Rows.Add(new[] { idinsumo, insumo });
             
+        }
+
+        #endregion
+
+        
+
+                   
        
     }
 }

@@ -31,7 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCompras));
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtidCompras = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.TextBox1 = new System.Windows.Forms.TextBox();
+            this.txtdatos = new System.Windows.Forms.TextBox();
             this.txtIngreso = new System.Windows.Forms.MaskedTextBox();
             this.dtpfechaFactura = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,6 +56,14 @@
             this.txtCuil = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCompra = new System.Windows.Forms.DataGridView();
+            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -66,14 +76,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIDRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecioCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
@@ -95,7 +97,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txtidCompras);
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.TextBox1);
+            this.groupBox3.Controls.Add(this.txtdatos);
             this.groupBox3.Controls.Add(this.txtIngreso);
             this.groupBox3.Controls.Add(this.dtpfechaFactura);
             this.groupBox3.Controls.Add(this.label7);
@@ -111,16 +115,35 @@
             this.groupBox3.TabIndex = 81;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Soderia";
-            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
-            // txtidCompras
+            // button1
             // 
-            this.txtidCompras.Enabled = false;
-            this.txtidCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtidCompras.Location = new System.Drawing.Point(207, 13);
-            this.txtidCompras.Name = "txtidCompras";
-            this.txtidCompras.Size = new System.Drawing.Size(61, 20);
-            this.txtidCompras.TabIndex = 93;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button1.Location = new System.Drawing.Point(241, 9);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 28);
+            this.button1.TabIndex = 93;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // TextBox1
+            // 
+            this.TextBox1.Enabled = false;
+            this.TextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TextBox1.Location = new System.Drawing.Point(149, 17);
+            this.TextBox1.Name = "TextBox1";
+            this.TextBox1.Size = new System.Drawing.Size(61, 20);
+            this.TextBox1.TabIndex = 94;
+            // 
+            // txtdatos
+            // 
+            this.txtdatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtdatos.Location = new System.Drawing.Point(275, 13);
+            this.txtdatos.Name = "txtdatos";
+            this.txtdatos.Size = new System.Drawing.Size(61, 20);
+            this.txtdatos.TabIndex = 93;
             // 
             // txtIngreso
             // 
@@ -366,6 +389,46 @@
             this.dgvCompra.Size = new System.Drawing.Size(760, 193);
             this.dgvCompra.TabIndex = 82;
             // 
+            // colIDInsumo
+            // 
+            this.colIDInsumo.HeaderText = "IDinsumo";
+            this.colIDInsumo.Name = "colIDInsumo";
+            // 
+            // colInsumo
+            // 
+            this.colInsumo.HeaderText = "Insumo";
+            this.colInsumo.Name = "colInsumo";
+            // 
+            // colRubro
+            // 
+            this.colRubro.HeaderText = "Rubro";
+            this.colRubro.Name = "colRubro";
+            // 
+            // colMarca
+            // 
+            this.colMarca.HeaderText = "Marca";
+            this.colMarca.Name = "colMarca";
+            // 
+            // colIDRubro
+            // 
+            this.colIDRubro.HeaderText = "idRubro";
+            this.colIDRubro.Name = "colIDRubro";
+            // 
+            // colPrecioCompra
+            // 
+            this.colPrecioCompra.HeaderText = "Precio Compra";
+            this.colPrecioCompra.Name = "colPrecioCompra";
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            // 
+            // colSubTotal
+            // 
+            this.colSubTotal.HeaderText = "SubTotal";
+            this.colSubTotal.Name = "colSubTotal";
+            // 
             // btnImprimir
             // 
             this.btnImprimir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnImprimir.BackgroundImage")));
@@ -501,46 +564,6 @@
             this.label16.TabIndex = 133;
             this.label16.Text = "Total General";
             // 
-            // colIDInsumo
-            // 
-            this.colIDInsumo.HeaderText = "IDinsumo";
-            this.colIDInsumo.Name = "colIDInsumo";
-            // 
-            // colInsumo
-            // 
-            this.colInsumo.HeaderText = "Insumo";
-            this.colInsumo.Name = "colInsumo";
-            // 
-            // colRubro
-            // 
-            this.colRubro.HeaderText = "Rubro";
-            this.colRubro.Name = "colRubro";
-            // 
-            // colMarca
-            // 
-            this.colMarca.HeaderText = "Marca";
-            this.colMarca.Name = "colMarca";
-            // 
-            // colIDRubro
-            // 
-            this.colIDRubro.HeaderText = "idRubro";
-            this.colIDRubro.Name = "colIDRubro";
-            // 
-            // colPrecioCompra
-            // 
-            this.colPrecioCompra.HeaderText = "Precio Compra";
-            this.colPrecioCompra.Name = "colPrecioCompra";
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            // 
-            // colSubTotal
-            // 
-            this.colSubTotal.HeaderText = "SubTotal";
-            this.colSubTotal.Name = "colSubTotal";
-            // 
             // formCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -608,7 +631,7 @@
         public System.Windows.Forms.ComboBox cbDomicilio;
         public System.Windows.Forms.TextBox txtCondicionIva;
         public System.Windows.Forms.DataGridView dgvCompra;
-        public System.Windows.Forms.TextBox txtidCompras;
+        public System.Windows.Forms.TextBox txtdatos;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;
@@ -617,5 +640,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecioCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
+        public System.Windows.Forms.TextBox TextBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

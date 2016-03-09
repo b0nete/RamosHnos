@@ -38,6 +38,8 @@
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtdatos = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtParametro = new System.Windows.Forms.MaskedTextBox();
             this.cbParametro = new System.Windows.Forms.ComboBox();
@@ -112,6 +114,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.txtdatos);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtParametro);
             this.groupBox1.Controls.Add(this.cbParametro);
@@ -123,6 +127,24 @@
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda Parametrizada";
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button1.Location = new System.Drawing.Point(668, 18);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 28);
+            this.button1.TabIndex = 110;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // txtdatos
+            // 
+            this.txtdatos.Location = new System.Drawing.Point(562, 23);
+            this.txtdatos.Name = "txtdatos";
+            this.txtdatos.Size = new System.Drawing.Size(100, 20);
+            this.txtdatos.TabIndex = 109;
             // 
             // label1
             // 
@@ -201,5 +223,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colEstado;
+        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox txtdatos;
     }
 }

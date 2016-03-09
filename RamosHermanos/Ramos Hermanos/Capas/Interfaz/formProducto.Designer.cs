@@ -76,6 +76,9 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tabStock = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.txtStockMin = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.colOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,9 +102,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtStockMin = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -694,6 +694,37 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stock";
             // 
+            // button8
+            // 
+            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(687, 40);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(28, 28);
+            this.button8.TabIndex = 125;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // txtStockMin
+            // 
+            this.txtStockMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtStockMin.Location = new System.Drawing.Point(313, 19);
+            this.txtStockMin.Name = "txtStockMin";
+            this.txtStockMin.Size = new System.Drawing.Size(81, 20);
+            this.txtStockMin.TabIndex = 124;
+            // 
+            // label11
+            // 
+            this.label11.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label11.Location = new System.Drawing.Point(234, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 13);
+            this.label11.TabIndex = 123;
+            this.label11.Text = "Stock Mínimo";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView1);
@@ -870,6 +901,7 @@
             this.txtnewPrecio.Name = "txtnewPrecio";
             this.txtnewPrecio.Size = new System.Drawing.Size(140, 20);
             this.txtnewPrecio.TabIndex = 60;
+            this.txtnewPrecio.TextChanged += new System.EventHandler(this.txtnewPrecio_TextChanged);
             this.txtnewPrecio.Leave += new System.EventHandler(this.txtnewPrecio_Leave);
             // 
             // label19
@@ -908,37 +940,6 @@
             this.label7.TabIndex = 103;
             this.label7.Text = "Productos";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtStockMin
-            // 
-            this.txtStockMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtStockMin.Location = new System.Drawing.Point(313, 19);
-            this.txtStockMin.Name = "txtStockMin";
-            this.txtStockMin.Size = new System.Drawing.Size(81, 20);
-            this.txtStockMin.TabIndex = 124;
-            // 
-            // label11
-            // 
-            this.label11.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label11.Location = new System.Drawing.Point(234, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(73, 13);
-            this.label11.TabIndex = 123;
-            this.label11.Text = "Stock Mínimo";
-            // 
-            // button8
-            // 
-            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(687, 40);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(28, 28);
-            this.button8.TabIndex = 125;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // formProducto
             // 
