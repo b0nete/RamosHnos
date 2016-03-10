@@ -739,6 +739,7 @@
             // 
             // tabCalles
             // 
+            this.tabCalles.BackColor = System.Drawing.SystemColors.Control;
             this.tabCalles.Controls.Add(this.btnSaveCalle);
             this.tabCalles.Controls.Add(this.btnClose);
             this.tabCalles.Controls.Add(this.btnDelCalle);
@@ -750,7 +751,6 @@
             this.tabCalles.Size = new System.Drawing.Size(506, 351);
             this.tabCalles.TabIndex = 3;
             this.tabCalles.Text = "Calles";
-            this.tabCalles.UseVisualStyleBackColor = true;
             // 
             // btnSaveCalle
             // 

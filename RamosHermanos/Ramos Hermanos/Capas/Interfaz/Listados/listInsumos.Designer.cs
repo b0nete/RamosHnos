@@ -64,7 +64,7 @@
             this.dgvInsumos.Location = new System.Drawing.Point(12, 61);
             this.dgvInsumos.Name = "dgvInsumos";
             this.dgvInsumos.ReadOnly = true;
-            this.dgvInsumos.Size = new System.Drawing.Size(746, 368);
+            this.dgvInsumos.Size = new System.Drawing.Size(768, 368);
             this.dgvInsumos.TabIndex = 55;
             this.dgvInsumos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvInsumos_MouseDoubleClick);
             // 
@@ -123,7 +123,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(746, 52);
+            this.groupBox1.Size = new System.Drawing.Size(768, 52);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda Parametrizada";
@@ -195,7 +195,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 450);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.dgvInsumos);
             this.Controls.Add(this.groupBox1);
             this.Name = "listInsumos";

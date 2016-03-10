@@ -258,6 +258,7 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvCliente);
+            this.MaximizeBox = false;
             this.Name = "listClientes";
             this.Text = "Listado Clientes";
             this.Load += new System.EventHandler(this.listClientes_Load);

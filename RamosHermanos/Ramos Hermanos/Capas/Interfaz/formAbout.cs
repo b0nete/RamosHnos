@@ -26,5 +26,10 @@ namespace RamosHermanos.Capas.Interfaz
         {
 
         }
+
+        private void formAbout_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

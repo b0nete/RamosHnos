@@ -146,6 +146,7 @@
             // 
             // tabDomicilios
             // 
+            this.tabDomicilios.BackColor = System.Drawing.SystemColors.Control;
             this.tabDomicilios.Controls.Add(this.btnUpdDom);
             this.tabDomicilios.Controls.Add(this.label5);
             this.tabDomicilios.Controls.Add(this.btnSaveDom);
@@ -159,7 +160,6 @@
             this.tabDomicilios.Size = new System.Drawing.Size(776, 536);
             this.tabDomicilios.TabIndex = 0;
             this.tabDomicilios.Text = "Domicilios";
-            this.tabDomicilios.UseVisualStyleBackColor = true;
             // 
             // btnUpdDom
             // 
@@ -684,6 +684,7 @@
             // 
             // tabTelefonos
             // 
+            this.tabTelefonos.BackColor = System.Drawing.SystemColors.Control;
             this.tabTelefonos.Controls.Add(this.btnUpdTel);
             this.tabTelefonos.Controls.Add(this.label16);
             this.tabTelefonos.Controls.Add(this.btnSaveTel);
@@ -697,7 +698,6 @@
             this.tabTelefonos.Size = new System.Drawing.Size(776, 536);
             this.tabTelefonos.TabIndex = 1;
             this.tabTelefonos.Text = "Telefonos";
-            this.tabTelefonos.UseVisualStyleBackColor = true;
             // 
             // btnUpdTel
             // 
@@ -921,6 +921,7 @@
             // 
             // tabEmails
             // 
+            this.tabEmails.BackColor = System.Drawing.SystemColors.Control;
             this.tabEmails.Controls.Add(this.btnUpdEmail);
             this.tabEmails.Controls.Add(this.lblRolTel);
             this.tabEmails.Controls.Add(this.label26);
@@ -938,7 +939,6 @@
             this.tabEmails.Size = new System.Drawing.Size(776, 536);
             this.tabEmails.TabIndex = 2;
             this.tabEmails.Text = "Emails";
-            this.tabEmails.UseVisualStyleBackColor = true;
             // 
             // btnUpdEmail
             // 

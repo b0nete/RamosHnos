@@ -192,11 +192,11 @@
             this.checkMi = new System.Windows.Forms.CheckBox();
             this.btnSaveVisita = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.i = new System.Windows.Forms.Label();
+            this.txtidDistri = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
-            this.txtidDistri = new System.Windows.Forms.TextBox();
-            this.i = new System.Windows.Forms.Label();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -224,7 +224,7 @@
             // 
             this.tabMovimientos.Location = new System.Drawing.Point(4, 22);
             this.tabMovimientos.Name = "tabMovimientos";
-            this.tabMovimientos.Size = new System.Drawing.Size(776, 536);
+            this.tabMovimientos.Size = new System.Drawing.Size(1027, 536);
             this.tabMovimientos.TabIndex = 4;
             this.tabMovimientos.Text = "Movimientos";
             this.tabMovimientos.UseVisualStyleBackColor = true;
@@ -236,7 +236,7 @@
             this.tabListado.Controls.Add(this.dgvCliente);
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
-            this.tabListado.Size = new System.Drawing.Size(776, 536);
+            this.tabListado.Size = new System.Drawing.Size(1027, 536);
             this.tabListado.TabIndex = 5;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
@@ -288,7 +288,7 @@
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCliente.Size = new System.Drawing.Size(776, 506);
+            this.dgvCliente.Size = new System.Drawing.Size(947, 506);
             this.dgvCliente.TabIndex = 1;
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
             this.dgvCliente.SelectionChanged += new System.EventHandler(this.dgvCliente_SelectionChanged);
@@ -388,7 +388,7 @@
             this.tabSugerencias.Location = new System.Drawing.Point(4, 22);
             this.tabSugerencias.Name = "tabSugerencias";
             this.tabSugerencias.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSugerencias.Size = new System.Drawing.Size(776, 536);
+            this.tabSugerencias.Size = new System.Drawing.Size(1027, 536);
             this.tabSugerencias.TabIndex = 2;
             this.tabSugerencias.Text = "Sugerencias";
             this.tabSugerencias.UseVisualStyleBackColor = true;
@@ -417,7 +417,7 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(776, 536);
+            this.tabInformacion.Size = new System.Drawing.Size(1027, 536);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             // 
@@ -1233,11 +1233,12 @@
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(784, 562);
+            this.tabMain.Size = new System.Drawing.Size(1035, 562);
             this.tabMain.TabIndex = 4;
             // 
             // tabInformacionJ
             // 
+            this.tabInformacionJ.BackColor = System.Drawing.Color.Transparent;
             this.tabInformacionJ.Controls.Add(this.button2);
             this.tabInformacionJ.Controls.Add(this.button3);
             this.tabInformacionJ.Controls.Add(this.groupBox9);
@@ -1247,10 +1248,9 @@
             this.tabInformacionJ.Controls.Add(this.button10);
             this.tabInformacionJ.Location = new System.Drawing.Point(4, 22);
             this.tabInformacionJ.Name = "tabInformacionJ";
-            this.tabInformacionJ.Size = new System.Drawing.Size(776, 536);
+            this.tabInformacionJ.Size = new System.Drawing.Size(1027, 536);
             this.tabInformacionJ.TabIndex = 6;
             this.tabInformacionJ.Text = "Informacion";
-            this.tabInformacionJ.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -1864,7 +1864,7 @@
             this.tabVisita.Controls.Add(this.groupBox7);
             this.tabVisita.Location = new System.Drawing.Point(4, 22);
             this.tabVisita.Name = "tabVisita";
-            this.tabVisita.Size = new System.Drawing.Size(776, 536);
+            this.tabVisita.Size = new System.Drawing.Size(1027, 536);
             this.tabVisita.TabIndex = 7;
             this.tabVisita.Text = "Visita";
             this.tabVisita.Click += new System.EventHandler(this.tabVisita_Click);
@@ -2065,6 +2065,23 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Domicilio";
             // 
+            // i
+            // 
+            this.i.AutoSize = true;
+            this.i.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.i.Location = new System.Drawing.Point(612, 22);
+            this.i.Name = "i";
+            this.i.Size = new System.Drawing.Size(36, 13);
+            this.i.TabIndex = 75;
+            this.i.Text = "idDistr";
+            // 
+            // txtidDistri
+            // 
+            this.txtidDistri.Location = new System.Drawing.Point(654, 19);
+            this.txtidDistri.Name = "txtidDistri";
+            this.txtidDistri.Size = new System.Drawing.Size(100, 20);
+            this.txtidDistri.TabIndex = 96;
+            // 
             // label32
             // 
             this.label32.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
@@ -2099,28 +2116,11 @@
             this.cbDomicilio.DropDown += new System.EventHandler(this.cbDomicilio_DropDown);
             this.cbDomicilio.SelectedIndexChanged += new System.EventHandler(this.cbDomicilio_SelectedIndexChanged);
             // 
-            // txtidDistri
-            // 
-            this.txtidDistri.Location = new System.Drawing.Point(654, 19);
-            this.txtidDistri.Name = "txtidDistri";
-            this.txtidDistri.Size = new System.Drawing.Size(100, 20);
-            this.txtidDistri.TabIndex = 96;
-            // 
-            // i
-            // 
-            this.i.AutoSize = true;
-            this.i.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.i.Location = new System.Drawing.Point(612, 22);
-            this.i.Name = "i";
-            this.i.Size = new System.Drawing.Size(36, 13);
-            this.i.TabIndex = 75;
-            this.i.Text = "idDistr";
-            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(1035, 562);
             this.Controls.Add(this.tabMain);
             this.Name = "formCliente";
             this.Text = "Cliente";

@@ -52,7 +52,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(4, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(746, 52);
+            this.groupBox1.Size = new System.Drawing.Size(775, 52);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda Parametrizada";
@@ -116,7 +116,7 @@
             this.dgvProducto.Location = new System.Drawing.Point(4, 70);
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.ReadOnly = true;
-            this.dgvProducto.Size = new System.Drawing.Size(746, 368);
+            this.dgvProducto.Size = new System.Drawing.Size(775, 368);
             this.dgvProducto.TabIndex = 53;
             this.dgvProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellContentClick);
             this.dgvProducto.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvProducto_MouseDoubleClick);
@@ -149,9 +149,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(757, 450);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.dgvProducto);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "listProductos";
             this.Text = "listProductos";
             this.Load += new System.EventHandler(this.listProductos_Load);

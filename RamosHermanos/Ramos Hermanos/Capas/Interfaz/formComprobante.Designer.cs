@@ -132,6 +132,7 @@
             // 
             // tabFactura
             // 
+            this.tabFactura.BackColor = System.Drawing.SystemColors.Control;
             this.tabFactura.Controls.Add(this.btnPrint);
             this.tabFactura.Controls.Add(this.cbEstado);
             this.tabFactura.Controls.Add(this.label12);
@@ -154,7 +155,6 @@
             this.tabFactura.Size = new System.Drawing.Size(776, 703);
             this.tabFactura.TabIndex = 1;
             this.tabFactura.Text = "Factura";
-            this.tabFactura.UseVisualStyleBackColor = true;
             this.tabFactura.Click += new System.EventHandler(this.tabFactura_Click);
             // 
             // btnPrint
