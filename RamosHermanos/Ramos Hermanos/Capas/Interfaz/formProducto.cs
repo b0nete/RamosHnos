@@ -317,30 +317,27 @@ namespace RamosHermanos.Capas.Interfaz
             // Y acto seguido formateamos el valor
             // a monetario con dos decimales.
             //
-            tb.Text = string.Format("{0:C2}", numero);
+            tb.Text = string.Format("{0:N}", numero);
 
 
         }
 
         private void txtnewPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char ch = e.KeyChar;
+            //decimal importe = 0;
+            //if (txtnewPrecio.Text.Contains(".")) // si tiene un punto la caja de texto, usa configuracion regional
+            //{
+            //    importe = Convert.ToDecimal(txtnewPrecio.Text, System.Globalization.CultureInfo.InvariantCulture);
 
-            if (ch == 44 && ch == 46 && txtnewPrecio.Text.IndexOf(',') != -1)
-            {
-                e.Handled = true;
-                return;
-            }
+            //}
+            //else // aca quiere decir que puso una coma y lo reemplaza por un punto
+            //{
 
-            if (!Char.IsDigit(ch) && ch != 8 && ch != 44 && ch != 46)
-            {
-                e.Handled = true;
-            }
-
-            if (e.KeyChar == '.')
-            {
-                e.KeyChar = ',';
-            }
+            //    string coma = txtnewPrecio.Text;
+            //    coma.Replace(',', '.');
+            //    importe = Convert.ToDecimal(coma);
+            //}
+            
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -362,6 +359,27 @@ namespace RamosHermanos.Capas.Interfaz
         private void txtnewPrecio_TextChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void txtnewPrecio_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (ch == 44 && ch == 46 && txtnewPrecio.Text.IndexOf(',') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 44 && ch != 46)
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '.')
+            {
+                e.KeyChar = ',';
+            }
         }
 
         

@@ -98,10 +98,10 @@
             this.dgvPrecios = new System.Windows.Forms.DataGridView();
             this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtnewPrecio = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtnewPrecio = new System.Windows.Forms.MaskedTextBox();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -837,9 +837,9 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.txtnewPrecio);
             this.groupBox4.Controls.Add(this.button9);
             this.groupBox4.Controls.Add(this.groupBox5);
-            this.groupBox4.Controls.Add(this.txtnewPrecio);
             this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Controls.Add(this.label27);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -894,16 +894,6 @@
             this.colFecha.HeaderText = "Fecha Actualización";
             this.colFecha.Name = "colFecha";
             // 
-            // txtnewPrecio
-            // 
-            this.txtnewPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtnewPrecio.Location = new System.Drawing.Point(117, 19);
-            this.txtnewPrecio.Name = "txtnewPrecio";
-            this.txtnewPrecio.Size = new System.Drawing.Size(140, 20);
-            this.txtnewPrecio.TabIndex = 60;
-            this.txtnewPrecio.TextChanged += new System.EventHandler(this.txtnewPrecio_TextChanged);
-            this.txtnewPrecio.Leave += new System.EventHandler(this.txtnewPrecio_Leave);
-            // 
             // label19
             // 
             this.label19.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
@@ -940,6 +930,14 @@
             this.label7.TabIndex = 103;
             this.label7.Text = "Productos";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtnewPrecio
+            // 
+            this.txtnewPrecio.Location = new System.Drawing.Point(117, 19);
+            this.txtnewPrecio.Name = "txtnewPrecio";
+            this.txtnewPrecio.Size = new System.Drawing.Size(151, 20);
+            this.txtnewPrecio.TabIndex = 124;
+            this.txtnewPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnewPrecio_KeyPress_1);
             // 
             // formProducto
             // 
@@ -1029,7 +1027,6 @@
         private System.Windows.Forms.TabPage tabPrecio;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
-        public System.Windows.Forms.TextBox txtnewPrecio;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -1046,5 +1043,6 @@
         public System.Windows.Forms.TextBox txtStockMin;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.MaskedTextBox txtnewPrecio;
     }
 }
