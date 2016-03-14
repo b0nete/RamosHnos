@@ -37,7 +37,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Guardado!");
+                //MessageBox.Show("Guardado!");
                 MySQL.DisconnectDB();
 
                 return factura;
@@ -112,6 +112,66 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+//        public static FacturaEntity BuscarFacturaID(FacturaEntity Factura)
+//        {
+
+//            try
+//            {
+//                MySQL.ConnectDB();
+
+//                string query = @"SELECT P.idFactura, P.idPersona, P.fechaPedido, P.fechaEntrega, p.Observaciones,P.rol, P.estado, P.total,
+//                               C.Nombre, C.Apellido, D.idDomicilio, D.calle, D.numero
+//                               FROM pedidos P
+//                               INNER JOIN clientes C on C.idCliente = P.idPersona
+//                               INNER JOIN domicilios D on D.idDomicilio = P.domicilio
+//                               WHERE P.idpedidos = @idPedido";
+
+//                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+//                cmd.Parameters.AddWithValue("@idPedido", pedido.idPedido);
+
+//                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+//                if (resultado == 0)
+//                {
+//                    MessageBox.Show("El Pedido NO existe!");
+
+//                }
+//                else
+//                {
+//                    DataTable dt = new DataTable();
+//                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+//                    da.Fill(dt);
+
+//                    DataRow row = dt.Rows[0];
+
+//                    pedido.idPedido = Convert.ToInt32(row["idPedidos"]);
+//                    pedido.idPersona = Convert.ToInt32(row["idPersona"]);
+//                    pedido.fechaPedido = Convert.ToDateTime(row["FechaPedido"]);
+//                    pedido.calle = Convert.ToString(row["nombre"]);
+//                    pedido.fechaEntrega = Convert.ToDateTime(row["FechaEntrega"]);
+//                    pedido.observaciones = Convert.ToString(row["observaciones"]);
+//                    pedido.rol = Convert.ToInt32(row["rol"]);
+//                    pedido.total = Convert.ToDouble(row["total"]);
+//                    pedido.nombre = Convert.ToString(row["Nombre"]);
+//                    pedido.apellido = Convert.ToString(row["Apellido"]);
+//                    pedido.domicilio = Convert.ToString(row["idDomicilio"]);
+//                    pedido.calle = Convert.ToString(row["calle"]);
+//                    pedido.estado = Convert.ToString(row["estado"]);
+
+
+//                    MySQL.DisconnectDB();
+//                }
+//                return pedido;
+//            }
+
+//            catch (Exception ex)
+//            {
+//                MessageBox.Show("Error: " + ex);
+//                throw;
+//            }
+//        }
 
         
     }

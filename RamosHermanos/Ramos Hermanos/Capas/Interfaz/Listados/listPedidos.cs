@@ -48,6 +48,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         formPedidos frmP = new formPedidos();
         PedidoEntity pedido = new PedidoEntity();
         itemPedidoEntity item = new itemPedidoEntity();
+
         private void SeleccionarDgv()
         {
             DataGridViewCell cell = null;

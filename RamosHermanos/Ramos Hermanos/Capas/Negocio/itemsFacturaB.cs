@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 using MySql.Data.MySqlClient;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Datos;
@@ -17,11 +18,12 @@ namespace RamosHermanos.Capas.Negocio
             MySQL.ConnectDB();
 
             string query = @"SELECT COUNT(*) FROM itemsFactura
-                             WHERE producto = @producto and factura = @factura";
+                             WHERE producto = @producto and factura = @factura and carga = @carga";
 
             MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
             cmd.Parameters.AddWithValue("@producto", itemFactura.producto);
             cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
+            cmd.Parameters.AddWithValue("@carga", itemFactura.carga);
 
             int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -29,6 +31,61 @@ namespace RamosHermanos.Capas.Negocio
                 return false;
             else
                 return true;
+        }
+
+        public static bool ExisteAguaItemFactura(itemFacturaEntity itemFactura)
+        {
+            MySQL.ConnectDB();
+
+            string query = @"SELECT COUNT(*) 
+FROM itemsFactura
+WHERE (producto = 1 or producto = 2 or producto = 3  or producto = 4 or producto = 5 or producto = 6) and factura = @factura and carga = @carga";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+            cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
+            cmd.Parameters.AddWithValue("@carga", itemFactura.carga);
+
+            int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (resultado == 0)
+                return false;
+            else
+                return true;
+        }
+
+        public static DataTable BuscarAguas(itemFacturaEntity itemFactura)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                DataTable dt = new DataTable();
+
+                string query = @"SELECT *
+FROM itemsFactura 
+WHERE factura = @factura and (producto =  1 or producto =  2 or producto =  3 or producto =  4 or producto =  5 or producto =  6)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado != 0)
+                {                    
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+                }
+
+                MySQL.DisconnectDB();
+                return dt;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
         }
 
         public static itemFacturaEntity InsertItemFactura(itemFacturaEntity itemFactura)

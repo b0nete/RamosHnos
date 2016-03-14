@@ -181,14 +181,14 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt4;
-        private System.Windows.Forms.TextBox txt10;
-        private System.Windows.Forms.TextBox txt12;
-        private System.Windows.Forms.TextBox txt20;
-        private System.Windows.Forms.TextBox txt25;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnSave;
+        public System.Windows.Forms.TextBox txt4;
+        public System.Windows.Forms.TextBox txt10;
+        public System.Windows.Forms.TextBox txt12;
+        public System.Windows.Forms.TextBox txt20;
+        public System.Windows.Forms.TextBox txt25;
     }
 }

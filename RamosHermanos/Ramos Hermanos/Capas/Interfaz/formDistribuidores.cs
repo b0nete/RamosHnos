@@ -678,10 +678,20 @@ namespace RamosHermanos.Capas.Interfaz
                 {
                     DataSet ds = GenerarReparto();
 
-                    frm.dgvRepartos.DataSource = ds;
-                    frm.dgvRepartos.DataMember = "dtItemsRecorrido";
-                    frm.setRowNumber(frm.dgvRepartos);
+                    RepartoB.BuscarReparto(reparto);
+                    frm.dtpFechaReparto.Value = reparto.fecha;
+                    frm.cbDistribuidores.SelectedValue = reparto.distribuidor;
+                    frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
+
+                    itemsReparto.reparto = reparto.idReparto;
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+                    
+                    //frm.setRowNumber(frm.dgvRepartos);
+                    //frm.dgvRepartos.DataSource = ds;
+                    //frm.dgvRepartos.DataMember = "dtItemsRecorrido";
                 }
+
+                frm.setRowNumber(frm.dgvRepartos);
             }
         }
 
@@ -779,13 +789,14 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
+        
+
         //Entidades
         FacturaEntity factura = new FacturaEntity();
 
         RepartoEntity reparto = new RepartoEntity();
 
         itemsRepartoEntity itemsReparto = new itemsRepartoEntity();
-
 
     }
 }

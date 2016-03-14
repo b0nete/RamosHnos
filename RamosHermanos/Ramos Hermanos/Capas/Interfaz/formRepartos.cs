@@ -110,7 +110,37 @@ namespace RamosHermanos.Capas.Interfaz
                 e.SuppressKeyPress = true;
                 SendKeys.Send("{TAB}");
 
-                EjecCarga();
+                itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+                itemFactura.carga = "C";
+
+                if (itemsFacturaB.ExisteAguaItemFactura(itemFactura) == true)
+                {
+                    formCargaPedido frm = new formCargaPedido();
+                    frm.Show();
+
+                    DataTable dtAgua = itemsFacturaB.BuscarAguas(itemFactura);
+                    foreach (DataRow dr in dtAgua.Rows)
+                    {
+                        if (Convert.ToInt32(dr["producto"]) == 6)
+                            frm.txt25.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 5)
+                            frm.txt20.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 4)
+                            frm.txt12.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 3)
+                            frm.txt10.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 1)
+                            frm.txt4.Text = Convert.ToString(dr["cantidad"]);
+                    }
+                }
+                else
+                {
+                    EjecCarga();
+                }                
             }
 
             if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colADescarga"].Selected)
@@ -118,8 +148,43 @@ namespace RamosHermanos.Capas.Interfaz
                 e.SuppressKeyPress = true;
                 SendKeys.Send("{TAB}");
 
-                EjecDescarga();
-            }          
+                itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+                itemFactura.carga = "D";
+
+                if (itemsFacturaB.ExisteAguaItemFactura(itemFactura) == true)
+                {
+                    formCargaPedido frm = new formCargaPedido();
+                    frm.Show();
+
+                    DataTable dtAgua = itemsFacturaB.BuscarAguas(itemFactura);
+                    foreach (DataRow dr in dtAgua.Rows)
+                    {
+                        if (Convert.ToInt32(dr["producto"]) == 6)
+                            frm.txt25.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 5)
+                            frm.txt20.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 4)
+                            frm.txt12.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 3)
+                            frm.txt10.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 1)
+                            frm.txt4.Text = Convert.ToString(dr["cantidad"]);
+                    }
+                }
+                else
+                {
+                    EjecDescarga();
+                }
+            }
+
+            if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colComprobante"].Selected)
+            {
+                SeleccionarDgv();
+            }
         }
 
         private void EjecCarga()
@@ -156,6 +221,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
 
+            //CARGAS
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSCarga")
             {
                 //Soda
@@ -172,7 +238,10 @@ namespace RamosHermanos.Capas.Interfaz
                 //Cajon
                 itemFactura.producto = 8;
                 itemFactura.carga = "C";
-                InsertFactura("colCCarga");
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                    UpdateFactura("colCCarga");
+                else
+                    InsertFactura("colCCarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCCarga")
@@ -180,7 +249,10 @@ namespace RamosHermanos.Capas.Interfaz
                 //Canasta
                 itemFactura.producto = 9;
                 itemFactura.carga = "C";
-                InsertFactura("colCCCarga");
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                    UpdateFactura("colCCCarga");
+                else
+                    InsertFactura("colCCCarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colPCarga")
@@ -188,7 +260,10 @@ namespace RamosHermanos.Capas.Interfaz
                 //Pie
                 itemFactura.producto = 10;
                 itemFactura.carga = "C";
-                InsertFactura("colPCarga");
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                    UpdateFactura("colPCarga");
+                else
+                    InsertFactura("colPCarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colDCarga")
@@ -196,8 +271,68 @@ namespace RamosHermanos.Capas.Interfaz
                 //Dispenser
                 itemFactura.producto = 11;
                 itemFactura.carga = "C";
-                InsertFactura("colDCarga");
-            } 
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                    UpdateFactura("colDCarga");
+                else
+                    InsertFactura("colDCarga");
+            }
+
+
+            //DESCARGAS
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSDescarga")
+            {
+                //Soda
+                itemFactura.producto = 7;
+                itemFactura.carga = "D";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                    UpdateFactura("colSDescarga");
+                else
+                    InsertFactura("colSDescarga");
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCDescarga")
+            {
+                //Cajon
+                itemFactura.producto = 8;
+                itemFactura.carga = "D";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                    UpdateFactura("colCDescarga");
+                else
+                    InsertFactura("colCDescarga");
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCDescarga")
+            {
+                //Canasta
+                itemFactura.producto = 9;
+                itemFactura.carga = "D";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                    UpdateFactura("colCCDescarga");
+                else
+                    InsertFactura("colCCDescarga");
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colPDescarga")
+            {
+                //Pie
+                itemFactura.producto = 10;
+                itemFactura.carga = "D";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                    UpdateFactura("colPDescarga");
+                else
+                    InsertFactura("colPDescarga");
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colDDescarga")
+            {
+                //Dispenser
+                itemFactura.producto = 11;
+                itemFactura.carga = "D";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                    UpdateFactura("colDDescarga");
+                else
+                    InsertFactura("colDDescarga");
+            }
                
         }
 
@@ -208,7 +343,11 @@ namespace RamosHermanos.Capas.Interfaz
 
         itemsRepartoEntity itemsReparto = new itemsRepartoEntity();
 
-        itemFacturaEntity itemFactura = new itemFacturaEntity(); 
+        itemFacturaEntity itemFactura = new itemFacturaEntity();
+
+        PedidoEntity pedido = new PedidoEntity();
+
+        itemPedidoEntity itemPedido = new itemPedidoEntity();
 
         private void dgvRepartos_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
@@ -247,6 +386,41 @@ namespace RamosHermanos.Capas.Interfaz
         private void dgvRepartos_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
 
+        }
+
+        private void SeleccionarDgv()
+        {
+            formPedidos frmP = new formPedidos();
+
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvRepartos.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
+            }
+            if (cell != null)
+            {
+                DataGridViewRow row = cell.OwningRow;
+
+                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el pedido para cargarlo.
+                pedido.idPedido = Convert.ToInt32(row.Cells["colComprobante"].Value.ToString());
+                PedidoB.BuscarIdPedido(pedido);
+                frmP.txtidpedido.Text = Convert.ToString(pedido.idPedido);
+                frmP.txtidCliente.Text = Convert.ToString(pedido.idPersona);
+                frmP.dtpFecha.Value = pedido.fechaPedido;
+                frmP.dtpEntrega.Value = pedido.fechaEntrega;
+                frmP.cbEstado.SelectedItem = pedido.estado;
+                frmP.txtObservaciones.Text = Convert.ToString(pedido.observaciones);
+                frmP.txtNombre.Text = Convert.ToString(pedido.nombre) + " " + Convert.ToString(pedido.apellido);
+                frmP.txtTotal.Text = Convert.ToString(pedido.total);
+
+                itemPedido.pedido = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
+                itemsPedidoB.CargarDgvPedido(itemPedido, frmP.dgvPedido);
+
+                DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente, "1");
+                frmP.Show();
+                frmP.tabMain.SelectedTab = frmP.tabPedido;
+            }
         }
 
     }

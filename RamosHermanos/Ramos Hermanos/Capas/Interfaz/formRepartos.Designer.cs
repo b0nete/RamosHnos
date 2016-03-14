@@ -75,16 +75,16 @@
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colACarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCCCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSDescarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colADescarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCDescarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCCDescarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPDescarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDDescarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -376,16 +376,16 @@
             this.Column10,
             this.colSCarga,
             this.colACarga,
-            this.Column13,
-            this.Column14,
-            this.Column15,
-            this.Column16,
-            this.Column17,
+            this.colCCarga,
+            this.colCCCarga,
+            this.colPCarga,
+            this.colDCarga,
+            this.colSDescarga,
             this.colADescarga,
-            this.Column19,
-            this.Column20,
-            this.Column21,
-            this.Column22,
+            this.colCDescarga,
+            this.colCCDescarga,
+            this.colPDescarga,
+            this.colDDescarga,
             this.Column23,
             this.Column24,
             this.Column25,
@@ -512,40 +512,40 @@
             this.colACarga.Name = "colACarga";
             this.colACarga.Width = 25;
             // 
-            // Column13
+            // colCCarga
             // 
-            this.Column13.DataPropertyName = "colCCarga";
-            this.Column13.HeaderText = "C";
-            this.Column13.Name = "Column13";
-            this.Column13.Width = 25;
+            this.colCCarga.DataPropertyName = "colCCarga";
+            this.colCCarga.HeaderText = "C";
+            this.colCCarga.Name = "colCCarga";
+            this.colCCarga.Width = 25;
             // 
-            // Column14
+            // colCCCarga
             // 
-            this.Column14.DataPropertyName = "colCCCarga";
-            this.Column14.HeaderText = "C";
-            this.Column14.Name = "Column14";
-            this.Column14.Width = 25;
+            this.colCCCarga.DataPropertyName = "colCCCarga";
+            this.colCCCarga.HeaderText = "C";
+            this.colCCCarga.Name = "colCCCarga";
+            this.colCCCarga.Width = 25;
             // 
-            // Column15
+            // colPCarga
             // 
-            this.Column15.DataPropertyName = "colPCarga";
-            this.Column15.HeaderText = "P";
-            this.Column15.Name = "Column15";
-            this.Column15.Width = 25;
+            this.colPCarga.DataPropertyName = "colPCarga";
+            this.colPCarga.HeaderText = "P";
+            this.colPCarga.Name = "colPCarga";
+            this.colPCarga.Width = 25;
             // 
-            // Column16
+            // colDCarga
             // 
-            this.Column16.DataPropertyName = "colDCarga";
-            this.Column16.HeaderText = "D";
-            this.Column16.Name = "Column16";
-            this.Column16.Width = 25;
+            this.colDCarga.DataPropertyName = "colDCarga";
+            this.colDCarga.HeaderText = "D";
+            this.colDCarga.Name = "colDCarga";
+            this.colDCarga.Width = 25;
             // 
-            // Column17
+            // colSDescarga
             // 
-            this.Column17.DataPropertyName = "colSDescarga";
-            this.Column17.HeaderText = "S";
-            this.Column17.Name = "Column17";
-            this.Column17.Width = 25;
+            this.colSDescarga.DataPropertyName = "colSDescarga";
+            this.colSDescarga.HeaderText = "S";
+            this.colSDescarga.Name = "colSDescarga";
+            this.colSDescarga.Width = 25;
             // 
             // colADescarga
             // 
@@ -554,33 +554,33 @@
             this.colADescarga.Name = "colADescarga";
             this.colADescarga.Width = 25;
             // 
-            // Column19
+            // colCDescarga
             // 
-            this.Column19.DataPropertyName = "colCDescarga";
-            this.Column19.HeaderText = "C";
-            this.Column19.Name = "Column19";
-            this.Column19.Width = 25;
+            this.colCDescarga.DataPropertyName = "colCDescarga";
+            this.colCDescarga.HeaderText = "C";
+            this.colCDescarga.Name = "colCDescarga";
+            this.colCDescarga.Width = 25;
             // 
-            // Column20
+            // colCCDescarga
             // 
-            this.Column20.DataPropertyName = "colCCDescarga";
-            this.Column20.HeaderText = "C";
-            this.Column20.Name = "Column20";
-            this.Column20.Width = 25;
+            this.colCCDescarga.DataPropertyName = "colCCDescarga";
+            this.colCCDescarga.HeaderText = "C";
+            this.colCCDescarga.Name = "colCCDescarga";
+            this.colCCDescarga.Width = 25;
             // 
-            // Column21
+            // colPDescarga
             // 
-            this.Column21.DataPropertyName = "colPDescarga";
-            this.Column21.HeaderText = "P";
-            this.Column21.Name = "Column21";
-            this.Column21.Width = 25;
+            this.colPDescarga.DataPropertyName = "colPDescarga";
+            this.colPDescarga.HeaderText = "P";
+            this.colPDescarga.Name = "colPDescarga";
+            this.colPDescarga.Width = 25;
             // 
-            // Column22
+            // colDDescarga
             // 
-            this.Column22.DataPropertyName = "colDDescarga";
-            this.Column22.HeaderText = "D";
-            this.Column22.Name = "Column22";
-            this.Column22.Width = 25;
+            this.colDDescarga.DataPropertyName = "colDDescarga";
+            this.colDDescarga.HeaderText = "D";
+            this.colDDescarga.Name = "colDDescarga";
+            this.colDDescarga.Width = 25;
             // 
             // Column23
             // 
@@ -677,16 +677,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSCarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn colACarga;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCCarga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCCCarga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPCarga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDCarga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colSDescarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn colADescarga;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCDescarga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCCDescarga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPDescarga;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDDescarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column25;

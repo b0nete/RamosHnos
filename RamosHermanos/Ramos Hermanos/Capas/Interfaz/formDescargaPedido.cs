@@ -28,17 +28,11 @@ namespace RamosHermanos.Capas.Interfaz
 
             int total = Suma();
 
-            if (txt25.Text != string.Empty)
-            {
-                itemFactura.factura = comprobante;
-                itemFactura.producto = 6;
-                itemFactura.cantidad = Convert.ToInt32(txt25.Text);
-                itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
-                itemFactura.subTotal = itemFactura.precioUnitario * itemFactura.cantidad;
-                itemFactura.carga = "D";
-
-                itemsFacturaB.InsertItemFactura(itemFactura);
-            }
+            DescargaTXT(txt25, 6);
+            DescargaTXT(txt20, 5);
+            DescargaTXT(txt12, 4);
+            DescargaTXT(txt10, 3);
+            DescargaTXT(txt4, 1);
 
             // Tutorial Interfaz formularios desacoplados
             // http://ltuttini.blogspot.com.ar/2009/09/c-comunicar-formularios-de-forma.html
@@ -60,6 +54,27 @@ namespace RamosHermanos.Capas.Interfaz
         {
             int suma = Convert.ToInt32(txt25.Text) + Convert.ToInt32(txt20.Text) + Convert.ToInt32(txt12.Text) + Convert.ToInt32(txt10.Text) + Convert.ToInt32(txt4.Text);
             return suma;
+        }
+
+        private void DescargaTXT(TextBox txt, int producto)
+        {
+            if (txt.Text == string.Empty)
+            {
+                txt.Text = "0";
+                return;
+            }
+
+            if (txt.Text != string.Empty)
+            {
+                itemFactura.factura = comprobante;
+                itemFactura.producto = producto;
+                itemFactura.cantidad = Convert.ToInt32(txt.Text);
+                itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
+                itemFactura.subTotal = itemFactura.precioUnitario * itemFactura.cantidad;
+                itemFactura.carga = "D";
+
+                itemsFacturaB.InsertItemFactura(itemFactura);
+            }
         }
 
         //Entidades

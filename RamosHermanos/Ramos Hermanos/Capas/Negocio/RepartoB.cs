@@ -52,7 +52,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 idReparto = Convert.ToInt32(cmd.ExecuteScalar());
 
-                MessageBox.Show("Guardado!");
+                //MessageBox.Show("Guardado!");
                 MySQL.DisconnectDB();
 
                 return idReparto;

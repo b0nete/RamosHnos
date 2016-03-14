@@ -32,7 +32,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Guardado!");
+                //MessageBox.Show("Guardado!");
                 MySQL.DisconnectDB();
 
                 return itemReparto;
@@ -117,8 +117,18 @@ namespace RamosHermanos.Capas.Negocio
                 dtMerge.Columns.Add("idComprobante");
 
                 DataTable dtEncabezado = new DataTable();
-                DataTable dtCargas = new DataTable();
-                DataTable dtCargas2 = new DataTable();
+                DataTable dtACarga = new DataTable();
+                DataTable dtSCarga = new DataTable();
+                DataTable dtCCarga = new DataTable();
+                DataTable dtCCCarga = new DataTable();
+                DataTable dtPCarga = new DataTable();
+                DataTable dtDCarga = new DataTable();
+                DataTable dtADescarga = new DataTable();
+                DataTable dtSDescarga = new DataTable();
+                DataTable dtCDescarga = new DataTable();
+                DataTable dtCCDescarga = new DataTable();
+                DataTable dtPDescarga = new DataTable();
+                DataTable dtDDescarga = new DataTable();
 
 
                 //Encabezado
@@ -136,11 +146,13 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 da.Fill(dtEncabezado);
 
-                ////Cargas                
+                               
                 foreach (DataRow dRow in dtEncabezado.Rows)
                 {
+                    ////CARGAS
+
                     //Aguas
-                    //dtCargas.Clear();
+                    //dtACarga.Clear();
                     itemFacturaEntity itemFactura = new itemFacturaEntity();
 
                     string queryACarga = @"SELECT SUM(cantidad) as colACarga
@@ -158,10 +170,10 @@ namespace RamosHermanos.Capas.Negocio
                     cmd2.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
 
                     MySqlDataAdapter da2 = new MySqlDataAdapter(cmd2);
-                    da2.Fill(dtCargas);
+                    da2.Fill(dtACarga);
 
                     //Sodas
-                    //dtCargas2.Clear();
+                    //dtSCarga.Clear();
                     string querySCarga = @"SELECT SUM(cantidad) as colSCarga
                                             FROM itemsFactura
                                             WHERE producto = 7 and factura = @factura and carga = 'C'";
@@ -169,10 +181,148 @@ namespace RamosHermanos.Capas.Negocio
                     MySqlCommand cmd3 = new MySqlCommand(querySCarga, MySQL.sqlcnx);
 
                     cmd3.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
-                    MessageBox.Show(Convert.ToString(dRow["idComprobante"]));
 
                     MySqlDataAdapter da3 = new MySqlDataAdapter(cmd3);
-                    da3.Fill(dtCargas2);
+                    da3.Fill(dtSCarga);
+
+                    //Cajon
+                    //dtSCarga.Clear();
+                    string queryCCarga = @"SELECT SUM(cantidad) as colCCarga
+                                            FROM itemsFactura
+                                            WHERE producto = 8 and factura = @factura and carga = 'C'";
+
+                    MySqlCommand cmd4 = new MySqlCommand(queryCCarga, MySQL.sqlcnx);
+
+                    cmd4.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
+
+                    MySqlDataAdapter da4 = new MySqlDataAdapter(cmd4);
+                    da4.Fill(dtCCarga);
+
+                    //Canasta
+                    //dtSCarga.Clear();
+                    string queryCCCarga = @"SELECT SUM(cantidad) as colCCCarga
+                                            FROM itemsFactura
+                                            WHERE producto = 9 and factura = @factura and carga = 'C'";
+
+                    MySqlCommand cmdCC = new MySqlCommand(queryCCCarga, MySQL.sqlcnx);
+
+                    cmdCC.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
+
+                    MySqlDataAdapter daCC = new MySqlDataAdapter(cmdCC);
+                    daCC.Fill(dtCCCarga);
+
+                    //Pie
+                    //dtSCarga.Clear();
+                    string queryPCarga = @"SELECT SUM(cantidad) as colPCarga
+                                            FROM itemsFactura
+                                            WHERE producto = 10 and factura = @factura and carga = 'C'";
+
+                    MySqlCommand cmdP = new MySqlCommand(queryPCarga, MySQL.sqlcnx);
+
+                    cmdP.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
+
+                    MySqlDataAdapter daP = new MySqlDataAdapter(cmdP);
+                    daP.Fill(dtPCarga);
+
+                    //Dispenser
+                    //dtSCarga.Clear();
+                    string queryDCarga = @"SELECT SUM(cantidad) as colDCarga
+                                            FROM itemsFactura
+                                            WHERE producto = 11 and factura = @factura and carga = 'C'";
+
+                    MySqlCommand cmdD = new MySqlCommand(queryDCarga, MySQL.sqlcnx);
+
+                    cmdD.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
+
+                    MySqlDataAdapter daD = new MySqlDataAdapter(cmdD);
+                    daD.Fill(dtDCarga);
+
+                    ////DESCARGAS
+
+                    //Aguas
+                    //dtACarga.Clear();
+
+                    string queryADescarga = @"SELECT SUM(cantidad) as colADescarga
+                                            FROM itemsFactura
+                                            WHERE factura = @factura and carga = 'D' 
+                                            and (producto = 1 
+                                            or producto = 2 
+                                            or producto = 3 
+                                            or producto = 4
+                                            or producto = 5 
+                                            or producto = 6)";
+
+                    MySqlCommand cmdADescarga = new MySqlCommand(queryADescarga, MySQL.sqlcnx);
+
+                    cmdADescarga.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
+
+                    MySqlDataAdapter daADescarga = new MySqlDataAdapter(cmdADescarga);
+                    daADescarga.Fill(dtADescarga);
+
+                    //Sodas
+                    //dtSCarga.Clear();
+                    string querySDescarga = @"SELECT SUM(cantidad) as colSDescarga
+                                            FROM itemsFactura
+                                            WHERE producto = 7 and factura = @factura and carga = 'D'";
+
+                    MySqlCommand cmdSDescarga = new MySqlCommand(querySDescarga, MySQL.sqlcnx);
+
+                    cmdSDescarga.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
+
+                    MySqlDataAdapter daSDescarga = new MySqlDataAdapter(cmdSDescarga);
+                    daSDescarga.Fill(dtSDescarga);
+
+                    //Cajon
+                    //dtSCarga.Clear();
+                    string queryCDescarga = @"SELECT SUM(cantidad) as colCDescarga
+                                            FROM itemsFactura
+                                            WHERE producto = 8 and factura = @factura and carga = 'D'";
+
+                    MySqlCommand cmdCDescarga = new MySqlCommand(queryCDescarga, MySQL.sqlcnx);
+
+                    cmdCDescarga.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
+
+                    MySqlDataAdapter daCDescarga = new MySqlDataAdapter(cmdCDescarga);
+                    daCDescarga.Fill(dtCDescarga);
+
+                    //Canasta
+                    //dtSCarga.Clear();
+                    string queryCCDescarga = @"SELECT SUM(cantidad) as colCCDescarga
+                                            FROM itemsFactura
+                                            WHERE producto = 9 and factura = @factura and carga = 'D'";
+
+                    MySqlCommand cmdCCDescarga = new MySqlCommand(queryCCDescarga, MySQL.sqlcnx);
+
+                    cmdCCDescarga.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
+
+                    MySqlDataAdapter daCCDescarga = new MySqlDataAdapter(cmdCCDescarga);
+                    daCCDescarga.Fill(dtCCDescarga);
+
+                    //Pie
+                    //dtSCarga.Clear();
+                    string queryPDescarga = @"SELECT SUM(cantidad) as colPDescarga
+                                            FROM itemsFactura
+                                            WHERE producto = 10 and factura = @factura and carga = 'D'";
+
+                    MySqlCommand cmdPDescarga = new MySqlCommand(queryPDescarga, MySQL.sqlcnx);
+
+                    cmdPDescarga.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
+
+                    MySqlDataAdapter daPDescarga = new MySqlDataAdapter(cmdPDescarga);
+                    daPDescarga.Fill(dtPDescarga);
+
+                    //Dispenser
+                    //dtSCarga.Clear();
+                    string queryDDescarga = @"SELECT SUM(cantidad) as colDDescarga
+                                            FROM itemsFactura
+                                            WHERE producto = 11 and factura = @factura and carga = 'D'";
+
+                    MySqlCommand cmdDDescarga = new MySqlCommand(queryDDescarga, MySQL.sqlcnx);
+
+                    cmdDDescarga.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
+
+                    MySqlDataAdapter daDDescarga = new MySqlDataAdapter(cmdDDescarga);
+                    daDDescarga.Fill(dtDDescarga);
                 }
 
                 foreach (DataRow row in dtEncabezado.Rows)
@@ -187,14 +337,40 @@ namespace RamosHermanos.Capas.Negocio
                     dtMerge.ImportRow(row);
                 }
 
-                for (int i = 0; i <= dtCargas.Rows.Count - 1; i++)
+                for (int i = 0; i <= dtACarga.Rows.Count - 1; i++)
                 {
                     DataRow rowMerge = dtMerge.Rows[i];
-                    DataRow roworigen = dtCargas.Rows[i];
-                    DataRow roworigen2 = dtCargas2.Rows[i];
+                    //CARGA
+                    DataRow roworigen = dtACarga.Rows[i];
+                    DataRow roworigen2 = dtSCarga.Rows[i];
+                    DataRow roworigenC = dtCCarga.Rows[i];
+                    DataRow roworigenCC = dtCCCarga.Rows[i];
+                    DataRow roworigenP= dtPCarga.Rows[i];
+                    DataRow roworigenD = dtDCarga.Rows[i];
+                    //DESCARGA
+                    DataRow roworigenSDescarga = dtSDescarga.Rows[i];
+                    DataRow roworigenADescarga = dtADescarga.Rows[i];
+                    DataRow roworigenCDescarga = dtCDescarga.Rows[i];
+                    DataRow roworigenCCDescarga = dtCCDescarga.Rows[i];
+                    DataRow roworigenPDescarga = dtPDescarga.Rows[i];
+                    DataRow roworigenDDescarga = dtDDescarga.Rows[i];
 
+
+                    //CARGA
                     rowMerge["colACarga"] = roworigen["colACarga"];
                     rowMerge["colSCarga"] = roworigen2["colSCarga"];
+                    rowMerge["colCCarga"] = roworigenC["colCCarga"];
+                    rowMerge["colCCCarga"] = roworigenCC["colCCCarga"];
+                    rowMerge["colPCarga"] = roworigenP["colPCarga"];
+                    rowMerge["colDCarga"] = roworigenD["colDCarga"];
+                    //DESCARGA
+                    rowMerge["colADescarga"] = roworigenADescarga["colADescarga"];
+                    rowMerge["colSDescarga"] = roworigenSDescarga["colSDescarga"];
+                    rowMerge["colCDescarga"] = roworigenCDescarga["colCDescarga"];
+                    rowMerge["colCCDescarga"] = roworigenCCDescarga["colCCDescarga"];
+                    rowMerge["colPDescarga"] = roworigenPDescarga["colPDescarga"];
+                    rowMerge["colDDescarga"] = roworigenDDescarga["colDDescarga"];
+
                 }
 
                 MySQL.DisconnectDB();
