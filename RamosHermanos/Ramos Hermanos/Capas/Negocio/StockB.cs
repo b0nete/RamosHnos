@@ -20,13 +20,13 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
 
-                string query = @"INSERT INTO Stock (productoInsumo, idProductoInsumo, stockMinimo, stockMaximo, stockActual) 
-                                 VALUES (@productoInsumo, @idProductoInsumo, @stockMinimo, @stockMaximo, 0)";
+                string query = @"INSERT INTO stockproducto (producto, idProducto, stockMinimo, stockMaximo, stockActual) 
+                                 VALUES (@producto, @idProducto, @stockMinimo, @stockMaximo, 0)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@productoInsumo", stock.productoInsumo);
-                cmd.Parameters.AddWithValue("@idproductoInsumo", stock.idProductoInsumo);
+                cmd.Parameters.AddWithValue("@producto", stock.productoInsumo);
+                cmd.Parameters.AddWithValue("@idproducto", stock.idProductoInsumo);
                 cmd.Parameters.AddWithValue("@stockMinimo", stock.stockMinimo);
                 cmd.Parameters.AddWithValue("@stockMaximo", stock.stockMaximo);
 
@@ -40,6 +40,44 @@ namespace RamosHermanos.Capas.Negocio
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+        public static void cargardgvStock(DataGridView dgv, TextBox idStock)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                string query = @"SELECT P.idStock,PRO.producto,PRO.idProducto,P.stockMinimo,P.stockMaximo,P.stockActual
+                            FROM stockProducto P
+                            INNER JOIN productos PRO on PRO.idProducto = P.idProducto
+                            where P.idStock=@idStock";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idStock", idStock.Text);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idProducto"]),
+                    Convert.ToString(dr["producto"]),
+                    Convert.ToString(dr["stockMinimo"]),
+                    Convert.ToString(dr["stockMaximo"]),
+                    Convert.ToString(dr["stockActual"]));
+
+                }
+
+                dr.Close();
+                MySQL.ConnectDB();
+            
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex + "ERROR");
                 throw;
             }
         }

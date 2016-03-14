@@ -288,7 +288,7 @@
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCliente.Size = new System.Drawing.Size(947, 506);
+            this.dgvCliente.Size = new System.Drawing.Size(855, 506);
             this.dgvCliente.TabIndex = 1;
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
             this.dgvCliente.SelectionChanged += new System.EventHandler(this.dgvCliente_SelectionChanged);
@@ -378,7 +378,7 @@
             // 
             this.tabFamilia.Location = new System.Drawing.Point(4, 22);
             this.tabFamilia.Name = "tabFamilia";
-            this.tabFamilia.Size = new System.Drawing.Size(776, 536);
+            this.tabFamilia.Size = new System.Drawing.Size(1027, 536);
             this.tabFamilia.TabIndex = 3;
             this.tabFamilia.Text = "Familia";
             this.tabFamilia.UseVisualStyleBackColor = true;
@@ -398,7 +398,7 @@
             this.tabAdicional.Location = new System.Drawing.Point(4, 22);
             this.tabAdicional.Name = "tabAdicional";
             this.tabAdicional.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdicional.Size = new System.Drawing.Size(776, 536);
+            this.tabAdicional.Size = new System.Drawing.Size(1027, 536);
             this.tabAdicional.TabIndex = 1;
             this.tabAdicional.Text = "Adicional";
             this.tabAdicional.UseVisualStyleBackColor = true;
@@ -1257,7 +1257,7 @@
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(674, 498);
+            this.button2.Location = new System.Drawing.Point(653, 343);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(28, 28);
             this.button2.TabIndex = 78;
@@ -1268,7 +1268,7 @@
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button3.Location = new System.Drawing.Point(742, 498);
+            this.button3.Location = new System.Drawing.Point(721, 343);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(28, 28);
             this.button3.TabIndex = 77;
@@ -1298,7 +1298,7 @@
             this.groupBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox9.Location = new System.Drawing.Point(6, 10);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(494, 354);
+            this.groupBox9.Size = new System.Drawing.Size(494, 246);
             this.groupBox9.TabIndex = 76;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Persona Jurídica";
@@ -1743,7 +1743,7 @@
             this.groupBox14.Controls.Add(this.txtDomicilioPJ);
             this.groupBox14.Controls.Add(this.label61);
             this.groupBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox14.Location = new System.Drawing.Point(6, 367);
+            this.groupBox14.Location = new System.Drawing.Point(6, 262);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(494, 125);
             this.groupBox14.TabIndex = 73;
@@ -1845,7 +1845,7 @@
             this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(708, 498);
+            this.button10.Location = new System.Drawing.Point(687, 343);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(28, 28);
             this.button10.TabIndex = 71;

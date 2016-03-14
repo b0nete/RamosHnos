@@ -2,14 +2,14 @@ Alcances.
 1.	Registrar usuarios. SI
 2.	Consultar usuarios. SI
 3.	Listar usuarios. SI
-4.	Registrar cargos. NO
+4.	Registrar privilegios. SI
 5.	Registrar pedidos. SI
 6.	Modificar pedidos. SI
 7.	Consultar pedidos. SI.
 8.	Listar pedidos. SI
-9.	Registrar pedido entregado. NO
+9.	Registrar pedido entregado. SI
 10.	Registrar medios de pago. NO
-11.	Registrar cobro efectivo. NO
+11.	Registrar cobro efectivo. SI
 12.	Generar comprobante. BETA
 13.	Generar recibo. BETA
 14.	Consultar cobros. NO
@@ -41,7 +41,6 @@ Alcances.
 39.	Consultar productos. SI
 40.	Listar productos. SI
 41.	Registrar rubros. SI
-42.	Consultar rubros. NO
 43.	Listar rubros. SI
 44.	Registrar stock inicial. SI
 45.	Generar stock. NO

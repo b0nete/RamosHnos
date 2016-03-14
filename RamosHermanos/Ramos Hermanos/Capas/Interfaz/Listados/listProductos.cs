@@ -60,6 +60,8 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 frmPro.cbMedida.SelectedValue = producto.medida;
 
                 PrecioProductosB.UltimoPrecioDGV(frmPro.dgvPrecios, frmPro.txtIDProd);
+                StockB.cargardgvStock(frmPro.dgvStock, frmPro.txtIDProd);
+                
             }
         }
 

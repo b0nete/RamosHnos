@@ -80,7 +80,7 @@
             this.txtStockMin = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvStock = new System.Windows.Forms.DataGridView();
             this.colOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,6 +93,7 @@
             this.label31 = new System.Windows.Forms.Label();
             this.tabPrecio = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtnewPrecio = new System.Windows.Forms.MaskedTextBox();
             this.button9 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dgvPrecios = new System.Windows.Forms.DataGridView();
@@ -101,7 +102,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtnewPrecio = new System.Windows.Forms.MaskedTextBox();
+            this.idStock = new System.Windows.Forms.TextBox();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -109,7 +110,7 @@
             this.tabStock.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.tabPrecio.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -677,6 +678,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.idStock);
             this.groupBox2.Controls.Add(this.button8);
             this.groupBox2.Controls.Add(this.txtStockMin);
             this.groupBox2.Controls.Add(this.label11);
@@ -727,7 +729,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.dgvStock);
             this.groupBox3.Location = new System.Drawing.Point(0, 71);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(721, 227);
@@ -735,19 +737,19 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Movimientos";
             // 
-            // dataGridView1
+            // dgvStock
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colOperacion,
             this.colComprobante,
             this.colFechaComprobante,
             this.colCantidad,
             this.colStock});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(709, 202);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvStock.Location = new System.Drawing.Point(6, 19);
+            this.dgvStock.Name = "dgvStock";
+            this.dgvStock.Size = new System.Drawing.Size(709, 202);
+            this.dgvStock.TabIndex = 0;
             // 
             // colOperacion
             // 
@@ -850,6 +852,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Precio";
             // 
+            // txtnewPrecio
+            // 
+            this.txtnewPrecio.Location = new System.Drawing.Point(117, 19);
+            this.txtnewPrecio.Name = "txtnewPrecio";
+            this.txtnewPrecio.Size = new System.Drawing.Size(151, 20);
+            this.txtnewPrecio.TabIndex = 124;
+            this.txtnewPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnewPrecio_KeyPress_1);
+            // 
             // button9
             // 
             this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
@@ -931,13 +941,13 @@
             this.label7.Text = "Productos";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtnewPrecio
+            // idStock
             // 
-            this.txtnewPrecio.Location = new System.Drawing.Point(117, 19);
-            this.txtnewPrecio.Name = "txtnewPrecio";
-            this.txtnewPrecio.Size = new System.Drawing.Size(151, 20);
-            this.txtnewPrecio.TabIndex = 124;
-            this.txtnewPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnewPrecio_KeyPress_1);
+            this.idStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.idStock.Location = new System.Drawing.Point(491, 15);
+            this.idStock.Name = "idStock";
+            this.idStock.Size = new System.Drawing.Size(81, 20);
+            this.idStock.TabIndex = 126;
             // 
             // formProducto
             // 
@@ -959,7 +969,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             this.tabPrecio.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -1013,7 +1023,6 @@
         private System.Windows.Forms.TabPage tabStock;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOperacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn colComprobante;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaComprobante;
@@ -1044,5 +1053,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.MaskedTextBox txtnewPrecio;
+        public System.Windows.Forms.DataGridView dgvStock;
+        public System.Windows.Forms.TextBox idStock;
     }
 }
