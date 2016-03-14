@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 using MySql.Data.MySqlClient;
 using RamosHermanos.Capas.Datos;
 using RamosHermanos.Capas.Entidades;
@@ -31,6 +32,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@fechaEntrega", factura.fechaEntrega);
                 cmd.Parameters.AddWithValue("@formaPago", factura.formaPago);
                 cmd.Parameters.AddWithValue("@cliente", factura.cliente);
+                cmd.Parameters.AddWithValue("@domicilio", factura.domicilio);
                 cmd.Parameters.AddWithValue("@observaciones", factura.observaciones);
                 cmd.Parameters.AddWithValue("@total", factura.total);
                 cmd.Parameters.AddWithValue("@estado", factura.estado);
@@ -113,65 +115,61 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-//        public static FacturaEntity BuscarFacturaID(FacturaEntity Factura)
-//        {
+        public static FacturaEntity BuscarFacturaID(FacturaEntity factura)
+        {
 
-//            try
-//            {
-//                MySQL.ConnectDB();
+            try
+            {
+                MySQL.ConnectDB();
 
-//                string query = @"SELECT P.idFactura, P.idPersona, P.fechaPedido, P.fechaEntrega, p.Observaciones,P.rol, P.estado, P.total,
-//                               C.Nombre, C.Apellido, D.idDomicilio, D.calle, D.numero
-//                               FROM pedidos P
-//                               INNER JOIN clientes C on C.idCliente = P.idPersona
-//                               INNER JOIN domicilios D on D.idDomicilio = P.domicilio
-//                               WHERE P.idpedidos = @idPedido";
+                string query = @"SELECT P.idFactura, P.idPersona, P.fechaPedido, P.fechaEntrega, p.Observaciones,P.rol, P.estado, P.total,
+                               C.Nombre, C.Apellido, D.idDomicilio, D.calle, D.numero
+                               FROM Facturas F
+                               INNER JOIN clientes C on C.idCliente = P.idPersona
+                               INNER JOIN domicilios D on D.idDomicilio = P.domicilio
+                               WHERE F.idFactura = @idFactura";
 
-//                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-//                cmd.Parameters.AddWithValue("@idPedido", pedido.idPedido);
+                cmd.Parameters.AddWithValue("@idFactura", factura.idFactura);
 
-//                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
-//                if (resultado == 0)
-//                {
-//                    MessageBox.Show("El Pedido NO existe!");
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("La Factura NO existe!");
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-//                }
-//                else
-//                {
-//                    DataTable dt = new DataTable();
-//                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    da.Fill(dt);
 
-//                    da.Fill(dt);
+                    DataRow row = dt.Rows[0];
 
-//                    DataRow row = dt.Rows[0];
-
-//                    pedido.idPedido = Convert.ToInt32(row["idPedidos"]);
-//                    pedido.idPersona = Convert.ToInt32(row["idPersona"]);
-//                    pedido.fechaPedido = Convert.ToDateTime(row["FechaPedido"]);
-//                    pedido.calle = Convert.ToString(row["nombre"]);
-//                    pedido.fechaEntrega = Convert.ToDateTime(row["FechaEntrega"]);
-//                    pedido.observaciones = Convert.ToString(row["observaciones"]);
-//                    pedido.rol = Convert.ToInt32(row["rol"]);
-//                    pedido.total = Convert.ToDouble(row["total"]);
-//                    pedido.nombre = Convert.ToString(row["Nombre"]);
-//                    pedido.apellido = Convert.ToString(row["Apellido"]);
-//                    pedido.domicilio = Convert.ToString(row["idDomicilio"]);
-//                    pedido.calle = Convert.ToString(row["calle"]);
-//                    pedido.estado = Convert.ToString(row["estado"]);
+                    factura.idFactura = Convert.ToInt32(row["idFactura"]);
+                    factura.cliente = Convert.ToInt32(row["cliente"]);
+                    factura.domicilio = Convert.ToInt32(row["idDomicilio"]);
+                    factura.fechaFactura = Convert.ToDateTime(row["FechaFactura"]);
+                    factura.fechaEntrega = Convert.ToDateTime(row["FechaEntrega"]);
+                    factura.observaciones = Convert.ToString(row["observaciones"]);
+                    factura.total = Convert.ToDouble(row["total"]);
+                    factura.nombreCompleto = Convert.ToString(row["Nombre"]) + Convert.ToString(row["Apellido"]);
+                    factura.domicilioCompleto = 
+                    factura.estado = Convert.ToString(row["estado"]);
 
 
-//                    MySQL.DisconnectDB();
-//                }
-//                return pedido;
-//            }
+                    MySQL.DisconnectDB();
+                }
+                return factura;
+            }
 
-//            catch (Exception ex)
-//            {
-//                MessageBox.Show("Error: " + ex);
-//                throw;
-//            }
-//        }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
 
         
     }

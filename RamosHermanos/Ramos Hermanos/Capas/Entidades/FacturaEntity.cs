@@ -18,10 +18,13 @@ namespace RamosHermanos.Capas.Entidades
         public string observaciones { get; set; }
         public double total { get; set; }
         public string estado { get; set; }
+        public int cliente { get; set; }
+        public int domicilio { get; set; }
 
         //Secundarios
 
-        public int cliente { get; set; }
+        public string nombreCompleto { get; set; }
+        public string domicilioCompleto { get; set; }
         public int proveedor { get; set; }
     }
 }

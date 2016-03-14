@@ -748,7 +748,24 @@ namespace RamosHermanos.Capas.Interfaz
                 itemsReparto.idComprobante = itemsRepartoB.UltimoComprobante() + 1;
                 itemsRepartoB.InsertItemReparto(itemsReparto);
 
+                //cmd.Parameters.AddWithValue("@tipoFactura", factura.tipoFactura);
+                //cmd.Parameters.AddWithValue("@numFactura", factura.numFactura);
+                //cmd.Parameters.AddWithValue("@fechaFactura", factura.fechaFactura);
+                //cmd.Parameters.AddWithValue("@fechaVencimiento", factura.fechaVencimiento);
+                //cmd.Parameters.AddWithValue("@fechaEntrega", factura.fechaEntrega);
+                //cmd.Parameters.AddWithValue("@formaPago", factura.formaPago);
+                //cmd.Parameters.AddWithValue("@cliente", factura.cliente);
+                //cmd.Parameters.AddWithValue("@domicilio", factura.domicilio);
+                //cmd.Parameters.AddWithValue("@observaciones", factura.observaciones);
+                //cmd.Parameters.AddWithValue("@total", factura.total);
+                //cmd.Parameters.AddWithValue("@estado", factura.estado);
+
+                factura.tipoFactura = "C";
+                factura.fechaFactura = DateTime.Today;
+                factura.fechaVencimiento = factura.fechaVencimiento.AddDays(7); //Sumamos 7 días al actual.
+                factura.fechaEntrega = DateTime.Today;
                 factura.cliente = itemsReparto.cliente;
+                factura.domicilio = itemsReparto.domicilio;
                 factura.numFactura = FacturaB.UltimaFactura() + 1;
                 FacturaB.InsertFactura(factura);
             }

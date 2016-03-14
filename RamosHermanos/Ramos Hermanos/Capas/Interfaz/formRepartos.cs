@@ -390,7 +390,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void SeleccionarDgv()
         {
-            formPedidos frmP = new formPedidos();
+            formVentas frmP = new formVentas();
 
             DataGridViewCell cell = null;
             foreach (DataGridViewCell selectedCell in dgvRepartos.SelectedCells)
@@ -400,26 +400,26 @@ namespace RamosHermanos.Capas.Interfaz
             }
             if (cell != null)
             {
-                DataGridViewRow row = cell.OwningRow;
+                //DataGridViewRow row = cell.OwningRow;
 
-                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el pedido para cargarlo.
-                pedido.idPedido = Convert.ToInt32(row.Cells["colComprobante"].Value.ToString());
-                PedidoB.BuscarIdPedido(pedido);
-                frmP.txtidpedido.Text = Convert.ToString(pedido.idPedido);
-                frmP.txtidCliente.Text = Convert.ToString(pedido.idPersona);
-                frmP.dtpFecha.Value = pedido.fechaPedido;
-                frmP.dtpEntrega.Value = pedido.fechaEntrega;
-                frmP.cbEstado.SelectedItem = pedido.estado;
-                frmP.txtObservaciones.Text = Convert.ToString(pedido.observaciones);
-                frmP.txtNombre.Text = Convert.ToString(pedido.nombre) + " " + Convert.ToString(pedido.apellido);
-                frmP.txtTotal.Text = Convert.ToString(pedido.total);
+                ////Cargamos el ID de acuerdo a la celda seleccionada y buscamos el pedido para cargarlo.
+                //factura.idFactura = Convert.ToInt32(row.Cells["colComprobante"].Value.ToString());
+                //FacturaB.BuscarFacturaID(factura);
+                //frmP.txtIDFactura.Text = Convert.ToString(factura.idFactura);
+                //frmP.txtidCliente.Text = Convert.ToString(pedido.idPersona);
+                //frmP.dtpFecha.Value = pedido.fechaPedido;
+                //frmP.dtpEntrega.Value = pedido.fechaEntrega;
+                //frmP.cbEstado.SelectedItem = pedido.estado;
+                //frmP.txtObservaciones.Text = Convert.ToString(pedido.observaciones);
+                //frmP.txtNombre.Text = Convert.ToString(pedido.nombre) + " " + Convert.ToString(pedido.apellido);
+                //frmP.txtTotal.Text = Convert.ToString(pedido.total);
 
-                itemPedido.pedido = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
-                itemsPedidoB.CargarDgvPedido(itemPedido, frmP.dgvPedido);
+                //itemPedido.pedido = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
+                //itemsPedidoB.CargarDgvPedido(itemPedido, frmP.dgvPedido);
 
-                DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente, "1");
-                frmP.Show();
-                frmP.tabMain.SelectedTab = frmP.tabPedido;
+                //DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente, "1");
+                //frmP.Show();
+                //frmP.tabMain.SelectedTab = frmP.tabPedido;
             }
         }
 

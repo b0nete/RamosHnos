@@ -177,11 +177,11 @@
     <Compile Include="Capas\Interfaz\formComprobante.Designer.cs">
       <DependentUpon>formComprobante.cs</DependentUpon>
     </Compile>
-    <Compile Include="Capas\Interfaz\formFactura.cs">
+    <Compile Include="Capas\Interfaz\formVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Capas\Interfaz\formFactura.Designer.cs">
-      <DependentUpon>formFactura.cs</DependentUpon>
+    <Compile Include="Capas\Interfaz\formVentas.Designer.cs">
+      <DependentUpon>formVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Interfaz\formInsumos.cs">
       <SubType>Form</SubType>
@@ -450,6 +450,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formComprobante.resx">
       <DependentUpon>formComprobante.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\formVentas.resx">
+      <DependentUpon>formVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formInsumos.resx">
       <DependentUpon>formInsumos.cs</DependentUpon>

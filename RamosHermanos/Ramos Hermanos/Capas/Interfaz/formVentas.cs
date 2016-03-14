@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace RamosHermanos.Capas.Interfaz
 {
-    public partial class formFactura : Form
+    public partial class formVentas : Form
     {
-        public formFactura()
+        public formVentas()
         {
             InitializeComponent();
+        }
+
+        private void formFactura_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
