@@ -417,6 +417,11 @@ namespace RamosHermanos.Capas.Interfaz
             
         }
 
+        private void formProducto_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
         
 
 

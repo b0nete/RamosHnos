@@ -76,6 +76,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tabStock = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.idStock = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
             this.txtStockMin = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -102,7 +103,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.idStock = new System.Windows.Forms.TextBox();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -696,6 +696,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stock";
             // 
+            // idStock
+            // 
+            this.idStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.idStock.Location = new System.Drawing.Point(491, 15);
+            this.idStock.Name = "idStock";
+            this.idStock.Size = new System.Drawing.Size(81, 20);
+            this.idStock.TabIndex = 126;
+            // 
             // button8
             // 
             this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
@@ -941,14 +949,6 @@
             this.label7.Text = "Productos";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // idStock
-            // 
-            this.idStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.idStock.Location = new System.Drawing.Point(491, 15);
-            this.idStock.Name = "idStock";
-            this.idStock.Size = new System.Drawing.Size(81, 20);
-            this.idStock.TabIndex = 126;
-            // 
             // formProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -958,6 +958,7 @@
             this.Controls.Add(this.tabProducto);
             this.Name = "formProducto";
             this.Text = "Producto";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formProducto_FormClosed);
             this.Load += new System.EventHandler(this.formProducto_Load);
             this.tabProducto.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);

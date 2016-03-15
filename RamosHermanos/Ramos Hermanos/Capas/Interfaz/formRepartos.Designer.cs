@@ -510,6 +510,7 @@
             this.colACarga.DataPropertyName = "colACarga";
             this.colACarga.HeaderText = "A";
             this.colACarga.Name = "colACarga";
+            this.colACarga.ReadOnly = true;
             this.colACarga.Width = 25;
             // 
             // colCCarga
@@ -552,6 +553,7 @@
             this.colADescarga.DataPropertyName = "colADescarga";
             this.colADescarga.HeaderText = "A";
             this.colADescarga.Name = "colADescarga";
+            this.colADescarga.ReadOnly = true;
             this.colADescarga.Width = 25;
             // 
             // colCDescarga

@@ -65,7 +65,7 @@ namespace RamosHermanos.Capas.Interfaz
                 return;
             }
 
-            if (txt.Text != string.Empty)
+            if (txt.Text != string.Empty && txt.Text != "0")
             {
                 itemFactura.factura = comprobante;
                 itemFactura.producto = producto;

@@ -20,7 +20,6 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             InitializeComponent();
         }
 
-        formProducto frmPro = new formProducto();
         ProductoEntity producto = new ProductoEntity();
         formPedidos frmP = new formPedidos();
 
@@ -40,7 +39,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             }
             if (cell != null)
             {
-
+                formProducto frmPro = new formProducto();
                 frmPro.Show();
 
                 DataGridViewRow row = cell.OwningRow;
