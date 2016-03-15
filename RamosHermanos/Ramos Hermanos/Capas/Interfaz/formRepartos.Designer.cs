@@ -60,7 +60,6 @@
             this.cbDistribuidores = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvRepartos = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.colOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,6 +88,7 @@
             this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabRepartos.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -342,11 +342,14 @@
             // 
             // cbDistribuidores
             // 
+            this.cbDistribuidores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDistribuidores.FormattingEnabled = true;
             this.cbDistribuidores.Location = new System.Drawing.Point(291, 5);
             this.cbDistribuidores.Name = "cbDistribuidores";
             this.cbDistribuidores.Size = new System.Drawing.Size(121, 21);
             this.cbDistribuidores.TabIndex = 3;
+            this.cbDistribuidores.SelectedIndexChanged += new System.EventHandler(this.cbDistribuidores_SelectedIndexChanged);
+            this.cbDistribuidores.SelectionChangeCommitted += new System.EventHandler(this.cbDistribuidores_SelectionChangeCommitted);
             // 
             // label1
             // 
@@ -404,16 +407,6 @@
             this.dgvRepartos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_RowEnter);
             this.dgvRepartos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvRepartos_KeyDown);
             this.dgvRepartos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvRepartos_KeyPress);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1000, 703);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // colOrden
             // 
@@ -610,6 +603,16 @@
             this.colComprobante.DataPropertyName = "idComprobante";
             this.colComprobante.HeaderText = "Comprobante";
             this.colComprobante.Name = "colComprobante";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1000, 703);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // formRepartos
             // 

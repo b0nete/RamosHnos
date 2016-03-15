@@ -59,6 +59,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvRepartos_EditingControlShowing_1(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
+            e.Control.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextboxNumeric_KeyPress);            
+
             //DataGridViewTextBoxEditingControl dText = (DataGridViewTextBoxEditingControl)e.Control;
             //dText.KeyUp -= new KeyEventHandler(text_KeyUp);
             //dText.KeyUp += new KeyEventHandler(text_KeyUp);
@@ -92,23 +94,6 @@ namespace RamosHermanos.Capas.Interfaz
 
         public void dgvRepartos_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-            }
-
             //if (e.KeyChar == 13)
             //{
             //    formCargaPedido frm = new formCargaPedido();
@@ -439,6 +424,70 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
+        private void TextboxNumeric_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Boolean nonNumberEntered;
+
+            nonNumberEntered = true;
+
+            if ((e.KeyChar >= 48 && e.KeyChar <= 57) || e.KeyChar == 8)
+            {
+                nonNumberEntered = false;
+            }
+
+            if (nonNumberEntered == true)
+            {
+                // Stop the character from being entered into the control since it is non-numerical.
+                e.Handled = true;
+                MessageBox.Show("Solo se aceptan Numeros!");
+            }
+            else
+            {
+                e.Handled = false;
+            }
+
+            
+        }
+
+        private void cbDistribuidores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbDistribuidores_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            formDistribuidores frm = new formDistribuidores();
+
+            if (RepartoB.ExisteReparto(reparto) == true)
+            {
+                RepartoB.BuscarReparto(reparto);
+                dtpFechaReparto.Value = reparto.fecha;
+                cbDistribuidores.SelectedValue = reparto.distribuidor;
+                txtReparto.Text = Convert.ToString(reparto.idReparto);
+
+                itemsReparto.reparto = reparto.idReparto;
+                dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, dgvRepartos);
+            }
+            else
+            {
+                DataSet ds = frm.GenerarReparto();
+
+                RepartoB.BuscarReparto(reparto);
+                dtpFechaReparto.Value = reparto.fecha;
+                cbDistribuidores.SelectedValue = reparto.distribuidor;
+                txtReparto.Text = Convert.ToString(reparto.idReparto);
+
+                itemsReparto.reparto = reparto.idReparto;
+                dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, dgvRepartos);
+
+                //frm.setRowNumber(frm.dgvRepartos);
+                //frm.dgvRepartos.DataSource = ds;
+                //frm.dgvRepartos.DataMember = "dtItemsRecorrido";
+            }
+
+            setRowNumber(dgvRepartos);
+        }
 
     }
 }
+

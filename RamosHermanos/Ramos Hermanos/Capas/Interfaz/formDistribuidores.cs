@@ -695,7 +695,7 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-        private DataSet GenerarReparto()
+        public DataSet GenerarReparto()
         {
             dsRecorridos ds = new dsRecorridos();
             formRepartos frm = new formRepartos();
@@ -793,8 +793,6 @@ namespace RamosHermanos.Capas.Interfaz
         {
 
         }
-
-        
 
         //Entidades
         FacturaEntity factura = new FacturaEntity();
