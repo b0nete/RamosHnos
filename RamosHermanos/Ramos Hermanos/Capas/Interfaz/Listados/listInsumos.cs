@@ -25,8 +25,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         {
             cbParametro.SelectedIndex = 0;
             InsumoB.cargardgvInsumo(dgvInsumos); 
-            if(datos.HasValue)
-            txtdatos.Text = Convert.ToString(datos);
+            
         }
 
         private void SearchParametro()
@@ -112,27 +111,37 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             }
             if (cell != null)
             {
-                DataGridViewRow row = this.dgvInsumos.CurrentRow as DataGridViewRow;
+                //DataGridViewRow row = cell.OwningRow;
                 
-                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el producto para cargarlo en tabInformación.
-                insumo.idInsumo = Convert.ToInt32(row.Cells["colIDInsumo"].Value.ToString());
+                ////Cargamos el ID de acuerdo a la celda seleccionada y buscamos el producto para cargarlo en tabInformación.
+                //insumo.idInsumo = Convert.ToInt32(row.Cells["colIDInsumo"].Value.ToString());
 
-                InsumoB.AdddInsumoDGV(frmP.dgvCompra, insumo);
+                //InsumoB.AdddInsumoDGV(frmP.dgvCompra, insumo);
+
+                //frmP.Show();
+                DataGridViewRow rowA = this.dgvInsumos.CurrentRow as DataGridViewRow;
 
                 IAddItem parent = this.Owner as IAddItem;
-                parent.AddNewItem(row);
-                this.Close();
+                parent.AddNewItem(rowA);
 
+                //this.Close();
+                
+                
             }
         
         
         }
-        private int? datos = null;
-        public listInsumos(int datos) : this()
-        { 
-            this.datos = datos; 
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = this.dgvInsumos.SelectedRows[0] as DataGridViewRow;
+            
+            IAddItem parent = this.Owner as IAddItem;
+            parent.AddNewItem(row);
+
+            this.Close();
         }
-          
+                  
       }
        
          

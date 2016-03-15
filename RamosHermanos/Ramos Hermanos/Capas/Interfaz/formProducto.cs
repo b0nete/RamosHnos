@@ -350,10 +350,10 @@ namespace RamosHermanos.Capas.Interfaz
         StockEntity stock = new StockEntity();
         private void CargarStock()
         {
-            stock.productoInsumo = "P";
             stock.idProductoInsumo = txtIDProd.Text;
             stock.stockMinimo = Convert.ToInt32(txtStockMin.Text);
             stock.stockMaximo = Convert.ToInt32(txtStockMax.Text);
+            stock.fechaActualizacion = Convert.ToDateTime(dtpfechaStock.Value);
         }
 
         private void txtnewPrecio_TextChanged(object sender, EventArgs e)
@@ -418,6 +418,16 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         private void formProducto_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void dtpfechaFactura_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }

@@ -188,9 +188,9 @@ namespace RamosHermanos.Capas.Interfaz
                 // Se recorre cada fila del DGV.
                 foreach (DataGridViewRow row in dgvPedido.Rows)
                 {
-                    if (row.Cells["colCantidad"].ToString() != string.Empty && row.Cells["colPrecio"].ToString() != string.Empty)
+                    if (row.Cells["colCantidad"].ToString() != string.Empty && row.Cells["colPrecioCompra"].ToString() != string.Empty)
                     {
-                        row.Cells["colSubTotal"].Value = Convert.ToInt32(row.Cells["colCantidad"].Value) * Convert.ToDouble(row.Cells["colPrecio"].Value);
+                        row.Cells["colSubTotal"].Value = Convert.ToInt32(row.Cells["colCantidad"].Value) * Convert.ToDouble(row.Cells["colPrecioCompra"].Value);
 
                         total += Convert.ToDouble(row.Cells["colSubTotal"].Value);
                     }

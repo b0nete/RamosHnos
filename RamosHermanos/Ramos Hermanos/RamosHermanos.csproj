@@ -577,6 +577,7 @@
       <DependentUpon>dsRecorridos.xsd</DependentUpon>
     </None>
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="Properties\DataSources\RamosHermanos.Capas.Interfaz.formFactura.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

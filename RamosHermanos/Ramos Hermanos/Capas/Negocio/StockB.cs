@@ -20,15 +20,15 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
 
-                string query = @"INSERT INTO stockproducto (producto, idProducto, stockMinimo, stockMaximo, stockActual) 
-                                 VALUES (@producto, @idProducto, @stockMinimo, @stockMaximo, 0)";
+                string query = @"INSERT INTO stockproducto (idProducto, stockMinimo, stockMaximo, stockActual,fechaActualizacion) 
+                                 VALUES (@idProducto, @stockMinimo, @stockMaximo, 0,@fechaActualizacion)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@producto", stock.productoInsumo);
                 cmd.Parameters.AddWithValue("@idproducto", stock.idProductoInsumo);
                 cmd.Parameters.AddWithValue("@stockMinimo", stock.stockMinimo);
                 cmd.Parameters.AddWithValue("@stockMaximo", stock.stockMaximo);
+                cmd.Parameters.AddWithValue("@fechaActualizacion", stock.fechaActualizacion);
 
                 cmd.ExecuteNonQuery();
 
@@ -43,19 +43,20 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
-        public static void cargardgvStock(DataGridView dgv, TextBox idStock)
+        public static void cargardgvStock(DataGridView dgv, TextBox idProducto)
         {
             try
             {
                 MySQL.ConnectDB();
-                string query = @"SELECT P.idStock,PRO.producto,PRO.idProducto,P.stockMinimo,P.stockMaximo,P.stockActual
+                string query = @"SELECT P.idStock,PRO.producto,PRO.idProducto,P.stockMinimo,P.stockMaximo,P.stockActual,P.fechaActualizacion
                             FROM stockProducto P
                             INNER JOIN productos PRO on PRO.idProducto = P.idProducto
-                            where P.idStock=@idStock";
+                            WHERE P.idProducto=@idProducto
+                            ORDER BY fechaActualizacion DESC";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@idStock", idStock.Text);
+                cmd.Parameters.AddWithValue("@idProducto", idProducto.Text);
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
@@ -66,7 +67,8 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["producto"]),
                     Convert.ToString(dr["stockMinimo"]),
                     Convert.ToString(dr["stockMaximo"]),
-                    Convert.ToString(dr["stockActual"]));
+                    Convert.ToString(dr["stockActual"]),
+                    Convert.ToString(dr["fechaActualizacion"]));
 
                 }
 
