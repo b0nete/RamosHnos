@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Negocio;
+using RamosHermanos.Capas.Interfaz.Contratos;
 
 namespace RamosHermanos.Capas.Interfaz.Listados
 {
@@ -37,6 +38,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             if (cell != null)
             {
                 DataGridViewRow row = cell.OwningRow;
+                formProveedor frmP = new formProveedor();
                 frmP.Show();
                 //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
                 proveedor.idProveedor = Convert.ToInt32(row.Cells["colIDProveedor"].Value.ToString());
@@ -79,7 +81,12 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             }
             if (cell != null)
             {
-                DataGridViewRow row = cell.OwningRow;
+                DataGridViewRow row = this.dgvProveedores.CurrentRow as DataGridViewRow;
+
+                IAddItem parent = this.Owner as IAddItem;
+
+                parent.AddNewItem(row);
+
                 frm.Show();
                 //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
                 proveedor.idProveedor = Convert.ToInt32(row.Cells["colIDProveedor"].Value.ToString());
