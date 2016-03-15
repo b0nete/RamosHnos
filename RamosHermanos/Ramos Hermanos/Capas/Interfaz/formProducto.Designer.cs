@@ -76,6 +76,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tabStock = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dtpfechaStock = new System.Windows.Forms.DateTimePicker();
             this.button8 = new System.Windows.Forms.Button();
             this.txtStockMin = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -83,7 +85,7 @@
             this.dgvStock = new System.Windows.Forms.DataGridView();
             this.txtStockMax = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtStockA = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.tabPrecio = new System.Windows.Forms.TabPage();
@@ -97,14 +99,11 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dtpfechaStock = new System.Windows.Forms.DateTimePicker();
-            this.label13 = new System.Windows.Forms.Label();
             this.colOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFechaActualizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -688,7 +687,7 @@
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.txtStockMax);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtStockA);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label31);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -698,6 +697,28 @@
             this.groupBox2.TabIndex = 51;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stock";
+            // 
+            // label13
+            // 
+            this.label13.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label13.Location = new System.Drawing.Point(42, 17);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(103, 13);
+            this.label13.TabIndex = 127;
+            this.label13.Text = "Fecha Actualización";
+            // 
+            // dtpfechaStock
+            // 
+            this.dtpfechaStock.CustomFormat = "dd/MM/yyyy";
+            this.dtpfechaStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpfechaStock.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpfechaStock.Location = new System.Drawing.Point(151, 14);
+            this.dtpfechaStock.Name = "dtpfechaStock";
+            this.dtpfechaStock.Size = new System.Drawing.Size(81, 20);
+            this.dtpfechaStock.TabIndex = 126;
+            this.dtpfechaStock.ValueChanged += new System.EventHandler(this.dtpfechaFactura_ValueChanged);
             // 
             // button8
             // 
@@ -714,7 +735,7 @@
             // txtStockMin
             // 
             this.txtStockMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtStockMin.Location = new System.Drawing.Point(288, 13);
+            this.txtStockMin.Location = new System.Drawing.Point(151, 45);
             this.txtStockMin.Name = "txtStockMin";
             this.txtStockMin.Size = new System.Drawing.Size(81, 20);
             this.txtStockMin.TabIndex = 124;
@@ -724,7 +745,7 @@
             this.label11.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label11.Location = new System.Drawing.Point(209, 16);
+            this.label11.Location = new System.Drawing.Point(72, 48);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 13);
             this.label11.TabIndex = 123;
@@ -748,8 +769,7 @@
             this.colComprobante,
             this.colFechaComprobante,
             this.colCantidad,
-            this.colStock,
-            this.colFechaActualizacion});
+            this.colStock});
             this.dgvStock.Location = new System.Drawing.Point(6, 19);
             this.dgvStock.Name = "dgvStock";
             this.dgvStock.Size = new System.Drawing.Size(709, 202);
@@ -758,7 +778,7 @@
             // txtStockMax
             // 
             this.txtStockMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtStockMax.Location = new System.Drawing.Point(288, 39);
+            this.txtStockMax.Location = new System.Drawing.Point(353, 45);
             this.txtStockMax.Name = "txtStockMax";
             this.txtStockMax.Size = new System.Drawing.Size(81, 20);
             this.txtStockMax.TabIndex = 120;
@@ -768,26 +788,26 @@
             this.label9.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(208, 42);
+            this.label9.Location = new System.Drawing.Point(273, 48);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 13);
             this.label9.TabIndex = 119;
             this.label9.Text = "Stock Máximo";
             // 
-            // textBox2
+            // txtStockA
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox2.Location = new System.Drawing.Point(85, 40);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(81, 20);
-            this.textBox2.TabIndex = 60;
+            this.txtStockA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtStockA.Location = new System.Drawing.Point(353, 14);
+            this.txtStockA.Name = "txtStockA";
+            this.txtStockA.Size = new System.Drawing.Size(81, 20);
+            this.txtStockA.TabIndex = 60;
             // 
             // label14
             // 
             this.label14.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label14.Location = new System.Drawing.Point(11, 43);
+            this.label14.Location = new System.Drawing.Point(279, 17);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(68, 13);
             this.label14.TabIndex = 59;
@@ -921,28 +941,6 @@
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // dtpfechaStock
-            // 
-            this.dtpfechaStock.CustomFormat = "dd/MM/yyyy";
-            this.dtpfechaStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpfechaStock.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpfechaStock.Location = new System.Drawing.Point(85, 14);
-            this.dtpfechaStock.Name = "dtpfechaStock";
-            this.dtpfechaStock.Size = new System.Drawing.Size(81, 20);
-            this.dtpfechaStock.TabIndex = 126;
-            this.dtpfechaStock.ValueChanged += new System.EventHandler(this.dtpfechaFactura_ValueChanged);
-            // 
-            // label13
-            // 
-            this.label13.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label13.Location = new System.Drawing.Point(42, 20);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(37, 13);
-            this.label13.TabIndex = 127;
-            this.label13.Text = "Fecha";
-            // 
             // colOperacion
             // 
             this.colOperacion.HeaderText = "Operación";
@@ -967,11 +965,6 @@
             // 
             this.colStock.HeaderText = "Stock";
             this.colStock.Name = "colStock";
-            // 
-            // colFechaActualizacion
-            // 
-            this.colFechaActualizacion.HeaderText = "FechaActualizacion";
-            this.colFechaActualizacion.Name = "colFechaActualizacion";
             // 
             // formProducto
             // 
@@ -1050,7 +1043,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.TextBox txtStockMax;
         private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox txtStockA;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TabPage tabPrecio;
@@ -1074,13 +1067,12 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.MaskedTextBox txtnewPrecio;
         public System.Windows.Forms.DataGridView dgvStock;
-        private System.Windows.Forms.DateTimePicker dtpfechaStock;
         private System.Windows.Forms.Label label13;
+        public System.Windows.Forms.DateTimePicker dtpfechaStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOperacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn colComprobante;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaComprobante;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaActualizacion;
     }
 }

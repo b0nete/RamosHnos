@@ -39,6 +39,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             }
             if (cell != null)
             {
+                StockProductoEntity stockP = new StockProductoEntity();
                 formProducto frmPro = new formProducto();
                 frmPro.Show();
 
@@ -59,7 +60,23 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 frmPro.cbMedida.SelectedValue = producto.medida;
 
                 PrecioProductosB.UltimoPrecioDGV(frmPro.dgvPrecios, frmPro.txtIDProd);
-                StockB.cargardgvStock(frmPro.dgvStock, frmPro.txtIDProd);
+
+                //Cargar Datos Stock
+                stockP.idProducto = producto.idProducto;
+                if (StockProductoB.ExisteStock(stockP) == false)
+                    MessageBox.Show("No existe stock");
+                else
+                {
+                    StockProductoB.BuscarStock(stockP);
+                    frmPro.txtStockMin.Text = Convert.ToString(stockP.stockMinimo);
+                    frmPro.txtStockMax.Text = Convert.ToString(stockP.stockMaximo);
+                    frmPro.txtStockA.Text = Convert.ToString(stockP.stockActual);
+                    frmPro.dtpfechaStock.Value = Convert.ToDateTime(stockP.fechaActualizacion);
+                }
+                //Cargar Operaciones Stock
+
+                
+                //StockProductoB.cargardgvStock(frmPro.dgvStock, frmPro.txtIDProd);
                 
             }
         }

@@ -343,14 +343,14 @@ namespace RamosHermanos.Capas.Interfaz
         private void button8_Click(object sender, EventArgs e)
         {
             CargarStock();
-            StockB.InsertStock(stock);
+            StockProductoB.InsertStock(stock);
         }
 
         // Entidades
-        StockEntity stock = new StockEntity();
+        StockProductoEntity stock = new StockProductoEntity();
         private void CargarStock()
         {
-            stock.idProductoInsumo = txtIDProd.Text;
+            stock.idProducto = Convert.ToInt32(txtIDProd.Text);
             stock.stockMinimo = Convert.ToInt32(txtStockMin.Text);
             stock.stockMaximo = Convert.ToInt32(txtStockMax.Text);
             stock.fechaActualizacion = Convert.ToDateTime(dtpfechaStock.Value);
