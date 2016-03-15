@@ -20,6 +20,7 @@ namespace RamosHermanos.Capas.Interfaz
     public partial class formCompras : Form, IAddItem
     {
         public int caseSwitch = 1;
+        public int switchCase = 1;
 
         public formCompras()
         {
@@ -57,11 +58,24 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            listProveedores frm = new listProveedores();
-            frm.caseSwitch = 1;
-            frm.Show(this);
+            //listProveedores frm = new listProveedores();
+            //frm.caseSwitch = 1;
+            //frm.Show(this);
+
+            listProveedores formADD = new listProveedores();
+            formADD.Show(this);
+            formADD.caseSwitch = 1;
         }
 
+        #region IAddItem Members
+
+        public void AddNewProveedor(TextBox txt)
+        {
+            string idproveedor = txtIDproveedor.Text;
+                        
+        }
+
+        #endregion
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiar();
@@ -94,37 +108,51 @@ namespace RamosHermanos.Capas.Interfaz
             
         }
 
-
-        
+        private bool DataCheck()
+        {
+            if(txtTotal.Text == null || txtIDproveedor.Text == null || txtnumFactura.Text == null)
+            {
+                MessageBox.Show("Datos Incompletos");
+                return false;
+            }
+            return true;
+        }
+             
         itemComprasEntity itemcompra = new itemComprasEntity();
        
         private void cargarItemCompra(DataGridViewRow row)
         {
 
             itemcompra.idInsumo = Convert.ToInt32(row.Cells["colIDInsumo"].Value);
-            itemcompra.idRubro = Convert.ToInt32(row.Cells["colIDRubro"].Value);
             itemcompra.marca = Convert.ToString(row.Cells["colMarca"].Value);
             itemcompra.precioUnitario = Convert.ToDouble(row.Cells["colPrecioCompra"].Value);
             itemcompra.subTotal = Convert.ToDouble(row.Cells["colSubTotal"].Value);
             itemcompra.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
-
-
+            
         }
         
         ComprasEntity compras = new ComprasEntity();
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //CargarCompras();
-            //ComprasB.InsertCompras(compras, txtidCompras);
-            
-            foreach (DataGridViewRow row in dgvCompra.Rows)
+            if (DataCheck() == false)
             {
-                cargarItemCompra(row);
-                itemCompraB.InsertItemCompras(itemcompra, dgvCompra);
+                return;
             }
+            else
+            {
+                CargarCompras();
+                ComprasB.InsertCompras(compras, txtidCompras);
 
-            MessageBox.Show("guardado");
+                foreach (DataGridViewRow row in dgvCompra.Rows)
+                {
+                    cargarItemCompra(row);
+                    itemCompraB.InsertItemCompras(itemcompra, dgvCompra);
+                }
 
+                MessageBox.Show("guardado");
+
+            }
+            
         }
 
         private void txtIngreso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -132,6 +160,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
+        
         private void button1_Click(object sender, EventArgs e)
         {
             listInsumos form = new listInsumos();
@@ -139,22 +168,7 @@ namespace RamosHermanos.Capas.Interfaz
  
         }
 
-        #region IAddItem Members
-
-        public void AddNewItem(DataGridViewRow row)
-        {
-            string idinsumo = row.Cells["colIDinsumo"].Value.ToString();
-            string insumo = row.Cells["colInsumo"].Value.ToString();
-            string rubro = row.Cells["colRubro"].Value.ToString();
-            string marca = row.Cells["colMarca"].Value.ToString();
-
-            
-            this.dgvCompra.Rows.Add(new[] { idinsumo, insumo, rubro, marca });
-            
-        }
-
-        #endregion
-
+        
         private void dgvCompra_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
             {
@@ -176,10 +190,27 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-        
+             
+        public void AddNewItem(DataGridViewRow row)
+        {
+            string idinsumo = row.Cells["colIDinsumo"].Value.ToString();
+            string insumo = row.Cells["colInsumo"].Value.ToString();
+            string rubro = row.Cells["colRubro"].Value.ToString();
+            string marca = row.Cells["colMarca"].Value.ToString();
 
-                   
+            
+            this.dgvCompra.Rows.Add(new[] { idinsumo, insumo, rubro, marca });
+            
+        }
+
+        
+        //public void AddNewItem(DataGridViewRow row)
+        //{
+        //    string idinsumo = txtIDproveedor.Text;
+                       
+        //}
        
+              
     }
 }
 
