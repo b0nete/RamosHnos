@@ -42,11 +42,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvFactura = new System.Windows.Forms.DataGridView();
-            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtpfechaFactura = new System.Windows.Forms.DateTimePicker();
             this.cbTipoFactura = new System.Windows.Forms.ComboBox();
@@ -55,7 +50,7 @@
             this.txtIDFactura = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtpfechaEntrega = new System.Windows.Forms.DateTimePicker();
+            this.dtpEntrega = new System.Windows.Forms.DateTimePicker();
             this.dtpVencimiento = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -74,6 +69,11 @@
             this.txtIDcliente = new System.Windows.Forms.TextBox();
             this.txtnumDoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -225,35 +225,6 @@
             this.dgvFactura.Size = new System.Drawing.Size(760, 316);
             this.dgvFactura.TabIndex = 96;
             // 
-            // colCodigo
-            // 
-            this.colCodigo.HeaderText = "Código";
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.ReadOnly = true;
-            // 
-            // colProducto
-            // 
-            this.colProducto.HeaderText = "Producto";
-            this.colProducto.Name = "colProducto";
-            this.colProducto.ReadOnly = true;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.HeaderText = "Precio Unitario";
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.ReadOnly = true;
-            // 
-            // colSubTotal
-            // 
-            this.colSubTotal.HeaderText = "SubTotal";
-            this.colSubTotal.Name = "colSubTotal";
-            this.colSubTotal.ReadOnly = true;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dtpfechaFactura);
@@ -334,7 +305,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dtpfechaEntrega);
+            this.groupBox2.Controls.Add(this.dtpEntrega);
             this.groupBox2.Controls.Add(this.dtpVencimiento);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label10);
@@ -348,15 +319,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles Venta";
             // 
-            // dtpfechaEntrega
+            // dtpEntrega
             // 
-            this.dtpfechaEntrega.CustomFormat = "dd/MM/yyyy";
-            this.dtpfechaEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpfechaEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpfechaEntrega.Location = new System.Drawing.Point(91, 46);
-            this.dtpfechaEntrega.Name = "dtpfechaEntrega";
-            this.dtpfechaEntrega.Size = new System.Drawing.Size(210, 20);
-            this.dtpfechaEntrega.TabIndex = 13;
+            this.dtpEntrega.CustomFormat = "dd/MM/yyyy";
+            this.dtpEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEntrega.Location = new System.Drawing.Point(91, 46);
+            this.dtpEntrega.Name = "dtpEntrega";
+            this.dtpEntrega.Size = new System.Drawing.Size(210, 20);
+            this.dtpEntrega.TabIndex = 13;
             // 
             // dtpVencimiento
             // 
@@ -552,6 +523,40 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Cliente";
             // 
+            // colCodigo
+            // 
+            this.colCodigo.DataPropertyName = "codProducto";
+            this.colCodigo.HeaderText = "Código";
+            this.colCodigo.Name = "colCodigo";
+            this.colCodigo.ReadOnly = true;
+            // 
+            // colProducto
+            // 
+            this.colProducto.DataPropertyName = "producto";
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.DataPropertyName = "cantidad";
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.DataPropertyName = "precioUnitario";
+            this.colPrecio.HeaderText = "Precio Unitario";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
+            // 
+            // colSubTotal
+            // 
+            this.colSubTotal.DataPropertyName = "subTotal";
+            this.colSubTotal.HeaderText = "SubTotal";
+            this.colSubTotal.Name = "colSubTotal";
+            this.colSubTotal.ReadOnly = true;
+            // 
             // formVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -591,49 +596,49 @@
         #endregion
 
         private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.DataGridView dgvFactura;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox txtIDFactura;
+        public System.Windows.Forms.DateTimePicker dtpfechaFactura;
+        public System.Windows.Forms.ComboBox cbTipoFactura;
+        public System.Windows.Forms.DateTimePicker dtpEntrega;
+        public System.Windows.Forms.DateTimePicker dtpVencimiento;
+        public System.Windows.Forms.ComboBox cbformaPago;
+        public System.Windows.Forms.ComboBox cbDomicilio;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtIVA;
+        public System.Windows.Forms.TextBox txtTel;
+        public System.Windows.Forms.TextBox txtIDcliente;
+        public System.Windows.Forms.TextBox txtnumDoc;
+        public System.Windows.Forms.ComboBox cbEstado;
+        public System.Windows.Forms.TextBox txtObservaciones;
+        public System.Windows.Forms.TextBox txtTotal;
+        public System.Windows.Forms.DataGridView dgvFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dtpfechaFactura;
-        private System.Windows.Forms.ComboBox cbTipoFactura;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DateTimePicker dtpfechaEntrega;
-        private System.Windows.Forms.DateTimePicker dtpVencimiento;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.ComboBox cbformaPago;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbDomicilio;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtIVA;
-        private System.Windows.Forms.TextBox txtTel;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtIDcliente;
-        private System.Windows.Forms.TextBox txtnumDoc;
-        private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox txtIDFactura;
     }
 }

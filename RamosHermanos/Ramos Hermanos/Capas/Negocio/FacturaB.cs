@@ -19,8 +19,8 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO Facturas (tipoFactura, numFactura, fechaFactura, fechaVencimiento, fechaEntrega, formaPago, cliente, observaciones, total, estado) 
-                                 VALUES (@tipoFactura, @numFactura, @fechaFactura, @fechaVencimiento, @fechaEntrega, @formaPago, @cliente, @observaciones, @total, @estado);
+                string query = @"INSERT INTO Facturas (tipoFactura, numFactura, fechaFactura, fechaVencimiento, fechaEntrega, formaPago, cliente, domicilio, observaciones, total, estado) 
+                                 VALUES (@tipoFactura, @numFactura, @fechaFactura, @fechaVencimiento, @fechaEntrega, @formaPago, @cliente, @domicilio, @observaciones, @total, @estado);
                                  SELECT LAST_INSERT_ID();";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -122,12 +122,12 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT P.idFactura, P.idPersona, P.fechaPedido, P.fechaEntrega, p.Observaciones,P.rol, P.estado, P.total,
+                string query = @"SELECT P.idFactura, P.cliente, P.fechaFactura, P.fechaEntrega, p.Observaciones, P.estado, P.total,
                                C.Nombre, C.Apellido, D.idDomicilio, D.calle, D.numero
-                               FROM Facturas F
-                               INNER JOIN clientes C on C.idCliente = P.idPersona
+                               FROM Facturas P
+                               INNER JOIN clientes C on C.idCliente = P.cliente
                                INNER JOIN domicilios D on D.idDomicilio = P.domicilio
-                               WHERE F.idFactura = @idFactura";
+                               WHERE P.idFactura = @idFactura";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -154,7 +154,7 @@ namespace RamosHermanos.Capas.Negocio
                     factura.fechaEntrega = Convert.ToDateTime(row["FechaEntrega"]);
                     factura.observaciones = Convert.ToString(row["observaciones"]);
                     factura.total = Convert.ToDouble(row["total"]);
-                    factura.nombreCompleto = Convert.ToString(row["Nombre"]) + Convert.ToString(row["Apellido"]);
+                    factura.nombreCompleto = Convert.ToString(row["Nombre"]) + ' ' + Convert.ToString(row["Apellido"]);
                     factura.domicilioCompleto = 
                     factura.estado = Convert.ToString(row["estado"]);
 

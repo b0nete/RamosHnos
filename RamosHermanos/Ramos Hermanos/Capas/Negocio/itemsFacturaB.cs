@@ -13,6 +13,51 @@ namespace RamosHermanos.Capas.Negocio
 {
     class itemsFacturaB
     {
+        public static void BuscarItemFacturaDGV(itemFacturaEntity itemFactura, DataGridView dgv, TextBox txtTotal)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT FI.idItemFactura, FI.factura, FI.producto as codProducto, FI.cantidad, FI.precioUnitario, FI.subTotal, P.producto
+                                 FROM itemsFactura FI
+                                 INNER JOIN Productos P ON P.idProducto = FI.producto
+                                 WHERE FI.factura = @factura";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado != 0)
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+                    dgv.AutoGenerateColumns = false;
+                    dgv.DataSource = dt;
+                }
+
+                double c;
+                double total = 0;
+
+                foreach (DataGridViewRow row in dgv.Rows)
+                {
+                    c = Convert.ToDouble(row.Cells["colSubTotal"].Value);
+                    total = Convert.ToDouble(c + total);
+                }
+
+                txtTotal.Text = Convert.ToString(total);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static bool ExisteItemFactura(itemFacturaEntity itemFactura)
         {
             MySQL.ConnectDB();

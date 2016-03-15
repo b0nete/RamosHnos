@@ -400,26 +400,25 @@ namespace RamosHermanos.Capas.Interfaz
             }
             if (cell != null)
             {
-                //DataGridViewRow row = cell.OwningRow;
+                DataGridViewRow row = cell.OwningRow;
 
-                ////Cargamos el ID de acuerdo a la celda seleccionada y buscamos el pedido para cargarlo.
-                //factura.idFactura = Convert.ToInt32(row.Cells["colComprobante"].Value.ToString());
-                //FacturaB.BuscarFacturaID(factura);
-                //frmP.txtIDFactura.Text = Convert.ToString(factura.idFactura);
-                //frmP.txtidCliente.Text = Convert.ToString(pedido.idPersona);
-                //frmP.dtpFecha.Value = pedido.fechaPedido;
-                //frmP.dtpEntrega.Value = pedido.fechaEntrega;
-                //frmP.cbEstado.SelectedItem = pedido.estado;
-                //frmP.txtObservaciones.Text = Convert.ToString(pedido.observaciones);
-                //frmP.txtNombre.Text = Convert.ToString(pedido.nombre) + " " + Convert.ToString(pedido.apellido);
-                //frmP.txtTotal.Text = Convert.ToString(pedido.total);
+                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el pedido para cargarlo.
+                factura.idFactura = Convert.ToInt32(row.Cells["colComprobante"].Value.ToString());
+                FacturaB.BuscarFacturaID(factura);
+                frmP.txtIDFactura.Text = Convert.ToString(factura.idFactura);
+                frmP.txtIDcliente.Text = Convert.ToString(factura.cliente);
+                frmP.dtpfechaFactura.Value = factura.fechaFactura;
+                frmP.dtpEntrega.Value = factura.fechaEntrega;
+                frmP.cbEstado.SelectedItem = factura.estado;
+                frmP.txtObservaciones.Text = Convert.ToString(pedido.observaciones);
+                frmP.txtNombre.Text = Convert.ToString(factura.nombreCompleto);
+                frmP.txtTotal.Text = Convert.ToString(factura.total);
 
-                //itemPedido.pedido = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
-                //itemsPedidoB.CargarDgvPedido(itemPedido, frmP.dgvPedido);
+                itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+                itemsFacturaB.BuscarItemFacturaDGV(itemFactura, frmP.dgvFactura, frmP.txtTotal);
 
-                //DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtidCliente, "1");
-                //frmP.Show();
-                //frmP.tabMain.SelectedTab = frmP.tabPedido;
+                DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtIDcliente, "1");
+                frmP.Show();
             }
         }
 

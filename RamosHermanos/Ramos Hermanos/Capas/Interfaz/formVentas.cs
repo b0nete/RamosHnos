@@ -19,7 +19,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formFactura_Load(object sender, EventArgs e)
         {
-
+            dgvFactura.AutoGenerateColumns = false;
         }
     }
 }
