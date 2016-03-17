@@ -302,6 +302,12 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
+        private void producciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formProduccion frm = new formProduccion();
+            frm.Show();
+        }
+
        
        
        
