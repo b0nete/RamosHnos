@@ -89,7 +89,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 cmd.ExecuteScalar();
 
-                MessageBox.Show("Produccion Guardada!");
+                //MessageBox.Show("Produccion Guardada!");
                 MySQL.DisconnectDB();
             }
 

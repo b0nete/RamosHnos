@@ -78,7 +78,8 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query = @"INSERT INTO Produccion (fechaProduccion) 
-                                 VALUES (@fechaProduccion);";
+                                 VALUES (@fechaProduccion);
+                                 SELECT LAST_INSERT_ID();";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -87,7 +88,7 @@ namespace RamosHermanos.Capas.Negocio
                 produccion.idProduccion = Convert.ToInt32(cmd.ExecuteScalar());
                 txt.Text = Convert.ToString(produccion.idProduccion);
 
-                MessageBox.Show("Produccion Guardada!");
+                //MessageBox.Show("Produccion Guardada!");
                 MySQL.DisconnectDB();
             }
 

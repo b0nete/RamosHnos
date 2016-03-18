@@ -51,9 +51,9 @@ namespace RamosHermanos.Capas.Interfaz
             ProduccionB.InsertProduccion(produccion, txtIDProduccion);
 
             
-            foreach (DataGridViewRow row in dgvProduccion.Rows)
+            foreach (DataGridViewRow rowA in dgvProduccion.Rows)
             {
-                CargaItemProduccion();
+                CargaItemProduccion(rowA);
                 itemProduccionB.InsertItemProduccion(itemProduccion);
             }
 
@@ -65,11 +65,11 @@ namespace RamosHermanos.Capas.Interfaz
         ProduccionEntity produccion = new ProduccionEntity();
 
         ItemProduccionEntity itemProduccion = new ItemProduccionEntity();
-        public void CargaItemProduccion()
+        public void CargaItemProduccion(DataGridViewRow row)
         {
             itemProduccion.produccion = Convert.ToInt32(txtIDProduccion.Text);
-            itemProduccion.producto = Convert.ToInt32(dgvProduccion.CurrentRow.Cells["colIDProducto"].Value.ToString());
-            itemProduccion.cantidad = Convert.ToInt32(dgvProduccion.CurrentRow.Cells["colCantidad"].Value.ToString());
+            itemProduccion.producto = Convert.ToInt32(row.Cells["colIDProducto"].Value);
+            itemProduccion.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
         }
     }
 }

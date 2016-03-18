@@ -227,10 +227,15 @@ WHERE factura = @factura and (producto =  1 or producto =  2 or producto =  3 or
             }
         }
 
-//        SELECT 'VENTA' as operacion, FI.factura, F.fechaFactura, FI.cantidad
+//(SELECT 'VENTA' as operacion, FI.factura as A, F.fechaFactura as B, FI.cantidad as C
 //FROM itemsfactura FI
 //INNER JOIN Facturas F ON FI.factura = F.idFactura
-//WHERE producto = 1;
+//WHERE producto = 1) 
+//UNION 
+//(SELECT 'PRODUCCION' as operacion, IP.produccion as A, P.fechaProduccion as B, IP.cantidad as C
+//FROM ItemsProduccion IP
+//INNER JOIN Produccion P ON IP.produccion = P.idProduccion
+//WHERE producto = 5)
 
 //        public static void InsertItemFactura2(DataGridView dgv)
 //        {

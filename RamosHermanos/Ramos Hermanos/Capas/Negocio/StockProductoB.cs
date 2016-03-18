@@ -144,5 +144,40 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static void StockLogDGV(DataGridView dgv, TextBox producto)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                string query = @"(SELECT 'VENTA' as operacion, FI.factura as A, F.fechaFactura as B, FI.cantidad as C
+                                FROM itemsfactura FI
+                                INNER JOIN Facturas F ON FI.factura = F.idFactura
+                                WHERE producto = @producto) 
+                                UNION 
+                                (SELECT 'PRODUCCION' as operacion, IP.produccion as A, P.fechaProduccion as B, IP.cantidad as C
+                                FROM ItemsProduccion IP
+                                INNER JOIN Produccion P ON IP.produccion = P.idProduccion
+                                WHERE producto = @producto)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@producto", producto.Text);
+
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+                    dgv.DataSource = dt;
+                    dgv.AutoGenerateColumns = false;
+
+                    MySQL.DisconnectDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex + "ERROR");
+                throw;
+            }
+        }
     }
 }

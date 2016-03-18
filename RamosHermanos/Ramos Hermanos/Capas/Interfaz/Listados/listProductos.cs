@@ -29,6 +29,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         {
             cbParametro.SelectedIndex = 0;
             ProductoB.CargarDGV(dgvProducto);
+            caseSwitch = 1;
         }
 
         private void dgvProducto_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -126,10 +127,11 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     frmPro.txtStockMax.Text = Convert.ToString(stockP.stockMaximo);
                     frmPro.txtStockA.Text = Convert.ToString(stockP.stockActual);
                     frmPro.dtpfechaStock.Value = Convert.ToDateTime(stockP.fechaActualizacion);
+
+                    //Cargar Operaciones Stock                    
+                    StockProductoB.StockLogDGV(frmPro.dgvStock, frmPro.txtIDProd);
+                    frmPro.dgvStock.AutoGenerateColumns = false;
                 }
-                //Cargar Operaciones Stock
-
-
                 //StockProductoB.cargardgvStock(frmPro.dgvStock, frmPro.txtIDProd);
 
             }

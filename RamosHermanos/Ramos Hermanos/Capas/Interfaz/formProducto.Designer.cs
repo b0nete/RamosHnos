@@ -943,6 +943,7 @@
             // 
             // colOperacion
             // 
+            this.colOperacion.DataPropertyName = "operacion";
             this.colOperacion.HeaderText = "Operación";
             this.colOperacion.Name = "colOperacion";
             // 
@@ -953,11 +954,13 @@
             // 
             // colFechaComprobante
             // 
+            this.colFechaComprobante.DataPropertyName = "A";
             this.colFechaComprobante.HeaderText = "Fecha Comprobante";
             this.colFechaComprobante.Name = "colFechaComprobante";
             // 
             // colCantidad
             // 
+            this.colCantidad.DataPropertyName = "B";
             this.colCantidad.HeaderText = "Cantidad";
             this.colCantidad.Name = "colCantidad";
             // 
