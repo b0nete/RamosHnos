@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Interfaz.Contratos;
 
 
 namespace RamosHermanos.Capas.Interfaz.Listados
@@ -20,6 +21,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             InitializeComponent();
         }
 
+        public int caseSwitch = 0;
         ProductoEntity producto = new ProductoEntity();
         formPedidos frmP = new formPedidos();
 
@@ -30,6 +32,58 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         }
 
         private void dgvProducto_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            switch (caseSwitch)
+            {
+                case 1:
+                    SeleccionarDGV();
+                    break;
+                case 2:
+                    DataGridViewRow rowA = this.dgvProducto.CurrentRow as DataGridViewRow;
+
+                    formProduccion formInterface = this.Owner as formProduccion;
+                    formInterface.pasarDatos(rowA);
+                    break;
+                default:
+                    Console.WriteLine("Default case");
+                    break;
+            }
+
+            
+        }
+
+        private void txtParametro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void SearchParametro()
+        {
+            string parametro = '%' + txtParametro.Text + '%';
+            ProductoB.CargarDGVParametros(dgvProducto, cbParametro, parametro);
+        }
+
+        private void txtParametro_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void txtParametro_TextChanged(object sender, EventArgs e)
+        {
+            SearchParametro();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void SeleccionarDGV()
         {
             DataGridViewCell cell = null;
             foreach (DataGridViewCell selectedCell in dgvProducto.SelectedCells)
@@ -75,41 +129,10 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 }
                 //Cargar Operaciones Stock
 
-                
+
                 //StockProductoB.cargardgvStock(frmPro.dgvStock, frmPro.txtIDProd);
-                
+
             }
-        }
-
-        private void txtParametro_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
-        private void SearchParametro()
-        {
-            string parametro = '%' + txtParametro.Text + '%';
-            ProductoB.CargarDGVParametros(dgvProducto, cbParametro, parametro);
-        }
-
-        private void txtParametro_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void txtParametro_TextChanged(object sender, EventArgs e)
-        {
-            SearchParametro();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvProducto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 

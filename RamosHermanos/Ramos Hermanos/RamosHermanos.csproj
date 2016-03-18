@@ -117,6 +117,7 @@
     </Compile>
     <Compile Include="Capas\Interfaz\Contratos\IAddItem.cs" />
     <Compile Include="Capas\Interfaz\Contratos\IForm.cs" />
+    <Compile Include="Capas\Interfaz\Contratos\produccionForm.cs" />
     <Compile Include="Capas\Interfaz\formAbout.cs">
       <SubType>Form</SubType>
     </Compile>

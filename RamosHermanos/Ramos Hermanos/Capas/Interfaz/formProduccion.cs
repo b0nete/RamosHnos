@@ -7,14 +7,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RamosHermanos.Capas.Interfaz.Listados;
+using RamosHermanos.Capas.Interfaz.Contratos;
 
 namespace RamosHermanos.Capas.Interfaz
 {
-    public partial class formProduccion : Form
+    public partial class formProduccion : Form, produccionForm
     {
         public formProduccion()
         {
             InitializeComponent();
+        }
+
+        //#region IAddItem Members
+
+        public void pasarDatos(DataGridViewRow row)
+        {
+            string idProducto = row.Cells["colIDProducto"].Value.ToString();
+            string producto = row.Cells["colProducto"].Value.ToString();
+            //string check = "true";
+
+            this.dgvProduccion.Rows.Add(new[] { idProducto, producto });
+        }
+
+        //#endregion
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            listProductos frm = new listProductos();
+            frm.caseSwitch = 2;
+            frm.Show(this);
+        }
+
+        private void formProduccion_Load(object sender, EventArgs e)
+        {
+            dtpFechaProduccion.MaxDate = DateTime.Today;
         }
     }
 }
