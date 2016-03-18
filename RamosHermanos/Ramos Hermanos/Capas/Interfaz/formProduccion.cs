@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Interfaz.Listados;
 using RamosHermanos.Capas.Interfaz.Contratos;
+using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Negocio;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -41,6 +43,33 @@ namespace RamosHermanos.Capas.Interfaz
         private void formProduccion_Load(object sender, EventArgs e)
         {
             dtpFechaProduccion.MaxDate = DateTime.Today;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            produccion.fechaProduccion = Convert.ToDateTime(dtpFechaProduccion.Value);
+            ProduccionB.InsertProduccion(produccion, txtIDProduccion);
+
+            
+            foreach (DataGridViewRow row in dgvProduccion.Rows)
+            {
+                CargaItemProduccion();
+                itemProduccionB.InsertItemProduccion(itemProduccion);
+            }
+
+
+        }
+
+        //Entidades
+
+        ProduccionEntity produccion = new ProduccionEntity();
+
+        ItemProduccionEntity itemProduccion = new ItemProduccionEntity();
+        public void CargaItemProduccion()
+        {
+            itemProduccion.produccion = Convert.ToInt32(txtIDProduccion.Text);
+            itemProduccion.producto = Convert.ToInt32(dgvProduccion.CurrentRow.Cells["colIDProducto"].Value.ToString());
+            itemProduccion.cantidad = Convert.ToInt32(dgvProduccion.CurrentRow.Cells["colCantidad"].Value.ToString());
         }
     }
 }
