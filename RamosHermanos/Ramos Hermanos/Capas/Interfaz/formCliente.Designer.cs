@@ -197,6 +197,13 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
+            this.dgvMovimientos = new System.Windows.Forms.DataGridView();
+            this.rbPagas = new System.Windows.Forms.RadioButton();
+            this.rbNoPagas = new System.Windows.Forms.RadioButton();
+            this.colIDFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rbAnuladas = new System.Windows.Forms.RadioButton();
+            this.tabMovimientos.SuspendLayout();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
@@ -218,13 +225,18 @@
             this.groupBox15.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMovimientos
             // 
+            this.tabMovimientos.Controls.Add(this.rbAnuladas);
+            this.tabMovimientos.Controls.Add(this.rbNoPagas);
+            this.tabMovimientos.Controls.Add(this.rbPagas);
+            this.tabMovimientos.Controls.Add(this.dgvMovimientos);
             this.tabMovimientos.Location = new System.Drawing.Point(4, 22);
             this.tabMovimientos.Name = "tabMovimientos";
-            this.tabMovimientos.Size = new System.Drawing.Size(1027, 536);
+            this.tabMovimientos.Size = new System.Drawing.Size(776, 536);
             this.tabMovimientos.TabIndex = 4;
             this.tabMovimientos.Text = "Movimientos";
             this.tabMovimientos.UseVisualStyleBackColor = true;
@@ -417,7 +429,7 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(1027, 536);
+            this.tabInformacion.Size = new System.Drawing.Size(776, 536);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             // 
@@ -1233,7 +1245,7 @@
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(1035, 562);
+            this.tabMain.Size = new System.Drawing.Size(784, 562);
             this.tabMain.TabIndex = 4;
             // 
             // tabInformacionJ
@@ -2116,15 +2128,74 @@
             this.cbDomicilio.DropDown += new System.EventHandler(this.cbDomicilio_DropDown);
             this.cbDomicilio.SelectedIndexChanged += new System.EventHandler(this.cbDomicilio_SelectedIndexChanged);
             // 
+            // dgvMovimientos
+            // 
+            this.dgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMovimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDFactura,
+            this.colFecha});
+            this.dgvMovimientos.Location = new System.Drawing.Point(8, 35);
+            this.dgvMovimientos.Name = "dgvMovimientos";
+            this.dgvMovimientos.Size = new System.Drawing.Size(760, 493);
+            this.dgvMovimientos.TabIndex = 0;
+            // 
+            // rbPagas
+            // 
+            this.rbPagas.AutoSize = true;
+            this.rbPagas.Location = new System.Drawing.Point(9, 12);
+            this.rbPagas.Name = "rbPagas";
+            this.rbPagas.Size = new System.Drawing.Size(55, 17);
+            this.rbPagas.TabIndex = 1;
+            this.rbPagas.Text = "Pagas";
+            this.rbPagas.UseVisualStyleBackColor = true;
+            this.rbPagas.CheckedChanged += new System.EventHandler(this.rbPagas_CheckedChanged);
+            // 
+            // rbNoPagas
+            // 
+            this.rbNoPagas.AutoSize = true;
+            this.rbNoPagas.Checked = true;
+            this.rbNoPagas.Location = new System.Drawing.Point(70, 12);
+            this.rbNoPagas.Name = "rbNoPagas";
+            this.rbNoPagas.Size = new System.Drawing.Size(72, 17);
+            this.rbNoPagas.TabIndex = 2;
+            this.rbNoPagas.Text = "No Pagas";
+            this.rbNoPagas.UseVisualStyleBackColor = true;
+            this.rbNoPagas.CheckedChanged += new System.EventHandler(this.rbNoPagas_CheckedChanged);
+            // 
+            // colIDFactura
+            // 
+            this.colIDFactura.DataPropertyName = "idFactura";
+            this.colIDFactura.HeaderText = "Nº Factura";
+            this.colIDFactura.Name = "colIDFactura";
+            // 
+            // colFecha
+            // 
+            this.colFecha.DataPropertyName = "fechaFactura";
+            this.colFecha.HeaderText = "Fecha Factura";
+            this.colFecha.Name = "colFecha";
+            // 
+            // rbAnuladas
+            // 
+            this.rbAnuladas.AutoSize = true;
+            this.rbAnuladas.Location = new System.Drawing.Point(148, 12);
+            this.rbAnuladas.Name = "rbAnuladas";
+            this.rbAnuladas.Size = new System.Drawing.Size(69, 17);
+            this.rbAnuladas.TabIndex = 3;
+            this.rbAnuladas.Text = "Anuladas";
+            this.rbAnuladas.UseVisualStyleBackColor = true;
+            this.rbAnuladas.CheckedChanged += new System.EventHandler(this.rbAnuladas_CheckedChanged);
+            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 562);
+            this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.tabMain);
             this.Name = "formCliente";
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.formCliente_Load);
+            this.tabMovimientos.ResumeLayout(false);
+            this.tabMovimientos.PerformLayout();
             this.tabListado.ResumeLayout(false);
             this.tabListado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
@@ -2161,6 +2232,7 @@
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2335,6 +2407,12 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label i;
         public System.Windows.Forms.TextBox txtidDistri;
+        public System.Windows.Forms.RadioButton rbNoPagas;
+        public System.Windows.Forms.RadioButton rbPagas;
+        public System.Windows.Forms.DataGridView dgvMovimientos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
+        public System.Windows.Forms.RadioButton rbAnuladas;
 
     }
 }

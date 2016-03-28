@@ -117,6 +117,38 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void GenerarSaldo(ClienteEntity cliente, TextBox txtSaldo)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT totalPagado.total1-totalPendiente.total2
+                                FROM
+                                (
+                                SELECT SUM(total) as total1
+                                FROM Facturas
+                                WHERE estado = 'Pagado'
+                                ) as TotalPagado,
+                                (
+                                SELECT SUM(total) as total2
+                                FROM Facturas
+                                WHERE estado = 'Pendiente'
+                                ) as TotalPendiente";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                txtSaldo.Text = Convert.ToString(cmd.ExecuteScalar());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+          
+        }
+
+
 
     }
 }

@@ -198,7 +198,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     frm.cbTipoCliente.SelectedValue = cliente.tipoCliente;
                     frm.cbEstado.Checked = cliente.estado;
                     
-                    frm.CargarTXTSaldo();
+                    //frm.CargarTXTSaldo();
 
                     //Contacto
                     DomicilioB.CargarTXT(frm.txtDomic, frm.txtIDcliente, 1);
@@ -207,6 +207,23 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     
                     DomicilioB.CargarCB(frm.cbDomicilio, frm.txtIDcliente, "1");
                     DistribuidorB.CargarCB(frm.cbDistribuidor, frm.txtIDcliente);
+
+                    //Movimientos
+                        if (frm.rbNoPagas.Checked == true)
+                        {
+                            FacturaB.SearchPendientes(cliente, frm.dgvMovimientos);
+                        }
+                        else if (frm.rbPagas.Checked == true)
+                        {
+                            FacturaB.SearchPagas(cliente, frm.dgvMovimientos);
+                        }
+                        else if (frm.rbAnuladas.Checked == true)
+                    {
+                        FacturaB.SearchAnuladas(cliente, frm.dgvMovimientos);
+                    }
+
+                    //Saldo
+                        SaldoB.GenerarSaldo(cliente, frm.txtSaldo);
                     
                     //Tabs
                     frm.CasePersona();
@@ -224,7 +241,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     frm.cbtipoClientePJ.SelectedValue = cliente.tipoCliente;
                     frm.cbEstadoPJ.Checked = cliente.estado;
 
-                    frm.CargarTXTSaldo();
+                    //frm.CargarTXTSaldo();
 
                     //Visita
                     //visita.rol = 1;
@@ -236,6 +253,23 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     DomicilioB.CargarTXT(frm.txtDomic, frm.txtIDcliente, 1);
                     EmailB.CargarTXT(frm.txtEmail, frm.txtIDcliente, 1);
                     TelefonoB.CargarTXT(frm.txtTel, frm.txtIDcliente, 1);
+
+                    //Movimientos
+                    if (frm.rbNoPagas.Checked == true)
+                    {
+                        FacturaB.SearchPendientes(cliente, frm.dgvMovimientos);
+                    }
+                    else if (frm.rbPagas.Checked == true)
+                    {
+                        FacturaB.SearchPagas(cliente, frm.dgvMovimientos);
+                    }
+                    else if (frm.rbAnuladas.Checked == true)
+                    {
+                        FacturaB.SearchAnuladas(cliente, frm.dgvMovimientos);
+                    }
+
+                    //Saldo
+                    SaldoB.GenerarSaldo(cliente, frm.txtSaldoPJ);
 
                     //Tabs
                     frm.CasePersonaJuridica();
@@ -287,6 +321,11 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         }
 
         private void txtParametro_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

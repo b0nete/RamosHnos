@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RamosHermanos.Capas.Negocio;
+using RamosHermanos.Capas.Entidades;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -20,6 +22,20 @@ namespace RamosHermanos.Capas.Interfaz
         private void formFactura_Load(object sender, EventArgs e)
         {
             dgvFactura.AutoGenerateColumns = false;
+        }
+
+        private void cbEstado_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            factura.estado = cbEstado.Text;
+            FacturaB.UpdateFactura(factura);
+        }
+
+        // Entidades
+        FacturaEntity factura = new FacturaEntity();
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

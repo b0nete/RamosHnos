@@ -283,6 +283,12 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
+        private void cbEstado_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            factura.estado = cbEstado.SelectedText;
+            FacturaB.InsertFactura(factura);
+        }
+
 
 
 

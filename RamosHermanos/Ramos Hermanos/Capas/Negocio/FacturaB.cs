@@ -13,6 +13,34 @@ namespace RamosHermanos.Capas.Negocio
 {
     class FacturaB
     {
+        public static FacturaEntity UpdateFactura(FacturaEntity factura)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"UPDATE Facturas
+                                 SET estado = @estado;";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@estado", factura.estado);
+
+                cmd.ExecuteNonQuery();
+
+                //MessageBox.Show("Guardado!");
+                MySQL.DisconnectDB();
+
+                return factura;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static FacturaEntity InsertFactura(FacturaEntity factura)
         {
             try
@@ -170,6 +198,128 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static DataTable SearchPagas(ClienteEntity cliente, DataGridView dgvMovimientos)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                DataTable dt = new DataTable();
+
+                string query = @"SELECT idFactura, fechaFactura
+                                 FROM facturas
+                                 WHERE estado = 'Pagado' and cliente = @cliente";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                cmd.Parameters.AddWithValue("@cliente", cliente.idCliente);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("No existen facturas pagas!");
+                }
+                else
+                {
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    dgvMovimientos.AutoGenerateColumns = false;
+                    dgvMovimientos.DataSource = dt;
+                }
+
+                MySQL.DisconnectDB();
+                return dt;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static DataTable SearchPendientes(ClienteEntity cliente, DataGridView dgvMovimientos)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                DataTable dt = new DataTable();
+
+                string query = @"SELECT idFactura, fechaFactura
+                                 FROM facturas
+                                 WHERE estado = 'Pendiente' and cliente = @cliente";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                cmd.Parameters.AddWithValue("@cliente", cliente.idCliente);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("No existen facturas pendientes!");
+                }
+                else
+                {
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    dgvMovimientos.AutoGenerateColumns = false;
+                    dgvMovimientos.DataSource = dt;
+                }
+
+                MySQL.DisconnectDB();
+                return dt;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static DataTable SearchAnuladas(ClienteEntity cliente, DataGridView dgvMovimientos)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                DataTable dt = new DataTable();
+
+                string query = @"SELECT idFactura, fechaFactura
+                                 FROM facturas
+                                 WHERE estado = 'Anulado' and cliente = @cliente";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                cmd.Parameters.AddWithValue("@cliente", cliente.idCliente);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("No existen facturas anuladas!");
+                }
+                else
+                {
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    dgvMovimientos.AutoGenerateColumns = false;
+                    dgvMovimientos.DataSource = dt;
+                }
+
+                MySQL.DisconnectDB();
+                return dt;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+
 
         
     }

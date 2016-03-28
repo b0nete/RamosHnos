@@ -74,6 +74,19 @@ namespace RamosHermanos.Capas.Interfaz
             cbIVAPJ.SelectedIndex = 0;
 
             CheckColor(cbEstadoPJ, lblEstadoPJ);
+
+            //Movimiento
+            if (txtIDcliente.Text != string.Empty)
+            {
+                cliente.idCliente = Convert.ToInt32(txtIDcliente.Text);
+                if (rbNoPagas.Checked == true)
+                {
+                    FacturaB.SearchPagas(cliente, dgvMovimientos);
+                }
+                else
+                {
+                }
+            }
         }
 
         private void gbCliente_Enter(object sender, EventArgs e)
@@ -1300,6 +1313,47 @@ namespace RamosHermanos.Capas.Interfaz
                 
             }
             
+        }
+
+        private void rbPagas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbPagas.Checked == true)
+                ChangeCheck(); 
+        }
+
+        private void rbNoPagas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbNoPagas.Checked == true)
+                ChangeCheck(); 
+        }
+
+        private void rbAnuladas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbAnuladas.Checked == true)
+                ChangeCheck();            
+        }
+
+        private void ChangeCheck()
+        {
+            dgvMovimientos.DataSource = "";                
+
+            if (txtIDcliente.Text != string.Empty)
+            {
+                cliente.idCliente = Convert.ToInt32(txtIDcliente.Text);
+                
+                if (rbNoPagas.Checked == true)
+                {
+                    FacturaB.SearchPendientes(cliente, dgvMovimientos);
+                }
+                else if (rbPagas.Checked == true)
+                {
+                    FacturaB.SearchPagas(cliente, dgvMovimientos);
+                }
+                else if (rbAnuladas.Checked == true)
+                {
+                    FacturaB.SearchAnuladas(cliente, dgvMovimientos);
+                }
+            }
         }
 
           
