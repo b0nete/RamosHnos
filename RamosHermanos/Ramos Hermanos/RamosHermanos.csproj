@@ -90,6 +90,7 @@
     <Compile Include="Capas\Entidades\RolEntity.cs" />
     <Compile Include="Capas\Entidades\RubroEntity.cs" />
     <Compile Include="Capas\Entidades\SaldoEntity.cs" />
+    <Compile Include="Capas\Entidades\SaldoEnvasesEntity.cs" />
     <Compile Include="Capas\Entidades\StockProductoEntity.cs" />
     <Compile Include="Capas\Entidades\TelefonoEntity.cs" />
     <Compile Include="Capas\Entidades\tipoClienteEntity.cs" />
@@ -185,6 +186,12 @@
     </Compile>
     <Compile Include="Capas\Interfaz\formProduccion.Designer.cs">
       <DependentUpon>formProduccion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Interfaz\formSaldoPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\formSaldoPedido.Designer.cs">
+      <DependentUpon>formSaldoPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Interfaz\formVentas.cs">
       <SubType>Form</SubType>
@@ -465,6 +472,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formProduccion.resx">
       <DependentUpon>formProduccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\formSaldoPedido.resx">
+      <DependentUpon>formSaldoPedido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\formVentas.resx">
       <DependentUpon>formVentas.cs</DependentUpon>

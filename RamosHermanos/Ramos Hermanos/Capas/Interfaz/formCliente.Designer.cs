@@ -95,25 +95,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.txtSaldo = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.txtCreditoMax = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txt25LT = new System.Windows.Forms.TextBox();
-            this.txt20LT = new System.Windows.Forms.TextBox();
-            this.txt12LT = new System.Windows.Forms.TextBox();
-            this.txt10LT = new System.Windows.Forms.TextBox();
-            this.txt4LT = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtRetornable = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDomicilio = new System.Windows.Forms.Button();
             this.btnEmail = new System.Windows.Forms.Button();
@@ -203,6 +184,34 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txt25LT = new System.Windows.Forms.TextBox();
+            this.txt20LT = new System.Windows.Forms.TextBox();
+            this.txt12LT = new System.Windows.Forms.TextBox();
+            this.txt10LT = new System.Windows.Forms.TextBox();
+            this.txt4LT = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtRetornable = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.txtDispenser = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.txtPie = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtCanasta = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.txtCajon = new System.Windows.Forms.TextBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.txtSaldo = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtCreditoMax = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tabMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.tabListado.SuspendLayout();
@@ -210,9 +219,6 @@
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabInformacionJ.SuspendLayout();
@@ -226,6 +232,10 @@
             this.groupBox15.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox17.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMovimientos
@@ -486,7 +496,6 @@
             this.tabInformacion.Controls.Add(this.button4);
             this.tabInformacion.Controls.Add(this.groupBox6);
             this.tabInformacion.Controls.Add(this.groupBox5);
-            this.tabInformacion.Controls.Add(this.groupBox2);
             this.tabInformacion.Controls.Add(this.groupBox1);
             this.tabInformacion.Controls.Add(this.btnSave);
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
@@ -954,221 +963,17 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.txtSaldo);
-            this.groupBox5.Controls.Add(this.label29);
-            this.groupBox5.Controls.Add(this.txtCreditoMax);
-            this.groupBox5.Controls.Add(this.label28);
+            this.groupBox5.Controls.Add(this.groupBox2);
+            this.groupBox5.Controls.Add(this.groupBox17);
+            this.groupBox5.Controls.Add(this.groupBox3);
+            this.groupBox5.Controls.Add(this.groupBox4);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(502, 10);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(265, 71);
+            this.groupBox5.Size = new System.Drawing.Size(265, 391);
             this.groupBox5.TabIndex = 67;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Saldo";
-            // 
-            // txtSaldo
-            // 
-            this.txtSaldo.Enabled = false;
-            this.txtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtSaldo.Location = new System.Drawing.Point(84, 43);
-            this.txtSaldo.Name = "txtSaldo";
-            this.txtSaldo.Size = new System.Drawing.Size(174, 20);
-            this.txtSaldo.TabIndex = 62;
-            this.txtSaldo.Text = "00,00";
-            // 
-            // label29
-            // 
-            this.label29.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label29.Location = new System.Drawing.Point(17, 46);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(67, 13);
-            this.label29.TabIndex = 63;
-            this.label29.Text = "Saldo Actual";
-            // 
-            // txtCreditoMax
-            // 
-            this.txtCreditoMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtCreditoMax.Location = new System.Drawing.Point(84, 17);
-            this.txtCreditoMax.Name = "txtCreditoMax";
-            this.txtCreditoMax.Size = new System.Drawing.Size(174, 20);
-            this.txtCreditoMax.TabIndex = 60;
-            this.txtCreditoMax.Text = "50,00";
-            this.txtCreditoMax.TextChanged += new System.EventHandler(this.txtCreditoMax_TextChanged);
-            this.txtCreditoMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCreditoMax_KeyPress);
-            // 
-            // label28
-            // 
-            this.label28.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label28.Location = new System.Drawing.Point(6, 20);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(79, 13);
-            this.label28.TabIndex = 61;
-            this.label28.Text = "Credito Máximo";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.groupBox4);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(502, 87);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(265, 172);
-            this.groupBox2.TabIndex = 66;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Envases";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.txt25LT);
-            this.groupBox3.Controls.Add(this.txt20LT);
-            this.groupBox3.Controls.Add(this.txt12LT);
-            this.groupBox3.Controls.Add(this.txt10LT);
-            this.groupBox3.Controls.Add(this.txt4LT);
-            this.groupBox3.Controls.Add(this.label27);
-            this.groupBox3.Controls.Add(this.label26);
-            this.groupBox3.Controls.Add(this.label25);
-            this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Controls.Add(this.label22);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(3, 16);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(126, 153);
-            this.groupBox3.TabIndex = 59;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Agua";
-            // 
-            // txt25LT
-            // 
-            this.txt25LT.Enabled = false;
-            this.txt25LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt25LT.Location = new System.Drawing.Point(64, 123);
-            this.txt25LT.Name = "txt25LT";
-            this.txt25LT.Size = new System.Drawing.Size(47, 20);
-            this.txt25LT.TabIndex = 102;
-            // 
-            // txt20LT
-            // 
-            this.txt20LT.Enabled = false;
-            this.txt20LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt20LT.Location = new System.Drawing.Point(64, 97);
-            this.txt20LT.Name = "txt20LT";
-            this.txt20LT.Size = new System.Drawing.Size(47, 20);
-            this.txt20LT.TabIndex = 101;
-            // 
-            // txt12LT
-            // 
-            this.txt12LT.Enabled = false;
-            this.txt12LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt12LT.Location = new System.Drawing.Point(64, 71);
-            this.txt12LT.Name = "txt12LT";
-            this.txt12LT.Size = new System.Drawing.Size(47, 20);
-            this.txt12LT.TabIndex = 100;
-            // 
-            // txt10LT
-            // 
-            this.txt10LT.Enabled = false;
-            this.txt10LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt10LT.Location = new System.Drawing.Point(64, 45);
-            this.txt10LT.Name = "txt10LT";
-            this.txt10LT.Size = new System.Drawing.Size(47, 20);
-            this.txt10LT.TabIndex = 99;
-            // 
-            // txt4LT
-            // 
-            this.txt4LT.Enabled = false;
-            this.txt4LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt4LT.Location = new System.Drawing.Point(64, 19);
-            this.txt4LT.Name = "txt4LT";
-            this.txt4LT.Size = new System.Drawing.Size(47, 20);
-            this.txt4LT.TabIndex = 98;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label27.Location = new System.Drawing.Point(18, 126);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(40, 13);
-            this.label27.TabIndex = 66;
-            this.label27.Text = "25 LTs";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label26.Location = new System.Drawing.Point(18, 100);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(40, 13);
-            this.label26.TabIndex = 64;
-            this.label26.Text = "20 LTs";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label25.Location = new System.Drawing.Point(18, 73);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(40, 13);
-            this.label25.TabIndex = 62;
-            this.label25.Text = "12 LTs";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label23.Location = new System.Drawing.Point(18, 48);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(40, 13);
-            this.label23.TabIndex = 60;
-            this.label23.Text = "10 LTs";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label22.Location = new System.Drawing.Point(24, 22);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(34, 13);
-            this.label22.TabIndex = 59;
-            this.label22.Text = "4 LTs";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.txtRetornable);
-            this.groupBox4.Controls.Add(this.label31);
-            this.groupBox4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(136, 16);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(126, 153);
-            this.groupBox4.TabIndex = 59;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Sodas";
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
-            // 
-            // txtRetornable
-            // 
-            this.txtRetornable.Enabled = false;
-            this.txtRetornable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtRetornable.Location = new System.Drawing.Point(64, 19);
-            this.txtRetornable.Name = "txtRetornable";
-            this.txtRetornable.Size = new System.Drawing.Size(47, 20);
-            this.txtRetornable.TabIndex = 103;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label31.Location = new System.Drawing.Point(6, 22);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(59, 13);
-            this.label31.TabIndex = 67;
-            this.label31.Text = "Retornable";
+            this.groupBox5.Text = "Saldos";
             // 
             // groupBox1
             // 
@@ -2191,6 +1996,301 @@
             this.cbDomicilio.DropDown += new System.EventHandler(this.cbDomicilio_DropDown);
             this.cbDomicilio.SelectedIndexChanged += new System.EventHandler(this.cbDomicilio_SelectedIndexChanged);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txt25LT);
+            this.groupBox3.Controls.Add(this.txt20LT);
+            this.groupBox3.Controls.Add(this.txt12LT);
+            this.groupBox3.Controls.Add(this.txt10LT);
+            this.groupBox3.Controls.Add(this.txt4LT);
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.label26);
+            this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Controls.Add(this.label23);
+            this.groupBox3.Controls.Add(this.label22);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(4, 101);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(126, 153);
+            this.groupBox3.TabIndex = 64;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Agua";
+            // 
+            // txt25LT
+            // 
+            this.txt25LT.Enabled = false;
+            this.txt25LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txt25LT.Location = new System.Drawing.Point(64, 123);
+            this.txt25LT.Name = "txt25LT";
+            this.txt25LT.Size = new System.Drawing.Size(47, 20);
+            this.txt25LT.TabIndex = 102;
+            // 
+            // txt20LT
+            // 
+            this.txt20LT.Enabled = false;
+            this.txt20LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txt20LT.Location = new System.Drawing.Point(64, 97);
+            this.txt20LT.Name = "txt20LT";
+            this.txt20LT.Size = new System.Drawing.Size(47, 20);
+            this.txt20LT.TabIndex = 101;
+            // 
+            // txt12LT
+            // 
+            this.txt12LT.Enabled = false;
+            this.txt12LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txt12LT.Location = new System.Drawing.Point(64, 71);
+            this.txt12LT.Name = "txt12LT";
+            this.txt12LT.Size = new System.Drawing.Size(47, 20);
+            this.txt12LT.TabIndex = 100;
+            // 
+            // txt10LT
+            // 
+            this.txt10LT.Enabled = false;
+            this.txt10LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txt10LT.Location = new System.Drawing.Point(64, 45);
+            this.txt10LT.Name = "txt10LT";
+            this.txt10LT.Size = new System.Drawing.Size(47, 20);
+            this.txt10LT.TabIndex = 99;
+            // 
+            // txt4LT
+            // 
+            this.txt4LT.Enabled = false;
+            this.txt4LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txt4LT.Location = new System.Drawing.Point(64, 19);
+            this.txt4LT.Name = "txt4LT";
+            this.txt4LT.Size = new System.Drawing.Size(47, 20);
+            this.txt4LT.TabIndex = 98;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label27.Location = new System.Drawing.Point(18, 126);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(40, 13);
+            this.label27.TabIndex = 66;
+            this.label27.Text = "25 LTs";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label26.Location = new System.Drawing.Point(18, 100);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(40, 13);
+            this.label26.TabIndex = 64;
+            this.label26.Text = "20 LTs";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label25.Location = new System.Drawing.Point(18, 73);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(40, 13);
+            this.label25.TabIndex = 62;
+            this.label25.Text = "12 LTs";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label23.Location = new System.Drawing.Point(18, 48);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(40, 13);
+            this.label23.TabIndex = 60;
+            this.label23.Text = "10 LTs";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label22.Location = new System.Drawing.Point(24, 22);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(34, 13);
+            this.label22.TabIndex = 59;
+            this.label22.Text = "4 LTs";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtRetornable);
+            this.groupBox4.Controls.Add(this.label31);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(137, 101);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(126, 153);
+            this.groupBox4.TabIndex = 65;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Sodas";
+            // 
+            // txtRetornable
+            // 
+            this.txtRetornable.Enabled = false;
+            this.txtRetornable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtRetornable.Location = new System.Drawing.Point(64, 19);
+            this.txtRetornable.Name = "txtRetornable";
+            this.txtRetornable.Size = new System.Drawing.Size(47, 20);
+            this.txtRetornable.TabIndex = 103;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label31.Location = new System.Drawing.Point(6, 22);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(59, 13);
+            this.label31.TabIndex = 67;
+            this.label31.Text = "Retornable";
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.txtDispenser);
+            this.groupBox17.Controls.Add(this.label44);
+            this.groupBox17.Controls.Add(this.txtPie);
+            this.groupBox17.Controls.Add(this.label43);
+            this.groupBox17.Controls.Add(this.txtCanasta);
+            this.groupBox17.Controls.Add(this.label41);
+            this.groupBox17.Controls.Add(this.txtCajon);
+            this.groupBox17.Controls.Add(this.label48);
+            this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox17.Location = new System.Drawing.Point(4, 260);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(126, 127);
+            this.groupBox17.TabIndex = 66;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Otros";
+            // 
+            // txtDispenser
+            // 
+            this.txtDispenser.Enabled = false;
+            this.txtDispenser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtDispenser.Location = new System.Drawing.Point(64, 97);
+            this.txtDispenser.Name = "txtDispenser";
+            this.txtDispenser.Size = new System.Drawing.Size(47, 20);
+            this.txtDispenser.TabIndex = 104;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label44.Location = new System.Drawing.Point(6, 100);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(54, 13);
+            this.label44.TabIndex = 103;
+            this.label44.Text = "Dispenser";
+            // 
+            // txtPie
+            // 
+            this.txtPie.Enabled = false;
+            this.txtPie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtPie.Location = new System.Drawing.Point(64, 71);
+            this.txtPie.Name = "txtPie";
+            this.txtPie.Size = new System.Drawing.Size(47, 20);
+            this.txtPie.TabIndex = 102;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label43.Location = new System.Drawing.Point(36, 74);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(22, 13);
+            this.label43.TabIndex = 101;
+            this.label43.Text = "Pie";
+            // 
+            // txtCanasta
+            // 
+            this.txtCanasta.Enabled = false;
+            this.txtCanasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtCanasta.Location = new System.Drawing.Point(64, 45);
+            this.txtCanasta.Name = "txtCanasta";
+            this.txtCanasta.Size = new System.Drawing.Size(47, 20);
+            this.txtCanasta.TabIndex = 100;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label41.Location = new System.Drawing.Point(14, 48);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(46, 13);
+            this.label41.TabIndex = 99;
+            this.label41.Text = "Canasta";
+            // 
+            // txtCajon
+            // 
+            this.txtCajon.Enabled = false;
+            this.txtCajon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtCajon.Location = new System.Drawing.Point(64, 19);
+            this.txtCajon.Name = "txtCajon";
+            this.txtCajon.Size = new System.Drawing.Size(47, 20);
+            this.txtCajon.TabIndex = 98;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label48.Location = new System.Drawing.Point(26, 22);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(34, 13);
+            this.label48.TabIndex = 59;
+            this.label48.Text = "Cajon";
+            // 
+            // txtSaldo
+            // 
+            this.txtSaldo.Enabled = false;
+            this.txtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtSaldo.Location = new System.Drawing.Point(84, 46);
+            this.txtSaldo.Name = "txtSaldo";
+            this.txtSaldo.Size = new System.Drawing.Size(165, 20);
+            this.txtSaldo.TabIndex = 69;
+            this.txtSaldo.Text = "00,00";
+            // 
+            // label29
+            // 
+            this.label29.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label29.Location = new System.Drawing.Point(17, 49);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(67, 13);
+            this.label29.TabIndex = 70;
+            this.label29.Text = "Saldo Actual";
+            // 
+            // txtCreditoMax
+            // 
+            this.txtCreditoMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtCreditoMax.Location = new System.Drawing.Point(84, 20);
+            this.txtCreditoMax.Name = "txtCreditoMax";
+            this.txtCreditoMax.Size = new System.Drawing.Size(165, 20);
+            this.txtCreditoMax.TabIndex = 67;
+            this.txtCreditoMax.Text = "50,00";
+            // 
+            // label28
+            // 
+            this.label28.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label28.Location = new System.Drawing.Point(6, 23);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(79, 13);
+            this.label28.TabIndex = 68;
+            this.label28.Text = "Credito Máximo";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtSaldo);
+            this.groupBox2.Controls.Add(this.txtCreditoMax);
+            this.groupBox2.Controls.Add(this.label28);
+            this.groupBox2.Controls.Add(this.label29);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(4, 19);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(255, 76);
+            this.groupBox2.TabIndex = 67;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Cuenta Corriente";
+            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2210,12 +2310,6 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabMain.ResumeLayout(false);
@@ -2239,6 +2333,14 @@
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2273,23 +2375,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        public System.Windows.Forms.TextBox txt25LT;
-        public System.Windows.Forms.TextBox txt20LT;
-        public System.Windows.Forms.TextBox txt12LT;
-        public System.Windows.Forms.TextBox txt10LT;
-        public System.Windows.Forms.TextBox txt4LT;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.GroupBox groupBox4;
-        public System.Windows.Forms.TextBox txtRetornable;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnDomicilio;
         private System.Windows.Forms.Button btnEmail;
@@ -2375,8 +2460,6 @@
         public System.Windows.Forms.ComboBox cbTipoDoc;
         public System.Windows.Forms.TextBox txtApellido;
         public System.Windows.Forms.TextBox txtNombre;
-        public System.Windows.Forms.TextBox txtSaldo;
-        public System.Windows.Forms.TextBox txtCreditoMax;
         public System.Windows.Forms.TextBox txtEmail;
         public System.Windows.Forms.TextBox txtTel;
         public System.Windows.Forms.TextBox txtDomic;
@@ -2419,6 +2502,34 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
         public System.Windows.Forms.RadioButton rbAnuladas;
+        private System.Windows.Forms.GroupBox groupBox2;
+        public System.Windows.Forms.TextBox txtSaldo;
+        public System.Windows.Forms.TextBox txtCreditoMax;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.GroupBox groupBox17;
+        public System.Windows.Forms.TextBox txtDispenser;
+        private System.Windows.Forms.Label label44;
+        public System.Windows.Forms.TextBox txtPie;
+        private System.Windows.Forms.Label label43;
+        public System.Windows.Forms.TextBox txtCanasta;
+        private System.Windows.Forms.Label label41;
+        public System.Windows.Forms.TextBox txtCajon;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.GroupBox groupBox3;
+        public System.Windows.Forms.TextBox txt25LT;
+        public System.Windows.Forms.TextBox txt20LT;
+        public System.Windows.Forms.TextBox txt12LT;
+        public System.Windows.Forms.TextBox txt10LT;
+        public System.Windows.Forms.TextBox txt4LT;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.GroupBox groupBox4;
+        public System.Windows.Forms.TextBox txtRetornable;
+        private System.Windows.Forms.Label label31;
 
     }
 }

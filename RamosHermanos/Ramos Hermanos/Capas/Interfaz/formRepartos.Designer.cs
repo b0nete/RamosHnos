@@ -60,13 +60,14 @@
             this.cbDistribuidores = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvRepartos = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.colOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colASaldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,7 +89,6 @@
             this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabRepartos.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -371,7 +371,7 @@
             this.colIDDomicilio,
             this.Column3,
             this.Column4,
-            this.Column5,
+            this.colASaldo,
             this.Column6,
             this.Column7,
             this.Column8,
@@ -407,6 +407,16 @@
             this.dgvRepartos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_RowEnter);
             this.dgvRepartos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvRepartos_KeyDown);
             this.dgvRepartos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvRepartos_KeyPress);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1000, 703);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // colOrden
             // 
@@ -449,12 +459,12 @@
             this.Column4.Name = "Column4";
             this.Column4.Width = 25;
             // 
-            // Column5
+            // colASaldo
             // 
-            this.Column5.DataPropertyName = "colASaldo";
-            this.Column5.HeaderText = "A";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 25;
+            this.colASaldo.DataPropertyName = "colASaldo";
+            this.colASaldo.HeaderText = "A";
+            this.colASaldo.Name = "colASaldo";
+            this.colASaldo.Width = 25;
             // 
             // Column6
             // 
@@ -604,16 +614,6 @@
             this.colComprobante.HeaderText = "Comprobante";
             this.colComprobante.Name = "colComprobante";
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1000, 703);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // formRepartos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -674,7 +674,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDDomicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colASaldo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;

@@ -107,6 +107,37 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvRepartos_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colASaldo"].Selected)
+            {
+                e.SuppressKeyPress = true;
+                SendKeys.Send("{TAB}");
+
+                itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+                itemFactura.carga = "C";
+
+                    formSaldoPedido frm = new formSaldoPedido();
+                    frm.Show();
+
+                    //DataTable dtAgua = itemsFacturaB.BuscarAguas(itemFactura);
+                    //foreach (DataRow dr in dtAgua.Rows)
+                    //{
+                    //    if (Convert.ToInt32(dr["producto"]) == 6)
+                    //        frm.txt25.Text = Convert.ToString(dr["cantidad"]);
+
+                    //    if (Convert.ToInt32(dr["producto"]) == 5)
+                    //        frm.txt20.Text = Convert.ToString(dr["cantidad"]);
+
+                    //    if (Convert.ToInt32(dr["producto"]) == 4)
+                    //        frm.txt12.Text = Convert.ToString(dr["cantidad"]);
+
+                    //    if (Convert.ToInt32(dr["producto"]) == 3)
+                    //        frm.txt10.Text = Convert.ToString(dr["cantidad"]);
+
+                    //    if (Convert.ToInt32(dr["producto"]) == 1)
+                    //        frm.txt4.Text = Convert.ToString(dr["cantidad"]);
+                    //}
+            }
+
             if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colACarga"].Selected)
             {
                 e.SuppressKeyPress = true;

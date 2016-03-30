@@ -116,6 +116,7 @@
             this.dgvProducto.Location = new System.Drawing.Point(4, 70);
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.ReadOnly = true;
+            this.dgvProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProducto.Size = new System.Drawing.Size(775, 368);
             this.dgvProducto.TabIndex = 53;
             this.dgvProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellContentClick);

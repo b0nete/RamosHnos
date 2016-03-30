@@ -19,8 +19,8 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO itemsReparto (reparto, cliente, domicilio, idComprobante) 
-                                 VALUES (@reparto, @cliente, @domicilio, @idComprobante);
+                string query = @"INSERT INTO itemsReparto (reparto, cliente, domicilio, idComprobante, agua4, agua10, agua12, agua20, agua25, cajon, canasta, pie, dispenser) 
+                                 VALUES (@reparto, @cliente, @domicilio, @idComprobante, @agua4, @agua10, @agua12, @agua20, @agua25, @cajon, @canasta, @pie, @dispenser);
                                  SELECT LAST_INSERT_ID();";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -29,6 +29,15 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@cliente", itemReparto.cliente);
                 cmd.Parameters.AddWithValue("@domicilio", itemReparto.domicilio);
                 cmd.Parameters.AddWithValue("@idComprobante", itemReparto.idComprobante);
+                cmd.Parameters.AddWithValue("@agua4", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 1));
+                cmd.Parameters.AddWithValue("@agua10", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 3));
+                cmd.Parameters.AddWithValue("@agua12", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 4));
+                cmd.Parameters.AddWithValue("@agua20", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 5));
+                cmd.Parameters.AddWithValue("@agua25", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 6));
+                cmd.Parameters.AddWithValue("@cajon", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 8));
+                cmd.Parameters.AddWithValue("@canasta", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 9));
+                cmd.Parameters.AddWithValue("@pie", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 10));
+                cmd.Parameters.AddWithValue("@dispenser", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 11));
 
                 cmd.ExecuteNonQuery();
 
@@ -132,7 +141,8 @@ namespace RamosHermanos.Capas.Negocio
 
 
                 //Encabezado
-                string query = @"SELECT IR.cliente as idCliente, CONCAT(C.nombre, ' ', C.apellido) as clienteCompleto, IR.domicilio as idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) as domicilioCompleto, idComprobante
+                string query = @"SELECT IR.cliente as idCliente, CONCAT(C.nombre, ' ', C.apellido) as clienteCompleto, IR.domicilio as idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) as domicilioCompleto, idComprobante, (SELECT SUM(agua4 + agua10 + agua12 + agua20 + agua25)
+FROM itemsReparto) as colASaldo, cajon as colCSaldo, canasta as colCCSaldo, pie as colPSaldo, dispenser as colDSaldo
                                  FROM itemsReparto IR
                                  INNER JOIN Clientes C ON C.idCliente = IR.cliente
                                  INNER JOIN Domicilios D ON D.idDomicilio = IR.domicilio

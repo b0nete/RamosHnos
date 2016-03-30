@@ -225,11 +225,15 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     //Saldo $
                     frm.txtSaldo.Text = SaldoB.GenerarSaldo(cliente);
                     //Saldo Envases
-                    frm.txt4LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente, 1));
-                    frm.txt10LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente, 3));
-                    frm.txt12LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente, 4));
-                    frm.txt20LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente, 5));
-                    frm.txt25LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente, 6));
+                    frm.txt4LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 1));
+                    frm.txt10LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 3));
+                    frm.txt12LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 4));
+                    frm.txt20LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 5));
+                    frm.txt25LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 6));
+                    frm.txtCajon.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 8));
+                    frm.txtCanasta.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 9));
+                    frm.txtPie.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 10));
+                    frm.txtDispenser.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 11));
                     
                     //Tabs
                     frm.CasePersona();
@@ -274,8 +278,14 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                         FacturaB.SearchAnuladas(cliente, frm.dgvMovimientos);
                     }
 
-                    //Saldo
+                    //Saldo $
                     frm.txtSaldoPJ.Text = SaldoB.GenerarSaldo(cliente);
+                    //Saldo Envases
+                    frm.txt4LTPJ.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 1));
+                    frm.txt10LTPJ.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 3));
+                    frm.txt12LTPJ.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 4));
+                    frm.txt20LTPJ.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 5));
+                    frm.txt25LTPJ.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 6));
 
                     //Tabs
                     frm.CasePersonaJuridica();

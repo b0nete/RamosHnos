@@ -801,5 +801,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         itemsRepartoEntity itemsReparto = new itemsRepartoEntity();
 
+        SaldoEnvasesEntity saldoEnvases = new SaldoEnvasesEntity();
+
     }
 }

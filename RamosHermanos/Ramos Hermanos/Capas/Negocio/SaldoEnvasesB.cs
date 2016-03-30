@@ -14,7 +14,7 @@ namespace RamosHermanos.Capas.Negocio
 {
     class SaldoEnvasesB
     {
-        public static int GenerarSaldoEnvases(ClienteEntity cliente, int idSoda)
+        public static int GenerarSaldoEnvases(int cliente, int idSoda)
         {
             try
             {
@@ -27,7 +27,7 @@ namespace RamosHermanos.Capas.Negocio
                                 WHERE cliente = @cliente";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-                cmd.Parameters.AddWithValue("@cliente", cliente.idCliente);
+                cmd.Parameters.AddWithValue("@cliente", cliente);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 da.Fill(dtFacturas);
@@ -75,6 +75,7 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }        
         }
+
 
     }
 }
