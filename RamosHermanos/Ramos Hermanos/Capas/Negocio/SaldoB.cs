@@ -117,11 +117,13 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void GenerarSaldo(ClienteEntity cliente, TextBox txtSaldo)
+        public static String GenerarSaldo(ClienteEntity cliente)
         {
             try
             {
                 MySQL.ConnectDB();
+
+                string saldo;
 
                 string query = @"SELECT totalPagado.total1-totalPendiente.total2
                                 FROM
@@ -138,7 +140,9 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                txtSaldo.Text = Convert.ToString(cmd.ExecuteScalar());
+                saldo = Convert.ToString(cmd.ExecuteScalar());
+
+                return saldo;
             }
             catch (Exception ex)
             {

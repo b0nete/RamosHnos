@@ -373,6 +373,7 @@
     <Compile Include="Capas\Negocio\RolB.cs" />
     <Compile Include="Capas\Negocio\RubroB.cs" />
     <Compile Include="Capas\Negocio\SaldoB.cs" />
+    <Compile Include="Capas\Negocio\SaldoEnvasesB.cs" />
     <Compile Include="Capas\Negocio\StockProductoB.cs" />
     <Compile Include="Capas\Negocio\TelefonoB.cs" />
     <Compile Include="Capas\Negocio\tipoClienteB.cs" />

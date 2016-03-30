@@ -222,8 +222,14 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                         FacturaB.SearchAnuladas(cliente, frm.dgvMovimientos);
                     }
 
-                    //Saldo
-                        SaldoB.GenerarSaldo(cliente, frm.txtSaldo);
+                    //Saldo $
+                    frm.txtSaldo.Text = SaldoB.GenerarSaldo(cliente);
+                    //Saldo Envases
+                    frm.txt4LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente, 1));
+                    frm.txt10LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente, 3));
+                    frm.txt12LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente, 4));
+                    frm.txt20LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente, 5));
+                    frm.txt25LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente, 6));
                     
                     //Tabs
                     frm.CasePersona();
@@ -269,7 +275,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     }
 
                     //Saldo
-                    SaldoB.GenerarSaldo(cliente, frm.txtSaldoPJ);
+                    frm.txtSaldoPJ.Text = SaldoB.GenerarSaldo(cliente);
 
                     //Tabs
                     frm.CasePersonaJuridica();
