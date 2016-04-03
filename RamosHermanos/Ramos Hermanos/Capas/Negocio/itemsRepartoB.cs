@@ -19,8 +19,8 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO itemsReparto (reparto, cliente, domicilio, idComprobante, agua4, agua10, agua12, agua20, agua25, cajon, canasta, pie, dispenser) 
-                                 VALUES (@reparto, @cliente, @domicilio, @idComprobante, @agua4, @agua10, @agua12, @agua20, @agua25, @cajon, @canasta, @pie, @dispenser);
+                string query = @"INSERT INTO itemsReparto (reparto, cliente, domicilio, idComprobante, soda, agua4, agua10, agua12, agua20, agua25, cajon, canasta, pie, dispenser) 
+                                 VALUES (@reparto, @cliente, @domicilio, @idComprobante, @soda, @agua4, @agua10, @agua12, @agua20, @agua25, @cajon, @canasta, @pie, @dispenser);
                                  SELECT LAST_INSERT_ID();";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -29,6 +29,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@cliente", itemReparto.cliente);
                 cmd.Parameters.AddWithValue("@domicilio", itemReparto.domicilio);
                 cmd.Parameters.AddWithValue("@idComprobante", itemReparto.idComprobante);
+                cmd.Parameters.AddWithValue("@soda", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 7));
                 cmd.Parameters.AddWithValue("@agua4", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 1));
                 cmd.Parameters.AddWithValue("@agua10", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 3));
                 cmd.Parameters.AddWithValue("@agua12", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 4));
@@ -138,10 +139,11 @@ namespace RamosHermanos.Capas.Negocio
                 DataTable dtCCDescarga = new DataTable();
                 DataTable dtPDescarga = new DataTable();
                 DataTable dtDDescarga = new DataTable();
+                DataTable dtVenta = new DataTable();
 
 
                 //Encabezado
-                string query = @"SELECT IR.cliente as idCliente, CONCAT(C.nombre, ' ', C.apellido) as clienteCompleto, IR.domicilio as idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) as domicilioCompleto, idComprobante, (SELECT SUM(agua4 + agua10 + agua12 + agua20 + agua25)
+                string query = @"SELECT IR.cliente as idCliente, CONCAT(C.nombre, ' ', C.apellido) as clienteCompleto, IR.domicilio as idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) as domicilioCompleto, idComprobante, soda as colSSaldo, (SELECT SUM(agua4 + agua10 + agua12 + agua20 + agua25)
 FROM itemsReparto) as colASaldo, cajon as colCSaldo, canasta as colCCSaldo, pie as colPSaldo, dispenser as colDSaldo
                                  FROM itemsReparto IR
                                  INNER JOIN Clientes C ON C.idCliente = IR.cliente
@@ -333,6 +335,27 @@ FROM itemsReparto) as colASaldo, cajon as colCSaldo, canasta as colCCSaldo, pie 
 
                     MySqlDataAdapter daDDescarga = new MySqlDataAdapter(cmdDDescarga);
                     daDDescarga.Fill(dtDDescarga);
+
+                    ////VENTA & COBRO
+
+                    //Venta
+                    //dtACarga.Clear();
+
+                    string queryVenta = @"SELECT totalCarga.subTotalC - totalDescarga.subTotalD as venta
+                                        FROM
+                                        (SELECT SUM(subTotal) as subTotalC
+                                        FROM itemsFactura
+                                        WHERE factura = @factura and carga = 'C') as totalCarga,
+                                        (SELECT SUM(subTotal) as subTotalD
+                                        FROM itemsFactura
+                                        WHERE factura = @factura and carga = 'D') as totalDescarga";
+
+                    MySqlCommand cmdVenta = new MySqlCommand(queryVenta, MySQL.sqlcnx);
+
+                    cmdVenta.Parameters.AddWithValue("@factura", dRow["idComprobante"]);
+
+                    MySqlDataAdapter daVenta = new MySqlDataAdapter(cmdVenta);
+                    daVenta.Fill(dtVenta);
                 }
 
                 foreach (DataRow row in dtEncabezado.Rows)
@@ -364,6 +387,8 @@ FROM itemsReparto) as colASaldo, cajon as colCSaldo, canasta as colCCSaldo, pie 
                     DataRow roworigenCCDescarga = dtCCDescarga.Rows[i];
                     DataRow roworigenPDescarga = dtPDescarga.Rows[i];
                     DataRow roworigenDDescarga = dtDDescarga.Rows[i];
+                    //Venta
+                    DataRow roworigenVenta = dtVenta.Rows[i];
 
 
                     //CARGA
@@ -380,6 +405,9 @@ FROM itemsReparto) as colASaldo, cajon as colCSaldo, canasta as colCCSaldo, pie 
                     rowMerge["colCCDescarga"] = roworigenCCDescarga["colCCDescarga"];
                     rowMerge["colPDescarga"] = roworigenPDescarga["colPDescarga"];
                     rowMerge["colDDescarga"] = roworigenDDescarga["colDDescarga"];
+                    //Venta
+                    rowMerge["colVenta"] = roworigenVenta["venta"];
+
 
                 }
 

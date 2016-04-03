@@ -85,8 +85,8 @@
             this.colCCDescarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colPDescarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDDescarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCobro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabRepartos.SuspendLayout();
@@ -389,8 +389,8 @@
             this.colCCDescarga,
             this.colPDescarga,
             this.colDDescarga,
-            this.Column23,
-            this.Column24,
+            this.colVenta,
+            this.colCobro,
             this.Column25,
             this.colComprobante});
             this.dgvRepartos.Location = new System.Drawing.Point(3, 31);
@@ -587,25 +587,26 @@
             this.colDDescarga.Name = "colDDescarga";
             this.colDDescarga.Width = 25;
             // 
-            // Column23
+            // colVenta
             // 
-            this.Column23.DataPropertyName = "colVenta";
-            this.Column23.HeaderText = "Venta";
-            this.Column23.Name = "Column23";
-            this.Column23.Width = 50;
+            this.colVenta.DataPropertyName = "colVenta";
+            this.colVenta.HeaderText = "Venta";
+            this.colVenta.Name = "colVenta";
+            this.colVenta.Width = 50;
             // 
-            // Column24
+            // colCobro
             // 
-            this.Column24.DataPropertyName = "colCobro";
-            this.Column24.HeaderText = "Cobro";
-            this.Column24.Name = "Column24";
-            this.Column24.Width = 50;
+            this.colCobro.DataPropertyName = "colCobro";
+            this.colCobro.HeaderText = "Cobro";
+            this.colCobro.Name = "colCobro";
+            this.colCobro.Width = 50;
             // 
             // Column25
             // 
             this.Column25.DataPropertyName = "colSaldoCC";
             this.Column25.HeaderText = "Saldo CC";
             this.Column25.Name = "Column25";
+            this.Column25.Visible = false;
             this.Column25.Width = 50;
             // 
             // colComprobante
@@ -692,8 +693,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCCDescarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPDescarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDDescarga;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column23;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCobro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
         private System.Windows.Forms.DataGridViewTextBoxColumn colComprobante;
     }
