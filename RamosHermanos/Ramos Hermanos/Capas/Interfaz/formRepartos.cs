@@ -57,15 +57,6 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-        private void dgvRepartos_EditingControlShowing_1(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-            e.Control.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextboxNumeric_KeyPress);            
-
-            //DataGridViewTextBoxEditingControl dText = (DataGridViewTextBoxEditingControl)e.Control;
-            //dText.KeyUp -= new KeyEventHandler(text_KeyUp);
-            //dText.KeyUp += new KeyEventHandler(text_KeyUp);
-        }
-
         private void dgvRepartos_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             
@@ -105,121 +96,6 @@ namespace RamosHermanos.Capas.Interfaz
             //}
         }
 
-        private void dgvRepartos_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colASaldo"].Selected)
-            {
-                e.SuppressKeyPress = true;
-                SendKeys.Send("{TAB}");
-
-                itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
-                itemFactura.carga = "C";
-
-                    formSaldoPedido frm = new formSaldoPedido();
-                    frm.Show();
-
-                    //DataTable dtAgua = itemsFacturaB.BuscarAguas(itemFactura);
-                    //foreach (DataRow dr in dtAgua.Rows)
-                    //{
-                    //    if (Convert.ToInt32(dr["producto"]) == 6)
-                    //        frm.txt25.Text = Convert.ToString(dr["cantidad"]);
-
-                    //    if (Convert.ToInt32(dr["producto"]) == 5)
-                    //        frm.txt20.Text = Convert.ToString(dr["cantidad"]);
-
-                    //    if (Convert.ToInt32(dr["producto"]) == 4)
-                    //        frm.txt12.Text = Convert.ToString(dr["cantidad"]);
-
-                    //    if (Convert.ToInt32(dr["producto"]) == 3)
-                    //        frm.txt10.Text = Convert.ToString(dr["cantidad"]);
-
-                    //    if (Convert.ToInt32(dr["producto"]) == 1)
-                    //        frm.txt4.Text = Convert.ToString(dr["cantidad"]);
-                    //}
-            }
-
-            if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colACarga"].Selected)
-            {
-                e.SuppressKeyPress = true;
-                SendKeys.Send("{TAB}");
-
-                itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
-                itemFactura.carga = "C";
-
-                if (itemsFacturaB.ExisteAguaItemFactura(itemFactura) == true)
-                {
-                    formCargaPedido frm = new formCargaPedido();
-                    frm.Show();
-
-                    DataTable dtAgua = itemsFacturaB.BuscarAguas(itemFactura);
-                    foreach (DataRow dr in dtAgua.Rows)
-                    {
-                        if (Convert.ToInt32(dr["producto"]) == 6)
-                            frm.txt25.Text = Convert.ToString(dr["cantidad"]);
-
-                        if (Convert.ToInt32(dr["producto"]) == 5)
-                            frm.txt20.Text = Convert.ToString(dr["cantidad"]);
-
-                        if (Convert.ToInt32(dr["producto"]) == 4)
-                            frm.txt12.Text = Convert.ToString(dr["cantidad"]);
-
-                        if (Convert.ToInt32(dr["producto"]) == 3)
-                            frm.txt10.Text = Convert.ToString(dr["cantidad"]);
-
-                        if (Convert.ToInt32(dr["producto"]) == 1)
-                            frm.txt4.Text = Convert.ToString(dr["cantidad"]);
-                    }
-                }
-                else
-                {
-                    EjecCarga();
-                }                
-            }
-
-            if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colADescarga"].Selected)
-            {
-                e.SuppressKeyPress = true;
-                SendKeys.Send("{TAB}");
-
-                itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
-                itemFactura.carga = "D";
-
-                if (itemsFacturaB.ExisteAguaItemFactura(itemFactura) == true)
-                {
-                    formCargaPedido frm = new formCargaPedido();
-                    frm.Show();
-
-                    DataTable dtAgua = itemsFacturaB.BuscarAguas(itemFactura);
-                    foreach (DataRow dr in dtAgua.Rows)
-                    {
-                        if (Convert.ToInt32(dr["producto"]) == 6)
-                            frm.txt25.Text = Convert.ToString(dr["cantidad"]);
-
-                        if (Convert.ToInt32(dr["producto"]) == 5)
-                            frm.txt20.Text = Convert.ToString(dr["cantidad"]);
-
-                        if (Convert.ToInt32(dr["producto"]) == 4)
-                            frm.txt12.Text = Convert.ToString(dr["cantidad"]);
-
-                        if (Convert.ToInt32(dr["producto"]) == 3)
-                            frm.txt10.Text = Convert.ToString(dr["cantidad"]);
-
-                        if (Convert.ToInt32(dr["producto"]) == 1)
-                            frm.txt4.Text = Convert.ToString(dr["cantidad"]);
-                    }
-                }
-                else
-                {
-                    EjecDescarga();
-                }
-            }
-
-            if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colComprobante"].Selected)
-            {
-                SeleccionarDgv();
-            }
-        }
-
         private void EjecCarga()
         {
             formCargaPedido frm = new formCargaPedido();
@@ -250,125 +126,6 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-        private void dgvRepartos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
-
-            //CARGAS
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSCarga")
-            {
-                //Soda
-                itemFactura.producto = 7;                
-                itemFactura.carga = "C";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                    UpdateFactura("colSCarga");                    
-                else
-                    InsertFactura("colSCarga");
-            }
-
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCarga")
-            {
-                //Cajon
-                itemFactura.producto = 8;
-                itemFactura.carga = "C";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                    UpdateFactura("colCCarga");
-                else
-                    InsertFactura("colCCarga");
-            }
-
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCCarga")
-            {
-                //Canasta
-                itemFactura.producto = 9;
-                itemFactura.carga = "C";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                    UpdateFactura("colCCCarga");
-                else
-                    InsertFactura("colCCCarga");
-            }
-
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colPCarga")
-            {
-                //Pie
-                itemFactura.producto = 10;
-                itemFactura.carga = "C";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                    UpdateFactura("colPCarga");
-                else
-                    InsertFactura("colPCarga");
-            }
-
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colDCarga")
-            {
-                //Dispenser
-                itemFactura.producto = 11;
-                itemFactura.carga = "C";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                    UpdateFactura("colDCarga");
-                else
-                    InsertFactura("colDCarga");
-            }
-
-
-            //DESCARGAS
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSDescarga")
-            {
-                //Soda
-                itemFactura.producto = 7;
-                itemFactura.carga = "D";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                    UpdateFactura("colSDescarga");
-                else
-                    InsertFactura("colSDescarga");
-            }
-
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCDescarga")
-            {
-                //Cajon
-                itemFactura.producto = 8;
-                itemFactura.carga = "D";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                    UpdateFactura("colCDescarga");
-                else
-                    InsertFactura("colCDescarga");
-            }
-
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCDescarga")
-            {
-                //Canasta
-                itemFactura.producto = 9;
-                itemFactura.carga = "D";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                    UpdateFactura("colCCDescarga");
-                else
-                    InsertFactura("colCCDescarga");
-            }
-
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colPDescarga")
-            {
-                //Pie
-                itemFactura.producto = 10;
-                itemFactura.carga = "D";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                    UpdateFactura("colPDescarga");
-                else
-                    InsertFactura("colPDescarga");
-            }
-
-            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colDDescarga")
-            {
-                //Dispenser
-                itemFactura.producto = 11;
-                itemFactura.carga = "D";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                    UpdateFactura("colDDescarga");
-                else
-                    InsertFactura("colDDescarga");
-            }
-               
-        }
-
         // Entidades
         FacturaEntity factura = new FacturaEntity();
 
@@ -382,13 +139,6 @@ namespace RamosHermanos.Capas.Interfaz
 
         itemPedidoEntity itemPedido = new itemPedidoEntity();
 
-        private void dgvRepartos_CellLeave(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvRepartos.CurrentCell.Value == DBNull.Value)
-            {
-                dgvRepartos.CurrentCell.Value = "0";
-            }
-        }
 
         private void InsertFactura(string nombreColumna)
         {
@@ -517,6 +267,317 @@ namespace RamosHermanos.Capas.Interfaz
             }
 
             setRowNumber(dgvRepartos);
+        }
+
+        private void dgvRepartos_CellEndEdit_1(object sender, DataGridViewCellEventArgs e)
+        {
+            itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+
+            //CARGAS
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSCarga")
+            {
+                //Soda
+                itemFactura.producto = 7;
+                itemFactura.carga = "C";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                {
+                    UpdateFactura("colSCarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+                else
+                {
+                    InsertFactura("colSCarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCarga")
+            {
+                //Cajon
+                itemFactura.producto = 8;
+                itemFactura.carga = "C";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                {
+                    UpdateFactura("colCCarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+                else
+                {
+                    InsertFactura("colCCarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCCarga")
+            {
+                //Canasta
+                itemFactura.producto = 9;
+                itemFactura.carga = "C";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                {
+                    UpdateFactura("colCCCarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+                else
+                {
+                    InsertFactura("colCCCarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colPCarga")
+            {
+                //Pie
+                itemFactura.producto = 10;
+                itemFactura.carga = "C";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                {
+                    UpdateFactura("colPCarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+                else
+                {
+                    InsertFactura("colPCarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colDCarga")
+            {
+                //Dispenser
+                itemFactura.producto = 11;
+                itemFactura.carga = "C";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                {
+                    UpdateFactura("colDCarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+                else
+                {
+                    InsertFactura("colDCarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+            }
+
+
+            //DESCARGAS
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSDescarga")
+            {
+                //Soda
+                itemFactura.producto = 7;
+                itemFactura.carga = "D";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                {
+                    UpdateFactura("colSDescarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+                else
+                {
+                    InsertFactura("colSDescarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCDescarga")
+            {
+                //Cajon
+                itemFactura.producto = 8;
+                itemFactura.carga = "D";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                {
+                    UpdateFactura("colCDescarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+                else
+                {
+                    InsertFactura("colCDescarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCDescarga")
+            {
+                //Canasta
+                itemFactura.producto = 9;
+                itemFactura.carga = "D";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                {
+                    UpdateFactura("colCCDescarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+                else
+                {
+                    InsertFactura("colCCDescarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colPDescarga")
+            {
+                //Pie
+                itemFactura.producto = 10;
+                itemFactura.carga = "D";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                {
+                    UpdateFactura("colPDescarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+                else
+                {
+                    InsertFactura("colPDescarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+            }
+
+            if (dgvRepartos.Columns[e.ColumnIndex].Name == "colDDescarga")
+            {
+                //Dispenser
+                itemFactura.producto = 11;
+                itemFactura.carga = "D";
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                {
+                    UpdateFactura("colDDescarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+                else
+                {
+                    InsertFactura("colDDescarga");
+                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+                }
+            }
+        }
+
+        private void dgvRepartos_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextboxNumeric_KeyPress);
+
+            //DataGridViewTextBoxEditingControl dText = (DataGridViewTextBoxEditingControl)e.Control;
+            //dText.KeyUp -= new KeyEventHandler(text_KeyUp);
+            //dText.KeyUp += new KeyEventHandler(text_KeyUp);
+        }
+
+        private void dgvRepartos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colASaldo"].Selected)
+            {
+                e.SuppressKeyPress = true;
+                SendKeys.Send("{TAB}");
+
+                itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+                itemFactura.carga = "C";
+
+                formSaldoPedido frm = new formSaldoPedido();
+                frm.Show();
+
+                //DataTable dtAgua = itemsFacturaB.BuscarAguas(itemFactura);
+                //foreach (DataRow dr in dtAgua.Rows)
+                //{
+                //    if (Convert.ToInt32(dr["producto"]) == 6)
+                //        frm.txt25.Text = Convert.ToString(dr["cantidad"]);
+
+                //    if (Convert.ToInt32(dr["producto"]) == 5)
+                //        frm.txt20.Text = Convert.ToString(dr["cantidad"]);
+
+                //    if (Convert.ToInt32(dr["producto"]) == 4)
+                //        frm.txt12.Text = Convert.ToString(dr["cantidad"]);
+
+                //    if (Convert.ToInt32(dr["producto"]) == 3)
+                //        frm.txt10.Text = Convert.ToString(dr["cantidad"]);
+
+                //    if (Convert.ToInt32(dr["producto"]) == 1)
+                //        frm.txt4.Text = Convert.ToString(dr["cantidad"]);
+                //}
+            }
+
+            if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colACarga"].Selected)
+            {
+                e.SuppressKeyPress = true;
+                SendKeys.Send("{TAB}");
+
+                itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+                itemFactura.carga = "C";
+
+                if (itemsFacturaB.ExisteAguaItemFactura(itemFactura) == true)
+                {
+                    formCargaPedido frm = new formCargaPedido();
+                    frm.Show();
+
+                    DataTable dtAgua = itemsFacturaB.BuscarAguas(itemFactura);
+                    foreach (DataRow dr in dtAgua.Rows)
+                    {
+                        if (Convert.ToInt32(dr["producto"]) == 6)
+                            frm.txt25.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 5)
+                            frm.txt20.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 4)
+                            frm.txt12.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 3)
+                            frm.txt10.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 1)
+                            frm.txt4.Text = Convert.ToString(dr["cantidad"]);
+                    }
+                }
+                else
+                {
+                    EjecCarga();
+                }
+            }
+
+            if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colADescarga"].Selected)
+            {
+                e.SuppressKeyPress = true;
+                SendKeys.Send("{TAB}");
+
+                itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+                itemFactura.carga = "D";
+
+                if (itemsFacturaB.ExisteAguaItemFactura(itemFactura) == true)
+                {
+                    formCargaPedido frm = new formCargaPedido();
+                    frm.Show();
+
+                    DataTable dtAgua = itemsFacturaB.BuscarAguas(itemFactura);
+                    foreach (DataRow dr in dtAgua.Rows)
+                    {
+                        if (Convert.ToInt32(dr["producto"]) == 6)
+                            frm.txt25.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 5)
+                            frm.txt20.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 4)
+                            frm.txt12.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 3)
+                            frm.txt10.Text = Convert.ToString(dr["cantidad"]);
+
+                        if (Convert.ToInt32(dr["producto"]) == 1)
+                            frm.txt4.Text = Convert.ToString(dr["cantidad"]);
+                    }
+                }
+                else
+                {
+                    EjecDescarga();
+                }
+            }
+
+            if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colComprobante"].Selected)
+            {
+                SeleccionarDgv();
+            }
+        }
+
+        private void dgvRepartos_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvRepartos.CurrentCell.Value == DBNull.Value)
+            {
+                dgvRepartos.CurrentCell.Value = "0";
+            }
         }
 
     }

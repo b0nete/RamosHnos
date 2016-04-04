@@ -173,7 +173,7 @@ WHERE factura = @factura and (producto =  1 or producto =  2 or producto =  3 or
 
                 string query = @"UPDATE itemsFactura
                                  SET cantidad = @cantidad, precioUnitario = @precioUnitario, subTotal = @subTotal
-                                 WHERE producto = @producto and factura = @factura";
+                                 WHERE producto = @producto and factura = @factura and carga = @carga";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 

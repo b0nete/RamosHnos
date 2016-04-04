@@ -117,32 +117,44 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static String GenerarSaldo(ClienteEntity cliente)
+        public static String GenerarSaldo(int cliente)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string saldo;
+//                string query = @"SELECT totalPagado.total1-totalPendiente.total2
+//                                FROM
+//                                (
+//                                SELECT SUM(total) as total1
+//                                FROM Facturas
+//                                WHERE estado = 'Pagado' and cliente = @cliente 
+//                                ) as TotalPagado,
+//                                (
+//                                SELECT SUM(total) as total2
+//                                FROM Facturas
+//                                WHERE estado = 'Pendiente' and cliente = @cliente
+//                                ) as TotalPendiente";
 
-                string query = @"SELECT totalPagado.total1-totalPendiente.total2
-                                FROM
-                                (
-                                SELECT SUM(total) as total1
-                                FROM Facturas
-                                WHERE estado = 'Pagado'
-                                ) as TotalPagado,
-                                (
-                                SELECT SUM(total) as total2
-                                FROM Facturas
-                                WHERE estado = 'Pendiente'
-                                ) as TotalPendiente";
+                string queryPagado = @"SELECT IFNULL((SELECT SUM(total) as total1
+                                    FROM Facturas
+                                    WHERE estado = 'Pagado' and cliente = @cliente), 0)";
 
-                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                MySqlCommand cmdPagado = new MySqlCommand(queryPagado, MySQL.sqlcnx);
+                cmdPagado.Parameters.AddWithValue("@cliente", cliente);
+                int totalPagado = Convert.ToInt32(cmdPagado.ExecuteScalar());
 
-                saldo = Convert.ToString(cmd.ExecuteScalar());
+                string queryPendiente = @"SELECT IFNULL((SELECT SUM(total) as total2
+                                        FROM Facturas
+                                        WHERE estado = 'Pendiente' and cliente = @cliente), 0)";
 
-                return saldo;
+                MySqlCommand cmdPendiente = new MySqlCommand(queryPendiente, MySQL.sqlcnx);
+                cmdPendiente.Parameters.AddWithValue("@cliente", cliente);
+                int totalPendiente = Convert.ToInt32(cmdPendiente.ExecuteScalar());
+
+                string totalDeuda = Convert.ToString(totalPendiente);
+
+                return totalDeuda;
             }
             catch (Exception ex)
             {

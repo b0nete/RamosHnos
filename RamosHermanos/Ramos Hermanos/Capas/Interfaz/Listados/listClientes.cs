@@ -223,7 +223,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     }
 
                     //Saldo $
-                    frm.txtSaldo.Text = SaldoB.GenerarSaldo(cliente);
+                    frm.txtSaldo.Text = SaldoB.GenerarSaldo(Convert.ToInt32(frm.txtIDcliente.Text));
                     //Saldo Envases
                     frm.txt4LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 1));
                     frm.txt10LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 3));
@@ -279,7 +279,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     }
 
                     //Saldo $
-                    frm.txtSaldoPJ.Text = SaldoB.GenerarSaldo(cliente);
+                    frm.txtSaldoPJ.Text = SaldoB.GenerarSaldo(Convert.ToInt32(frm.txtIDcliente.Text));
                     //Saldo Envases
                     frm.txt4LTPJ.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 1));
                     frm.txt10LTPJ.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 3));

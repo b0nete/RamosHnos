@@ -673,6 +673,12 @@ namespace RamosHermanos.Capas.Interfaz
 
                     itemsReparto.reparto = reparto.idReparto;
                     frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+
+                    foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
+                    {
+                        frm.dgvRepartos.CurrentRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(frm.dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
+                        frm.dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(frm.dgvRepartos);
+                    }
                 }
                 else
                 {
