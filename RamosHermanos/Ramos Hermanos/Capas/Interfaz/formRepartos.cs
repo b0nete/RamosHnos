@@ -284,12 +284,10 @@ namespace RamosHermanos.Capas.Interfaz
                 if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
                 {
                     UpdateFactura("colSCarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
                 else
                 {
                     InsertFactura("colSCarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
 
             }
@@ -302,12 +300,10 @@ namespace RamosHermanos.Capas.Interfaz
                 if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
                 {
                     UpdateFactura("colCCarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
                 else
                 {
                     InsertFactura("colCCarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
             }
 
@@ -319,12 +315,10 @@ namespace RamosHermanos.Capas.Interfaz
                 if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
                 {
                     UpdateFactura("colCCCarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
                 else
                 {
                     InsertFactura("colCCCarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
             }
 
@@ -336,12 +330,10 @@ namespace RamosHermanos.Capas.Interfaz
                 if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
                 {
                     UpdateFactura("colPCarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
                 else
                 {
                     InsertFactura("colPCarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
             }
 
@@ -353,12 +345,10 @@ namespace RamosHermanos.Capas.Interfaz
                 if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
                 {
                     UpdateFactura("colDCarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
                 else
                 {
                     InsertFactura("colDCarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
             }
 
@@ -372,12 +362,10 @@ namespace RamosHermanos.Capas.Interfaz
                 if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
                 {
                     UpdateFactura("colSDescarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
                 else
                 {
                     InsertFactura("colSDescarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
             }
 
@@ -389,12 +377,10 @@ namespace RamosHermanos.Capas.Interfaz
                 if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
                 {
                     UpdateFactura("colCDescarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
                 else
                 {
                     InsertFactura("colCDescarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
             }
 
@@ -406,12 +392,10 @@ namespace RamosHermanos.Capas.Interfaz
                 if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
                 {
                     UpdateFactura("colCCDescarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
                 else
                 {
                     InsertFactura("colCCDescarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
             }
 
@@ -423,12 +407,10 @@ namespace RamosHermanos.Capas.Interfaz
                 if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
                 {
                     UpdateFactura("colPDescarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
                 else
                 {
                     InsertFactura("colPDescarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
             }
 
@@ -440,14 +422,16 @@ namespace RamosHermanos.Capas.Interfaz
                 if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
                 {
                     UpdateFactura("colDDescarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
                 else
                 {
                     InsertFactura("colDDescarga");
-                    dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
                 }
             }
+
+            //Para todos, actualizar total de la Venta.
+            dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
+
         }
 
         private void dgvRepartos_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)

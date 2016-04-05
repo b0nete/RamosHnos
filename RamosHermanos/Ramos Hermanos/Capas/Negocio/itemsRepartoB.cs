@@ -420,7 +420,7 @@ FROM itemsReparto) as colASaldo, cajon as colCSaldo, canasta as colCCSaldo, pie 
             }
         }
 
-        public static string CalcularVenta(DataGridView dgvReparto)
+        public static string CalcularVenta(int idFactura)
         {
             try
             {
@@ -431,7 +431,7 @@ FROM itemsReparto) as colASaldo, cajon as colCSaldo, canasta as colCCSaldo, pie 
                                         WHERE factura = @factura and carga = 'C'), 0) as totalCarga";
 
                 MySqlCommand cmdCarga = new MySqlCommand(queryCarga, MySQL.sqlcnx);
-                cmdCarga.Parameters.AddWithValue("@factura", dgvReparto.CurrentRow.Cells["colComprobante"].Value);
+                cmdCarga.Parameters.AddWithValue("@factura", idFactura);
                 int cantCarga = Convert.ToInt32(cmdCarga.ExecuteScalar());
 
 
@@ -440,7 +440,7 @@ FROM itemsReparto) as colASaldo, cajon as colCSaldo, canasta as colCCSaldo, pie 
                                         WHERE factura = @factura and carga = 'D'), 0) as totalDescarga";
 
                 MySqlCommand cmdDescarga = new MySqlCommand(queryDescarga, MySQL.sqlcnx);
-                cmdDescarga.Parameters.AddWithValue("@factura", dgvReparto.CurrentRow.Cells["colComprobante"].Value);
+                cmdDescarga.Parameters.AddWithValue("@factura", idFactura);
                 int cantDescarga = Convert.ToInt32(cmdDescarga.ExecuteScalar());
 
                 string total = Convert.ToString(cantCarga - cantDescarga);

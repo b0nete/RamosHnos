@@ -677,7 +677,7 @@ namespace RamosHermanos.Capas.Interfaz
                     foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     {
                         dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
-                        dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(frm.dgvRepartos);
+                        dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
                         dRow.Cells["colCobro"].Value = FacturaB.EstadoPago(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
                     }
                 }
@@ -696,7 +696,7 @@ namespace RamosHermanos.Capas.Interfaz
                     foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     {
                         dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(frm.dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
-                        dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(frm.dgvRepartos);
+                        dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
                     }
                     
                     //frm.setRowNumber(frm.dgvRepartos);
