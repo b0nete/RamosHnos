@@ -81,12 +81,15 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             }
             if (cell != null)
             {
-                DataGridViewRow row = this.dgvProveedores.CurrentRow as DataGridViewRow;
+                //DataGridViewRow row = this.dgvProveedores.CurrentRow as DataGridViewRow;
 
-                IAddItem parent = this.Owner as IAddItem;
+                //IAddItem parent = this.Owner as IAddItem;
 
-                parent.AddNewItem(row);
 
+                //parent.AddNewItem(row);
+
+                DataGridViewRow row = cell.OwningRow;
+                formCompras frm = new formCompras();
                 frm.Show();
                 //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
                 proveedor.idProveedor = Convert.ToInt32(row.Cells["colIDProveedor"].Value.ToString());

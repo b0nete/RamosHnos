@@ -190,7 +190,7 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-             
+
         public void AddNewItem(DataGridViewRow row)
         {
             string idinsumo = row.Cells["colIDinsumo"].Value.ToString();
@@ -198,18 +198,13 @@ namespace RamosHermanos.Capas.Interfaz
             string rubro = row.Cells["colRubro"].Value.ToString();
             string marca = row.Cells["colMarca"].Value.ToString();
 
-            
+
             this.dgvCompra.Rows.Add(new[] { idinsumo, insumo, rubro, marca });
-            
+
         }
 
-        
-        //public void AddNewItem(DataGridViewRow row)
-        //{
-        //    string idinsumo = txtIDproveedor.Text;
-                       
-        //}
-       
+
+           
               
     }
 }

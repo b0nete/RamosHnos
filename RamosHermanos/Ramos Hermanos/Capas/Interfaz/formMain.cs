@@ -308,6 +308,16 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            MessageBox.Show("Seleccione un Proveedor");
+            listProveedores frm = new listProveedores();
+            frm.Show();
+            frm.caseSwitch = 1;
+
+        }
+
        
        
        
