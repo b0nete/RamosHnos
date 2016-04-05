@@ -453,5 +453,39 @@ FROM itemsReparto) as colASaldo, cajon as colCSaldo, canasta as colCCSaldo, pie 
                 throw;
             }
         }
+
+        public static string CalcularVentaRow(int facturaValue)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string queryCarga = @"SELECT IFNULL((SELECT SUM(subTotal) as STCarga
+                                        FROM itemsFactura
+                                        WHERE factura = @factura and carga = 'C'), 0) as totalCarga";
+
+                MySqlCommand cmdCarga = new MySqlCommand(queryCarga, MySQL.sqlcnx);
+                cmdCarga.Parameters.AddWithValue("@factura", facturaValue);
+                int cantCarga = Convert.ToInt32(cmdCarga.ExecuteScalar());
+
+
+                string queryDescarga = @"SELECT IFNULL((SELECT SUM(subTotal) as STDescarga
+                                        FROM itemsFactura
+                                        WHERE factura = @factura and carga = 'D'), 0) as totalDescarga";
+
+                MySqlCommand cmdDescarga = new MySqlCommand(queryDescarga, MySQL.sqlcnx);
+                cmdDescarga.Parameters.AddWithValue("@factura", facturaValue);
+                int cantDescarga = Convert.ToInt32(cmdDescarga.ExecuteScalar());
+
+                string total = Convert.ToString(cantCarga - cantDescarga);
+
+                return total;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
     }
 }

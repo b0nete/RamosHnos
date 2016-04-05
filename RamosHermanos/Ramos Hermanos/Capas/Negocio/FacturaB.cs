@@ -319,6 +319,34 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static bool EstadoPago(int idFactura)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT estado 
+                                FROM facturas
+                                WHERE idFactura = @factura";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@factura", idFactura);
+
+                string estado = Convert.ToString(cmd.ExecuteScalar());
+
+                if (estado == "Pagado")                
+                    return true;                
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
 
 
         

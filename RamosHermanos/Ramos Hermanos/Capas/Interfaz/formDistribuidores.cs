@@ -676,8 +676,9 @@ namespace RamosHermanos.Capas.Interfaz
 
                     foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     {
-                        frm.dgvRepartos.CurrentRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(frm.dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
-                        frm.dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(frm.dgvRepartos);
+                        dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
+                        dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(frm.dgvRepartos);
+                        dRow.Cells["colCobro"].Value = FacturaB.EstadoPago(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
                     }
                 }
                 else
@@ -691,6 +692,12 @@ namespace RamosHermanos.Capas.Interfaz
 
                     itemsReparto.reparto = reparto.idReparto;
                     frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+
+                    foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
+                    {
+                        dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(frm.dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
+                        dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(frm.dgvRepartos);
+                    }
                     
                     //frm.setRowNumber(frm.dgvRepartos);
                     //frm.dgvRepartos.DataSource = ds;
@@ -755,6 +762,7 @@ namespace RamosHermanos.Capas.Interfaz
                 itemsRepartoB.InsertItemReparto(itemsReparto);
 
                 factura.tipoFactura = "C";
+                factura.estado = "Pendiente";
                 factura.fechaFactura = DateTime.Today;
                 factura.fechaVencimiento = factura.fechaVencimiento.AddDays(7); //Sumamos 7 días al actual.
                 factura.fechaEntrega = DateTime.Today;

@@ -16,7 +16,8 @@ namespace RamosHermanos.Capas.Interfaz
     public partial class formCargaPedido : Form
     {
 
-        public string comprobante; 
+        public string comprobante;
+        public int iRow;
 
         public formCargaPedido()
         {
@@ -26,14 +27,14 @@ namespace RamosHermanos.Capas.Interfaz
         private void btnSave_Click(object sender, EventArgs e)
         {
             formRepartos frm = new formRepartos();
-
-            int total = Suma();
             
             CargaTXT(txt25, 6);
             CargaTXT(txt20, 5);
             CargaTXT(txt12, 4);
             CargaTXT(txt10, 3);
             CargaTXT(txt4, 1);
+
+            int total = Suma();
 
             // Tutorial Interfaz formularios desacoplados
             // http://ltuttini.blogspot.com.ar/2009/09/c-comunicar-formularios-de-forma.html
@@ -67,21 +68,38 @@ namespace RamosHermanos.Capas.Interfaz
 
             if (txt.Text != string.Empty && txt.Text != "0")
             {
-                itemFactura.factura = comprobante;
                 itemFactura.producto = producto;
                 itemFactura.cantidad = Convert.ToInt32(txt.Text);
                 itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
                 itemFactura.subTotal = itemFactura.precioUnitario * itemFactura.cantidad;
+                itemFactura.factura = comprobante;
                 itemFactura.carga = "C";
 
-                itemsFacturaB.InsertItemFactura(itemFactura);
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                {
+                    itemsFacturaB.UpdateItemFactura(itemFactura);
+                }
+                else
+                {
+                    itemsFacturaB.InsertItemFactura(itemFactura);
+                }
             }
         }
 
         //Entidades
         itemFacturaEntity itemFactura = new itemFacturaEntity();
 
-            
+        private void formCargaPedido_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //formRepartos frm = new formRepartos();
+            //frm.UpdateTotalFactura();
+        }
+
+        private void formCargaPedido_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //formRepartos frm = new formRepartos();
+            //frm.UpdateTotalFactura();
+        }
 
             
     }

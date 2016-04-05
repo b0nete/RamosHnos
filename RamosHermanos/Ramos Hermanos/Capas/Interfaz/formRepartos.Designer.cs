@@ -60,7 +60,7 @@
             this.colPDescarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDDescarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCobro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCobro = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRepartos)).BeginInit();
@@ -340,6 +340,8 @@
             this.colCobro.DataPropertyName = "colCobro";
             this.colCobro.HeaderText = "Cobro";
             this.colCobro.Name = "colCobro";
+            this.colCobro.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colCobro.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.colCobro.Width = 50;
             // 
             // Column25
@@ -411,7 +413,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPDescarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDDescarga;
         private System.Windows.Forms.DataGridViewTextBoxColumn colVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCobro;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colCobro;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column25;
         private System.Windows.Forms.DataGridViewTextBoxColumn colComprobante;
 

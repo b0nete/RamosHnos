@@ -20,6 +20,8 @@ namespace RamosHermanos.Capas.Interfaz
         public int row;
         public int column;
         public int comprobante;
+        public int iRow;
+        public int iFactura;
         //public int total;
 
         public formRepartos()
@@ -31,7 +33,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         public void CompletarCelda(string total)
         {
-            dgvRepartos[column, row].Value = Convert.ToString(Convert.ToString(total));
+            dgvRepartos[column, row].Value = Convert.ToString(total);
         }
 
         #endregion
@@ -104,7 +106,7 @@ namespace RamosHermanos.Capas.Interfaz
             row = dgvRepartos.CurrentCell.RowIndex;
             frm.comprobante = Convert.ToString(dgvRepartos.CurrentRow.Cells["colComprobante"].Value);
 
-            frm.Show(this);
+            frm.Show(this);            
         }
 
         private void EjecDescarga()
@@ -492,6 +494,9 @@ namespace RamosHermanos.Capas.Interfaz
 
             if (e.KeyCode == Keys.Enter && dgvRepartos.CurrentRow.Cells["colACarga"].Selected)
             {
+                iRow = dgvRepartos.CurrentRow.Index;
+                iFactura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value);
+
                 e.SuppressKeyPress = true;
                 SendKeys.Send("{TAB}");
 
@@ -501,6 +506,7 @@ namespace RamosHermanos.Capas.Interfaz
                 if (itemsFacturaB.ExisteAguaItemFactura(itemFactura) == true)
                 {
                     formCargaPedido frm = new formCargaPedido();
+                    frm.comprobante = itemFactura.factura;
                     frm.Show();
 
                     DataTable dtAgua = itemsFacturaB.BuscarAguas(itemFactura);
@@ -578,6 +584,12 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 dgvRepartos.CurrentCell.Value = "0";
             }
+        }
+
+        public void UpdateTotalFactura()
+        {
+            dgvRepartos.Rows[0].Cells["colVenta"].Value = "5";
+            //dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
         }
 
     }

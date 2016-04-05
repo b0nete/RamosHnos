@@ -169,6 +169,8 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "formCargaPedido";
             this.Text = "formCargaPedido";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formCargaPedido_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formCargaPedido_FormClosed);
             this.Load += new System.EventHandler(this.formCargaPedido_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
