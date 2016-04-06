@@ -106,7 +106,7 @@ namespace RamosHermanos.Capas.Interfaz
             row = dgvRepartos.CurrentCell.RowIndex;
             frm.comprobante = Convert.ToString(dgvRepartos.CurrentRow.Cells["colComprobante"].Value);
 
-            frm.Show(this);            
+            frm.Show(this);
         }
 
         private void EjecDescarga()
@@ -490,8 +490,10 @@ namespace RamosHermanos.Capas.Interfaz
                 if (itemsFacturaB.ExisteAguaItemFactura(itemFactura) == true)
                 {
                     formCargaPedido frm = new formCargaPedido();
+                    column = dgvRepartos.CurrentCell.ColumnIndex;
+                    row = dgvRepartos.CurrentCell.RowIndex;
                     frm.comprobante = itemFactura.factura;
-                    frm.Show();
+                    frm.Show(this);
 
                     DataTable dtAgua = itemsFacturaB.BuscarAguas(itemFactura);
                     foreach (DataRow dr in dtAgua.Rows)

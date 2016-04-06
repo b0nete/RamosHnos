@@ -41,8 +41,8 @@ namespace RamosHermanos.Capas.Interfaz
 
             IForm formInterface = this.Owner as IForm;
 
-            if (formInterface != null)
-                formInterface.CompletarCelda(Convert.ToString(total));
+            //if (formInterface != null)
+              formInterface.CompletarCelda(Convert.ToString(total));
             
             this.Close();
         }
