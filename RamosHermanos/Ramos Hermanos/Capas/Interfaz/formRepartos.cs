@@ -107,6 +107,9 @@ namespace RamosHermanos.Capas.Interfaz
             frm.comprobante = Convert.ToString(dgvRepartos.CurrentRow.Cells["colComprobante"].Value);
 
             frm.Show(this);
+
+            //Para todos, actualizar total de la Venta.
+            dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
         }
 
         private void EjecDescarga()
@@ -118,6 +121,9 @@ namespace RamosHermanos.Capas.Interfaz
             frm.comprobante = Convert.ToString(dgvRepartos.CurrentRow.Cells["colComprobante"].Value);
 
             frm.Show(this);
+
+            //Para todos, actualizar total de la Venta.
+            dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
         }
 
         private void Ejec2(KeyEventArgs e)
@@ -429,6 +435,25 @@ namespace RamosHermanos.Capas.Interfaz
                 }
             }
 
+            //if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCobro")
+            //{
+            //    int factura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value);
+            //    string estado;
+
+            //    //Convert.ToDecimal(drDatos["total"] is DBNull ? 0:drDatos["total"])
+
+            //    if (dgvRepartos.CurrentRow.Cells["colCobro"].Value is DBNull ? false : Convert.ToBoolean(dgvRepartos.CurrentRow.Cells["colCobro"].Value))
+            //    {
+            //        estado = "Pagado";
+            //        FacturaB.UpdateFromDGV(estado, factura);
+            //    }
+            //    else if (dgvRepartos.CurrentRow.Cells["colCobro"].Value is DBNull ? true : Convert.ToBoolean(dgvRepartos.CurrentRow.Cells["colCobro"].Value))
+            //    {
+            //        estado = "Pendiente";
+            //        FacturaB.UpdateFromDGV(estado, factura);
+            //    }
+            //}
+
             //Para todos, actualizar total de la Venta.
             dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
 
@@ -531,7 +556,10 @@ namespace RamosHermanos.Capas.Interfaz
                 if (itemsFacturaB.ExisteAguaItemFactura(itemFactura) == true)
                 {
                     formCargaPedido frm = new formCargaPedido();
-                    frm.Show();
+                    column = dgvRepartos.CurrentCell.ColumnIndex;
+                    row = dgvRepartos.CurrentCell.RowIndex;
+                    frm.comprobante = itemFactura.factura;
+                    frm.Show(this);
 
                     DataTable dtAgua = itemsFacturaB.BuscarAguas(itemFactura);
                     foreach (DataRow dr in dtAgua.Rows)
@@ -562,20 +590,86 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 SeleccionarDgv();
             }
+
+            //Para todos, actualizar total de la Venta.
+            dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
+
         }
 
         private void dgvRepartos_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvRepartos.CurrentCell.Value == DBNull.Value)
-            {
-                dgvRepartos.CurrentCell.Value = "0";
-            }
+            //if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCobro")
+            //{
+            //    MessageBox.Show("ASD2");
+            //}
         }
 
         public void UpdateTotalFactura()
         {
             dgvRepartos.Rows[0].Cells["colVenta"].Value = "5";
             //dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(dgvRepartos);
+        }
+
+        private void dgvRepartos_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+
+        }
+
+        private void dgvRepartos_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            //if (dgvRepartos.CurrentCell.OwningColumn.Name == "colCobro")
+            //{
+            //    MessageBox.Show("ASD");
+            //}
+        }
+
+        private void dgvRepartos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+                //int factura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value);
+                //string estado;
+
+                ////Convert.ToDecimal(drDatos["total"] is DBNull ? 0:drDatos["total"])
+
+                //if (dgvRepartos.CurrentRow.Cells["colCobro"].Value is DBNull ? false : Convert.ToBoolean(dgvRepartos.CurrentRow.Cells["colCobro"].Value))
+                //{
+                //    estado = "Pagado";
+                //    FacturaB.UpdateFromDGV(estado, factura);
+                //}
+                //else if (dgvRepartos.CurrentRow.Cells["colCobro"].Value is DBNull ? true : Convert.ToBoolean(dgvRepartos.CurrentRow.Cells["colCobro"].Value))
+                //{
+                //    estado = "Pendiente";
+                //    FacturaB.UpdateFromDGV(estado, factura);
+                //}  
+        }
+
+        private void dgvRepartos_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            if (dgvRepartos.CurrentCell.OwningColumn.Name == "colCobro")
+            {
+                dgvRepartos.CommitEdit(DataGridViewDataErrorContexts.Commit);
+
+                int factura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value);
+                string estado;
+
+                //Convert.ToDecimal(drDatos["total"] is DBNull ? 0:drDatos["total"])
+
+                if (dgvRepartos.CurrentRow.Cells["colCobro"].Value is DBNull ? false : Convert.ToBoolean(dgvRepartos.CurrentRow.Cells["colCobro"].Value))
+                {
+                    estado = "Pagado";
+                    FacturaB.UpdateFromDGV(estado, factura);
+                }
+                else if (dgvRepartos.CurrentRow.Cells["colCobro"].Value is DBNull ? true : Convert.ToBoolean(dgvRepartos.CurrentRow.Cells["colCobro"].Value))
+                {
+                    estado = "Pendiente";
+                    FacturaB.UpdateFromDGV(estado, factura);
+                }  
+            }
+
+        }
+
+        private void dgvRepartos_CurrentCellChanged(object sender, EventArgs e)
+        {
+            
         }
 
     }

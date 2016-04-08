@@ -347,6 +347,43 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void UpdateFromDGV(string estado, int factura)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"UPDATE Facturas
+                                SET estado = @estado
+                                WHERE idFactura = @factura";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@estado", estado);
+                cmd.Parameters.AddWithValue("@factura", factura);
+
+                cmd.ExecuteNonQuery();
+
+                //if (Convert.ToBoolean(dgvReparto.CurrentRow.Cells["colCobro"].Value) == true)
+                //{
+                //    estadoSTRING = "Pagado";
+                //    cmd.Parameters.AddWithValue("@estado", estadoSTRING);
+                //}
+                //else if (Convert.ToBoolean(dgvReparto.CurrentRow.Cells["colCobro"].Value) == false)
+                //{
+                //    estadoSTRING = "Pendiente";
+                //    cmd.Parameters.AddWithValue("@estado", estadoSTRING);
+                //}
+
+
+                MySQL.DisconnectDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
 
 
         

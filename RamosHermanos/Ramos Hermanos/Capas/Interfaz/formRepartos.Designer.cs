@@ -156,7 +156,12 @@
             this.dgvRepartos.TabIndex = 12;
             this.dgvRepartos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellEndEdit_1);
             this.dgvRepartos.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellLeave);
+            this.dgvRepartos.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvRepartos_CellStateChanged);
+            this.dgvRepartos.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellValueChanged);
+            this.dgvRepartos.CurrentCellChanged += new System.EventHandler(this.dgvRepartos_CurrentCellChanged);
+            this.dgvRepartos.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvRepartos_CurrentCellDirtyStateChanged);
             this.dgvRepartos.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvRepartos_EditingControlShowing);
+            this.dgvRepartos.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgvRepartos_RowStateChanged);
             this.dgvRepartos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvRepartos_KeyDown);
             // 
             // colOrden
