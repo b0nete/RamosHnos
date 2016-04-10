@@ -60,7 +60,9 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         private void SeleccionarDGV()
 
         {
+               
                 DataGridViewCell cell = null;
+                
                 foreach (DataGridViewCell selectedCell in dgvInsumos.SelectedCells)
                 {
                     cell = selectedCell;
@@ -69,10 +71,8 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 if (cell != null)
                 {
 
-                    frmI.Show();
-
                     DataGridViewRow row = cell.OwningRow;
-
+                    frmI.Show();
                     //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
 
                     insumo.idInsumo = Convert.ToInt32(row.Cells["colIDinsumo"].Value.ToString());

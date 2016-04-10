@@ -135,6 +135,7 @@
             this.colCliente.HeaderText = "IDCliente";
             this.colCliente.Name = "colCliente";
             this.colCliente.ReadOnly = true;
+            this.colCliente.Visible = false;
             // 
             // colApellidoCli
             // 

@@ -32,18 +32,6 @@
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.button11 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtStockActual = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtStockMin = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dtpFechaActualizacion = new System.Windows.Forms.DateTimePicker();
-            this.txtCostoAct = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtInsumo = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -93,8 +81,6 @@
             this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvinsumos)).BeginInit();
@@ -108,22 +94,20 @@
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(419, 561);
+            this.tabMain.Size = new System.Drawing.Size(419, 407);
             this.tabMain.TabIndex = 0;
             // 
             // tabInformacion
             // 
             this.tabInformacion.BackColor = System.Drawing.SystemColors.Control;
             this.tabInformacion.Controls.Add(this.button11);
-            this.tabInformacion.Controls.Add(this.groupBox3);
-            this.tabInformacion.Controls.Add(this.groupBox2);
             this.tabInformacion.Controls.Add(this.groupBox1);
             this.tabInformacion.Controls.Add(this.button1);
             this.tabInformacion.Controls.Add(this.btnEdit);
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(411, 535);
+            this.tabInformacion.Size = new System.Drawing.Size(411, 381);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.Click += new System.EventHandler(this.tabInformacion_Click);
@@ -133,145 +117,12 @@
             this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button11.Location = new System.Drawing.Point(375, 499);
+            this.button11.Location = new System.Drawing.Point(375, 340);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(28, 28);
             this.button11.TabIndex = 113;
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.txtStockActual);
-            this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.txtStockMin);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(8, 340);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(395, 75);
-            this.groupBox3.TabIndex = 117;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Stock";
-            // 
-            // txtStockActual
-            // 
-            this.txtStockActual.Enabled = false;
-            this.txtStockActual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtStockActual.Location = new System.Drawing.Point(115, 45);
-            this.txtStockActual.Name = "txtStockActual";
-            this.txtStockActual.Size = new System.Drawing.Size(261, 20);
-            this.txtStockActual.TabIndex = 98;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label19.Location = new System.Drawing.Point(41, 48);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(68, 13);
-            this.label19.TabIndex = 97;
-            this.label19.Text = "Stock Actual";
-            // 
-            // label11
-            // 
-            this.label11.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(28, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(11, 13);
-            this.label11.TabIndex = 91;
-            this.label11.Text = "*";
-            // 
-            // txtStockMin
-            // 
-            this.txtStockMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtStockMin.Location = new System.Drawing.Point(115, 19);
-            this.txtStockMin.Name = "txtStockMin";
-            this.txtStockMin.Size = new System.Drawing.Size(261, 20);
-            this.txtStockMin.TabIndex = 90;
-            this.txtStockMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStockMin_KeyPress);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label13.Location = new System.Drawing.Point(36, 22);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(73, 13);
-            this.label13.TabIndex = 89;
-            this.label13.Text = "Stock Mínimo";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.dtpFechaActualizacion);
-            this.groupBox2.Controls.Add(this.txtCostoAct);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(8, 420);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(395, 74);
-            this.groupBox2.TabIndex = 116;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Precio";
-            // 
-            // dtpFechaActualizacion
-            // 
-            this.dtpFechaActualizacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaActualizacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaActualizacion.Location = new System.Drawing.Point(112, 43);
-            this.dtpFechaActualizacion.Name = "dtpFechaActualizacion";
-            this.dtpFechaActualizacion.Size = new System.Drawing.Size(263, 20);
-            this.dtpFechaActualizacion.TabIndex = 85;
-            // 
-            // txtCostoAct
-            // 
-            this.txtCostoAct.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtCostoAct.Location = new System.Drawing.Point(113, 17);
-            this.txtCostoAct.Name = "txtCostoAct";
-            this.txtCostoAct.Size = new System.Drawing.Size(261, 20);
-            this.txtCostoAct.TabIndex = 100;
-            this.txtCostoAct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCostoAct_KeyPress);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label14.Location = new System.Drawing.Point(5, 46);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(103, 13);
-            this.label14.TabIndex = 83;
-            this.label14.Text = "Fecha Actualización";
-            // 
-            // label24
-            // 
-            this.label24.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label24.Location = new System.Drawing.Point(41, 20);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(67, 13);
-            this.label24.TabIndex = 106;
-            this.label24.Text = "Costo Actual";
-            // 
-            // label23
-            // 
-            this.label23.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label23.ForeColor = System.Drawing.Color.Red;
-            this.label23.Location = new System.Drawing.Point(30, 19);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(11, 13);
-            this.label23.TabIndex = 107;
-            this.label23.Text = "*";
             // 
             // groupBox1
             // 
@@ -713,7 +564,7 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(307, 499);
+            this.button1.Location = new System.Drawing.Point(307, 340);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 28);
             this.button1.TabIndex = 113;
@@ -725,7 +576,7 @@
             this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnEdit.Location = new System.Drawing.Point(341, 499);
+            this.btnEdit.Location = new System.Drawing.Point(341, 340);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(28, 28);
             this.btnEdit.TabIndex = 115;
@@ -807,17 +658,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 561);
+            this.ClientSize = new System.Drawing.Size(419, 407);
             this.Controls.Add(this.tabMain);
             this.Name = "formInsumos";
             this.Text = "Insumos";
             this.Load += new System.EventHandler(this.formInsumos_Load);
             this.tabMain.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabListado.ResumeLayout(false);
@@ -828,14 +675,6 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
@@ -871,10 +710,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
         private System.Windows.Forms.Button button11;
         public System.Windows.Forms.TabControl tabMain;
-        public System.Windows.Forms.TextBox txtStockActual;
-        public System.Windows.Forms.TextBox txtStockMin;
-        public System.Windows.Forms.DateTimePicker dtpFechaActualizacion;
-        public System.Windows.Forms.TextBox txtCostoAct;
         public System.Windows.Forms.TextBox txtCantidad;
         public System.Windows.Forms.ComboBox cbMedida;
         public System.Windows.Forms.DateTimePicker dtpFecha;

@@ -29,9 +29,7 @@ namespace RamosHermanos.Capas.Interfaz
           insumo.marca = cbMarca.Text;
           insumo.proveedor = Convert.ToInt32(cbProv.SelectedValue);
           insumo.rubro = Convert.ToString(cbRubro.SelectedValue);
-          insumo.stockMin = Convert.ToString(txtStockMin.Text);
-          
-                
+               
         }
 
         
@@ -39,7 +37,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool VerificarCampos()
         {
-            if (cbProv.SelectedValue == null || cbRubro.SelectedValue == null || cbMarca.SelectedValue == null || labelInsumo.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null || txtStockMin.Text == string.Empty || txtCostoAct.Text == string.Empty )
+            if (cbProv.SelectedValue == null || cbRubro.SelectedValue == null || cbMarca.SelectedValue == null || labelInsumo.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null )
             {
                 MessageBox.Show("Complete los campos Obligatorios");
 
@@ -75,7 +73,6 @@ namespace RamosHermanos.Capas.Interfaz
                 cbMarca.Text = insumo.marca;
                 cbProv.SelectedValue = insumo.proveedor;
                 txtRubro.Text = insumo.rubro;
-                txtStockMin.Text = insumo.stockMin;
 
                }
                 
@@ -156,8 +153,6 @@ namespace RamosHermanos.Capas.Interfaz
                     else
                     {
                         InsumoB.InsertInsumo(insumo, txtidInsumo);
-                        cargarCosto(txtidInsumo);
-                        CostoB.InsertCosto(costo);
                         InsumoB.cargardgvInsumo(dgvinsumos);
                     }
                 }
@@ -167,15 +162,6 @@ namespace RamosHermanos.Capas.Interfaz
                         
             
         }
-
-        CostoEntity costo = new CostoEntity();
-        private void cargarCosto(TextBox txt)
-        {
-            costo.insumo = Convert.ToInt32(txt.Text);
-            costo.costo = Convert.ToDouble(txtCostoAct.Text);
-            costo.fechaActualizacion = dtpFechaActualizacion.Value;
-        }
-        
 
         private void cbEstado_CheckedChanged(object sender, EventArgs e)
         {
@@ -193,34 +179,34 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-        private void txtCostoAct_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == 8)
-            {
-                e.Handled = false;
-                return;
-            }
-            bool IsDec = false;
-            int nroDec = 0;
+        //private void txtCostoAct_KeyPress(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == 8)
+        //    {
+        //        e.Handled = false;
+        //        return;
+        //    }
+        //    bool IsDec = false;
+        //    int nroDec = 0;
 
-            for (int i = 0; i < txtCostoAct.Text.Length; i++)
-            {
-                if (txtCostoAct.Text[i] == '.')
-                    IsDec = true;
+        //    for (int i = 0; i < txtCostoAct.Text.Length; i++)
+        //    {
+        //        if (txtCostoAct.Text[i] == '.')
+        //            IsDec = true;
 
-                if (IsDec && nroDec++ >= 2)
-                {
-                    e.Handled = true;
-                    return;
-                }
-            }
-            if (e.KeyChar >= 48 && e.KeyChar <= 57)
-                e.Handled = false;
-            else if (e.KeyChar == 46)
-                e.Handled = (IsDec) ? true : false;
-            else
-                e.Handled = true; 
-        }
+        //        if (IsDec && nroDec++ >= 2)
+        //        {
+        //            e.Handled = true;
+        //            return;
+        //        }
+        //    }
+        //    if (e.KeyChar >= 48 && e.KeyChar <= 57)
+        //        e.Handled = false;
+        //    else if (e.KeyChar == 46)
+        //        e.Handled = (IsDec) ? true : false;
+        //    else
+        //        e.Handled = true; 
+        //}
 
         private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
         {

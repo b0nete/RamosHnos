@@ -32,6 +32,11 @@
             this.rbDGVPJ = new System.Windows.Forms.RadioButton();
             this.rbDGV = new System.Windows.Forms.RadioButton();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtParametro = new System.Windows.Forms.MaskedTextBox();
+            this.cbParametro = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,11 +50,6 @@
             this.colCondicionIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtParametro = new System.Windows.Forms.MaskedTextBox();
-            this.cbParametro = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -102,90 +102,10 @@
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCliente.Size = new System.Drawing.Size(784, 499);
+            this.dgvCliente.Size = new System.Drawing.Size(847, 499);
             this.dgvCliente.TabIndex = 4;
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
             this.dgvCliente.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCliente_MouseDoubleClick);
-            // 
-            // colIDCliente
-            // 
-            this.colIDCliente.HeaderText = "Nº Cliente";
-            this.colIDCliente.Name = "colIDCliente";
-            this.colIDCliente.ReadOnly = true;
-            // 
-            // colApellido
-            // 
-            this.colApellido.HeaderText = "Apellido";
-            this.colApellido.Name = "colApellido";
-            this.colApellido.ReadOnly = true;
-            // 
-            // colNombre
-            // 
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.ReadOnly = true;
-            // 
-            // colIDTipoDoc
-            // 
-            this.colIDTipoDoc.HeaderText = "ID Tipo Doc";
-            this.colIDTipoDoc.Name = "colIDTipoDoc";
-            this.colIDTipoDoc.ReadOnly = true;
-            this.colIDTipoDoc.Visible = false;
-            // 
-            // coltipoDoc
-            // 
-            this.coltipoDoc.HeaderText = "Tipo Documento";
-            this.coltipoDoc.Name = "coltipoDoc";
-            this.coltipoDoc.ReadOnly = true;
-            // 
-            // colNumDoc
-            // 
-            this.colNumDoc.HeaderText = "Nº Documento";
-            this.colNumDoc.Name = "colNumDoc";
-            this.colNumDoc.ReadOnly = true;
-            // 
-            // colCUIL
-            // 
-            this.colCUIL.HeaderText = "CUIL";
-            this.colCUIL.Name = "colCUIL";
-            this.colCUIL.ReadOnly = true;
-            // 
-            // colFechaAlta
-            // 
-            this.colFechaAlta.HeaderText = "Fecha Alta";
-            this.colFechaAlta.Name = "colFechaAlta";
-            this.colFechaAlta.ReadOnly = true;
-            // 
-            // colSexo
-            // 
-            this.colSexo.HeaderText = "Sexo";
-            this.colSexo.Name = "colSexo";
-            this.colSexo.ReadOnly = true;
-            // 
-            // colEstadoCivil
-            // 
-            this.colEstadoCivil.HeaderText = "Estado Civil";
-            this.colEstadoCivil.Name = "colEstadoCivil";
-            this.colEstadoCivil.ReadOnly = true;
-            // 
-            // colCondicionIVA
-            // 
-            this.colCondicionIVA.HeaderText = "Condicion IVA";
-            this.colCondicionIVA.Name = "colCondicionIVA";
-            this.colCondicionIVA.ReadOnly = true;
-            // 
-            // colIDtipoCliente
-            // 
-            this.colIDtipoCliente.HeaderText = "ID Tipo Cliente";
-            this.colIDtipoCliente.Name = "colIDtipoCliente";
-            this.colIDtipoCliente.ReadOnly = true;
-            this.colIDtipoCliente.Visible = false;
-            // 
-            // coltipoCliente
-            // 
-            this.coltipoCliente.HeaderText = "Categoria";
-            this.coltipoCliente.Name = "coltipoCliente";
-            this.coltipoCliente.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -252,11 +172,94 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // colIDCliente
+            // 
+            this.colIDCliente.HeaderText = "Nº Cliente";
+            this.colIDCliente.Name = "colIDCliente";
+            this.colIDCliente.ReadOnly = true;
+            // 
+            // colApellido
+            // 
+            this.colApellido.HeaderText = "Apellido";
+            this.colApellido.Name = "colApellido";
+            this.colApellido.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colIDTipoDoc
+            // 
+            this.colIDTipoDoc.HeaderText = "ID Tipo Doc";
+            this.colIDTipoDoc.Name = "colIDTipoDoc";
+            this.colIDTipoDoc.ReadOnly = true;
+            this.colIDTipoDoc.Visible = false;
+            // 
+            // coltipoDoc
+            // 
+            this.coltipoDoc.HeaderText = "Tipo Documento";
+            this.coltipoDoc.Name = "coltipoDoc";
+            this.coltipoDoc.ReadOnly = true;
+            this.coltipoDoc.Visible = false;
+            // 
+            // colNumDoc
+            // 
+            this.colNumDoc.HeaderText = "Nº Documento";
+            this.colNumDoc.Name = "colNumDoc";
+            this.colNumDoc.ReadOnly = true;
+            // 
+            // colCUIL
+            // 
+            this.colCUIL.HeaderText = "CUIL";
+            this.colCUIL.Name = "colCUIL";
+            this.colCUIL.ReadOnly = true;
+            // 
+            // colFechaAlta
+            // 
+            this.colFechaAlta.HeaderText = "Fecha Alta";
+            this.colFechaAlta.Name = "colFechaAlta";
+            this.colFechaAlta.ReadOnly = true;
+            this.colFechaAlta.Visible = false;
+            // 
+            // colSexo
+            // 
+            this.colSexo.HeaderText = "Sexo";
+            this.colSexo.Name = "colSexo";
+            this.colSexo.ReadOnly = true;
+            this.colSexo.Visible = false;
+            // 
+            // colEstadoCivil
+            // 
+            this.colEstadoCivil.HeaderText = "Estado Civil";
+            this.colEstadoCivil.Name = "colEstadoCivil";
+            this.colEstadoCivil.ReadOnly = true;
+            // 
+            // colCondicionIVA
+            // 
+            this.colCondicionIVA.HeaderText = "Condicion IVA";
+            this.colCondicionIVA.Name = "colCondicionIVA";
+            this.colCondicionIVA.ReadOnly = true;
+            // 
+            // colIDtipoCliente
+            // 
+            this.colIDtipoCliente.HeaderText = "ID Tipo Cliente";
+            this.colIDtipoCliente.Name = "colIDtipoCliente";
+            this.colIDtipoCliente.ReadOnly = true;
+            this.colIDtipoCliente.Visible = false;
+            // 
+            // coltipoCliente
+            // 
+            this.coltipoCliente.HeaderText = "Categoria";
+            this.coltipoCliente.Name = "coltipoCliente";
+            this.coltipoCliente.ReadOnly = true;
+            // 
             // listClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(847, 561);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dgvCliente);
             this.MaximizeBox = false;
@@ -274,6 +277,12 @@
 
         private System.Windows.Forms.RadioButton rbDGVPJ;
         private System.Windows.Forms.RadioButton rbDGV;
+        public System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox txtParametro;
+        private System.Windows.Forms.ComboBox cbParametro;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
@@ -287,11 +296,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCondicionIVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDtipoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn coltipoCliente;
-        public System.Windows.Forms.DataGridView dgvCliente;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox txtParametro;
-        private System.Windows.Forms.ComboBox cbParametro;
-        private System.Windows.Forms.Button btnSearch;
     }
 }
