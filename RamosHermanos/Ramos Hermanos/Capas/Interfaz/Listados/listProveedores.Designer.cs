@@ -145,9 +145,9 @@
             this.cbParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbParametro.FormattingEnabled = true;
             this.cbParametro.Items.AddRange(new object[] {
-            "ID",
-            "RazonSocial",
-            "Cuit"});
+            "Nº Proveedor",
+            "Razon Social",
+            "CUIT"});
             this.cbParametro.Location = new System.Drawing.Point(73, 23);
             this.cbParametro.Name = "cbParametro";
             this.cbParametro.Size = new System.Drawing.Size(133, 21);

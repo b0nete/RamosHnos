@@ -738,7 +738,7 @@ namespace RamosHermanos.Capas.Interfaz
                     CargarSaldo(txtIDclientePJ);
                     SaldoB.BuscarSaldo(saldo);
                     txtCreditoMaxPJ.Text = Convert.ToString(saldo.creditoMax);
-                    txtSaldoPJ.Text = Convert.ToString(saldo.saldoActual);
+                    txt4LTPJ.Text = Convert.ToString(saldo.saldoActual);
 
                     //Visita
                     //visita.rol = 1;
@@ -1185,7 +1185,6 @@ namespace RamosHermanos.Capas.Interfaz
             tabMain.Controls.Remove(tabVisita);
             tabMain.Controls.Add(tabInformacion);
             tabMain.Controls.Add(tabMovimientos);
-            tabMain.Controls.Add(tabVisita);
         }
 
         public void CasePersonaJuridica()
@@ -1197,7 +1196,6 @@ namespace RamosHermanos.Capas.Interfaz
             tabMain.Controls.Remove(tabVisita);
             tabMain.Controls.Add(tabInformacionJ);
             tabMain.Controls.Add(tabMovimientos);
-            tabMain.Controls.Add(tabVisita);
         }
 
         private void btnPedido_Click(object sender, EventArgs e)
