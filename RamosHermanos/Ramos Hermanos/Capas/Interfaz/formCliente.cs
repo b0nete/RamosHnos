@@ -1039,19 +1039,19 @@ namespace RamosHermanos.Capas.Interfaz
         VisitaEntity visita = new VisitaEntity();
         private void CargarVisita(DataGridView dgv)
         {
-            visita.rol = 1;
-            visita.idPersona = Convert.ToInt32(dgv.CurrentRow.Cells["colVLucliente"].Value);
+            //visita.rol = 1;
+            //visita.idPersona = Convert.ToInt32(dgv.CurrentRow.Cells["colVLucliente"].Value);
         }
 
         
         private void CargarItemsVisita(string strDia, DataGridViewRow row)
         {
-            visita.rol = 1;
-            visita.idPersona = Convert.ToInt32(row.Cells["colVLucliente"].Value);
-            visita.dia = strDia;
-            visita.domicilio = Convert.ToInt32(row.Cells["colVLudomicilio"].Value);
-            visita.distribuidor = Convert.ToInt32(row.Cells["colVLudistribuidor"].Value);
-            visita.estado = Convert.ToBoolean(row.Cells["colVLuestado"].Value);
+            //visita.rol = 1;
+            //visita.idPersona = Convert.ToInt32(row.Cells["colVLucliente"].Value);
+            //visita.dia = strDia;
+            //visita.domicilio = Convert.ToInt32(row.Cells["colVLudomicilio"].Value);
+            //visita.distribuidor = Convert.ToInt32(row.Cells["colVLudistribuidor"].Value);
+            //visita.estado = Convert.ToBoolean(row.Cells["colVLuestado"].Value);
         }
 
         private void groupBox9_Enter(object sender, EventArgs e)
@@ -1248,68 +1248,68 @@ namespace RamosHermanos.Capas.Interfaz
         VisitaEntity v = new VisitaEntity();
         public void cargarVisita()
         {
-            v.rol = 1;
-            v.idPersona = Convert.ToInt32(txtIDcliente.Text);
-            v.domicilio = Convert.ToInt32(cbDomicilio.SelectedValue);
-            v.estado = cbEstadoVisita.Checked;
-            v.distribuidor = Convert.ToInt32(cbDomicilio.SelectedValue);
+            //v.rol = 1;
+            //v.idPersona = Convert.ToInt32(txtIDcliente.Text);
+            //v.domicilio = Convert.ToInt32(cbDomicilio.SelectedValue);
+            //v.estado = cbEstadoVisita.Checked;
+            //v.distribuidor = Convert.ToInt32(cbDomicilio.SelectedValue);
          
             
         }
 
         private void btnSaveVisita_Click(object sender, EventArgs e)
         {
-            cargarVisita();
-            VisitaB.DeleteVisita(v);
-            if (checkLu.Checked == true)
-            {
-                v.dia = "Lu";
-                cargarVisita();
-                VisitaB.InsertVisitaCliente(v);
+            //cargarVisita();
+            //VisitaB.DeleteVisita(v);
+            //if (checkLu.Checked == true)
+            //{
+            //    v.dia = "Lu";
+            //    cargarVisita();
+            //    VisitaB.InsertVisitaCliente(v);
                 
-            }
-            if (checkMa.Checked == true)
-            {
-                v.dia = "Ma";
-                cargarVisita();
-                VisitaB.InsertVisitaCliente(v);
+            //}
+            //if (checkMa.Checked == true)
+            //{
+            //    v.dia = "Ma";
+            //    cargarVisita();
+            //    VisitaB.InsertVisitaCliente(v);
                 
-            }
-            if (checkMi.Checked == true)
-            {
-                v.dia = "Mi";
-                cargarVisita();
-                VisitaB.InsertVisitaCliente(v);
+            //}
+            //if (checkMi.Checked == true)
+            //{
+            //    v.dia = "Mi";
+            //    cargarVisita();
+            //    VisitaB.InsertVisitaCliente(v);
                 
-            }
-            if (checkJu.Checked == true)
-            {
-                v.dia = "Ju";
-                cargarVisita();
-                VisitaB.InsertVisitaCliente(v);
+            //}
+            //if (checkJu.Checked == true)
+            //{
+            //    v.dia = "Ju";
+            //    cargarVisita();
+            //    VisitaB.InsertVisitaCliente(v);
                 
-            }
-            if (checkVi.Checked == true)
-            {
-                v.dia = "Vi";
-                cargarVisita();
-                VisitaB.InsertVisitaCliente(v);
+            //}
+            //if (checkVi.Checked == true)
+            //{
+            //    v.dia = "Vi";
+            //    cargarVisita();
+            //    VisitaB.InsertVisitaCliente(v);
                 
-            }
-            if (checkSa.Checked == true)
-            {
-                v.dia = "Sa";
-                cargarVisita();
-                VisitaB.InsertVisitaCliente(v);
+            //}
+            //if (checkSa.Checked == true)
+            //{
+            //    v.dia = "Sa";
+            //    cargarVisita();
+            //    VisitaB.InsertVisitaCliente(v);
                 
-            }
-            if (checkDo.Checked == true)
-            {
-                v.dia = "Do";
-                cargarVisita();
-                VisitaB.InsertVisitaCliente(v);
+            //}
+            //if (checkDo.Checked == true)
+            //{
+            //    v.dia = "Do";
+            //    cargarVisita();
+            //    VisitaB.InsertVisitaCliente(v);
                 
-            }
+            //}
             
         }
 

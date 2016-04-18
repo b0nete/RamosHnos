@@ -216,7 +216,7 @@ namespace RamosHermanos.Capas.Negocio
                 int resultado = Convert.ToInt32(cmd.ExecuteScalar());
                 if (resultado == 0)
                 {
-                    MessageBox.Show("No existen facturas pagas!");
+                    //MessageBox.Show("No existen facturas pagas!");
                 }
                 else
                 {
@@ -256,7 +256,7 @@ namespace RamosHermanos.Capas.Negocio
                 int resultado = Convert.ToInt32(cmd.ExecuteScalar());
                 if (resultado == 0)
                 {
-                    MessageBox.Show("No existen facturas pendientes!");
+                    //MessageBox.Show("No existen facturas pendientes!");
                 }
                 else
                 {
@@ -296,7 +296,7 @@ namespace RamosHermanos.Capas.Negocio
                 int resultado = Convert.ToInt32(cmd.ExecuteScalar());
                 if (resultado == 0)
                 {
-                    MessageBox.Show("No existen facturas anuladas!");
+                    //MessageBox.Show("No existen facturas anuladas!");
                 }
                 else
                 {
