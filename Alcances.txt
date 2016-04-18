@@ -12,7 +12,7 @@ Alcances.
 11.	Registrar cobro efectivo. SI
 12.	Generar comprobante. BETA
 13.	Generar recibo. BETA
-14.	Consultar cobros. NO
+14.	Consultar cobros. SI
 15.	Registrar clientes. SI
 16.	Consultar clientes. SI
 17.	Listar clientes. SI
@@ -20,19 +20,19 @@ Alcances.
 19.	Consultar proveedores. SI
 20.	Listar proveedores.SI
 21.	Consultar saldo proveedores. NO
-22.	Consultar saldo clientes. NO
+22.	Consultar saldo clientes. SI
 23.	Generar listado de insumos faltantes. NO
-24.	Generar pedido de insumos faltantes. NO
+24.	Generar pedido de insumos faltantes. SI
 25.	Registrar insumos entrantes. SI
 26.	Generar listado de productos faltantes. NO
-27.	Generar pedido de productos faltantes. NO
+27.	Generar pedido de productos faltantes. SI
 28.	Registrar productos elaborados. SI
-29.	Registrar cobro en efectivo. NO
-30.	Consultar cobros. NO
-31.	Listar cobros. NO
-32.	Registrar pagos. NO
-33.	Consultar pagos. NO
-34.	Listar pagos. NO
+29.	Registrar cobro en efectivo. SI
+30.	Consultar cobros. SI
+31.	Listar cobros. SI
+32.	Registrar pagos. SI
+33.	Consultar pagos. SI
+34.	Listar pagos. SI
 35.	Registrar insumos. SI
 36.	Consultar insumos. SI
 37.	Listar insumos. SI
@@ -43,20 +43,20 @@ Alcances.
 41.	Registrar rubros. SI
 43.	Listar rubros. SI
 44.	Registrar stock inicial. SI
-45.	Generar stock. NO
+45.	Generar stock. SI
 46.	Registrar stock mínimo. SI
-47.	Actualizar stock. NO
-48.	Consultar stock. NO
-49.	Listar stock.NO
-50.	Listar ventas.NO
-51.	Listar compras.NO
-52.	Consultar ventas.NO
+47.	Actualizar stock. SI
+48.	Consultar stock. SI
+49.	Listar stock.SI
+50.	Listar ventas. NO
+51.	Listar compras. NO
+52.	Consultar ventas. NO
 53.	Emitir informe de compras. NO
 54.	Emitir informe de ventas. NO
 55.	Emitir informe de stock.NO
 56.	Listar movimientos de caja.NO
-57.	Generar agenda.NO
-58.	Generar cuenta corriente proveedores. NO
-59.	Generar cuenta corrientes clientes. NO
+57.	Generar agenda. SI
+58.	Generar cuenta corriente proveedores. SI
+59.	Generar cuenta corrientes clientes. SI
 60.	Generar listado de Reparto. SI
 61.	Generar mapa de distribución. SI 
