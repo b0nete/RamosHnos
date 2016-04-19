@@ -191,6 +191,7 @@
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 106;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // listInsumos
             // 
@@ -214,8 +215,6 @@
         public System.Windows.Forms.DataGridView dgvInsumos;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox txtParametro;
-        private System.Windows.Forms.ComboBox cbParametro;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDinsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInsumo;
@@ -226,5 +225,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn colEstado;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.TextBox txtdatos;
+        public System.Windows.Forms.ComboBox cbParametro;
+        public System.Windows.Forms.MaskedTextBox txtParametro;
     }
 }

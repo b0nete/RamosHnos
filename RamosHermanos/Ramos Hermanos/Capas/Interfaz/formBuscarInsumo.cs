@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Negocio;
+using RamosHermanos.Capas.Interfaz.Listados;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -25,7 +26,7 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
 
-        formInsumos frm = new formInsumos();
+        listInsumos frm = new listInsumos();
         InsumoEntity insumo = new InsumoEntity();
 
         private void BuscarNameInsumo()
@@ -34,7 +35,6 @@ namespace RamosHermanos.Capas.Interfaz
             if (txtInsumo.Text == "")
             {
                 frm.Show();
-                frm.tabMain.SelectedTab = frm.tabListado;
                 return;
             }
 
@@ -51,9 +51,9 @@ namespace RamosHermanos.Capas.Interfaz
                 InsumoB.BuscarInsumos(insumo);
                 txtInsumo.Text = "";
                 frm.Show();
-                frm.txtidInsumo.Text = Convert.ToString(insumo.idInsumo);
-                frm.txtInsumo.Text = Convert.ToString(insumo.insumo);
-                frm.txtDescripcion.Text = insumo.descripcion;
+                //frm.txtidInsumo.Text = Convert.ToString(insumo.idInsumo);
+                //frm.txtInsumo.Text = Convert.ToString(insumo.insumo);
+                //frm.txtDescripcion.Text = insumo.descripcion;
                 
                 return;
             }
@@ -64,8 +64,8 @@ namespace RamosHermanos.Capas.Interfaz
 
             if (txtIDInsumo.Text == "")
             {
-                frm.Show();
-                frm.tabMain.SelectedTab = frm.tabListado;
+                //frm.Show();
+                //frm.tabMain.SelectedTab = frm.tabListado;
                 return;
             }
 
@@ -82,9 +82,9 @@ namespace RamosHermanos.Capas.Interfaz
                 InsumoB.BuscarInsumosID(insumo);
                 txtInsumo.Text = "";
                 frm.Show();
-                frm.txtidInsumo.Text = Convert.ToString(insumo.idInsumo);
-                frm.txtInsumo.Text = Convert.ToString(insumo.insumo);
-                frm.txtDescripcion.Text = insumo.descripcion;
+                //frm.txtidInsumo.Text = Convert.ToString(insumo.idInsumo);
+                //frm.txtInsumo.Text = Convert.ToString(insumo.insumo);
+                //frm.txtDescripcion.Text = insumo.descripcion;
 
                 return;
             }

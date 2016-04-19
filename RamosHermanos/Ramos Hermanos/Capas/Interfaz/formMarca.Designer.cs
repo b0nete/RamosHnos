@@ -46,6 +46,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -59,10 +60,10 @@
             this.colIDMarca,
             this.colMarca,
             this.colEstado});
-            this.dgvMarcas.Location = new System.Drawing.Point(12, 147);
+            this.dgvMarcas.Location = new System.Drawing.Point(12, 171);
             this.dgvMarcas.Name = "dgvMarcas";
             this.dgvMarcas.ReadOnly = true;
-            this.dgvMarcas.Size = new System.Drawing.Size(600, 248);
+            this.dgvMarcas.Size = new System.Drawing.Size(264, 248);
             this.dgvMarcas.TabIndex = 96;
             this.dgvMarcas.SelectionChanged += new System.EventHandler(this.dgvMarcas_SelectionChanged);
             // 
@@ -90,7 +91,7 @@
             this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnClose.Location = new System.Drawing.Point(584, 401);
+            this.btnClose.Location = new System.Drawing.Point(248, 425);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(28, 28);
             this.btnClose.TabIndex = 95;
@@ -102,7 +103,7 @@
             this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
             this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDel.Location = new System.Drawing.Point(584, 113);
+            this.btnDel.Location = new System.Drawing.Point(248, 137);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(28, 28);
             this.btnDel.TabIndex = 93;
@@ -113,7 +114,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSave.Location = new System.Drawing.Point(550, 113);
+            this.btnSave.Location = new System.Drawing.Point(214, 137);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 92;
@@ -132,19 +133,18 @@
             this.groupBox1.Controls.Add(this.txtMarca);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(3, 36);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(600, 95);
+            this.groupBox1.Size = new System.Drawing.Size(273, 95);
             this.groupBox1.TabIndex = 94;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Marcas";
             // 
             // lblEstado
             // 
             this.lblEstado.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(100, 71);
+            this.lblEstado.Location = new System.Drawing.Point(80, 67);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(0, 13);
             this.lblEstado.TabIndex = 76;
@@ -156,7 +156,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(30, 71);
+            this.label1.Location = new System.Drawing.Point(10, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(11, 13);
             this.label1.TabIndex = 75;
@@ -167,7 +167,7 @@
             this.cbEstado.AutoSize = true;
             this.cbEstado.Checked = true;
             this.cbEstado.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbEstado.Location = new System.Drawing.Point(79, 71);
+            this.cbEstado.Location = new System.Drawing.Point(59, 67);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(15, 14);
             this.cbEstado.TabIndex = 73;
@@ -178,7 +178,7 @@
             this.Estado.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.Estado.AutoSize = true;
             this.Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.Estado.Location = new System.Drawing.Point(37, 71);
+            this.Estado.Location = new System.Drawing.Point(17, 67);
             this.Estado.Name = "Estado";
             this.Estado.Size = new System.Drawing.Size(40, 13);
             this.Estado.TabIndex = 72;
@@ -188,7 +188,7 @@
             // 
             this.txtIDMarca.Enabled = false;
             this.txtIDMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtIDMarca.Location = new System.Drawing.Point(78, 19);
+            this.txtIDMarca.Location = new System.Drawing.Point(58, 13);
             this.txtIDMarca.Name = "txtIDMarca";
             this.txtIDMarca.Size = new System.Drawing.Size(113, 20);
             this.txtIDMarca.TabIndex = 67;
@@ -197,7 +197,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label8.Location = new System.Drawing.Point(25, 22);
+            this.label8.Location = new System.Drawing.Point(5, 16);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 68;
@@ -208,7 +208,7 @@
             this.label4.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(40, 48);
+            this.label4.Location = new System.Drawing.Point(20, 42);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 64;
@@ -217,9 +217,9 @@
             // txtMarca
             // 
             this.txtMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtMarca.Location = new System.Drawing.Point(78, 45);
+            this.txtMarca.Location = new System.Drawing.Point(58, 39);
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(440, 20);
+            this.txtMarca.Size = new System.Drawing.Size(209, 20);
             this.txtMarca.TabIndex = 65;
             // 
             // label15
@@ -229,17 +229,31 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(32, 48);
+            this.label15.Location = new System.Drawing.Point(12, 42);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(11, 13);
             this.label15.TabIndex = 66;
             this.label15.Text = "*";
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(0, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(284, 39);
+            this.label2.TabIndex = 115;
+            this.label2.Text = "Marcas";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // formMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 441);
+            this.ClientSize = new System.Drawing.Size(284, 459);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvMarcas);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDel);
@@ -274,5 +288,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colEstado;
+        private System.Windows.Forms.Label label2;
     }
 }

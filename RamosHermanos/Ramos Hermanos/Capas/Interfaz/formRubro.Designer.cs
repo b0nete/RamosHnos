@@ -46,6 +46,7 @@
             this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRubro)).BeginInit();
             this.SuspendLayout();
@@ -147,7 +148,7 @@
             this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
             this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDel.Location = new System.Drawing.Point(276, 107);
+            this.btnDel.Location = new System.Drawing.Point(276, 146);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(28, 28);
             this.btnDel.TabIndex = 83;
@@ -158,7 +159,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSave.Location = new System.Drawing.Point(242, 107);
+            this.btnSave.Location = new System.Drawing.Point(242, 146);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 82;
@@ -177,12 +178,11 @@
             this.groupBox1.Controls.Add(this.txtRubro);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(3, 42);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(292, 98);
+            this.groupBox1.Size = new System.Drawing.Size(301, 98);
             this.groupBox1.TabIndex = 84;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Rubro";
             // 
             // dgvRubro
             // 
@@ -193,10 +193,10 @@
             this.colIdRubro,
             this.colRubro,
             this.colEstado});
-            this.dgvRubro.Location = new System.Drawing.Point(23, 150);
+            this.dgvRubro.Location = new System.Drawing.Point(3, 180);
             this.dgvRubro.Name = "dgvRubro";
             this.dgvRubro.ReadOnly = true;
-            this.dgvRubro.Size = new System.Drawing.Size(281, 241);
+            this.dgvRubro.Size = new System.Drawing.Size(301, 241);
             this.dgvRubro.TabIndex = 82;
             this.dgvRubro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -224,18 +224,32 @@
             this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnClose.Location = new System.Drawing.Point(276, 401);
+            this.btnClose.Location = new System.Drawing.Point(276, 427);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(28, 28);
             this.btnClose.TabIndex = 91;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(309, 39);
+            this.label5.TabIndex = 115;
+            this.label5.Text = "Rubros";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // formRubro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(321, 441);
+            this.ClientSize = new System.Drawing.Size(309, 460);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvRubro);
             this.Controls.Add(this.groupBox1);
@@ -270,5 +284,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colEstado;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label5;
     }
 }

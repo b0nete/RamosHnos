@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Negocio;
+using RamosHermanos.Capas.Interfaz.Listados;
 
 namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formInsumos : Form
     {
+        public int caseSwitch = 2;
         public formInsumos()
         {
             InitializeComponent();
@@ -50,7 +52,8 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (txtInsumo.Text == string.Empty)
             {
-                tabMain.SelectedTab = tabListado;
+                listInsumos frmlist = new listInsumos();
+                frmlist.Show(); ;
                 return;
             
             }
@@ -81,11 +84,11 @@ namespace RamosHermanos.Capas.Interfaz
         
         private void formInsumos_Load(object sender, EventArgs e)
         {
+            //caseSwitch = 2;
             ProveedorB.CargarProv(cbProv);
             RubroB.CargarRubro(cbRubro);
             MarcaB.CargarCB(cbMarca);
             MedidaB.CargarCB(cbMedida);
-            InsumoB.cargardgvInsumo(dgvinsumos);
             checkcolor();
         }
 
@@ -153,7 +156,7 @@ namespace RamosHermanos.Capas.Interfaz
                     else
                     {
                         InsumoB.InsertInsumo(insumo, txtidInsumo);
-                        InsumoB.cargardgvInsumo(dgvinsumos);
+                        //InsumoB.cargardgvInsumo(dgvinsumos);
                     }
                 }
             }
@@ -251,34 +254,34 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-        private void SeleccionarDGV()
-        {
-            DataGridViewCell cell = null;
-            foreach (DataGridViewCell selectedCell in dgvinsumos.SelectedCells)
-            {
-                cell = selectedCell;
-                break;
-            }
-            if (cell != null)
-            {
-                DataGridViewRow row = cell.OwningRow;
+        //private void SeleccionarDGV()
+        //{
+        //    DataGridViewCell cell = null;
+        //    foreach (DataGridViewCell selectedCell in dgvinsumos.SelectedCells)
+        //    {
+        //        cell = selectedCell;
+        //        break;
+        //    }
+        //    if (cell != null)
+        //    {
+        //        DataGridViewRow row = cell.OwningRow;
 
-                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
-                insumo.insumo =Convert.ToString(row.Cells["colInsumo"].Value);
+        //        //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+        //        insumo.insumo =Convert.ToString(row.Cells["colInsumo"].Value);
                 
-                InsumoB.BuscarInsumos(insumo);
-               // insumo.idInsumo = Convert.ToInt32(txtidInsumo.Text);
-                dtpFecha.Value = insumo.fecha;
-                cbProv.SelectedValue = insumo.proveedor;
-                txtInsumo.Text = insumo.insumo;
-                txtRubro.Text = insumo.rubro;
-                cbMarca.Text = insumo.marca;
+        //        InsumoB.BuscarInsumos(insumo);
+        //       // insumo.idInsumo = Convert.ToInt32(txtidInsumo.Text);
+        //        dtpFecha.Value = insumo.fecha;
+        //        cbProv.SelectedValue = insumo.proveedor;
+        //        txtInsumo.Text = insumo.insumo;
+        //        txtRubro.Text = insumo.rubro;
+        //        cbMarca.Text = insumo.marca;
 
-                tabMain.SelectedTab = tabInformacion;
+        //        tabMain.SelectedTab = tabInformacion;
              
 
-            }
-        }
+        //    }
+        //}
 
         private void cbMarca_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -287,7 +290,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvinsumos_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            SeleccionarDGV();
+            //SeleccionarDGV();
         }
 
         private void cbProv_DropDown(object sender, EventArgs e)
@@ -301,13 +304,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-        private void cbRubro_DropDown(object sender, EventArgs e)
-        {
-            
-            RubroB.CargarRubro(cbRubro);
-            
-        }
-
+        
         private void cbMarca_DropDown(object sender, EventArgs e)
         {
             MarcaB.CargarCB(cbMarca);
@@ -328,6 +325,29 @@ namespace RamosHermanos.Capas.Interfaz
         {
 
         }
+
+        
+        private void btnSearch_Click_1(object sender, EventArgs e)
+        {
+            
+            listInsumos frm = new listInsumos();
+            frm.Show();
+            caseSwitch = 2;
+            //string parametro = '%' + frm.txtParametro.Text + '%';
+            //InsumoB.CargarDGVParametros(frm.dgvInsumos, frm.cbParametro, parametro);
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbRubro_DropDown(object sender, EventArgs e)
+        {
+            RubroB.CargarRubro(cbRubro);
+        }
+
+        
     
           
     }

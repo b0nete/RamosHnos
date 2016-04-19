@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formInsumos));
-            this.tabMain = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.button11 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -69,45 +68,24 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtRubro = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.tabListado = new System.Windows.Forms.TabPage();
-            this.dgvinsumos = new System.Windows.Forms.DataGridView();
-            this.colidinsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStockActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabMain.SuspendLayout();
+            this.tabMain = new System.Windows.Forms.TabControl();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabInformacion.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabListado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvinsumos)).BeginInit();
+            this.tabMain.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tabMain
-            // 
-            this.tabMain.Controls.Add(this.tabInformacion);
-            this.tabMain.Controls.Add(this.tabListado);
-            this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabMain.Location = new System.Drawing.Point(0, 0);
-            this.tabMain.Name = "tabMain";
-            this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(419, 407);
-            this.tabMain.TabIndex = 0;
             // 
             // tabInformacion
             // 
             this.tabInformacion.BackColor = System.Drawing.SystemColors.Control;
+            this.tabInformacion.Controls.Add(this.label4);
             this.tabInformacion.Controls.Add(this.button11);
             this.tabInformacion.Controls.Add(this.groupBox1);
             this.tabInformacion.Controls.Add(this.button1);
-            this.tabInformacion.Controls.Add(this.btnEdit);
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(411, 381);
+            this.tabInformacion.Size = new System.Drawing.Size(411, 372);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.Click += new System.EventHandler(this.tabInformacion_Click);
@@ -117,7 +95,7 @@
             this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button11.Location = new System.Drawing.Point(375, 340);
+            this.button11.Location = new System.Drawing.Point(375, 339);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(28, 28);
             this.button11.TabIndex = 113;
@@ -162,12 +140,11 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtRubro);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(8, 6);
+            this.groupBox1.Location = new System.Drawing.Point(6, 39);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(395, 328);
+            this.groupBox1.Size = new System.Drawing.Size(395, 295);
             this.groupBox1.TabIndex = 111;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Información Insumo";
             // 
             // txtInsumo
             // 
@@ -182,11 +159,12 @@
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSearch.Location = new System.Drawing.Point(350, 67);
+            this.btnSearch.Location = new System.Drawing.Point(350, 65);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 125;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
             // label5
             // 
@@ -221,6 +199,7 @@
             this.cbRubro.Name = "cbRubro";
             this.cbRubro.Size = new System.Drawing.Size(261, 21);
             this.cbRubro.TabIndex = 122;
+            this.cbRubro.DropDown += new System.EventHandler(this.cbRubro_DropDown);
             this.cbRubro.SelectedIndexChanged += new System.EventHandler(this.cbRubro_SelectedIndexChanged);
             // 
             // lblEstado
@@ -564,166 +543,97 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(307, 340);
+            this.button1.Location = new System.Drawing.Point(341, 339);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 28);
             this.button1.TabIndex = 113;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // btnEdit
+            // tabMain
             // 
-            this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
-            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnEdit.Location = new System.Drawing.Point(341, 340);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(28, 28);
-            this.btnEdit.TabIndex = 115;
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.tabMain.Controls.Add(this.tabInformacion);
+            this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabMain.Location = new System.Drawing.Point(0, 0);
+            this.tabMain.Name = "tabMain";
+            this.tabMain.SelectedIndex = 0;
+            this.tabMain.Size = new System.Drawing.Size(419, 398);
+            this.tabMain.TabIndex = 0;
             // 
-            // tabListado
+            // label4
             // 
-            this.tabListado.Controls.Add(this.dgvinsumos);
-            this.tabListado.Location = new System.Drawing.Point(4, 22);
-            this.tabListado.Name = "tabListado";
-            this.tabListado.Size = new System.Drawing.Size(411, 535);
-            this.tabListado.TabIndex = 1;
-            this.tabListado.Text = "Listado";
-            this.tabListado.UseVisualStyleBackColor = true;
-            // 
-            // dgvinsumos
-            // 
-            this.dgvinsumos.AllowUserToAddRows = false;
-            this.dgvinsumos.AllowUserToDeleteRows = false;
-            this.dgvinsumos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvinsumos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colidinsumo,
-            this.colFechaAlta,
-            this.colProv,
-            this.colInsumo,
-            this.colStockActual,
-            this.colRubro,
-            this.colMarca});
-            this.dgvinsumos.Location = new System.Drawing.Point(3, 3);
-            this.dgvinsumos.Name = "dgvinsumos";
-            this.dgvinsumos.ReadOnly = true;
-            this.dgvinsumos.Size = new System.Drawing.Size(745, 529);
-            this.dgvinsumos.TabIndex = 113;
-            this.dgvinsumos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvinsumos_MouseDoubleClick);
-            // 
-            // colidinsumo
-            // 
-            this.colidinsumo.HeaderText = "IDinsumo";
-            this.colidinsumo.Name = "colidinsumo";
-            this.colidinsumo.ReadOnly = true;
-            // 
-            // colFechaAlta
-            // 
-            this.colFechaAlta.HeaderText = "Fecha Alta";
-            this.colFechaAlta.Name = "colFechaAlta";
-            this.colFechaAlta.ReadOnly = true;
-            // 
-            // colProv
-            // 
-            this.colProv.HeaderText = "Proveedor";
-            this.colProv.Name = "colProv";
-            this.colProv.ReadOnly = true;
-            // 
-            // colInsumo
-            // 
-            this.colInsumo.HeaderText = "Insumo";
-            this.colInsumo.Name = "colInsumo";
-            this.colInsumo.ReadOnly = true;
-            // 
-            // colStockActual
-            // 
-            this.colStockActual.HeaderText = "Stock Actual";
-            this.colStockActual.Name = "colStockActual";
-            this.colStockActual.ReadOnly = true;
-            // 
-            // colRubro
-            // 
-            this.colRubro.HeaderText = "Rubro";
-            this.colRubro.Name = "colRubro";
-            this.colRubro.ReadOnly = true;
-            // 
-            // colMarca
-            // 
-            this.colMarca.HeaderText = "Marca";
-            this.colMarca.Name = "colMarca";
-            this.colMarca.ReadOnly = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(405, 39);
+            this.label4.TabIndex = 114;
+            this.label4.Text = "Insumos";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // formInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 407);
+            this.ClientSize = new System.Drawing.Size(419, 398);
             this.Controls.Add(this.tabMain);
+            this.MaximizeBox = false;
             this.Name = "formInsumos";
             this.Text = "Insumos";
             this.Load += new System.EventHandler(this.formInsumos_Load);
-            this.tabMain.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabListado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvinsumos)).EndInit();
+            this.tabMain.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        public System.Windows.Forms.TabPage tabInformacion;
+        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.TextBox txtInsumo;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelInsumo;
+        public System.Windows.Forms.ComboBox cbRubro;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label27;
+        public System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.ComboBox cbMedida;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.ComboBox cbMarca;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
+        public System.Windows.Forms.TextBox txtidInsumo;
         private System.Windows.Forms.Label label17;
+        public System.Windows.Forms.ComboBox cbProv;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button7;
+        public System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
+        public System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label txtRubro;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label lblEstado;
-        private System.Windows.Forms.DataGridView dgvinsumos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colidinsumo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colProv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colInsumo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStockActual;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
-        private System.Windows.Forms.Button button11;
         public System.Windows.Forms.TabControl tabMain;
-        public System.Windows.Forms.TextBox txtCantidad;
-        public System.Windows.Forms.ComboBox cbMedida;
-        public System.Windows.Forms.DateTimePicker dtpFecha;
-        public System.Windows.Forms.ComboBox cbMarca;
-        public System.Windows.Forms.TextBox txtidInsumo;
-        public System.Windows.Forms.ComboBox cbProv;
-        public System.Windows.Forms.CheckBox cbEstado;
-        public System.Windows.Forms.TextBox txtDescripcion;
-        public System.Windows.Forms.TabPage tabInformacion;
-        public System.Windows.Forms.TabPage tabListado;
-        public System.Windows.Forms.TextBox txtInsumo;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label labelInsumo;
-        public System.Windows.Forms.ComboBox cbRubro;
+        private System.Windows.Forms.Label label4;
+
     }
 }

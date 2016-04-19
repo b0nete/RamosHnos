@@ -70,9 +70,11 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 }
                 if (cell != null)
                 {
-
-                    DataGridViewRow row = cell.OwningRow;
+                    formInsumos frmI = new formInsumos();
+                    InsumoEntity insumo = new InsumoEntity();
                     frmI.Show();
+                    DataGridViewRow row = cell.OwningRow;
+                    
                     //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
 
                     insumo.idInsumo = Convert.ToInt32(row.Cells["colIDinsumo"].Value.ToString());
@@ -140,6 +142,11 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             parent.AddNewItem(row);
 
             this.Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
         }
                   
       }
