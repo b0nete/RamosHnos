@@ -29,7 +29,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         {
             cbParametro.SelectedIndex = 0;
             ProductoB.CargarDGV(dgvProducto);
-            caseSwitch = 1;
+            //caseSwitch = 1;
         }
 
         private void dgvProducto_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -122,11 +122,9 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     MessageBox.Show("No existe stock");
                 else
                 {
-                    StockProductoB.BuscarStock(stockP);
+                    StockProductoB.BuscarStock(Convert.ToInt32(frmPro.txtIDProd.Text));
                     frmPro.txtStockMin.Text = Convert.ToString(stockP.stockMinimo);
                     frmPro.txtStockMax.Text = Convert.ToString(stockP.stockMaximo);
-                    frmPro.txtStockA.Text = Convert.ToString(stockP.stockActual);
-                    frmPro.dtpfechaStock.Value = Convert.ToDateTime(stockP.fechaActualizacion);
 
                     //Cargar Operaciones Stock                    
                     StockProductoB.StockLogDGV(frmPro.dgvStock, frmPro.txtIDProd);

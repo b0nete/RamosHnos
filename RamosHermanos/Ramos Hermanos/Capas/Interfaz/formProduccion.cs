@@ -49,15 +49,14 @@ namespace RamosHermanos.Capas.Interfaz
         {
             produccion.fechaProduccion = Convert.ToDateTime(dtpFechaProduccion.Value);
             ProduccionB.InsertProduccion(produccion, txtIDProduccion);
-
             
             foreach (DataGridViewRow rowA in dgvProduccion.Rows)
             {
                 CargaItemProduccion(rowA);
                 itemProduccionB.InsertItemProduccion(itemProduccion);
+                CargaItemLogStock(rowA);
+                StockProductoB.ActualizarStock(logStock);
             }
-
-
         }
 
         //Entidades
@@ -71,5 +70,22 @@ namespace RamosHermanos.Capas.Interfaz
             itemProduccion.producto = Convert.ToInt32(row.Cells["colIDProducto"].Value);
             itemProduccion.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
         }
+
+        StockProductoEntity stockProducto = new StockProductoEntity();
+        
+
+        LogStockProductoEntity logStock = new LogStockProductoEntity();
+        public void CargaItemLogStock(DataGridViewRow row)
+        {
+            logStock.operacion = "P";
+            logStock.comprobante = Convert.ToInt32(txtIDProduccion.Text);
+            logStock.idProducto = Convert.ToInt32(row.Cells["colIDProducto"].Value);
+            logStock.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
+
+            //Buscamos el stockActual
+            StockProductoB.BuscarStock(logStock.idProducto);
+            logStock.stockActual = stockProducto.stockNuevo;
+        }
+
     }
 }

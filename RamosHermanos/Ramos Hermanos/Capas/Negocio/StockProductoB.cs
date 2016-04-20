@@ -32,17 +32,22 @@ namespace RamosHermanos.Capas.Negocio
                 return true;
         }
 
-        public static StockProductoEntity BuscarStock(StockProductoEntity stockP)
+        public static StockProductoEntity BuscarStock(int idProducto)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = "SELECT * FROM stockProducto WHERE idProducto = @idProducto";
+                StockProductoEntity stockP = new StockProductoEntity();
+
+                string query = @"SELECT SP.stockMinimo, SP.stockMaximo, MAX(SPL.stockActual) as stockActual, MAX(SPL.stockNuevo) as stockNuevo
+                                FROM stockProducto SP
+                                INNER JOIN stockProductoLog SPL ON SPL.idProducto = SP.idProducto
+                                WHERE SP.idProducto = @idProducto";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@idProducto", stockP.idProducto);
+                cmd.Parameters.AddWithValue("@idProducto", idProducto);
 
                 int resultado = cmd.ExecuteNonQuery();
 
@@ -58,7 +63,8 @@ namespace RamosHermanos.Capas.Negocio
                     stockP.stockMinimo = Convert.ToInt32(row["stockMinimo"]);
                     stockP.stockMaximo = Convert.ToInt32(row["stockMaximo"]);
                     stockP.stockActual = Convert.ToInt32(row["stockActual"]);
-                    stockP.fechaActualizacion = Convert.ToDateTime(row["fechaActualizacion"]);
+                    stockP.stockNuevo = Convert.ToInt32(row["stockNuevo"]);
+                    //stockP.fechaActualizacion = Convert.ToDateTime(row["fechaActualizacion"]);
 
                     MySQL.DisconnectDB();
                 }
@@ -66,6 +72,43 @@ namespace RamosHermanos.Capas.Negocio
                 return stockP;
             }
 
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void ActualizarStock(LogStockProductoEntity logStock)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"INSERT INTO stockProductoLog (operacion, comprobante, idProducto, cantidad, stockActual, stockNuevo)
+                                VALUES (@operacion, @comprobante, @idProducto, @cantidad, @stockActual, @stockNuevo)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@operacion", logStock.operacion);
+                cmd.Parameters.AddWithValue("@comprobante", logStock.comprobante);
+                cmd.Parameters.AddWithValue("@idProducto", logStock.idProducto);
+                cmd.Parameters.AddWithValue("@cantidad", logStock.cantidad);
+                cmd.Parameters.AddWithValue("@stockActual", logStock.stockActual);
+
+                if (logStock.operacion == "P")
+                {
+                    cmd.Parameters.AddWithValue("@stockNuevo", logStock.stockActual + logStock.cantidad);
+                }
+                else if (logStock.operacion == "V")
+                {
+                    cmd.Parameters.AddWithValue("@stockNuevo", logStock.stockActual - logStock.cantidad);
+                }                
+
+                cmd.ExecuteNonQuery();
+
+                MySQL.DisconnectDB();
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
