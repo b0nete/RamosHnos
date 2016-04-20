@@ -347,6 +347,26 @@ namespace RamosHermanos.Capas.Interfaz
             RubroB.CargarRubro(cbRubro);
         }
 
+        private void dtpfechaFactura_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtnewPrecio_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
         
     
           
