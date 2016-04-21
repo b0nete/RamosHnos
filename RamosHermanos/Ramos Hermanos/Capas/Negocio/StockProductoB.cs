@@ -49,7 +49,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 cmd.Parameters.AddWithValue("@idProducto", idProducto);
 
-                int resultado = cmd.ExecuteNonQuery();
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
                 if (resultado != 0)
                 {
@@ -71,7 +71,6 @@ namespace RamosHermanos.Capas.Negocio
 
                 return stockP;
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
@@ -94,11 +93,11 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@comprobante", logStock.comprobante);
                 cmd.Parameters.AddWithValue("@idProducto", logStock.idProducto);
                 cmd.Parameters.AddWithValue("@cantidad", logStock.cantidad);
-                cmd.Parameters.AddWithValue("@stockActual", logStock.stockActual);
+                cmd.Parameters.AddWithValue("@stockActual", logStock.stockNuevo);
 
                 if (logStock.operacion == "P")
                 {
-                    cmd.Parameters.AddWithValue("@stockNuevo", logStock.stockActual + logStock.cantidad);
+                    cmd.Parameters.AddWithValue("@stockNuevo", logStock.stockNuevo + logStock.cantidad);
                 }
                 else if (logStock.operacion == "V")
                 {
@@ -193,15 +192,26 @@ namespace RamosHermanos.Capas.Negocio
             try
             {
                 MySQL.ConnectDB();
-                string query = @"(SELECT 'VENTA' as operacion, FI.factura as A, F.fechaFactura as B, FI.cantidad as C
-                                FROM itemsfactura FI
-                                INNER JOIN Facturas F ON FI.factura = F.idFactura
-                                WHERE producto = @producto) 
+//                string query = @"(SELECT 'VENTA' as operacion, FI.factura as A, F.fechaFactura as B, FI.cantidad as C
+//                                FROM itemsfactura FI
+//                                INNER JOIN Facturas F ON FI.factura = F.idFactura
+//                                WHERE producto = @producto) 
+//                                UNION 
+//                                (SELECT 'PRODUCCION' as operacion, IP.produccion as A, P.fechaProduccion as B, IP.cantidad as C
+//                                FROM ItemsProduccion IP
+//                                INNER JOIN Produccion P ON IP.produccion = P.idProduccion
+//                                WHERE producto = @producto)";
+
+                string query = @"(SELECT 'VENTA' as operacion, SPL.comprobante as A, F.fechaFactura as B, SPL.cantidad as C, SPL.stockNuevo as D
+                                FROM stockProductoLog SPL                                
+                                INNER JOIN Facturas F ON SPL.comprobante = F.idFactura
+                                WHERE idProducto = @producto) 
                                 UNION 
-                                (SELECT 'PRODUCCION' as operacion, IP.produccion as A, P.fechaProduccion as B, IP.cantidad as C
-                                FROM ItemsProduccion IP
-                                INNER JOIN Produccion P ON IP.produccion = P.idProduccion
-                                WHERE producto = @producto)";
+                                (SELECT 'PRODUCCION' as operacion, SPL.comprobante as A, P.fechaProduccion as B, SPL.cantidad as C, SPL.stockNuevo as D
+                                FROM stockProductoLog SPL                                
+                                INNER JOIN Produccion P ON SPL.comprobante = P.idProduccion
+                                WHERE idProducto = @producto)";
+
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 

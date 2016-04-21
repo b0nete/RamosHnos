@@ -764,6 +764,8 @@
             // 
             // dgvStock
             // 
+            this.dgvStock.AllowUserToAddRows = false;
+            this.dgvStock.AllowUserToDeleteRows = false;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colOperacion,
@@ -773,6 +775,7 @@
             this.colStock});
             this.dgvStock.Location = new System.Drawing.Point(6, 19);
             this.dgvStock.Name = "dgvStock";
+            this.dgvStock.ReadOnly = true;
             this.dgvStock.Size = new System.Drawing.Size(709, 202);
             this.dgvStock.TabIndex = 0;
             // 
@@ -948,29 +951,35 @@
             this.colOperacion.DataPropertyName = "operacion";
             this.colOperacion.HeaderText = "Operación";
             this.colOperacion.Name = "colOperacion";
+            this.colOperacion.ReadOnly = true;
             // 
             // colComprobante
             // 
             this.colComprobante.DataPropertyName = "A";
             this.colComprobante.HeaderText = "Nº Comprobante";
             this.colComprobante.Name = "colComprobante";
+            this.colComprobante.ReadOnly = true;
             // 
             // colFechaComprobante
             // 
             this.colFechaComprobante.DataPropertyName = "B";
             this.colFechaComprobante.HeaderText = "Fecha Comprobante";
             this.colFechaComprobante.Name = "colFechaComprobante";
+            this.colFechaComprobante.ReadOnly = true;
             // 
             // colCantidad
             // 
             this.colCantidad.DataPropertyName = "C";
             this.colCantidad.HeaderText = "Cantidad";
             this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
             // 
             // colStock
             // 
+            this.colStock.DataPropertyName = "D";
             this.colStock.HeaderText = "Stock";
             this.colStock.Name = "colStock";
+            this.colStock.ReadOnly = true;
             // 
             // formProducto
             // 
