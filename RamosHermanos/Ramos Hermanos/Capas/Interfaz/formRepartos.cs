@@ -294,6 +294,9 @@ namespace RamosHermanos.Capas.Interfaz
                 else
                 {
                     InsertFactura("colSCarga");
+                    //Actualizar Stock
+                    CargaItemLogStock("colSCarga", itemFactura.producto);
+                    StockProductoB.ActualizarStock(logStock);
                 }
 
             }
@@ -670,6 +673,22 @@ namespace RamosHermanos.Capas.Interfaz
         private void dgvRepartos_CurrentCellChanged(object sender, EventArgs e)
         {
             
+        }
+
+        StockProductoEntity stockProducto = new StockProductoEntity();
+
+
+        LogStockProductoEntity logStock = new LogStockProductoEntity();
+        public void CargaItemLogStock(string nombreColumna, int producto)
+        {
+            logStock.operacion = "V";
+            logStock.comprobante = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value);
+            logStock.idProducto = producto;
+            logStock.cantidad = Convert.ToInt32(dgvRepartos.CurrentRow.Cells[nombreColumna].Value.ToString());
+
+            //Buscamos el stockActual
+            StockProductoB.BuscarStock(logStock.idProducto);
+            logStock.stockActual = stockProducto.stockNuevo;
         }
 
     }

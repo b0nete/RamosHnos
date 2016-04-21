@@ -358,6 +358,7 @@
     <Compile Include="Capas\Negocio\itemProduccionB.cs" />
     <Compile Include="Capas\Negocio\itemsPedidoB.cs" />
     <Compile Include="Capas\Negocio\itemsRepartoB.cs" />
+    <Compile Include="Capas\Negocio\LogStockProductoEntity.cs" />
     <Compile Include="Capas\Negocio\PedidoB.cs" />
     <Compile Include="Capas\Negocio\ProduccionB.cs" />
     <Compile Include="Capas\Negocio\RecorridoB.cs" />

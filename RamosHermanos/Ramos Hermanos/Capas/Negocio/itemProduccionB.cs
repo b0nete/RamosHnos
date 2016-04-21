@@ -84,7 +84,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@produccion", itemProduccion.produccion);
-                cmd.Parameters.AddWithValue("@producto", itemProduccion.produccion);
+                cmd.Parameters.AddWithValue("@producto", itemProduccion.producto);
                 cmd.Parameters.AddWithValue("@cantidad", itemProduccion.cantidad);
 
                 cmd.ExecuteScalar();

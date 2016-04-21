@@ -232,6 +232,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             listProductos frm = new listProductos();
             frm.Show();
+            frm.caseSwitch = 1;
         }
 
         private void regsitrarToolStripMenuItem_Click(object sender, EventArgs e)

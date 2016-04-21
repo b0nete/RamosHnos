@@ -712,6 +712,7 @@
             // dtpfechaStock
             // 
             this.dtpfechaStock.CustomFormat = "dd/MM/yyyy";
+            this.dtpfechaStock.Enabled = false;
             this.dtpfechaStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpfechaStock.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpfechaStock.Location = new System.Drawing.Point(151, 14);
@@ -735,7 +736,7 @@
             // txtStockMin
             // 
             this.txtStockMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtStockMin.Location = new System.Drawing.Point(151, 45);
+            this.txtStockMin.Location = new System.Drawing.Point(353, 14);
             this.txtStockMin.Name = "txtStockMin";
             this.txtStockMin.Size = new System.Drawing.Size(81, 20);
             this.txtStockMin.TabIndex = 124;
@@ -745,7 +746,7 @@
             this.label11.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label11.Location = new System.Drawing.Point(72, 48);
+            this.label11.Location = new System.Drawing.Point(274, 17);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(73, 13);
             this.label11.TabIndex = 123;
@@ -763,6 +764,8 @@
             // 
             // dgvStock
             // 
+            this.dgvStock.AllowUserToAddRows = false;
+            this.dgvStock.AllowUserToDeleteRows = false;
             this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colOperacion,
@@ -772,13 +775,14 @@
             this.colStock});
             this.dgvStock.Location = new System.Drawing.Point(6, 19);
             this.dgvStock.Name = "dgvStock";
+            this.dgvStock.ReadOnly = true;
             this.dgvStock.Size = new System.Drawing.Size(709, 202);
             this.dgvStock.TabIndex = 0;
             // 
             // txtStockMax
             // 
             this.txtStockMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtStockMax.Location = new System.Drawing.Point(353, 45);
+            this.txtStockMax.Location = new System.Drawing.Point(353, 40);
             this.txtStockMax.Name = "txtStockMax";
             this.txtStockMax.Size = new System.Drawing.Size(81, 20);
             this.txtStockMax.TabIndex = 120;
@@ -788,7 +792,7 @@
             this.label9.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(273, 48);
+            this.label9.Location = new System.Drawing.Point(273, 43);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 13);
             this.label9.TabIndex = 119;
@@ -796,8 +800,9 @@
             // 
             // txtStockA
             // 
+            this.txtStockA.Enabled = false;
             this.txtStockA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtStockA.Location = new System.Drawing.Point(353, 14);
+            this.txtStockA.Location = new System.Drawing.Point(151, 40);
             this.txtStockA.Name = "txtStockA";
             this.txtStockA.Size = new System.Drawing.Size(81, 20);
             this.txtStockA.TabIndex = 60;
@@ -807,7 +812,7 @@
             this.label14.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label14.Location = new System.Drawing.Point(279, 17);
+            this.label14.Location = new System.Drawing.Point(77, 43);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(68, 13);
             this.label14.TabIndex = 59;
@@ -946,28 +951,35 @@
             this.colOperacion.DataPropertyName = "operacion";
             this.colOperacion.HeaderText = "Operación";
             this.colOperacion.Name = "colOperacion";
+            this.colOperacion.ReadOnly = true;
             // 
             // colComprobante
             // 
+            this.colComprobante.DataPropertyName = "A";
             this.colComprobante.HeaderText = "Nº Comprobante";
             this.colComprobante.Name = "colComprobante";
+            this.colComprobante.ReadOnly = true;
             // 
             // colFechaComprobante
             // 
-            this.colFechaComprobante.DataPropertyName = "A";
+            this.colFechaComprobante.DataPropertyName = "B";
             this.colFechaComprobante.HeaderText = "Fecha Comprobante";
             this.colFechaComprobante.Name = "colFechaComprobante";
+            this.colFechaComprobante.ReadOnly = true;
             // 
             // colCantidad
             // 
-            this.colCantidad.DataPropertyName = "B";
+            this.colCantidad.DataPropertyName = "C";
             this.colCantidad.HeaderText = "Cantidad";
             this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
             // 
             // colStock
             // 
+            this.colStock.DataPropertyName = "D";
             this.colStock.HeaderText = "Stock";
             this.colStock.Name = "colStock";
+            this.colStock.ReadOnly = true;
             // 
             // formProducto
             // 

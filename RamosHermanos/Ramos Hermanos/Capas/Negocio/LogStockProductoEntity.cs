@@ -4,14 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RamosHermanos.Capas.Entidades
+namespace RamosHermanos.Capas.Negocio
 {
-    public class StockProductoEntity
+    class LogStockProductoEntity
     {
-        public int idStock { get; set; }
+        public int idStockProductoLog { get; set; }
+        public string operacion { get; set; }
+        public int comprobante { get; set; }
         public int idProducto { get; set; }
-        public int stockMinimo { get; set; }
-        public int stockMaximo { get; set; }
+        public int cantidad { get; set; }
         public int stockActual { get; set; }
         public int stockNuevo { get; set; }
         public DateTime fechaActualizacion { get; set; }

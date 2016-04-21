@@ -32,19 +32,24 @@ namespace RamosHermanos.Capas.Negocio
                 return true;
         }
 
-        public static StockProductoEntity BuscarStock(StockProductoEntity stockP)
+        public static StockProductoEntity BuscarStock(int idProducto)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = "SELECT * FROM stockProducto WHERE idProducto = @idProducto";
+                StockProductoEntity stockP = new StockProductoEntity();
+
+                string query = @"SELECT SP.stockMinimo, SP.stockMaximo, MAX(SPL.stockActual) as stockActual, MAX(SPL.stockNuevo) as stockNuevo
+                                FROM stockProducto SP
+                                INNER JOIN stockProductoLog SPL ON SPL.idProducto = SP.idProducto
+                                WHERE SP.idProducto = @idProducto";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@idProducto", stockP.idProducto);
+                cmd.Parameters.AddWithValue("@idProducto", idProducto);
 
-                int resultado = cmd.ExecuteNonQuery();
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
                 if (resultado != 0)
                 {
@@ -58,14 +63,51 @@ namespace RamosHermanos.Capas.Negocio
                     stockP.stockMinimo = Convert.ToInt32(row["stockMinimo"]);
                     stockP.stockMaximo = Convert.ToInt32(row["stockMaximo"]);
                     stockP.stockActual = Convert.ToInt32(row["stockActual"]);
-                    stockP.fechaActualizacion = Convert.ToDateTime(row["fechaActualizacion"]);
+                    stockP.stockNuevo = Convert.ToInt32(row["stockNuevo"]);
+                    //stockP.fechaActualizacion = Convert.ToDateTime(row["fechaActualizacion"]);
 
                     MySQL.DisconnectDB();
                 }
 
                 return stockP;
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
 
+        public static void ActualizarStock(LogStockProductoEntity logStock)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"INSERT INTO stockProductoLog (operacion, comprobante, idProducto, cantidad, stockActual, stockNuevo)
+                                VALUES (@operacion, @comprobante, @idProducto, @cantidad, @stockActual, @stockNuevo)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@operacion", logStock.operacion);
+                cmd.Parameters.AddWithValue("@comprobante", logStock.comprobante);
+                cmd.Parameters.AddWithValue("@idProducto", logStock.idProducto);
+                cmd.Parameters.AddWithValue("@cantidad", logStock.cantidad);
+                cmd.Parameters.AddWithValue("@stockActual", logStock.stockNuevo);
+
+                if (logStock.operacion == "P")
+                {
+                    cmd.Parameters.AddWithValue("@stockNuevo", logStock.stockNuevo + logStock.cantidad);
+                }
+                else if (logStock.operacion == "V")
+                {
+                    cmd.Parameters.AddWithValue("@stockNuevo", logStock.stockActual - logStock.cantidad);
+                }                
+
+                cmd.ExecuteNonQuery();
+
+                MySQL.DisconnectDB();
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);
@@ -150,15 +192,26 @@ namespace RamosHermanos.Capas.Negocio
             try
             {
                 MySQL.ConnectDB();
-                string query = @"(SELECT 'VENTA' as operacion, FI.factura as A, F.fechaFactura as B, FI.cantidad as C
-                                FROM itemsfactura FI
-                                INNER JOIN Facturas F ON FI.factura = F.idFactura
-                                WHERE producto = @producto) 
+//                string query = @"(SELECT 'VENTA' as operacion, FI.factura as A, F.fechaFactura as B, FI.cantidad as C
+//                                FROM itemsfactura FI
+//                                INNER JOIN Facturas F ON FI.factura = F.idFactura
+//                                WHERE producto = @producto) 
+//                                UNION 
+//                                (SELECT 'PRODUCCION' as operacion, IP.produccion as A, P.fechaProduccion as B, IP.cantidad as C
+//                                FROM ItemsProduccion IP
+//                                INNER JOIN Produccion P ON IP.produccion = P.idProduccion
+//                                WHERE producto = @producto)";
+
+                string query = @"(SELECT 'VENTA' as operacion, SPL.comprobante as A, F.fechaFactura as B, SPL.cantidad as C, SPL.stockNuevo as D
+                                FROM stockProductoLog SPL                                
+                                INNER JOIN Facturas F ON SPL.comprobante = F.idFactura
+                                WHERE idProducto = @producto) 
                                 UNION 
-                                (SELECT 'PRODUCCION' as operacion, IP.produccion as A, P.fechaProduccion as B, IP.cantidad as C
-                                FROM ItemsProduccion IP
-                                INNER JOIN Produccion P ON IP.produccion = P.idProduccion
-                                WHERE producto = @producto)";
+                                (SELECT 'PRODUCCION' as operacion, SPL.comprobante as A, P.fechaProduccion as B, SPL.cantidad as C, SPL.stockNuevo as D
+                                FROM stockProductoLog SPL                                
+                                INNER JOIN Produccion P ON SPL.comprobante = P.idProduccion
+                                WHERE idProducto = @producto)";
+
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
