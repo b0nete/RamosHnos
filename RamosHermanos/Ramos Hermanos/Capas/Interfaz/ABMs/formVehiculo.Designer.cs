@@ -240,6 +240,7 @@
             "Subaru",
             "Suzuki",
             "Toyota",
+            "Trafic",
             "Volkswagen",
             "Volvo"});
             this.cbMarca.Location = new System.Drawing.Point(90, 45);

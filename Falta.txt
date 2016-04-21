@@ -1,7 +1,7 @@
-Agregar Proveedores DB MATI
-Agregar Camionetas y repartidores DB MATI
+Agregar Proveedores DB SI
+Agregar Camionetas y repartidores DB SI
 Registrar Produccion (agregar producto) ZUR2
-Ver Insumos MATI
+Ver Insumos MATI - BETA
 21.	Consultar saldo proveedores. NO MATI
 23.	Generar listado de insumos faltantes. NO MATI
 23.	Generar listado de Producto faltantes. NO MATI
