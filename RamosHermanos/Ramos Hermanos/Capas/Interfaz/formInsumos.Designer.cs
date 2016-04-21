@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formInsumos));
             this.tabInformacion = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtInsumo = new System.Windows.Forms.TextBox();
@@ -69,10 +70,48 @@
             this.txtRubro = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tabMain = new System.Windows.Forms.TabControl();
-            this.label4 = new System.Windows.Forms.Label();
+            this.tabStock = new System.Windows.Forms.TabPage();
+            this.tabPrecio = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dtpfechaStock = new System.Windows.Forms.DateTimePicker();
+            this.button8 = new System.Windows.Forms.Button();
+            this.txtStockMin = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvStock = new System.Windows.Forms.DataGridView();
+            this.txtStockMax = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtStockA = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtnewPrecio = new System.Windows.Forms.MaskedTextBox();
+            this.button9 = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dgvPrecios = new System.Windows.Forms.DataGridView();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.colOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaActualizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button5 = new System.Windows.Forms.Button();
             this.tabInformacion.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabMain.SuspendLayout();
+            this.tabStock.SuspendLayout();
+            this.tabPrecio.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrecios)).BeginInit();
             this.SuspendLayout();
             // 
             // tabInformacion
@@ -85,17 +124,30 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(411, 372);
+            this.tabInformacion.Size = new System.Drawing.Size(476, 372);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.Click += new System.EventHandler(this.tabInformacion_Click);
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(3, 3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(470, 39);
+            this.label4.TabIndex = 114;
+            this.label4.Text = "Insumos";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button11
             // 
             this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button11.Location = new System.Drawing.Point(375, 339);
+            this.button11.Location = new System.Drawing.Point(440, 341);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(28, 28);
             this.button11.TabIndex = 113;
@@ -140,9 +192,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtRubro);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(6, 39);
+            this.groupBox1.Location = new System.Drawing.Point(8, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(395, 295);
+            this.groupBox1.Size = new System.Drawing.Size(460, 295);
             this.groupBox1.TabIndex = 111;
             this.groupBox1.TabStop = false;
             // 
@@ -151,7 +203,7 @@
             this.txtInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtInsumo.Location = new System.Drawing.Point(86, 68);
             this.txtInsumo.Name = "txtInsumo";
-            this.txtInsumo.Size = new System.Drawing.Size(261, 20);
+            this.txtInsumo.Size = new System.Drawing.Size(335, 20);
             this.txtInsumo.TabIndex = 126;
             // 
             // btnSearch
@@ -159,7 +211,7 @@
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSearch.Location = new System.Drawing.Point(350, 65);
+            this.btnSearch.Location = new System.Drawing.Point(425, 66);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 125;
@@ -197,7 +249,7 @@
             this.cbRubro.FormattingEnabled = true;
             this.cbRubro.Location = new System.Drawing.Point(87, 147);
             this.cbRubro.Name = "cbRubro";
-            this.cbRubro.Size = new System.Drawing.Size(261, 21);
+            this.cbRubro.Size = new System.Drawing.Size(335, 21);
             this.cbRubro.TabIndex = 122;
             this.cbRubro.DropDown += new System.EventHandler(this.cbRubro_DropDown);
             this.cbRubro.SelectedIndexChanged += new System.EventHandler(this.cbRubro_SelectedIndexChanged);
@@ -216,7 +268,7 @@
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(351, 115);
+            this.button4.Location = new System.Drawing.Point(426, 116);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 120;
@@ -241,7 +293,7 @@
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtCantidad.Location = new System.Drawing.Point(87, 263);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(117, 20);
+            this.txtCantidad.Size = new System.Drawing.Size(163, 20);
             this.txtCantidad.TabIndex = 118;
             this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
             // 
@@ -276,7 +328,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(221, 266);
+            this.label10.Location = new System.Drawing.Point(269, 265);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(11, 13);
             this.label10.TabIndex = 111;
@@ -286,9 +338,9 @@
             // 
             this.cbMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbMedida.FormattingEnabled = true;
-            this.cbMedida.Location = new System.Drawing.Point(276, 263);
+            this.cbMedida.Location = new System.Drawing.Point(323, 262);
             this.cbMedida.Name = "cbMedida";
-            this.cbMedida.Size = new System.Drawing.Size(71, 21);
+            this.cbMedida.Size = new System.Drawing.Size(98, 21);
             this.cbMedida.TabIndex = 110;
             // 
             // label3
@@ -296,7 +348,7 @@
             this.label3.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(228, 266);
+            this.label3.Location = new System.Drawing.Point(276, 265);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 109;
@@ -308,7 +360,7 @@
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(87, 94);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(260, 20);
+            this.dtpFecha.Size = new System.Drawing.Size(334, 20);
             this.dtpFecha.TabIndex = 105;
             // 
             // label22
@@ -326,7 +378,7 @@
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(351, 173);
+            this.button2.Location = new System.Drawing.Point(426, 174);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(28, 28);
             this.button2.TabIndex = 103;
@@ -340,7 +392,7 @@
             this.cbMarca.FormattingEnabled = true;
             this.cbMarca.Location = new System.Drawing.Point(87, 174);
             this.cbMarca.Name = "cbMarca";
-            this.cbMarca.Size = new System.Drawing.Size(261, 21);
+            this.cbMarca.Size = new System.Drawing.Size(335, 21);
             this.cbMarca.TabIndex = 102;
             this.cbMarca.DropDown += new System.EventHandler(this.cbMarca_DropDown);
             this.cbMarca.SelectedIndexChanged += new System.EventHandler(this.cbMarca_SelectedIndexChanged);
@@ -375,7 +427,7 @@
             this.txtidInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtidInsumo.Location = new System.Drawing.Point(86, 45);
             this.txtidInsumo.Name = "txtidInsumo";
-            this.txtidInsumo.Size = new System.Drawing.Size(261, 20);
+            this.txtidInsumo.Size = new System.Drawing.Size(335, 20);
             this.txtidInsumo.TabIndex = 96;
             // 
             // label17
@@ -395,7 +447,7 @@
             this.cbProv.FormattingEnabled = true;
             this.cbProv.Location = new System.Drawing.Point(87, 120);
             this.cbProv.Name = "cbProv";
-            this.cbProv.Size = new System.Drawing.Size(261, 21);
+            this.cbProv.Size = new System.Drawing.Size(335, 21);
             this.cbProv.TabIndex = 94;
             this.cbProv.DropDown += new System.EventHandler(this.cbProv_DropDown);
             this.cbProv.SelectedIndexChanged += new System.EventHandler(this.cbProv_SelectedIndexChanged);
@@ -429,7 +481,7 @@
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(351, 143);
+            this.button3.Location = new System.Drawing.Point(426, 144);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(28, 28);
             this.button3.TabIndex = 87;
@@ -514,7 +566,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(87, 204);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(261, 53);
+            this.txtDescripcion.Size = new System.Drawing.Size(335, 53);
             this.txtDescripcion.TabIndex = 29;
             // 
             // label2
@@ -543,7 +595,7 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(341, 339);
+            this.button1.Location = new System.Drawing.Point(406, 341);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 28);
             this.button1.TabIndex = 113;
@@ -553,31 +605,338 @@
             // tabMain
             // 
             this.tabMain.Controls.Add(this.tabInformacion);
+            this.tabMain.Controls.Add(this.tabStock);
+            this.tabMain.Controls.Add(this.tabPrecio);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.Location = new System.Drawing.Point(0, 0);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(419, 398);
+            this.tabMain.Size = new System.Drawing.Size(484, 398);
             this.tabMain.TabIndex = 0;
             // 
-            // label4
+            // tabStock
             // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(3, 3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(405, 39);
-            this.label4.TabIndex = 114;
-            this.label4.Text = "Insumos";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tabStock.Controls.Add(this.label16);
+            this.tabStock.Controls.Add(this.groupBox2);
+            this.tabStock.Location = new System.Drawing.Point(4, 22);
+            this.tabStock.Name = "tabStock";
+            this.tabStock.Padding = new System.Windows.Forms.Padding(3);
+            this.tabStock.Size = new System.Drawing.Size(476, 372);
+            this.tabStock.TabIndex = 1;
+            this.tabStock.Text = "Stock";
+            this.tabStock.UseVisualStyleBackColor = true;
+            // 
+            // tabPrecio
+            // 
+            this.tabPrecio.Controls.Add(this.groupBox4);
+            this.tabPrecio.Controls.Add(this.label18);
+            this.tabPrecio.Location = new System.Drawing.Point(4, 22);
+            this.tabPrecio.Name = "tabPrecio";
+            this.tabPrecio.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPrecio.Size = new System.Drawing.Size(476, 372);
+            this.tabPrecio.TabIndex = 2;
+            this.tabPrecio.Text = "Precio";
+            this.tabPrecio.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.button5);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.dtpfechaStock);
+            this.groupBox2.Controls.Add(this.button8);
+            this.groupBox2.Controls.Add(this.txtStockMin);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.groupBox3);
+            this.groupBox2.Controls.Add(this.txtStockMax);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.txtStockA);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.label31);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(6, 45);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(461, 319);
+            this.groupBox2.TabIndex = 52;
+            this.groupBox2.TabStop = false;
+            // 
+            // label13
+            // 
+            this.label13.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label13.Location = new System.Drawing.Point(10, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(103, 13);
+            this.label13.TabIndex = 127;
+            this.label13.Text = "Fecha Actualización";
+            // 
+            // dtpfechaStock
+            // 
+            this.dtpfechaStock.CustomFormat = "dd/MM/yyyy";
+            this.dtpfechaStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpfechaStock.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpfechaStock.Location = new System.Drawing.Point(119, 17);
+            this.dtpfechaStock.Name = "dtpfechaStock";
+            this.dtpfechaStock.Size = new System.Drawing.Size(81, 20);
+            this.dtpfechaStock.TabIndex = 126;
+            // 
+            // button8
+            // 
+            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.Location = new System.Drawing.Point(687, 40);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(28, 28);
+            this.button8.TabIndex = 125;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // txtStockMin
+            // 
+            this.txtStockMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtStockMin.Location = new System.Drawing.Point(119, 48);
+            this.txtStockMin.Name = "txtStockMin";
+            this.txtStockMin.Size = new System.Drawing.Size(81, 20);
+            this.txtStockMin.TabIndex = 124;
+            // 
+            // label11
+            // 
+            this.label11.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label11.Location = new System.Drawing.Point(40, 51);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(73, 13);
+            this.label11.TabIndex = 123;
+            this.label11.Text = "Stock Mínimo";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dgvStock);
+            this.groupBox3.Location = new System.Drawing.Point(0, 76);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(721, 245);
+            this.groupBox3.TabIndex = 122;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Movimientos";
+            // 
+            // dgvStock
+            // 
+            this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colOperacion,
+            this.colFechaActualizacion,
+            this.colCantidad,
+            this.colStock});
+            this.dgvStock.Location = new System.Drawing.Point(6, 19);
+            this.dgvStock.Name = "dgvStock";
+            this.dgvStock.Size = new System.Drawing.Size(447, 218);
+            this.dgvStock.TabIndex = 0;
+            // 
+            // txtStockMax
+            // 
+            this.txtStockMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtStockMax.Location = new System.Drawing.Point(298, 48);
+            this.txtStockMax.Name = "txtStockMax";
+            this.txtStockMax.Size = new System.Drawing.Size(81, 20);
+            this.txtStockMax.TabIndex = 120;
+            // 
+            // label6
+            // 
+            this.label6.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label6.Location = new System.Drawing.Point(218, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(74, 13);
+            this.label6.TabIndex = 119;
+            this.label6.Text = "Stock Máximo";
+            // 
+            // txtStockA
+            // 
+            this.txtStockA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtStockA.Location = new System.Drawing.Point(298, 17);
+            this.txtStockA.Name = "txtStockA";
+            this.txtStockA.Size = new System.Drawing.Size(81, 20);
+            this.txtStockA.TabIndex = 60;
+            // 
+            // label14
+            // 
+            this.label14.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label14.Location = new System.Drawing.Point(224, 20);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(68, 13);
+            this.label14.TabIndex = 59;
+            this.label14.Text = "Stock Actual";
+            // 
+            // label31
+            // 
+            this.label31.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label31.AutoSize = true;
+            this.label31.BackColor = System.Drawing.Color.Transparent;
+            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label31.ForeColor = System.Drawing.Color.Red;
+            this.label31.Location = new System.Drawing.Point(-11, 216);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(11, 13);
+            this.label31.TabIndex = 84;
+            this.label31.Text = "*";
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(3, 3);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(470, 39);
+            this.label16.TabIndex = 115;
+            this.label16.Text = "Stock";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label18.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(3, 3);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(470, 39);
+            this.label18.TabIndex = 115;
+            this.label18.Text = "Precio";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtnewPrecio);
+            this.groupBox4.Controls.Add(this.button9);
+            this.groupBox4.Controls.Add(this.groupBox5);
+            this.groupBox4.Controls.Add(this.label19);
+            this.groupBox4.Controls.Add(this.label23);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(6, 45);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(462, 298);
+            this.groupBox4.TabIndex = 116;
+            this.groupBox4.TabStop = false;
+            // 
+            // txtnewPrecio
+            // 
+            this.txtnewPrecio.Location = new System.Drawing.Point(87, 17);
+            this.txtnewPrecio.Name = "txtnewPrecio";
+            this.txtnewPrecio.Size = new System.Drawing.Size(191, 20);
+            this.txtnewPrecio.TabIndex = 124;
+            // 
+            // button9
+            // 
+            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.Location = new System.Drawing.Point(284, 12);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(28, 28);
+            this.button9.TabIndex = 123;
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.dgvPrecios);
+            this.groupBox5.Location = new System.Drawing.Point(0, 48);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(456, 250);
+            this.groupBox5.TabIndex = 122;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Precios Anteriores";
+            // 
+            // dgvPrecios
+            // 
+            this.dgvPrecios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPrecios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colPrecio,
+            this.colFecha});
+            this.dgvPrecios.Location = new System.Drawing.Point(6, 19);
+            this.dgvPrecios.Name = "dgvPrecios";
+            this.dgvPrecios.Size = new System.Drawing.Size(444, 225);
+            this.dgvPrecios.TabIndex = 0;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.HeaderText = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            // 
+            // colFecha
+            // 
+            this.colFecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colFecha.HeaderText = "Fecha Actualización";
+            this.colFecha.Name = "colFecha";
+            // 
+            // label19
+            // 
+            this.label19.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label19.Location = new System.Drawing.Point(9, 20);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(72, 13);
+            this.label19.TabIndex = 59;
+            this.label19.Text = "Nuevo Precio";
+            // 
+            // label23
+            // 
+            this.label23.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label23.ForeColor = System.Drawing.Color.Red;
+            this.label23.Location = new System.Drawing.Point(-11, 216);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(11, 13);
+            this.label23.TabIndex = 84;
+            this.label23.Text = "*";
+            // 
+            // colOperacion
+            // 
+            this.colOperacion.DataPropertyName = "operacion";
+            this.colOperacion.HeaderText = "Operación";
+            this.colOperacion.Name = "colOperacion";
+            // 
+            // colFechaActualizacion
+            // 
+            this.colFechaActualizacion.DataPropertyName = "A";
+            this.colFechaActualizacion.HeaderText = "Fecha Actualizacion";
+            this.colFechaActualizacion.Name = "colFechaActualizacion";
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.DataPropertyName = "B";
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            // 
+            // colStock
+            // 
+            this.colStock.HeaderText = "Stock";
+            this.colStock.Name = "colStock";
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(427, 48);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(28, 28);
+            this.button5.TabIndex = 128;
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // formInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 398);
+            this.ClientSize = new System.Drawing.Size(484, 398);
             this.Controls.Add(this.tabMain);
             this.MaximizeBox = false;
             this.Name = "formInsumos";
@@ -587,6 +946,16 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabMain.ResumeLayout(false);
+            this.tabStock.ResumeLayout(false);
+            this.tabPrecio.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPrecios)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -634,6 +1003,37 @@
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.TabControl tabMain;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage tabStock;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label13;
+        public System.Windows.Forms.DateTimePicker dtpfechaStock;
+        private System.Windows.Forms.Button button8;
+        public System.Windows.Forms.TextBox txtStockMin;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.GroupBox groupBox3;
+        public System.Windows.Forms.DataGridView dgvStock;
+        public System.Windows.Forms.TextBox txtStockMax;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox txtStockA;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TabPage tabPrecio;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOperacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaActualizacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.MaskedTextBox txtnewPrecio;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.GroupBox groupBox5;
+        public System.Windows.Forms.DataGridView dgvPrecios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Button button5;
 
     }
 }
