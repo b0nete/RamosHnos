@@ -203,14 +203,16 @@ namespace RamosHermanos.Capas.Negocio
 //                                WHERE producto = @producto)";
 
                 string query = @"(SELECT 'VENTA' as operacion, SPL.comprobante as A, F.fechaFactura as B, SPL.cantidad as C, SPL.stockNuevo as D
-                                FROM stockProductoLog SPL                                
-                                INNER JOIN Facturas F ON SPL.comprobante = F.idFactura
-                                WHERE idProducto = @producto) 
+                                FROM stockProductoLog SPL
+                                INNER JOIN Facturas F ON F.idFactura = SPL.comprobante
+                                INNER JOIN itemsFactura IIF ON IIF.factura = F.idFactura
+                                WHERE SPL.idProducto = @producto and operacion = 'V') 
                                 UNION 
-                                (SELECT 'PRODUCCION' as operacion, SPL.comprobante as A, P.fechaProduccion as B, SPL.cantidad as C, SPL.stockNuevo as D
-                                FROM stockProductoLog SPL                                
-                                INNER JOIN Produccion P ON SPL.comprobante = P.idProduccion
-                                WHERE idProducto = @producto)";
+                                (SELECT 'PRODUCCION' as operacion, SPL.comprobante as A, P.fechaProduccion as B, SPL.cantidad as C, SPL.stockNuevo as D 
+                                FROM stockProductoLog SPL
+                                INNER JOIN Produccion P ON P.idProduccion = SPL.comprobante
+                                INNER JOIN itemsProduccion IIP ON IIP.produccion = P.idProduccion
+                                WHERE SPL.idProducto = @producto and operacion = 'P')";
 
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
