@@ -91,6 +91,7 @@
     <Compile Include="Capas\Entidades\RubroEntity.cs" />
     <Compile Include="Capas\Entidades\SaldoEntity.cs" />
     <Compile Include="Capas\Entidades\SaldoEnvasesEntity.cs" />
+    <Compile Include="Capas\Entidades\stockInsumoEntity.cs" />
     <Compile Include="Capas\Entidades\StockProductoEntity.cs" />
     <Compile Include="Capas\Entidades\TelefonoEntity.cs" />
     <Compile Include="Capas\Entidades\tipoClienteEntity.cs" />
@@ -354,6 +355,7 @@
     <Compile Include="Capas\Negocio\ClienteB.cs" />
     <Compile Include="Capas\Negocio\CalleB.cs" />
     <Compile Include="Capas\Negocio\ComprasB.cs" />
+    <Compile Include="Capas\Negocio\LogStockInsumoEntity.cs" />
     <Compile Include="Capas\Negocio\itemCompraB.cs" />
     <Compile Include="Capas\Negocio\itemProduccionB.cs" />
     <Compile Include="Capas\Negocio\itemsPedidoB.cs" />
@@ -383,6 +385,7 @@
     <Compile Include="Capas\Negocio\RubroB.cs" />
     <Compile Include="Capas\Negocio\SaldoB.cs" />
     <Compile Include="Capas\Negocio\SaldoEnvasesB.cs" />
+    <Compile Include="Capas\Negocio\StockInsumoB.cs" />
     <Compile Include="Capas\Negocio\StockProductoB.cs" />
     <Compile Include="Capas\Negocio\TelefonoB.cs" />
     <Compile Include="Capas\Negocio\tipoClienteB.cs" />

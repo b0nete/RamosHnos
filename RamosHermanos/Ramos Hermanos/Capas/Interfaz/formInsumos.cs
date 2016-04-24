@@ -24,6 +24,7 @@ namespace RamosHermanos.Capas.Interfaz
         InsumoEntity insumo = new InsumoEntity();
         public void cargarInsumo()
         {
+           
           insumo.estado = cbEstado.Checked;
           insumo.descripcion= txtDescripcion.Text;
           insumo.fecha= dtpFecha.Value;
@@ -366,8 +367,21 @@ namespace RamosHermanos.Capas.Interfaz
         {
 
         }
-
         
+        StockInsumoEntity stock = new StockInsumoEntity();
+        private void CargarStock()
+        {
+            stock.idInsumo = Convert.ToInt32(txtidInsumo.Text);
+            stock.stockMinimo = Convert.ToInt32(txtStockMin.Text);
+            stock.stockMaximo = Convert.ToInt32(txtStockMax.Text);
+            stock.fechaActualizacion = Convert.ToDateTime(dtpfechaStock.Value);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            CargarStock();
+            StockInsumoB.InsertStock(stock);
+        }
     
           
     }

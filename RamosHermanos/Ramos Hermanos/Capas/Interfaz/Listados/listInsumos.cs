@@ -89,6 +89,8 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     frmI.cbProv.SelectedValue = insumo.proveedor;
                     frmI.cbRubro.SelectedValue = insumo.rubro;
 
+                    StockInsumoB.cargardgvStock(frmI.dgvStock, frmI.txtidInsumo);
+
                     //frmPro.cbTipoProducto.SelectedValue = producto.tipoProducto;
                     //frmI.txtInsumo.Text= Convert.ToString(insumo.insumo);
                     //frmPro.cbMarca.SelectedValue = producto.marca;
