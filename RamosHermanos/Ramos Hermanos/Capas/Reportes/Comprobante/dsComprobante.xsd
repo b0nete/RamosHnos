@@ -12,16 +12,12 @@
   <xs:element name="dsComprobante" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsComprobante" msprop:Generator_UserDSName="dsComprobante">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="dtFactura" msprop:Generator_TableClassName="dtFacturaDataTable" msprop:Generator_TableVarName="tabledtFactura" msprop:Generator_TablePropName="dtFactura" msprop:Generator_RowDeletingName="dtFacturaRowDeleting" msprop:Generator_RowChangingName="dtFacturaRowChanging" msprop:Generator_RowEvHandlerName="dtFacturaRowChangeEventHandler" msprop:Generator_RowDeletedName="dtFacturaRowDeleted" msprop:Generator_UserTableName="dtFactura" msprop:Generator_RowChangedName="dtFacturaRowChanged" msprop:Generator_RowEvArgName="dtFacturaRowChangeEvent" msprop:Generator_RowClassName="dtFacturaRow">
           <xs:complexType>
-            <xs:sequence>
-              <xs:element name="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnDataColumn1" msprop:Generator_ColumnPropNameInRow="DataColumn1" msprop:Generator_ColumnPropNameInTable="DataColumn1Column" msprop:Generator_UserColumnName="DataColumn1" type="xs:string" minOccurs="0" />
-              <xs:element name="DataColumn2" msprop:Generator_ColumnVarNameInTable="columnDataColumn2" msprop:Generator_ColumnPropNameInRow="DataColumn2" msprop:Generator_ColumnPropNameInTable="DataColumn2Column" msprop:Generator_UserColumnName="DataColumn2" type="xs:string" minOccurs="0" />
-              <xs:element name="DataColumn3" msprop:Generator_ColumnVarNameInTable="columnDataColumn3" msprop:Generator_ColumnPropNameInRow="DataColumn3" msprop:Generator_ColumnPropNameInTable="DataColumn3Column" msprop:Generator_UserColumnName="DataColumn3" type="xs:string" minOccurs="0" />
-              <xs:element name="DataColumn4" msprop:Generator_ColumnVarNameInTable="columnDataColumn4" msprop:Generator_ColumnPropNameInRow="DataColumn4" msprop:Generator_ColumnPropNameInTable="DataColumn4Column" msprop:Generator_UserColumnName="DataColumn4" type="xs:string" minOccurs="0" />
-              <xs:element name="DataColumn5" msprop:Generator_ColumnVarNameInTable="columnDataColumn5" msprop:Generator_ColumnPropNameInRow="DataColumn5" msprop:Generator_ColumnPropNameInTable="DataColumn5Column" msprop:Generator_UserColumnName="DataColumn5" type="xs:string" minOccurs="0" />
-              <xs:element name="DataColumn6" msprop:Generator_ColumnVarNameInTable="columnDataColumn6" msprop:Generator_ColumnPropNameInRow="DataColumn6" msprop:Generator_ColumnPropNameInTable="DataColumn6Column" msprop:Generator_UserColumnName="DataColumn6" type="xs:string" minOccurs="0" />
-            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dtItemsFactura" msprop:Generator_TableClassName="dtItemsFacturaDataTable" msprop:Generator_TableVarName="tabledtItemsFactura" msprop:Generator_TablePropName="dtItemsFactura" msprop:Generator_RowDeletingName="dtItemsFacturaRowDeleting" msprop:Generator_RowChangingName="dtItemsFacturaRowChanging" msprop:Generator_RowEvHandlerName="dtItemsFacturaRowChangeEventHandler" msprop:Generator_RowDeletedName="dtItemsFacturaRowDeleted" msprop:Generator_UserTableName="dtItemsFactura" msprop:Generator_RowChangedName="dtItemsFacturaRowChanged" msprop:Generator_RowEvArgName="dtItemsFacturaRowChangeEvent" msprop:Generator_RowClassName="dtItemsFacturaRow">
+          <xs:complexType>
           </xs:complexType>
         </xs:element>
       </xs:choice>

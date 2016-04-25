@@ -339,6 +339,12 @@
     <Compile Include="Capas\Interfaz\Listados\listProveedores.Designer.cs">
       <DependentUpon>listProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaz\Listados\listVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\Listados\listVentas.Designer.cs">
+      <DependentUpon>listVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\PruebaReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -399,6 +405,10 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>crComprobante.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Capas\Reportes\Comprobante\dsComprobante.cs">
+      <DependentUpon>dsComprobante.xsd</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Capas\Reportes\Comprobante\dsComprobante.Designer.cs">
@@ -552,6 +562,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\Listados\listProveedores.resx">
       <DependentUpon>listProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\Listados\listVentas.resx">
+      <DependentUpon>listVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\PruebaReporte.resx">
       <DependentUpon>PruebaReporte.cs</DependentUpon>

@@ -42,6 +42,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formProduccion_Load(object sender, EventArgs e)
         {
+            dtpFechaProduccion.Value = DateTime.Today;
             dtpFechaProduccion.MaxDate = DateTime.Today;
         }
 
@@ -72,7 +73,7 @@ namespace RamosHermanos.Capas.Interfaz
             itemProduccion.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
         }
 
-        StockProductoEntity stockP = new StockProductoEntity();
+
         
 
         LogStockProductoEntity logStock = new LogStockProductoEntity();
@@ -84,9 +85,8 @@ namespace RamosHermanos.Capas.Interfaz
             logStock.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
 
             //Buscamos el stockActual
-            StockProductoB.BuscarStock(logStock.idProducto);
-            MessageBox.Show(Convert.ToString(stockP.stockNuevo));
-            logStock.stockActual = stockP.stockNuevo;
+            StockProductoEntity stockP = StockProductoB.BuscarStock(logStock.idProducto);
+            logStock.stockNuevo = stockP.stockNuevo;
             
 
         }

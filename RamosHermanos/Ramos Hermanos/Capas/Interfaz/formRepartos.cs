@@ -7,9 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CrystalDecisions.CrystalReports.Engine;
 using RamosHermanos.Capas.Interfaz.Contratos;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Reportes;
+using RamosHermanos.Capas.Reportes.Recorridos;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -675,9 +678,6 @@ namespace RamosHermanos.Capas.Interfaz
             
         }
 
-        StockProductoEntity stockProducto = new StockProductoEntity();
-
-
         LogStockProductoEntity logStock = new LogStockProductoEntity();
         public void CargaItemLogStock(string nombreColumna, int producto)
         {
@@ -687,8 +687,13 @@ namespace RamosHermanos.Capas.Interfaz
             logStock.cantidad = Convert.ToInt32(dgvRepartos.CurrentRow.Cells[nombreColumna].Value.ToString());
 
             //Buscamos el stockActual
-            StockProductoB.BuscarStock(logStock.idProducto);
-            logStock.stockActual = stockProducto.stockNuevo;
+            StockProductoEntity stockProducto = StockProductoB.BuscarStock(logStock.idProducto);
+            logStock.stockNuevo = stockProducto.stockNuevo;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

@@ -40,10 +40,10 @@ namespace RamosHermanos.Capas.Negocio
 
                 StockProductoEntity stockP = new StockProductoEntity();
 
-                string query = @"SELECT SP.stockMinimo, SP.stockMaximo, MAX(SPL.stockActual) as stockActual, MAX(SPL.stockNuevo) as stockNuevo
+                string query = @"SELECT SP.stockMinimo, SP.stockMaximo, SPL.stockActual as stockActual, SPL.stockNuevo as stockNuevo
                                 FROM stockProducto SP
                                 INNER JOIN stockProductoLog SPL ON SPL.idProducto = SP.idProducto
-                                WHERE SP.idProducto = @idProducto";
+                                WHERE SP.idProducto = @idProducto and idStockProductoLog = (SELECT MAX(idStockProductoLog) FROM stockProductoLog)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -101,7 +101,7 @@ namespace RamosHermanos.Capas.Negocio
                 }
                 else if (logStock.operacion == "V")
                 {
-                    cmd.Parameters.AddWithValue("@stockNuevo", logStock.stockActual - logStock.cantidad);
+                    cmd.Parameters.AddWithValue("@stockNuevo", logStock.stockNuevo - logStock.cantidad);
                 }                
 
                 cmd.ExecuteNonQuery();

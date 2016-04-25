@@ -36,11 +36,11 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvProduccion = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtpFechaProduccion = new System.Windows.Forms.DateTimePicker();
             this.colIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpFechaProduccion = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduccion)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +64,7 @@
             // 
             // txtIDProduccion
             // 
+            this.txtIDProduccion.Enabled = false;
             this.txtIDProduccion.Location = new System.Drawing.Point(143, 19);
             this.txtIDProduccion.Name = "txtIDProduccion";
             this.txtIDProduccion.Size = new System.Drawing.Size(100, 20);
@@ -127,24 +128,6 @@
             this.dgvProduccion.Size = new System.Drawing.Size(748, 258);
             this.dgvProduccion.TabIndex = 2;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 56);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Fecha de Producción";
-            // 
-            // dtpFechaProduccion
-            // 
-            this.dtpFechaProduccion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaProduccion.Location = new System.Drawing.Point(143, 50);
-            this.dtpFechaProduccion.Name = "dtpFechaProduccion";
-            this.dtpFechaProduccion.Size = new System.Drawing.Size(98, 20);
-            this.dtpFechaProduccion.TabIndex = 0;
-            this.dtpFechaProduccion.Value = new System.DateTime(2016, 3, 17, 0, 0, 0, 0);
-            // 
             // colIDProducto
             // 
             this.colIDProducto.HeaderText = "Nº Producto";
@@ -161,6 +144,24 @@
             // 
             this.colCantidad.HeaderText = "Cantidad";
             this.colCantidad.Name = "colCantidad";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(28, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Fecha de Producción";
+            // 
+            // dtpFechaProduccion
+            // 
+            this.dtpFechaProduccion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaProduccion.Location = new System.Drawing.Point(143, 50);
+            this.dtpFechaProduccion.Name = "dtpFechaProduccion";
+            this.dtpFechaProduccion.Size = new System.Drawing.Size(98, 20);
+            this.dtpFechaProduccion.TabIndex = 0;
+            this.dtpFechaProduccion.Value = new System.DateTime(2016, 4, 25, 0, 0, 0, 0);
             // 
             // formProduccion
             // 
