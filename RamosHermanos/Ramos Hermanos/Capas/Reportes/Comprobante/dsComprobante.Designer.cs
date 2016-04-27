@@ -24,9 +24,9 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class dsComprobante : global::System.Data.DataSet {
         
-        private dtFacturaDataTable tabledtFactura;
+        private itemsFacturaDataTable tableitemsFactura;
         
-        private dtItemsFacturaDataTable tabledtItemsFactura;
+        private facturaDataTable tablefactura;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -56,11 +56,11 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["dtFactura"] != null)) {
-                    base.Tables.Add(new dtFacturaDataTable(ds.Tables["dtFactura"]));
+                if ((ds.Tables["itemsFactura"] != null)) {
+                    base.Tables.Add(new itemsFacturaDataTable(ds.Tables["itemsFactura"]));
                 }
-                if ((ds.Tables["dtItemsFactura"] != null)) {
-                    base.Tables.Add(new dtItemsFacturaDataTable(ds.Tables["dtItemsFactura"]));
+                if ((ds.Tables["factura"] != null)) {
+                    base.Tables.Add(new facturaDataTable(ds.Tables["factura"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -84,9 +84,9 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public dtFacturaDataTable dtFactura {
+        public itemsFacturaDataTable itemsFactura {
             get {
-                return this.tabledtFactura;
+                return this.tableitemsFactura;
             }
         }
         
@@ -94,9 +94,9 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public dtItemsFacturaDataTable dtItemsFactura {
+        public facturaDataTable factura {
             get {
-                return this.tabledtItemsFactura;
+                return this.tablefactura;
             }
         }
         
@@ -167,11 +167,11 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["dtFactura"] != null)) {
-                    base.Tables.Add(new dtFacturaDataTable(ds.Tables["dtFactura"]));
+                if ((ds.Tables["itemsFactura"] != null)) {
+                    base.Tables.Add(new itemsFacturaDataTable(ds.Tables["itemsFactura"]));
                 }
-                if ((ds.Tables["dtItemsFactura"] != null)) {
-                    base.Tables.Add(new dtItemsFacturaDataTable(ds.Tables["dtItemsFactura"]));
+                if ((ds.Tables["factura"] != null)) {
+                    base.Tables.Add(new facturaDataTable(ds.Tables["factura"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -206,16 +206,16 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tabledtFactura = ((dtFacturaDataTable)(base.Tables["dtFactura"]));
+            this.tableitemsFactura = ((itemsFacturaDataTable)(base.Tables["itemsFactura"]));
             if ((initTable == true)) {
-                if ((this.tabledtFactura != null)) {
-                    this.tabledtFactura.InitVars();
+                if ((this.tableitemsFactura != null)) {
+                    this.tableitemsFactura.InitVars();
                 }
             }
-            this.tabledtItemsFactura = ((dtItemsFacturaDataTable)(base.Tables["dtItemsFactura"]));
+            this.tablefactura = ((facturaDataTable)(base.Tables["factura"]));
             if ((initTable == true)) {
-                if ((this.tabledtItemsFactura != null)) {
-                    this.tabledtItemsFactura.InitVars();
+                if ((this.tablefactura != null)) {
+                    this.tablefactura.InitVars();
                 }
             }
         }
@@ -228,21 +228,21 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             this.Namespace = "http://tempuri.org/dsComprobante.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tabledtFactura = new dtFacturaDataTable();
-            base.Tables.Add(this.tabledtFactura);
-            this.tabledtItemsFactura = new dtItemsFacturaDataTable();
-            base.Tables.Add(this.tabledtItemsFactura);
+            this.tableitemsFactura = new itemsFacturaDataTable();
+            base.Tables.Add(this.tableitemsFactura);
+            this.tablefactura = new facturaDataTable();
+            base.Tables.Add(this.tablefactura);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializedtFactura() {
+        private bool ShouldSerializeitemsFactura() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializedtItemsFactura() {
+        private bool ShouldSerializefactura() {
             return false;
         }
         
@@ -302,22 +302,30 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void dtFacturaRowChangeEventHandler(object sender, dtFacturaRowChangeEvent e);
+        public delegate void itemsFacturaRowChangeEventHandler(object sender, itemsFacturaRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void dtItemsFacturaRowChangeEventHandler(object sender, dtItemsFacturaRowChangeEvent e);
+        public delegate void facturaRowChangeEventHandler(object sender, facturaRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class dtFacturaDataTable : global::System.Data.TypedTableBase<dtFacturaRow> {
+        public partial class itemsFacturaDataTable : global::System.Data.TypedTableBase<itemsFacturaRow> {
+            
+            private global::System.Data.DataColumn columncantidad;
+            
+            private global::System.Data.DataColumn columnproducto;
+            
+            private global::System.Data.DataColumn columnprecioUnitario;
+            
+            private global::System.Data.DataColumn columnsubTotal;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtFacturaDataTable() {
-                this.TableName = "dtFactura";
+            public itemsFacturaDataTable() {
+                this.TableName = "itemsFactura";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -325,7 +333,7 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal dtFacturaDataTable(global::System.Data.DataTable table) {
+            internal itemsFacturaDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -342,9 +350,41 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected dtFacturaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected itemsFacturaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cantidadColumn {
+                get {
+                    return this.columncantidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn productoColumn {
+                get {
+                    return this.columnproducto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn precioUnitarioColumn {
+                get {
+                    return this.columnprecioUnitario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn subTotalColumn {
+                get {
+                    return this.columnsubTotal;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -358,44 +398,48 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtFacturaRow this[int index] {
+            public itemsFacturaRow this[int index] {
                 get {
-                    return ((dtFacturaRow)(this.Rows[index]));
+                    return ((itemsFacturaRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event dtFacturaRowChangeEventHandler dtFacturaRowChanging;
+            public event itemsFacturaRowChangeEventHandler itemsFacturaRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event dtFacturaRowChangeEventHandler dtFacturaRowChanged;
+            public event itemsFacturaRowChangeEventHandler itemsFacturaRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event dtFacturaRowChangeEventHandler dtFacturaRowDeleting;
+            public event itemsFacturaRowChangeEventHandler itemsFacturaRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event dtFacturaRowChangeEventHandler dtFacturaRowDeleted;
+            public event itemsFacturaRowChangeEventHandler itemsFacturaRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AdddtFacturaRow(dtFacturaRow row) {
+            public void AdditemsFacturaRow(itemsFacturaRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtFacturaRow AdddtFacturaRow() {
-                dtFacturaRow rowdtFacturaRow = ((dtFacturaRow)(this.NewRow()));
-                object[] columnValuesArray = new object[0];
-                rowdtFacturaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowdtFacturaRow);
-                return rowdtFacturaRow;
+            public itemsFacturaRow AdditemsFacturaRow(string cantidad, string producto, string precioUnitario, string subTotal) {
+                itemsFacturaRow rowitemsFacturaRow = ((itemsFacturaRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        cantidad,
+                        producto,
+                        precioUnitario,
+                        subTotal};
+                rowitemsFacturaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowitemsFacturaRow);
+                return rowitemsFacturaRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                dtFacturaDataTable cln = ((dtFacturaDataTable)(base.Clone()));
+                itemsFacturaDataTable cln = ((itemsFacturaDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -403,43 +447,55 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new dtFacturaDataTable();
+                return new itemsFacturaDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columncantidad = base.Columns["cantidad"];
+                this.columnproducto = base.Columns["producto"];
+                this.columnprecioUnitario = base.Columns["precioUnitario"];
+                this.columnsubTotal = base.Columns["subTotal"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columncantidad = new global::System.Data.DataColumn("cantidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncantidad);
+                this.columnproducto = new global::System.Data.DataColumn("producto", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnproducto);
+                this.columnprecioUnitario = new global::System.Data.DataColumn("precioUnitario", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnprecioUnitario);
+                this.columnsubTotal = new global::System.Data.DataColumn("subTotal", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsubTotal);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtFacturaRow NewdtFacturaRow() {
-                return ((dtFacturaRow)(this.NewRow()));
+            public itemsFacturaRow NewitemsFacturaRow() {
+                return ((itemsFacturaRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new dtFacturaRow(builder);
+                return new itemsFacturaRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(dtFacturaRow);
+                return typeof(itemsFacturaRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.dtFacturaRowChanged != null)) {
-                    this.dtFacturaRowChanged(this, new dtFacturaRowChangeEvent(((dtFacturaRow)(e.Row)), e.Action));
+                if ((this.itemsFacturaRowChanged != null)) {
+                    this.itemsFacturaRowChanged(this, new itemsFacturaRowChangeEvent(((itemsFacturaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -447,8 +503,8 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.dtFacturaRowChanging != null)) {
-                    this.dtFacturaRowChanging(this, new dtFacturaRowChangeEvent(((dtFacturaRow)(e.Row)), e.Action));
+                if ((this.itemsFacturaRowChanging != null)) {
+                    this.itemsFacturaRowChanging(this, new itemsFacturaRowChangeEvent(((itemsFacturaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -456,8 +512,8 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.dtFacturaRowDeleted != null)) {
-                    this.dtFacturaRowDeleted(this, new dtFacturaRowChangeEvent(((dtFacturaRow)(e.Row)), e.Action));
+                if ((this.itemsFacturaRowDeleted != null)) {
+                    this.itemsFacturaRowDeleted(this, new itemsFacturaRowChangeEvent(((itemsFacturaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -465,14 +521,14 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.dtFacturaRowDeleting != null)) {
-                    this.dtFacturaRowDeleting(this, new dtFacturaRowChangeEvent(((dtFacturaRow)(e.Row)), e.Action));
+                if ((this.itemsFacturaRowDeleting != null)) {
+                    this.itemsFacturaRowDeleting(this, new itemsFacturaRowChangeEvent(((itemsFacturaRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovedtFacturaRow(dtFacturaRow row) {
+            public void RemoveitemsFacturaRow(itemsFacturaRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -499,7 +555,7 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "dtFacturaDataTable";
+                attribute2.FixedValue = "itemsFacturaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -545,12 +601,12 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class dtItemsFacturaDataTable : global::System.Data.TypedTableBase<dtItemsFacturaRow> {
+        public partial class facturaDataTable : global::System.Data.TypedTableBase<facturaRow> {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtItemsFacturaDataTable() {
-                this.TableName = "dtItemsFactura";
+            public facturaDataTable() {
+                this.TableName = "factura";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -558,7 +614,7 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal dtItemsFacturaDataTable(global::System.Data.DataTable table) {
+            internal facturaDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -575,7 +631,7 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected dtItemsFacturaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected facturaDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -591,44 +647,44 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtItemsFacturaRow this[int index] {
+            public facturaRow this[int index] {
                 get {
-                    return ((dtItemsFacturaRow)(this.Rows[index]));
+                    return ((facturaRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event dtItemsFacturaRowChangeEventHandler dtItemsFacturaRowChanging;
+            public event facturaRowChangeEventHandler facturaRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event dtItemsFacturaRowChangeEventHandler dtItemsFacturaRowChanged;
+            public event facturaRowChangeEventHandler facturaRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event dtItemsFacturaRowChangeEventHandler dtItemsFacturaRowDeleting;
+            public event facturaRowChangeEventHandler facturaRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event dtItemsFacturaRowChangeEventHandler dtItemsFacturaRowDeleted;
+            public event facturaRowChangeEventHandler facturaRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AdddtItemsFacturaRow(dtItemsFacturaRow row) {
+            public void AddfacturaRow(facturaRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtItemsFacturaRow AdddtItemsFacturaRow() {
-                dtItemsFacturaRow rowdtItemsFacturaRow = ((dtItemsFacturaRow)(this.NewRow()));
+            public facturaRow AddfacturaRow() {
+                facturaRow rowfacturaRow = ((facturaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[0];
-                rowdtItemsFacturaRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowdtItemsFacturaRow);
-                return rowdtItemsFacturaRow;
+                rowfacturaRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowfacturaRow);
+                return rowfacturaRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                dtItemsFacturaDataTable cln = ((dtItemsFacturaDataTable)(base.Clone()));
+                facturaDataTable cln = ((facturaDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -636,7 +692,7 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new dtItemsFacturaDataTable();
+                return new facturaDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -651,28 +707,28 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtItemsFacturaRow NewdtItemsFacturaRow() {
-                return ((dtItemsFacturaRow)(this.NewRow()));
+            public facturaRow NewfacturaRow() {
+                return ((facturaRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new dtItemsFacturaRow(builder);
+                return new facturaRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(dtItemsFacturaRow);
+                return typeof(facturaRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.dtItemsFacturaRowChanged != null)) {
-                    this.dtItemsFacturaRowChanged(this, new dtItemsFacturaRowChangeEvent(((dtItemsFacturaRow)(e.Row)), e.Action));
+                if ((this.facturaRowChanged != null)) {
+                    this.facturaRowChanged(this, new facturaRowChangeEvent(((facturaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -680,8 +736,8 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.dtItemsFacturaRowChanging != null)) {
-                    this.dtItemsFacturaRowChanging(this, new dtItemsFacturaRowChangeEvent(((dtItemsFacturaRow)(e.Row)), e.Action));
+                if ((this.facturaRowChanging != null)) {
+                    this.facturaRowChanging(this, new facturaRowChangeEvent(((facturaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -689,8 +745,8 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.dtItemsFacturaRowDeleted != null)) {
-                    this.dtItemsFacturaRowDeleted(this, new dtItemsFacturaRowChangeEvent(((dtItemsFacturaRow)(e.Row)), e.Action));
+                if ((this.facturaRowDeleted != null)) {
+                    this.facturaRowDeleted(this, new facturaRowChangeEvent(((facturaRow)(e.Row)), e.Action));
                 }
             }
             
@@ -698,14 +754,14 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.dtItemsFacturaRowDeleting != null)) {
-                    this.dtItemsFacturaRowDeleting(this, new dtItemsFacturaRowChangeEvent(((dtItemsFacturaRow)(e.Row)), e.Action));
+                if ((this.facturaRowDeleting != null)) {
+                    this.facturaRowDeleting(this, new facturaRowChangeEvent(((facturaRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovedtItemsFacturaRow(dtItemsFacturaRow row) {
+            public void RemovefacturaRow(facturaRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -732,7 +788,7 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "dtItemsFacturaDataTable";
+                attribute2.FixedValue = "facturaDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -776,30 +832,142 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class dtFacturaRow : global::System.Data.DataRow {
+        public partial class itemsFacturaRow : global::System.Data.DataRow {
             
-            private dtFacturaDataTable tabledtFactura;
+            private itemsFacturaDataTable tableitemsFactura;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal dtFacturaRow(global::System.Data.DataRowBuilder rb) : 
+            internal itemsFacturaRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabledtFactura = ((dtFacturaDataTable)(this.Table));
+                this.tableitemsFactura = ((itemsFacturaDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cantidad {
+                get {
+                    try {
+                        return ((string)(this[this.tableitemsFactura.cantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad\' de la tabla \'itemsFactura\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitemsFactura.cantidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string producto {
+                get {
+                    try {
+                        return ((string)(this[this.tableitemsFactura.productoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'producto\' de la tabla \'itemsFactura\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitemsFactura.productoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string precioUnitario {
+                get {
+                    try {
+                        return ((string)(this[this.tableitemsFactura.precioUnitarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'precioUnitario\' de la tabla \'itemsFactura\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitemsFactura.precioUnitarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string subTotal {
+                get {
+                    try {
+                        return ((string)(this[this.tableitemsFactura.subTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'subTotal\' de la tabla \'itemsFactura\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableitemsFactura.subTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscantidadNull() {
+                return this.IsNull(this.tableitemsFactura.cantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcantidadNull() {
+                this[this.tableitemsFactura.cantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsproductoNull() {
+                return this.IsNull(this.tableitemsFactura.productoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetproductoNull() {
+                this[this.tableitemsFactura.productoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsprecioUnitarioNull() {
+                return this.IsNull(this.tableitemsFactura.precioUnitarioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetprecioUnitarioNull() {
+                this[this.tableitemsFactura.precioUnitarioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IssubTotalNull() {
+                return this.IsNull(this.tableitemsFactura.subTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetsubTotalNull() {
+                this[this.tableitemsFactura.subTotalColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class dtItemsFacturaRow : global::System.Data.DataRow {
+        public partial class facturaRow : global::System.Data.DataRow {
             
-            private dtItemsFacturaDataTable tabledtItemsFactura;
+            private facturaDataTable tablefactura;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal dtItemsFacturaRow(global::System.Data.DataRowBuilder rb) : 
+            internal facturaRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabledtItemsFactura = ((dtItemsFacturaDataTable)(this.Table));
+                this.tablefactura = ((facturaDataTable)(this.Table));
             }
         }
         
@@ -807,22 +975,22 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class dtFacturaRowChangeEvent : global::System.EventArgs {
+        public class itemsFacturaRowChangeEvent : global::System.EventArgs {
             
-            private dtFacturaRow eventRow;
+            private itemsFacturaRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtFacturaRowChangeEvent(dtFacturaRow row, global::System.Data.DataRowAction action) {
+            public itemsFacturaRowChangeEvent(itemsFacturaRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtFacturaRow Row {
+            public itemsFacturaRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -841,22 +1009,22 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class dtItemsFacturaRowChangeEvent : global::System.EventArgs {
+        public class facturaRowChangeEvent : global::System.EventArgs {
             
-            private dtItemsFacturaRow eventRow;
+            private facturaRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtItemsFacturaRowChangeEvent(dtItemsFacturaRow row, global::System.Data.DataRowAction action) {
+            public facturaRowChangeEvent(facturaRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtItemsFacturaRow Row {
+            public facturaRow Row {
                 get {
                     return this.eventRow;
                 }

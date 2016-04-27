@@ -12,6 +12,7 @@ using CrystalDecisions.CrystalReports.Engine;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Reportes;
+using RamosHermanos.Capas.Reportes.Comprobante;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -287,6 +288,38 @@ namespace RamosHermanos.Capas.Interfaz
         {
             factura.estado = cbEstado.SelectedText;
             FacturaB.InsertFactura(factura);
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ASD");
+            string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
+            string rep = @"\Capas\Reportes\Recorridos\crComprobante.rpt";
+
+            dsComprobante ds = new dsComprobante();
+
+            foreach (DataGridViewRow dRow in dgvFactura.Rows)
+            {
+                ds.Tables["dtItemsFactura"].Rows.Add
+                (
+                new object[]
+                {
+                    dgvFactura.CurrentRow.Cells["colCantidad"].Value,
+                    dgvFactura.CurrentRow.Cells["colProducto"].Value,
+                    dgvFactura.CurrentRow.Cells["colPrecio"].Value,
+                    dgvFactura.CurrentRow.Cells["colSubTotal"].Value
+                }
+                );
+            };
+
+            //Cargar Reporte
+            formReports frm = new formReports();
+            frm.Show();
+            ReportDocument rd = new ReportDocument();
+            rd.Load(ruta + rep);
+            //rd.Load("C:/Users/b0nete/Documents/GitHub/RamosHnos/RamosHermanos/Ramos Hermanos/Capas/Reportes/Recorridos/crFactura.rpt");
+            rd.SetDataSource(ds);
+            frm.crvReporte.ReportSource = rd;
         }
 
 

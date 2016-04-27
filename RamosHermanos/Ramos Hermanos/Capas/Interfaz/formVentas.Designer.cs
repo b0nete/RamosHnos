@@ -90,6 +90,7 @@
             this.btnPrint.Size = new System.Drawing.Size(28, 28);
             this.btnPrint.TabIndex = 108;
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // cbEstado
             // 

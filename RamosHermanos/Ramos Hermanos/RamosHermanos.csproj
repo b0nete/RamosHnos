@@ -446,6 +446,11 @@
     <Compile Include="Libs\InputBox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ramosdbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ramosdbDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Capas\Interfaz\ABMs\formBuscarCliente.resx">
       <DependentUpon>formBuscarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -621,7 +626,6 @@
     </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />
-    <None Include="Properties\DataSources\RamosHermanos.Capas.Interfaz.formFactura.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -631,6 +635,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="ramosdbDataSet.xsc">
+      <DependentUpon>ramosdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ramosdbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ramosdbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ramosdbDataSet.xss">
+      <DependentUpon>ramosdbDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -643,6 +658,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\" />
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
