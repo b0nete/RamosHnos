@@ -62,7 +62,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cbformaPago = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtIVA = new System.Windows.Forms.TextBox();
@@ -74,6 +73,7 @@
             this.txtIDcliente = new System.Windows.Forms.TextBox();
             this.txtnumDoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtDomicilio = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -121,6 +121,7 @@
             // 
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Enabled = false;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(744, 222);
@@ -133,6 +134,7 @@
             // 
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Enabled = false;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(710, 222);
@@ -412,7 +414,8 @@
             this.cbformaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbformaPago.FormattingEnabled = true;
             this.cbformaPago.Items.AddRange(new object[] {
-            "Efectivo"});
+            "Contado",
+            "Cuenta Corriente"});
             this.cbformaPago.Location = new System.Drawing.Point(91, 19);
             this.cbformaPago.Name = "cbformaPago";
             this.cbformaPago.Size = new System.Drawing.Size(210, 21);
@@ -420,7 +423,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbDomicilio);
+            this.groupBox1.Controls.Add(this.txtDomicilio);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.txtIVA);
@@ -439,20 +442,6 @@
             this.groupBox1.TabIndex = 93;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles";
-            // 
-            // cbDomicilio
-            // 
-            this.cbDomicilio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDomicilio.FormattingEnabled = true;
-            this.cbDomicilio.Items.AddRange(new object[] {
-            "C",
-            "E",
-            "X"});
-            this.cbDomicilio.Location = new System.Drawing.Point(75, 69);
-            this.cbDomicilio.Name = "cbDomicilio";
-            this.cbDomicilio.Size = new System.Drawing.Size(331, 21);
-            this.cbDomicilio.TabIndex = 10;
             // 
             // txtNombre
             // 
@@ -560,6 +549,15 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Cliente";
             // 
+            // txtDomicilio
+            // 
+            this.txtDomicilio.Enabled = false;
+            this.txtDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDomicilio.Location = new System.Drawing.Point(75, 69);
+            this.txtDomicilio.Name = "txtDomicilio";
+            this.txtDomicilio.Size = new System.Drawing.Size(331, 20);
+            this.txtDomicilio.TabIndex = 91;
+            // 
             // formVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -628,7 +626,6 @@
         public System.Windows.Forms.DateTimePicker dtpEntrega;
         public System.Windows.Forms.DateTimePicker dtpVencimiento;
         public System.Windows.Forms.ComboBox cbformaPago;
-        public System.Windows.Forms.ComboBox cbDomicilio;
         public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.TextBox txtIVA;
         public System.Windows.Forms.TextBox txtTel;
@@ -643,5 +640,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
+        public System.Windows.Forms.TextBox txtDomicilio;
     }
 }

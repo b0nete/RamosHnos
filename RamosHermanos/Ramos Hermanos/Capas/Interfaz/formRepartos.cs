@@ -211,7 +211,11 @@ namespace RamosHermanos.Capas.Interfaz
                 itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
                 itemsFacturaB.BuscarItemFacturaDGV(itemFactura, frmP.dgvFactura, frmP.txtTotal);
 
-                DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtIDcliente, "1");
+                DomicilioB.CargarTXTID(factura.domicilio, frmP.txtDomicilio);
+
+                ClienteEntity cliente = ClienteB.BuscarClienteCIVAyCP(factura.cliente);
+                frmP.txtIVA.Text = cliente.condicionIVA;
+                frmP.cbformaPago.Text = "Contado";
                 frmP.Show();
             }
         }

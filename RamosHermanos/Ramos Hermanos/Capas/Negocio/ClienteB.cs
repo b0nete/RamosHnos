@@ -260,6 +260,59 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static ClienteEntity BuscarClienteCIVAyCP(int idCliente)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                ClienteEntity cliente = new ClienteEntity();
+
+                string query = "SELECT * FROM Clientes WHERE idCliente = @idCliente";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idCliente", idCliente);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("El Cliente no existe!");
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    DataRow row = dt.Rows[0];
+
+                    cliente.tipoPersona = Convert.ToString(row["tipoPersona"]);
+                    cliente.numDoc = Convert.ToString(row["numDoc"]);
+                    cliente.fechaAlta = Convert.ToDateTime(row["fechaAlta"]);
+                    cliente.tipoDoc = Convert.ToInt32(row["tipoDoc"]);
+                    cliente.sexo = Convert.ToString(row["sexo"]);
+                    cliente.cuil = Convert.ToString(row["cuil"]);
+                    cliente.apellido = Convert.ToString(row["apellido"]);
+                    cliente.nombre = Convert.ToString(row["nombre"]);
+                    cliente.estadoCivil = Convert.ToString(row["estadoCivil"]);
+                    cliente.condicionIVA = Convert.ToString(row["condicionIVA"]);
+                    cliente.tipoCliente = Convert.ToInt32(row["tipoCliente"]);
+                    cliente.estado = Convert.ToBoolean(row["estado"]);
+
+                    MySQL.DisconnectDB();
+                }
+                return cliente;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static ClienteEntity BuscarApellido(ClienteEntity cliente)
         {
             try

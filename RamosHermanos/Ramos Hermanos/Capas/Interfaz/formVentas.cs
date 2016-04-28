@@ -49,16 +49,19 @@ namespace RamosHermanos.Capas.Interfaz
             dsComprobante ds = new dsComprobante();
 
             ////Factura
-            //ds.Tables["factura"].Rows.Add
-            //(
-            //    new object[]
-            //    {
-            //        dgvFactura.CurrentRow.Cells["colCantidad"].Value,
-            //        dgvFactura.CurrentRow.Cells["colProducto"].Value,
-            //        dgvFactura.CurrentRow.Cells["colPrecio"].Value,
-            //        dgvFactura.CurrentRow.Cells["colSubTotal"].Value  
-            //    }
-            //);
+            ds.Tables["factura"].Rows.Add
+            (
+                new object[]
+                {
+                    txtIDFactura.Text,
+                    dtpfechaFactura.Text,
+                    txtNombre.Text,
+                    txtDomicilio.Text,
+                    txtTotal.Text,
+                    txtIVA.Text,
+                    cbformaPago.Text
+                }
+            );
 
             //ItemsFactura
             foreach (DataGridViewRow dRow in dgvFactura.Rows)

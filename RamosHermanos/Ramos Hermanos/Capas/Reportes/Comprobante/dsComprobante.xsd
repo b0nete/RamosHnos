@@ -24,6 +24,15 @@
         </xs:element>
         <xs:element name="factura" msprop:Generator_TableClassName="facturaDataTable" msprop:Generator_TableVarName="tablefactura" msprop:Generator_TablePropName="factura" msprop:Generator_RowDeletingName="facturaRowDeleting" msprop:Generator_RowChangingName="facturaRowChanging" msprop:Generator_RowEvHandlerName="facturaRowChangeEventHandler" msprop:Generator_RowDeletedName="facturaRowDeleted" msprop:Generator_UserTableName="factura" msprop:Generator_RowChangedName="facturaRowChanged" msprop:Generator_RowEvArgName="facturaRowChangeEvent" msprop:Generator_RowClassName="facturaRow">
           <xs:complexType>
+            <xs:sequence>
+              <xs:element name="factura" msprop:Generator_ColumnVarNameInTable="columnfactura" msprop:Generator_ColumnPropNameInRow="factura" msprop:Generator_ColumnPropNameInTable="facturaColumn" msprop:Generator_UserColumnName="factura" type="xs:string" minOccurs="0" />
+              <xs:element name="fechaFactura" msprop:Generator_ColumnVarNameInTable="columnfechaFactura" msprop:Generator_ColumnPropNameInRow="fechaFactura" msprop:Generator_ColumnPropNameInTable="fechaFacturaColumn" msprop:Generator_UserColumnName="fechaFactura" type="xs:string" minOccurs="0" />
+              <xs:element name="cliente" msprop:Generator_ColumnVarNameInTable="columncliente" msprop:Generator_ColumnPropNameInRow="cliente" msprop:Generator_ColumnPropNameInTable="clienteColumn" msprop:Generator_UserColumnName="cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="domicilio" msprop:Generator_ColumnVarNameInTable="columndomicilio" msprop:Generator_ColumnPropNameInRow="domicilio" msprop:Generator_ColumnPropNameInTable="domicilioColumn" msprop:Generator_UserColumnName="domicilio" type="xs:string" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:string" minOccurs="0" />
+              <xs:element name="condIVA" msprop:Generator_ColumnVarNameInTable="columncondIVA" msprop:Generator_ColumnPropNameInRow="condIVA" msprop:Generator_ColumnPropNameInTable="condIVAColumn" msprop:Generator_UserColumnName="condIVA" type="xs:string" minOccurs="0" />
+              <xs:element name="conVenta" msprop:Generator_ColumnVarNameInTable="columnconVenta" msprop:Generator_ColumnPropNameInRow="conVenta" msprop:Generator_ColumnPropNameInTable="conVentaColumn" msprop:Generator_UserColumnName="conVenta" type="xs:string" minOccurs="0" />
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>

@@ -150,7 +150,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT P.idFactura, P.cliente, P.fechaFactura, P.fechaEntrega, p.Observaciones, P.estado, P.total,
+                string query = @"SELECT P.idFactura, P.cliente, P.domicilio, P.fechaFactura, P.fechaEntrega, p.Observaciones, P.estado, P.total,
                                C.Nombre, C.Apellido, D.idDomicilio, D.calle, D.numero
                                FROM Facturas P
                                INNER JOIN clientes C on C.idCliente = P.cliente
@@ -177,7 +177,7 @@ namespace RamosHermanos.Capas.Negocio
 
                     factura.idFactura = Convert.ToInt32(row["idFactura"]);
                     factura.cliente = Convert.ToInt32(row["cliente"]);
-                    factura.domicilio = Convert.ToInt32(row["idDomicilio"]);
+                    factura.domicilio = Convert.ToInt32(row["domicilio"]);
                     factura.fechaFactura = Convert.ToDateTime(row["FechaFactura"]);
                     factura.fechaEntrega = Convert.ToDateTime(row["FechaEntrega"]);
                     factura.observaciones = Convert.ToString(row["observaciones"]);

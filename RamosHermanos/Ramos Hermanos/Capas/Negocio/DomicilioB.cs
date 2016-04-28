@@ -265,6 +265,47 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void CargarTXTID(int idDomicilio, TextBox txtDomicilio)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+//                string query = @"SELECT group_concat(' ', B.barrio,' ', calle,' ', numero,' ', piso,' ', dpto,' ', CP) 
+//                                 FROM Domicilios D
+//                                 INNER JOIN Barrios B ON D.barrio = B.idBarrio
+//                                 WHERE rol = @rol and idPersona = @idPersona and D.estado = 1";
+
+                string query = @"SELECT D.idDomicilio, CONCAT(D.idDomicilio,' ',D.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
+                                 FROM Domicilios D 
+                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
+                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
+                                 INNER JOIN Barrios B ON D.Barrio = B.idBarrio
+                                 WHERE D.idDomicilio = @idDomicilio";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idDomicilio", idDomicilio);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                DataRow row = dt.Rows[0];
+
+                txtDomicilio.Text = Convert.ToString(row["domCompleto"]);
+
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static List<DomicilioEntity> ListDomicilios(DomicilioEntity domicilio)
         {
             try
