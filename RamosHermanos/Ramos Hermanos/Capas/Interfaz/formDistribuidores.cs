@@ -511,49 +511,9 @@ namespace RamosHermanos.Capas.Interfaz
         //    void AddNewItem(DataGridViewRow row);
         //}
 
-        private void btnSaveRecLu_Click(object sender, EventArgs e)
-        {
+        
 
-            //Validacion.
-            if (txtIDdistribuidor.Text == string.Empty)
-            {
-                MessageBox.Show("Ingrese un distribuidor!");
-            }
-
-            //Borramos Recorrido e itemsRecorrido anteriores.
-            if (txtIDRecorridoLu.Text != string.Empty)
-            {
-                itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoLu.Text);
-                itemsRecorridoB.DeleteItemRecorrido(itemRecorrido);
-                recorrido.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
-                RecorridoB.DeleteRecorrido(recorrido);
-            }
-
-            //Cargamos encabezado del recorrido.
-            string strDia = "LU";
-            CargarRecorrido(strDia);
-            RecorridoB.InsertRecorrido(recorrido, txtIDRecorridoLu);
-
-            //Cargamos los nuevos items del recorrido
-            foreach (DataGridViewRow row in dgvRecorridoLu.Rows)
-            {
-                CargarItemRecorrido(row);
-                itemsRecorridoB.InsertItemRecorrido(itemRecorrido);
-            }
-
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            formDomicilio frm = new formDomicilio();
-            frm.tabVar = 0;
-            frm.DGVvar = 2;
-            frm.Show(this);
-
-            //Valores Predeterminados
-            frm.cbProvinciaCalle.SelectedValue = 5; // Cordoba
-            frm.cbLocalidadesCalle.SelectedValue = 26; // Cordoba Capital.
-        }
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -572,26 +532,7 @@ namespace RamosHermanos.Capas.Interfaz
             }                   
         }
 
-        private void btnUp_Click(object sender, EventArgs e)
-        {
-            DataGridView grid = dgvRecorridoLu;
-            try
-            {
-                int totalRows = grid.Rows.Count;
-                int idx = grid.SelectedCells[0].OwningRow.Index;
-                if (idx == 0)
-                    return;
-                int col = grid.SelectedCells[0].OwningColumn.Index;
-                DataGridViewRowCollection rows = grid.Rows;
-                DataGridViewRow row = rows[idx];
-                rows.Remove(row);
-                rows.Insert(idx - 1, row);
-                grid.ClearSelection();
-                grid.Rows[idx - 1].Cells[col].Selected = true;
-
-            }
-            catch { }
-        }
+        
 
         private void btnDown_Click(object sender, EventArgs e)
         {
@@ -816,6 +757,174 @@ namespace RamosHermanos.Capas.Interfaz
         itemsRepartoEntity itemsReparto = new itemsRepartoEntity();
 
         SaldoEnvasesEntity saldoEnvases = new SaldoEnvasesEntity();
+
+        private void GuardarRecorrido(TextBox txtIDRecorridodia, string dia, DataGridView dgvRecorridoDia)
+        {
+            //Validacion.
+            if (txtIDRecorridodia.Text == string.Empty)
+            {
+                MessageBox.Show("Ingrese un distribuidor!");
+            }
+
+            //Borramos Recorrido e itemsRecorrido anteriores.
+            if (txtIDRecorridodia.Text != string.Empty)
+            {
+                itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridodia.Text);
+                itemsRecorridoB.DeleteItemRecorrido(itemRecorrido);
+                recorrido.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
+                RecorridoB.DeleteRecorrido(recorrido);
+            }
+
+            //Cargamos encabezado del recorrido.
+            string strDia = dia;
+            CargarRecorrido(strDia);
+            RecorridoB.InsertRecorrido(recorrido, txtIDRecorridoLu);
+
+            //Cargamos los nuevos items del recorrido
+            foreach (DataGridViewRow row in dgvRecorridoDia.Rows)
+            {
+                CargarItemRecorrido(row);
+                itemsRecorridoB.InsertItemRecorrido(itemRecorrido);
+            }
+        }
+        private void btnSaveRecLu_Click(object sender, EventArgs e)
+        {
+            GuardarRecorrido(txtIDRecorridoLu, "LU", dgvRecorridoLu);      
+        }
+
+        private void btnSaveRecMa_Click(object sender, EventArgs e)
+        {
+            GuardarRecorrido(txtIDRecorridoMa, "MA", dgvRecorridoMa);  
+        }
+
+        private void btnSaveRecMi_Click(object sender, EventArgs e)
+        {
+            GuardarRecorrido(txtIDRecorridoMi, "MI", dgvRecorridoMi);  
+        }
+
+        private void btnSaveRecJu_Click(object sender, EventArgs e)
+        {
+            GuardarRecorrido(txtIDRecorridoJu, "JU", dgvRecorridoJu);  
+        }
+
+        private void btnSaveRecVi_Click(object sender, EventArgs e)
+        {
+            GuardarRecorrido(txtIDRecorridoVi, "VI", dgvRecorridoVi);  
+        }
+
+        private void btnSaveRecSa_Click(object sender, EventArgs e)
+        {
+            GuardarRecorrido(txtIDRecorridoSa, "SA", dgvRecorridoSa);  
+        }
+
+        private void btnSaveRecDo_Click(object sender, EventArgs e)
+        {
+            GuardarRecorrido(txtIDRecorridoDo, "DO", dgvRecorridoDo);  
+        }
+
+        private void addCalles()
+        {
+            formDomicilio frm = new formDomicilio();
+            frm.tabVar = 0;
+            frm.DGVvar = 2;
+            frm.Show(this);
+
+            //Valores Predeterminados
+            frm.cbProvinciaCalle.SelectedValue = 5; // Cordoba
+            frm.cbLocalidadesCalle.SelectedValue = 26; // Cordoba Capital.
+        }
+
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            addCalles();
+        }
+
+        private void btnAddMa_Click(object sender, EventArgs e)
+        {
+            addCalles();
+        }
+
+        private void btnAddMi_Click(object sender, EventArgs e)
+        {
+            addCalles();
+        }
+
+        private void btnAddJu_Click(object sender, EventArgs e)
+        {
+            addCalles();
+        }
+
+        private void btnAddVi_Click(object sender, EventArgs e)
+        {
+            addCalles();
+        }
+
+        private void btnAddSa_Click(object sender, EventArgs e)
+        {
+            addCalles();
+        }
+
+        private void btnAddDo_Click(object sender, EventArgs e)
+        {
+            addCalles();
+        }
+
+        private void UpCalles(DataGridView dgvRecorridoDia)
+        {
+            DataGridView grid = dgvRecorridoDia;
+            try
+            {
+                int totalRows = grid.Rows.Count;
+                int idx = grid.SelectedCells[0].OwningRow.Index;
+                if (idx == 0)
+                    return;
+                int col = grid.SelectedCells[0].OwningColumn.Index;
+                DataGridViewRowCollection rows = grid.Rows;
+                DataGridViewRow row = rows[idx];
+                rows.Remove(row);
+                rows.Insert(idx - 1, row);
+                grid.ClearSelection();
+                grid.Rows[idx - 1].Cells[col].Selected = true;
+
+            }
+            catch { }
+        }
+
+        private void btnUp_Click(object sender, EventArgs e)
+        {
+            UpCalles(dgvRecorridoLu);
+        }
+
+        private void btnUpMa_Click(object sender, EventArgs e)
+        {
+            UpCalles(dgvRecorridoMa);
+        }
+
+        private void btnUpMi_Click(object sender, EventArgs e)
+        {
+            UpCalles(dgvRecorridoMi);
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            UpCalles(dgvRecorridoJu);
+        }
+
+        private void btnUpVi_Click(object sender, EventArgs e)
+        {
+            UpCalles(dgvRecorridoVi);
+        }
+
+        private void btnUpSa_Click(object sender, EventArgs e)
+        {
+            UpCalles(dgvRecorridoSa);
+        }
+
+        private void btnUpDo_Click(object sender, EventArgs e)
+        {
+            UpCalles(dgvRecorridoDo);
+        }
 
     }
 }
