@@ -472,7 +472,7 @@
             // 
             this.tabAdicional.Location = new System.Drawing.Point(4, 22);
             this.tabAdicional.Name = "tabAdicional";
-            this.tabAdicional.Size = new System.Drawing.Size(788, 389);
+            this.tabAdicional.Size = new System.Drawing.Size(504, 345);
             this.tabAdicional.TabIndex = 2;
             this.tabAdicional.Text = "Adicional";
             this.tabAdicional.UseVisualStyleBackColor = true;
@@ -550,7 +550,7 @@
             // 
             this.tabMovimientos.Location = new System.Drawing.Point(4, 22);
             this.tabMovimientos.Name = "tabMovimientos";
-            this.tabMovimientos.Size = new System.Drawing.Size(788, 389);
+            this.tabMovimientos.Size = new System.Drawing.Size(504, 345);
             this.tabMovimientos.TabIndex = 3;
             this.tabMovimientos.Text = "Movimientos";
             this.tabMovimientos.UseVisualStyleBackColor = true;
@@ -559,7 +559,7 @@
             // 
             this.tabPedido.Location = new System.Drawing.Point(4, 22);
             this.tabPedido.Name = "tabPedido";
-            this.tabPedido.Size = new System.Drawing.Size(788, 389);
+            this.tabPedido.Size = new System.Drawing.Size(504, 345);
             this.tabPedido.TabIndex = 4;
             this.tabPedido.Text = "Pedido";
             this.tabPedido.UseVisualStyleBackColor = true;

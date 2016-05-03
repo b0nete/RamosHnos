@@ -95,7 +95,6 @@ namespace RamosHermanos.Capas.Interfaz
             tabDistribuidor.Controls.Remove(tabListado);
             tabDistribuidor.Controls.Remove(tabRecorrido);
             tabDistribuidor.Controls.Add(tabInformacion);
-            tabDistribuidor.Controls.Add(tabHojaRuta);
             tabDistribuidor.Controls.Add(tabRecorrido);
         }
 
