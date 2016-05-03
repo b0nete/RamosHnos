@@ -47,5 +47,31 @@ namespace RamosHermanos.Capas.Negocio
 		throw;
 	}
         }
+
+        public static void ListCompras(DataGridView dgvList)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT idcompras as colCompra, fecha as colFecha, total as colTotal, razonSocial as colProveedor, total as colTotal
+                                FROM Compras C
+                                INNER JOIN Proveedores P ON P.idProveedor = C.proveedor";
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(query, MySQL.sqlcnx);
+
+                da.Fill(dt);
+
+                dgvList.DataSource = dt;
+
+                MySQL.DisconnectDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
         }
 }

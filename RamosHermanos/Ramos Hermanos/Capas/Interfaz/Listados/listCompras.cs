@@ -11,17 +11,18 @@ using RamosHermanos.Capas.Negocio;
 
 namespace RamosHermanos.Capas.Interfaz.Listados
 {
-    public partial class listVentas : Form
+    public partial class listCompras : Form
     {
-        public listVentas()
+        public listCompras()
         {
             InitializeComponent();
         }
 
-        private void listVentas_Load(object sender, EventArgs e)
+        private void listCompras_Load(object sender, EventArgs e)
         {
-            FacturaB.ListFacturas(dgvVentas);
-            dgvVentas.AutoGenerateColumns = false;
+            ComprasB.ListCompras(dgvCompras);
+            dgvCompras.AutoGenerateColumns = false;
+            
         }
     }
 }

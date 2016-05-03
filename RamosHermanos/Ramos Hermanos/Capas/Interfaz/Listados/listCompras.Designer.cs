@@ -1,6 +1,6 @@
 ﻿namespace RamosHermanos.Capas.Interfaz.Listados
 {
-    partial class listVentas
+    partial class listCompras
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvVentas = new System.Windows.Forms.DataGridView();
+            this.dgvCompras = new System.Windows.Forms.DataGridView();
             this.colFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipoFac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvVentas
+            // dgvCompras
             // 
-            this.dgvVentas.AllowUserToAddRows = false;
-            this.dgvVentas.AllowUserToDeleteRows = false;
-            this.dgvVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCompras.AllowUserToAddRows = false;
+            this.dgvCompras.AllowUserToDeleteRows = false;
+            this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colFactura,
             this.colTipoFac,
             this.colFecha,
             this.colTotal,
             this.colNombre,
             this.colEstado});
-            this.dgvVentas.Location = new System.Drawing.Point(12, 12);
-            this.dgvVentas.Name = "dgvVentas";
-            this.dgvVentas.ReadOnly = true;
-            this.dgvVentas.Size = new System.Drawing.Size(760, 537);
-            this.dgvVentas.TabIndex = 0;
+            this.dgvCompras.Location = new System.Drawing.Point(12, 12);
+            this.dgvCompras.Name = "dgvCompras";
+            this.dgvCompras.ReadOnly = true;
+            this.dgvCompras.Size = new System.Drawing.Size(760, 537);
+            this.dgvCompras.TabIndex = 1;
             // 
             // colFactura
             // 
@@ -99,23 +99,23 @@
             this.colEstado.ReadOnly = true;
             this.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // listVentas
+            // listCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.dgvVentas);
-            this.Name = "listVentas";
-            this.Text = "Listado Ventas";
-            this.Load += new System.EventHandler(this.listVentas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
+            this.Controls.Add(this.dgvCompras);
+            this.Name = "listCompras";
+            this.Text = "listCompras";
+            this.Load += new System.EventHandler(this.listCompras_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvVentas;
+        private System.Windows.Forms.DataGridView dgvCompras;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipoFac;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;

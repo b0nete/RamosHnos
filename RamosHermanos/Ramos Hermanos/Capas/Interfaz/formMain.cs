@@ -319,6 +319,12 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listVentas frm = new listVentas();
+            frm.Show();
+        }
+
        
        
        
