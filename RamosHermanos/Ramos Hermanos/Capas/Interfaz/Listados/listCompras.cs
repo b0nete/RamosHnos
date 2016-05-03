@@ -22,7 +22,6 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         {
             ComprasB.ListCompras(dgvCompras);
             dgvCompras.AutoGenerateColumns = false;
-            
         }
     }
 }
