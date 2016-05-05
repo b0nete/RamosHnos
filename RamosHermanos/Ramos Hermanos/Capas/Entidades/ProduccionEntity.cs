@@ -10,5 +10,6 @@ namespace RamosHermanos.Capas.Entidades
     {
         public int idProduccion { get; set; }
         public DateTime fechaProduccion { get; set; }
+        public string descripcion { get; set; }
     }
 }

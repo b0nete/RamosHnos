@@ -77,13 +77,14 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO Produccion (fechaProduccion) 
-                                 VALUES (@fechaProduccion);
+                string query = @"INSERT INTO Produccion (fechaProduccion, descripcion) 
+                                 VALUES (@fechaProduccion, @descripcion);
                                  SELECT LAST_INSERT_ID();";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@fechaProduccion", produccion.fechaProduccion);
+                cmd.Parameters.AddWithValue("@descripcion", produccion.descripcion);
 
                 produccion.idProduccion = Convert.ToInt32(cmd.ExecuteScalar());
                 txt.Text = Convert.ToString(produccion.idProduccion);
@@ -92,6 +93,31 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.DisconnectDB();
             }
 
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void ListProduccion(DataGridView dgvList)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT idProduccion as colProduccion, fechaProduccion as colFecha, descripcion as colDescripcion
+                                FROM Produccion P";
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(query, MySQL.sqlcnx);
+
+                da.Fill(dt);
+
+                dgvList.DataSource = dt;
+
+                MySQL.DisconnectDB();
+            }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex);

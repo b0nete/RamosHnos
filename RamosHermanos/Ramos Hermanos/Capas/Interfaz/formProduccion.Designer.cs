@@ -41,12 +41,16 @@
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFechaProduccion = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduccion)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtDescripcion);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtIDProduccion);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.btnSave);
@@ -57,7 +61,7 @@
             this.groupBox1.Controls.Add(this.dtpFechaProduccion);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(760, 416);
+            this.groupBox1.Size = new System.Drawing.Size(696, 416);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producción";
@@ -84,7 +88,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(726, 381);
+            this.btnSave.Location = new System.Drawing.Point(662, 381);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 96;
@@ -96,7 +100,7 @@
             this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
             this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDel.Location = new System.Drawing.Point(726, 83);
+            this.btnDel.Location = new System.Drawing.Point(40, 381);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(28, 28);
             this.btnDel.TabIndex = 95;
@@ -107,7 +111,7 @@
             this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAdd.Location = new System.Drawing.Point(692, 83);
+            this.btnAdd.Location = new System.Drawing.Point(6, 381);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(28, 28);
             this.btnAdd.TabIndex = 94;
@@ -123,9 +127,9 @@
             this.colIDProducto,
             this.colProducto,
             this.colCantidad});
-            this.dgvProduccion.Location = new System.Drawing.Point(6, 117);
+            this.dgvProduccion.Location = new System.Drawing.Point(6, 133);
             this.dgvProduccion.Name = "dgvProduccion";
-            this.dgvProduccion.Size = new System.Drawing.Size(748, 258);
+            this.dgvProduccion.Size = new System.Drawing.Size(684, 242);
             this.dgvProduccion.TabIndex = 2;
             // 
             // colIDProducto
@@ -148,7 +152,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 56);
+            this.label1.Location = new System.Drawing.Point(28, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 13);
             this.label1.TabIndex = 1;
@@ -157,17 +161,35 @@
             // dtpFechaProduccion
             // 
             this.dtpFechaProduccion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaProduccion.Location = new System.Drawing.Point(143, 50);
+            this.dtpFechaProduccion.Location = new System.Drawing.Point(143, 45);
             this.dtpFechaProduccion.Name = "dtpFechaProduccion";
             this.dtpFechaProduccion.Size = new System.Drawing.Size(98, 20);
             this.dtpFechaProduccion.TabIndex = 0;
             this.dtpFechaProduccion.Value = new System.DateTime(2016, 4, 25, 0, 0, 0, 0);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(74, 74);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.TabIndex = 99;
+            this.label3.Text = "Descripción";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Enabled = false;
+            this.txtDescripcion.Location = new System.Drawing.Point(143, 71);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(547, 56);
+            this.txtDescripcion.TabIndex = 100;
+            // 
             // formProduccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 436);
+            this.ClientSize = new System.Drawing.Size(720, 436);
             this.Controls.Add(this.groupBox1);
             this.Name = "formProduccion";
             this.Text = "Registrar Produccion";
@@ -193,5 +215,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label3;
     }
 }

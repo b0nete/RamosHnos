@@ -301,13 +301,11 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void producciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            formProduccion frm = new formProduccion();
-            frm.Show();
+            
         }
 
         private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
             MessageBox.Show("Seleccione un Proveedor");
             listProveedores frm = new listProveedores();
             frm.Show();
@@ -331,6 +329,35 @@ namespace RamosHermanos.Capas.Interfaz
             formDistribuidores frm = new formDistribuidores();
             frm.Show();
             frm.CaseListado();
+        }
+
+        private void registrarToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            formProduccion frm = new formProduccion();
+            frm.Show();
+        }
+
+        private void listadoToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            listProduccion frm = new listProduccion();
+            frm.Show();
+        }
+
+        private void propiedadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            listVentas frm = new listVentas();
+            frm.Show();
+        }
+
+        private void comprasToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            listCompras frm = new listCompras();
+            frm.Show();
         }
 
        
