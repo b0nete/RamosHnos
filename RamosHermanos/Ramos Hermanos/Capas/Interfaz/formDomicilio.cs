@@ -22,6 +22,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         public int tabVar;
         public int DGVvar = 1;
+        public int VAR;
 
         // Eventos
         private void formDomicilio_Load(object sender, EventArgs e)
@@ -221,10 +222,11 @@ namespace RamosHermanos.Capas.Interfaz
 
                     // Caso 2: Envía datos al formRecorrido.
                     case 2:
+                        //                        
                         DataGridViewRow rowA = this.dgvCalle.CurrentRow as DataGridViewRow;
 
-                        IAddItem parent = this.Owner as IAddItem;
-                        parent.AddNewItem(rowA);
+                        IAddItemDGV parent = this.Owner as IAddItemDGV;
+                        parent.AddNewItem(rowA, VAR);
 
                         //this.Close();
                         break;

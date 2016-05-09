@@ -13,6 +13,11 @@ namespace RamosHermanos.Capas.Interfaz.Contratos
         void AddNewItem(DataGridViewRow row);
     }
 
+    interface IAddItemDGV
+    {
+        void AddNewItem(DataGridViewRow row, int VAR);
+    }
+
     interface GetParametro
     {
         void AddParametro(TextBox text);

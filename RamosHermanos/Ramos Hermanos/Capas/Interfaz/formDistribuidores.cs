@@ -19,9 +19,10 @@ using RamosHermanos.Capas.Reportes.Recorridos;
 
 namespace RamosHermanos.Capas.Interfaz
 {
-    public partial class formDistribuidores : Form, IAddItem
+    public partial class formDistribuidores : Form, IAddItemDGV
     {
         public int tabVar;
+        public int addItemVar;
 
         public formDistribuidores()
         {
@@ -494,13 +495,55 @@ namespace RamosHermanos.Capas.Interfaz
 
         //#region IAddItem Members
 
-        public void AddNewItem(DataGridViewRow row)
+        public void AddNewItem(DataGridViewRow row, int VAR)
         {
             string idCalle = row.Cells["colCIDcalle"].Value.ToString();
             string calle = row.Cells["colCCalle"].Value.ToString();
             string check = "true";
 
-            this.dgvRecorridoLu.Rows.Add(new[] {idCalle, calle, "", "", "", check});
+
+            switch (VAR)
+            {
+                //Lu
+                case 1:
+                    Console.WriteLine("Lu");
+                    this.dgvRecorridoLu.Rows.Add(new[] { idCalle, calle, "", "", "", check });
+                    break;
+                //Ma
+                case 2:
+                    Console.WriteLine("Ma");
+                    this.dgvRecorridoMa.Rows.Add(new[] { idCalle, calle, "", "", "", check });
+                    break;
+                //Mi
+                case 3:
+                    Console.WriteLine("Mi");
+                    this.dgvRecorridoMi.Rows.Add(new[] { idCalle, calle, "", "", "", check });
+                    break;
+                //Ju
+                case 4:
+                    Console.WriteLine("Ju");
+                    this.dgvRecorridoJu.Rows.Add(new[] { idCalle, calle, "", "", "", check });
+                    break;
+                //Vi
+                case 5:
+                    Console.WriteLine("Vi");
+                    this.dgvRecorridoVi.Rows.Add(new[] { idCalle, calle, "", "", "", check });
+                    break;
+                //Sa
+                case 6:
+                    Console.WriteLine("Sa");
+                    this.dgvRecorridoSa.Rows.Add(new[] { idCalle, calle, "", "", "", check });
+                    break;
+                case 7:
+                    Console.WriteLine("Do");
+                    this.dgvRecorridoDo.Rows.Add(new[] { idCalle, calle, "", "", "", check });
+                    break;
+                default:
+                    Console.WriteLine("Default case");
+                    break;
+            }
+
+            //this.dgvRecorridoLu.Rows.Add(new[] {idCalle, calle, "", "", "", check});
         }
 
         //#endregion
@@ -821,11 +864,12 @@ namespace RamosHermanos.Capas.Interfaz
             GuardarRecorrido(txtIDRecorridoDo, "DO", dgvRecorridoDo);  
         }
 
-        private void addCalles()
+        private void addCalles(int VAR)
         {
             formDomicilio frm = new formDomicilio();
             frm.tabVar = 0;
             frm.DGVvar = 2;
+            frm.VAR = VAR;
             frm.Show(this);
 
             //Valores Predeterminados
@@ -836,37 +880,37 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            addCalles();
+            addCalles(1);
         }
 
         private void btnAddMa_Click(object sender, EventArgs e)
         {
-            addCalles();
+            addCalles(2);
         }
 
         private void btnAddMi_Click(object sender, EventArgs e)
         {
-            addCalles();
+            addCalles(3);
         }
 
         private void btnAddJu_Click(object sender, EventArgs e)
         {
-            addCalles();
+            addCalles(4);
         }
 
         private void btnAddVi_Click(object sender, EventArgs e)
         {
-            addCalles();
+            addCalles(5);
         }
 
         private void btnAddSa_Click(object sender, EventArgs e)
         {
-            addCalles();
+            addCalles(6);
         }
 
         private void btnAddDo_Click(object sender, EventArgs e)
         {
-            addCalles();
+            addCalles(7);
         }
 
         private void UpCalles(DataGridView dgvRecorridoDia)
