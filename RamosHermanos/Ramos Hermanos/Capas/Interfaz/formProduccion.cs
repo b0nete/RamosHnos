@@ -49,6 +49,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void btnSave_Click(object sender, EventArgs e)
         {
             produccion.fechaProduccion = Convert.ToDateTime(dtpFechaProduccion.Value);
+            produccion.descripcion = txtDescripcion.Text;
             ProduccionB.InsertProduccion(produccion, txtIDProduccion);
             
             foreach (DataGridViewRow rowA in dgvProduccion.Rows)
