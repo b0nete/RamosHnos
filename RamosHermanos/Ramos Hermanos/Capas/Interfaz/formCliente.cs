@@ -15,8 +15,8 @@ namespace RamosHermanos.Capas.Interfaz
     
     public partial class formCliente : Form
     {
-        public int switchcase = 0;
-        public int caseSwitch = 0;
+        public int switchcase;
+        public int caseSwitch;
 
         public formCliente()
         {
@@ -35,7 +35,7 @@ namespace RamosHermanos.Capas.Interfaz
             // Listado
             CheckListado();
 
-            // Casos de Inicio.            
+            // Casos de Inicio.    
             switch (switchcase)
             {
                 case 1:

@@ -123,13 +123,14 @@ namespace RamosHermanos.Capas.Negocio
 
 
                 string query = @"INSERT INTO stockproducto (idProducto, stockMinimo, stockMaximo, stockActual,fechaActualizacion) 
-                                 VALUES (@idProducto, @stockMinimo, @stockMaximo, 0,@fechaActualizacion)";
+                                 VALUES (@idProducto, @stockMinimo, @stockMaximo, 0, @fechaActualizacion)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@idproducto", stock.idProducto);
                 cmd.Parameters.AddWithValue("@stockMinimo", stock.stockMinimo);
                 cmd.Parameters.AddWithValue("@stockMaximo", stock.stockMaximo);
+                cmd.Parameters.AddWithValue("@stockActual", stock.stockActual);
                 cmd.Parameters.AddWithValue("@fechaActualizacion", stock.fechaActualizacion);
 
                 cmd.ExecuteNonQuery();

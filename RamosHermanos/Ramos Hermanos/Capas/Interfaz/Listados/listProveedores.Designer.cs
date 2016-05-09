@@ -60,7 +60,8 @@
             this.dgvProveedores.Location = new System.Drawing.Point(5, 70);
             this.dgvProveedores.Name = "dgvProveedores";
             this.dgvProveedores.ReadOnly = true;
-            this.dgvProveedores.Size = new System.Drawing.Size(775, 368);
+            this.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProveedores.Size = new System.Drawing.Size(775, 479);
             this.dgvProveedores.TabIndex = 55;
             this.dgvProveedores.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvProveedores_MouseDoubleClick);
             // 
@@ -173,7 +174,7 @@
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.Name = "listProveedores";
-            this.Text = "listProveedores";
+            this.Text = "Listado Proveedores";
             this.Load += new System.EventHandler(this.listProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();
             this.groupBox1.ResumeLayout(false);

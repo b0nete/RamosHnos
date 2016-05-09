@@ -178,7 +178,6 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Location = new System.Drawing.Point(143, 71);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";

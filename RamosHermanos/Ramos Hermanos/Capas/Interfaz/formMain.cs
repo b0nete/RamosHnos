@@ -137,14 +137,14 @@ namespace RamosHermanos.Capas.Interfaz
         private void personaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formCliente frm = new formCliente();
-            frm.caseSwitch = 1;
+            frm.switchcase = 1;
             frm.Show();
         }
 
         private void personaJurídicaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formCliente frm = new formCliente();
-            frm.caseSwitch = 2;
+            frm.switchcase = 2;
             frm.Show();
         }
 

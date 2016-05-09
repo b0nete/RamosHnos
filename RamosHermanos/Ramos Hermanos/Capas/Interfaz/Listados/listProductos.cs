@@ -94,7 +94,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             }
             if (cell != null)
             {
-                StockProductoEntity stockP = new StockProductoEntity();
+                StockProductoEntity stockPo = new StockProductoEntity();
                 formProducto frmPro = new formProducto();
                 frmPro.Show();
 
@@ -117,12 +117,12 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 PrecioProductosB.UltimoPrecioDGV(frmPro.dgvPrecios, frmPro.txtIDProd);
 
                 //Cargar Datos Stock
-                stockP.idProducto = producto.idProducto;
-                if (StockProductoB.ExisteStock(stockP) == false)
+                stockPo.idProducto = producto.idProducto;
+                if (StockProductoB.ExisteStock(stockPo) == false)
                     MessageBox.Show("No existe stock");
                 else
                 {
-                    StockProductoB.BuscarStock(Convert.ToInt32(frmPro.txtIDProd.Text));
+                    StockProductoEntity stockP = StockProductoB.BuscarStock(Convert.ToInt32(frmPro.txtIDProd.Text));
                     frmPro.txtStockMin.Text = Convert.ToString(stockP.stockMinimo);
                     frmPro.txtStockMax.Text = Convert.ToString(stockP.stockMaximo);
                     frmPro.txtStockA.Text = Convert.ToString(stockP.stockNuevo);
