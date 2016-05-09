@@ -360,6 +360,13 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
+        private void compraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formCompras frm = new formCompras();
+
+            frm.Show();
+        }
+
        
        
        
