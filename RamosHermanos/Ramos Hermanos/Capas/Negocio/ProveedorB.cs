@@ -353,11 +353,7 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["fechaAlta"]),
                     Convert.ToString(dr["condicionIVA"]),
                     Convert.ToString(dr["estado"]));
-
-
-
                 }
-
                 dr.Close();
                 MySQL.DisconnectDB();
             }

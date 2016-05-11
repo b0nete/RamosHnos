@@ -762,21 +762,26 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvRecorridoLu_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
+            //UpdateMCM(dgvRecorridoLu, "colLuDesde", "colLuHasta", "colLuSentido");
+        }
+
+        private void UpdateMCM(DataGridView dgvRecorridoDia, string colDiaDesde, string colDiaHasta, string colDiaSentido)
+        {
             foreach (DataGridViewRow row in dgvRecorridoLu.Rows)
             {
                 // Se ejecutan las operaciones solo si la columna cantidad y precio tienen algún valor, ya que de lo contrario nos dará un error.
-                if (Convert.ToString(row.Cells["colLuDesde"].Value) == "" || Convert.ToString(row.Cells["colLuHasta"].Value) == "")
+                if (Convert.ToString(row.Cells[colDiaDesde].Value) == "" || Convert.ToString(row.Cells[colDiaHasta].Value) == "")
                 {
                     return;
                 }
-                
-                if (Convert.ToInt32(row.Cells["colLuDesde"].Value) < Convert.ToInt32(row.Cells["colLuHasta"].Value))
+
+                if (Convert.ToInt32(row.Cells[colDiaDesde].Value) < Convert.ToInt32(row.Cells[colDiaHasta].Value))
                 {
-                    row.Cells["colLuSentido"].Value = "M";
+                    row.Cells[colDiaSentido].Value = "M";
                 }
                 else
                 {
-                    row.Cells["colLuSentido"].Value = "C";
+                    row.Cells[colDiaSentido].Value = "C";
                 }
             }
         }
@@ -834,19 +839,19 @@ namespace RamosHermanos.Capas.Interfaz
             GuardarRecorrido(txtIDRecorridoLu, "LU", dgvRecorridoLu);      
         }
 
-        private void btnSaveRecMa_Click(object sender, EventArgs e)
+        private void btnSaveRecMa_Click_1(object sender, EventArgs e)
         {
-            GuardarRecorrido(txtIDRecorridoMa, "MA", dgvRecorridoMa);  
+            GuardarRecorrido(txtIDRecorridoMa, "MA", dgvRecorridoMa);
         }
 
         private void btnSaveRecMi_Click(object sender, EventArgs e)
         {
-            GuardarRecorrido(txtIDRecorridoMi, "MI", dgvRecorridoMi);  
+            GuardarRecorrido(txtIDRecorridoMi, "MI", dgvRecorridoMi);
         }
 
-        private void btnSaveRecJu_Click(object sender, EventArgs e)
+        private void btnSaveRecJu_Click_1(object sender, EventArgs e)
         {
-            GuardarRecorrido(txtIDRecorridoJu, "JU", dgvRecorridoJu);  
+            GuardarRecorrido(txtIDRecorridoJu, "JU", dgvRecorridoJu);
         }
 
         private void btnSaveRecVi_Click(object sender, EventArgs e)
@@ -968,6 +973,17 @@ namespace RamosHermanos.Capas.Interfaz
         {
             UpCalles(dgvRecorridoDo);
         }
+
+        private void dgvRecorridoLu_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            UpdateMCM(dgvRecorridoLu, "colLuDesde", "colLuHasta", "colLuSentido");
+        }
+
+
+
+
+
+
 
     }
 }
