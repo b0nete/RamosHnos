@@ -83,13 +83,12 @@
             // 
             // tabProveedor
             // 
-            this.tabProveedor.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tabProveedor.Controls.Add(this.tabInformacion);
             this.tabProveedor.Controls.Add(this.tabAdicional);
             this.tabProveedor.Controls.Add(this.tabListado);
             this.tabProveedor.Controls.Add(this.tabMovimientos);
             this.tabProveedor.Controls.Add(this.tabPedido);
-            this.tabProveedor.Location = new System.Drawing.Point(3, 42);
+            this.tabProveedor.Location = new System.Drawing.Point(3, 33);
             this.tabProveedor.Name = "tabProveedor";
             this.tabProveedor.SelectedIndex = 0;
             this.tabProveedor.Size = new System.Drawing.Size(512, 371);
@@ -572,7 +571,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(517, 39);
+            this.label2.Size = new System.Drawing.Size(517, 30);
             this.label2.TabIndex = 73;
             this.label2.Text = "Proveedores";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -581,7 +580,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 428);
+            this.ClientSize = new System.Drawing.Size(517, 407);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tabProveedor);
             this.Name = "formProveedor";

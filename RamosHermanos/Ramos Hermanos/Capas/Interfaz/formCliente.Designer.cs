@@ -57,6 +57,13 @@
             this.tabSugerencias = new System.Windows.Forms.TabPage();
             this.tabAdicional = new System.Windows.Forms.TabPage();
             this.tabInformacion = new System.Windows.Forms.TabPage();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.cbSabado = new System.Windows.Forms.CheckBox();
+            this.cbViernes = new System.Windows.Forms.CheckBox();
+            this.cbJueves = new System.Windows.Forms.CheckBox();
+            this.cbMiercoles = new System.Windows.Forms.CheckBox();
+            this.cbMartes = new System.Windows.Forms.CheckBox();
+            this.cbLunes = new System.Windows.Forms.CheckBox();
             this.btnPedido = new System.Windows.Forms.Button();
             this.btnClean = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -136,6 +143,42 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabInformacionJ = new System.Windows.Forms.TabPage();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCreditoMaxPJ = new System.Windows.Forms.TextBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.txt25LTPJ = new System.Windows.Forms.TextBox();
+            this.txt20LTPJ = new System.Windows.Forms.TextBox();
+            this.txt12LTPJ = new System.Windows.Forms.TextBox();
+            this.txt10LTPJ = new System.Windows.Forms.TextBox();
+            this.txt4LTPJ = new System.Windows.Forms.TextBox();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
@@ -192,54 +235,13 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.cbLunes = new System.Windows.Forms.CheckBox();
-            this.cbMartes = new System.Windows.Forms.CheckBox();
-            this.cbMiercoles = new System.Windows.Forms.CheckBox();
-            this.cbJueves = new System.Windows.Forms.CheckBox();
-            this.cbViernes = new System.Windows.Forms.CheckBox();
-            this.cbSabado = new System.Windows.Forms.CheckBox();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtCreditoMaxPJ = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
-            this.txt25LTPJ = new System.Windows.Forms.TextBox();
-            this.txt20LTPJ = new System.Windows.Forms.TextBox();
-            this.txt12LTPJ = new System.Windows.Forms.TextBox();
-            this.txt10LTPJ = new System.Windows.Forms.TextBox();
-            this.txt4LTPJ = new System.Windows.Forms.TextBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label58 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
             this.tabMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.tabInformacion.SuspendLayout();
+            this.groupBox16.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -249,19 +251,18 @@
             this.groupBox1.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabInformacionJ.SuspendLayout();
-            this.groupBox9.SuspendLayout();
-            this.groupBox14.SuspendLayout();
-            this.tabVisita.SuspendLayout();
-            this.groupBox15.SuspendLayout();
-            this.groupBox8.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            this.groupBox16.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox11.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox13.SuspendLayout();
             this.groupBox18.SuspendLayout();
             this.groupBox19.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox14.SuspendLayout();
+            this.tabVisita.SuspendLayout();
+            this.groupBox15.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMovimientos
@@ -532,12 +533,94 @@
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.cbSabado);
+            this.groupBox16.Controls.Add(this.cbViernes);
+            this.groupBox16.Controls.Add(this.cbJueves);
+            this.groupBox16.Controls.Add(this.cbMiercoles);
+            this.groupBox16.Controls.Add(this.cbMartes);
+            this.groupBox16.Controls.Add(this.cbLunes);
+            this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox16.Location = new System.Drawing.Point(503, 403);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(264, 89);
+            this.groupBox16.TabIndex = 72;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Visita";
+            // 
+            // cbSabado
+            // 
+            this.cbSabado.AutoSize = true;
+            this.cbSabado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSabado.Location = new System.Drawing.Point(148, 65);
+            this.cbSabado.Name = "cbSabado";
+            this.cbSabado.Size = new System.Drawing.Size(63, 17);
+            this.cbSabado.TabIndex = 5;
+            this.cbSabado.Text = "Sabado";
+            this.cbSabado.UseVisualStyleBackColor = true;
+            // 
+            // cbViernes
+            // 
+            this.cbViernes.AutoSize = true;
+            this.cbViernes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbViernes.Location = new System.Drawing.Point(148, 42);
+            this.cbViernes.Name = "cbViernes";
+            this.cbViernes.Size = new System.Drawing.Size(61, 17);
+            this.cbViernes.TabIndex = 4;
+            this.cbViernes.Text = "Viernes";
+            this.cbViernes.UseVisualStyleBackColor = true;
+            // 
+            // cbJueves
+            // 
+            this.cbJueves.AutoSize = true;
+            this.cbJueves.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbJueves.Location = new System.Drawing.Point(148, 19);
+            this.cbJueves.Name = "cbJueves";
+            this.cbJueves.Size = new System.Drawing.Size(60, 17);
+            this.cbJueves.TabIndex = 3;
+            this.cbJueves.Text = "Jueves";
+            this.cbJueves.UseVisualStyleBackColor = true;
+            // 
+            // cbMiercoles
+            // 
+            this.cbMiercoles.AutoSize = true;
+            this.cbMiercoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMiercoles.Location = new System.Drawing.Point(24, 65);
+            this.cbMiercoles.Name = "cbMiercoles";
+            this.cbMiercoles.Size = new System.Drawing.Size(71, 17);
+            this.cbMiercoles.TabIndex = 2;
+            this.cbMiercoles.Text = "Miercoles";
+            this.cbMiercoles.UseVisualStyleBackColor = true;
+            // 
+            // cbMartes
+            // 
+            this.cbMartes.AutoSize = true;
+            this.cbMartes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMartes.Location = new System.Drawing.Point(24, 42);
+            this.cbMartes.Name = "cbMartes";
+            this.cbMartes.Size = new System.Drawing.Size(58, 17);
+            this.cbMartes.TabIndex = 1;
+            this.cbMartes.Text = "Martes";
+            this.cbMartes.UseVisualStyleBackColor = true;
+            // 
+            // cbLunes
+            // 
+            this.cbLunes.AutoSize = true;
+            this.cbLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLunes.Location = new System.Drawing.Point(24, 19);
+            this.cbLunes.Name = "cbLunes";
+            this.cbLunes.Size = new System.Drawing.Size(55, 17);
+            this.cbLunes.TabIndex = 0;
+            this.cbLunes.Text = "Lunes";
+            this.cbLunes.UseVisualStyleBackColor = true;
+            // 
             // btnPedido
             // 
             this.btnPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPedido.BackgroundImage")));
             this.btnPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPedido.Location = new System.Drawing.Point(640, 498);
+            this.btnPedido.Location = new System.Drawing.Point(671, 498);
             this.btnPedido.Name = "btnPedido";
             this.btnPedido.Size = new System.Drawing.Size(28, 28);
             this.btnPedido.TabIndex = 71;
@@ -549,7 +632,7 @@
             this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
             this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(674, 498);
+            this.btnClean.Location = new System.Drawing.Point(705, 498);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
             this.btnClean.TabIndex = 70;
@@ -561,7 +644,7 @@
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(742, 498);
+            this.button4.Location = new System.Drawing.Point(557, 498);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 69;
@@ -1414,7 +1497,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(708, 498);
+            this.btnSave.Location = new System.Drawing.Point(739, 498);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 61;
@@ -1431,8 +1514,7 @@
             this.tabMain.Controls.Add(this.tabListado);
             this.tabMain.Controls.Add(this.tabMovimientos);
             this.tabMain.Controls.Add(this.tabVisita);
-            this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabMain.Location = new System.Drawing.Point(0, 0);
+            this.tabMain.Location = new System.Drawing.Point(0, 30);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
             this.tabMain.Size = new System.Drawing.Size(784, 562);
@@ -1453,6 +1535,397 @@
             this.tabInformacionJ.Size = new System.Drawing.Size(776, 536);
             this.tabInformacionJ.TabIndex = 6;
             this.tabInformacionJ.Text = "Informacion";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.checkBox1);
+            this.groupBox10.Controls.Add(this.checkBox2);
+            this.groupBox10.Controls.Add(this.checkBox3);
+            this.groupBox10.Controls.Add(this.checkBox4);
+            this.groupBox10.Controls.Add(this.checkBox5);
+            this.groupBox10.Controls.Add(this.checkBox6);
+            this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox10.Location = new System.Drawing.Point(506, 403);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(264, 89);
+            this.groupBox10.TabIndex = 80;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "Visita";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(148, 65);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(63, 17);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "Sabado";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.Location = new System.Drawing.Point(148, 42);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(61, 17);
+            this.checkBox2.TabIndex = 4;
+            this.checkBox2.Text = "Viernes";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox3.Location = new System.Drawing.Point(148, 19);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(60, 17);
+            this.checkBox3.TabIndex = 3;
+            this.checkBox3.Text = "Jueves";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox4.Location = new System.Drawing.Point(24, 65);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(71, 17);
+            this.checkBox4.TabIndex = 2;
+            this.checkBox4.Text = "Miercoles";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox5.Location = new System.Drawing.Point(24, 42);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(58, 17);
+            this.checkBox5.TabIndex = 1;
+            this.checkBox5.Text = "Martes";
+            this.checkBox5.UseVisualStyleBackColor = true;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox6.Location = new System.Drawing.Point(24, 19);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(55, 17);
+            this.checkBox6.TabIndex = 0;
+            this.checkBox6.Text = "Lunes";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.groupBox12);
+            this.groupBox11.Controls.Add(this.groupBox13);
+            this.groupBox11.Controls.Add(this.groupBox18);
+            this.groupBox11.Controls.Add(this.groupBox19);
+            this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox11.Location = new System.Drawing.Point(505, 10);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(265, 391);
+            this.groupBox11.TabIndex = 79;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Saldos";
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.textBox1);
+            this.groupBox12.Controls.Add(this.txtCreditoMaxPJ);
+            this.groupBox12.Controls.Add(this.label46);
+            this.groupBox12.Controls.Add(this.label50);
+            this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox12.Location = new System.Drawing.Point(4, 19);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(255, 76);
+            this.groupBox12.TabIndex = 67;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Cuenta Corriente";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox1.Location = new System.Drawing.Point(84, 46);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(165, 20);
+            this.textBox1.TabIndex = 69;
+            this.textBox1.Text = "00,00";
+            // 
+            // txtCreditoMaxPJ
+            // 
+            this.txtCreditoMaxPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtCreditoMaxPJ.Location = new System.Drawing.Point(84, 20);
+            this.txtCreditoMaxPJ.Name = "txtCreditoMaxPJ";
+            this.txtCreditoMaxPJ.Size = new System.Drawing.Size(165, 20);
+            this.txtCreditoMaxPJ.TabIndex = 67;
+            this.txtCreditoMaxPJ.Text = "50,00";
+            // 
+            // label46
+            // 
+            this.label46.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label46.Location = new System.Drawing.Point(6, 23);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(79, 13);
+            this.label46.TabIndex = 68;
+            this.label46.Text = "Credito Máximo";
+            // 
+            // label50
+            // 
+            this.label50.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label50.Location = new System.Drawing.Point(17, 49);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(67, 13);
+            this.label50.TabIndex = 70;
+            this.label50.Text = "Saldo Actual";
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.textBox3);
+            this.groupBox13.Controls.Add(this.label51);
+            this.groupBox13.Controls.Add(this.textBox4);
+            this.groupBox13.Controls.Add(this.label52);
+            this.groupBox13.Controls.Add(this.textBox5);
+            this.groupBox13.Controls.Add(this.label53);
+            this.groupBox13.Controls.Add(this.textBox6);
+            this.groupBox13.Controls.Add(this.label54);
+            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox13.Location = new System.Drawing.Point(4, 260);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(126, 127);
+            this.groupBox13.TabIndex = 66;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "Otros";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Enabled = false;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox3.Location = new System.Drawing.Point(64, 97);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(47, 20);
+            this.textBox3.TabIndex = 104;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label51.Location = new System.Drawing.Point(6, 100);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(54, 13);
+            this.label51.TabIndex = 103;
+            this.label51.Text = "Dispenser";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Enabled = false;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox4.Location = new System.Drawing.Point(64, 71);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(47, 20);
+            this.textBox4.TabIndex = 102;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label52.Location = new System.Drawing.Point(36, 74);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(22, 13);
+            this.label52.TabIndex = 101;
+            this.label52.Text = "Pie";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Enabled = false;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox5.Location = new System.Drawing.Point(64, 45);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(47, 20);
+            this.textBox5.TabIndex = 100;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label53.Location = new System.Drawing.Point(14, 48);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(46, 13);
+            this.label53.TabIndex = 99;
+            this.label53.Text = "Canasta";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Enabled = false;
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox6.Location = new System.Drawing.Point(64, 19);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(47, 20);
+            this.textBox6.TabIndex = 98;
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label54.Location = new System.Drawing.Point(26, 22);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(34, 13);
+            this.label54.TabIndex = 59;
+            this.label54.Text = "Cajon";
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.txt25LTPJ);
+            this.groupBox18.Controls.Add(this.txt20LTPJ);
+            this.groupBox18.Controls.Add(this.txt12LTPJ);
+            this.groupBox18.Controls.Add(this.txt10LTPJ);
+            this.groupBox18.Controls.Add(this.txt4LTPJ);
+            this.groupBox18.Controls.Add(this.label55);
+            this.groupBox18.Controls.Add(this.label56);
+            this.groupBox18.Controls.Add(this.label57);
+            this.groupBox18.Controls.Add(this.label58);
+            this.groupBox18.Controls.Add(this.label62);
+            this.groupBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox18.Location = new System.Drawing.Point(4, 101);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(126, 153);
+            this.groupBox18.TabIndex = 64;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "Agua";
+            // 
+            // txt25LTPJ
+            // 
+            this.txt25LTPJ.Enabled = false;
+            this.txt25LTPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txt25LTPJ.Location = new System.Drawing.Point(64, 123);
+            this.txt25LTPJ.Name = "txt25LTPJ";
+            this.txt25LTPJ.Size = new System.Drawing.Size(47, 20);
+            this.txt25LTPJ.TabIndex = 102;
+            // 
+            // txt20LTPJ
+            // 
+            this.txt20LTPJ.Enabled = false;
+            this.txt20LTPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txt20LTPJ.Location = new System.Drawing.Point(64, 97);
+            this.txt20LTPJ.Name = "txt20LTPJ";
+            this.txt20LTPJ.Size = new System.Drawing.Size(47, 20);
+            this.txt20LTPJ.TabIndex = 101;
+            // 
+            // txt12LTPJ
+            // 
+            this.txt12LTPJ.Enabled = false;
+            this.txt12LTPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txt12LTPJ.Location = new System.Drawing.Point(64, 71);
+            this.txt12LTPJ.Name = "txt12LTPJ";
+            this.txt12LTPJ.Size = new System.Drawing.Size(47, 20);
+            this.txt12LTPJ.TabIndex = 100;
+            // 
+            // txt10LTPJ
+            // 
+            this.txt10LTPJ.Enabled = false;
+            this.txt10LTPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txt10LTPJ.Location = new System.Drawing.Point(64, 45);
+            this.txt10LTPJ.Name = "txt10LTPJ";
+            this.txt10LTPJ.Size = new System.Drawing.Size(47, 20);
+            this.txt10LTPJ.TabIndex = 99;
+            // 
+            // txt4LTPJ
+            // 
+            this.txt4LTPJ.Enabled = false;
+            this.txt4LTPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txt4LTPJ.Location = new System.Drawing.Point(64, 19);
+            this.txt4LTPJ.Name = "txt4LTPJ";
+            this.txt4LTPJ.Size = new System.Drawing.Size(47, 20);
+            this.txt4LTPJ.TabIndex = 98;
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label55.Location = new System.Drawing.Point(18, 126);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(40, 13);
+            this.label55.TabIndex = 66;
+            this.label55.Text = "25 LTs";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label56.Location = new System.Drawing.Point(18, 100);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(40, 13);
+            this.label56.TabIndex = 64;
+            this.label56.Text = "20 LTs";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label57.Location = new System.Drawing.Point(18, 73);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(40, 13);
+            this.label57.TabIndex = 62;
+            this.label57.Text = "12 LTs";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label58.Location = new System.Drawing.Point(18, 48);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(40, 13);
+            this.label58.TabIndex = 60;
+            this.label58.Text = "10 LTs";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label62.Location = new System.Drawing.Point(24, 22);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(34, 13);
+            this.label62.TabIndex = 59;
+            this.label62.Text = "4 LTs";
+            // 
+            // groupBox19
+            // 
+            this.groupBox19.Controls.Add(this.textBox12);
+            this.groupBox19.Controls.Add(this.label63);
+            this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox19.Location = new System.Drawing.Point(137, 101);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(126, 153);
+            this.groupBox19.TabIndex = 65;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "Sodas";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Enabled = false;
+            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.textBox12.Location = new System.Drawing.Point(64, 19);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(47, 20);
+            this.textBox12.TabIndex = 103;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label63.Location = new System.Drawing.Point(6, 22);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(59, 13);
+            this.label63.TabIndex = 67;
+            this.label63.Text = "Retornable";
             // 
             // button2
             // 
@@ -2103,484 +2576,25 @@
             this.cbDomicilio.DropDown += new System.EventHandler(this.cbDomicilio_DropDown);
             this.cbDomicilio.SelectedIndexChanged += new System.EventHandler(this.cbDomicilio_SelectedIndexChanged);
             // 
-            // groupBox16
-            // 
-            this.groupBox16.Controls.Add(this.cbSabado);
-            this.groupBox16.Controls.Add(this.cbViernes);
-            this.groupBox16.Controls.Add(this.cbJueves);
-            this.groupBox16.Controls.Add(this.cbMiercoles);
-            this.groupBox16.Controls.Add(this.cbMartes);
-            this.groupBox16.Controls.Add(this.cbLunes);
-            this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox16.Location = new System.Drawing.Point(503, 403);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(264, 89);
-            this.groupBox16.TabIndex = 72;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Visita";
-            // 
-            // cbLunes
-            // 
-            this.cbLunes.AutoSize = true;
-            this.cbLunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbLunes.Location = new System.Drawing.Point(24, 19);
-            this.cbLunes.Name = "cbLunes";
-            this.cbLunes.Size = new System.Drawing.Size(55, 17);
-            this.cbLunes.TabIndex = 0;
-            this.cbLunes.Text = "Lunes";
-            this.cbLunes.UseVisualStyleBackColor = true;
-            // 
-            // cbMartes
-            // 
-            this.cbMartes.AutoSize = true;
-            this.cbMartes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMartes.Location = new System.Drawing.Point(24, 42);
-            this.cbMartes.Name = "cbMartes";
-            this.cbMartes.Size = new System.Drawing.Size(58, 17);
-            this.cbMartes.TabIndex = 1;
-            this.cbMartes.Text = "Martes";
-            this.cbMartes.UseVisualStyleBackColor = true;
-            // 
-            // cbMiercoles
-            // 
-            this.cbMiercoles.AutoSize = true;
-            this.cbMiercoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMiercoles.Location = new System.Drawing.Point(24, 65);
-            this.cbMiercoles.Name = "cbMiercoles";
-            this.cbMiercoles.Size = new System.Drawing.Size(71, 17);
-            this.cbMiercoles.TabIndex = 2;
-            this.cbMiercoles.Text = "Miercoles";
-            this.cbMiercoles.UseVisualStyleBackColor = true;
-            // 
-            // cbJueves
-            // 
-            this.cbJueves.AutoSize = true;
-            this.cbJueves.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbJueves.Location = new System.Drawing.Point(148, 19);
-            this.cbJueves.Name = "cbJueves";
-            this.cbJueves.Size = new System.Drawing.Size(60, 17);
-            this.cbJueves.TabIndex = 3;
-            this.cbJueves.Text = "Jueves";
-            this.cbJueves.UseVisualStyleBackColor = true;
-            // 
-            // cbViernes
-            // 
-            this.cbViernes.AutoSize = true;
-            this.cbViernes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbViernes.Location = new System.Drawing.Point(148, 42);
-            this.cbViernes.Name = "cbViernes";
-            this.cbViernes.Size = new System.Drawing.Size(61, 17);
-            this.cbViernes.TabIndex = 4;
-            this.cbViernes.Text = "Viernes";
-            this.cbViernes.UseVisualStyleBackColor = true;
-            // 
-            // cbSabado
-            // 
-            this.cbSabado.AutoSize = true;
-            this.cbSabado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbSabado.Location = new System.Drawing.Point(148, 65);
-            this.cbSabado.Name = "cbSabado";
-            this.cbSabado.Size = new System.Drawing.Size(63, 17);
-            this.cbSabado.TabIndex = 5;
-            this.cbSabado.Text = "Sabado";
-            this.cbSabado.UseVisualStyleBackColor = true;
-            // 
-            // groupBox10
-            // 
-            this.groupBox10.Controls.Add(this.checkBox1);
-            this.groupBox10.Controls.Add(this.checkBox2);
-            this.groupBox10.Controls.Add(this.checkBox3);
-            this.groupBox10.Controls.Add(this.checkBox4);
-            this.groupBox10.Controls.Add(this.checkBox5);
-            this.groupBox10.Controls.Add(this.checkBox6);
-            this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox10.Location = new System.Drawing.Point(506, 403);
-            this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(264, 89);
-            this.groupBox10.TabIndex = 80;
-            this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "Visita";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(148, 65);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(63, 17);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Sabado";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(148, 42);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(61, 17);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "Viernes";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(148, 19);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(60, 17);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "Jueves";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(24, 65);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(71, 17);
-            this.checkBox4.TabIndex = 2;
-            this.checkBox4.Text = "Miercoles";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.Location = new System.Drawing.Point(24, 42);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(58, 17);
-            this.checkBox5.TabIndex = 1;
-            this.checkBox5.Text = "Martes";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(24, 19);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(55, 17);
-            this.checkBox6.TabIndex = 0;
-            this.checkBox6.Text = "Lunes";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.groupBox12);
-            this.groupBox11.Controls.Add(this.groupBox13);
-            this.groupBox11.Controls.Add(this.groupBox18);
-            this.groupBox11.Controls.Add(this.groupBox19);
-            this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox11.Location = new System.Drawing.Point(505, 10);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(265, 391);
-            this.groupBox11.TabIndex = 79;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Saldos";
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Controls.Add(this.textBox1);
-            this.groupBox12.Controls.Add(this.txtCreditoMaxPJ);
-            this.groupBox12.Controls.Add(this.label46);
-            this.groupBox12.Controls.Add(this.label50);
-            this.groupBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox12.Location = new System.Drawing.Point(4, 19);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(255, 76);
-            this.groupBox12.TabIndex = 67;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Cuenta Corriente";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox1.Location = new System.Drawing.Point(84, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 20);
-            this.textBox1.TabIndex = 69;
-            this.textBox1.Text = "00,00";
-            // 
-            // txtCreditoMaxPJ
-            // 
-            this.txtCreditoMaxPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtCreditoMaxPJ.Location = new System.Drawing.Point(84, 20);
-            this.txtCreditoMaxPJ.Name = "txtCreditoMaxPJ";
-            this.txtCreditoMaxPJ.Size = new System.Drawing.Size(165, 20);
-            this.txtCreditoMaxPJ.TabIndex = 67;
-            this.txtCreditoMaxPJ.Text = "50,00";
-            // 
-            // label46
-            // 
-            this.label46.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label46.Location = new System.Drawing.Point(6, 23);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(79, 13);
-            this.label46.TabIndex = 68;
-            this.label46.Text = "Credito Máximo";
-            // 
-            // label50
-            // 
-            this.label50.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label50.Location = new System.Drawing.Point(17, 49);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(67, 13);
-            this.label50.TabIndex = 70;
-            this.label50.Text = "Saldo Actual";
-            // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.textBox3);
-            this.groupBox13.Controls.Add(this.label51);
-            this.groupBox13.Controls.Add(this.textBox4);
-            this.groupBox13.Controls.Add(this.label52);
-            this.groupBox13.Controls.Add(this.textBox5);
-            this.groupBox13.Controls.Add(this.label53);
-            this.groupBox13.Controls.Add(this.textBox6);
-            this.groupBox13.Controls.Add(this.label54);
-            this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox13.Location = new System.Drawing.Point(4, 260);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(126, 127);
-            this.groupBox13.TabIndex = 66;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Otros";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox3.Location = new System.Drawing.Point(64, 97);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(47, 20);
-            this.textBox3.TabIndex = 104;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label51.Location = new System.Drawing.Point(6, 100);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(54, 13);
-            this.label51.TabIndex = 103;
-            this.label51.Text = "Dispenser";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox4.Location = new System.Drawing.Point(64, 71);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(47, 20);
-            this.textBox4.TabIndex = 102;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label52.Location = new System.Drawing.Point(36, 74);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(22, 13);
-            this.label52.TabIndex = 101;
-            this.label52.Text = "Pie";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox5.Location = new System.Drawing.Point(64, 45);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(47, 20);
-            this.textBox5.TabIndex = 100;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label53.Location = new System.Drawing.Point(14, 48);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(46, 13);
-            this.label53.TabIndex = 99;
-            this.label53.Text = "Canasta";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Enabled = false;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox6.Location = new System.Drawing.Point(64, 19);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(47, 20);
-            this.textBox6.TabIndex = 98;
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label54.Location = new System.Drawing.Point(26, 22);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(34, 13);
-            this.label54.TabIndex = 59;
-            this.label54.Text = "Cajon";
-            // 
-            // groupBox18
-            // 
-            this.groupBox18.Controls.Add(this.txt25LTPJ);
-            this.groupBox18.Controls.Add(this.txt20LTPJ);
-            this.groupBox18.Controls.Add(this.txt12LTPJ);
-            this.groupBox18.Controls.Add(this.txt10LTPJ);
-            this.groupBox18.Controls.Add(this.txt4LTPJ);
-            this.groupBox18.Controls.Add(this.label55);
-            this.groupBox18.Controls.Add(this.label56);
-            this.groupBox18.Controls.Add(this.label57);
-            this.groupBox18.Controls.Add(this.label58);
-            this.groupBox18.Controls.Add(this.label62);
-            this.groupBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox18.Location = new System.Drawing.Point(4, 101);
-            this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(126, 153);
-            this.groupBox18.TabIndex = 64;
-            this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "Agua";
-            // 
-            // txt25LTPJ
-            // 
-            this.txt25LTPJ.Enabled = false;
-            this.txt25LTPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt25LTPJ.Location = new System.Drawing.Point(64, 123);
-            this.txt25LTPJ.Name = "txt25LTPJ";
-            this.txt25LTPJ.Size = new System.Drawing.Size(47, 20);
-            this.txt25LTPJ.TabIndex = 102;
-            // 
-            // txt20LTPJ
-            // 
-            this.txt20LTPJ.Enabled = false;
-            this.txt20LTPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt20LTPJ.Location = new System.Drawing.Point(64, 97);
-            this.txt20LTPJ.Name = "txt20LTPJ";
-            this.txt20LTPJ.Size = new System.Drawing.Size(47, 20);
-            this.txt20LTPJ.TabIndex = 101;
-            // 
-            // txt12LTPJ
-            // 
-            this.txt12LTPJ.Enabled = false;
-            this.txt12LTPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt12LTPJ.Location = new System.Drawing.Point(64, 71);
-            this.txt12LTPJ.Name = "txt12LTPJ";
-            this.txt12LTPJ.Size = new System.Drawing.Size(47, 20);
-            this.txt12LTPJ.TabIndex = 100;
-            // 
-            // txt10LTPJ
-            // 
-            this.txt10LTPJ.Enabled = false;
-            this.txt10LTPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt10LTPJ.Location = new System.Drawing.Point(64, 45);
-            this.txt10LTPJ.Name = "txt10LTPJ";
-            this.txt10LTPJ.Size = new System.Drawing.Size(47, 20);
-            this.txt10LTPJ.TabIndex = 99;
-            // 
-            // txt4LTPJ
-            // 
-            this.txt4LTPJ.Enabled = false;
-            this.txt4LTPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txt4LTPJ.Location = new System.Drawing.Point(64, 19);
-            this.txt4LTPJ.Name = "txt4LTPJ";
-            this.txt4LTPJ.Size = new System.Drawing.Size(47, 20);
-            this.txt4LTPJ.TabIndex = 98;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label55.Location = new System.Drawing.Point(18, 126);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(40, 13);
-            this.label55.TabIndex = 66;
-            this.label55.Text = "25 LTs";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label56.Location = new System.Drawing.Point(18, 100);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(40, 13);
-            this.label56.TabIndex = 64;
-            this.label56.Text = "20 LTs";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label57.Location = new System.Drawing.Point(18, 73);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(40, 13);
-            this.label57.TabIndex = 62;
-            this.label57.Text = "12 LTs";
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label58.Location = new System.Drawing.Point(18, 48);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(40, 13);
-            this.label58.TabIndex = 60;
-            this.label58.Text = "10 LTs";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label62.Location = new System.Drawing.Point(24, 22);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(34, 13);
-            this.label62.TabIndex = 59;
-            this.label62.Text = "4 LTs";
-            // 
-            // groupBox19
-            // 
-            this.groupBox19.Controls.Add(this.textBox12);
-            this.groupBox19.Controls.Add(this.label63);
-            this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox19.Location = new System.Drawing.Point(137, 101);
-            this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(126, 153);
-            this.groupBox19.TabIndex = 65;
-            this.groupBox19.TabStop = false;
-            this.groupBox19.Text = "Sodas";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Enabled = false;
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox12.Location = new System.Drawing.Point(64, 19);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(47, 20);
-            this.textBox12.TabIndex = 103;
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label63.Location = new System.Drawing.Point(6, 22);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(59, 13);
-            this.label63.TabIndex = 67;
-            this.label63.Text = "Retornable";
+            // label64
+            // 
+            this.label64.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label64.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.ForeColor = System.Drawing.Color.White;
+            this.label64.Location = new System.Drawing.Point(0, 0);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(784, 30);
+            this.label64.TabIndex = 115;
+            this.label64.Text = "Clientes";
+            this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 562);
+            this.ClientSize = new System.Drawing.Size(784, 594);
+            this.Controls.Add(this.label64);
             this.Controls.Add(this.tabMain);
             this.Name = "formCliente";
             this.Text = "Cliente";
@@ -2592,6 +2606,8 @@
             this.tabListado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.tabInformacion.ResumeLayout(false);
+            this.groupBox16.ResumeLayout(false);
+            this.groupBox16.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -2607,6 +2623,17 @@
             this.groupBox1.PerformLayout();
             this.tabMain.ResumeLayout(false);
             this.tabInformacionJ.ResumeLayout(false);
+            this.groupBox10.ResumeLayout(false);
+            this.groupBox10.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
+            this.groupBox19.ResumeLayout(false);
+            this.groupBox19.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox14.ResumeLayout(false);
@@ -2619,19 +2646,6 @@
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox16.ResumeLayout(false);
-            this.groupBox16.PerformLayout();
-            this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
-            this.groupBox18.ResumeLayout(false);
-            this.groupBox18.PerformLayout();
-            this.groupBox19.ResumeLayout(false);
-            this.groupBox19.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2844,6 +2858,7 @@
         private System.Windows.Forms.GroupBox groupBox19;
         public System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label64;
 
     }
 }

@@ -279,7 +279,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     }
 
                     //Saldo $
-                    frm.txt4LTPJ.Text = SaldoB.GenerarSaldo(Convert.ToInt32(frm.txtIDcliente.Text));
+                    frm.txt4LTPJ.Text = SaldoB.GenerarSaldo(Convert.ToInt32(frm.txtIDclientePJ.Text));
                     //Saldo Envases
                     frm.txt4LTPJ.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 1));
                     frm.txt10LTPJ.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 3));
