@@ -72,6 +72,8 @@ namespace RamosHermanos.Capas.Negocio
                     insumo.proveedor = Convert.ToInt32(row["proveedor"]);
                     insumo.rubro = Convert.ToString(row["rubro"]);
                     insumo.stockMin = Convert.ToString(row["stockMin"]);
+                    insumo.medida = Convert.ToInt32(row["medida"]);
+                    insumo.cantidad = Convert.ToDouble(row["cantidad"]);
 
                     MySQL.DisconnectDB();
                 }
@@ -201,8 +203,8 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"Insert into insumos (fecha, proveedor,rubro, marca, insumo, descripcion, stockMin, estado)
-                                VALUES (@fecha, @proveedor,@rubro, @marca, @insumo, @descripcion, @stockMin, @estado);
+                string query = @"Insert into insumos (fecha, proveedor,rubro, marca, insumo, descripcion, stockMin, estado, medida, cantidad)
+                                VALUES (@fecha, @proveedor,@rubro, @marca, @insumo, @descripcion, @stockMin, @estado, @medida, @cantidad);
                                 SELECT LAST_INSERT_ID();";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -216,22 +218,20 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@descripcion", insumo.descripcion);
                 cmd.Parameters.AddWithValue("@stockMin", insumo.stockMin);
                 cmd.Parameters.AddWithValue("@estado", insumo.estado);
+                cmd.Parameters.AddWithValue("@medida", insumo.medida);
+                cmd.Parameters.AddWithValue("@cantidad", insumo.cantidad);
 
                 txtid.Text = Convert.ToString(cmd.ExecuteScalar());
-
 
                 MessageBox.Show("Guardado");
 
                 return insumo;
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("ERROR" + ex);
                 throw;
             }
-        
-        
         }
 
         public static void cargardgvInsumo(DataGridView dgv)
@@ -241,9 +241,10 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"Select I.idInsumo , I.insumo , I.fecha , I.estado, P.razonSocial ,I.StockMin, R.rubro, I.marca
+                string query = @"Select I.idInsumo , I.insumo , I.fecha , I.estado, P.razonSocial ,I.StockMin, R.rubro, I.marca, M.medida, I.cantidad
                                 FROM insumos I
                                 INNER JOIN proveedores P ON I.proveedor = P.idProveedor
+                                INNER JOIN medidas M ON M.idMedida = I.medida
                                 INNER JOIN rubros R on I.rubro = R.idRubro ";
                                 
 ;
@@ -261,8 +262,10 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["rubro"]),                   
                     Convert.ToString(dr["marca"]),
                     Convert.ToString(dr["fecha"]),
-                    Convert.ToString(dr["estado"]));
-
+                    Convert.ToString(dr["estado"]),
+                    Convert.ToString(dr["medida"]),
+                    Convert.ToString(dr["cantidad"]) 
+                    );
                 }
 
                 dr.Close();

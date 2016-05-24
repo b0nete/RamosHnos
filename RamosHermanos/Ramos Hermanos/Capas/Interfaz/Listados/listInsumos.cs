@@ -88,6 +88,8 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     //frmI.cbMarca.SelectedValue= insumo.marca;
                     frmI.cbProv.SelectedValue = insumo.proveedor;
                     frmI.cbRubro.SelectedValue = insumo.rubro;
+                    frmI.cbMedida.SelectedValue = insumo.medida;
+                    frmI.txtCantidad.Text = Convert.ToString(insumo.cantidad);
 
                     StockInsumoB.cargardgvStock(frmI.dgvStock, frmI.txtidInsumo);
 
@@ -115,22 +117,12 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             }
             if (cell != null)
             {
-                //DataGridViewRow row = cell.OwningRow;
-                
-                ////Cargamos el ID de acuerdo a la celda seleccionada y buscamos el producto para cargarlo en tabInformación.
-                //insumo.idInsumo = Convert.ToInt32(row.Cells["colIDInsumo"].Value.ToString());
-
-                //InsumoB.AdddInsumoDGV(frmP.dgvCompra, insumo);
-
-                //frmP.Show();
                 DataGridViewRow rowA = this.dgvInsumos.CurrentRow as DataGridViewRow;
 
                 IAddItem parent = this.Owner as IAddItem;
                 parent.AddNewItem(rowA);
 
                 //this.Close();
-                
-                
             }
         
         
@@ -147,6 +139,11 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvInsumos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

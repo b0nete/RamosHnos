@@ -75,6 +75,7 @@
     <Compile Include="Capas\Entidades\itemPedidoEntity.cs" />
     <Compile Include="Capas\Entidades\ItemProduccionEntity.cs" />
     <Compile Include="Capas\Entidades\itemRecorridoEntity.cs" />
+    <Compile Include="Capas\Entidades\itemsProductoEntity.cs" />
     <Compile Include="Capas\Entidades\itemsRepartoEntity.cs" />
     <Compile Include="Capas\Entidades\LocalidadEntity.cs" />
     <Compile Include="Capas\Entidades\MarcaEntity.cs" />
@@ -373,6 +374,7 @@
     <Compile Include="Capas\Negocio\ClienteB.cs" />
     <Compile Include="Capas\Negocio\CalleB.cs" />
     <Compile Include="Capas\Negocio\ComprasB.cs" />
+    <Compile Include="Capas\Negocio\itemsProductoB.cs" />
     <Compile Include="Capas\Negocio\LogStockInsumoEntity.cs" />
     <Compile Include="Capas\Negocio\itemCompraB.cs" />
     <Compile Include="Capas\Negocio\itemProduccionB.cs" />

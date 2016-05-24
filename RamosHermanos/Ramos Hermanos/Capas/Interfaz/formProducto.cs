@@ -11,10 +11,11 @@ using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Interfaz.Listados;
 using RamosHermanos.Capas.Interfaz.ABMs;
+using RamosHermanos.Capas.Interfaz.Contratos;
 
 namespace RamosHermanos.Capas.Interfaz
 {
-    public partial class formProducto : Form
+    public partial class formProducto : Form, IAddItem
     {
         public formProducto()
         {
@@ -432,9 +433,40 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-        
+        public void AddNewItem(DataGridViewRow row)
+        {
+            string idinsumo = row.Cells["colIDInsumo"].Value.ToString();
+            string insumo = row.Cells["colInsumo"].Value.ToString();
+            string medida = row.Cells["colMedida"].Value.ToString();
 
+            this.dgvConformacion.Rows.Add(new[] { idinsumo, insumo, medida });
 
+        }
+
+        private void btnAddLu_Click(object sender, EventArgs e)
+        {
+            listInsumos frm = new listInsumos();
+            frm.caseSwitch = 1;
+            frm.Show(this);            
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow dr in dgvConformacion.Rows)
+            {
+                cargarItemsProducto(dr);
+                itemsProductoB.InsertItemProducto(itemProducto);
+            }
+        }
+
+        //Entidades
+        itemsProductoEntity itemProducto = new itemsProductoEntity();
+        private void cargarItemsProducto(DataGridViewRow dRow)
+        {
+            itemProducto.idInsumo = Convert.ToInt32(dRow.Cells["colIdInsumo"].Value);
+            itemProducto.medida = Convert.ToString(dRow.Cells["colMedida"].Value);
+            itemProducto.cantidad = Convert.ToDouble(dRow.Cells["colCantidadm"].Value);
+        }
         
     }
 }

@@ -83,6 +83,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvStock = new System.Windows.Forms.DataGridView();
+            this.colOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtStockMax = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtStockA = new System.Windows.Forms.TextBox();
@@ -98,12 +103,16 @@
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label19 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.tabConformacion = new System.Windows.Forms.TabPage();
+            this.btnDelInsumo = new System.Windows.Forms.Button();
+            this.btnAddInsumo = new System.Windows.Forms.Button();
+            this.dgvConformacion = new System.Windows.Forms.DataGridView();
+            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidadm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
-            this.colOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFechaComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSaveConformacion = new System.Windows.Forms.Button();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -116,6 +125,8 @@
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrecios)).BeginInit();
+            this.tabConformacion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConformacion)).BeginInit();
             this.SuspendLayout();
             // 
             // tabProducto
@@ -123,6 +134,7 @@
             this.tabProducto.Controls.Add(this.tabInformacion);
             this.tabProducto.Controls.Add(this.tabStock);
             this.tabProducto.Controls.Add(this.tabPrecio);
+            this.tabProducto.Controls.Add(this.tabConformacion);
             this.tabProducto.Location = new System.Drawing.Point(3, 33);
             this.tabProducto.Name = "tabProducto";
             this.tabProducto.SelectedIndex = 0;
@@ -779,6 +791,41 @@
             this.dgvStock.Size = new System.Drawing.Size(709, 202);
             this.dgvStock.TabIndex = 0;
             // 
+            // colOperacion
+            // 
+            this.colOperacion.DataPropertyName = "operacion";
+            this.colOperacion.HeaderText = "Operación";
+            this.colOperacion.Name = "colOperacion";
+            this.colOperacion.ReadOnly = true;
+            // 
+            // colComprobante
+            // 
+            this.colComprobante.DataPropertyName = "A";
+            this.colComprobante.HeaderText = "Nº Comprobante";
+            this.colComprobante.Name = "colComprobante";
+            this.colComprobante.ReadOnly = true;
+            // 
+            // colFechaComprobante
+            // 
+            this.colFechaComprobante.DataPropertyName = "B";
+            this.colFechaComprobante.HeaderText = "Fecha Comprobante";
+            this.colFechaComprobante.Name = "colFechaComprobante";
+            this.colFechaComprobante.ReadOnly = true;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.DataPropertyName = "C";
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
+            // 
+            // colStock
+            // 
+            this.colStock.DataPropertyName = "D";
+            this.colStock.HeaderText = "Stock";
+            this.colStock.Name = "colStock";
+            this.colStock.ReadOnly = true;
+            // 
             // txtStockMax
             // 
             this.txtStockMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -932,6 +979,76 @@
             this.label27.TabIndex = 84;
             this.label27.Text = "*";
             // 
+            // tabConformacion
+            // 
+            this.tabConformacion.Controls.Add(this.btnSaveConformacion);
+            this.tabConformacion.Controls.Add(this.btnDelInsumo);
+            this.tabConformacion.Controls.Add(this.btnAddInsumo);
+            this.tabConformacion.Controls.Add(this.dgvConformacion);
+            this.tabConformacion.Location = new System.Drawing.Point(4, 22);
+            this.tabConformacion.Name = "tabConformacion";
+            this.tabConformacion.Padding = new System.Windows.Forms.Padding(3);
+            this.tabConformacion.Size = new System.Drawing.Size(735, 312);
+            this.tabConformacion.TabIndex = 3;
+            this.tabConformacion.Text = "Conformacion";
+            this.tabConformacion.UseVisualStyleBackColor = true;
+            // 
+            // btnDelInsumo
+            // 
+            this.btnDelInsumo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelInsumo.BackgroundImage")));
+            this.btnDelInsumo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDelInsumo.Location = new System.Drawing.Point(40, 278);
+            this.btnDelInsumo.Name = "btnDelInsumo";
+            this.btnDelInsumo.Size = new System.Drawing.Size(28, 28);
+            this.btnDelInsumo.TabIndex = 95;
+            this.btnDelInsumo.UseVisualStyleBackColor = true;
+            // 
+            // btnAddInsumo
+            // 
+            this.btnAddInsumo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddInsumo.BackgroundImage")));
+            this.btnAddInsumo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAddInsumo.Location = new System.Drawing.Point(6, 278);
+            this.btnAddInsumo.Name = "btnAddInsumo";
+            this.btnAddInsumo.Size = new System.Drawing.Size(28, 28);
+            this.btnAddInsumo.TabIndex = 94;
+            this.btnAddInsumo.UseVisualStyleBackColor = true;
+            this.btnAddInsumo.Click += new System.EventHandler(this.btnAddLu_Click);
+            // 
+            // dgvConformacion
+            // 
+            this.dgvConformacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConformacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDInsumo,
+            this.colInsumo,
+            this.colMedida,
+            this.colCantidadm});
+            this.dgvConformacion.Location = new System.Drawing.Point(6, 6);
+            this.dgvConformacion.Name = "dgvConformacion";
+            this.dgvConformacion.Size = new System.Drawing.Size(721, 266);
+            this.dgvConformacion.TabIndex = 0;
+            // 
+            // colIDInsumo
+            // 
+            this.colIDInsumo.HeaderText = "ID Insumo";
+            this.colIDInsumo.Name = "colIDInsumo";
+            // 
+            // colInsumo
+            // 
+            this.colInsumo.HeaderText = "Insumo";
+            this.colInsumo.Name = "colInsumo";
+            // 
+            // colMedida
+            // 
+            this.colMedida.HeaderText = "Unidad Medida";
+            this.colMedida.Name = "colMedida";
+            // 
+            // colCantidadm
+            // 
+            this.colCantidadm.HeaderText = "Cantidad";
+            this.colCantidadm.Name = "colCantidadm";
+            // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -946,40 +1063,17 @@
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // colOperacion
+            // btnSaveConformacion
             // 
-            this.colOperacion.DataPropertyName = "operacion";
-            this.colOperacion.HeaderText = "Operación";
-            this.colOperacion.Name = "colOperacion";
-            this.colOperacion.ReadOnly = true;
-            // 
-            // colComprobante
-            // 
-            this.colComprobante.DataPropertyName = "A";
-            this.colComprobante.HeaderText = "Nº Comprobante";
-            this.colComprobante.Name = "colComprobante";
-            this.colComprobante.ReadOnly = true;
-            // 
-            // colFechaComprobante
-            // 
-            this.colFechaComprobante.DataPropertyName = "B";
-            this.colFechaComprobante.HeaderText = "Fecha Comprobante";
-            this.colFechaComprobante.Name = "colFechaComprobante";
-            this.colFechaComprobante.ReadOnly = true;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.DataPropertyName = "C";
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            this.colCantidad.ReadOnly = true;
-            // 
-            // colStock
-            // 
-            this.colStock.DataPropertyName = "D";
-            this.colStock.HeaderText = "Stock";
-            this.colStock.Name = "colStock";
-            this.colStock.ReadOnly = true;
+            this.btnSaveConformacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveConformacion.BackgroundImage")));
+            this.btnSaveConformacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveConformacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveConformacion.Location = new System.Drawing.Point(699, 278);
+            this.btnSaveConformacion.Name = "btnSaveConformacion";
+            this.btnSaveConformacion.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveConformacion.TabIndex = 96;
+            this.btnSaveConformacion.UseVisualStyleBackColor = true;
+            this.btnSaveConformacion.Click += new System.EventHandler(this.button10_Click);
             // 
             // formProducto
             // 
@@ -1008,6 +1102,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrecios)).EndInit();
+            this.tabConformacion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConformacion)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1089,5 +1185,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaComprobante;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
+        private System.Windows.Forms.TabPage tabConformacion;
+        private System.Windows.Forms.DataGridView dgvConformacion;
+        private System.Windows.Forms.Button btnDelInsumo;
+        private System.Windows.Forms.Button btnAddInsumo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDInsumo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colInsumo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMedida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidadm;
+        private System.Windows.Forms.Button btnSaveConformacion;
     }
 }
