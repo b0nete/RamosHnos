@@ -104,15 +104,16 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.tabConformacion = new System.Windows.Forms.TabPage();
+            this.btnSaveConformacion = new System.Windows.Forms.Button();
             this.btnDelInsumo = new System.Windows.Forms.Button();
             this.btnAddInsumo = new System.Windows.Forms.Button();
             this.dgvConformacion = new System.Windows.Forms.DataGridView();
+            this.label7 = new System.Windows.Forms.Label();
             this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidadm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnSaveConformacion = new System.Windows.Forms.Button();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -993,6 +994,18 @@
             this.tabConformacion.Text = "Conformacion";
             this.tabConformacion.UseVisualStyleBackColor = true;
             // 
+            // btnSaveConformacion
+            // 
+            this.btnSaveConformacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveConformacion.BackgroundImage")));
+            this.btnSaveConformacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveConformacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveConformacion.Location = new System.Drawing.Point(699, 278);
+            this.btnSaveConformacion.Name = "btnSaveConformacion";
+            this.btnSaveConformacion.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveConformacion.TabIndex = 96;
+            this.btnSaveConformacion.UseVisualStyleBackColor = true;
+            this.btnSaveConformacion.Click += new System.EventHandler(this.button10_Click);
+            // 
             // btnDelInsumo
             // 
             this.btnDelInsumo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelInsumo.BackgroundImage")));
@@ -1018,36 +1031,19 @@
             // 
             // dgvConformacion
             // 
+            this.dgvConformacion.AllowUserToAddRows = false;
+            this.dgvConformacion.AllowUserToDeleteRows = false;
             this.dgvConformacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConformacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colIDInsumo,
             this.colInsumo,
+            this.colIDMedida,
             this.colMedida,
             this.colCantidadm});
             this.dgvConformacion.Location = new System.Drawing.Point(6, 6);
             this.dgvConformacion.Name = "dgvConformacion";
             this.dgvConformacion.Size = new System.Drawing.Size(721, 266);
             this.dgvConformacion.TabIndex = 0;
-            // 
-            // colIDInsumo
-            // 
-            this.colIDInsumo.HeaderText = "ID Insumo";
-            this.colIDInsumo.Name = "colIDInsumo";
-            // 
-            // colInsumo
-            // 
-            this.colInsumo.HeaderText = "Insumo";
-            this.colInsumo.Name = "colInsumo";
-            // 
-            // colMedida
-            // 
-            this.colMedida.HeaderText = "Unidad Medida";
-            this.colMedida.Name = "colMedida";
-            // 
-            // colCantidadm
-            // 
-            this.colCantidadm.HeaderText = "Cantidad";
-            this.colCantidadm.Name = "colCantidadm";
             // 
             // label7
             // 
@@ -1063,17 +1059,35 @@
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // btnSaveConformacion
+            // colIDInsumo
             // 
-            this.btnSaveConformacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveConformacion.BackgroundImage")));
-            this.btnSaveConformacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveConformacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveConformacion.Location = new System.Drawing.Point(699, 278);
-            this.btnSaveConformacion.Name = "btnSaveConformacion";
-            this.btnSaveConformacion.Size = new System.Drawing.Size(28, 28);
-            this.btnSaveConformacion.TabIndex = 96;
-            this.btnSaveConformacion.UseVisualStyleBackColor = true;
-            this.btnSaveConformacion.Click += new System.EventHandler(this.button10_Click);
+            this.colIDInsumo.HeaderText = "ID Insumo";
+            this.colIDInsumo.Name = "colIDInsumo";
+            this.colIDInsumo.ReadOnly = true;
+            // 
+            // colInsumo
+            // 
+            this.colInsumo.HeaderText = "Insumo";
+            this.colInsumo.Name = "colInsumo";
+            this.colInsumo.ReadOnly = true;
+            // 
+            // colIDMedida
+            // 
+            this.colIDMedida.HeaderText = "ID Medida";
+            this.colIDMedida.Name = "colIDMedida";
+            this.colIDMedida.ReadOnly = true;
+            this.colIDMedida.Visible = false;
+            // 
+            // colMedida
+            // 
+            this.colMedida.HeaderText = "Unidad Medida";
+            this.colMedida.Name = "colMedida";
+            this.colMedida.ReadOnly = true;
+            // 
+            // colCantidadm
+            // 
+            this.colCantidadm.HeaderText = "Cantidad";
+            this.colCantidadm.Name = "colCantidadm";
             // 
             // formProducto
             // 
@@ -1186,13 +1200,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
         private System.Windows.Forms.TabPage tabConformacion;
-        private System.Windows.Forms.DataGridView dgvConformacion;
         private System.Windows.Forms.Button btnDelInsumo;
         private System.Windows.Forms.Button btnAddInsumo;
+        private System.Windows.Forms.Button btnSaveConformacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInsumo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidadm;
-        private System.Windows.Forms.Button btnSaveConformacion;
+        public System.Windows.Forms.DataGridView dgvConformacion;
     }
 }

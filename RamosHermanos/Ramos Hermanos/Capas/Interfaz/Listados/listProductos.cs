@@ -131,6 +131,9 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     StockProductoB.StockLogDGV(frmPro.dgvStock, frmPro.txtIDProd);
                     frmPro.dgvStock.AutoGenerateColumns = false;
                 }
+
+                //Conformacion
+                itemsProductoB.CargarDGV(Convert.ToInt32(frmPro.txtIDProd.Text), frmPro.dgvConformacion);
                 //StockProductoB.cargardgvStock(frmPro.dgvStock, frmPro.txtIDProd);
 
             }

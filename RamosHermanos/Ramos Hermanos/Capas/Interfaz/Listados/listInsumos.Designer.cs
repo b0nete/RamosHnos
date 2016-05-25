@@ -42,6 +42,7 @@
             this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colIDMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumos)).BeginInit();
@@ -61,6 +62,7 @@
             this.colMarca,
             this.colFecha,
             this.colEstado,
+            this.colIDMedida,
             this.colMedida,
             this.colCantidad});
             this.dgvInsumos.Location = new System.Drawing.Point(12, 61);
@@ -175,6 +177,13 @@
             this.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colEstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // colIDMedida
+            // 
+            this.colIDMedida.HeaderText = "ID Medida";
+            this.colIDMedida.Name = "colIDMedida";
+            this.colIDMedida.ReadOnly = true;
+            this.colIDMedida.Visible = false;
+            // 
             // colMedida
             // 
             this.colMedida.HeaderText = "Medida";
@@ -221,6 +230,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colEstado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
     }

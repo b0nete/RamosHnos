@@ -8,6 +8,7 @@ namespace RamosHermanos.Capas.Entidades
 {
     class itemsProductoEntity
     {
+        public int producto { get; set; }
         public int idItemProducto { get; set; }
         public int idInsumo { get; set; }
         public string medida { get; set; }

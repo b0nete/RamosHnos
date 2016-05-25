@@ -241,7 +241,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"Select I.idInsumo , I.insumo , I.fecha , I.estado, P.razonSocial ,I.StockMin, R.rubro, I.marca, M.medida, I.cantidad
+                string query = @"Select I.idInsumo , I.insumo , I.fecha , I.estado, P.razonSocial ,I.StockMin, R.rubro, I.marca, I.medida as idMedida, M.medida, I.cantidad
                                 FROM insumos I
                                 INNER JOIN proveedores P ON I.proveedor = P.idProveedor
                                 INNER JOIN medidas M ON M.idMedida = I.medida
@@ -263,6 +263,7 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["marca"]),
                     Convert.ToString(dr["fecha"]),
                     Convert.ToString(dr["estado"]),
+                    Convert.ToString(dr["idMedida"]),
                     Convert.ToString(dr["medida"]),
                     Convert.ToString(dr["cantidad"]) 
                     );

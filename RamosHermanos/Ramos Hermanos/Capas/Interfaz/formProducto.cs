@@ -437,9 +437,10 @@ namespace RamosHermanos.Capas.Interfaz
         {
             string idinsumo = row.Cells["colIDInsumo"].Value.ToString();
             string insumo = row.Cells["colInsumo"].Value.ToString();
+            string idMedida = row.Cells["colIDMedida"].Value.ToString();
             string medida = row.Cells["colMedida"].Value.ToString();
 
-            this.dgvConformacion.Rows.Add(new[] { idinsumo, insumo, medida });
+            this.dgvConformacion.Rows.Add(new[] { idinsumo, insumo, idMedida, medida });
 
         }
 
@@ -463,8 +464,9 @@ namespace RamosHermanos.Capas.Interfaz
         itemsProductoEntity itemProducto = new itemsProductoEntity();
         private void cargarItemsProducto(DataGridViewRow dRow)
         {
+            itemProducto.producto = Convert.ToInt32(txtIDProd.Text);
             itemProducto.idInsumo = Convert.ToInt32(dRow.Cells["colIdInsumo"].Value);
-            itemProducto.medida = Convert.ToString(dRow.Cells["colMedida"].Value);
+            itemProducto.medida = Convert.ToString(dRow.Cells["colIDMedida"].Value);
             itemProducto.cantidad = Convert.ToDouble(dRow.Cells["colCantidadm"].Value);
         }
         
