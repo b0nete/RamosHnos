@@ -12,7 +12,7 @@ namespace RamosHermanos.Capas.Entidades
         public DateTime fecha { get; set; }
         public string rubro { get; set; }
         public int proveedor { get; set; }
-        public string marca { get; set; }
+        public int marca { get; set; }
         public string insumo { get; set; }
         public string descripcion { get; set; }
         public string stockMin { get; set; }

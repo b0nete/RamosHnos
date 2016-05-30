@@ -68,7 +68,7 @@ namespace RamosHermanos.Capas.Negocio
                     insumo.descripcion = Convert.ToString(row["descripcion"]);
                     insumo.fecha = Convert.ToDateTime(row["fecha"]);
                     insumo.insumo = Convert.ToString(row["insumo"]);
-                    insumo.marca = Convert.ToString(row["marca"]);
+                    insumo.marca = Convert.ToInt32(row["marca"]);
                     insumo.proveedor = Convert.ToInt32(row["proveedor"]);
                     insumo.rubro = Convert.ToString(row["rubro"]);
                     insumo.stockMin = Convert.ToString(row["stockMin"]);
@@ -120,7 +120,7 @@ namespace RamosHermanos.Capas.Negocio
                     insumo.descripcion = Convert.ToString(row["descripcion"]);
                     insumo.fecha = Convert.ToDateTime(row["fecha"]);
                     insumo.insumo = Convert.ToString(row["insumo"]);
-                    insumo.marca = Convert.ToString(row["marca"]);
+                    insumo.marca = Convert.ToInt32(row["marca"]);
                     insumo.proveedor = Convert.ToInt32(row["proveedor"]);
                     insumo.rubro = Convert.ToString(row["rubro"]);
                     insumo.stockMin = Convert.ToString(row["stockMin"]);
@@ -241,10 +241,11 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"Select I.idInsumo , I.insumo , I.fecha , I.estado, P.razonSocial ,I.StockMin, R.rubro, I.marca, I.medida as idMedida, M.medida, I.cantidad
+                string query = @"Select I.idInsumo , I.insumo , I.fecha , I.estado, P.razonSocial ,I.StockMin, R.rubro, MM.marca, I.medida as idMedida, M.medida, I.cantidad
                                 FROM insumos I
                                 INNER JOIN proveedores P ON I.proveedor = P.idProveedor
                                 INNER JOIN medidas M ON M.idMedida = I.medida
+                                INNER JOIN Marcas MM ON MM.idMarca = I.Marca
                                 INNER JOIN rubros R on I.rubro = R.idRubro ";
                                 
 ;

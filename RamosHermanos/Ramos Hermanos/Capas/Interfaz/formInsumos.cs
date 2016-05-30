@@ -29,7 +29,7 @@ namespace RamosHermanos.Capas.Interfaz
           insumo.descripcion= txtDescripcion.Text;
           insumo.fecha= dtpFecha.Value;
           insumo.insumo= Convert.ToString(txtInsumo.Text);
-          insumo.marca = cbMarca.Text;
+          insumo.marca = Convert.ToInt32(cbMarca.Text);
           insumo.proveedor = Convert.ToInt32(cbProv.SelectedValue);
           insumo.rubro = Convert.ToString(cbRubro.SelectedValue);
           insumo.medida = Convert.ToInt32(cbMedida.SelectedValue);
@@ -75,7 +75,7 @@ namespace RamosHermanos.Capas.Interfaz
                 txtDescripcion.Text = insumo.descripcion;
                 dtpFecha.Value = insumo.fecha;
                 txtInsumo.Text = insumo.insumo;
-                cbMarca.Text = insumo.marca;
+                cbMarca.Text = Convert.ToString(insumo.marca);
                 cbProv.SelectedValue = insumo.proveedor;
                 txtRubro.Text = insumo.rubro;
 
@@ -383,7 +383,30 @@ namespace RamosHermanos.Capas.Interfaz
             CargarStock();
             StockInsumoB.InsertStock(stock);
         }
-    
+
+        private void button9_Click_1(object sender, EventArgs e)
+        {
+            if (txtnewPrecio.Text == "")
+            {
+                MessageBox.Show("Por favor, ingrese un precio");
+            }
+            else
+            {
+                //Desabilitamos todos los precios anteriores del mismo producto.
+                int idInsumo = Convert.ToInt32(txtidInsumo.Text);
+                PrecioInsumosB.DisablePrecio(idInsumo);
+
+                //Insertamos el nuevo precio.
+                precio.insumo = Convert.ToInt32(txtidInsumo.Text);
+                precio.precio = Convert.ToDecimal(txtnewPrecio.Text);
+                PrecioInsumosB.InsertPrecio(precio);
+                //Actualizamos DGV
+                PrecioProductosB.UltimoPrecioDGV(dgvPrecios, txtidInsumo);
+            }
+        }
+
+        //Entidades
+        PrecioInsumoEntity precio = new PrecioInsumoEntity();  
           
     }
   

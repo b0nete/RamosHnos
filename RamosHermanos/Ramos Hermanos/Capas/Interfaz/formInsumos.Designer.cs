@@ -622,7 +622,7 @@
             this.tabStock.Location = new System.Drawing.Point(4, 22);
             this.tabStock.Name = "tabStock";
             this.tabStock.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStock.Size = new System.Drawing.Size(572, 372);
+            this.tabStock.Size = new System.Drawing.Size(474, 370);
             this.tabStock.TabIndex = 1;
             this.tabStock.Text = "Stock";
             this.tabStock.UseVisualStyleBackColor = true;
@@ -635,7 +635,7 @@
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(3, 3);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(566, 39);
+            this.label16.Size = new System.Drawing.Size(468, 39);
             this.label16.TabIndex = 115;
             this.label16.Text = "Stock";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -844,7 +844,7 @@
             this.tabPrecio.Location = new System.Drawing.Point(4, 22);
             this.tabPrecio.Name = "tabPrecio";
             this.tabPrecio.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPrecio.Size = new System.Drawing.Size(572, 372);
+            this.tabPrecio.Size = new System.Drawing.Size(474, 370);
             this.tabPrecio.TabIndex = 2;
             this.tabPrecio.Text = "Precio";
             this.tabPrecio.UseVisualStyleBackColor = true;
@@ -880,6 +880,7 @@
             this.button9.Size = new System.Drawing.Size(28, 28);
             this.button9.TabIndex = 123;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click_1);
             // 
             // groupBox5
             // 
@@ -945,7 +946,7 @@
             this.label18.ForeColor = System.Drawing.Color.White;
             this.label18.Location = new System.Drawing.Point(3, 3);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(566, 39);
+            this.label18.Size = new System.Drawing.Size(468, 39);
             this.label18.TabIndex = 115;
             this.label18.Text = "Precio";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
