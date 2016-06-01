@@ -155,6 +155,7 @@
             this.colLuSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colLuEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnSaveRecMa = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.btnUpMa = new System.Windows.Forms.Button();
@@ -163,7 +164,14 @@
             this.btnDelMa = new System.Windows.Forms.Button();
             this.btnAddMa = new System.Windows.Forms.Button();
             this.dgvRecorridoMa = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnSaveRecMi = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.btnUpMi = new System.Windows.Forms.Button();
@@ -172,6 +180,12 @@
             this.btnDelMi = new System.Windows.Forms.Button();
             this.btnAddMi = new System.Windows.Forms.Button();
             this.dgvRecorridoMi = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMiDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMiHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMiSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.btnSaveRecJu = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
@@ -182,6 +196,12 @@
             this.btnDelJu = new System.Windows.Forms.Button();
             this.btnAddJu = new System.Windows.Forms.Button();
             this.dgvRecorridoJu = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colJuDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colJuHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colJuSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.button27 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
@@ -192,6 +212,12 @@
             this.btnDelVi = new System.Windows.Forms.Button();
             this.btnAddVi = new System.Windows.Forms.Button();
             this.dgvRecorridoVi = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colViDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colViHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colViSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.button34 = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
@@ -202,6 +228,12 @@
             this.btnDelSa = new System.Windows.Forms.Button();
             this.btnAddSa = new System.Windows.Forms.Button();
             this.dgvRecorridoSa = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSaDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSaHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSaSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.button41 = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
@@ -212,38 +244,6 @@
             this.btnDelDo = new System.Windows.Forms.Button();
             this.btnAddDo = new System.Windows.Forms.Button();
             this.dgvRecorridoDo = new System.Windows.Forms.DataGridView();
-            this.btnSaveRecMa = new System.Windows.Forms.Button();
-            this.btnSaveRecMi = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMiDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMiHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMiSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colJuDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colJuHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colJuSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colViDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colViHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colViSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSaDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSaHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSaSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDoDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -1692,7 +1692,6 @@
             this.button3.Size = new System.Drawing.Size(28, 28);
             this.button3.TabIndex = 98;
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnUpLu
@@ -1838,6 +1837,18 @@
             this.tabPage2.Text = "Martes";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btnSaveRecMa
+            // 
+            this.btnSaveRecMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecMa.BackgroundImage")));
+            this.btnSaveRecMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveRecMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRecMa.Location = new System.Drawing.Point(734, 475);
+            this.btnSaveRecMa.Name = "btnSaveRecMa";
+            this.btnSaveRecMa.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveRecMa.TabIndex = 109;
+            this.btnSaveRecMa.UseVisualStyleBackColor = true;
+            this.btnSaveRecMa.Click += new System.EventHandler(this.btnSaveRecMa_Click_1);
+            // 
             // button6
             // 
             this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
@@ -1932,6 +1943,43 @@
             this.dgvRecorridoMa.Size = new System.Drawing.Size(756, 463);
             this.dgvRecorridoMa.TabIndex = 100;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nº Calle";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Calle";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // colMaDesde
+            // 
+            this.colMaDesde.HeaderText = "Desde";
+            this.colMaDesde.Name = "colMaDesde";
+            // 
+            // colMaHasta
+            // 
+            this.colMaHasta.HeaderText = "Hasta";
+            this.colMaHasta.Name = "colMaHasta";
+            // 
+            // colMaSentido
+            // 
+            this.colMaSentido.HeaderText = "Sentido";
+            this.colMaSentido.Name = "colMaSentido";
+            this.colMaSentido.Visible = false;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Estado";
+            this.dataGridViewCheckBoxColumn1.IndeterminateValue = "True";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.btnSaveRecMi);
@@ -1949,6 +1997,18 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Miercoles";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveRecMi
+            // 
+            this.btnSaveRecMi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecMi.BackgroundImage")));
+            this.btnSaveRecMi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveRecMi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRecMi.Location = new System.Drawing.Point(734, 475);
+            this.btnSaveRecMi.Name = "btnSaveRecMi";
+            this.btnSaveRecMi.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveRecMi.TabIndex = 109;
+            this.btnSaveRecMi.UseVisualStyleBackColor = true;
+            this.btnSaveRecMi.Click += new System.EventHandler(this.btnSaveRecMi_Click);
             // 
             // button13
             // 
@@ -2043,6 +2103,43 @@
             this.dgvRecorridoMi.Name = "dgvRecorridoMi";
             this.dgvRecorridoMi.Size = new System.Drawing.Size(756, 463);
             this.dgvRecorridoMi.TabIndex = 100;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Nº Calle";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Calle";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // colMiDesde
+            // 
+            this.colMiDesde.HeaderText = "Desde";
+            this.colMiDesde.Name = "colMiDesde";
+            // 
+            // colMiHasta
+            // 
+            this.colMiHasta.HeaderText = "Hasta";
+            this.colMiHasta.Name = "colMiHasta";
+            // 
+            // colMiSentido
+            // 
+            this.colMiSentido.HeaderText = "Sentido";
+            this.colMiSentido.Name = "colMiSentido";
+            this.colMiSentido.Visible = false;
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Estado";
+            this.dataGridViewCheckBoxColumn2.IndeterminateValue = "True";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tabPage4
             // 
@@ -2168,6 +2265,43 @@
             this.dgvRecorridoJu.Size = new System.Drawing.Size(756, 463);
             this.dgvRecorridoJu.TabIndex = 100;
             // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "Nº Calle";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "Calle";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // colJuDesde
+            // 
+            this.colJuDesde.HeaderText = "Desde";
+            this.colJuDesde.Name = "colJuDesde";
+            // 
+            // colJuHasta
+            // 
+            this.colJuHasta.HeaderText = "Hasta";
+            this.colJuHasta.Name = "colJuHasta";
+            // 
+            // colJuSentido
+            // 
+            this.colJuSentido.HeaderText = "Sentido";
+            this.colJuSentido.Name = "colJuSentido";
+            this.colJuSentido.Visible = false;
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.HeaderText = "Estado";
+            this.dataGridViewCheckBoxColumn3.IndeterminateValue = "True";
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            this.dataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.button27);
@@ -2291,6 +2425,43 @@
             this.dgvRecorridoVi.Name = "dgvRecorridoVi";
             this.dgvRecorridoVi.Size = new System.Drawing.Size(756, 463);
             this.dgvRecorridoVi.TabIndex = 100;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.HeaderText = "Nº Calle";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.HeaderText = "Calle";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            // 
+            // colViDesde
+            // 
+            this.colViDesde.HeaderText = "Desde";
+            this.colViDesde.Name = "colViDesde";
+            // 
+            // colViHasta
+            // 
+            this.colViHasta.HeaderText = "Hasta";
+            this.colViHasta.Name = "colViHasta";
+            // 
+            // colViSentido
+            // 
+            this.colViSentido.HeaderText = "Sentido";
+            this.colViSentido.Name = "colViSentido";
+            this.colViSentido.Visible = false;
+            // 
+            // dataGridViewCheckBoxColumn4
+            // 
+            this.dataGridViewCheckBoxColumn4.HeaderText = "Estado";
+            this.dataGridViewCheckBoxColumn4.IndeterminateValue = "True";
+            this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
+            this.dataGridViewCheckBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tabPage6
             // 
@@ -2416,6 +2587,43 @@
             this.dgvRecorridoSa.Size = new System.Drawing.Size(756, 463);
             this.dgvRecorridoSa.TabIndex = 100;
             // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.HeaderText = "Nº Calle";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.HeaderText = "Calle";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.ReadOnly = true;
+            // 
+            // colSaDesde
+            // 
+            this.colSaDesde.HeaderText = "Desde";
+            this.colSaDesde.Name = "colSaDesde";
+            // 
+            // colSaHasta
+            // 
+            this.colSaHasta.HeaderText = "Hasta";
+            this.colSaHasta.Name = "colSaHasta";
+            // 
+            // colSaSentido
+            // 
+            this.colSaSentido.HeaderText = "Sentido";
+            this.colSaSentido.Name = "colSaSentido";
+            this.colSaSentido.Visible = false;
+            // 
+            // dataGridViewCheckBoxColumn5
+            // 
+            this.dataGridViewCheckBoxColumn5.HeaderText = "Estado";
+            this.dataGridViewCheckBoxColumn5.IndeterminateValue = "True";
+            this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
+            this.dataGridViewCheckBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewCheckBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.button41);
@@ -2539,215 +2747,6 @@
             this.dgvRecorridoDo.Name = "dgvRecorridoDo";
             this.dgvRecorridoDo.Size = new System.Drawing.Size(756, 463);
             this.dgvRecorridoDo.TabIndex = 100;
-            // 
-            // btnSaveRecMa
-            // 
-            this.btnSaveRecMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecMa.BackgroundImage")));
-            this.btnSaveRecMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveRecMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecMa.Location = new System.Drawing.Point(734, 475);
-            this.btnSaveRecMa.Name = "btnSaveRecMa";
-            this.btnSaveRecMa.Size = new System.Drawing.Size(28, 28);
-            this.btnSaveRecMa.TabIndex = 109;
-            this.btnSaveRecMa.UseVisualStyleBackColor = true;
-            this.btnSaveRecMa.Click += new System.EventHandler(this.btnSaveRecMa_Click_1);
-            // 
-            // btnSaveRecMi
-            // 
-            this.btnSaveRecMi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecMi.BackgroundImage")));
-            this.btnSaveRecMi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveRecMi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecMi.Location = new System.Drawing.Point(734, 475);
-            this.btnSaveRecMi.Name = "btnSaveRecMi";
-            this.btnSaveRecMi.Size = new System.Drawing.Size(28, 28);
-            this.btnSaveRecMi.TabIndex = 109;
-            this.btnSaveRecMi.UseVisualStyleBackColor = true;
-            this.btnSaveRecMi.Click += new System.EventHandler(this.btnSaveRecMi_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nº Calle";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Calle";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // colMaDesde
-            // 
-            this.colMaDesde.HeaderText = "Desde";
-            this.colMaDesde.Name = "colMaDesde";
-            // 
-            // colMaHasta
-            // 
-            this.colMaHasta.HeaderText = "Hasta";
-            this.colMaHasta.Name = "colMaHasta";
-            // 
-            // colMaSentido
-            // 
-            this.colMaSentido.HeaderText = "Sentido";
-            this.colMaSentido.Name = "colMaSentido";
-            this.colMaSentido.Visible = false;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Estado";
-            this.dataGridViewCheckBoxColumn1.IndeterminateValue = "True";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Nº Calle";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Calle";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // colMiDesde
-            // 
-            this.colMiDesde.HeaderText = "Desde";
-            this.colMiDesde.Name = "colMiDesde";
-            // 
-            // colMiHasta
-            // 
-            this.colMiHasta.HeaderText = "Hasta";
-            this.colMiHasta.Name = "colMiHasta";
-            // 
-            // colMiSentido
-            // 
-            this.colMiSentido.HeaderText = "Sentido";
-            this.colMiSentido.Name = "colMiSentido";
-            this.colMiSentido.Visible = false;
-            // 
-            // dataGridViewCheckBoxColumn2
-            // 
-            this.dataGridViewCheckBoxColumn2.HeaderText = "Estado";
-            this.dataGridViewCheckBoxColumn2.IndeterminateValue = "True";
-            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
-            this.dataGridViewCheckBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.HeaderText = "Nº Calle";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.HeaderText = "Calle";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // colJuDesde
-            // 
-            this.colJuDesde.HeaderText = "Desde";
-            this.colJuDesde.Name = "colJuDesde";
-            // 
-            // colJuHasta
-            // 
-            this.colJuHasta.HeaderText = "Hasta";
-            this.colJuHasta.Name = "colJuHasta";
-            // 
-            // colJuSentido
-            // 
-            this.colJuSentido.HeaderText = "Sentido";
-            this.colJuSentido.Name = "colJuSentido";
-            this.colJuSentido.Visible = false;
-            // 
-            // dataGridViewCheckBoxColumn3
-            // 
-            this.dataGridViewCheckBoxColumn3.HeaderText = "Estado";
-            this.dataGridViewCheckBoxColumn3.IndeterminateValue = "True";
-            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
-            this.dataGridViewCheckBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.HeaderText = "Nº Calle";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.HeaderText = "Calle";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            // 
-            // colViDesde
-            // 
-            this.colViDesde.HeaderText = "Desde";
-            this.colViDesde.Name = "colViDesde";
-            // 
-            // colViHasta
-            // 
-            this.colViHasta.HeaderText = "Hasta";
-            this.colViHasta.Name = "colViHasta";
-            // 
-            // colViSentido
-            // 
-            this.colViSentido.HeaderText = "Sentido";
-            this.colViSentido.Name = "colViSentido";
-            this.colViSentido.Visible = false;
-            // 
-            // dataGridViewCheckBoxColumn4
-            // 
-            this.dataGridViewCheckBoxColumn4.HeaderText = "Estado";
-            this.dataGridViewCheckBoxColumn4.IndeterminateValue = "True";
-            this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
-            this.dataGridViewCheckBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.HeaderText = "Nº Calle";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            this.dataGridViewTextBoxColumn21.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.HeaderText = "Calle";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.ReadOnly = true;
-            // 
-            // colSaDesde
-            // 
-            this.colSaDesde.HeaderText = "Desde";
-            this.colSaDesde.Name = "colSaDesde";
-            // 
-            // colSaHasta
-            // 
-            this.colSaHasta.HeaderText = "Hasta";
-            this.colSaHasta.Name = "colSaHasta";
-            // 
-            // colSaSentido
-            // 
-            this.colSaSentido.HeaderText = "Sentido";
-            this.colSaSentido.Name = "colSaSentido";
-            this.colSaSentido.Visible = false;
-            // 
-            // dataGridViewCheckBoxColumn5
-            // 
-            this.dataGridViewCheckBoxColumn5.HeaderText = "Estado";
-            this.dataGridViewCheckBoxColumn5.IndeterminateValue = "True";
-            this.dataGridViewCheckBoxColumn5.Name = "dataGridViewCheckBoxColumn5";
-            this.dataGridViewCheckBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCheckBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // dataGridViewTextBoxColumn26
             // 
