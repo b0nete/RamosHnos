@@ -401,7 +401,7 @@ namespace RamosHermanos.Capas.Interfaz
                 precio.precio = Convert.ToDecimal(txtnewPrecio.Text);
                 PrecioInsumosB.InsertPrecio(precio);
                 //Actualizamos DGV
-                PrecioProductosB.UltimoPrecioDGV(dgvPrecios, txtidInsumo);
+                PrecioInsumosB.UltimoPrecioDGV(dgvPrecios, txtidInsumo);
             }
         }
 

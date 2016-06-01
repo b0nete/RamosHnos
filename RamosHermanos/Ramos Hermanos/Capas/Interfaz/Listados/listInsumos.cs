@@ -24,8 +24,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         private void listInsumos_Load(object sender, EventArgs e)
         {
             cbParametro.SelectedIndex = 0;
-            InsumoB.cargardgvInsumo(dgvInsumos); 
-            
+            InsumoB.cargardgvInsumo(dgvInsumos);             
         }
 
         private void SearchParametro()
@@ -101,7 +100,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     //frmPro.txtCantidad.Text = Convert.ToString(producto.cantidad);
                     //frmPro.cbMedida.SelectedValue = producto.medida;
 
-                    //PrecioProductosB.UltimoPrecioDGV(frmPro.dgvPrecios);
+                    PrecioInsumosB.UltimoPrecioDGV(frmI.dgvPrecios, frmI.txtidInsumo);
                 }
             }
 

@@ -189,7 +189,6 @@ namespace RamosHermanos.Capas.Negocio
                     dgv.Rows.Add(
                     Convert.ToString(dr["precio"]),
                     Convert.ToString(dr["fechaActualizacion"]));
-
                 }
 
                 dr.Close();
