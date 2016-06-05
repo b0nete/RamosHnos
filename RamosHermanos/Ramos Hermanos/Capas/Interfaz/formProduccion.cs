@@ -75,7 +75,6 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
 
-        
 
         LogStockProductoEntity logStock = new LogStockProductoEntity();
         public void CargaItemLogStock(DataGridViewRow row)

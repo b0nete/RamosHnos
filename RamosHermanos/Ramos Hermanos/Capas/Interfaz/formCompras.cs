@@ -134,6 +134,7 @@ namespace RamosHermanos.Capas.Interfaz
         ComprasEntity compras = new ComprasEntity();
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
             if (DataCheck() == false)
             {
                 return;
@@ -143,10 +144,12 @@ namespace RamosHermanos.Capas.Interfaz
                 CargarCompras();
                 ComprasB.InsertCompras(compras, txtidCompras);
 
-                foreach (DataGridViewRow row in dgvCompra.Rows)
+                foreach (DataGridViewRow rowA in dgvCompra.Rows)
                 {
-                    cargarItemCompra(row);
+                    cargarItemCompra(rowA);
                     itemCompraB.InsertItemCompras(itemcompra, dgvCompra);
+                    CargaItemLogStock(rowA);
+                    StockInsumoB.ActualizarStock(logStock);
                 }
 
                 MessageBox.Show("guardado");
@@ -155,6 +158,20 @@ namespace RamosHermanos.Capas.Interfaz
             
         }
 
+        LogStockInsumoEntity logStock = new LogStockInsumoEntity();
+        public void CargaItemLogStock(DataGridViewRow row)
+        {
+            logStock.operacion = "P";
+            logStock.comprobante = Convert.ToInt32(txtidCompras.Text);
+            logStock.idInsumo = Convert.ToInt32(row.Cells["colIDInsumo"].Value);
+            logStock.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
+
+            //Buscamos el stockActual
+            StockInsumoEntity stockP = StockInsumoB.BuscarStock(logStock.idInsumo);
+            logStock.stockNuevo = stockP.stockNuevo;
+            
+
+        }
         private void txtIngreso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 

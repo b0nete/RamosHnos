@@ -40,8 +40,8 @@ namespace RamosHermanos.Capas.Negocio
 
                 StockInsumoEntity stockI = new StockInsumoEntity();
 
-                string query = @"SELECT SI.stockMinimo, SI.stockMaximo, MAX(SPL.stockActual) as stockActual, MAX(SPL.stockNuevo) as stockNuevo
-                                FROM stockInsumo SI
+                string query = @"SELECT SI.stockMinimo, SI.stockMaximo, MAX(SIL.stockActual) as stockActual, MAX(SIL.stockNuevo) as stockNuevo
+                                FROM stockInsumos SI
                                 INNER JOIN stockInsumoLog SIL ON SIL.idInsumo = SI.idInsumo
                                 WHERE SI.idInsumo = @idInsumo";
 
