@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -130,7 +131,8 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);  
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dtItemsRecorrido = new DataTable();
-                DataTable dtItemsRecorridoFULL = new DataTable();                
+                DataTable dtItemsRecorridoAUX = new DataTable();
+                DataTable dtItemsRecorridoFULL = new DataTable();
 
                 foreach (DataGridViewRow row in dgv.Rows)
                 {
@@ -143,11 +145,61 @@ namespace RamosHermanos.Capas.Negocio
                     cmd.Parameters.AddWithValue("@idRecorrido", txt.Text);
                     cmd.Parameters.AddWithValue("@calle", Convert.ToInt32(row.Cells["colLuIDcalle"].Value));
 
-                    // Se Llena el dtItemsRecorrido
+                    // Se Llena el dtItemsRecorrido                    
                     da.Fill(dtItemsRecorrido);
 
+                    if (dtItemsRecorridoFULL.Rows.Count == 0)
+                    {
+                        dtItemsRecorridoFULL.Merge(dtItemsRecorrido);
+                    }
+                    else
+                    {
+                        bool salir = false;
+
+                        for (int i = 0; i <= dtItemsRecorrido.Rows.Count - 1; i++)
+                        {
+                            for (int y = 0; y <= dtItemsRecorridoFULL.Rows.Count - 1; y++)
+                            {
+                                if (dtItemsRecorrido.Rows[i]["idDomicilio"].ToString() != dtItemsRecorridoFULL.Rows[y]["idDomicilio"].ToString())
+                                {
+                                    DataRow dr = dtItemsRecorrido.Rows[i];
+                                    dtItemsRecorridoFULL.ImportRow(dr);
+
+                                    salir = true;
+                                    break;
+                                }
+
+                                if (salir)
+                                    break;
+                            }
+                        }
+                    }
+
+                    //if (dtItemsRecorridoFULL.Rows.Count == 0)
+                    //{
+                    //    dtItemsRecorridoFULL.Merge(dtItemsRecorrido);
+                    //}
+                    //else
+                    //{
+                    //    foreach (DataRow dr in dtItemsRecorrido.Rows)
+                    //    {
+                    //        foreach (DataRow drFULL in dtItemsRecorridoFULL.Rows)
+                    //        {
+                    //            if (dr["idDomicilio"].ToString() != drFULL["idDomicilio"].ToString())
+                    //            {
+                    //                dtItemsRecorridoAUX.ImportRow(dr);
+                    //            }
+                    //        }
+                    //    }
+                    //}
+
+                    //foreach (DataRow rowA in dtItemsRecorridoAUX.Rows)
+                    //{
+                    //    dtItemsRecorridoFULL.ImportRow(rowA);
+                    //}
+
                     // Agregamos al DataTable principal
-                    dtItemsRecorridoFULL.Merge(dtItemsRecorrido);
+                    //dtItemsRecorridoFULL.Merge(dtItemsRecorrido);
                                         
                     cmd.Parameters.Clear();
                     dtItemsRecorrido.Clear();
@@ -161,6 +213,82 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        //foreach (DataRow dr in dtItemsRecorrido.Rows)                        
+        //{
+        //    //MessageBox.Show(Convert.ToString(dr["idDomicilio"]) + "DR");
+        //    if (dtItemsRecorridoFULL.Rows.Count == 0)
+        //    {
+        //        da.Fill(dtItemsRecorridoFilter);
+        //        dtItemsRecorridoFilter.ImportRow(dr);
+        //        dtItemsRecorridoFULL.Merge(dtItemsRecorridoFilter);
+        //    }
+        //    else
+        //    {
+        //        foreach (DataRow drFULL in dtItemsRecorridoFULL.Rows)
+        //        {
+        //            MessageBox.Show(dr["idDomicilio"].ToString());
+        //            MessageBox.Show(drFULL["idDomicilio"].ToString());
+
+        //            if (dr["idDomicilio"].ToString() != drFULL["idDomicilio"].ToString())
+        //            {
+        //                da.Fill(dtItemsRecorridoFilter);
+        //                dtItemsRecorridoFilter.ImportRow(dr);
+        //                MessageBox.Show(dtItemsRecorridoFilter.Rows[0].ToString());
+        //                //dtItemsRecorridoFULL.Merge(dtItemsRecorridoFilter);
+        //            }
+        //        }
+        //    }
+        //}
+
+        //foreach (DataRow dr in dtItemsRecorrido.Rows)
+        //{
+        //    MessageBox.Show(Convert.ToString(dtItemsRecorrido.Rows.Count));
+        //    //MessageBox.Show(Convert.ToString(dr["idDomicilio"]));
+        //    foreach (DataRow drFULL in dtItemsRecorridoFULL.Rows)
+        //    {
+        //        MessageBox.Show(Convert.ToString(dtItemsRecorridoFULL.Rows.Count));
+        //        //MessageBox.Show(Convert.ToString(drFULL["idDomicilio"]));
+        //        if (dr["idDomicilio"] != drFULL["idDomicilio"] || drFULL == null)
+        //        {
+        //            dtItemsRecorridoFilter.ImportRow(dr);
+        //            MessageBox.Show(Convert.ToString(dtItemsRecorridoFilter.Rows.Count));
+        //            dtItemsRecorridoFULL.Merge(dtItemsRecorridoFilter);
+        //        }
+        //    }
+        //}
+
+        //private void CleanCodigos(ref ICollection<string> Codigos, ICollection<string> CodigosEliminar)
+        //{
+        //    foreach (string Codigo in new ArrayList(Codigos))
+        //    {
+        //        if (CodigosEliminar.Contains(Codigo))
+        //            Codigos.Remove(Codigo);
+        //    }
+        //}
+
+        //// Se Llena el dtItemsRecorrido
+        //            da.Fill(dtItemsRecorrido);
+
+        //            // Agregamos al DataTable principal
+        //            dtItemsRecorridoFULL.Merge(dtItemsRecorrido);
+
+        //foreach (DataRow dr in dtItemsRecorrido.Rows)
+        //            {
+        //                MessageBox.Show(Convert.ToString(dtItemsRecorrido.Rows.Count));
+        //                //MessageBox.Show(Convert.ToString(dr["idDomicilio"]));
+        //                foreach (DataRow drFULL in dtItemsRecorridoFULL.Rows)
+        //                {
+        //                    MessageBox.Show(Convert.ToString(dtItemsRecorridoFULL.Rows.Count));
+        //                    //MessageBox.Show(Convert.ToString(drFULL["idDomicilio"]));
+        //                    if (dr["idDomicilio"] != drFULL["idDomicilio"] || drFULL == null)
+        //                    {
+        //                        dtItemsRecorridoFilter.ImportRow(dr);
+        //                        MessageBox.Show(Convert.ToString(dtItemsRecorridoFilter.Rows.Count));
+        //                        dtItemsRecorridoFULL.Merge(dtItemsRecorridoFilter);
+        //                    }
+        //                }
+        //            }
 
         
 
