@@ -356,7 +356,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void comprasToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            listCompras frm = new listCompras();
+            //listCompras frm = new listCompras();
+            formCompras frm = new formCompras();
             frm.Show();
         }
 

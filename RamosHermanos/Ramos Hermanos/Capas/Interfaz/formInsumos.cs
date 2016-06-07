@@ -29,7 +29,7 @@ namespace RamosHermanos.Capas.Interfaz
           insumo.descripcion= txtDescripcion.Text;
           insumo.fecha= dtpFecha.Value;
           insumo.insumo= Convert.ToString(txtInsumo.Text);
-          insumo.marca = Convert.ToInt32(cbMarca.Text);
+          insumo.marca = Convert.ToInt32(cbMarca.SelectedValue);
           insumo.proveedor = Convert.ToInt32(cbProv.SelectedValue);
           insumo.rubro = Convert.ToString(cbRubro.SelectedValue);
           insumo.medida = Convert.ToInt32(cbMedida.SelectedValue);
