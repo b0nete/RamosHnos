@@ -69,6 +69,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 }
                 if (cell != null)
                 {
+                    StockInsumoEntity stockIns = new StockInsumoEntity();
                     formInsumos frmI = new formInsumos();
                     InsumoEntity insumo = new InsumoEntity();
                     frmI.Show();
@@ -90,6 +91,24 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     frmI.cbMedida.SelectedValue = insumo.medida;
                     frmI.txtCantidad.Text = Convert.ToString(insumo.cantidad);
 
+                    PrecioInsumosB.UltimoPrecioDGV(frmI.dgvPrecios, frmI.txtidInsumo);
+
+                    //cargarDatosStock
+                    stockIns.idInsumo = insumo.idInsumo;
+                    if (StockInsumoB.ExisteStock(stockIns) == false)
+                        MessageBox.Show("No existe stock");
+                    else
+                    {
+                        StockInsumoEntity stockInsumo = StockInsumoB.BuscarStock(Convert.ToInt32(frmI.txtidInsumo.Text));
+                        frmI.txtStockMin.Text = Convert.ToString(stockInsumo.stockMinimo);
+                        frmI.txtStockMax.Text = Convert.ToString(stockInsumo.stockMaximo);
+                        frmI.txtStockA.Text = Convert.ToString(stockInsumo.stockNuevo);
+
+                        //Cargar Operaciones Stock      
+                        
+                        StockProductoB.StockLogDGV(frmI.dgvStock, frmI.txtidInsumo);
+                        frmI.dgvStock.AutoGenerateColumns = false;
+                    }
                     StockInsumoB.cargardgvStock(frmI.dgvStock, frmI.txtidInsumo);
 
                     //frmPro.cbTipoProducto.SelectedValue = producto.tipoProducto;
@@ -100,7 +119,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     //frmPro.txtCantidad.Text = Convert.ToString(producto.cantidad);
                     //frmPro.cbMedida.SelectedValue = producto.medida;
 
-                    PrecioInsumosB.UltimoPrecioDGV(frmI.dgvPrecios, frmI.txtidInsumo);
+                    
                 }
             }
 

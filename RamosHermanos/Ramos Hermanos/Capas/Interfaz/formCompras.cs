@@ -220,6 +220,21 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
+        public void AddNewItemProveedor(DataGridViewRow rowA)
+        {
+            string idproveedor = txtIDproveedor.Text;
+           
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            dgvCompra.Rows.RemoveAt(dgvCompra.CurrentRow.Index);
+        }
+
+        public void pasarDatos(TextBox text)
+        {
+            string idProveedor = txtIDproveedor.Text;
+        }
 
            
               

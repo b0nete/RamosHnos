@@ -125,6 +125,7 @@
       <DependentUpon>formVehiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Interfaz\Contratos\IAddItem.cs" />
+    <Compile Include="Capas\Interfaz\Contratos\IAddNewItemProveedor.cs" />
     <Compile Include="Capas\Interfaz\Contratos\IForm.cs" />
     <Compile Include="Capas\Interfaz\Contratos\IReparto.cs" />
     <Compile Include="Capas\Interfaz\Contratos\produccionForm.cs" />

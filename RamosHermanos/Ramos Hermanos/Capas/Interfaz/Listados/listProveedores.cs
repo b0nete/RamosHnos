@@ -72,7 +72,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         
         private void SeleccionarDGVCompras()
         {
-
+            
             DataGridViewCell cell = null;
             foreach (DataGridViewCell selectedCell in dgvProveedores.SelectedCells)
             {
@@ -81,29 +81,37 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             }
             if (cell != null)
             {
-                //DataGridViewRow row = this.dgvProveedores.CurrentRow as DataGridViewRow;
+
+                DataGridViewRow rowA = this.dgvProveedores.CurrentRow as DataGridViewRow;
+
+                formCompras formInterface = this.Owner as formCompras;
+
+                formInterface.pasarDatos(rowA);
+
+                break;
+                //DataGridViewRow rowA = this.dgvProveedores.CurrentRow as DataGridViewRow;
 
                 //IAddItem parent = this.Owner as IAddItem;
+                
 
+                //parent.AddNewItemProveedor(rowA);
 
-                //parent.AddNewItem(row);
-
-                DataGridViewRow row = cell.OwningRow;
-                formCompras frm = new formCompras();
-                frm.Show();
-                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
-                proveedor.idProveedor = Convert.ToInt32(row.Cells["colIDProveedor"].Value.ToString());
-                ProveedorB.BuscarIdProv(proveedor);
-                frm.txtIDproveedor.Text= Convert.ToString(proveedor.idProveedor);
-                frm.txtNameProveedor.Text = proveedor.razsocial;
-                frm.txtCuil.Text = proveedor.cuit;
-                frm.txtCondicionIva.Text = proveedor.condicioniva;
-                DomicilioB.CargarCB(frm.cbDomicilio, frm.txtIDproveedor, "2");
+                //DataGridViewRow row = cell.OwningRow;
+                //formCompras frm = new formCompras();
+                //frm.Show();
+                ////Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+                //proveedor.idProveedor = Convert.ToInt32(row.Cells["colIDProveedor"].Value.ToString());
+                //ProveedorB.BuscarIdProv(proveedor);
+                //frm.txtIDproveedor.Text= Convert.ToString(proveedor.idProveedor);
+                //frm.txtNameProveedor.Text = proveedor.razsocial;
+                //frm.txtCuil.Text = proveedor.cuit;
+                //frm.txtCondicionIva.Text = proveedor.condicioniva;
+                //DomicilioB.CargarCB(frm.cbDomicilio, frm.txtIDproveedor, "2");
                 //EmailB.CargarTXT(frmP.txtEmail, frmP.txtidprov, 2);
-                TelefonoB.CargarTXT(frm.txtTel, frm.txtIDproveedor, 2);
+                //TelefonoB.CargarTXT(frm.txtTel, frm.txtIDproveedor, 2);
 
-                //frmP.tabProveedor.SelectedTab = frmP.tabInformacion;
-                Close();
+                ////frmP.tabProveedor.SelectedTab = frmP.tabInformacion;
+                //Close();
             }
         }
 

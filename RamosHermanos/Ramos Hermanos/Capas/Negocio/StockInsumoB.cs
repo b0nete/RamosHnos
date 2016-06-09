@@ -186,52 +186,52 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+        public static void StockLogDGV(DataGridView dgv, TextBox producto)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                //                string query = @"(SELECT 'VENTA' as operacion, FI.factura as A, F.fechaFactura as B, FI.cantidad as C
+                //                                FROM itemsfactura FI
+                //                                INNER JOIN Facturas F ON FI.factura = F.idFactura
+                //                                WHERE producto = @producto) 
+                //                                UNION 
+                //                                (SELECT 'PRODUCCION' as operacion, IP.produccion as A, P.fechaProduccion as B, IP.cantidad as C
+                //                                FROM ItemsProduccion IP
+                //                                INNER JOIN Produccion P ON IP.produccion = P.idProduccion
+                //                                WHERE producto = @producto)";
+
+                string query = @"(SELECT 'COMPRA' as operacion, SIL.comprobante as A, F.fechaFactura as B, SIL.cantidad as C, SIL.stockNuevo as D
+                                FROM stockInsumoLog SIL
+                                INNER JOIN Facturas F ON F.idFactura = SIL.comprobante
+                                INNER JOIN itemsFactura IIF ON IIF.factura = F.idFactura
+                                WHERE SIL.idInsumo= @insumo and operacion = 'C') 
+                                UNION 
+                                (SELECT 'PRODUCCION' as operacion, SPL.comprobante as A, P.fechaProduccion as B, SPL.cantidad as C, SPL.stockNuevo as D 
+                                FROM stockProductoLog SPL
+                                INNER JOIN Produccion P ON P.idProduccion = SPL.comprobante
+                                INNER JOIN itemsProduccion IIP ON IIP.produccion = P.idProduccion
+                                WHERE SPL.idProducto = @producto and operacion = 'P')";
+
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@producto", producto.Text);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+                dgv.DataSource = dt;
+                dgv.AutoGenerateColumns = false;
+
+                MySQL.DisconnectDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex + "ERROR");
+                throw;
+            }
+        }
     }
-    }
-//        public static void StockLogDGV(DataGridView dgv, TextBox producto)
-//        {
-//            try
-//            {
-//                MySQL.ConnectDB();
-////                string query = @"(SELECT 'VENTA' as operacion, FI.factura as A, F.fechaFactura as B, FI.cantidad as C
-////                                FROM itemsfactura FI
-////                                INNER JOIN Facturas F ON FI.factura = F.idFactura
-////                                WHERE producto = @producto) 
-////                                UNION 
-////                                (SELECT 'PRODUCCION' as operacion, IP.produccion as A, P.fechaProduccion as B, IP.cantidad as C
-////                                FROM ItemsProduccion IP
-////                                INNER JOIN Produccion P ON IP.produccion = P.idProduccion
-////                                WHERE producto = @producto)";
-
-//                string query = @"(SELECT 'VENTA' as operacion, SPL.comprobante as A, F.fechaFactura as B, SPL.cantidad as C, SPL.stockNuevo as D
-//                                FROM stockProductoLog SPL                                
-//                                INNER JOIN Facturas F ON SPL.comprobante = F.idFactura
-//                                WHERE idProducto = @producto) 
-//                                UNION 
-//                                (SELECT 'PRODUCCION' as operacion, SPL.comprobante as A, P.fechaProduccion as B, SPL.cantidad as C, SPL.stockNuevo as D
-//                                FROM stockProductoLog SPL                                
-//                                INNER JOIN Produccion P ON SPL.comprobante = P.idProduccion
-//                                WHERE idProducto = @producto)";
-
-
-//                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-
-//                cmd.Parameters.AddWithValue("@producto", producto.Text);
-
-//                    DataTable dt = new DataTable();
-//                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
-//                    da.Fill(dt);
-//                    dgv.DataSource = dt;
-//                    dgv.AutoGenerateColumns = false;
-
-//                    MySQL.DisconnectDB();
-//            }
-//            catch (Exception ex)
-//            {
-//                MessageBox.Show(ex + "ERROR");
-//                throw;
-//            }
-//        }
-//    }
-//}
+}
