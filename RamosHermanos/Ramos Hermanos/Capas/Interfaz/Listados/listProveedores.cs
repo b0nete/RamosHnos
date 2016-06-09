@@ -82,13 +82,13 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             if (cell != null)
             {
 
-                DataGridViewRow rowA = this.dgvProveedores.CurrentRow as DataGridViewRow;
+                //DataGridViewRow rowA = this.dgvProveedores.CurrentRow as DataGridViewRow;
 
-                formCompras formInterface = this.Owner as formCompras;
+                //formCompras formInterface = this.Owner as formCompras;
 
-                formInterface.pasarDatos(rowA);
+                //formInterface.pasarDatos(rowA);
 
-                break;
+                //break;
                 //DataGridViewRow rowA = this.dgvProveedores.CurrentRow as DataGridViewRow;
 
                 //IAddItem parent = this.Owner as IAddItem;

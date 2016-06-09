@@ -112,7 +112,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static DataTable GetItemsRecorrido(DataGridView dgv, TextBox txt)
+        public static DataTable GetItemsRecorrido(DataGridView dgv, TextBox txt, string colDiaSentidoo, string colDiaIDCallee)
         {
             try
             {
@@ -136,14 +136,14 @@ namespace RamosHermanos.Capas.Negocio
 
                 foreach (DataGridViewRow row in dgv.Rows)
                 {
-                    if(row.Cells["colLuSentido"].Value.ToString() == "C")
+                    if(row.Cells[colDiaSentidoo].Value.ToString() == "C")
                     {
                         cmd.CommandText = query + " DESC";
                     }		
                     
-                    cmd.Parameters.AddWithValue("@sentido", Convert.ToString(row.Cells["colLuSentido"].Value));
+                    cmd.Parameters.AddWithValue("@sentido", Convert.ToString(row.Cells[colDiaSentidoo].Value));
                     cmd.Parameters.AddWithValue("@idRecorrido", txt.Text);
-                    cmd.Parameters.AddWithValue("@calle", Convert.ToInt32(row.Cells["colLuIDcalle"].Value));
+                    cmd.Parameters.AddWithValue("@calle", Convert.ToInt32(row.Cells[colDiaIDCallee].Value));
 
                     // Se Llena el dtItemsRecorrido                    
                     da.Fill(dtItemsRecorrido);
@@ -155,25 +155,67 @@ namespace RamosHermanos.Capas.Negocio
                     else
                     {
                         bool salir = false;
+                        bool comparacion = false;
 
                         for (int i = 0; i <= dtItemsRecorrido.Rows.Count - 1; i++)
                         {
                             for (int y = 0; y <= dtItemsRecorridoFULL.Rows.Count - 1; y++)
                             {
+                                //MessageBox.Show(dtItemsRecorrido.Rows[i]["idDomicilio"].ToString());
+                                //MessageBox.Show(dtItemsRecorridoFULL.Rows[i]["idDomicilio"].ToString());
+
                                 if (dtItemsRecorrido.Rows[i]["idDomicilio"].ToString() != dtItemsRecorridoFULL.Rows[y]["idDomicilio"].ToString())
+                                {
+                                    comparacion = true;
+                                }
+
+                                //MessageBox.Show(dtItemsRecorrido.Rows[i]["idDomicilio"].ToString());
+                                //MessageBox.Show(dtItemsRecorridoFULL.Rows[i]["idDomicilio"].ToString());
+
+                                if (dtItemsRecorrido.Rows[i]["idDomicilio"].ToString() == dtItemsRecorridoFULL.Rows[y]["idDomicilio"].ToString())                                    
+                                {
+                                    if (salir)
+                                        break;
+                                }
+
+                                if (dtItemsRecorridoFULL.Rows.Count - 1 == y && comparacion == true)
                                 {
                                     DataRow dr = dtItemsRecorrido.Rows[i];
                                     dtItemsRecorridoFULL.ImportRow(dr);
-
-                                    salir = true;
-                                    break;
                                 }
 
-                                if (salir)
-                                    break;
+                                //if (salir)
+                                //    break;
                             }
                         }
                     }
+
+                    //if (dtItemsRecorridoFULL.Rows.Count == 0)
+                    //{
+                    //    dtItemsRecorridoFULL.Merge(dtItemsRecorrido);
+                    //}
+                    //else
+                    //{
+                    //    bool salir = false;
+
+                    //    for (int i = 0; i <= dtItemsRecorrido.Rows.Count - 1; i++)
+                    //    {
+                    //        for (int y = 0; y <= dtItemsRecorridoFULL.Rows.Count - 1; y++)
+                    //        {
+                    //            if (dtItemsRecorrido.Rows[i]["idDomicilio"].ToString() != dtItemsRecorridoFULL.Rows[y]["idDomicilio"].ToString())
+                    //            {
+                    //                DataRow dr = dtItemsRecorrido.Rows[i];
+                    //                dtItemsRecorridoFULL.ImportRow(dr);
+
+                    //                salir = true;
+                    //                break;
+                    //            }
+
+                    //            if (salir)
+                    //                break;
+                    //        }
+                    //    }
+                    //}
 
                     //if (dtItemsRecorridoFULL.Rows.Count == 0)
                     //{

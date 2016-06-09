@@ -604,7 +604,7 @@ namespace RamosHermanos.Capas.Interfaz
             string rep = @"\Capas\Reportes\Recorridos\crRecorridos.rpt";
 
             // dsHojaRuta contiene dtRecorrido y dtItemsRecorrido
-            DataSet ds = GenerarReparto(); 
+            DataSet ds = GenerarReparto(dgvRecorridoLu, txtIDRecorridoLu, "colLuSentido", "colLuIDcalle"); 
 
             //Cargar Reporte
             formReports frm = new formReports();
@@ -666,7 +666,7 @@ namespace RamosHermanos.Capas.Interfaz
                 }
                 else
                 {
-                    DataSet ds = GenerarReparto();
+                    DataSet ds = GenerarReparto(dgvRecorridoLu, txtIDRecorridoLu, "colLuSentido", "colLuIDcalle");
 
                     RepartoB.BuscarReparto(reparto);
                     frm.dtpFechaReparto.Value = reparto.fecha;
@@ -691,7 +691,7 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-        public DataSet GenerarReparto()
+        public DataSet GenerarReparto(DataGridView dgvRecorridoDia, TextBox txtIDRecorridoDia, string colDiaSentidoo, string colDiaIDCallee)
         {
             dsRecorridos ds = new dsRecorridos();
             formRepartos frm = new formRepartos();
@@ -717,7 +717,7 @@ namespace RamosHermanos.Capas.Interfaz
             int numReparto = RepartoB.InsertReparto(reparto);
             
             //dtItemsRecorrido
-            DataTable dtItemsRecorridoTest = itemsRecorridoB.GetItemsRecorrido(dgvRecorridoLu, txtIDRecorridoLu);
+            DataTable dtItemsRecorridoTest = itemsRecorridoB.GetItemsRecorrido(dgvRecorridoDia, txtIDRecorridoDia, colDiaSentidoo, colDiaIDCallee);
 
             int rows = dtItemsRecorridoTest.Rows.Count;
 
