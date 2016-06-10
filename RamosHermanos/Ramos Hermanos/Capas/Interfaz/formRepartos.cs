@@ -252,36 +252,36 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void cbDistribuidores_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            formDistribuidores frm = new formDistribuidores();
+            //formDistribuidores frm = new formDistribuidores();
 
-            if (RepartoB.ExisteReparto(reparto) == true)
-            {
-                RepartoB.BuscarReparto(reparto);
-                dtpFechaReparto.Value = reparto.fecha;
-                cbDistribuidores.SelectedValue = reparto.distribuidor;
-                txtReparto.Text = Convert.ToString(reparto.idReparto);
+            //if (RepartoB.ExisteReparto(reparto) == true)
+            //{
+            //    RepartoB.BuscarReparto(reparto);
+            //    dtpFechaReparto.Value = reparto.fecha;
+            //    cbDistribuidores.SelectedValue = reparto.distribuidor;
+            //    txtReparto.Text = Convert.ToString(reparto.idReparto);
 
-                itemsReparto.reparto = reparto.idReparto;
-                dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, dgvRepartos);
-            }
-            else
-            {
-                DataSet ds = frm.GenerarReparto();
+            //    itemsReparto.reparto = reparto.idReparto;
+            //    dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, dgvRepartos);
+            //}
+            //else
+            //{
+            //    DataSet ds = frm.GenerarReparto();
 
-                RepartoB.BuscarReparto(reparto);
-                dtpFechaReparto.Value = reparto.fecha;
-                cbDistribuidores.SelectedValue = reparto.distribuidor;
-                txtReparto.Text = Convert.ToString(reparto.idReparto);
+            //    RepartoB.BuscarReparto(reparto);
+            //    dtpFechaReparto.Value = reparto.fecha;
+            //    cbDistribuidores.SelectedValue = reparto.distribuidor;
+            //    txtReparto.Text = Convert.ToString(reparto.idReparto);
 
-                itemsReparto.reparto = reparto.idReparto;
-                dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, dgvRepartos);
+            //    itemsReparto.reparto = reparto.idReparto;
+            //    dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, dgvRepartos);
 
-                //frm.setRowNumber(frm.dgvRepartos);
-                //frm.dgvRepartos.DataSource = ds;
-                //frm.dgvRepartos.DataMember = "dtItemsRecorrido";
-            }
+            //    //frm.setRowNumber(frm.dgvRepartos);
+            //    //frm.dgvRepartos.DataSource = ds;
+            //    //frm.dgvRepartos.DataMember = "dtItemsRecorrido";
+            //}
 
-            setRowNumber(dgvRepartos);
+            //setRowNumber(dgvRepartos);
         }
 
         private void dgvRepartos_CellEndEdit_1(object sender, DataGridViewCellEventArgs e)

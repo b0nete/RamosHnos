@@ -154,12 +154,14 @@ namespace RamosHermanos.Capas.Negocio
                     }
                     else
                     {
-                        bool salir = false;
+                        bool salir = true;
                         bool comparacion = false;
 
                         for (int i = 0; i <= dtItemsRecorrido.Rows.Count - 1; i++)
                         {
-                            for (int y = 0; y <= dtItemsRecorridoFULL.Rows.Count - 1; y++)
+                            int count = dtItemsRecorridoFULL.Rows.Count - 1;
+
+                            for (int y = 0; y <= count ; y++)
                             {
                                 //MessageBox.Show(dtItemsRecorrido.Rows[i]["idDomicilio"].ToString());
                                 //MessageBox.Show(dtItemsRecorridoFULL.Rows[i]["idDomicilio"].ToString());
@@ -174,6 +176,9 @@ namespace RamosHermanos.Capas.Negocio
 
                                 if (dtItemsRecorrido.Rows[i]["idDomicilio"].ToString() == dtItemsRecorridoFULL.Rows[y]["idDomicilio"].ToString())                                    
                                 {
+                                    //MessageBox.Show(dtItemsRecorrido.Rows[i]["idDomicilio"].ToString());
+                                    //MessageBox.Show(dtItemsRecorridoFULL.Rows[y]["idDomicilio"].ToString());
+
                                     if (salir)
                                         break;
                                 }
