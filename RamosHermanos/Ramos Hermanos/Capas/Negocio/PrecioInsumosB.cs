@@ -151,7 +151,7 @@ namespace RamosHermanos.Capas.Negocio
 
                     DataRow row = dt.Rows[0];
 
-                    precio.precio = Convert.ToDecimal(row["precio"]);
+                    precio.precio = Convert.ToDouble(row["precio"]);
                     precio.fechaActualizacion = Convert.ToDateTime(row["fechaActualizacion"]);
 
                     MySQL.DisconnectDB();

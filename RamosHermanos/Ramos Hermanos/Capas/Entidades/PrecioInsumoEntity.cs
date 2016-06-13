@@ -11,7 +11,7 @@ namespace RamosHermanos.Capas.Entidades
         public int idPrecioInsumo { get; set; }
         public int insumo { get; set; }
         public DateTime fechaActualizacion { get; set; }
-        public decimal precio { get; set; }
+        public double precio { get; set; }
         public bool estado { get; set; }
     }
 }

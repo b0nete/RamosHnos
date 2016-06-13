@@ -365,6 +365,26 @@ namespace RamosHermanos.Capas.Interfaz
         private void txtnewPrecio_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             {
+                char ch = e.KeyChar;
+
+                if (ch == 44 && ch == 46 && txtnewPrecio.Text.IndexOf(',') != -1)
+                {
+                    e.Handled = true;
+                    return;
+                }
+
+                if (!Char.IsDigit(ch) && ch != 8 && ch != 44 && ch != 46)
+                {
+                    e.Handled = true;
+                }
+
+                if (e.KeyChar == '.')
+                {
+                    e.KeyChar = ',';
+                }
+
+                //////////////////////////////////////////
+
                 //char ch = e.KeyChar;
 
                 //if (ch == 44 && ch == 46 && txtnewPrecio.Text.IndexOf('.') != -1)
@@ -385,34 +405,34 @@ namespace RamosHermanos.Capas.Interfaz
 
                 //MessageBox.Show(Convert.ToInt16(e.KeyChar).ToString());
 
-                if (e.KeyChar == 8)
-                {
-                    e.Handled = false;
-                    return;
-                }
+                //if (e.KeyChar == 8)
+                //{
+                //    e.Handled = false;
+                //    return;
+                //}
 
 
-                bool IsDec = false;
-                int nroDec = 0;
+                //bool IsDec = false;
+                //int nroDec = 0;
 
-                for (int i = 0; i < txtnewPrecio.Text.Length; i++)
-                {
-                    if (txtnewPrecio.Text[i] == ',')
-                        IsDec = true;
+                //for (int i = 0; i < txtnewPrecio.Text.Length; i++)
+                //{
+                //    if (txtnewPrecio.Text[i] == ',')
+                //        IsDec = true;
 
-                    if (IsDec && nroDec++ >= 2)
-                    {
-                        e.Handled = true;
-                        return;
-                    }
+                //    if (IsDec && nroDec++ >= 2)
+                //    {
+                //        e.Handled = true;
+                //        return;
+                //    }
                     
-                }
-                if (e.KeyChar >= 48 && e.KeyChar <= 57 && e.KeyChar> 2)
-                    e.Handled = false;
-                else if (e.KeyChar == 44)
-                    e.Handled = (IsDec) ? true : false;
-                else
-                    e.Handled = true;
+                //}
+                //if (e.KeyChar >= 48 && e.KeyChar <= 57 && e.KeyChar> 2)
+                //    e.Handled = false;
+                //else if (e.KeyChar == 44)
+                //    e.Handled = (IsDec) ? true : false;
+                //else
+                //    e.Handled = true;
 
             }
             

@@ -240,14 +240,74 @@ namespace RamosHermanos.Capas.Interfaz
                 TelefonoB.CargarTXT(txtTel, txtIDdistribuidor, 3);
 
                 //Se completa el tabRecorrido
-                string strLu = "LU";
-                CargarRecorrido(strLu);
+                string strDia = "LU";
+                CargarRecorrido(strDia);
                 RecorridoB.BuscarRecorrido(recorrido, txtIDRecorridoLu);
 
                 if (txtIDRecorridoLu.Text != string.Empty)
                 {
                     itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoLu.Text);
                     itemsRecorridoB.BuscarItemRecorrido(itemRecorrido, dgvRecorridoLu);
+                }
+
+                strDia = "MA";
+                CargarRecorrido(strDia);
+                RecorridoB.BuscarRecorrido(recorrido, txtIDRecorridoMa);
+
+                if (txtIDRecorridoMa.Text != string.Empty)
+                {
+                    itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoMa.Text);
+                    itemsRecorridoB.BuscarItemRecorrido(itemRecorrido, dgvRecorridoMa);
+                }
+
+                strDia = "MI";
+                CargarRecorrido(strDia);
+                RecorridoB.BuscarRecorrido(recorrido, txtIDRecorridoMi);
+
+                if (txtIDRecorridoMi.Text != string.Empty)
+                {
+                    itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoMi.Text);
+                    itemsRecorridoB.BuscarItemRecorrido(itemRecorrido, dgvRecorridoMi);
+                }
+
+                strDia = "JU";
+                CargarRecorrido(strDia);
+                RecorridoB.BuscarRecorrido(recorrido, txtIDRecorridoJu);
+
+                if (txtIDRecorridoJu.Text != string.Empty)
+                {
+                    itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoJu.Text);
+                    itemsRecorridoB.BuscarItemRecorrido(itemRecorrido, dgvRecorridoJu);
+                }
+
+                strDia = "VI";
+                CargarRecorrido(strDia);
+                RecorridoB.BuscarRecorrido(recorrido, txtIDRecorridoVi);
+
+                if (txtIDRecorridoVi.Text != string.Empty)
+                {
+                    itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoVi.Text);
+                    itemsRecorridoB.BuscarItemRecorrido(itemRecorrido, dgvRecorridoVi);
+                }
+
+                strDia = "SA";
+                CargarRecorrido(strDia);
+                RecorridoB.BuscarRecorrido(recorrido, txtIDRecorridoSa);
+
+                if (txtIDRecorridoSa.Text != string.Empty)
+                {
+                    itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoSa.Text);
+                    itemsRecorridoB.BuscarItemRecorrido(itemRecorrido, dgvRecorridoSa);
+                }
+
+                strDia = "DO";
+                CargarRecorrido(strDia);
+                RecorridoB.BuscarRecorrido(recorrido, txtIDRecorridoDo);
+
+                if (txtIDRecorridoDo.Text != string.Empty)
+                {
+                    itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoDo.Text);
+                    itemsRecorridoB.BuscarItemRecorrido(itemRecorrido, dgvRecorridoDo);
                 }
 
                 //Case
@@ -408,13 +468,13 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         itemRecorridoEntity itemRecorrido = new itemRecorridoEntity();
-        private void CargarItemRecorrido(DataGridViewRow row)
+        private void CargarItemRecorrido(DataGridViewRow row, string dia)
        { 
             itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoLu.Text);
-            itemRecorrido.calle = Convert.ToInt32(row.Cells["colLuIDcalle"].Value);
-            itemRecorrido.desde = Convert.ToInt32(row.Cells["colLuDesde"].Value);
-            itemRecorrido.hasta = Convert.ToInt32(row.Cells["colLuHasta"].Value);
-            itemRecorrido.sentido = Convert.ToString(row.Cells["colLuSentido"].Value);
+            itemRecorrido.calle = Convert.ToInt32(row.Cells["col"+ dia +"IDcalle"].Value);
+            itemRecorrido.desde = Convert.ToInt32(row.Cells["col"+ dia +"Desde"].Value);
+            itemRecorrido.hasta = Convert.ToInt32(row.Cells["col"+ dia +"Hasta"].Value);
+            itemRecorrido.sentido = Convert.ToString(row.Cells["col"+ dia +"Sentido"].Value);
 
             //if (itemRecorrido.desde < itemRecorrido.hasta)
             //    // "M" = Mano
@@ -423,7 +483,7 @@ namespace RamosHermanos.Capas.Interfaz
             //    // "C" = ContraMano
             //    itemRecorrido.sentido = "C";
 
-            itemRecorrido.estado = Convert.ToBoolean(row.Cells["colLuEstado"].Value);
+            itemRecorrido.estado = Convert.ToBoolean(row.Cells["col"+ dia +"Estado"].Value);
         }
 
         private void btnEmail_Click(object sender, EventArgs e)
@@ -830,10 +890,11 @@ namespace RamosHermanos.Capas.Interfaz
             //Cargamos los nuevos items del recorrido
             foreach (DataGridViewRow row in dgvRecorridoDia.Rows)
             {
-                CargarItemRecorrido(row);
+                CargarItemRecorrido(row, strDia);
                 itemsRecorridoB.InsertItemRecorrido(itemRecorrido);
             }
         }
+
         private void btnSaveRecLu_Click(object sender, EventArgs e)
         {
             GuardarRecorrido(txtIDRecorridoLu, "LU", dgvRecorridoLu);      

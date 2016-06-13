@@ -398,7 +398,7 @@ namespace RamosHermanos.Capas.Interfaz
 
                 //Insertamos el nuevo precio.
                 precio.insumo = Convert.ToInt32(txtidInsumo.Text);
-                precio.precio = Convert.ToDecimal(txtnewPrecio.Text);
+                precio.precio = Convert.ToDouble(txtnewPrecio.Text);
                 PrecioInsumosB.InsertPrecio(precio);
                 //Actualizamos DGV
                 PrecioInsumosB.UltimoPrecioDGV(dgvPrecios, txtidInsumo);
@@ -406,7 +406,33 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         //Entidades
-        PrecioInsumoEntity precio = new PrecioInsumoEntity();  
+        PrecioInsumoEntity precio = new PrecioInsumoEntity();
+
+        private void txtnewPrecio_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtnewPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (ch == 44 && ch == 46 && txtnewPrecio.Text.IndexOf(',') != -1)
+            {
+                e.Handled = true;
+                return;
+            }
+
+            if (!Char.IsDigit(ch) && ch != 8 && ch != 44 && ch != 46)
+            {
+                e.Handled = true;
+            }
+
+            if (e.KeyChar == '.')
+            {
+                e.KeyChar = ',';
+            }
+        }  
           
     }
   
