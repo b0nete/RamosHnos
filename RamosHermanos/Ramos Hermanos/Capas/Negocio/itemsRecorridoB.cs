@@ -159,26 +159,19 @@ namespace RamosHermanos.Capas.Negocio
 
                         for (int i = 0; i <= dtItemsRecorrido.Rows.Count - 1; i++)
                         {
+
                             int count = dtItemsRecorridoFULL.Rows.Count - 1;
 
                             for (int y = 0; y <= count ; y++)
                             {
-                                //MessageBox.Show(dtItemsRecorrido.Rows[i]["idDomicilio"].ToString());
-                                //MessageBox.Show(dtItemsRecorridoFULL.Rows[i]["idDomicilio"].ToString());
 
                                 if (dtItemsRecorrido.Rows[i]["idDomicilio"].ToString() != dtItemsRecorridoFULL.Rows[y]["idDomicilio"].ToString())
                                 {
                                     comparacion = true;
                                 }
 
-                                //MessageBox.Show(dtItemsRecorrido.Rows[i]["idDomicilio"].ToString());
-                                //MessageBox.Show(dtItemsRecorridoFULL.Rows[i]["idDomicilio"].ToString());
-
                                 if (dtItemsRecorrido.Rows[i]["idDomicilio"].ToString() == dtItemsRecorridoFULL.Rows[y]["idDomicilio"].ToString())                                    
                                 {
-                                    //MessageBox.Show(dtItemsRecorrido.Rows[i]["idDomicilio"].ToString());
-                                    //MessageBox.Show(dtItemsRecorridoFULL.Rows[y]["idDomicilio"].ToString());
-
                                     if (salir)
                                         break;
                                 }
@@ -194,56 +187,6 @@ namespace RamosHermanos.Capas.Negocio
                             }
                         }
                     }
-
-                    //if (dtItemsRecorridoFULL.Rows.Count == 0)
-                    //{
-                    //    dtItemsRecorridoFULL.Merge(dtItemsRecorrido);
-                    //}
-                    //else
-                    //{
-                    //    bool salir = false;
-
-                    //    for (int i = 0; i <= dtItemsRecorrido.Rows.Count - 1; i++)
-                    //    {
-                    //        for (int y = 0; y <= dtItemsRecorridoFULL.Rows.Count - 1; y++)
-                    //        {
-                    //            if (dtItemsRecorrido.Rows[i]["idDomicilio"].ToString() != dtItemsRecorridoFULL.Rows[y]["idDomicilio"].ToString())
-                    //            {
-                    //                DataRow dr = dtItemsRecorrido.Rows[i];
-                    //                dtItemsRecorridoFULL.ImportRow(dr);
-
-                    //                salir = true;
-                    //                break;
-                    //            }
-
-                    //            if (salir)
-                    //                break;
-                    //        }
-                    //    }
-                    //}
-
-                    //if (dtItemsRecorridoFULL.Rows.Count == 0)
-                    //{
-                    //    dtItemsRecorridoFULL.Merge(dtItemsRecorrido);
-                    //}
-                    //else
-                    //{
-                    //    foreach (DataRow dr in dtItemsRecorrido.Rows)
-                    //    {
-                    //        foreach (DataRow drFULL in dtItemsRecorridoFULL.Rows)
-                    //        {
-                    //            if (dr["idDomicilio"].ToString() != drFULL["idDomicilio"].ToString())
-                    //            {
-                    //                dtItemsRecorridoAUX.ImportRow(dr);
-                    //            }
-                    //        }
-                    //    }
-                    //}
-
-                    //foreach (DataRow rowA in dtItemsRecorridoAUX.Rows)
-                    //{
-                    //    dtItemsRecorridoFULL.ImportRow(rowA);
-                    //}
 
                     // Agregamos al DataTable principal
                     //dtItemsRecorridoFULL.Merge(dtItemsRecorrido);
