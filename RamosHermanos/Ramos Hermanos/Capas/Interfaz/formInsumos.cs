@@ -378,10 +378,24 @@ namespace RamosHermanos.Capas.Interfaz
             stock.fechaActualizacion = Convert.ToDateTime(dtpfechaStock.Value);
         }
 
+        private bool VerificarCamposStock()
+        {
+            if (txtStockA.Text == null)
+            {
+                MessageBox.Show("Por favor, complete los campos necesarios");
+
+                return false;
+            }
+            return true;
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
-            CargarStock();
-            StockInsumoB.InsertStock(stock);
+            if (VerificarCamposStock()== true)
+            {
+                CargarStock();
+                StockInsumoB.InsertStock(stock);
+            }
         }
 
         private void button9_Click_1(object sender, EventArgs e)
