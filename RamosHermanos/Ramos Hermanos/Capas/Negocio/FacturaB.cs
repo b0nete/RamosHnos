@@ -19,14 +19,87 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"UPDATE Facturas
-                                 SET estado = @estado;";
+                //Buscamos valores originales, para que en el caso de no tener algún valor para actualizar se actualize con los valores originales para no obtener 0 o NULL.
+
+                string query = "SELECT * FROM Facturas WHERE idFactura = @idFactura";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@estado", factura.estado);
+                cmd.Parameters.AddWithValue("@idFactura", factura.idFactura);
 
-                cmd.ExecuteNonQuery();
+                int idFacturaORIG = 0;
+                string tipoFactura;
+                int numFactura = 0;
+                DateTime fechaFactura;
+                DateTime fechaVencimiento;
+                DateTime fechaEntrega;
+                string formaPago;
+                int cliente = 0;
+                int domicilio = 0;
+                string observaciones;
+                double total;
+                string estado;
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado != 0)
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    DataRow row = dt.Rows[0];
+
+                    idFacturaORIG = Convert.ToInt32(row["idFactura"]);
+                    tipoFactura = Convert.ToString(row["tipoFactura"]);
+                    numFactura = Convert.ToInt32(row["numfactura"]);
+                    fechaFactura = Convert.ToDateTime(row["fechaFactura"]);
+                    fechaVencimiento = Convert.ToDateTime(row["fechaVencimiento"]);
+                    fechaEntrega = Convert.ToDateTime(row["fechaEntrega"]);
+                    formaPago = Convert.ToString(row["formaPago"]);
+                    cliente = Convert.ToInt32(row["cliente"]);
+                    domicilio = Convert.ToInt32(row["domicilio"]);
+                    observaciones = Convert.ToString(row["observaciones"]);
+                    total = Convert.ToDouble(row["total"]);
+                    estado = Convert.ToString(row["estado"]);
+                }
+
+                // ----------------------------------------------------------//
+
+                //Hacemos el update, si hay valores nuevos se actualiza, de lo contrario se vuelven a cargar los valores originales.
+
+                string query1 = @"UPDATE Facturas 
+                                 SET tipoFactura = @tipoFactura, numFactura = @numFactura, fechaFactura = @fechaFactura, fechaVencimiento = @fechaVencimiento, fechaEntrega = @fechaEntrega, formaPago = @formaPago, cliente = @cliente, domicilio = @domicilio, observaciones = @observaciones, total = @total, estado = @estado
+                                 WHERE idFactura = @idFactura";
+
+                MySqlCommand cmd1 = new MySqlCommand(query1, MySQL.sqlcnx);
+
+                if (factura.idFactura == 0 || factura.idFactura == null)
+                {
+                    factura.idFactura = idFacturaORIG;
+                }
+                else
+                {
+                    factura.idFactura = factura.idFactura;
+                }
+                    
+
+
+
+                
+                cmd1.Parameters.AddWithValue("@tipoFactura", factura.tipoFactura);
+                cmd1.Parameters.AddWithValue("@numFactura", factura.numFactura);
+                cmd1.Parameters.AddWithValue("@fechaFactura", factura.fechaFactura);
+                cmd1.Parameters.AddWithValue("@fechaVencimiento", factura.fechaVencimiento);
+                cmd1.Parameters.AddWithValue("@fechaEntrega", factura.fechaEntrega);
+                cmd1.Parameters.AddWithValue("@formaPago", factura.formaPago);
+                cmd1.Parameters.AddWithValue("@cliente", factura.cliente);
+                cmd1.Parameters.AddWithValue("@domicilio", factura.domicilio);
+                cmd1.Parameters.AddWithValue("@observaciones", factura.observaciones);
+                cmd1.Parameters.AddWithValue("@total", factura.total);
+                cmd1.Parameters.AddWithValue("@estado", factura.estado);
+
+                cmd1.ExecuteNonQuery();
 
                 //MessageBox.Show("Guardado!");
                 MySQL.DisconnectDB();
@@ -410,7 +483,6 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
-
 
         
     }

@@ -155,6 +155,12 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (dgvRepartos.CurrentCell.Value.ToString() != string.Empty)
             {
+                //Factura
+                factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
+
+                FacturaB.InsertFactura(factura);
+
+                //ItemsFactura
                 itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
                 itemFactura.cantidad = Convert.ToInt32(dgvRepartos.CurrentRow.Cells[nombreColumna].Value.ToString());
                 itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
@@ -168,6 +174,14 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (dgvRepartos.CurrentCell.Value.ToString() != string.Empty)
             {
+                //Factura
+                factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
+                factura.cliente = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value.ToString());
+                factura.idFactura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
+
+                FacturaB.UpdateFactura(factura);
+
+                //ItemsFactura
                 itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
                 itemFactura.cantidad = Convert.ToInt32(dgvRepartos.CurrentRow.Cells[nombreColumna].Value.ToString());
                 itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
@@ -241,8 +255,6 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 e.Handled = false;
             }
-
-            
         }
 
         private void cbDistribuidores_SelectedIndexChanged(object sender, EventArgs e)

@@ -43,7 +43,7 @@ namespace RamosHermanos.Capas.Negocio
                 string query = @"SELECT SP.stockMinimo, SP.stockMaximo, SPL.stockActual as stockActual, SPL.stockNuevo as stockNuevo
                                 FROM stockProducto SP
                                 INNER JOIN stockProductoLog SPL ON SPL.idProducto = SP.idProducto
-                                WHERE SP.idProducto = @idProducto and idStockProductoLog = (SELECT MAX(idStockProductoLog) FROM stockProductoLog)";
+                                WHERE SP.idProducto = @idProducto and idStockProductoLog = (SELECT MAX(idStockProductoLog) FROM stockProductoLog WHERE idProducto = @idProducto)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 

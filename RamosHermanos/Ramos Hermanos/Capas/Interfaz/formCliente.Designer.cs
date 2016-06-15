@@ -1109,6 +1109,7 @@
             this.txtSaldo.Size = new System.Drawing.Size(165, 20);
             this.txtSaldo.TabIndex = 69;
             this.txtSaldo.Text = "00,00";
+            this.txtSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtCreditoMax
             // 
@@ -1118,6 +1119,7 @@
             this.txtCreditoMax.Size = new System.Drawing.Size(165, 20);
             this.txtCreditoMax.TabIndex = 67;
             this.txtCreditoMax.Text = "50,00";
+            this.txtCreditoMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label28
             // 
@@ -1655,7 +1657,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(165, 20);
             this.textBox1.TabIndex = 69;
-            this.textBox1.Text = "00,00";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtCreditoMaxPJ
             // 
@@ -1664,7 +1666,7 @@
             this.txtCreditoMaxPJ.Name = "txtCreditoMaxPJ";
             this.txtCreditoMaxPJ.Size = new System.Drawing.Size(165, 20);
             this.txtCreditoMaxPJ.TabIndex = 67;
-            this.txtCreditoMaxPJ.Text = "50,00";
+            this.txtCreditoMaxPJ.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label46
             // 

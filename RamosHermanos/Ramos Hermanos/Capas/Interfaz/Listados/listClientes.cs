@@ -224,7 +224,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
                     //Saldo $
                     frm.txtSaldo.Text = SaldoB.GenerarSaldo(Convert.ToInt32(frm.txtIDcliente.Text));
-                    //Saldo Envases
+                    //Saldo Envases Aguas
                     frm.txt4LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 1));
                     frm.txt10LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 3));
                     frm.txt12LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 4));
@@ -234,7 +234,8 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     frm.txtCanasta.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 9));
                     frm.txtPie.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 10));
                     frm.txtDispenser.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 11));
-                    
+                    //Salgo Envase Soda
+                    frm.txtRetornable.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 7));
                     //Tabs
                     frm.CasePersona();
                 }
