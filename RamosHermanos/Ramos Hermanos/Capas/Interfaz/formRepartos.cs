@@ -175,9 +175,18 @@ namespace RamosHermanos.Capas.Interfaz
             if (dgvRepartos.CurrentCell.Value.ToString() != string.Empty)
             {
                 //Factura
-                factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
+                factura.tipoFactura = "C";
+                factura.estado = "Pendiente";
+                factura.fechaFactura = DateTime.Today;
+                factura.fechaVencimiento = factura.fechaVencimiento.AddDays(7); //Sumamos 7 días al actual.
+                factura.fechaEntrega = DateTime.Today;
                 factura.cliente = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value.ToString());
+                factura.domicilio = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDDomicilio"].Value.ToString());
+                factura.numFactura = FacturaB.UltimaFactura() + 1;
                 factura.idFactura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
+                factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
+                factura.observaciones = "";
+                factura.estado = "";
 
                 FacturaB.UpdateFactura(factura);
 

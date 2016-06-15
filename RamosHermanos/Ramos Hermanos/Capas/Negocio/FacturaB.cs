@@ -28,17 +28,17 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@idFactura", factura.idFactura);
 
                 int idFacturaORIG = 0;
-                string tipoFactura;
-                int numFactura = 0;
-                DateTime fechaFactura;
-                DateTime fechaVencimiento;
-                DateTime fechaEntrega;
-                string formaPago;
-                int cliente = 0;
-                int domicilio = 0;
-                string observaciones;
-                double total;
-                string estado;
+                string tipoFacturaORIG = "";
+                int numFacturaORIG = 0;
+                DateTime fechaFacturaORIG = Convert.ToDateTime("01/01/1990");
+                DateTime fechaVencimientoORIG = Convert.ToDateTime("01/01/1990");
+                DateTime fechaEntregaORIG = Convert.ToDateTime("01/01/1990");
+                string formaPagoORIG = "";
+                int clienteORIG = 0;
+                int domicilioORIG = 0;
+                string observacionesORIG = "";
+                double totalORIG = Convert.ToDouble(0);
+                string estadoORIG = "";
 
                 int resultado = Convert.ToInt32(cmd.ExecuteScalar());
                 if (resultado != 0)
@@ -51,17 +51,17 @@ namespace RamosHermanos.Capas.Negocio
                     DataRow row = dt.Rows[0];
 
                     idFacturaORIG = Convert.ToInt32(row["idFactura"]);
-                    tipoFactura = Convert.ToString(row["tipoFactura"]);
-                    numFactura = Convert.ToInt32(row["numfactura"]);
-                    fechaFactura = Convert.ToDateTime(row["fechaFactura"]);
-                    fechaVencimiento = Convert.ToDateTime(row["fechaVencimiento"]);
-                    fechaEntrega = Convert.ToDateTime(row["fechaEntrega"]);
-                    formaPago = Convert.ToString(row["formaPago"]);
-                    cliente = Convert.ToInt32(row["cliente"]);
-                    domicilio = Convert.ToInt32(row["domicilio"]);
-                    observaciones = Convert.ToString(row["observaciones"]);
-                    total = Convert.ToDouble(row["total"]);
-                    estado = Convert.ToString(row["estado"]);
+                    tipoFacturaORIG = Convert.ToString(row["tipoFactura"]);
+                    numFacturaORIG = Convert.ToInt32(row["numfactura"]);
+                    fechaFacturaORIG = Convert.ToDateTime(row["fechaFactura"]);
+                    fechaVencimientoORIG = Convert.ToDateTime(row["fechaVencimiento"]);
+                    fechaEntregaORIG = Convert.ToDateTime(row["fechaEntrega"]);
+                    formaPagoORIG = Convert.ToString(row["formaPago"]);
+                    clienteORIG = Convert.ToInt32(row["cliente"]);
+                    domicilioORIG = Convert.ToInt32(row["domicilio"]);
+                    observacionesORIG = Convert.ToString(row["observaciones"]);
+                    totalORIG = Convert.ToDouble(row["total"]);
+                    estadoORIG = Convert.ToString(row["observaciones"]);
                 }
 
                 // ----------------------------------------------------------//
@@ -74,30 +74,65 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySqlCommand cmd1 = new MySqlCommand(query1, MySQL.sqlcnx);
 
-                if (factura.idFactura == 0 || factura.idFactura == null)
-                {
-                    factura.idFactura = idFacturaORIG;
-                }
+                if (factura.idFactura == 0 || factura.idFactura.ToString() == string.Empty)
+                    cmd1.Parameters.AddWithValue("@idFactura", idFacturaORIG);
                 else
-                {
-                    factura.idFactura = factura.idFactura;
-                }
-                    
+                    cmd1.Parameters.AddWithValue("@idFactura", factura.idFactura);
 
+                if (factura.tipoFactura == string.Empty || factura.tipoFactura == null)
+                    cmd1.Parameters.AddWithValue("@tipoFactura", tipoFacturaORIG);
+                else
+                    cmd1.Parameters.AddWithValue("@tipoFactura", factura.tipoFactura);
 
+                if (Convert.ToString(factura.numFactura) == string.Empty || factura.numFactura.ToString() == null)
+                    cmd1.Parameters.AddWithValue("@numFactura", numFacturaORIG);
+                else
+                    cmd1.Parameters.AddWithValue("@numFactura", factura.numFactura);
 
-                
-                cmd1.Parameters.AddWithValue("@tipoFactura", factura.tipoFactura);
-                cmd1.Parameters.AddWithValue("@numFactura", factura.numFactura);
-                cmd1.Parameters.AddWithValue("@fechaFactura", factura.fechaFactura);
-                cmd1.Parameters.AddWithValue("@fechaVencimiento", factura.fechaVencimiento);
-                cmd1.Parameters.AddWithValue("@fechaEntrega", factura.fechaEntrega);
-                cmd1.Parameters.AddWithValue("@formaPago", factura.formaPago);
-                cmd1.Parameters.AddWithValue("@cliente", factura.cliente);
-                cmd1.Parameters.AddWithValue("@domicilio", factura.domicilio);
-                cmd1.Parameters.AddWithValue("@observaciones", factura.observaciones);
-                cmd1.Parameters.AddWithValue("@total", factura.total);
-                cmd1.Parameters.AddWithValue("@estado", factura.estado);
+                if (Convert.ToString(factura.fechaFactura) == string.Empty || factura.idFactura.ToString() == null)
+                    cmd1.Parameters.AddWithValue("@fechaFactura", fechaFacturaORIG);
+                else
+                    cmd1.Parameters.AddWithValue("@fechaFactura", factura.fechaFactura);
+
+                if (Convert.ToString(factura.fechaVencimiento) == string.Empty || factura.idFactura.ToString() == null)
+                    cmd1.Parameters.AddWithValue("@fechaVencimiento", fechaVencimientoORIG);
+                else
+                    cmd1.Parameters.AddWithValue("@fechaVencimiento", factura.fechaVencimiento);
+
+                if (Convert.ToString(factura.fechaEntrega) == string.Empty || factura.fechaEntrega.ToString() == null)
+                    cmd1.Parameters.AddWithValue("@fechaEntrega", fechaEntregaORIG);
+                else
+                    cmd1.Parameters.AddWithValue("@fechaEntrega", factura.fechaEntrega);
+
+                if (Convert.ToString(factura.fechaEntrega) == string.Empty || factura.fechaEntrega.ToString() == null)
+                    cmd1.Parameters.AddWithValue("@fechaEntrega", fechaEntregaORIG);
+                else
+                    cmd1.Parameters.AddWithValue("@formaPago", factura.formaPago);
+
+                if (Convert.ToString(factura.cliente) == string.Empty || factura.cliente.ToString() == null)
+                    cmd1.Parameters.AddWithValue("@cliente", clienteORIG);
+                else
+                    cmd1.Parameters.AddWithValue("@cliente", factura.cliente);
+
+                if (Convert.ToString(factura.domicilio) == string.Empty || factura.domicilio.ToString() == null)
+                    cmd1.Parameters.AddWithValue("@domicilio", domicilioORIG);
+                else
+                    cmd1.Parameters.AddWithValue("@domicilio", factura.domicilio);
+
+                if (Convert.ToString(factura.observaciones) == string.Empty || factura.observaciones.ToString() == null)
+                    cmd1.Parameters.AddWithValue("@observaciones", observacionesORIG);
+                else
+                    cmd1.Parameters.AddWithValue("@observaciones", factura.observaciones);
+
+                if (Convert.ToString(factura.total) == string.Empty || factura.total.ToString() == null)
+                    cmd1.Parameters.AddWithValue("@total", totalORIG);
+                else
+                    cmd1.Parameters.AddWithValue("@total", factura.total);
+
+                if (Convert.ToString(factura.estado) == string.Empty || factura.estado.ToString() == null)
+                    cmd1.Parameters.AddWithValue("@estado", estadoORIG);
+                else
+                    cmd1.Parameters.AddWithValue("@estado", factura.estado);
 
                 cmd1.ExecuteNonQuery();
 
