@@ -736,11 +736,11 @@ namespace RamosHermanos.Capas.Interfaz
                     itemsReparto.reparto = reparto.idReparto;
                     frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
 
-                    foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
-                    {
-                        dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(frm.dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
-                        dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
-                    }
+                    //foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
+                    //{
+                    //    dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(frm.dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
+                    //    dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    //}
                     
                     //frm.setRowNumber(frm.dgvRepartos);
                     //frm.dgvRepartos.DataSource = ds;
@@ -813,6 +813,13 @@ namespace RamosHermanos.Capas.Interfaz
                 factura.domicilio = itemsReparto.domicilio;
                 factura.numFactura = FacturaB.UltimaFactura() + 1;
                 FacturaB.InsertFactura(factura);
+            }
+
+            //Buscamos y guardamos los Saldos
+            foreach (DataRow dr in ds.Tables["dtItemsRecorrido"].Rows)
+            {
+                dr["colSaldo"] = SaldoB.GenerarSaldo(Convert.ToInt32(dr["idCliente"].ToString()));
+                dr["colVenta"]= itemsRepartoB.CalcularVenta(Convert.ToInt32(dr["colComprobante"].ToString()));
             }
 
             return ds;
