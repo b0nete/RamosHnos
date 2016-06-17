@@ -153,8 +153,11 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void InsertFactura(string nombreColumna)
         {
+
             if (dgvRepartos.CurrentCell.Value.ToString() != string.Empty)
             {
+                dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
+
                 //Factura
                 factura.tipoFactura = "C";
                 factura.estado = "Pendiente";
@@ -178,6 +181,14 @@ namespace RamosHermanos.Capas.Interfaz
                 itemFactura.subTotal = itemFactura.precioUnitario * itemFactura.cantidad;
 
                 itemsFacturaB.InsertItemFactura(itemFactura);
+
+                //Actualizamos el total de la factura ya que los itemsFactura se guardan despues de la Factura, por lo tanto el total se calcula después.
+                //Para todos, actualizar total de la Venta.
+                dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
+
+                factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
+
+                FacturaB.UpdateFactura(factura);
             }
         }
 
@@ -208,6 +219,14 @@ namespace RamosHermanos.Capas.Interfaz
                 itemFactura.subTotal = itemFactura.precioUnitario * itemFactura.cantidad;
 
                 itemsFacturaB.UpdateItemFactura(itemFactura);
+
+                //Actualizamos el total de la factura ya que los itemsFactura se guardan despues de la Factura, por lo tanto el total se calcula después.
+                //Para todos, actualizar total de la Venta.
+                dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
+
+                factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
+
+                FacturaB.UpdateFactura(factura);
             }
         }
 
@@ -318,9 +337,6 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvRepartos_CellEndEdit_1(object sender, DataGridViewCellEventArgs e)
         {
-            //Calculamos Total
-            dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
-
             itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
 
             //CARGAS

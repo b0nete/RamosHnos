@@ -61,7 +61,7 @@ namespace RamosHermanos.Capas.Negocio
                     domicilioORIG = Convert.ToInt32(row["domicilio"]);
                     observacionesORIG = Convert.ToString(row["observaciones"]);
                     totalORIG = Convert.ToDouble(row["total"]);
-                    estadoORIG = Convert.ToString(row["observaciones"]);
+                    estadoORIG = Convert.ToString(row["estado"]);
                 }
 
                 // ----------------------------------------------------------//
