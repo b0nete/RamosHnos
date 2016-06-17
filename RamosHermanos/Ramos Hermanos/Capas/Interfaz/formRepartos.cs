@@ -156,7 +156,18 @@ namespace RamosHermanos.Capas.Interfaz
             if (dgvRepartos.CurrentCell.Value.ToString() != string.Empty)
             {
                 //Factura
+                factura.tipoFactura = "C";
+                factura.estado = "Pendiente";
+                factura.fechaFactura = DateTime.Today;
+                factura.fechaVencimiento = factura.fechaVencimiento.AddDays(7); //Sumamos 7 días al actual.
+                factura.fechaEntrega = DateTime.Today;
+                factura.cliente = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value.ToString());
+                factura.domicilio = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDDomicilio"].Value.ToString());
+                factura.numFactura = FacturaB.UltimaFactura() + 1;
+                factura.idFactura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
                 factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
+                factura.observaciones = "";
+                factura.estado = "";
 
                 FacturaB.InsertFactura(factura);
 
@@ -307,6 +318,9 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvRepartos_CellEndEdit_1(object sender, DataGridViewCellEventArgs e)
         {
+            //Calculamos Total
+            dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
+
             itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
 
             //CARGAS

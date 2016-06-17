@@ -57,6 +57,49 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static itemsRepartoEntity UpdateItemRepartoSaldos(itemsRepartoEntity itemReparto)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"UPDATE itemsReparto
+                                 SET soda = @soda, agua4 = @agua4, agua10 = @agua10, agua12 = @agua12, agua20 = @agua20, agua25 = @agua25, cajon = @cajon, canasta = @canasta, pie = @pie, dispenser = @dispenser, saldo = @saldo;";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@reparto", itemReparto.reparto);
+                cmd.Parameters.AddWithValue("@cliente", itemReparto.cliente);
+                cmd.Parameters.AddWithValue("@domicilio", itemReparto.domicilio);
+                cmd.Parameters.AddWithValue("@idComprobante", itemReparto.idComprobante);
+                cmd.Parameters.AddWithValue("@soda", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 7));
+                cmd.Parameters.AddWithValue("@agua4", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 1));
+                cmd.Parameters.AddWithValue("@agua10", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 3));
+                cmd.Parameters.AddWithValue("@agua12", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 4));
+                cmd.Parameters.AddWithValue("@agua20", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 5));
+                cmd.Parameters.AddWithValue("@agua25", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 6));
+                cmd.Parameters.AddWithValue("@cajon", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 8));
+                cmd.Parameters.AddWithValue("@canasta", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 9));
+                cmd.Parameters.AddWithValue("@pie", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 10));
+                cmd.Parameters.AddWithValue("@dispenser", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 11));
+                cmd.Parameters.AddWithValue("@saldo", SaldoB.GenerarSaldo(itemReparto.cliente));
+
+
+                cmd.ExecuteNonQuery();
+
+                //MessageBox.Show("Guardado!");
+                MySQL.DisconnectDB();
+
+                return itemReparto;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static int UltimoComprobante()
         {
             try
