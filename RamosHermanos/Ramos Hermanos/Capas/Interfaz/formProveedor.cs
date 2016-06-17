@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Negocio;
+using RamosHermanos.Capas.Interfaz.Listados;
 
 
 namespace RamosHermanos.Capas.Interfaz
@@ -129,12 +130,9 @@ namespace RamosHermanos.Capas.Interfaz
 
             if (txtRazonSocial.Text == "")
             {
-                tabProveedor.Controls.Add(tabListado);
-                tabProveedor.Controls.Remove(tabInformacion);
-                tabProveedor.Controls.Remove(tabAdicional);
-                tabProveedor.Controls.Remove(tabMovimientos);
-                tabProveedor.Controls.Remove(tabPedido);
-                tabProveedor.SelectedTab = tabListado;
+                this.Close();
+                listProveedores frm = new listProveedores();
+                frm.Show();
 
                 return;
 

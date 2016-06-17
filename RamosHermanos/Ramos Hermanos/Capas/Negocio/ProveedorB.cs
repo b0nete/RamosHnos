@@ -44,10 +44,11 @@ namespace RamosHermanos.Capas.Negocio
             MySQL.ConnectDB();
 
             string query = @"Select COUNT(*) from proveedores
-                            where razonSocial = @razonSocial";
+                            where razonSocial = @razonSocial OR cuit = @cuit";
 
             MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
             cmd.Parameters.AddWithValue("@razonSocial", prov.razsocial);
+            cmd.Parameters.AddWithValue("@cuit", prov.cuit);
 
             int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -118,10 +119,11 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query = @"UPDATE proveedores
-                               SET fechaAlta = @fechaAlta, razonsocial = @razonSocial, estado = @estado,condicionIVA =@condicionIVA,debMAX=@debMAX
-                               WHERE cuit = @cuit";
+                               SET fechaAlta = @fechaAlta, razonsocial = @razonSocial, cuit = @cuit, estado = @estado,condicionIVA =@condicionIVA,debMAX=@debMAX
+                               WHERE idProveedor = @idProveedor";
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
+                cmd.Parameters.AddWithValue("@idProveedor", prov.idProveedor);
                 cmd.Parameters.AddWithValue("@fechaAlta", prov.fecha);
                 cmd.Parameters.AddWithValue("@cuit", prov.cuit);
                 cmd.Parameters.AddWithValue("@razonSocial", prov.razsocial);

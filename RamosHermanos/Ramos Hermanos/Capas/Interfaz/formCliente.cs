@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Negocio;
-
+using RamosHermanos.Capas.Interfaz.Listados;
 namespace RamosHermanos.Capas.Interfaz
 {
     
@@ -486,7 +486,9 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (txtnumDoc.Text == "")
             {
-                tabMain.SelectedTab = tabListado;
+                listClientes frm = new listClientes();
+                frm.Show();
+                //tabMain.SelectedTab = tabListado;
                 return;
             }
 
@@ -618,7 +620,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool ValidarCamposPJ() //Verificar valores necesarios cargados.
         {
-            if (txtCUILPJ.Text == string.Empty || txtNombrePJ.Text == string.Empty)
+            if (txtCUILPJ.Text == string.Empty || txtNombrePJ.Text == string.Empty || txtCreditoMaxPJ.Text == string.Empty)
             {
                 MessageBox.Show("Datos necesarios incompletos.");
                 return false;
@@ -650,13 +652,12 @@ namespace RamosHermanos.Capas.Interfaz
             txt25LT.Text = "";
             txtRetornable.Text = "";
             txtDomic.Text = "";
-            //cbLunes.Checked = false;
-            //cbMartes.Checked = false;
-            //cbMiercoles.Checked = false;
-            //cbJueves.Checked = false;
-            //cbViernes.Checked = false;
-            //cbSabado.Checked = false;
-            //cbDomingo.Checked = false;
+            cbLunes.Checked = false;
+            cbMartes.Checked = false;
+            cbMiercoles.Checked = false;
+            cbJueves.Checked = false;
+            cbViernes.Checked = false;
+            cbSabado.Checked = false;
             //txtLun.Text = "";
             //txtMar.Text = "";
             //txtMie.Text = "";
@@ -1200,8 +1201,20 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnPedido_Click(object sender, EventArgs e)
         {
-            formPedidos frm = new formPedidos();
-            frm.Show();
+            if (txtIDcliente.Text == string.Empty)
+            {
+                listClientes frm = new listClientes();
+                frm.Show();
+            }
+            else
+            {
+                formPedidos frm = new formPedidos();
+                frm.txtidCliente.Text = txtIDcliente.Text;
+                frm.txtNombre.Text = txtApellido.Text + " " + txtNombre.Text;
+                frm.Show();
+                //frm.cbDomicilio.Value= txtDomic.Text;
+                
+            }
         }
 
         public void CargarTXTSaldo()
@@ -1354,9 +1367,145 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
+        private void txtCreditoMax_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            //MessageBox.Show(Convert.ToInt16(e.KeyChar).ToString());
+       
+       if (e.KeyChar ==8 ) {
+         e.Handled = false;
+         return;
+       }
+
+
+       bool IsDec = false;
+        int nroDec = 0;
+
+       for (int i=0 ; i<txtCreditoMax.Text.Length; i++) {
+         if ( txtCreditoMax.Text[i] == '.' )
+            IsDec = true;
+
+         if ( IsDec && nroDec++ >=2) {
+            e.Handled = true;
+            return;
+         }
+
+
+       }
+
+       if ( e.KeyChar>=48 && e.KeyChar<=57)
+         e.Handled = false;
+       else if (e.KeyChar==46)         
+         e.Handled = (IsDec) ? true:false;
+       else
+         e.Handled = true;
+
+     }
+
+        private void CleanPJ()
+        {
+            txtIDclientePJ.Text = "";
+            txtCUILPJ.Text = "";
+            txtNombrePJ.Text = "";
+            cbIVAPJ.SelectedIndex = 4;
+            cbtipoClientePJ.SelectedIndex= 0;
+            txtEmailPJ.Text = "";
+            txtDomicilioPJ.Text = "";
+            txtTelefonoPJ.Text = "";
+            txtCreditoMaxPJ.Text = "";
+            txtSaldo.Text = "";
+            txt4LTPJ.Text = "";
+            txt10LTPJ.Text = "";
+            txt12LTPJ.Text = "";
+            txt20LTPJ.Text = "";
+            txt25LTPJ.Text = "";
+            cbLunesPJ.Checked = false;
+            cbMartesPJ.Checked = false;
+            cbMiercolesPJ.Checked = false;
+            cbJuevesPJ.Checked = false;
+            cbViernesPJ.Checked = false;
+            cbSabadoPJ.Checked = false;
+            //txtLun.Text = "";
+            //txtMar.Text = "";
+            //txtMie.Text = "";
+            //txtJue.Text = "";
+            //txtVie.Text = "";
+            //txtSab.Text = "";
+            //txtDom.Text = "";
+            //dtpA.Text = "09:00";
+            //dtpB.Text = "16:00";
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CleanPJ();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (txtIDclientePJ.Text == string.Empty)
+            {
+                listClientes frm = new listClientes();
+                frm.Show();
+            }
+            else
+            {
+                formContacto frm = new formContacto();
+                frm.tabVar = 0;
+                frm.txtIDALL.Text = txtIDclientePJ.Text;
+                frm.Show();
+                frm.cbRolALL.SelectedValue = 1;
+                frm.txtNombreEmail.Text = txtNombrePJ.Text;
+                frm.txtNombreTel.Text = txtNombrePJ.Text;
+                frm.txtNombreDom.Text = txtNombrePJ.Text;
+
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (txtIDclientePJ.Text == string.Empty)
+            {
+                listClientes frm = new listClientes();
+                frm.Show();
+            }
+            else
+            {
+                formContacto frm = new formContacto();
+                frm.tabVar = 1;
+                frm.txtIDALL.Text = txtIDclientePJ.Text;
+                frm.Show();
+                frm.cbRolALL.SelectedValue = 1;
+                frm.txtNombreEmail.Text = txtNombrePJ.Text;
+                frm.txtNombreTel.Text = txtNombrePJ.Text;
+                frm.txtNombreDom.Text = txtNombrePJ.Text;
+
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (txtIDclientePJ.Text == string.Empty)
+            {
+                listClientes frm = new listClientes();
+                frm.Show();
+            }
+            else
+            {
+                formContacto frm = new formContacto();
+                frm.tabVar = 2;
+                frm.txtIDALL.Text = txtIDclientePJ.Text;
+                frm.Show();
+                frm.cbRolALL.SelectedValue = 1;
+                frm.txtNombreEmail.Text = txtNombrePJ.Text;
+                frm.txtNombreTel.Text = txtNombrePJ.Text;
+                frm.txtNombreDom.Text = txtNombrePJ.Text;
+
+            }
+        }
+        }
+
           
 }
 
-}
+
         
  

@@ -144,12 +144,12 @@
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabInformacionJ = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.cbSabadoPJ = new System.Windows.Forms.CheckBox();
+            this.cbViernesPJ = new System.Windows.Forms.CheckBox();
+            this.cbJuevesPJ = new System.Windows.Forms.CheckBox();
+            this.cbMiercolesPJ = new System.Windows.Forms.CheckBox();
+            this.cbMartesPJ = new System.Windows.Forms.CheckBox();
+            this.cbLunesPJ = new System.Windows.Forms.CheckBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -177,7 +177,7 @@
             this.label58 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtRetornablePJ = new System.Windows.Forms.TextBox();
             this.label63 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -623,7 +623,7 @@
             this.btnPedido.Location = new System.Drawing.Point(671, 498);
             this.btnPedido.Name = "btnPedido";
             this.btnPedido.Size = new System.Drawing.Size(28, 28);
-            this.btnPedido.TabIndex = 71;
+            this.btnPedido.TabIndex = 2;
             this.btnPedido.UseVisualStyleBackColor = true;
             this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);
             // 
@@ -635,7 +635,7 @@
             this.btnClean.Location = new System.Drawing.Point(705, 498);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
-            this.btnClean.TabIndex = 70;
+            this.btnClean.TabIndex = 1;
             this.btnClean.UseVisualStyleBackColor = true;
             this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
@@ -691,7 +691,7 @@
             this.groupBox6.Location = new System.Drawing.Point(6, 10);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(494, 354);
-            this.groupBox6.TabIndex = 68;
+            this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Persona";
             this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
@@ -702,7 +702,7 @@
             this.lblEstado.Location = new System.Drawing.Point(123, 22);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(0, 13);
-            this.lblEstado.TabIndex = 92;
+            this.lblEstado.TabIndex = 2;
             // 
             // button1
             // 
@@ -712,7 +712,7 @@
             this.button1.Location = new System.Drawing.Point(463, 312);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 28);
-            this.button1.TabIndex = 91;
+            this.button1.TabIndex = 17;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -737,7 +737,7 @@
             this.btnSearch.Location = new System.Drawing.Point(463, 118);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
-            this.btnSearch.TabIndex = 88;
+            this.btnSearch.TabIndex = 9;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -747,7 +747,7 @@
             this.txtnumDoc.Location = new System.Drawing.Point(102, 123);
             this.txtnumDoc.Name = "txtnumDoc";
             this.txtnumDoc.Size = new System.Drawing.Size(355, 20);
-            this.txtnumDoc.TabIndex = 87;
+            this.txtnumDoc.TabIndex = 8;
             this.txtnumDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnumDoc_KeyPress);
             // 
             // label6
@@ -771,7 +771,7 @@
             this.cbSexo.Location = new System.Drawing.Point(102, 149);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Size = new System.Drawing.Size(355, 21);
-            this.cbSexo.TabIndex = 86;
+            this.cbSexo.TabIndex = 10;
             // 
             // cbTipoCliente
             // 
@@ -781,7 +781,7 @@
             this.cbTipoCliente.Location = new System.Drawing.Point(102, 316);
             this.cbTipoCliente.Name = "cbTipoCliente";
             this.cbTipoCliente.Size = new System.Drawing.Size(355, 21);
-            this.cbTipoCliente.TabIndex = 84;
+            this.cbTipoCliente.TabIndex = 16;
             this.cbTipoCliente.DropDown += new System.EventHandler(this.cbTipoCliente_DropDown);
             // 
             // label24
@@ -817,7 +817,7 @@
             this.cbIVA.Location = new System.Drawing.Point(102, 289);
             this.cbIVA.Name = "cbIVA";
             this.cbIVA.Size = new System.Drawing.Size(355, 21);
-            this.cbIVA.TabIndex = 83;
+            this.cbIVA.TabIndex = 15;
             this.cbIVA.SelectedIndexChanged += new System.EventHandler(this.cbIVA_SelectedIndexChanged);
             // 
             // cbEstadoCivil
@@ -833,7 +833,7 @@
             this.cbEstadoCivil.Location = new System.Drawing.Point(102, 262);
             this.cbEstadoCivil.Name = "cbEstadoCivil";
             this.cbEstadoCivil.Size = new System.Drawing.Size(355, 21);
-            this.cbEstadoCivil.TabIndex = 82;
+            this.cbEstadoCivil.TabIndex = 14;
             // 
             // dtpFechaAlta
             // 
@@ -844,7 +844,7 @@
             this.dtpFechaAlta.Location = new System.Drawing.Point(102, 68);
             this.dtpFechaAlta.Name = "dtpFechaAlta";
             this.dtpFechaAlta.Size = new System.Drawing.Size(355, 20);
-            this.dtpFechaAlta.TabIndex = 81;
+            this.dtpFechaAlta.TabIndex = 6;
             // 
             // label20
             // 
@@ -873,7 +873,7 @@
             this.label12.Location = new System.Drawing.Point(41, 71);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(58, 13);
-            this.label12.TabIndex = 78;
+            this.label12.TabIndex = 11;
             this.label12.Text = "Fecha Alta";
             // 
             // cbEstado
@@ -884,7 +884,7 @@
             this.cbEstado.Location = new System.Drawing.Point(102, 22);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(15, 14);
-            this.cbEstado.TabIndex = 77;
+            this.cbEstado.TabIndex = 13;
             this.cbEstado.UseVisualStyleBackColor = true;
             this.cbEstado.CheckedChanged += new System.EventHandler(this.cbEstado_CheckedChanged);
             // 
@@ -895,7 +895,7 @@
             this.label11.Location = new System.Drawing.Point(59, 22);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(40, 13);
-            this.label11.TabIndex = 76;
+            this.label11.TabIndex = 4;
             this.label11.Text = "Estado";
             // 
             // label8
@@ -905,7 +905,7 @@
             this.label8.Location = new System.Drawing.Point(48, 45);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 13);
-            this.label8.TabIndex = 30;
+            this.label8.TabIndex = 10;
             this.label8.Text = "Nº Cliente";
             // 
             // txtCUIL
@@ -915,7 +915,7 @@
             this.txtCUIL.Mask = "00-00000000-0";
             this.txtCUIL.Name = "txtCUIL";
             this.txtCUIL.Size = new System.Drawing.Size(355, 20);
-            this.txtCUIL.TabIndex = 61;
+            this.txtCUIL.TabIndex = 11;
             this.txtCUIL.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // txtIDcliente
@@ -925,7 +925,7 @@
             this.txtIDcliente.Location = new System.Drawing.Point(102, 42);
             this.txtIDcliente.Name = "txtIDcliente";
             this.txtIDcliente.Size = new System.Drawing.Size(355, 20);
-            this.txtIDcliente.TabIndex = 31;
+            this.txtIDcliente.TabIndex = 5;
             this.txtIDcliente.TextChanged += new System.EventHandler(this.txtIDcliente_TextChanged);
             // 
             // label13
@@ -1021,7 +1021,7 @@
             this.cbTipoDoc.Location = new System.Drawing.Point(102, 94);
             this.cbTipoDoc.Name = "cbTipoDoc";
             this.cbTipoDoc.Size = new System.Drawing.Size(355, 21);
-            this.cbTipoDoc.TabIndex = 57;
+            this.cbTipoDoc.TabIndex = 7;
             // 
             // txtApellido
             // 
@@ -1029,7 +1029,7 @@
             this.txtApellido.Location = new System.Drawing.Point(102, 206);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(355, 20);
-            this.txtApellido.TabIndex = 62;
+            this.txtApellido.TabIndex = 12;
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // label1
@@ -1048,7 +1048,7 @@
             this.txtNombre.Location = new System.Drawing.Point(102, 232);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(355, 20);
-            this.txtNombre.TabIndex = 63;
+            this.txtNombre.TabIndex = 13;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // label4
@@ -1107,7 +1107,7 @@
             this.txtSaldo.Location = new System.Drawing.Point(84, 46);
             this.txtSaldo.Name = "txtSaldo";
             this.txtSaldo.Size = new System.Drawing.Size(165, 20);
-            this.txtSaldo.TabIndex = 69;
+            this.txtSaldo.TabIndex = 1;
             this.txtSaldo.Text = "00,00";
             this.txtSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -1117,9 +1117,10 @@
             this.txtCreditoMax.Location = new System.Drawing.Point(84, 20);
             this.txtCreditoMax.Name = "txtCreditoMax";
             this.txtCreditoMax.Size = new System.Drawing.Size(165, 20);
-            this.txtCreditoMax.TabIndex = 67;
+            this.txtCreditoMax.TabIndex = 0;
             this.txtCreditoMax.Text = "50,00";
             this.txtCreditoMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCreditoMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCreditoMax_KeyPress_1);
             // 
             // label28
             // 
@@ -1410,7 +1411,7 @@
             this.btnDomicilio.Location = new System.Drawing.Point(463, 55);
             this.btnDomicilio.Name = "btnDomicilio";
             this.btnDomicilio.Size = new System.Drawing.Size(28, 28);
-            this.btnDomicilio.TabIndex = 56;
+            this.btnDomicilio.TabIndex = 1;
             this.btnDomicilio.UseVisualStyleBackColor = true;
             this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
             // 
@@ -1422,7 +1423,7 @@
             this.btnEmail.Location = new System.Drawing.Point(463, 27);
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(28, 28);
-            this.btnEmail.TabIndex = 58;
+            this.btnEmail.TabIndex = 0;
             this.btnEmail.UseVisualStyleBackColor = true;
             this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
             // 
@@ -1434,7 +1435,7 @@
             this.btnTelefono.Location = new System.Drawing.Point(463, 83);
             this.btnTelefono.Name = "btnTelefono";
             this.btnTelefono.Size = new System.Drawing.Size(28, 28);
-            this.btnTelefono.TabIndex = 57;
+            this.btnTelefono.TabIndex = 2;
             this.btnTelefono.UseVisualStyleBackColor = true;
             this.btnTelefono.Click += new System.EventHandler(this.btnTelefono_Click_1);
             // 
@@ -1503,7 +1504,7 @@
             this.btnSave.Location = new System.Drawing.Point(739, 498);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
-            this.btnSave.TabIndex = 61;
+            this.btnSave.TabIndex = 0;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -1541,12 +1542,12 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.checkBox1);
-            this.groupBox10.Controls.Add(this.checkBox2);
-            this.groupBox10.Controls.Add(this.checkBox3);
-            this.groupBox10.Controls.Add(this.checkBox4);
-            this.groupBox10.Controls.Add(this.checkBox5);
-            this.groupBox10.Controls.Add(this.checkBox6);
+            this.groupBox10.Controls.Add(this.cbSabadoPJ);
+            this.groupBox10.Controls.Add(this.cbViernesPJ);
+            this.groupBox10.Controls.Add(this.cbJuevesPJ);
+            this.groupBox10.Controls.Add(this.cbMiercolesPJ);
+            this.groupBox10.Controls.Add(this.cbMartesPJ);
+            this.groupBox10.Controls.Add(this.cbLunesPJ);
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.Location = new System.Drawing.Point(506, 403);
             this.groupBox10.Name = "groupBox10";
@@ -1555,71 +1556,71 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Visita";
             // 
-            // checkBox1
+            // cbSabadoPJ
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(148, 65);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(63, 17);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Sabado";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbSabadoPJ.AutoSize = true;
+            this.cbSabadoPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSabadoPJ.Location = new System.Drawing.Point(148, 65);
+            this.cbSabadoPJ.Name = "cbSabadoPJ";
+            this.cbSabadoPJ.Size = new System.Drawing.Size(63, 17);
+            this.cbSabadoPJ.TabIndex = 5;
+            this.cbSabadoPJ.Text = "Sabado";
+            this.cbSabadoPJ.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // cbViernesPJ
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(148, 42);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(61, 17);
-            this.checkBox2.TabIndex = 4;
-            this.checkBox2.Text = "Viernes";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cbViernesPJ.AutoSize = true;
+            this.cbViernesPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbViernesPJ.Location = new System.Drawing.Point(148, 42);
+            this.cbViernesPJ.Name = "cbViernesPJ";
+            this.cbViernesPJ.Size = new System.Drawing.Size(61, 17);
+            this.cbViernesPJ.TabIndex = 4;
+            this.cbViernesPJ.Text = "Viernes";
+            this.cbViernesPJ.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // cbJuevesPJ
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(148, 19);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(60, 17);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "Jueves";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.cbJuevesPJ.AutoSize = true;
+            this.cbJuevesPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbJuevesPJ.Location = new System.Drawing.Point(148, 19);
+            this.cbJuevesPJ.Name = "cbJuevesPJ";
+            this.cbJuevesPJ.Size = new System.Drawing.Size(60, 17);
+            this.cbJuevesPJ.TabIndex = 3;
+            this.cbJuevesPJ.Text = "Jueves";
+            this.cbJuevesPJ.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // cbMiercolesPJ
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(24, 65);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(71, 17);
-            this.checkBox4.TabIndex = 2;
-            this.checkBox4.Text = "Miercoles";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.cbMiercolesPJ.AutoSize = true;
+            this.cbMiercolesPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMiercolesPJ.Location = new System.Drawing.Point(24, 65);
+            this.cbMiercolesPJ.Name = "cbMiercolesPJ";
+            this.cbMiercolesPJ.Size = new System.Drawing.Size(71, 17);
+            this.cbMiercolesPJ.TabIndex = 2;
+            this.cbMiercolesPJ.Text = "Miercoles";
+            this.cbMiercolesPJ.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // cbMartesPJ
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.Location = new System.Drawing.Point(24, 42);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(58, 17);
-            this.checkBox5.TabIndex = 1;
-            this.checkBox5.Text = "Martes";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.cbMartesPJ.AutoSize = true;
+            this.cbMartesPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMartesPJ.Location = new System.Drawing.Point(24, 42);
+            this.cbMartesPJ.Name = "cbMartesPJ";
+            this.cbMartesPJ.Size = new System.Drawing.Size(58, 17);
+            this.cbMartesPJ.TabIndex = 1;
+            this.cbMartesPJ.Text = "Martes";
+            this.cbMartesPJ.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // cbLunesPJ
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(24, 19);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(55, 17);
-            this.checkBox6.TabIndex = 0;
-            this.checkBox6.Text = "Lunes";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.cbLunesPJ.AutoSize = true;
+            this.cbLunesPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbLunesPJ.Location = new System.Drawing.Point(24, 19);
+            this.cbLunesPJ.Name = "cbLunesPJ";
+            this.cbLunesPJ.Size = new System.Drawing.Size(55, 17);
+            this.cbLunesPJ.TabIndex = 0;
+            this.cbLunesPJ.Text = "Lunes";
+            this.cbLunesPJ.UseVisualStyleBackColor = true;
             // 
             // groupBox11
             // 
@@ -1901,7 +1902,7 @@
             // 
             // groupBox19
             // 
-            this.groupBox19.Controls.Add(this.textBox12);
+            this.groupBox19.Controls.Add(this.txtRetornablePJ);
             this.groupBox19.Controls.Add(this.label63);
             this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox19.Location = new System.Drawing.Point(137, 101);
@@ -1911,14 +1912,14 @@
             this.groupBox19.TabStop = false;
             this.groupBox19.Text = "Sodas";
             // 
-            // textBox12
+            // txtRetornablePJ
             // 
-            this.textBox12.Enabled = false;
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox12.Location = new System.Drawing.Point(64, 19);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(47, 20);
-            this.textBox12.TabIndex = 103;
+            this.txtRetornablePJ.Enabled = false;
+            this.txtRetornablePJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtRetornablePJ.Location = new System.Drawing.Point(64, 19);
+            this.txtRetornablePJ.Name = "txtRetornablePJ";
+            this.txtRetornablePJ.Size = new System.Drawing.Size(47, 20);
+            this.txtRetornablePJ.TabIndex = 103;
             // 
             // label63
             // 
@@ -1940,6 +1941,7 @@
             this.button2.Size = new System.Drawing.Size(28, 28);
             this.button2.TabIndex = 78;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -2223,6 +2225,7 @@
             this.button7.Size = new System.Drawing.Size(28, 28);
             this.button7.TabIndex = 56;
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -2234,6 +2237,7 @@
             this.button8.Size = new System.Drawing.Size(28, 28);
             this.button8.TabIndex = 58;
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -2245,6 +2249,7 @@
             this.button9.Size = new System.Drawing.Size(28, 28);
             this.button9.TabIndex = 57;
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // txtEmailPJ
             // 
@@ -2588,7 +2593,7 @@
             this.label64.Location = new System.Drawing.Point(0, 0);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(784, 30);
-            this.label64.TabIndex = 115;
+            this.label64.TabIndex = 0;
             this.label64.Text = "Clientes";
             this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -2826,12 +2831,12 @@
         private System.Windows.Forms.CheckBox cbMartes;
         private System.Windows.Forms.CheckBox cbLunes;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox cbSabadoPJ;
+        private System.Windows.Forms.CheckBox cbViernesPJ;
+        private System.Windows.Forms.CheckBox cbJuevesPJ;
+        private System.Windows.Forms.CheckBox cbMiercolesPJ;
+        private System.Windows.Forms.CheckBox cbMartesPJ;
+        private System.Windows.Forms.CheckBox cbLunesPJ;
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.GroupBox groupBox12;
         public System.Windows.Forms.TextBox textBox1;
@@ -2859,7 +2864,7 @@
         private System.Windows.Forms.Label label58;
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.GroupBox groupBox19;
-        public System.Windows.Forms.TextBox textBox12;
+        public System.Windows.Forms.TextBox txtRetornablePJ;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label64;
 
