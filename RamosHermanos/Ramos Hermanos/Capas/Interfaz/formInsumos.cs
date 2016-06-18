@@ -41,7 +41,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool VerificarCampos()
         {
-            if (cbProv.SelectedValue == null || cbRubro.SelectedValue == null || cbMarca.SelectedValue == null || labelInsumo.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null )
+            if (txtInsumo.Text== string.Empty || cbProv.SelectedValue == null || cbRubro.SelectedValue == null || cbMarca.SelectedValue == null || labelInsumo.Text == string.Empty || txtCantidad.Text == string.Empty || cbMedida.SelectedValue == null )
             {
                 MessageBox.Show("Complete los campos Obligatorios");
 

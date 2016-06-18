@@ -779,6 +779,19 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
+        private void CheckColorPJ(CheckBox cb, Label lbl)
+        {
+            if (cb.Checked == true)
+            {
+                lbl.BackColor = Color.Green;
+                lbl.Text = "Habilitado";
+            }
+            else
+            {
+                lbl.BackColor = Color.Red;
+                lbl.Text = "Desabilitado";
+            }
+        }
         // Validaciones
 
         private void txtnumDoc_KeyPress(object sender, KeyPressEventArgs e)
@@ -1038,7 +1051,7 @@ namespace RamosHermanos.Capas.Interfaz
         public void CargarSaldo(TextBox txt)
         {
             saldo.rol = 1;
-            saldo.idPersona = Convert.ToInt32(txt.Text);
+            saldo.idPersona = Convert.ToInt32(txtIDclientePJ.Text);
             saldo.creditoMax = Convert.ToDouble(txtCreditoMax.Text);
             saldo.saldoActual = Convert.ToDouble(txtSaldo.Text);
         }
@@ -1506,6 +1519,11 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtNombreDom.Text = txtNombrePJ.Text;
 
             }
+        }
+
+        private void cbEstadoPJ_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckColor(cbEstadoPJ, lbltxtP);
         }
         }
 

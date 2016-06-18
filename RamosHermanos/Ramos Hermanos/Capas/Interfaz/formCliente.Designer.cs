@@ -236,6 +236,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.label64 = new System.Windows.Forms.Label();
+            this.lbltxtP = new System.Windows.Forms.Label();
             this.tabMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.tabListado.SuspendLayout();
@@ -1956,6 +1957,7 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.lbltxtP);
             this.groupBox9.Controls.Add(this.lblEstadoPJ);
             this.groupBox9.Controls.Add(this.button5);
             this.groupBox9.Controls.Add(this.button6);
@@ -2101,6 +2103,7 @@
             this.cbEstadoPJ.Size = new System.Drawing.Size(15, 14);
             this.cbEstadoPJ.TabIndex = 77;
             this.cbEstadoPJ.UseVisualStyleBackColor = true;
+            this.cbEstadoPJ.CheckedChanged += new System.EventHandler(this.cbEstadoPJ_CheckedChanged);
             // 
             // label39
             // 
@@ -2597,6 +2600,14 @@
             this.label64.Text = "Clientes";
             this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lbltxtP
+            // 
+            this.lbltxtP.AutoSize = true;
+            this.lbltxtP.Location = new System.Drawing.Point(119, 22);
+            this.lbltxtP.Name = "lbltxtP";
+            this.lbltxtP.Size = new System.Drawing.Size(0, 13);
+            this.lbltxtP.TabIndex = 94;
+            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2867,6 +2878,7 @@
         public System.Windows.Forms.TextBox txtRetornablePJ;
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label lbltxtP;
 
     }
 }
