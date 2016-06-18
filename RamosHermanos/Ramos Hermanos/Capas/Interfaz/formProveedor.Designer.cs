@@ -92,7 +92,8 @@
             this.tabProveedor.Name = "tabProveedor";
             this.tabProveedor.SelectedIndex = 0;
             this.tabProveedor.Size = new System.Drawing.Size(512, 371);
-            this.tabProveedor.TabIndex = 0;
+            this.tabProveedor.TabIndex = 1;
+            this.tabProveedor.TabStop = false;
             // 
             // tabInformacion
             // 
@@ -116,7 +117,8 @@
             this.btnClean.Location = new System.Drawing.Point(438, 311);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
-            this.btnClean.TabIndex = 71;
+            this.btnClean.TabIndex = 1;
+            this.btnClean.TabStop = false;
             this.btnClean.UseVisualStyleBackColor = true;
             this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
@@ -176,7 +178,7 @@
             this.btnSearch.Location = new System.Drawing.Point(455, 122);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(27, 28);
-            this.btnSearch.TabIndex = 88;
+            this.btnSearch.TabIndex = 5;
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -203,7 +205,7 @@
             this.cbIVA.Location = new System.Drawing.Point(94, 154);
             this.cbIVA.Name = "cbIVA";
             this.cbIVA.Size = new System.Drawing.Size(355, 21);
-            this.cbIVA.TabIndex = 83;
+            this.cbIVA.TabIndex = 6;
             this.cbIVA.SelectedIndexChanged += new System.EventHandler(this.cbIVA_SelectedIndexChanged);
             // 
             // dtpFechaAlta
@@ -215,7 +217,7 @@
             this.dtpFechaAlta.Location = new System.Drawing.Point(94, 72);
             this.dtpFechaAlta.Name = "dtpFechaAlta";
             this.dtpFechaAlta.Size = new System.Drawing.Size(355, 20);
-            this.dtpFechaAlta.TabIndex = 81;
+            this.dtpFechaAlta.TabIndex = 2;
             // 
             // label20
             // 
@@ -246,6 +248,7 @@
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(15, 14);
             this.cbEstado.TabIndex = 77;
+            this.cbEstado.TabStop = false;
             this.cbEstado.UseVisualStyleBackColor = true;
             this.cbEstado.CheckedChanged += new System.EventHandler(this.cbEstado_CheckedChanged);
             // 
@@ -276,7 +279,7 @@
             this.txtcuit.Mask = "00-00000000-0";
             this.txtcuit.Name = "txtcuit";
             this.txtcuit.Size = new System.Drawing.Size(355, 20);
-            this.txtcuit.TabIndex = 61;
+            this.txtcuit.TabIndex = 3;
             this.txtcuit.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtcuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcuit_KeyPress);
             // 
@@ -287,7 +290,7 @@
             this.txtidprov.Location = new System.Drawing.Point(94, 46);
             this.txtidprov.Name = "txtidprov";
             this.txtidprov.Size = new System.Drawing.Size(355, 20);
-            this.txtidprov.TabIndex = 31;
+            this.txtidprov.TabIndex = 1;
             // 
             // label16
             // 
@@ -331,7 +334,7 @@
             this.txtRazonSocial.Location = new System.Drawing.Point(94, 128);
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(355, 20);
-            this.txtRazonSocial.TabIndex = 62;
+            this.txtRazonSocial.TabIndex = 4;
             this.txtRazonSocial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRazonSocial_KeyPress);
             // 
             // label1
@@ -370,7 +373,7 @@
             this.btnDomicilio.Location = new System.Drawing.Point(455, 44);
             this.btnDomicilio.Name = "btnDomicilio";
             this.btnDomicilio.Size = new System.Drawing.Size(28, 28);
-            this.btnDomicilio.TabIndex = 56;
+            this.btnDomicilio.TabIndex = 8;
             this.btnDomicilio.UseVisualStyleBackColor = true;
             this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
             // 
@@ -382,7 +385,7 @@
             this.btnEmail.Location = new System.Drawing.Point(455, 16);
             this.btnEmail.Name = "btnEmail";
             this.btnEmail.Size = new System.Drawing.Size(28, 28);
-            this.btnEmail.TabIndex = 58;
+            this.btnEmail.TabIndex = 7;
             this.btnEmail.UseVisualStyleBackColor = true;
             this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click_1);
             // 
@@ -394,7 +397,7 @@
             this.btnTelefono.Location = new System.Drawing.Point(455, 72);
             this.btnTelefono.Name = "btnTelefono";
             this.btnTelefono.Size = new System.Drawing.Size(28, 28);
-            this.btnTelefono.TabIndex = 57;
+            this.btnTelefono.TabIndex = 9;
             this.btnTelefono.UseVisualStyleBackColor = true;
             this.btnTelefono.Click += new System.EventHandler(this.btnTelefono_Click_1);
             // 
@@ -463,7 +466,7 @@
             this.btnGuardarProv.Location = new System.Drawing.Point(472, 311);
             this.btnGuardarProv.Name = "btnGuardarProv";
             this.btnGuardarProv.Size = new System.Drawing.Size(28, 28);
-            this.btnGuardarProv.TabIndex = 61;
+            this.btnGuardarProv.TabIndex = 10;
             this.btnGuardarProv.UseVisualStyleBackColor = true;
             this.btnGuardarProv.Click += new System.EventHandler(this.btnGuardarProv_Click);
             // 
@@ -572,7 +575,7 @@
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(517, 30);
-            this.label2.TabIndex = 73;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Proveedores";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -584,6 +587,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tabProveedor);
             this.Name = "formProveedor";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.formProveedor_Load);
             this.tabProveedor.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);

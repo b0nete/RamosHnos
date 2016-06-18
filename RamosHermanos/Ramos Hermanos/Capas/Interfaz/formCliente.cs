@@ -175,7 +175,9 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (txtIDcliente.Text == string.Empty)
             {
-                tabMain.SelectedTab = tabListado;
+                MessageBox.Show("Previamente, guarde los cambios realizados");
+                //listClientes frm = new listClientes();
+                //frm.Show();
             }
             else
             {
@@ -195,7 +197,9 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (txtIDcliente.Text == string.Empty)
             {
-                tabMain.SelectedTab = tabListado;
+                MessageBox.Show("Previamente, guarde los cambios realizados");
+                //listClientes frm = new listClientes();
+                //frm.Show();
             }
             else
             {
@@ -214,7 +218,9 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (txtIDcliente.Text == string.Empty)
             {
-                tabMain.SelectedTab = tabListado;
+                MessageBox.Show("Previamente, guarde los cambios realizados");
+                //listClientes frm = new listClientes();
+                //frm.Show();
             }
             else
             {

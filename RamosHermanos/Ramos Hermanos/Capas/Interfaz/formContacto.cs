@@ -68,6 +68,7 @@ namespace RamosHermanos.Capas.Interfaz
             DomicilioB.CargarDGV(dgvDomicilio, cbRolALL, txtIDALL);
         }
 
+        formCliente frm = new formCliente();
         private void button9_Click(object sender, EventArgs e)
         {
             if (ValidarEmail(txtEmail.Text) == false)
@@ -87,6 +88,7 @@ namespace RamosHermanos.Capas.Interfaz
                     CargarEmail();
                     EmailB.InsertEmail(email);
                     EmailB.CargarDGV(dgvEmail, cbRolALL, txtIDALL);
+         
                 }                
             }
         }
@@ -431,6 +433,8 @@ namespace RamosHermanos.Capas.Interfaz
         {
             CalleB.CargarCB(cbCalle, cbBarrio);
         }
+
+       
 
       
 
