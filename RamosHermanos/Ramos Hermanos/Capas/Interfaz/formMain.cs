@@ -326,9 +326,10 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void buscarToolStripMenuItem4_Click(object sender, EventArgs e)
         {
-            formDistribuidores frm = new formDistribuidores();
+            listDistribuidores frm = new listDistribuidores();
+            //formDistribuidores frm = new formDistribuidores();
             frm.Show();
-            frm.CaseListado();
+            //frm.CaseListado();
         }
 
         private void registrarToolStripMenuItem4_Click(object sender, EventArgs e)

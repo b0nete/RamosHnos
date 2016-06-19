@@ -168,7 +168,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT D.idDistribuidor, D.fechaAlta, D.tipoDoc as IDtipoDoc, TP.tipoDoc, D.numDoc, D.fechaNacimiento, D.sexo, D.cuil, D.apellido, D.nombre, D.estadoCivil
+                string query = @"SELECT D.idDistribuidor, D.fechaAlta, IDtipoDoc as IDtipoDoc, TP.tipoDoc, D.numDoc, D.fechaNacimiento, D.sexo, D.cuil, D.apellido, D.nombre, D.estado
                                  FROM Distribuidores D
                                  INNER JOIN tipoDocumento TP ON D.tipoDoc = TP.idTipoDoc";
 
@@ -181,15 +181,10 @@ namespace RamosHermanos.Capas.Negocio
                     dgv.Rows.Add(
                     Convert.ToString(dr["idDistribuidor"]),
                     Convert.ToDateTime(dr["fechaAlta"]).ToString("dd/MM/yyyy"),
-                    Convert.ToString(dr["IDtipoDoc"]),
-                    Convert.ToString(dr["tipoDoc"]),
                     Convert.ToString(dr["numDoc"]),
-                    Convert.ToDateTime(dr["fechaNacimiento"]).ToString("dd/MM/yyyy"),
-                    Convert.ToString(dr["sexo"]),
-                    Convert.ToString(dr["cuil"]),
                     Convert.ToString(dr["apellido"]),
                     Convert.ToString(dr["nombre"]),
-                    Convert.ToString(dr["estadoCivil"]));
+                    Convert.ToString(dr["estado"]));
                 }
 
                 dr.Close();
@@ -352,7 +347,113 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        
+        public static DistribuidorEntity BuscarIdDistr(DistribuidorEntity distribuidor)
+        {
+
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"Select * from distribuidores
+                                WHERE idDistribuidor = @idDistribuidor";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idDistribuidor", distribuidor.idDistribuidor);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado == 0)
+                {
+                    MessageBox.Show("El Distribuidor NO existe!");
+
+                }
+                else
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    DataRow row = dt.Rows[0];
+
+                    distribuidor.idDistribuidor = Convert.ToInt32(row["idDistribuidor"]);
+                    distribuidor.fechaAlta = Convert.ToDateTime(row["fechaAlta"]);
+                    distribuidor.numDoc = Convert.ToString(row["dni"]);
+                    distribuidor.nombreCompleto = Convert.ToString(row["Nombre"]);
+                    distribuidor.estado = Convert.ToBoolean(row["estado"]);
+
+                    MySQL.DisconnectDB();
+                }
+                return distribuidor;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void CargarDGVParametros(DataGridView dgv, ComboBox cb, string parametro)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+
+                string query = @"SELECT D.idDistribuidor, D.nombre, D.apellido, D.numDoc, D.fechaAlta, D.estado
+                                 FROM Distribuidores D
+                                 WHERE";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idDistribuidor", parametro);
+                //cmd.Parameters.AddWithValue("@tipoproductos", parametro);
+                cmd.Parameters.AddWithValue("@nombre", parametro);
+                cmd.Parameters.AddWithValue("@numDoc", parametro);
+
+                if (cb.SelectedIndex == 0)
+                {
+                    cmd.CommandText = query + " D.idDistribuidor LIKE @idDistribuidor";
+                }
+                //if (cb.SelectedIndex == 1)
+                //{
+                //    cmd.CommandText = query + " tipoproductos LIKE @tipoproductos";
+                //}
+                if (cb.SelectedIndex == 1)
+                {
+                    cmd.CommandText = query + " D.nombre LIKE @nombre";
+                }
+                if (cb.SelectedIndex == 2)
+                {
+                    cmd.CommandText = query + " D.numDoc LIKE @numDoc";
+                }
+
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idDistribuidor"]),
+                    Convert.ToString(dr["fechaAlta"]),
+                    //Convert.ToString(dr["numDoc"]),
+                    Convert.ToString(dr["numDoc"]),
+                    Convert.ToString(dr["apellido"]),
+                    Convert.ToString(dr["nombre"]),
+                    Convert.ToString(dr["estado"]));
+                }
+
+                dr.Close();
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
         
     }
 }
