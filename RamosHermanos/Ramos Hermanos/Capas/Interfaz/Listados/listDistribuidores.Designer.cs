@@ -125,6 +125,7 @@
             this.dgvDistribuidores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDistribuidores.Size = new System.Drawing.Size(770, 529);
             this.dgvDistribuidores.TabIndex = 57;
+            this.dgvDistribuidores.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDistribuidores_CellMouseDoubleClick);
             // 
             // colIDDistribuidor
             // 
@@ -172,6 +173,7 @@
             this.Name = "listDistribuidores";
             this.Text = "listDistribuidores";
             this.Load += new System.EventHandler(this.listDistribuidores_Load);
+            this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listDistribuidores_MouseDoubleClick);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDistribuidores)).EndInit();

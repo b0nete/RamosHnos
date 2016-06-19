@@ -378,7 +378,7 @@ namespace RamosHermanos.Capas.Negocio
 
                     distribuidor.idDistribuidor = Convert.ToInt32(row["idDistribuidor"]);
                     distribuidor.fechaAlta = Convert.ToDateTime(row["fechaAlta"]);
-                    distribuidor.numDoc = Convert.ToString(row["dni"]);
+                    distribuidor.numDoc = Convert.ToString(row["numDoc"]);
                     distribuidor.nombreCompleto = Convert.ToString(row["Nombre"]);
                     distribuidor.estado = Convert.ToBoolean(row["estado"]);
 

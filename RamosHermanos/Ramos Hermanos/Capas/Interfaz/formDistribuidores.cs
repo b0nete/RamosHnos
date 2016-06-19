@@ -451,7 +451,7 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         VehiculoEntity vehiculo = new VehiculoEntity();
-        private void CargarVehiculo()
+        public void CargarVehiculo()
         {
             vehiculo.marca = cbMarca.Text;
             vehiculo.modelo = Convert.ToString(nudModelo.Value);
@@ -461,7 +461,7 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         RecorridoEntity recorrido = new RecorridoEntity();
-        private void CargarRecorrido(string strDia)
+        public void CargarRecorrido(string strDia)
         {
             recorrido.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
             recorrido.dia = strDia;

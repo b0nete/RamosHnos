@@ -2864,7 +2864,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.CheckBox cbEstado;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtIDdistribuidor;
@@ -2884,11 +2883,8 @@
         private System.Windows.Forms.Button btnDomicilio;
         private System.Windows.Forms.Button btnEmail;
         private System.Windows.Forms.Button btnTelefono;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtDomic;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TabPage tabVehiculos;
@@ -2948,7 +2944,6 @@
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.DataGridView dataGridView6;
         private System.Windows.Forms.TabPage tabRecorrido;
-        private System.Windows.Forms.TabControl btnDownSa;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
@@ -2960,7 +2955,6 @@
         private System.Windows.Forms.Button btnSaveRecLu;
         private System.Windows.Forms.Button btnDelLu;
         private System.Windows.Forms.Button btnAddLu;
-        private System.Windows.Forms.TextBox txtIDRecorridoLu;
         public System.Windows.Forms.ComboBox cbVehiculo;
         private System.Windows.Forms.Button btnUpLu;
         private System.Windows.Forms.Button btnDownLu;
@@ -2978,7 +2972,6 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btnUpMa;
         private System.Windows.Forms.Button btnDownMa;
-        private System.Windows.Forms.TextBox txtIDRecorridoMa;
         private System.Windows.Forms.Button btnDelMa;
         private System.Windows.Forms.Button btnAddMa;
         public System.Windows.Forms.DataGridView dgvRecorridoMa;
@@ -2986,7 +2979,6 @@
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button btnUpMi;
         private System.Windows.Forms.Button btnDownMi;
-        private System.Windows.Forms.TextBox txtIDRecorridoMi;
         private System.Windows.Forms.Button btnDelMi;
         private System.Windows.Forms.Button btnAddMi;
         public System.Windows.Forms.DataGridView dgvRecorridoMi;
@@ -2994,7 +2986,6 @@
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button btnUpJu;
         private System.Windows.Forms.Button btnDownJu;
-        private System.Windows.Forms.TextBox txtIDRecorridoJu;
         private System.Windows.Forms.Button btnDelJu;
         private System.Windows.Forms.Button btnAddJu;
         public System.Windows.Forms.DataGridView dgvRecorridoJu;
@@ -3002,7 +2993,6 @@
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Button btnUpVi;
         private System.Windows.Forms.Button btnDownVi;
-        private System.Windows.Forms.TextBox txtIDRecorridoVi;
         private System.Windows.Forms.Button btnSaveRecVi;
         private System.Windows.Forms.Button btnDelVi;
         private System.Windows.Forms.Button btnAddVi;
@@ -3011,7 +3001,6 @@
         private System.Windows.Forms.Button button35;
         private System.Windows.Forms.Button btnUpSa;
         private System.Windows.Forms.Button button37;
-        private System.Windows.Forms.TextBox txtIDRecorridoSa;
         private System.Windows.Forms.Button btnSaveRecSa;
         private System.Windows.Forms.Button btnDelSa;
         private System.Windows.Forms.Button btnAddSa;
@@ -3020,7 +3009,6 @@
         private System.Windows.Forms.Button button42;
         private System.Windows.Forms.Button btnUpDo;
         private System.Windows.Forms.Button btnDownDo;
-        private System.Windows.Forms.TextBox txtIDRecorridoDo;
         private System.Windows.Forms.Button btnSaveRecDo;
         private System.Windows.Forms.Button btnDelDo;
         private System.Windows.Forms.Button btnAddDo;
@@ -3073,5 +3061,17 @@
         public System.Windows.Forms.TextBox txtApellido;
         public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.DateTimePicker dtpNacimiento;
+        public System.Windows.Forms.CheckBox cbEstado;
+        public System.Windows.Forms.TextBox txtEmail;
+        public System.Windows.Forms.TextBox txtTel;
+        public System.Windows.Forms.TextBox txtDomic;
+        public System.Windows.Forms.TextBox txtIDRecorridoLu;
+        public System.Windows.Forms.TabControl btnDownSa;
+        public System.Windows.Forms.TextBox txtIDRecorridoMa;
+        public System.Windows.Forms.TextBox txtIDRecorridoJu;
+        public System.Windows.Forms.TextBox txtIDRecorridoVi;
+        public System.Windows.Forms.TextBox txtIDRecorridoSa;
+        public System.Windows.Forms.TextBox txtIDRecorridoDo;
+        public System.Windows.Forms.TextBox txtIDRecorridoMi;
     }
 }
