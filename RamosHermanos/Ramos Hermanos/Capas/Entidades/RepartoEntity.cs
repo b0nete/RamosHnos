@@ -13,5 +13,9 @@ namespace RamosHermanos.Capas.Entidades
         public DateTime fecha { get; set; }
         public string turno { get; set; }
         public bool generado { get; set; }
+
+        //
+
+        public int boole { get; set; }
     }
 }

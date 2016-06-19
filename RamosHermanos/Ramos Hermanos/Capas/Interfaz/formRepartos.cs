@@ -51,6 +51,8 @@ namespace RamosHermanos.Capas.Interfaz
             DistribuidorB.CargarCBDistrib(cbDistribuidores);
             dgvRepartos.AutoGenerateColumns = false;
 
+            dtpFechaReparto.MaxDate = DateTime.Today;
+
             //dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
         }
 
@@ -749,6 +751,53 @@ namespace RamosHermanos.Capas.Interfaz
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BuscarReparto()
+        {
+            reparto.distribuidor = Convert.ToInt32(cbDistribuidores.SelectedValue);
+            reparto.fecha = dtpFechaReparto.Value.Date;
+
+            RepartoB.BuscarReparto(reparto);
+
+            if (reparto.boole != 0)
+            {
+                RepartoB.BuscarReparto(reparto);
+                dtpFechaReparto.Value = reparto.fecha;
+                cbDistribuidores.SelectedValue = reparto.distribuidor;
+                txtReparto.Text = Convert.ToString(reparto.idReparto);
+
+                itemsReparto.reparto = reparto.idReparto;
+                dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, dgvRepartos);
+
+                foreach (DataGridViewRow dRow in dgvRepartos.Rows)
+                {
+                    dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
+                    dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    dRow.Cells["colCobro"].Value = FacturaB.EstadoPago(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                }
+
+                setRowNumber(dgvRepartos);
+            }
+            else
+            {
+                MessageBox.Show("No existe reparto!");
+            }
+        }
+
+        private void dtpFechaReparto_ValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cbDistribuidores_SelectionChangeCommitted_1(object sender, EventArgs e)
+        {
+            BuscarReparto();
+        }
+
+        private void dtpFechaReparto_CloseUp(object sender, EventArgs e)
+        {
+            BuscarReparto();
         }
 
     }

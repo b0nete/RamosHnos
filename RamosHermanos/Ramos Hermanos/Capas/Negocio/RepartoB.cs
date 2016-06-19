@@ -130,6 +130,10 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@distribuidor", reparto.distribuidor);
 
                 int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+                // Asignamos a reparto.boole el valor de la variable resultado
+                reparto.boole = resultado;
+
                 if (resultado != 0)
                 {
                     DataTable dt = new DataTable();
