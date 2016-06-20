@@ -40,7 +40,7 @@
             this.colNumDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDistribuidores)).BeginInit();
             this.SuspendLayout();
@@ -106,6 +106,7 @@
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 106;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // dgvDistribuidores
             // 
@@ -162,6 +163,8 @@
             this.colEstado.HeaderText = "Estado";
             this.colEstado.Name = "colEstado";
             this.colEstado.ReadOnly = true;
+            this.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // listDistribuidores
             // 
@@ -194,7 +197,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNumDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEstado;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colEstado;
 
     }
 }
