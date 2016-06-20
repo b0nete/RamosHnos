@@ -19,8 +19,8 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO Recorridos (distribuidor, dia)
-                                 VALUES (@distribuidor, @dia);
+                string query = @"INSERT INTO Recorridos (distribuidor, dia, estado)
+                                 VALUES (@distribuidor, @dia, '1');
                                  SELECT LAST_INSERT_ID();";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);

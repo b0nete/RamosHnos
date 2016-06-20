@@ -1912,6 +1912,7 @@
             this.btnDelMa.Size = new System.Drawing.Size(28, 28);
             this.btnDelMa.TabIndex = 102;
             this.btnDelMa.UseVisualStyleBackColor = true;
+            this.btnDelMa.Click += new System.EventHandler(this.btnDelMa_Click);
             // 
             // btnAddMa
             // 
@@ -1941,6 +1942,7 @@
             this.dgvRecorridoMa.Name = "dgvRecorridoMa";
             this.dgvRecorridoMa.Size = new System.Drawing.Size(756, 463);
             this.dgvRecorridoMa.TabIndex = 100;
+            this.dgvRecorridoMa.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecorridoMa_CellValueChanged);
             // 
             // colMaIDCalle
             // 
@@ -2074,6 +2076,7 @@
             this.btnDelMi.Size = new System.Drawing.Size(28, 28);
             this.btnDelMi.TabIndex = 102;
             this.btnDelMi.UseVisualStyleBackColor = true;
+            this.btnDelMi.Click += new System.EventHandler(this.btnDelMi_Click);
             // 
             // btnAddMi
             // 
@@ -2103,6 +2106,7 @@
             this.dgvRecorridoMi.Name = "dgvRecorridoMi";
             this.dgvRecorridoMi.Size = new System.Drawing.Size(756, 463);
             this.dgvRecorridoMi.TabIndex = 100;
+            this.dgvRecorridoMi.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecorridoMi_CellValueChanged);
             // 
             // colMiIDCalle
             // 
@@ -2236,6 +2240,7 @@
             this.btnDelJu.Size = new System.Drawing.Size(28, 28);
             this.btnDelJu.TabIndex = 102;
             this.btnDelJu.UseVisualStyleBackColor = true;
+            this.btnDelJu.Click += new System.EventHandler(this.btnDelJu_Click);
             // 
             // btnAddJu
             // 
@@ -2265,6 +2270,7 @@
             this.dgvRecorridoJu.Name = "dgvRecorridoJu";
             this.dgvRecorridoJu.Size = new System.Drawing.Size(756, 463);
             this.dgvRecorridoJu.TabIndex = 100;
+            this.dgvRecorridoJu.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecorridoJu_CellValueChanged);
             // 
             // colJuIDCalle
             // 
@@ -2398,6 +2404,7 @@
             this.btnDelVi.Size = new System.Drawing.Size(28, 28);
             this.btnDelVi.TabIndex = 102;
             this.btnDelVi.UseVisualStyleBackColor = true;
+            this.btnDelVi.Click += new System.EventHandler(this.btnDelVi_Click);
             // 
             // btnAddVi
             // 
@@ -2427,6 +2434,7 @@
             this.dgvRecorridoVi.Name = "dgvRecorridoVi";
             this.dgvRecorridoVi.Size = new System.Drawing.Size(756, 463);
             this.dgvRecorridoVi.TabIndex = 100;
+            this.dgvRecorridoVi.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecorridoVi_CellValueChanged);
             // 
             // colViIDCalle
             // 
@@ -2559,6 +2567,7 @@
             this.btnDelSa.Size = new System.Drawing.Size(28, 28);
             this.btnDelSa.TabIndex = 102;
             this.btnDelSa.UseVisualStyleBackColor = true;
+            this.btnDelSa.Click += new System.EventHandler(this.btnDelSa_Click);
             // 
             // btnAddSa
             // 
@@ -2588,6 +2597,7 @@
             this.dgvRecorridoSa.Name = "dgvRecorridoSa";
             this.dgvRecorridoSa.Size = new System.Drawing.Size(756, 463);
             this.dgvRecorridoSa.TabIndex = 100;
+            this.dgvRecorridoSa.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecorridoSa_CellValueChanged);
             // 
             // colSaIDCalle
             // 
@@ -2721,6 +2731,7 @@
             this.btnDelDo.Size = new System.Drawing.Size(28, 28);
             this.btnDelDo.TabIndex = 102;
             this.btnDelDo.UseVisualStyleBackColor = true;
+            this.btnDelDo.Click += new System.EventHandler(this.btnDelDo_Click);
             // 
             // btnAddDo
             // 
@@ -2750,6 +2761,7 @@
             this.dgvRecorridoDo.Name = "dgvRecorridoDo";
             this.dgvRecorridoDo.Size = new System.Drawing.Size(756, 463);
             this.dgvRecorridoDo.TabIndex = 100;
+            this.dgvRecorridoDo.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecorridoDo_CellValueChanged);
             // 
             // colDoIDCalle
             // 

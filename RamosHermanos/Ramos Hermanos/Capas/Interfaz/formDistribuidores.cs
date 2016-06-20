@@ -468,9 +468,9 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         itemRecorridoEntity itemRecorrido = new itemRecorridoEntity();
-        private void CargarItemRecorrido(DataGridViewRow row, string dia)
+        private void CargarItemRecorrido(DataGridViewRow row, string dia, TextBox txtIDRecorridoDia)
        { 
-            itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoLu.Text);
+            itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridoDia.Text);
             itemRecorrido.calle = Convert.ToInt32(row.Cells["col"+ dia +"IDcalle"].Value);
             itemRecorrido.desde = Convert.ToInt32(row.Cells["col"+ dia +"Desde"].Value);
             itemRecorrido.hasta = Convert.ToInt32(row.Cells["col"+ dia +"Hasta"].Value);
@@ -836,7 +836,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void UpdateMCM(DataGridView dgvRecorridoDia, string colDiaDesde, string colDiaHasta, string colDiaSentido)
         {
-            foreach (DataGridViewRow row in dgvRecorridoLu.Rows)
+            foreach (DataGridViewRow row in dgvRecorridoDia.Rows)
             {
                 // Se ejecutan las operaciones solo si la columna cantidad y precio tienen algún valor, ya que de lo contrario nos dará un error.
                 if (Convert.ToString(row.Cells[colDiaDesde].Value) == "" || Convert.ToString(row.Cells[colDiaHasta].Value) == "")
@@ -862,7 +862,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-
+            RemoveRow(dgvRecorridoLu);
         }
 
         //Entidades
@@ -894,12 +894,12 @@ namespace RamosHermanos.Capas.Interfaz
             //Cargamos encabezado del recorrido.
             string strDia = dia;
             CargarRecorrido(strDia);
-            RecorridoB.InsertRecorrido(recorrido, txtIDRecorridoLu);
+            RecorridoB.InsertRecorrido(recorrido, txtIDRecorridodia);
 
             //Cargamos los nuevos items del recorrido
             foreach (DataGridViewRow row in dgvRecorridoDia.Rows)
             {
-                CargarItemRecorrido(row, strDia);
+                CargarItemRecorrido(row, strDia, txtIDRecorridodia);
                 itemsRecorridoB.InsertItemRecorrido(itemRecorrido);
             }
         }
@@ -1116,22 +1116,308 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSaveRecorridoMi_Click(object sender, EventArgs e)
         {
+            if (dgvRecorridoMi.Rows.Count == 0)
+            {
+                MessageBox.Show("No existe ningun recorrido, no se puede generar reparto!");
+            }
+            else
+            {
+                formRepartos frm = new formRepartos();
+                frm.Show();
 
+                // Verificamos que ya no se haya generado un reparto para ese mismo día y el mismo distribuidor.
+                reparto.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
+                reparto.fecha = DateTime.Today;
+                reparto.dia = "Mi";
+
+                if (RepartoB.ExisteReparto(reparto) == true)
+                {
+                    RepartoB.BuscarReparto(reparto);
+                    frm.dtpFechaReparto.Value = reparto.fecha;
+                    frm.cbDistribuidores.SelectedValue = reparto.distribuidor;
+                    frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
+
+                    itemsReparto.reparto = reparto.idReparto;
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+
+                    foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
+                    {
+                        dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
+                        dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                        dRow.Cells["colCobro"].Value = FacturaB.EstadoPago(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    }
+                }
+                else
+                {
+                    DataSet ds = GenerarReparto(dgvRecorridoMi, "Mi", txtIDRecorridoMi, "colMiSentido", "colMiIDcalle");
+
+                    RepartoB.BuscarReparto(reparto);
+                    frm.dtpFechaReparto.Value = reparto.fecha;
+                    frm.cbDistribuidores.SelectedValue = reparto.distribuidor;
+                    frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
+
+                    itemsReparto.reparto = reparto.idReparto;
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+
+                    //foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
+                    //{
+                    //    dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(frm.dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
+                    //    dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    //}
+
+                    //frm.setRowNumber(frm.dgvRepartos);
+                    //frm.dgvRepartos.DataSource = ds;
+                    //frm.dgvRepartos.DataMember = "dtItemsRecorrido";
+                }
+
+                frm.setRowNumber(frm.dgvRepartos);
+            }
         }
 
         private void btnSaveRecorridoJu_Click(object sender, EventArgs e)
         {
+            if (dgvRecorridoJu.Rows.Count == 0)
+            {
+                MessageBox.Show("No existe ningun recorrido, no se puede generar reparto!");
+            }
+            else
+            {
+                formRepartos frm = new formRepartos();
+                frm.Show();
 
+                // Verificamos que ya no se haya generado un reparto para ese mismo día y el mismo distribuidor.
+                reparto.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
+                reparto.fecha = DateTime.Today;
+                reparto.dia = "Ju";
+
+                if (RepartoB.ExisteReparto(reparto) == true)
+                {
+                    RepartoB.BuscarReparto(reparto);
+                    frm.dtpFechaReparto.Value = reparto.fecha;
+                    frm.cbDistribuidores.SelectedValue = reparto.distribuidor;
+                    frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
+
+                    itemsReparto.reparto = reparto.idReparto;
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+
+                    foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
+                    {
+                        dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
+                        dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                        dRow.Cells["colCobro"].Value = FacturaB.EstadoPago(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    }
+                }
+                else
+                {
+                    DataSet ds = GenerarReparto(dgvRecorridoJu, "Ju", txtIDRecorridoJu, "colJuSentido", "colJuIDcalle");
+
+                    RepartoB.BuscarReparto(reparto);
+                    frm.dtpFechaReparto.Value = reparto.fecha;
+                    frm.cbDistribuidores.SelectedValue = reparto.distribuidor;
+                    frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
+
+                    itemsReparto.reparto = reparto.idReparto;
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+
+                    //foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
+                    //{
+                    //    dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(frm.dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
+                    //    dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    //}
+
+                    //frm.setRowNumber(frm.dgvRepartos);
+                    //frm.dgvRepartos.DataSource = ds;
+                    //frm.dgvRepartos.DataMember = "dtItemsRecorrido";
+                }
+
+                frm.setRowNumber(frm.dgvRepartos);
+            }
         }
 
         private void btnSaveRecorridoVi_Click(object sender, EventArgs e)
         {
+            if (dgvRecorridoVi.Rows.Count == 0)
+            {
+                MessageBox.Show("No existe ningun recorrido, no se puede generar reparto!");
+            }
+            else
+            {
+                formRepartos frm = new formRepartos();
+                frm.Show();
 
+                // Verificamos que ya no se haya generado un reparto para ese mismo día y el mismo distribuidor.
+                reparto.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
+                reparto.fecha = DateTime.Today;
+                reparto.dia = "Vi";
+
+                if (RepartoB.ExisteReparto(reparto) == true)
+                {
+                    RepartoB.BuscarReparto(reparto);
+                    frm.dtpFechaReparto.Value = reparto.fecha;
+                    frm.cbDistribuidores.SelectedValue = reparto.distribuidor;
+                    frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
+
+                    itemsReparto.reparto = reparto.idReparto;
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+
+                    foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
+                    {
+                        dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
+                        dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                        dRow.Cells["colCobro"].Value = FacturaB.EstadoPago(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    }
+                }
+                else
+                {
+                    DataSet ds = GenerarReparto(dgvRecorridoVi, "Vi", txtIDRecorridoVi, "colViSentido", "colViIDcalle");
+
+                    RepartoB.BuscarReparto(reparto);
+                    frm.dtpFechaReparto.Value = reparto.fecha;
+                    frm.cbDistribuidores.SelectedValue = reparto.distribuidor;
+                    frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
+
+                    itemsReparto.reparto = reparto.idReparto;
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+
+                    //foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
+                    //{
+                    //    dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(frm.dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
+                    //    dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    //}
+
+                    //frm.setRowNumber(frm.dgvRepartos);
+                    //frm.dgvRepartos.DataSource = ds;
+                    //frm.dgvRepartos.DataMember = "dtItemsRecorrido";
+                }
+
+                frm.setRowNumber(frm.dgvRepartos);
+            }
         }
 
         private void btnSaveRecorridoSa_Click(object sender, EventArgs e)
         {
+            if (dgvRecorridoSa.Rows.Count == 0)
+            {
+                MessageBox.Show("No existe ningun recorrido, no se puede generar reparto!");
+            }
+            else
+            {
+                formRepartos frm = new formRepartos();
+                frm.Show();
 
+                // Verificamos que ya no se haya generado un reparto para ese mismo día y el mismo distribuidor.
+                reparto.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
+                reparto.fecha = DateTime.Today;
+                reparto.dia = "Sa";
+
+                if (RepartoB.ExisteReparto(reparto) == true)
+                {
+                    RepartoB.BuscarReparto(reparto);
+                    frm.dtpFechaReparto.Value = reparto.fecha;
+                    frm.cbDistribuidores.SelectedValue = reparto.distribuidor;
+                    frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
+
+                    itemsReparto.reparto = reparto.idReparto;
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+
+                    foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
+                    {
+                        dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
+                        dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                        dRow.Cells["colCobro"].Value = FacturaB.EstadoPago(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    }
+                }
+                else
+                {
+                    DataSet ds = GenerarReparto(dgvRecorridoSa, "Sa", txtIDRecorridoSa, "colSaSentido", "colSaIDcalle");
+
+                    RepartoB.BuscarReparto(reparto);
+                    frm.dtpFechaReparto.Value = reparto.fecha;
+                    frm.cbDistribuidores.SelectedValue = reparto.distribuidor;
+                    frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
+
+                    itemsReparto.reparto = reparto.idReparto;
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+
+                    //foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
+                    //{
+                    //    dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(frm.dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
+                    //    dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    //}
+
+                    //frm.setRowNumber(frm.dgvRepartos);
+                    //frm.dgvRepartos.DataSource = ds;
+                    //frm.dgvRepartos.DataMember = "dtItemsRecorrido";
+                }
+
+                frm.setRowNumber(frm.dgvRepartos);
+            }
+        }
+
+        private void dgvRecorridoMa_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            UpdateMCM(dgvRecorridoMa, "colMaDesde", "colMaHasta", "colMaSentido");
+        }
+
+        private void dgvRecorridoMi_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            UpdateMCM(dgvRecorridoMi, "colMiDesde", "colMiHasta", "colMiSentido");
+        }
+
+        private void dgvRecorridoJu_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            UpdateMCM(dgvRecorridoJu, "colJuDesde", "colJuHasta", "colJuSentido");
+        }
+
+        private void dgvRecorridoVi_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            UpdateMCM(dgvRecorridoVi, "colViDesde", "colViHasta", "colViSentido");
+        }
+
+        private void dgvRecorridoSa_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            UpdateMCM(dgvRecorridoSa, "colSaDesde", "colSaHasta", "colSaSentido");
+        }
+
+        private void dgvRecorridoDo_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            UpdateMCM(dgvRecorridoDo, "colDoDesde", "colDoHasta", "colDoSentido");
+        }
+
+        private void RemoveRow(DataGridView dgvRecorrido)
+        {
+            dgvRecorrido.Rows.RemoveAt(dgvRecorrido.CurrentRow.Index);
+        }
+
+        private void btnDelMa_Click(object sender, EventArgs e)
+        {
+            RemoveRow(dgvRecorridoMa);
+        }
+
+        private void btnDelMi_Click(object sender, EventArgs e)
+        {
+            RemoveRow(dgvRecorridoMi);
+        }
+
+        private void btnDelJu_Click(object sender, EventArgs e)
+        {
+            RemoveRow(dgvRecorridoJu);
+
+        }
+
+        private void btnDelVi_Click(object sender, EventArgs e)
+        {
+            RemoveRow(dgvRecorridoVi);
+        }
+
+        private void btnDelSa_Click(object sender, EventArgs e)
+        {
+            RemoveRow(dgvRecorridoSa);
+        }
+
+        private void btnDelDo_Click(object sender, EventArgs e)
+        {
+            RemoveRow(dgvRecorridoDo);
         }
     }
 }
