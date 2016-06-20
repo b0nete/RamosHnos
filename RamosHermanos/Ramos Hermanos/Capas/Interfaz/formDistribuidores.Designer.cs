@@ -156,7 +156,7 @@
             this.colLuEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnSaveRecMa = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnSaveRecorridoMa = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.btnUpMa = new System.Windows.Forms.Button();
             this.btnDownMa = new System.Windows.Forms.Button();
@@ -172,7 +172,7 @@
             this.colMaEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.btnSaveRecMi = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btnSaveRecorridoMi = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.btnUpMi = new System.Windows.Forms.Button();
             this.btnDownMi = new System.Windows.Forms.Button();
@@ -188,7 +188,7 @@
             this.colMiEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.btnSaveRecJu = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
+            this.btnSaveRecorridoJu = new System.Windows.Forms.Button();
             this.button21 = new System.Windows.Forms.Button();
             this.btnUpJu = new System.Windows.Forms.Button();
             this.btnDownJu = new System.Windows.Forms.Button();
@@ -203,7 +203,7 @@
             this.colJuSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colJuEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button27 = new System.Windows.Forms.Button();
+            this.btnSaveRecorridoVi = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
             this.btnUpVi = new System.Windows.Forms.Button();
             this.btnDownVi = new System.Windows.Forms.Button();
@@ -219,7 +219,7 @@
             this.colViSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colViEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.button34 = new System.Windows.Forms.Button();
+            this.btnSaveRecorridoSa = new System.Windows.Forms.Button();
             this.button35 = new System.Windows.Forms.Button();
             this.btnUpSa = new System.Windows.Forms.Button();
             this.button37 = new System.Windows.Forms.Button();
@@ -235,7 +235,7 @@
             this.colSaSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSaEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.button41 = new System.Windows.Forms.Button();
+            this.btnSaveRecorridoDo = new System.Windows.Forms.Button();
             this.button42 = new System.Windows.Forms.Button();
             this.btnUpDo = new System.Windows.Forms.Button();
             this.btnDownDo = new System.Windows.Forms.Button();
@@ -1820,7 +1820,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.btnSaveRecMa);
-            this.tabPage2.Controls.Add(this.button6);
+            this.tabPage2.Controls.Add(this.btnSaveRecorridoMa);
             this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.btnUpMa);
             this.tabPage2.Controls.Add(this.btnDownMa);
@@ -1848,16 +1848,17 @@
             this.btnSaveRecMa.UseVisualStyleBackColor = true;
             this.btnSaveRecMa.Click += new System.EventHandler(this.btnSaveRecMa_Click_1);
             // 
-            // button6
+            // btnSaveRecorridoMa
             // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(700, 475);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(28, 28);
-            this.button6.TabIndex = 108;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSaveRecorridoMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecorridoMa.BackgroundImage")));
+            this.btnSaveRecorridoMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveRecorridoMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRecorridoMa.Location = new System.Drawing.Point(700, 475);
+            this.btnSaveRecorridoMa.Name = "btnSaveRecorridoMa";
+            this.btnSaveRecorridoMa.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveRecorridoMa.TabIndex = 108;
+            this.btnSaveRecorridoMa.UseVisualStyleBackColor = true;
+            this.btnSaveRecorridoMa.Click += new System.EventHandler(this.btnSaveRecorridoMa_Click);
             // 
             // button7
             // 
@@ -1900,7 +1901,6 @@
             this.txtIDRecorridoMa.Name = "txtIDRecorridoMa";
             this.txtIDRecorridoMa.Size = new System.Drawing.Size(60, 20);
             this.txtIDRecorridoMa.TabIndex = 104;
-            this.txtIDRecorridoMa.Visible = false;
             // 
             // btnDelMa
             // 
@@ -1982,7 +1982,7 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.btnSaveRecMi);
-            this.tabPage3.Controls.Add(this.button13);
+            this.tabPage3.Controls.Add(this.btnSaveRecorridoMi);
             this.tabPage3.Controls.Add(this.button14);
             this.tabPage3.Controls.Add(this.btnUpMi);
             this.tabPage3.Controls.Add(this.btnDownMi);
@@ -2009,16 +2009,17 @@
             this.btnSaveRecMi.UseVisualStyleBackColor = true;
             this.btnSaveRecMi.Click += new System.EventHandler(this.btnSaveRecMi_Click);
             // 
-            // button13
+            // btnSaveRecorridoMi
             // 
-            this.button13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button13.BackgroundImage")));
-            this.button13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(700, 475);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(28, 28);
-            this.button13.TabIndex = 108;
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnSaveRecorridoMi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecorridoMi.BackgroundImage")));
+            this.btnSaveRecorridoMi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveRecorridoMi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRecorridoMi.Location = new System.Drawing.Point(700, 475);
+            this.btnSaveRecorridoMi.Name = "btnSaveRecorridoMi";
+            this.btnSaveRecorridoMi.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveRecorridoMi.TabIndex = 108;
+            this.btnSaveRecorridoMi.UseVisualStyleBackColor = true;
+            this.btnSaveRecorridoMi.Click += new System.EventHandler(this.btnSaveRecorridoMi_Click);
             // 
             // button14
             // 
@@ -2143,7 +2144,7 @@
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.btnSaveRecJu);
-            this.tabPage4.Controls.Add(this.button20);
+            this.tabPage4.Controls.Add(this.btnSaveRecorridoJu);
             this.tabPage4.Controls.Add(this.button21);
             this.tabPage4.Controls.Add(this.btnUpJu);
             this.tabPage4.Controls.Add(this.btnDownJu);
@@ -2170,16 +2171,17 @@
             this.btnSaveRecJu.UseVisualStyleBackColor = true;
             this.btnSaveRecJu.Click += new System.EventHandler(this.btnSaveRecJu_Click_1);
             // 
-            // button20
+            // btnSaveRecorridoJu
             // 
-            this.button20.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button20.BackgroundImage")));
-            this.button20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button20.Location = new System.Drawing.Point(700, 475);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(28, 28);
-            this.button20.TabIndex = 108;
-            this.button20.UseVisualStyleBackColor = true;
+            this.btnSaveRecorridoJu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecorridoJu.BackgroundImage")));
+            this.btnSaveRecorridoJu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveRecorridoJu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRecorridoJu.Location = new System.Drawing.Point(700, 475);
+            this.btnSaveRecorridoJu.Name = "btnSaveRecorridoJu";
+            this.btnSaveRecorridoJu.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveRecorridoJu.TabIndex = 108;
+            this.btnSaveRecorridoJu.UseVisualStyleBackColor = true;
+            this.btnSaveRecorridoJu.Click += new System.EventHandler(this.btnSaveRecorridoJu_Click);
             // 
             // button21
             // 
@@ -2303,7 +2305,7 @@
             // 
             // tabPage5
             // 
-            this.tabPage5.Controls.Add(this.button27);
+            this.tabPage5.Controls.Add(this.btnSaveRecorridoVi);
             this.tabPage5.Controls.Add(this.button28);
             this.tabPage5.Controls.Add(this.btnUpVi);
             this.tabPage5.Controls.Add(this.btnDownVi);
@@ -2319,16 +2321,17 @@
             this.tabPage5.Text = "Viernes";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button27
+            // btnSaveRecorridoVi
             // 
-            this.button27.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button27.BackgroundImage")));
-            this.button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button27.Location = new System.Drawing.Point(700, 475);
-            this.button27.Name = "button27";
-            this.button27.Size = new System.Drawing.Size(28, 28);
-            this.button27.TabIndex = 108;
-            this.button27.UseVisualStyleBackColor = true;
+            this.btnSaveRecorridoVi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecorridoVi.BackgroundImage")));
+            this.btnSaveRecorridoVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveRecorridoVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRecorridoVi.Location = new System.Drawing.Point(700, 475);
+            this.btnSaveRecorridoVi.Name = "btnSaveRecorridoVi";
+            this.btnSaveRecorridoVi.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveRecorridoVi.TabIndex = 108;
+            this.btnSaveRecorridoVi.UseVisualStyleBackColor = true;
+            this.btnSaveRecorridoVi.Click += new System.EventHandler(this.btnSaveRecorridoVi_Click);
             // 
             // button28
             // 
@@ -2464,7 +2467,7 @@
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.button34);
+            this.tabPage6.Controls.Add(this.btnSaveRecorridoSa);
             this.tabPage6.Controls.Add(this.button35);
             this.tabPage6.Controls.Add(this.btnUpSa);
             this.tabPage6.Controls.Add(this.button37);
@@ -2480,16 +2483,17 @@
             this.tabPage6.Text = "Sabado";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // button34
+            // btnSaveRecorridoSa
             // 
-            this.button34.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button34.BackgroundImage")));
-            this.button34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button34.Location = new System.Drawing.Point(700, 475);
-            this.button34.Name = "button34";
-            this.button34.Size = new System.Drawing.Size(28, 28);
-            this.button34.TabIndex = 108;
-            this.button34.UseVisualStyleBackColor = true;
+            this.btnSaveRecorridoSa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecorridoSa.BackgroundImage")));
+            this.btnSaveRecorridoSa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveRecorridoSa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRecorridoSa.Location = new System.Drawing.Point(700, 475);
+            this.btnSaveRecorridoSa.Name = "btnSaveRecorridoSa";
+            this.btnSaveRecorridoSa.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveRecorridoSa.TabIndex = 108;
+            this.btnSaveRecorridoSa.UseVisualStyleBackColor = true;
+            this.btnSaveRecorridoSa.Click += new System.EventHandler(this.btnSaveRecorridoSa_Click);
             // 
             // button35
             // 
@@ -2624,7 +2628,7 @@
             // 
             // tabPage7
             // 
-            this.tabPage7.Controls.Add(this.button41);
+            this.tabPage7.Controls.Add(this.btnSaveRecorridoDo);
             this.tabPage7.Controls.Add(this.button42);
             this.tabPage7.Controls.Add(this.btnUpDo);
             this.tabPage7.Controls.Add(this.btnDownDo);
@@ -2640,16 +2644,17 @@
             this.tabPage7.Text = "Domingo";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // button41
+            // btnSaveRecorridoDo
             // 
-            this.button41.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button41.BackgroundImage")));
-            this.button41.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button41.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button41.Location = new System.Drawing.Point(700, 475);
-            this.button41.Name = "button41";
-            this.button41.Size = new System.Drawing.Size(28, 28);
-            this.button41.TabIndex = 108;
-            this.button41.UseVisualStyleBackColor = true;
+            this.btnSaveRecorridoDo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecorridoDo.BackgroundImage")));
+            this.btnSaveRecorridoDo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveRecorridoDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRecorridoDo.Location = new System.Drawing.Point(700, 475);
+            this.btnSaveRecorridoDo.Name = "btnSaveRecorridoDo";
+            this.btnSaveRecorridoDo.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveRecorridoDo.TabIndex = 108;
+            this.btnSaveRecorridoDo.UseVisualStyleBackColor = true;
+            this.btnSaveRecorridoDo.Click += new System.EventHandler(this.button41_Click);
             // 
             // button42
             // 
@@ -2897,16 +2902,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colColor;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colEstado;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.MaskedTextBox txtPatente;
-        private System.Windows.Forms.NumericUpDown nudModelo;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox cbMarca;
-        private System.Windows.Forms.ComboBox cbColor;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button btnUpdVeh;
-        private System.Windows.Forms.CheckBox cbEstadoVeh;
         private System.Windows.Forms.Button btnSaveVehi;
-        private System.Windows.Forms.TextBox txtIDvehiculo;
         private System.Windows.Forms.Button btnColor;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
@@ -2968,28 +2967,28 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colLuHasta;
         private System.Windows.Forms.DataGridViewTextBoxColumn colLuSentido;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colLuEstado;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnSaveRecorridoMa;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btnUpMa;
         private System.Windows.Forms.Button btnDownMa;
         private System.Windows.Forms.Button btnDelMa;
         private System.Windows.Forms.Button btnAddMa;
         public System.Windows.Forms.DataGridView dgvRecorridoMa;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btnSaveRecorridoMi;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Button btnUpMi;
         private System.Windows.Forms.Button btnDownMi;
         private System.Windows.Forms.Button btnDelMi;
         private System.Windows.Forms.Button btnAddMi;
         public System.Windows.Forms.DataGridView dgvRecorridoMi;
-        private System.Windows.Forms.Button button20;
+        private System.Windows.Forms.Button btnSaveRecorridoJu;
         private System.Windows.Forms.Button button21;
         private System.Windows.Forms.Button btnUpJu;
         private System.Windows.Forms.Button btnDownJu;
         private System.Windows.Forms.Button btnDelJu;
         private System.Windows.Forms.Button btnAddJu;
         public System.Windows.Forms.DataGridView dgvRecorridoJu;
-        private System.Windows.Forms.Button button27;
+        private System.Windows.Forms.Button btnSaveRecorridoVi;
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Button btnUpVi;
         private System.Windows.Forms.Button btnDownVi;
@@ -2997,7 +2996,7 @@
         private System.Windows.Forms.Button btnDelVi;
         private System.Windows.Forms.Button btnAddVi;
         public System.Windows.Forms.DataGridView dgvRecorridoVi;
-        private System.Windows.Forms.Button button34;
+        private System.Windows.Forms.Button btnSaveRecorridoSa;
         private System.Windows.Forms.Button button35;
         private System.Windows.Forms.Button btnUpSa;
         private System.Windows.Forms.Button button37;
@@ -3005,7 +3004,7 @@
         private System.Windows.Forms.Button btnDelSa;
         private System.Windows.Forms.Button btnAddSa;
         public System.Windows.Forms.DataGridView dgvRecorridoSa;
-        private System.Windows.Forms.Button button41;
+        private System.Windows.Forms.Button btnSaveRecorridoDo;
         private System.Windows.Forms.Button button42;
         private System.Windows.Forms.Button btnUpDo;
         private System.Windows.Forms.Button btnDownDo;
@@ -3073,5 +3072,11 @@
         public System.Windows.Forms.TextBox txtIDRecorridoSa;
         public System.Windows.Forms.TextBox txtIDRecorridoDo;
         public System.Windows.Forms.TextBox txtIDRecorridoMi;
+        public System.Windows.Forms.MaskedTextBox txtPatente;
+        public System.Windows.Forms.NumericUpDown nudModelo;
+        public System.Windows.Forms.ComboBox cbMarca;
+        public System.Windows.Forms.ComboBox cbColor;
+        public System.Windows.Forms.CheckBox cbEstadoVeh;
+        public System.Windows.Forms.TextBox txtIDvehiculo;
     }
 }

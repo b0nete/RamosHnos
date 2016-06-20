@@ -32,11 +32,63 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             DistribuidorB.CargarDGVParametros(dgvDistribuidores,cbParametro, parametro);
         }
 
+        // Entidades
 
         formDistribuidores frmD = new formDistribuidores();
+
         DistribuidorEntity distribuidor = new DistribuidorEntity();
+        private void CargarDistribuidor()
+        {
+            distribuidor.rol = 3;
+            distribuidor.fechaAlta = frmD.dtpFechaAlta.Value;
+            distribuidor.tipoDoc = Convert.ToInt32(frmD.cbTipoDoc.SelectedValue);
+            distribuidor.numDoc = frmD.txtnumDoc.Text;
+            distribuidor.fechaNacimiento = frmD.dtpNacimiento.Value;
+            distribuidor.sexo = frmD.cbSexo.Text;
+            distribuidor.cuil = frmD.txtCUIL.Text;
+            distribuidor.apellido = frmD.txtApellido.Text;
+            distribuidor.nombre = frmD.txtNombre.Text;
+            distribuidor.estadoCivil = frmD.cbEstadoCivil.Text;
+            distribuidor.vehiculo = Convert.ToInt32(frmD.cbVehiculo.SelectedValue);
+            distribuidor.estado = frmD.cbEstado.Checked;
+        }
+
+        VehiculoEntity vehiculo = new VehiculoEntity();
+        public void CargarVehiculo()
+        {
+            vehiculo.marca = frmD.cbMarca.Text;
+            vehiculo.modelo = Convert.ToString(frmD.nudModelo.Value);
+            vehiculo.patente = frmD.txtPatente.Text;
+            vehiculo.color = frmD.cbColor.Text;
+            vehiculo.estado = frmD.cbEstado.Checked;
+        }
+
         RecorridoEntity recorrido = new RecorridoEntity();
+        public void CargarRecorrido(string strDia)
+        {
+            recorrido.distribuidor = Convert.ToInt32(frmD.txtIDdistribuidor.Text);
+            recorrido.dia = strDia;
+        }
+
         itemRecorridoEntity itemRecorrido = new itemRecorridoEntity();
+        private void CargarItemRecorrido(DataGridViewRow row, string dia)
+        {
+            itemRecorrido.recorrido = Convert.ToInt32(frmD.txtIDRecorridoLu.Text);
+            itemRecorrido.calle = Convert.ToInt32(row.Cells["col" + dia + "IDcalle"].Value);
+            itemRecorrido.desde = Convert.ToInt32(row.Cells["col" + dia + "Desde"].Value);
+            itemRecorrido.hasta = Convert.ToInt32(row.Cells["col" + dia + "Hasta"].Value);
+            itemRecorrido.sentido = Convert.ToString(row.Cells["col" + dia + "Sentido"].Value);
+
+            //if (itemRecorrido.desde < itemRecorrido.hasta)
+            //    // "M" = Mano
+            //    itemRecorrido.sentido = "M";
+            //else if (itemRecorrido.desde > itemRecorrido.hasta)
+            //    // "C" = ContraMano
+            //    itemRecorrido.sentido = "C";
+
+            itemRecorrido.estado = Convert.ToBoolean(row.Cells["col" + dia + "Estado"].Value);
+        }
+
 
         private void SeleccionarDGV()
         {
@@ -110,7 +162,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
                 //Se completa el tabRecorrido
                 string strDia = "LU";
-                frmD.CargarRecorrido(strDia);
+                CargarRecorrido(strDia);
                 RecorridoB.BuscarRecorrido(recorrido, frmD.txtIDRecorridoLu);
 
                 if (frmD.txtIDRecorridoLu.Text != string.Empty)
@@ -120,7 +172,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 }
 
                 strDia = "MA";
-                frmD.CargarRecorrido(strDia);
+                CargarRecorrido(strDia);
                 RecorridoB.BuscarRecorrido(recorrido, frmD.txtIDRecorridoMa);
 
                 if (frmD.txtIDRecorridoMa.Text != string.Empty)
@@ -130,7 +182,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 }
 
                 strDia = "MI";
-                frmD.CargarRecorrido(strDia);
+                CargarRecorrido(strDia);
                 RecorridoB.BuscarRecorrido(recorrido, frmD.txtIDRecorridoMi);
 
                 if (frmD.txtIDRecorridoMi.Text != string.Empty)
@@ -140,7 +192,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 }
 
                 strDia = "JU";
-                frmD.CargarRecorrido(strDia);
+                CargarRecorrido(strDia);
                 RecorridoB.BuscarRecorrido(recorrido, frmD.txtIDRecorridoJu);
 
                 if (frmD.txtIDRecorridoJu.Text != string.Empty)
@@ -150,7 +202,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 }
 
                 strDia = "VI";
-                frmD.CargarRecorrido(strDia);
+                CargarRecorrido(strDia);
                 RecorridoB.BuscarRecorrido(recorrido, frmD.txtIDRecorridoVi);
 
                 if (frmD.txtIDRecorridoVi.Text != string.Empty)
@@ -160,7 +212,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 }
 
                 strDia = "SA";
-                frmD.CargarRecorrido(strDia);
+                CargarRecorrido(strDia);
                 RecorridoB.BuscarRecorrido(recorrido, frmD.txtIDRecorridoSa);
 
                 if (frmD.txtIDRecorridoSa.Text != string.Empty)
@@ -170,7 +222,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 }
 
                 strDia = "DO";
-                frmD.CargarRecorrido(strDia);
+                CargarRecorrido(strDia);
                 RecorridoB.BuscarRecorrido(recorrido, frmD.txtIDRecorridoDo);
 
                 if (frmD.txtIDRecorridoDo.Text != string.Empty)

@@ -17,12 +17,13 @@ namespace RamosHermanos.Capas.Negocio
             MySQL.ConnectDB();
 
             string query = @"SELECT COUNT(*) FROM Repartos
-                             WHERE distribuidor = @distribuidor and fecha = @fecha";
+                             WHERE distribuidor = @distribuidor and fecha = @fecha and dia = @dia";
 
             MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
             cmd.Parameters.AddWithValue("@fecha", reparto.fecha);
             cmd.Parameters.AddWithValue("@distribuidor", reparto.distribuidor);
+            cmd.Parameters.AddWithValue("@dia", reparto.dia);
 
             int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -40,14 +41,15 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO Repartos (distribuidor, fecha, turno) 
-                                 VALUES (@distribuidor, @fecha, @turno);
+                string query = @"INSERT INTO Repartos (distribuidor, fecha, dia, turno) 
+                                 VALUES (@distribuidor, @fecha, @dia, @turno);
                                  SELECT LAST_INSERT_ID()";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@distribuidor", reparto.distribuidor);
                 cmd.Parameters.AddWithValue("@fecha", reparto.fecha);
+                cmd.Parameters.AddWithValue("@dia", reparto.dia);
                 cmd.Parameters.AddWithValue("@turno", reparto.turno);
 
                 idReparto = Convert.ToInt32(cmd.ExecuteScalar());
@@ -122,12 +124,13 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = "SELECT * FROM Repartos WHERE fecha = @fecha and distribuidor = @distribuidor";
+                string query = "SELECT * FROM Repartos WHERE fecha = @fecha and distribuidor = @distribuidor and dia = @dia";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@fecha", reparto.fecha);
                 cmd.Parameters.AddWithValue("@distribuidor", reparto.distribuidor);
+                cmd.Parameters.AddWithValue("@dia", reparto.dia);
 
                 int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
