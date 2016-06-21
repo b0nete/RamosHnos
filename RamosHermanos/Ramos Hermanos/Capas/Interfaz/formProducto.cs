@@ -341,10 +341,37 @@ namespace RamosHermanos.Capas.Interfaz
             
         }
 
+        private bool VerificarCamposStock()
+        {
+            if (txtStockMin.Text == string.Empty || txtStockMax.Text == string.Empty)
+            {
+                MessageBox.Show("Por favor, complete los campos necesarios");
+                return false;                
+            }
+            return true;
+        
+        }
+
         private void button8_Click(object sender, EventArgs e)
         {
-            CargarStock();
-            StockProductoB.InsertStock(stock);
+            SaveStock();
+            
+        }
+
+        private void SaveStock()
+        {
+            if (VerificarCamposStock() == false)
+            {
+                return;
+            }
+            else
+            {
+                CargarStock();
+                StockProductoB.InsertStock(stock);
+
+            }
+        
+        
         }
 
         // Entidades
