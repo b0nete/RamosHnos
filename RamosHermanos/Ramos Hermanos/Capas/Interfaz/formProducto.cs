@@ -341,10 +341,37 @@ namespace RamosHermanos.Capas.Interfaz
             
         }
 
+        private bool VerificarCamposStock()
+        {
+            if (txtStockMin.Text == string.Empty || txtStockMax.Text == string.Empty)
+            {
+                MessageBox.Show("Por favor, complete los campos necesarios");
+                return false;                
+            }
+            return true;
+        
+        }
+
         private void button8_Click(object sender, EventArgs e)
         {
-            CargarStock();
-            StockProductoB.InsertStock(stock);
+            SaveStock();
+            
+        }
+
+        private void SaveStock()
+        {
+            if (VerificarCamposStock() == false)
+            {
+                return;
+            }
+            else
+            {
+                CargarStock();
+                StockProductoB.InsertStock(stock);
+
+            }
+        
+        
         }
 
         // Entidades
@@ -466,9 +493,20 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnAddLu_Click(object sender, EventArgs e)
         {
-            listInsumos frm = new listInsumos();
-            frm.caseSwitch = 1;
-            frm.Show(this);            
+            if (txtIDProd.Text == string.Empty || txtProducto.Text == string.Empty)
+            {
+                MessageBox.Show("Por favor, selecione previamente un producto");
+                listProductos frmP = new listProductos();
+                frmP.Show();
+                return;
+            }
+            else
+            {
+                listInsumos frm = new listInsumos();
+                frm.caseSwitch = 1;
+                frm.Show(this);
+
+            }     
         }
 
         private void button10_Click(object sender, EventArgs e)

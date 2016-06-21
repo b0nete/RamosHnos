@@ -77,9 +77,10 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label8.Location = new System.Drawing.Point(114, 197);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(353, 13);
+            this.label8.Size = new System.Drawing.Size(435, 13);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Copyright © 2015 Izquierdo ,Manoukian. Reservados todos los derechos.";
+            this.label8.Text = "Copyright © 2016 Izquierdo,Edgardo, Manoukian, Matías. Reservados todos los derec" +
+    "hos.";
             // 
             // groupBox1
             // 

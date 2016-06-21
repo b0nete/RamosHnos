@@ -68,13 +68,13 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query = @"UPDATE productos
-                                 SET tipoProducto = @tipoProducto, marca = @marca, producto = @producto, descripcion = @descripcion, cantidad = @cantidad, medida = @medida, estado = @estado
+                                 SET marca = @marca, producto = @producto, descripcion = @descripcion, cantidad = @cantidad, medida = @medida, estado = @estado
                                  WHERE idProducto = @idProducto";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@idProducto", prod.idProducto);
-                cmd.Parameters.AddWithValue("@tipoProducto", prod.tipoProducto);
+                //cmd.Parameters.AddWithValue("@tipoProducto", prod.tipoProducto);
                 cmd.Parameters.AddWithValue("@marca", prod.marca);
                 cmd.Parameters.AddWithValue("@producto", prod.producto);
                 cmd.Parameters.AddWithValue("@descripcion", prod.descripcion);

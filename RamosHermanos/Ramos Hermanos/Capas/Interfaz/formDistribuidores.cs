@@ -16,6 +16,7 @@ using RamosHermanos.Capas.Interfaz.Contratos;
 using RamosHermanos.Capas.Interfaz.ABMs;
 using RamosHermanos.Capas.Reportes;
 using RamosHermanos.Capas.Reportes.Recorridos;
+using RamosHermanos.Capas.Interfaz.Listados;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -394,7 +395,8 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (txtnumDoc.Text == "")
             {
-                tabDistribuidor.SelectedTab = tabListado;
+                listDistribuidores frm = new listDistribuidores();
+                frm.Show();
                 return;
             }
 
@@ -1234,6 +1236,23 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
+        private void clean()
+        {
+            txtIDdistribuidor.Text = "";
+            cbTipoDoc.SelectedValue = 0;
+            txtnumDoc.Text = "";
+            cbSexo.SelectedValue = 0;
+            txtCUIL.Text = "";
+            txtApellido.Text = "";
+            txtNombre.Text = "";
+            cbEstadoCivil.SelectedValue = 0;
+            cbEstado.Checked = true;
+            txtEmail.Text = "";
+            txtTel.Text = "";
+            txtDomic.Text = "";
+
+        }
+
         private void btnSaveRecorridoVi_Click(object sender, EventArgs e)
         {
             if (dgvRecorridoVi.Rows.Count == 0)
@@ -1418,6 +1437,17 @@ namespace RamosHermanos.Capas.Interfaz
         private void btnDelDo_Click(object sender, EventArgs e)
         {
             RemoveRow(dgvRecorridoDo);
+        }
+
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            clean();
+
+        }
+
+        private void btnClean_Click_1(object sender, EventArgs e)
+        {
+            clean();
         }
     }
 }

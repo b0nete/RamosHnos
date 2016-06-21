@@ -147,7 +147,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         {
             if (rbDGV.Checked == true && cbParametro.SelectedIndex == 2 || rbDGVPJ.Checked == true && cbParametro.SelectedIndex == 1)
             {
-                txtParametro.Mask = "00-00000000-00";
+                txtParametro.Mask = "";
             }
             else
             {
