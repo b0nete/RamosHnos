@@ -1051,7 +1051,7 @@ namespace RamosHermanos.Capas.Interfaz
         public void CargarSaldo(TextBox txt)
         {
             saldo.rol = 1;
-            saldo.idPersona = Convert.ToInt32(txtIDclientePJ.Text);
+            saldo.idPersona = Convert.ToInt32(txtIDcliente.Text);
             saldo.creditoMax = Convert.ToDouble(txtCreditoMax.Text);
             saldo.saldoActual = Convert.ToDouble(txtSaldo.Text);
         }
