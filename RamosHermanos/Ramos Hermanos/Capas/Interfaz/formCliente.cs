@@ -1390,7 +1390,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             //MessageBox.Show(Convert.ToInt16(e.KeyChar).ToString());
        
-       if (e.KeyChar ==8 ) {
+       if (e.KeyChar == 8 ) {
          e.Handled = false;
          return;
        }
