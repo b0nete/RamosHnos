@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Interfaz.Listados;
@@ -526,6 +527,46 @@ namespace RamosHermanos.Capas.Interfaz
             itemProducto.idInsumo = Convert.ToInt32(dRow.Cells["colIdInsumo"].Value);
             itemProducto.medida = Convert.ToString(dRow.Cells["colIDMedida"].Value);
             itemProducto.cantidad = Convert.ToDouble(dRow.Cells["colCantidadm"].Value);
+        }
+
+        private void btnGrafico_Click(object sender, EventArgs e)
+        {
+            DataTable dtGrafico = ProduccionB.GenerarGraficoProducto(Convert.ToInt32(txtIDProd.Text), dtpDiariaDesde.Value, dtpDiariaHasta.Value);
+
+            List<string> xCantidad = new List<string>();
+
+            foreach (DataRow row in dtGrafico.Rows)
+            {
+                string var = row["Cantidad"].ToString();                    
+
+                xCantidad.Add(var);
+            }
+
+            //
+
+            List<string> yFechaProduccion = new List<string>();
+
+            foreach (DataRow rowA in dtGrafico.Rows)
+            {
+                string var = rowA["fechaProduccion"].ToString();
+
+                yFechaProduccion.Add(var);
+            }
+
+            for (int i = 0; i < yFechaProduccion.Count; i++)
+            {
+                //Titulos
+                Series serieCantidad = chartProductos.Series.Add(yFechaProduccion[i].ToString());
+
+                //Cantidades
+                serieCantidad.Label = xCantidad[i].ToString();
+                serieCantidad.LabelAngle = 45;
+
+                serieCantidad.Points.AddXY(yFechaProduccion[i], Convert.ToDouble(xCantidad[i]));
+                //serieCantidad.Points.Add(Convert.ToDouble(xCantidad[i]));
+            }
+
+
         }
         
     }

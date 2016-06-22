@@ -171,5 +171,38 @@ namespace RamosHermanos.Capas.Negocio
 //                throw;
 //            }
 //        }
+
+        public static DataTable GenerarGraficoProducto(int producto, DateTime fechaDesde, DateTime fechaHasta)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+
+                MySQL.ConnectDB();
+
+                string query = @"SELECT DATE_FORMAT(P.fechaProduccion,'%m/%d/%Y') as fechaProduccion, IP.producto, IP.cantidad
+                                FROM ItemsProduccion IP
+                                INNER JOIN Produccion P ON P.idProduccion = IP.produccion
+                                WHERE producto = @producto and (fechaProduccion > @fechaDesde and fechaProduccion < @fechaHasta) 
+                                ";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@producto", producto);
+                cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+                cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
     }
 }
