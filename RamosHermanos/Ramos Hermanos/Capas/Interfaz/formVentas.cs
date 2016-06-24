@@ -43,17 +43,20 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+
+            //string valor = "00000000";
             string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
             string rep = @"\Capas\Reportes\Comprobante\crComprobante.rpt";
-
+            string change;
             dsComprobante ds = new dsComprobante();
 
             ////Factura
             ds.Tables["factura"].Rows.Add
             (
                 new object[]
-                {
-                    txtIDFactura.Text,
+                { 
+                    change = string.Format("{0,18:00000000}", Convert.ToInt32(txtIDFactura.Text)),
+                    //Convert.ToString(valor + Convert.ToInt32(txtIDFactura.Text)),
                     dtpfechaFactura.Text,
                     txtNombre.Text,
                     txtDomicilio.Text,

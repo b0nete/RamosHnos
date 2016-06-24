@@ -42,6 +42,7 @@ namespace RamosHermanos.Capas.Interfaz
             ProductoB.CargarDGV(dgvProducto);
 
             // Valores Iniciales
+
             cbTipoFactura.SelectedIndex = 0;
             cbformaPago.SelectedIndex = 0;
             dtpVencimiento.Value = System.DateTime.Today.AddDays(30);
