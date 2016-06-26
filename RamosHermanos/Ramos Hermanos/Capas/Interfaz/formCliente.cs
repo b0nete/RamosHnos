@@ -1388,35 +1388,53 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void txtCreditoMax_KeyPress_1(object sender, KeyPressEventArgs e)
         {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+            TextBox textBox = (TextBox)sender;
+            // only allow one decimal point
+            if (e.KeyChar == '.' && textBox.Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+            if (!char.IsControl(e.KeyChar) && textBox.SelectionLength == 0)
+            {
+                if (textBox.Text.IndexOf('.') > -1 && textBox.Text.Substring(textBox.Text.IndexOf('.')).Length >= 3)
+                {
+                    e.Handled = true;
+                }
+            }
             //MessageBox.Show(Convert.ToInt16(e.KeyChar).ToString());
        
-       if (e.KeyChar == 8 ) {
-         e.Handled = false;
-         return;
-       }
+       //if (e.KeyChar == 8 ) {
+       //  e.Handled = false;
+       //  return;
+       //}
 
 
-       bool IsDec = false;
-        int nroDec = 0;
+       //bool IsDec = false;
+       // int nroDec = 0;
 
-       for (int i=0 ; i<txtCreditoMax.Text.Length; i++) {
-         if ( txtCreditoMax.Text[i] == '.' )
-            IsDec = true;
+       //for (int i=0 ; i<txtCreditoMax.Text.Length; i++) {
+       //  if ( txtCreditoMax.Text[i] == '.' )
+       //     IsDec = true;
 
-         if ( IsDec && nroDec++ >=2) {
-            e.Handled = true;
-            return;
-         }
+       //  if ( IsDec && nroDec++ >=2) {
+       //     e.Handled = true;
+       //     return;
+       //  }
 
 
-       }
+       //}
 
-       if ( e.KeyChar>=48 && e.KeyChar<=57)
-         e.Handled = false;
-       else if (e.KeyChar==46)         
-         e.Handled = (IsDec) ? true:false;
-       else
-         e.Handled = true;
+       //if ( e.KeyChar>=48 && e.KeyChar<=57)
+       //  e.Handled = false;
+       //else if (e.KeyChar==46)         
+       //  e.Handled = (IsDec) ? true:false;
+       //else
+       //  e.Handled = true;
 
      }
 
@@ -1524,6 +1542,12 @@ namespace RamosHermanos.Capas.Interfaz
         private void cbEstadoPJ_CheckedChanged(object sender, EventArgs e)
         {
             CheckColor(cbEstadoPJ, lbltxtP);
+        }
+
+        private void txtCreditoMax_Leave(object sender, EventArgs e)
+        {
+            //decimal val = Convert.ToDecimal(txtCreditoMax.Text);
+            //txtCreditoMax.Text = val.ToString("N2");
         }
         }
 

@@ -182,6 +182,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.lbltxtP = new System.Windows.Forms.Label();
             this.lblEstadoPJ = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
@@ -236,7 +237,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.label64 = new System.Windows.Forms.Label();
-            this.lbltxtP = new System.Windows.Forms.Label();
             this.tabMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.tabListado.SuspendLayout();
@@ -1122,6 +1122,7 @@
             this.txtCreditoMax.Text = "50,00";
             this.txtCreditoMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtCreditoMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCreditoMax_KeyPress_1);
+            this.txtCreditoMax.Leave += new System.EventHandler(this.txtCreditoMax_Leave);
             // 
             // label28
             // 
@@ -1986,6 +1987,14 @@
             this.groupBox9.Text = "Persona Jurídica";
             this.groupBox9.Enter += new System.EventHandler(this.groupBox9_Enter);
             // 
+            // lbltxtP
+            // 
+            this.lbltxtP.AutoSize = true;
+            this.lbltxtP.Location = new System.Drawing.Point(119, 22);
+            this.lbltxtP.Name = "lbltxtP";
+            this.lbltxtP.Size = new System.Drawing.Size(0, 13);
+            this.lbltxtP.TabIndex = 94;
+            // 
             // lblEstadoPJ
             // 
             this.lblEstadoPJ.AutoSize = true;
@@ -2599,14 +2608,6 @@
             this.label64.TabIndex = 0;
             this.label64.Text = "Clientes";
             this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbltxtP
-            // 
-            this.lbltxtP.AutoSize = true;
-            this.lbltxtP.Location = new System.Drawing.Point(119, 22);
-            this.lbltxtP.Name = "lbltxtP";
-            this.lbltxtP.Size = new System.Drawing.Size(0, 13);
-            this.lbltxtP.TabIndex = 94;
             // 
             // formCliente
             // 
