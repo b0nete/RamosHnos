@@ -182,7 +182,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(775, 49);
+            this.label3.Size = new System.Drawing.Size(775, 36);
             this.label3.TabIndex = 146;
             this.label3.Text = "Pedidos";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

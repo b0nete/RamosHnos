@@ -961,7 +961,6 @@
             this.Controls.Add(this.tabMain);
             this.MaximizeBox = false;
             this.Name = "formInsumos";
-            this.Text = "Insumos";
             this.Load += new System.EventHandler(this.formInsumos_Load);
             this.tabInformacion.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

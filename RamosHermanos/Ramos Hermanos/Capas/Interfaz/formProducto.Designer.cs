@@ -117,18 +117,18 @@
             this.colIDMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidadm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label7 = new System.Windows.Forms.Label();
             this.tabEstadisticas = new System.Windows.Forms.TabPage();
-            this.btnGrafico = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.dtpDiariaDesde = new System.Windows.Forms.DateTimePicker();
-            this.dtpDiariaHasta = new System.Windows.Forms.DateTimePicker();
-            this.Desde = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnGrafico = new System.Windows.Forms.Button();
+            this.Desde = new System.Windows.Forms.Label();
+            this.dtpDiariaHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpDiariaDesde = new System.Windows.Forms.DateTimePicker();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.label7 = new System.Windows.Forms.Label();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -144,8 +144,8 @@
             this.tabConformacion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConformacion)).BeginInit();
             this.tabEstadisticas.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).BeginInit();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabProducto
@@ -1094,20 +1094,6 @@
             this.colCantidadm.HeaderText = "Cantidad";
             this.colCantidadm.Name = "colCantidadm";
             // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(0, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(746, 30);
-            this.label7.TabIndex = 103;
-            this.label7.Text = "Productos";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
             // tabEstadisticas
             // 
             this.tabEstadisticas.Controls.Add(this.chartProductos);
@@ -1119,106 +1105,6 @@
             this.tabEstadisticas.TabIndex = 4;
             this.tabEstadisticas.Text = "Estadisticas";
             this.tabEstadisticas.UseVisualStyleBackColor = true;
-            // 
-            // btnGrafico
-            // 
-            this.btnGrafico.Location = new System.Drawing.Point(285, 258);
-            this.btnGrafico.Name = "btnGrafico";
-            this.btnGrafico.Size = new System.Drawing.Size(75, 23);
-            this.btnGrafico.TabIndex = 1;
-            this.btnGrafico.Text = "button10";
-            this.btnGrafico.UseVisualStyleBackColor = true;
-            this.btnGrafico.Click += new System.EventHandler(this.btnGrafico_Click);
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.label16);
-            this.groupBox7.Controls.Add(this.btnGrafico);
-            this.groupBox7.Controls.Add(this.Desde);
-            this.groupBox7.Controls.Add(this.dtpDiariaHasta);
-            this.groupBox7.Controls.Add(this.dtpDiariaDesde);
-            this.groupBox7.Controls.Add(this.radioButton3);
-            this.groupBox7.Controls.Add(this.radioButton2);
-            this.groupBox7.Controls.Add(this.radioButton1);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(6, 6);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(366, 287);
-            this.groupBox7.TabIndex = 2;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Parametros";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(34, 114);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.Text = "Mensual";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(34, 31);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(52, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Diaria";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(34, 196);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(52, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.Text = "Anual";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // dtpDiariaDesde
-            // 
-            this.dtpDiariaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDiariaDesde.Location = new System.Drawing.Point(75, 67);
-            this.dtpDiariaDesde.Name = "dtpDiariaDesde";
-            this.dtpDiariaDesde.Size = new System.Drawing.Size(106, 20);
-            this.dtpDiariaDesde.TabIndex = 3;
-            this.dtpDiariaDesde.Value = new System.DateTime(2016, 1, 21, 21, 4, 0, 0);
-            // 
-            // dtpDiariaHasta
-            // 
-            this.dtpDiariaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDiariaHasta.Location = new System.Drawing.Point(241, 67);
-            this.dtpDiariaHasta.Name = "dtpDiariaHasta";
-            this.dtpDiariaHasta.Size = new System.Drawing.Size(106, 20);
-            this.dtpDiariaHasta.TabIndex = 4;
-            // 
-            // Desde
-            // 
-            this.Desde.AutoSize = true;
-            this.Desde.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Desde.Location = new System.Drawing.Point(31, 73);
-            this.Desde.Name = "Desde";
-            this.Desde.Size = new System.Drawing.Size(38, 13);
-            this.Desde.TabIndex = 5;
-            this.Desde.Text = "Desde";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(200, 73);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(35, 13);
-            this.label16.TabIndex = 6;
-            this.label16.Text = "Hasta";
             // 
             // chartProductos
             // 
@@ -1240,6 +1126,120 @@
             this.chartProductos.TabIndex = 3;
             this.chartProductos.Text = "chart1";
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label16);
+            this.groupBox7.Controls.Add(this.btnGrafico);
+            this.groupBox7.Controls.Add(this.Desde);
+            this.groupBox7.Controls.Add(this.dtpDiariaHasta);
+            this.groupBox7.Controls.Add(this.dtpDiariaDesde);
+            this.groupBox7.Controls.Add(this.radioButton3);
+            this.groupBox7.Controls.Add(this.radioButton2);
+            this.groupBox7.Controls.Add(this.radioButton1);
+            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.Location = new System.Drawing.Point(6, 6);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(366, 287);
+            this.groupBox7.TabIndex = 2;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Parametros";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(200, 73);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(35, 13);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "Hasta";
+            // 
+            // btnGrafico
+            // 
+            this.btnGrafico.Location = new System.Drawing.Point(285, 258);
+            this.btnGrafico.Name = "btnGrafico";
+            this.btnGrafico.Size = new System.Drawing.Size(75, 23);
+            this.btnGrafico.TabIndex = 1;
+            this.btnGrafico.Text = "button10";
+            this.btnGrafico.UseVisualStyleBackColor = true;
+            this.btnGrafico.Click += new System.EventHandler(this.btnGrafico_Click);
+            // 
+            // Desde
+            // 
+            this.Desde.AutoSize = true;
+            this.Desde.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Desde.Location = new System.Drawing.Point(31, 73);
+            this.Desde.Name = "Desde";
+            this.Desde.Size = new System.Drawing.Size(38, 13);
+            this.Desde.TabIndex = 5;
+            this.Desde.Text = "Desde";
+            // 
+            // dtpDiariaHasta
+            // 
+            this.dtpDiariaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDiariaHasta.Location = new System.Drawing.Point(241, 67);
+            this.dtpDiariaHasta.Name = "dtpDiariaHasta";
+            this.dtpDiariaHasta.Size = new System.Drawing.Size(106, 20);
+            this.dtpDiariaHasta.TabIndex = 4;
+            // 
+            // dtpDiariaDesde
+            // 
+            this.dtpDiariaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDiariaDesde.Location = new System.Drawing.Point(75, 67);
+            this.dtpDiariaDesde.Name = "dtpDiariaDesde";
+            this.dtpDiariaDesde.Size = new System.Drawing.Size(106, 20);
+            this.dtpDiariaDesde.TabIndex = 3;
+            this.dtpDiariaDesde.Value = new System.DateTime(2016, 1, 21, 21, 4, 0, 0);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.Location = new System.Drawing.Point(34, 196);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(52, 17);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.Text = "Anual";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Checked = true;
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(34, 31);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(52, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Diaria";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(34, 114);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(65, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.Text = "Mensual";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(746, 30);
+            this.label7.TabIndex = 103;
+            this.label7.Text = "Productos";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // formProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1248,7 +1248,6 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tabProducto);
             this.Name = "formProducto";
-            this.Text = "Producto";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formProducto_FormClosed);
             this.Load += new System.EventHandler(this.formProducto_Load);
             this.tabProducto.ResumeLayout(false);
@@ -1270,9 +1269,9 @@
             this.tabConformacion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConformacion)).EndInit();
             this.tabEstadisticas.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).EndInit();
             this.ResumeLayout(false);
 
         }

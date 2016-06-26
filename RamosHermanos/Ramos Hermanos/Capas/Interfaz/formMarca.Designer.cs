@@ -260,7 +260,6 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);
             this.Name = "formMarca";
-            this.Text = "formMarca";
             this.Load += new System.EventHandler(this.formMarca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMarcas)).EndInit();
             this.groupBox1.ResumeLayout(false);

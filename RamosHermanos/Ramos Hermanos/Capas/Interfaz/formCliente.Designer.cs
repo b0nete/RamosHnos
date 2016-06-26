@@ -645,7 +645,7 @@
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(557, 498);
+            this.button4.Location = new System.Drawing.Point(637, 498);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 69;

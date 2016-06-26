@@ -68,6 +68,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.tabProveedor = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
@@ -86,7 +87,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.tabProveedor = new System.Windows.Forms.TabPage();
             this.tabMain.SuspendLayout();
             this.tabCliente.SuspendLayout();
             this.tabClienteJ.SuspendLayout();
@@ -106,6 +106,7 @@
             // 
             // tabCliente
             // 
+            this.tabCliente.BackColor = System.Drawing.SystemColors.Control;
             this.tabCliente.Controls.Add(this.btnClose);
             this.tabCliente.Controls.Add(this.button7);
             this.tabCliente.Controls.Add(this.button8);
@@ -130,7 +131,6 @@
             this.tabCliente.Size = new System.Drawing.Size(452, 219);
             this.tabCliente.TabIndex = 0;
             this.tabCliente.Text = "Cliente";
-            this.tabCliente.UseVisualStyleBackColor = true;
             this.tabCliente.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // btnClose
@@ -323,6 +323,7 @@
             // 
             // tabClienteJ
             // 
+            this.tabClienteJ.BackColor = System.Drawing.SystemColors.Control;
             this.tabClienteJ.Controls.Add(this.button3);
             this.tabClienteJ.Controls.Add(this.button5);
             this.tabClienteJ.Controls.Add(this.button6);
@@ -343,10 +344,9 @@
             this.tabClienteJ.Controls.Add(this.label12);
             this.tabClienteJ.Location = new System.Drawing.Point(4, 22);
             this.tabClienteJ.Name = "tabClienteJ";
-            this.tabClienteJ.Size = new System.Drawing.Size(456, 219);
+            this.tabClienteJ.Size = new System.Drawing.Size(452, 219);
             this.tabClienteJ.TabIndex = 2;
             this.tabClienteJ.Text = "ClienteJ";
-            this.tabClienteJ.UseVisualStyleBackColor = true;
             this.tabClienteJ.Click += new System.EventHandler(this.tabClienteJ_Click);
             // 
             // button3
@@ -536,6 +536,34 @@
             this.label12.TabIndex = 165;
             this.label12.Text = "Cliente";
             // 
+            // tabProveedor
+            // 
+            this.tabProveedor.BackColor = System.Drawing.SystemColors.Control;
+            this.tabProveedor.Controls.Add(this.button4);
+            this.tabProveedor.Controls.Add(this.button11);
+            this.tabProveedor.Controls.Add(this.button12);
+            this.tabProveedor.Controls.Add(this.button13);
+            this.tabProveedor.Controls.Add(this.dateTimePicker2);
+            this.tabProveedor.Controls.Add(this.label14);
+            this.tabProveedor.Controls.Add(this.textBox7);
+            this.tabProveedor.Controls.Add(this.label15);
+            this.tabProveedor.Controls.Add(this.label16);
+            this.tabProveedor.Controls.Add(this.label17);
+            this.tabProveedor.Controls.Add(this.textBox8);
+            this.tabProveedor.Controls.Add(this.label18);
+            this.tabProveedor.Controls.Add(this.textBox9);
+            this.tabProveedor.Controls.Add(this.label19);
+            this.tabProveedor.Controls.Add(this.textBox10);
+            this.tabProveedor.Controls.Add(this.button2);
+            this.tabProveedor.Controls.Add(this.textBox11);
+            this.tabProveedor.Controls.Add(this.label21);
+            this.tabProveedor.Location = new System.Drawing.Point(4, 22);
+            this.tabProveedor.Name = "tabProveedor";
+            this.tabProveedor.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProveedor.Size = new System.Drawing.Size(452, 219);
+            this.tabProveedor.TabIndex = 1;
+            this.tabProveedor.Text = "Proveedor";
+            // 
             // button4
             // 
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
@@ -722,34 +750,6 @@
             this.label21.Size = new System.Drawing.Size(56, 13);
             this.label21.TabIndex = 165;
             this.label21.Text = "Proveedor";
-            // 
-            // tabProveedor
-            // 
-            this.tabProveedor.Controls.Add(this.button4);
-            this.tabProveedor.Controls.Add(this.button11);
-            this.tabProveedor.Controls.Add(this.button12);
-            this.tabProveedor.Controls.Add(this.button13);
-            this.tabProveedor.Controls.Add(this.dateTimePicker2);
-            this.tabProveedor.Controls.Add(this.label14);
-            this.tabProveedor.Controls.Add(this.textBox7);
-            this.tabProveedor.Controls.Add(this.label15);
-            this.tabProveedor.Controls.Add(this.label16);
-            this.tabProveedor.Controls.Add(this.label17);
-            this.tabProveedor.Controls.Add(this.textBox8);
-            this.tabProveedor.Controls.Add(this.label18);
-            this.tabProveedor.Controls.Add(this.textBox9);
-            this.tabProveedor.Controls.Add(this.label19);
-            this.tabProveedor.Controls.Add(this.textBox10);
-            this.tabProveedor.Controls.Add(this.button2);
-            this.tabProveedor.Controls.Add(this.textBox11);
-            this.tabProveedor.Controls.Add(this.label21);
-            this.tabProveedor.Location = new System.Drawing.Point(4, 22);
-            this.tabProveedor.Name = "tabProveedor";
-            this.tabProveedor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProveedor.Size = new System.Drawing.Size(456, 219);
-            this.tabProveedor.TabIndex = 1;
-            this.tabProveedor.Text = "Proveedor";
-            this.tabProveedor.UseVisualStyleBackColor = true;
             // 
             // formSaldos
             // 

@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formDistribuidores));
             this.tabDistribuidor = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
+            this.label28 = new System.Windows.Forms.Label();
             this.btnClean = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -306,12 +307,14 @@
             this.tabDistribuidor.Location = new System.Drawing.Point(0, 0);
             this.tabDistribuidor.Name = "tabDistribuidor";
             this.tabDistribuidor.SelectedIndex = 0;
-            this.tabDistribuidor.Size = new System.Drawing.Size(784, 561);
+            this.tabDistribuidor.Size = new System.Drawing.Size(517, 656);
             this.tabDistribuidor.TabIndex = 0;
             this.tabDistribuidor.SelectedIndexChanged += new System.EventHandler(this.tabDistribuidor_SelectedIndexChanged);
             // 
             // tabInformacion
             // 
+            this.tabInformacion.BackColor = System.Drawing.SystemColors.Control;
+            this.tabInformacion.Controls.Add(this.label28);
             this.tabInformacion.Controls.Add(this.btnClean);
             this.tabInformacion.Controls.Add(this.button4);
             this.tabInformacion.Controls.Add(this.groupBox6);
@@ -321,17 +324,29 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(776, 535);
+            this.tabInformacion.Size = new System.Drawing.Size(775, 630);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
-            this.tabInformacion.UseVisualStyleBackColor = true;
+            // 
+            // label28
+            // 
+            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label28.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(3, 3);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(769, 30);
+            this.label28.TabIndex = 79;
+            this.label28.Text = "Distribuidores";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnClean
             // 
             this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
             this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(674, 497);
+            this.btnClean.Location = new System.Drawing.Point(405, 595);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
             this.btnClean.TabIndex = 78;
@@ -340,10 +355,9 @@
             // 
             // button4
             // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(742, 497);
+            this.button4.Location = new System.Drawing.Point(473, 595);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 77;
@@ -383,7 +397,7 @@
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.label2);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(6, 9);
+            this.groupBox6.Location = new System.Drawing.Point(6, 51);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(494, 351);
             this.groupBox6.TabIndex = 0;
@@ -721,19 +735,18 @@
             this.groupBox5.Controls.Add(this.cbVehiculo);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(506, 9);
+            this.groupBox5.Location = new System.Drawing.Point(6, 407);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(262, 51);
+            this.groupBox5.Size = new System.Drawing.Size(496, 51);
             this.groupBox5.TabIndex = 75;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Vehículo";
             // 
             // button2
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button2.Location = new System.Drawing.Point(228, 16);
+            this.button2.Location = new System.Drawing.Point(462, 17);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(28, 28);
             this.button2.TabIndex = 1;
@@ -745,9 +758,9 @@
             this.cbVehiculo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbVehiculo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbVehiculo.FormattingEnabled = true;
-            this.cbVehiculo.Location = new System.Drawing.Point(62, 19);
+            this.cbVehiculo.Location = new System.Drawing.Point(102, 16);
             this.cbVehiculo.Name = "cbVehiculo";
-            this.cbVehiculo.Size = new System.Drawing.Size(160, 21);
+            this.cbVehiculo.Size = new System.Drawing.Size(196, 21);
             this.cbVehiculo.TabIndex = 0;
             this.cbVehiculo.DropDown += new System.EventHandler(this.cbVehiculo_DropDown);
             // 
@@ -755,7 +768,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label20.Location = new System.Drawing.Point(6, 22);
+            this.label20.Location = new System.Drawing.Point(46, 19);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(50, 13);
             this.label20.TabIndex = 94;
@@ -773,7 +786,7 @@
             this.groupBox1.Controls.Add(this.txtDomic);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(6, 366);
+            this.groupBox1.Location = new System.Drawing.Point(8, 464);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(494, 125);
             this.groupBox1.TabIndex = 73;
@@ -782,7 +795,6 @@
             // 
             // btnDomicilio
             // 
-            this.btnDomicilio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDomicilio.BackgroundImage")));
             this.btnDomicilio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnDomicilio.Location = new System.Drawing.Point(463, 55);
@@ -878,7 +890,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(708, 497);
+            this.btnSave.Location = new System.Drawing.Point(439, 595);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 1;
@@ -887,22 +899,22 @@
             // 
             // tabVehiculos
             // 
+            this.tabVehiculos.BackColor = System.Drawing.SystemColors.Control;
             this.tabVehiculos.Controls.Add(this.button1);
             this.tabVehiculos.Controls.Add(this.dgvVehiculos);
             this.tabVehiculos.Controls.Add(this.groupBox2);
             this.tabVehiculos.Location = new System.Drawing.Point(4, 22);
             this.tabVehiculos.Name = "tabVehiculos";
-            this.tabVehiculos.Size = new System.Drawing.Size(776, 535);
+            this.tabVehiculos.Size = new System.Drawing.Size(516, 630);
             this.tabVehiculos.TabIndex = 2;
             this.tabVehiculos.Text = "Vehiculos";
-            this.tabVehiculos.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(740, 499);
+            this.button1.Location = new System.Drawing.Point(485, 530);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 28);
             this.button1.TabIndex = 73;
@@ -920,10 +932,10 @@
             this.colPatente,
             this.colColor,
             this.colEstado});
-            this.dgvVehiculos.Location = new System.Drawing.Point(6, 198);
+            this.dgvVehiculos.Location = new System.Drawing.Point(6, 229);
             this.dgvVehiculos.Name = "dgvVehiculos";
             this.dgvVehiculos.ReadOnly = true;
-            this.dgvVehiculos.Size = new System.Drawing.Size(762, 295);
+            this.dgvVehiculos.Size = new System.Drawing.Size(507, 295);
             this.dgvVehiculos.TabIndex = 72;
             this.dgvVehiculos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvVehiculos_MouseDoubleClick);
             // 
@@ -986,7 +998,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(6, 9);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(762, 183);
+            this.groupBox2.Size = new System.Drawing.Size(507, 214);
             this.groupBox2.TabIndex = 71;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Vehiculos";
@@ -1253,7 +1265,7 @@
             this.btnUpdVeh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdVeh.BackgroundImage")));
             this.btnUpdVeh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpdVeh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpdVeh.Location = new System.Drawing.Point(728, 145);
+            this.btnUpdVeh.Location = new System.Drawing.Point(461, 180);
             this.btnUpdVeh.Name = "btnUpdVeh";
             this.btnUpdVeh.Size = new System.Drawing.Size(28, 28);
             this.btnUpdVeh.TabIndex = 65;
@@ -1277,7 +1289,7 @@
             this.btnSaveVehi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveVehi.BackgroundImage")));
             this.btnSaveVehi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveVehi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveVehi.Location = new System.Drawing.Point(694, 145);
+            this.btnSaveVehi.Location = new System.Drawing.Point(427, 180);
             this.btnSaveVehi.Name = "btnSaveVehi";
             this.btnSaveVehi.Size = new System.Drawing.Size(28, 28);
             this.btnSaveVehi.TabIndex = 64;
@@ -1347,7 +1359,7 @@
             this.tabHojaRuta.Controls.Add(this.tabDias);
             this.tabHojaRuta.Location = new System.Drawing.Point(4, 22);
             this.tabHojaRuta.Name = "tabHojaRuta";
-            this.tabHojaRuta.Size = new System.Drawing.Size(776, 535);
+            this.tabHojaRuta.Size = new System.Drawing.Size(516, 630);
             this.tabHojaRuta.TabIndex = 3;
             this.tabHojaRuta.Text = "Hoja de Ruta";
             this.tabHojaRuta.UseVisualStyleBackColor = true;
@@ -1365,7 +1377,7 @@
             this.tabDias.Location = new System.Drawing.Point(0, 0);
             this.tabDias.Name = "tabDias";
             this.tabDias.SelectedIndex = 0;
-            this.tabDias.Size = new System.Drawing.Size(776, 535);
+            this.tabDias.Size = new System.Drawing.Size(516, 630);
             this.tabDias.TabIndex = 0;
             // 
             // tabLunes
@@ -1374,7 +1386,7 @@
             this.tabLunes.Location = new System.Drawing.Point(4, 22);
             this.tabLunes.Name = "tabLunes";
             this.tabLunes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLunes.Size = new System.Drawing.Size(768, 509);
+            this.tabLunes.Size = new System.Drawing.Size(508, 604);
             this.tabLunes.TabIndex = 0;
             this.tabLunes.Text = "Lunes";
             this.tabLunes.UseVisualStyleBackColor = true;
@@ -1391,7 +1403,7 @@
             this.dgvLun.Location = new System.Drawing.Point(3, 3);
             this.dgvLun.Name = "dgvLun";
             this.dgvLun.ReadOnly = true;
-            this.dgvLun.Size = new System.Drawing.Size(762, 503);
+            this.dgvLun.Size = new System.Drawing.Size(502, 598);
             this.dgvLun.TabIndex = 0;
             // 
             // colCliente
@@ -1412,7 +1424,7 @@
             this.tabMartes.Location = new System.Drawing.Point(4, 22);
             this.tabMartes.Name = "tabMartes";
             this.tabMartes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMartes.Size = new System.Drawing.Size(768, 509);
+            this.tabMartes.Size = new System.Drawing.Size(655, 681);
             this.tabMartes.TabIndex = 1;
             this.tabMartes.Text = "Martes";
             this.tabMartes.UseVisualStyleBackColor = true;
@@ -1423,7 +1435,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(762, 503);
+            this.dataGridView1.Size = new System.Drawing.Size(649, 675);
             this.dataGridView1.TabIndex = 1;
             // 
             // tabMiercoles
@@ -1431,7 +1443,7 @@
             this.tabMiercoles.Controls.Add(this.dataGridView2);
             this.tabMiercoles.Location = new System.Drawing.Point(4, 22);
             this.tabMiercoles.Name = "tabMiercoles";
-            this.tabMiercoles.Size = new System.Drawing.Size(768, 509);
+            this.tabMiercoles.Size = new System.Drawing.Size(655, 681);
             this.tabMiercoles.TabIndex = 2;
             this.tabMiercoles.Text = "Miercoles";
             this.tabMiercoles.UseVisualStyleBackColor = true;
@@ -1442,7 +1454,7 @@
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(0, 0);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(768, 509);
+            this.dataGridView2.Size = new System.Drawing.Size(655, 681);
             this.dataGridView2.TabIndex = 1;
             // 
             // tabJueves
@@ -1450,7 +1462,7 @@
             this.tabJueves.Controls.Add(this.dataGridView3);
             this.tabJueves.Location = new System.Drawing.Point(4, 22);
             this.tabJueves.Name = "tabJueves";
-            this.tabJueves.Size = new System.Drawing.Size(768, 509);
+            this.tabJueves.Size = new System.Drawing.Size(655, 681);
             this.tabJueves.TabIndex = 3;
             this.tabJueves.Text = "Jueves";
             this.tabJueves.UseVisualStyleBackColor = true;
@@ -1461,7 +1473,7 @@
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(768, 509);
+            this.dataGridView3.Size = new System.Drawing.Size(655, 681);
             this.dataGridView3.TabIndex = 1;
             // 
             // tabViernes
@@ -1469,7 +1481,7 @@
             this.tabViernes.Controls.Add(this.dataGridView4);
             this.tabViernes.Location = new System.Drawing.Point(4, 22);
             this.tabViernes.Name = "tabViernes";
-            this.tabViernes.Size = new System.Drawing.Size(768, 509);
+            this.tabViernes.Size = new System.Drawing.Size(655, 681);
             this.tabViernes.TabIndex = 4;
             this.tabViernes.Text = "Viernes";
             this.tabViernes.UseVisualStyleBackColor = true;
@@ -1480,7 +1492,7 @@
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView4.Location = new System.Drawing.Point(0, 0);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(768, 509);
+            this.dataGridView4.Size = new System.Drawing.Size(655, 681);
             this.dataGridView4.TabIndex = 1;
             // 
             // tabSabado
@@ -1488,7 +1500,7 @@
             this.tabSabado.Controls.Add(this.dataGridView5);
             this.tabSabado.Location = new System.Drawing.Point(4, 22);
             this.tabSabado.Name = "tabSabado";
-            this.tabSabado.Size = new System.Drawing.Size(768, 509);
+            this.tabSabado.Size = new System.Drawing.Size(655, 681);
             this.tabSabado.TabIndex = 5;
             this.tabSabado.Text = "Sabado";
             this.tabSabado.UseVisualStyleBackColor = true;
@@ -1499,7 +1511,7 @@
             this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView5.Location = new System.Drawing.Point(0, 0);
             this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(768, 509);
+            this.dataGridView5.Size = new System.Drawing.Size(655, 681);
             this.dataGridView5.TabIndex = 1;
             // 
             // tabDomingo
@@ -1507,7 +1519,7 @@
             this.tabDomingo.Controls.Add(this.dataGridView6);
             this.tabDomingo.Location = new System.Drawing.Point(4, 22);
             this.tabDomingo.Name = "tabDomingo";
-            this.tabDomingo.Size = new System.Drawing.Size(768, 509);
+            this.tabDomingo.Size = new System.Drawing.Size(655, 681);
             this.tabDomingo.TabIndex = 6;
             this.tabDomingo.Text = "Domingo";
             this.tabDomingo.UseVisualStyleBackColor = true;
@@ -1518,7 +1530,7 @@
             this.dataGridView6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView6.Location = new System.Drawing.Point(0, 0);
             this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.Size = new System.Drawing.Size(768, 509);
+            this.dataGridView6.Size = new System.Drawing.Size(655, 681);
             this.dataGridView6.TabIndex = 1;
             // 
             // tabListado
@@ -1527,7 +1539,7 @@
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(776, 535);
+            this.tabListado.Size = new System.Drawing.Size(516, 630);
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
@@ -1554,7 +1566,7 @@
             this.dgvDistribuidores.Name = "dgvDistribuidores";
             this.dgvDistribuidores.ReadOnly = true;
             this.dgvDistribuidores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDistribuidores.Size = new System.Drawing.Size(770, 529);
+            this.dgvDistribuidores.Size = new System.Drawing.Size(510, 624);
             this.dgvDistribuidores.TabIndex = 2;
             this.dgvDistribuidores.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvDistribuidores_MouseDoubleClick);
             // 
@@ -1630,7 +1642,7 @@
             this.tabRecorrido.Controls.Add(this.btnDownSa);
             this.tabRecorrido.Location = new System.Drawing.Point(4, 22);
             this.tabRecorrido.Name = "tabRecorrido";
-            this.tabRecorrido.Size = new System.Drawing.Size(776, 535);
+            this.tabRecorrido.Size = new System.Drawing.Size(509, 630);
             this.tabRecorrido.TabIndex = 4;
             this.tabRecorrido.Text = "Recorrido";
             this.tabRecorrido.UseVisualStyleBackColor = true;
@@ -1648,7 +1660,7 @@
             this.btnDownSa.Location = new System.Drawing.Point(0, 0);
             this.btnDownSa.Name = "btnDownSa";
             this.btnDownSa.SelectedIndex = 0;
-            this.btnDownSa.Size = new System.Drawing.Size(776, 535);
+            this.btnDownSa.Size = new System.Drawing.Size(509, 630);
             this.btnDownSa.TabIndex = 1;
             // 
             // tabPage1
@@ -1665,7 +1677,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(768, 509);
+            this.tabPage1.Size = new System.Drawing.Size(501, 604);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lunes";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1676,7 +1688,7 @@
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(700, 475);
+            this.button5.Location = new System.Drawing.Point(334, 475);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(28, 28);
             this.button5.TabIndex = 99;
@@ -1688,7 +1700,7 @@
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(666, 475);
+            this.button3.Location = new System.Drawing.Point(300, 475);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(28, 28);
             this.button3.TabIndex = 98;
@@ -1700,7 +1712,7 @@
             this.btnUpLu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpLu.BackgroundImage")));
             this.btnUpLu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpLu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpLu.Location = new System.Drawing.Point(329, 475);
+            this.btnUpLu.Location = new System.Drawing.Point(192, 475);
             this.btnUpLu.Name = "btnUpLu";
             this.btnUpLu.Size = new System.Drawing.Size(28, 28);
             this.btnUpLu.TabIndex = 97;
@@ -1712,7 +1724,7 @@
             this.btnDownLu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownLu.BackgroundImage")));
             this.btnDownLu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDownLu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDownLu.Location = new System.Drawing.Point(363, 475);
+            this.btnDownLu.Location = new System.Drawing.Point(226, 475);
             this.btnDownLu.Name = "btnDownLu";
             this.btnDownLu.Size = new System.Drawing.Size(28, 28);
             this.btnDownLu.TabIndex = 96;
@@ -1731,7 +1743,7 @@
             this.btnSaveRecLu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecLu.BackgroundImage")));
             this.btnSaveRecLu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecLu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecLu.Location = new System.Drawing.Point(734, 475);
+            this.btnSaveRecLu.Location = new System.Drawing.Point(368, 475);
             this.btnSaveRecLu.Name = "btnSaveRecLu";
             this.btnSaveRecLu.Size = new System.Drawing.Size(28, 28);
             this.btnSaveRecLu.TabIndex = 94;
@@ -1832,7 +1844,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(768, 509);
+            this.tabPage2.Size = new System.Drawing.Size(655, 681);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Martes";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1995,7 +2007,7 @@
             this.tabPage3.Controls.Add(this.dgvRecorridoMi);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(768, 509);
+            this.tabPage3.Size = new System.Drawing.Size(655, 681);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Miercoles";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -2159,7 +2171,7 @@
             this.tabPage4.Controls.Add(this.dgvRecorridoJu);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(768, 509);
+            this.tabPage4.Size = new System.Drawing.Size(655, 681);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Jueves";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -2323,7 +2335,7 @@
             this.tabPage5.Controls.Add(this.dgvRecorridoVi);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(768, 509);
+            this.tabPage5.Size = new System.Drawing.Size(655, 681);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Viernes";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -2487,7 +2499,7 @@
             this.tabPage6.Controls.Add(this.dgvRecorridoSa);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(768, 509);
+            this.tabPage6.Size = new System.Drawing.Size(501, 604);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Sabado";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -2650,14 +2662,13 @@
             this.tabPage7.Controls.Add(this.dgvRecorridoDo);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(768, 509);
+            this.tabPage7.Size = new System.Drawing.Size(655, 681);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Domingo";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // btnSaveRecorridoDo
             // 
-            this.btnSaveRecorridoDo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecorridoDo.BackgroundImage")));
             this.btnSaveRecorridoDo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecorridoDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveRecorridoDo.Location = new System.Drawing.Point(700, 475);
@@ -2669,7 +2680,6 @@
             // 
             // button42
             // 
-            this.button42.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button42.BackgroundImage")));
             this.button42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button42.Location = new System.Drawing.Point(666, 475);
@@ -2805,10 +2815,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(517, 656);
             this.Controls.Add(this.tabDistribuidor);
             this.Name = "formDistribuidores";
-            this.Text = "Distribuidores";
             this.Load += new System.EventHandler(this.formDistribuidores_Load);
             this.tabDistribuidor.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
@@ -3091,5 +3100,6 @@
         public System.Windows.Forms.ComboBox cbColor;
         public System.Windows.Forms.CheckBox cbEstadoVeh;
         public System.Windows.Forms.TextBox txtIDvehiculo;
+        private System.Windows.Forms.Label label28;
     }
 }
