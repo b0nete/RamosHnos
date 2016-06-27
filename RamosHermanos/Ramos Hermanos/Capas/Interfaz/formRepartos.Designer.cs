@@ -161,6 +161,7 @@
             this.dgvRepartos.Name = "dgvRepartos";
             this.dgvRepartos.Size = new System.Drawing.Size(984, 678);
             this.dgvRepartos.TabIndex = 12;
+            this.dgvRepartos.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvRepartos_CellBeginEdit_1);
             this.dgvRepartos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellEndEdit_1);
             this.dgvRepartos.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRepartos_CellLeave);
             this.dgvRepartos.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvRepartos_CellStateChanged);

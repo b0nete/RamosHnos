@@ -235,5 +235,30 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static bool DisponiblidadStock(int idProducto, int cantidad)
+        {
+            MySQL.ConnectDB();
+
+            string query = @"SELECT * 
+                            FROM stockProductoLog
+                            WHERE idProducto = @idProducto and idStockProductoLog = (SELECT MAX(idStockProductoLog) FROM stockproductolog WHERE idProducto = @idProducto)";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+            cmd.Parameters.AddWithValue("@idProducto", idProducto);
+
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            da.Fill(dt);
+
+            if (Convert.ToInt32(dt.Rows[0]["stockNuevo"].ToString()) < cantidad)
+            {
+                MessageBox.Show("No hay stock disponible!");
+                return false;
+            }
+            else
+                return true;
+        }
     }
 }

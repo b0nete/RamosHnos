@@ -48,6 +48,7 @@
             this.dgvProduccion.Location = new System.Drawing.Point(12, 12);
             this.dgvProduccion.Name = "dgvProduccion";
             this.dgvProduccion.ReadOnly = true;
+            this.dgvProduccion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProduccion.Size = new System.Drawing.Size(760, 537);
             this.dgvProduccion.TabIndex = 56;
             // 

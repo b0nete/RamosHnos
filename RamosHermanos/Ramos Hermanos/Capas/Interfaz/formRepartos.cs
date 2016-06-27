@@ -25,6 +25,7 @@ namespace RamosHermanos.Capas.Interfaz
         public int comprobante;
         public int iRow;
         public int iFactura;
+        public int cantidadPreEdit;
         //public int total;
 
         public formRepartos()
@@ -347,6 +348,15 @@ namespace RamosHermanos.Capas.Interfaz
                 //Soda
                 itemFactura.producto = 7;
                 itemFactura.carga = "C";
+
+                //Corroborar Stock
+                bool dispStock = StockProductoB.DisponiblidadStock(7, Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colSCarga"].Value.ToString()));
+                if (dispStock == false)
+                {
+                    dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
+                    return;                    
+                }
+                
                 if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
                 {
                     UpdateFactura("colSCarga");
@@ -798,6 +808,14 @@ namespace RamosHermanos.Capas.Interfaz
         private void dtpFechaReparto_CloseUp(object sender, EventArgs e)
         {
             BuscarReparto();
+        }
+
+        private void dgvRepartos_CellBeginEdit_1(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (Convert.ToInt32(dgvRepartos.CurrentCell.Value.ToString()) != 0 || dgvRepartos.CurrentCell.Value.ToString() != string.Empty)
+            {
+                cantidadPreEdit = Convert.ToInt32(dgvRepartos.CurrentCell.Value.ToString());
+            }
         }
 
     }
