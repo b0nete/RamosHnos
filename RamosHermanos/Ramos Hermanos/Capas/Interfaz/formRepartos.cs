@@ -812,12 +812,14 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvRepartos_CellBeginEdit_1(object sender, DataGridViewCellCancelEventArgs e)
         {
-            if (Convert.ToString(dgvRepartos.CurrentCell.Value) != string.Empty)
+            if (dgvRepartos.CurrentCell.OwningColumn.Name == "colCobro")
             {
-                if (Convert.ToInt32(dgvRepartos.CurrentCell.Value.ToString()) != 0 || dgvRepartos.CurrentCell.Value.ToString() != string.Empty)
-                {
-                    cantidadPreEdit = Convert.ToInt32(dgvRepartos.CurrentCell.Value.ToString());
-                }
+                return;
+            }
+
+            if (Convert.ToInt32(dgvRepartos.CurrentCell.Value.ToString()) != 0 || dgvRepartos.CurrentCell.Value.ToString() != string.Empty)
+            {
+                cantidadPreEdit = Convert.ToInt32(dgvRepartos.CurrentCell.Value.ToString());
             }
         }
 
