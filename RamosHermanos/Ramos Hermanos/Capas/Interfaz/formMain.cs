@@ -369,6 +369,17 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
+        private void administraciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formLogin frm = new formLogin();
+            frm.Show();
+        }
+
        
        
        

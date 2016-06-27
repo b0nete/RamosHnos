@@ -335,7 +335,7 @@ namespace RamosHermanos.Capas.Interfaz
             
             listInsumos frm = new listInsumos();
             frm.Show();
-            caseSwitch = 2;
+            frm.caseSwitch = 2;
             //string parametro = '%' + frm.txtParametro.Text + '%';
             //InsumoB.CargarDGVParametros(frm.dgvInsumos, frm.cbParametro, parametro);
         }
