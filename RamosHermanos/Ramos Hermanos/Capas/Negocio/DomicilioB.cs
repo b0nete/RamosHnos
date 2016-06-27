@@ -271,12 +271,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-//                string query = @"SELECT group_concat(' ', B.barrio,' ', calle,' ', numero,' ', piso,' ', dpto,' ', CP) 
-//                                 FROM Domicilios D
-//                                 INNER JOIN Barrios B ON D.barrio = B.idBarrio
-//                                 WHERE rol = @rol and idPersona = @idPersona and D.estado = 1";
-
-                string query = @"SELECT D.idDomicilio, CONCAT(D.idDomicilio,' ',D.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
+                string query = @"SELECT D.idDomicilio, CONCAT(D.idDomicilio,' ',D.Calle,' ',D.Numero,' ',IFNULL(D.Piso, '-'),' ',IFNULL(D.Dpto, '-'),' - ',IFNULL(D.CP, '-'),' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
                                  FROM Domicilios D 
                                  INNER JOIN Provincias P ON P.idProvincia = D.Provincia
                                  INNER JOIN Localidades L ON L.idLocalidad = D.Localidad

@@ -118,7 +118,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT C.idCliente, CONCAT(C.nombre, ' ', C.apellido) as nombreCompleto, D.idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' ', 'PISO:', ' ',IFNULL(D.Piso, ''),' ', 'DPTO:',' ', IFNULL(D.Dpto, '')) domicilioCompleto
+                string query = @"SELECT C.idCliente, CONCAT(C.nombre, ' ', C.apellido) as nombreCompleto, D.idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' ', 'PISO:', ' ',IFNULL(D.Piso, '-'),' ', 'DPTO:',' ', IFNULL(D.Dpto, '-')) domicilioCompleto
                                 FROM itemsRecorrido IR
                                 INNER JOIN Domicilios D ON D.calle = IR.calle
                                 INNER JOIN Clientes C ON C.idCliente = D.idPersona

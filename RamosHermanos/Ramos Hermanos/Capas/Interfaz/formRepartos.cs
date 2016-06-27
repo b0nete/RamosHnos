@@ -812,9 +812,12 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvRepartos_CellBeginEdit_1(object sender, DataGridViewCellCancelEventArgs e)
         {
-            if (Convert.ToInt32(dgvRepartos.CurrentCell.Value.ToString()) != 0 || dgvRepartos.CurrentCell.Value.ToString() != string.Empty)
+            if (Convert.ToString(dgvRepartos.CurrentCell.Value) != string.Empty)
             {
-                cantidadPreEdit = Convert.ToInt32(dgvRepartos.CurrentCell.Value.ToString());
+                if (Convert.ToInt32(dgvRepartos.CurrentCell.Value.ToString()) != 0 || dgvRepartos.CurrentCell.Value.ToString() != string.Empty)
+                {
+                    cantidadPreEdit = Convert.ToInt32(dgvRepartos.CurrentCell.Value.ToString());
+                }
             }
         }
 
