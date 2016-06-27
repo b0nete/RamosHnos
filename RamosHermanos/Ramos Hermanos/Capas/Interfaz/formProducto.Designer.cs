@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProducto));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProducto));
             this.tabProducto = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -120,15 +119,23 @@
             this.tabEstadisticas = new System.Windows.Forms.TabPage();
             this.chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.dtpAnualHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpAnualDesde = new System.Windows.Forms.DateTimePicker();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.dtpMensualHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpMensualDesde = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
-            this.btnGrafico = new System.Windows.Forms.Button();
             this.Desde = new System.Windows.Forms.Label();
             this.dtpDiariaHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDiariaDesde = new System.Windows.Forms.DateTimePicker();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbAnual = new System.Windows.Forms.RadioButton();
+            this.rbDiario = new System.Windows.Forms.RadioButton();
+            this.rbMensual = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -164,6 +171,7 @@
             // tabInformacion
             // 
             this.tabInformacion.BackColor = System.Drawing.SystemColors.Control;
+            this.tabInformacion.Controls.Add(this.btnEstadisticas);
             this.tabInformacion.Controls.Add(this.groupBox6);
             this.tabInformacion.Controls.Add(this.button4);
             this.tabInformacion.Controls.Add(this.button1);
@@ -1112,30 +1120,31 @@
             this.chartProductos.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chartProductos.Legends.Add(legend1);
-            this.chartProductos.Location = new System.Drawing.Point(378, 9);
+            this.chartProductos.Location = new System.Drawing.Point(378, 6);
             this.chartProductos.Name = "chartProductos";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series2";
-            this.chartProductos.Series.Add(series1);
-            this.chartProductos.Series.Add(series2);
-            this.chartProductos.Size = new System.Drawing.Size(570, 300);
+            this.chartProductos.Size = new System.Drawing.Size(349, 287);
             this.chartProductos.TabIndex = 3;
             this.chartProductos.Text = "chart1";
+            title1.Name = "Title1";
+            this.chartProductos.Titles.Add(title1);
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.label28);
+            this.groupBox7.Controls.Add(this.label29);
+            this.groupBox7.Controls.Add(this.dtpAnualHasta);
+            this.groupBox7.Controls.Add(this.dtpAnualDesde);
+            this.groupBox7.Controls.Add(this.label23);
+            this.groupBox7.Controls.Add(this.label24);
+            this.groupBox7.Controls.Add(this.dtpMensualHasta);
+            this.groupBox7.Controls.Add(this.dtpMensualDesde);
             this.groupBox7.Controls.Add(this.label16);
-            this.groupBox7.Controls.Add(this.btnGrafico);
             this.groupBox7.Controls.Add(this.Desde);
             this.groupBox7.Controls.Add(this.dtpDiariaHasta);
             this.groupBox7.Controls.Add(this.dtpDiariaDesde);
-            this.groupBox7.Controls.Add(this.radioButton3);
-            this.groupBox7.Controls.Add(this.radioButton2);
-            this.groupBox7.Controls.Add(this.radioButton1);
+            this.groupBox7.Controls.Add(this.rbAnual);
+            this.groupBox7.Controls.Add(this.rbDiario);
+            this.groupBox7.Controls.Add(this.rbMensual);
             this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox7.Location = new System.Drawing.Point(6, 6);
             this.groupBox7.Name = "groupBox7";
@@ -1143,32 +1152,101 @@
             this.groupBox7.TabIndex = 2;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Parametros";
+            this.groupBox7.Enter += new System.EventHandler(this.groupBox7_Enter);
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(189, 215);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(35, 13);
+            this.label28.TabIndex = 14;
+            this.label28.Text = "Hasta";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(20, 215);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(38, 13);
+            this.label29.TabIndex = 13;
+            this.label29.Text = "Desde";
+            // 
+            // dtpAnualHasta
+            // 
+            this.dtpAnualHasta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpAnualHasta.Location = new System.Drawing.Point(230, 209);
+            this.dtpAnualHasta.Name = "dtpAnualHasta";
+            this.dtpAnualHasta.Size = new System.Drawing.Size(106, 20);
+            this.dtpAnualHasta.TabIndex = 12;
+            this.dtpAnualHasta.ValueChanged += new System.EventHandler(this.dtpAnualHasta_ValueChanged);
+            // 
+            // dtpAnualDesde
+            // 
+            this.dtpAnualDesde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpAnualDesde.Location = new System.Drawing.Point(64, 209);
+            this.dtpAnualDesde.Name = "dtpAnualDesde";
+            this.dtpAnualDesde.Size = new System.Drawing.Size(106, 20);
+            this.dtpAnualDesde.TabIndex = 11;
+            this.dtpAnualDesde.Value = new System.DateTime(2016, 1, 21, 21, 4, 0, 0);
+            this.dtpAnualDesde.ValueChanged += new System.EventHandler(this.dtpAnualDesde_ValueChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(189, 131);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(35, 13);
+            this.label23.TabIndex = 10;
+            this.label23.Text = "Hasta";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(20, 131);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(38, 13);
+            this.label24.TabIndex = 9;
+            this.label24.Text = "Desde";
+            // 
+            // dtpMensualHasta
+            // 
+            this.dtpMensualHasta.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpMensualHasta.Location = new System.Drawing.Point(230, 125);
+            this.dtpMensualHasta.Name = "dtpMensualHasta";
+            this.dtpMensualHasta.Size = new System.Drawing.Size(106, 20);
+            this.dtpMensualHasta.TabIndex = 8;
+            this.dtpMensualHasta.ValueChanged += new System.EventHandler(this.dtpMensualHasta_ValueChanged);
+            // 
+            // dtpMensualDesde
+            // 
+            this.dtpMensualDesde.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpMensualDesde.Location = new System.Drawing.Point(64, 125);
+            this.dtpMensualDesde.Name = "dtpMensualDesde";
+            this.dtpMensualDesde.Size = new System.Drawing.Size(106, 20);
+            this.dtpMensualDesde.TabIndex = 7;
+            this.dtpMensualDesde.Value = new System.DateTime(2016, 1, 21, 21, 4, 0, 0);
+            this.dtpMensualDesde.ValueChanged += new System.EventHandler(this.dtpMensualDesde_ValueChanged);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(200, 73);
+            this.label16.Location = new System.Drawing.Point(189, 51);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(35, 13);
             this.label16.TabIndex = 6;
             this.label16.Text = "Hasta";
             // 
-            // btnGrafico
-            // 
-            this.btnGrafico.Location = new System.Drawing.Point(285, 258);
-            this.btnGrafico.Name = "btnGrafico";
-            this.btnGrafico.Size = new System.Drawing.Size(75, 23);
-            this.btnGrafico.TabIndex = 1;
-            this.btnGrafico.Text = "button10";
-            this.btnGrafico.UseVisualStyleBackColor = true;
-            this.btnGrafico.Click += new System.EventHandler(this.btnGrafico_Click);
-            // 
             // Desde
             // 
             this.Desde.AutoSize = true;
             this.Desde.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Desde.Location = new System.Drawing.Point(31, 73);
+            this.Desde.Location = new System.Drawing.Point(20, 51);
             this.Desde.Name = "Desde";
             this.Desde.Size = new System.Drawing.Size(38, 13);
             this.Desde.TabIndex = 5;
@@ -1177,54 +1255,59 @@
             // dtpDiariaHasta
             // 
             this.dtpDiariaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDiariaHasta.Location = new System.Drawing.Point(241, 67);
+            this.dtpDiariaHasta.Location = new System.Drawing.Point(230, 45);
             this.dtpDiariaHasta.Name = "dtpDiariaHasta";
             this.dtpDiariaHasta.Size = new System.Drawing.Size(106, 20);
             this.dtpDiariaHasta.TabIndex = 4;
+            this.dtpDiariaHasta.ValueChanged += new System.EventHandler(this.dtpDiariaHasta_ValueChanged);
             // 
             // dtpDiariaDesde
             // 
             this.dtpDiariaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDiariaDesde.Location = new System.Drawing.Point(75, 67);
+            this.dtpDiariaDesde.Location = new System.Drawing.Point(64, 45);
             this.dtpDiariaDesde.Name = "dtpDiariaDesde";
             this.dtpDiariaDesde.Size = new System.Drawing.Size(106, 20);
             this.dtpDiariaDesde.TabIndex = 3;
             this.dtpDiariaDesde.Value = new System.DateTime(2016, 1, 21, 21, 4, 0, 0);
+            this.dtpDiariaDesde.ValueChanged += new System.EventHandler(this.dtpDiariaDesde_ValueChanged);
             // 
-            // radioButton3
+            // rbAnual
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(34, 196);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(52, 17);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.Text = "Anual";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbAnual.AutoSize = true;
+            this.rbAnual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAnual.Location = new System.Drawing.Point(6, 184);
+            this.rbAnual.Name = "rbAnual";
+            this.rbAnual.Size = new System.Drawing.Size(52, 17);
+            this.rbAnual.TabIndex = 2;
+            this.rbAnual.Text = "Anual";
+            this.rbAnual.UseVisualStyleBackColor = true;
+            this.rbAnual.CheckedChanged += new System.EventHandler(this.rbAnual_CheckedChanged);
             // 
-            // radioButton2
+            // rbDiario
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(34, 31);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(52, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Diaria";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbDiario.AutoSize = true;
+            this.rbDiario.Checked = true;
+            this.rbDiario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbDiario.Location = new System.Drawing.Point(6, 19);
+            this.rbDiario.Name = "rbDiario";
+            this.rbDiario.Size = new System.Drawing.Size(52, 17);
+            this.rbDiario.TabIndex = 1;
+            this.rbDiario.TabStop = true;
+            this.rbDiario.Text = "Diario";
+            this.rbDiario.UseVisualStyleBackColor = true;
+            this.rbDiario.CheckedChanged += new System.EventHandler(this.rbDiario_CheckedChanged);
             // 
-            // radioButton1
+            // rbMensual
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(34, 114);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(65, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.Text = "Mensual";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbMensual.AutoSize = true;
+            this.rbMensual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbMensual.Location = new System.Drawing.Point(6, 102);
+            this.rbMensual.Name = "rbMensual";
+            this.rbMensual.Size = new System.Drawing.Size(65, 17);
+            this.rbMensual.TabIndex = 0;
+            this.rbMensual.Text = "Mensual";
+            this.rbMensual.UseVisualStyleBackColor = true;
+            this.rbMensual.CheckedChanged += new System.EventHandler(this.rbMensual_CheckedChanged);
             // 
             // label7
             // 
@@ -1240,6 +1323,18 @@
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.BackgroundImage")));
+            this.btnEstadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas.Location = new System.Drawing.Point(565, 278);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(28, 28);
+            this.btnEstadisticas.TabIndex = 115;
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            // 
             // formProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1248,6 +1343,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tabProducto);
             this.Name = "formProducto";
+            this.Text = "Producto";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formProducto_FormClosed);
             this.Load += new System.EventHandler(this.formProducto_Load);
             this.tabProducto.ResumeLayout(false);
@@ -1364,15 +1460,23 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidadm;
         public System.Windows.Forms.DataGridView dgvConformacion;
         private System.Windows.Forms.TabPage tabEstadisticas;
-        private System.Windows.Forms.Button btnGrafico;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label Desde;
         private System.Windows.Forms.DateTimePicker dtpDiariaHasta;
         private System.Windows.Forms.DateTimePicker dtpDiariaDesde;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbAnual;
+        private System.Windows.Forms.RadioButton rbDiario;
+        private System.Windows.Forms.RadioButton rbMensual;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartProductos;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.DateTimePicker dtpMensualHasta;
+        private System.Windows.Forms.DateTimePicker dtpMensualDesde;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.DateTimePicker dtpAnualHasta;
+        private System.Windows.Forms.DateTimePicker dtpAnualDesde;
+        private System.Windows.Forms.Button btnEstadisticas;
     }
 }

@@ -172,7 +172,7 @@ namespace RamosHermanos.Capas.Negocio
 //            }
 //        }
 
-        public static DataTable GenerarGraficoProducto(int producto, DateTime fechaDesde, DateTime fechaHasta)
+        public static DataTable GenerarGraficoDiario(int producto, DateTime fechaDesde, DateTime fechaHasta)
         {
             try
             {
@@ -180,11 +180,81 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySQL.ConnectDB();
 
-                string query = @"SELECT DATE_FORMAT(P.fechaProduccion,'%m/%d/%Y') as fechaProduccion, IP.producto, IP.cantidad
+                string query = @"SELECT DATE_FORMAT(P.fechaProduccion,'%m/%d/%Y') as fechaProduccion, IP.producto, SUM(IP.cantidad) as Cantidad
                                 FROM ItemsProduccion IP
                                 INNER JOIN Produccion P ON P.idProduccion = IP.produccion
-                                WHERE producto = @producto and (fechaProduccion > @fechaDesde and fechaProduccion < @fechaHasta) 
+                                INNER JOIN Productos PP ON IP.Producto = PP.idProducto
+                                WHERE IP.producto = @producto and (fechaProduccion >= @fechaDesde and fechaProduccion <= @fechaHasta)
+                                GROUP BY fechaProduccion
                                 ";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@producto", producto);
+                cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+                cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static DataTable GenerarGraficoMensual(int producto, DateTime fechaDesde, DateTime fechaHasta)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+
+                MySQL.ConnectDB();
+
+                string query = @"SELECT DATE_FORMAT(P.fechaProduccion,'%m/%Y') as fechaProduccion, IP.producto, SUM(IP.cantidad) as Cantidad
+                                FROM ItemsProduccion IP
+                                INNER JOIN Produccion P ON P.idProduccion = IP.produccion
+                                INNER JOIN Productos PP ON IP.Producto = PP.idProducto
+                                WHERE IP.producto = @producto and (fechaProduccion >= @fechaDesde and fechaProduccion <= @fechaHasta)
+                                GROUP BY MONTH(fechaProduccion)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@producto", producto);
+                cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+                cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static DataTable GenerarGraficoAnual(int producto, DateTime fechaDesde, DateTime fechaHasta)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+
+                MySQL.ConnectDB();
+
+                string query = @"SELECT DATE_FORMAT(P.fechaProduccion,'%Y') as fechaProduccion, IP.producto, SUM(IP.cantidad) as Cantidad
+                                FROM ItemsProduccion IP
+                                INNER JOIN Produccion P ON P.idProduccion = IP.produccion
+                                INNER JOIN Productos PP ON IP.Producto = PP.idProducto
+                                WHERE IP.producto = @producto and (fechaProduccion >= @fechaDesde and fechaProduccion <= @fechaHasta)
+                                GROUP BY YEAR(fechaProduccion)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 

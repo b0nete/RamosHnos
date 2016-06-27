@@ -107,6 +107,12 @@
     <Compile Include="Capas\Entidades\UsuarioEntity.cs" />
     <Compile Include="Capas\Entidades\VehiculoEntity.cs" />
     <Compile Include="Capas\Entidades\VisitaEntity.cs" />
+    <Compile Include="Capas\Graficos\formGInsumos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Graficos\formGInsumos.Designer.cs">
+      <DependentUpon>formGInsumos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\ABMs\formBuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -478,6 +484,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ramosdbDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Capas\Graficos\formGInsumos.resx">
+      <DependentUpon>formGInsumos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\ABMs\formBuscarCliente.resx">
       <DependentUpon>formBuscarCliente.cs</DependentUpon>
     </EmbeddedResource>

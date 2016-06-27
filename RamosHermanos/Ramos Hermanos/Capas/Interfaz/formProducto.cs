@@ -13,6 +13,7 @@ using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Interfaz.Listados;
 using RamosHermanos.Capas.Interfaz.ABMs;
 using RamosHermanos.Capas.Interfaz.Contratos;
+using RamosHermanos.Capas.Graficos;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -35,6 +36,12 @@ namespace RamosHermanos.Capas.Interfaz
             CheckColor();
 
             ProductoB.CargarRubros(cbRubro);
+
+            //Formato Combos tabEstadisticas
+            dtpMensualDesde.CustomFormat = "MM-yyyy";
+            dtpMensualHasta.CustomFormat = "MM-yyyy";
+            dtpAnualDesde.CustomFormat = "yyyy";
+            dtpAnualHasta.CustomFormat = "yyyy";
         }
 
         private void cbEstado_CheckedChanged(object sender, EventArgs e)
@@ -531,42 +538,108 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnGrafico_Click(object sender, EventArgs e)
         {
-            DataTable dtGrafico = ProduccionB.GenerarGraficoProducto(Convert.ToInt32(txtIDProd.Text), dtpDiariaDesde.Value, dtpDiariaHasta.Value);
+            GenerarGrafico();
+        }
 
-            List<string> xCantidad = new List<string>();
-
-            foreach (DataRow row in dtGrafico.Rows)
+        private void GenerarGrafico()
+        {
+            if (rbDiario.Checked == true)
             {
-                string var = row["Cantidad"].ToString();                    
+                DataTable dtGrafico = ProduccionB.GenerarGraficoDiario(Convert.ToInt32(txtIDProd.Text), dtpDiariaDesde.Value, dtpDiariaHasta.Value);
 
-                xCantidad.Add(var);
+                chartProductos.Series.Clear();
+                chartProductos.DataBindTable(dtGrafico.AsDataView(), "fechaProduccion");
+
+                chartProductos.Series["producto"].Enabled = false;
+
+                for (int i = 0; i < chartProductos.Series["Cantidad"].Points.Count(); i++)
+                {
+                    chartProductos.Series["Cantidad"].Points[i].Label = dtGrafico.Rows[i]["Cantidad"].ToString();
+                }
             }
-
-            //
-
-            List<string> yFechaProduccion = new List<string>();
-
-            foreach (DataRow rowA in dtGrafico.Rows)
+            else if (rbMensual.Checked == true)
             {
-                string var = rowA["fechaProduccion"].ToString();
+                DataTable dtGrafico = ProduccionB.GenerarGraficoMensual(Convert.ToInt32(txtIDProd.Text), dtpDiariaDesde.Value, dtpDiariaHasta.Value);
 
-                yFechaProduccion.Add(var);
+                chartProductos.Series.Clear();
+                chartProductos.DataBindTable(dtGrafico.AsDataView(), "fechaProduccion");
+
+                chartProductos.Series["producto"].Enabled = false;
+
+                for (int i = 0; i < chartProductos.Series["Cantidad"].Points.Count(); i++)
+                {
+                    chartProductos.Series["Cantidad"].Points[i].Label = dtGrafico.Rows[i]["Cantidad"].ToString();
+                }
             }
-
-            for (int i = 0; i < yFechaProduccion.Count; i++)
+            else if (rbAnual.Checked == true)
             {
-                //Titulos
-                Series serieCantidad = chartProductos.Series.Add(yFechaProduccion[i].ToString());
+                DataTable dtGrafico = ProduccionB.GenerarGraficoAnual(Convert.ToInt32(txtIDProd.Text), dtpDiariaDesde.Value, dtpDiariaHasta.Value);
 
-                //Cantidades
-                serieCantidad.Label = xCantidad[i].ToString();
-                serieCantidad.LabelAngle = 45;
+                chartProductos.Series.Clear();
+                chartProductos.DataBindTable(dtGrafico.AsDataView(), "fechaProduccion");
 
-                serieCantidad.Points.AddXY(yFechaProduccion[i], Convert.ToDouble(xCantidad[i]));
-                //serieCantidad.Points.Add(Convert.ToDouble(xCantidad[i]));
+                chartProductos.Series["producto"].Enabled = false;
+
+                for (int i = 0; i < chartProductos.Series["Cantidad"].Points.Count(); i++)
+                {
+                    chartProductos.Series["Cantidad"].Points[i].Label = dtGrafico.Rows[i]["Cantidad"].ToString();
+                }
             }
+        }
 
+        private void groupBox7_Enter(object sender, EventArgs e)
+        {
 
+        }
+
+        private void rbDiario_CheckedChanged(object sender, EventArgs e)
+        {
+            GenerarGrafico();
+        }
+
+        private void rbMensual_CheckedChanged(object sender, EventArgs e)
+        {
+            GenerarGrafico();
+        }
+
+        private void rbAnual_CheckedChanged(object sender, EventArgs e)
+        {
+            GenerarGrafico();
+        }
+
+        private void dtpDiariaDesde_ValueChanged(object sender, EventArgs e)
+        {
+            GenerarGrafico();
+        }
+
+        private void dtpDiariaHasta_ValueChanged(object sender, EventArgs e)
+        {
+            GenerarGrafico();
+        }
+
+        private void dtpMensualDesde_ValueChanged(object sender, EventArgs e)
+        {
+            GenerarGrafico();
+        }
+
+        private void dtpMensualHasta_ValueChanged(object sender, EventArgs e)
+        {
+            GenerarGrafico();
+        }
+
+        private void dtpAnualDesde_ValueChanged(object sender, EventArgs e)
+        {
+            GenerarGrafico();
+        }
+
+        private void dtpAnualHasta_ValueChanged(object sender, EventArgs e)
+        {
+            GenerarGrafico();
+        }
+
+        private void btnEstadisticas_Click(object sender, EventArgs e)
+        {
+            
         }
         
     }

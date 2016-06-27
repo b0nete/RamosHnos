@@ -151,6 +151,9 @@ namespace RamosHermanos.Capas.Negocio
             try
             {
                 MySQL.ConnectDB();
+
+                dgv.DataSource = null;
+
                 string query = @"SELECT I.idStock,INS.insumo,INS.idInsumo,I.stockMinimo,I.stockMaximo,I.stockActual,I.fechaActualizacion
                             FROM stockInsumos I
                             INNER JOIN insumos INS on INS.idInsumo = I.idInsumo
@@ -172,7 +175,6 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["stockMaximo"]),
                     Convert.ToString(dr["stockActual"]),
                     Convert.ToString(dr["fechaActualizacion"]));
-
                 }
 
                 dr.Close();

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Interfaz.Listados;
+using RamosHermanos.Capas.Graficos;
 
 namespace RamosHermanos.Capas.Interfaz
 {
@@ -446,6 +447,15 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 e.KeyChar = ',';
             }
+        }
+
+        private void btnEstadisticas_Click(object sender, EventArgs e)
+        {
+            formGInsumos frm = new formGInsumos();
+            frm.Show();
+
+            frm.txtID.Text = txtidInsumo.Text;
+            frm.lblTitle.Text = txtInsumo.Text;
         }  
           
     }
