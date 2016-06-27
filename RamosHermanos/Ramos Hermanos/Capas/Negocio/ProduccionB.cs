@@ -215,7 +215,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySQL.ConnectDB();
 
-                string query = @"SELECT DATE_FORMAT(P.fechaProduccion,'%m/%Y') as fechaProduccion, IP.producto, SUM(IP.cantidad) as Cantidad
+                string query = @"SELECT DATE_FORMAT(P.fechaProduccion,'%M') as fechaProduccion, IP.producto, SUM(IP.cantidad) as Cantidad
                                 FROM ItemsProduccion IP
                                 INNER JOIN Produccion P ON P.idProduccion = IP.produccion
                                 INNER JOIN Productos PP ON IP.Producto = PP.idProducto
@@ -249,7 +249,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySQL.ConnectDB();
 
-                string query = @"SELECT DATE_FORMAT(P.fechaProduccion,'%Y') as fechaProduccion, IP.producto, SUM(IP.cantidad) as Cantidad
+                string query = @"SELECT DATE_FORMAT(P.fechaProduccion,'%Y') as fechaProduccion, SUM(IP.cantidad) as Cantidad
                                 FROM ItemsProduccion IP
                                 INNER JOIN Produccion P ON P.idProduccion = IP.produccion
                                 INNER JOIN Productos PP ON IP.Producto = PP.idProducto

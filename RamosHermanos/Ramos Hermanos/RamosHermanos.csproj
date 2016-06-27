@@ -113,6 +113,12 @@
     <Compile Include="Capas\Graficos\formGInsumos.Designer.cs">
       <DependentUpon>formGInsumos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Graficos\formGProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Graficos\formGProductos.Designer.cs">
+      <DependentUpon>formGProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\ABMs\formBuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -486,6 +492,9 @@
     </Compile>
     <EmbeddedResource Include="Capas\Graficos\formGInsumos.resx">
       <DependentUpon>formGInsumos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Graficos\formGProductos.resx">
+      <DependentUpon>formGProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\ABMs\formBuscarCliente.resx">
       <DependentUpon>formBuscarCliente.cs</DependentUpon>

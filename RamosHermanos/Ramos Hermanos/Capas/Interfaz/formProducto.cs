@@ -639,7 +639,11 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnEstadisticas_Click(object sender, EventArgs e)
         {
-            
+            formGProductos frm = new formGProductos();
+            frm.Show();
+
+            frm.txtID.Text = txtIDProd.Text;
+            frm.lblTitle.Text = txtProducto.Text;
         }
         
     }
