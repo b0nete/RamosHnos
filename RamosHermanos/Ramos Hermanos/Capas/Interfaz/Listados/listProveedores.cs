@@ -106,7 +106,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 frm.txtNameProveedor.Text = proveedor.razsocial;
                 frm.txtCuil.Text = proveedor.cuit;
                 frm.txtCondicionIva.Text = proveedor.condicioniva;
-                DomicilioB.CargarCB(frm.cbDomicilio, frm.txtIDproveedor, "2");
+                //DomicilioB.CargarCB(frm.cbDomicilio, frm.txtIDproveedor, "2");
                 EmailB.CargarTXT(frmP.txtEmail, frmP.txtidprov, 2);
                 TelefonoB.CargarTXT(frm.txtTel, frm.txtIDproveedor, 2);
 

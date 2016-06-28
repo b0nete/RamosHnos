@@ -345,90 +345,32 @@ namespace RamosHermanos.Capas.Interfaz
             //CARGAS
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSCarga")
             {
-                //Soda
-                itemFactura.producto = 7;
-                itemFactura.carga = "C";
-
-                //Corroborar Stock
-                bool dispStock = StockProductoB.DisponiblidadStock(7, Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colSCarga"].Value.ToString()));
-                if (dispStock == false)
-                {
-                    dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
-                    return;                    
-                }
-                
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                {
-                    UpdateFactura("colSCarga");
-                }
-                else
-                {
-                    InsertFactura("colSCarga");
-                    //Actualizar Stock
-                    CargaItemLogStock("colSCarga", itemFactura.producto);
-                    StockProductoB.ActualizarStock(logStock);
-                }
-
+                //Soda 1LT
+                editCellProductos(7, "C", "colSCarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCarga")
             {
                 //Cajon
-                itemFactura.producto = 8;
-                itemFactura.carga = "C";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                {
-                    UpdateFactura("colCCarga");
-                }
-                else
-                {
-                    InsertFactura("colCCarga");
-                }
+                editCellProductos(8, "C", "colSCarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCCarga")
             {
                 //Canasta
-                itemFactura.producto = 9;
-                itemFactura.carga = "C";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                {
-                    UpdateFactura("colCCCarga");
-                }
-                else
-                {
-                    InsertFactura("colCCCarga");
-                }
+                editCellProductos(9, "C", "colSCarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colPCarga")
             {
                 //Pie
-                itemFactura.producto = 10;
-                itemFactura.carga = "C";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                {
-                    UpdateFactura("colPCarga");
-                }
-                else
-                {
-                    InsertFactura("colPCarga");
-                }
+                editCellProductos(10, "C", "colSCarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colDCarga")
             {
                 //Dispenser
-                itemFactura.producto = 11;
-                itemFactura.carga = "C";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                {
-                    UpdateFactura("colDCarga");
-                }
-                else
-                {
-                    InsertFactura("colDCarga");
-                }
+                editCellProductos(11, "C", "colSCarga");
             }
 
 
@@ -436,76 +378,31 @@ namespace RamosHermanos.Capas.Interfaz
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSDescarga")
             {
                 //Soda
-                itemFactura.producto = 7;
-                itemFactura.carga = "D";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                {
-                    UpdateFactura("colSDescarga");
-                }
-                else
-                {
-                    InsertFactura("colSDescarga");
-                }
+                editCellProductos(7, "D", "colSDescarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCDescarga")
             {
                 //Cajon
-                itemFactura.producto = 8;
-                itemFactura.carga = "D";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                {
-                    UpdateFactura("colCDescarga");
-                }
-                else
-                {
-                    InsertFactura("colCDescarga");
-                }
+                editCellProductos(8, "D", "colSDescarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCDescarga")
             {
                 //Canasta
-                itemFactura.producto = 9;
-                itemFactura.carga = "D";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                {
-                    UpdateFactura("colCCDescarga");
-                }
-                else
-                {
-                    InsertFactura("colCCDescarga");
-                }
+                editCellProductos(9, "D", "colSDescarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colPDescarga")
             {
                 //Pie
-                itemFactura.producto = 10;
-                itemFactura.carga = "D";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                {
-                    UpdateFactura("colPDescarga");
-                }
-                else
-                {
-                    InsertFactura("colPDescarga");
-                }
+                editCellProductos(10, "D", "colSDescarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colDDescarga")
             {
                 //Dispenser
-                itemFactura.producto = 11;
-                itemFactura.carga = "D";
-                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
-                {
-                    UpdateFactura("colDDescarga");
-                }
-                else
-                {
-                    InsertFactura("colDDescarga");
-                }
+                editCellProductos(11, "D", "colSDescarga");
             }
 
             //if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCobro")
@@ -812,7 +709,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvRepartos_CellBeginEdit_1(object sender, DataGridViewCellCancelEventArgs e)
         {
-            if (dgvRepartos.CurrentCell.OwningColumn.Name == "colCobro")
+            if (dgvRepartos.CurrentCell.OwningColumn.Name == "colCobro" || dgvRepartos.CurrentCell.Value.ToString() == string.Empty)
             {
                 return;
             }
@@ -821,6 +718,56 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 cantidadPreEdit = Convert.ToInt32(dgvRepartos.CurrentCell.Value.ToString());
             }
+        }
+
+        private void editCellProductos(int idProducto, string carga, string colCarga)
+        {
+            itemFactura.producto = idProducto;
+            itemFactura.carga = carga;
+
+            //Corroborar Stock
+            bool dispStock = StockProductoB.DisponiblidadStock(idProducto, Convert.ToInt32(dgvRepartos.CurrentRow.Cells[colCarga].Value.ToString()));
+            if (dispStock == false)
+            {
+                dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
+                return;
+            }
+
+            if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+            {
+                UpdateFactura(colCarga);
+            }
+            else
+            {
+                InsertFactura(colCarga);
+                //Actualizar Stock
+                CargaItemLogStock(colCarga, idProducto);
+                StockProductoB.ActualizarStock(logStock);
+            }
+
+            ////Soda
+            //itemFactura.producto = 7;
+            //itemFactura.carga = "C";
+
+            ////Corroborar Stock
+            //bool dispStock = StockProductoB.DisponiblidadStock(itemFactura.producto, Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colSCarga"].Value.ToString()));
+            //if (dispStock == false)
+            //{
+            //    dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
+            //    return;                    
+            //}
+
+            //if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+            //{
+            //    UpdateFactura("colSCarga");
+            //}
+            //else
+            //{
+            //    InsertFactura("colSCarga");
+            //    //Actualizar Stock
+            //    CargaItemLogStock("colSCarga", itemFactura.producto);
+            //    StockProductoB.ActualizarStock(logStock);
+            //}
         }
 
     }

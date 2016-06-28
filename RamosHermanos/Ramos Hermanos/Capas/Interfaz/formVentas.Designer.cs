@@ -62,6 +62,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cbformaPago = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtIVA = new System.Windows.Forms.TextBox();
@@ -73,7 +74,6 @@
             this.txtIDcliente = new System.Windows.Forms.TextBox();
             this.txtnumDoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtDomicilio = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -356,7 +356,7 @@
             this.groupBox2.Size = new System.Drawing.Size(760, 73);
             this.groupBox2.TabIndex = 94;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Detalles Venta";
+            this.groupBox2.Text = "Detalles Cobro";
             // 
             // dtpEntrega
             // 
@@ -442,6 +442,15 @@
             this.groupBox1.TabIndex = 93;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles";
+            // 
+            // txtDomicilio
+            // 
+            this.txtDomicilio.Enabled = false;
+            this.txtDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDomicilio.Location = new System.Drawing.Point(75, 69);
+            this.txtDomicilio.Name = "txtDomicilio";
+            this.txtDomicilio.Size = new System.Drawing.Size(331, 20);
+            this.txtDomicilio.TabIndex = 91;
             // 
             // txtNombre
             // 
@@ -548,15 +557,6 @@
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Cliente";
-            // 
-            // txtDomicilio
-            // 
-            this.txtDomicilio.Enabled = false;
-            this.txtDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDomicilio.Location = new System.Drawing.Point(75, 69);
-            this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(331, 20);
-            this.txtDomicilio.TabIndex = 91;
             // 
             // formVentas
             // 

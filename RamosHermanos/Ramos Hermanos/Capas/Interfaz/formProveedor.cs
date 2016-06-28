@@ -475,6 +475,25 @@ namespace RamosHermanos.Capas.Interfaz
         {
             CheckColor();   
         }
+
+        private void btnCompra_Click(object sender, EventArgs e)
+        {
+            formCompras frm = new formCompras();
+            frm.Show();
+
+
+            //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+            proveedor.idProveedor = Convert.ToInt32(txtidprov.Text);
+            ProveedorB.BuscarIdProv(proveedor);
+            frm.txtIDproveedor.Text = Convert.ToString(proveedor.idProveedor);
+            frm.txtNameProveedor.Text = proveedor.razsocial;
+            frm.txtCuil.Text = proveedor.cuit;
+            frm.txtCondicionIva.Text = proveedor.condicioniva;
+
+            DomicilioB.CargarTXT(txtDomicilio, txtidprov, 2);
+            TelefonoB.CargarTXT(frm.txtTel, frm.txtIDproveedor, 2);
+        }
+
         }
  }
 

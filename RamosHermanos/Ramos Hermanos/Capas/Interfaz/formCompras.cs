@@ -34,7 +34,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formCompras_Load(object sender, EventArgs e)
         {
-            txtIngreso.Text = DateTime.Now.ToString("hh:mm:ss");
+            //txtIngreso.Text = DateTime.Now.ToString("hh:mm:ss");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -85,7 +85,6 @@ namespace RamosHermanos.Capas.Interfaz
         {
             txtIDproveedor.Text=null;
             txtCuil.Text=null;
-            txtIngreso.Text = null;
             txtNameProveedor.Text = null;
             txtnumFactura.Text= null;
             txtObservaciones.Text = null;
@@ -234,6 +233,11 @@ namespace RamosHermanos.Capas.Interfaz
         public void pasarDatos(TextBox text)
         {
             string idProveedor = txtIDproveedor.Text;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
         }
 
            

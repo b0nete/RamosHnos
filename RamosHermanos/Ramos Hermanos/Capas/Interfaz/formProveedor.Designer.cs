@@ -73,6 +73,7 @@
             this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.tabPedido = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnCompra = new System.Windows.Forms.Button();
             this.tabProveedor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -98,6 +99,7 @@
             // tabInformacion
             // 
             this.tabInformacion.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabInformacion.Controls.Add(this.btnCompra);
             this.tabInformacion.Controls.Add(this.btnClean);
             this.tabInformacion.Controls.Add(this.groupBox6);
             this.tabInformacion.Controls.Add(this.groupBox1);
@@ -579,6 +581,19 @@
             this.label2.Text = "Proveedores";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnCompra
+            // 
+            this.btnCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCompra.BackgroundImage")));
+            this.btnCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCompra.Location = new System.Drawing.Point(404, 311);
+            this.btnCompra.Name = "btnCompra";
+            this.btnCompra.Size = new System.Drawing.Size(28, 28);
+            this.btnCompra.TabIndex = 68;
+            this.btnCompra.TabStop = false;
+            this.btnCompra.UseVisualStyleBackColor = true;
+            this.btnCompra.Click += new System.EventHandler(this.btnCompra_Click);
+            // 
             // formProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -647,5 +662,6 @@
         public System.Windows.Forms.TextBox txtTel;
         public System.Windows.Forms.TextBox txtDomicilio;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnCompra;
     }
 }
