@@ -30,7 +30,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formContacto_Load(object sender, EventArgs e)
         {
-            CargaInicial();            
+            CargaInicial();
         }
 
         private void CargaInicial()
@@ -47,7 +47,7 @@ namespace RamosHermanos.Capas.Interfaz
                     tabContacto.SelectedTab = tabEmails;
                     break;
             }
-            
+
             RolB.CargarCB(cbRolALL);
 
             //Telefono
@@ -90,8 +90,8 @@ namespace RamosHermanos.Capas.Interfaz
                     CargarEmail();
                     EmailB.InsertEmail(email);
                     EmailB.CargarDGV(dgvEmail, cbRolALL, txtIDALL);
-         
-                }                
+
+                }
             }
         }
 
@@ -124,8 +124,8 @@ namespace RamosHermanos.Capas.Interfaz
                     CargarTelefono();
                     TelefonoB.InsertTelefono(telefono);
                     TelefonoB.CargarDGV(dgvTelefono, cbRolALL, txtIDALL);
-                }                
-            }            
+                }
+            }
         }
 
         TelefonoEntity telefono = new TelefonoEntity();
@@ -155,7 +155,7 @@ namespace RamosHermanos.Capas.Interfaz
             BarrioB.CargarCB(cbBarrio, cbLocalidad);
         }
 
-        
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (ValidarDomicilio() == false)
@@ -168,9 +168,9 @@ namespace RamosHermanos.Capas.Interfaz
                 CargarDomicilio();
                 DomicilioB.InsertDomicilio(domicilio);
                 DomicilioB.CargarDGV(dgvDomicilio, cbRolALL, txtIDALL);
-                
+
             }
-            
+
         }
 
         DomicilioEntity domicilio = new DomicilioEntity();
@@ -284,7 +284,7 @@ namespace RamosHermanos.Capas.Interfaz
                 DataGridViewRow row = cell.OwningRow;
                 email.idEmail = Convert.ToInt32(row.Cells["colIDEmail"].Value.ToString());
                 //MessageBox.Show(Convert.ToString(email.idEmail));
-                txtEmail.Text = row.Cells["colEmail"].Value.ToString();                
+                txtEmail.Text = row.Cells["colEmail"].Value.ToString();
                 email.email = row.Cells["colEmail"].Value.ToString();
                 cbEstadoEmail.Checked = Convert.ToBoolean(row.Cells["colEstado"].Value.ToString());
                 email.estado = Convert.ToBoolean(row.Cells["colEstado"].Value.ToString());
@@ -333,7 +333,7 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 return false;
             }
-            return true;            
+            return true;
         }
 
         private bool ValidarDomicilio()
@@ -375,7 +375,7 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
-        
+
 
         private void btnUpdDom_Click(object sender, EventArgs e)
         {
@@ -406,14 +406,14 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void cbRolALL_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
             formDomicilio frm = new formDomicilio();
             frm.tabVar = 0;
-                    
+
             frm.Show();
 
             frm.cbProvinciaCalle.SelectedValue = cbProvincia.SelectedValue;
@@ -423,7 +423,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void cbCalle_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cbBarrio_SelectionChangeCommitted(object sender, EventArgs e)
@@ -437,7 +437,7 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         public string stringDOM;
-        public string stringMAIL;
+        public string stringMAIL = "";
         public string stringTEL;
 
         public void fillStrings(int idRol)
@@ -449,50 +449,48 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formContacto_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //IAddItemSTRING miInterfaz = this.Owner as IAddItemSTRING;
+            IAddItemSTRING miInterfaz = this.Owner as IAddItemSTRING;
 
-            //switch (tabUpdateTXT)
-            //{
-            //    case 1:
-            //        //Clientes
-            //        fillStrings(1);
+            switch (tabUpdateTXT)
+            {
+                case 1:
+                    //Clientes
+                    fillStrings(1);
 
-            //        //Actualizar TXT Contacto
-                    
-            //        if (miInterfaz != null)
-            //        {
-            //            miInterfaz.cambiarTexto(stringDOM, stringMAIL, stringTEL);
-            //        }
-            //        this.Dispose();
+                    //Actualizar TXT Contacto
+                    if (miInterfaz != null)
+                    {
+                        miInterfaz.cambiarTexto(stringMAIL, stringDOM, stringTEL);
+                    }
+                    this.Dispose();
 
-            //        break;
-            //    case 2:
-            //        //Proveedores
-            //        //Actualizar TXT Contacto
-            //        string stringDOM = DomicilioB.CargarTXTSTRING(txtIDALL, 2);
-            //        string stringMAIL = EmailB.CargarTXTString(txtIDALL, 2);
-            //        string stringTEL = TelefonoB.CargarTXTString(txtIDALL, 2);
+                    break;
+                case 2:
+                    //Proveedores
+                    fillStrings(2);
+
+                    //Actualizar TXT Contacto                    
+                    if (miInterfaz != null)
+                    {
+                        miInterfaz.cambiarTexto(stringMAIL, stringDOM, stringTEL);
+                    }
+                    this.Dispose();
+
+                    break;
+                default:
+                    Console.WriteLine("Default case");
+                    break;
+                //}
+            }
 
 
-            //        if (miInterfaz != null)
-            //        {
-            //            miInterfaz.cambiarTexto(stringDOM, stringMAIL, stringTEL);
-            //        }
-            //        this.Dispose();
 
-            //        break;
-            //    default:
-            //        Console.WriteLine("Default case");
-            //        break;
-            //}
+
+
+
+
+
         }
-
-       
-
-      
-
-        
-
-
     }
 }
+

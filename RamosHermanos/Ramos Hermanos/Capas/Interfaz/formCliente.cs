@@ -10,10 +10,12 @@ using System.Windows.Forms;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Interfaz.Listados;
+using RamosHermanos.Capas.Interfaz.Contratos;
+
 namespace RamosHermanos.Capas.Interfaz
 {
     
-    public partial class formCliente : Form
+    public partial class formCliente : Form, IAddItemSTRING
     {
         public int switchcase;
         public int caseSwitch;
@@ -21,6 +23,14 @@ namespace RamosHermanos.Capas.Interfaz
         public formCliente()
         {
             InitializeComponent();
+        }
+
+        public void cambiarTexto(string txtMail, string txtDom, string txtTell)
+        {
+            txtEmail.Text = txtMail;
+            txtDomic.Text = txtDom;
+            txtDomicilioPJ.Text = txtDom;
+            txtTel.Text = txtTell;
         }
 
         // Eventos        
@@ -183,8 +193,9 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 formContacto frm = new formContacto();
                 frm.tabVar = 0;
+                frm.tabUpdateTXT = 1;
                 frm.txtIDALL.Text = txtIDcliente.Text;                 
-                frm.Show();
+                frm.Show(this);
                 frm.cbRolALL.SelectedValue = 1;          
                 frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
                 frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
@@ -206,7 +217,8 @@ namespace RamosHermanos.Capas.Interfaz
                 formContacto frm = new formContacto();
                 frm.tabVar = 1;
                 frm.txtIDALL.Text = txtIDcliente.Text;
-                frm.Show();
+                frm.tabUpdateTXT = 1;
+                frm.Show(this);
                 frm.cbRolALL.SelectedValue = 1;                
                 frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
                 frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
@@ -227,8 +239,9 @@ namespace RamosHermanos.Capas.Interfaz
                 formContacto frm = new formContacto();
                 //frm.tabContacto.SelectTab = tabEmails;
                 frm.tabVar = 2;
+                frm.tabUpdateTXT = 1;
                 frm.txtIDALL.Text = txtIDcliente.Text;
-                frm.Show();
+                frm.Show(this);
                 frm.cbRolALL.SelectedValue = 1;                
                 frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
                 frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
