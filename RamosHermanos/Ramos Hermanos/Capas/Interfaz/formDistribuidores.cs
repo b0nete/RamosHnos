@@ -1449,5 +1449,15 @@ namespace RamosHermanos.Capas.Interfaz
         {
             clean();
         }
+
+        private void btnDownVi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button37_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
