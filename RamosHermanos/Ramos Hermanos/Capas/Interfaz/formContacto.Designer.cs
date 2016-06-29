@@ -593,6 +593,7 @@
             // 
             this.txtCP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtCP.Location = new System.Drawing.Point(468, 103);
+            this.txtCP.MaxLength = 6;
             this.txtCP.Name = "txtCP";
             this.txtCP.Size = new System.Drawing.Size(238, 20);
             this.txtCP.TabIndex = 43;
@@ -1138,6 +1139,7 @@
             this.Controls.Add(this.tabContacto);
             this.Name = "formContacto";
             this.Text = "Contacto";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formContacto_FormClosed);
             this.Load += new System.EventHandler(this.formContacto_Load);
             this.tabContacto.ResumeLayout(false);
             this.tabDomicilios.ResumeLayout(false);

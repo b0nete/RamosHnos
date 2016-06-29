@@ -10,7 +10,12 @@ namespace RamosHermanos.Capas.Interfaz.Contratos
 {
     interface IAddItem
     {
-        void AddNewItem(DataGridViewRow row);
+        void AddNewItem(DataGridViewRow row);       
+    }
+
+    interface IAddItemSTRING
+    {
+        void cambiarTexto(string txtMail, string txtDom, string txtTel);
     }
 
     interface IAddItemDGV
@@ -22,4 +27,7 @@ namespace RamosHermanos.Capas.Interfaz.Contratos
     {
         void AddParametro(TextBox text);
     }    
+
+
+
 }

@@ -24,6 +24,10 @@ namespace RamosHermanos.Capas.Interfaz
         private void formUsuario_Load(object sender, EventArgs e)
         {
             PrivilegiosB.CargarCB(cbPrivilegios);
+
+            //Esconder tabs
+            tabUsuarios.Controls.Remove(tabListado);
+            tabUsuarios.Controls.Remove(tabLogs);
         }
 
         private void btnSave_Click(object sender, EventArgs e)

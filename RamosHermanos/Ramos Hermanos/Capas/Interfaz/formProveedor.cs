@@ -10,15 +10,23 @@ using System.Windows.Forms;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Interfaz.Listados;
+using RamosHermanos.Capas.Interfaz.Contratos;
 
 
 namespace RamosHermanos.Capas.Interfaz
 {
-    public partial class formProveedor : Form
+    public partial class formProveedor : Form, IAddItemSTRING
     {
         public formProveedor()
         {
             InitializeComponent();
+        }
+
+        public void cambiarTexto(string txtMail, string txtDom, string txtTell)
+        {
+            txtEmail.Text = txtMail;
+            txtDomicilio.Text = txtDom;
+            txtTel.Text = txtTell;
         }
 
         private void formProveedor_Load(object sender, EventArgs e)
@@ -93,7 +101,8 @@ namespace RamosHermanos.Capas.Interfaz
                 formContacto frm = new formContacto();
                 frm.txtIDALL.Text = txtidprov.Text;
                 frm.tabVar = 0;
-                frm.Show();
+                frm.tabUpdateTXT = 2;
+                frm.Show(this);
                 frm.cbRolALL.SelectedValue = 2;
                 frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
@@ -116,7 +125,8 @@ namespace RamosHermanos.Capas.Interfaz
                 formContacto frm = new formContacto();
                 frm.txtIDALL.Text = txtidprov.Text;
                 frm.tabVar = 1;
-                frm.Show();
+                frm.tabUpdateTXT = 2;
+                frm.Show(this);
                 frm.cbRolALL.SelectedValue = 2;
                 frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
@@ -405,8 +415,9 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 formContacto frm = new formContacto();
                 frm.txtIDALL.Text = txtidprov.Text;
-                frm.tabVar = 2;                
-                frm.Show();
+                frm.tabVar = 2;
+                frm.tabUpdateTXT = 2;
+                frm.Show(this);
                 frm.cbRolALL.SelectedValue = 2;                
                 frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;

@@ -165,5 +165,32 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static string CargarTXTString(TextBox txtID, int rol)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = "SELECT group_concat(' ', caracteristica,'-', numTel) FROM Telefonos T WHERE rol = @rol and idPersona = @idPersona";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@rol", rol);
+                cmd.Parameters.AddWithValue("@idPersona", txtID.Text);
+
+                string retornado = Convert.ToString(cmd.ExecuteScalar());
+
+                MySQL.DisconnectDB();
+
+                return retornado;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
     }
 }

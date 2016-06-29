@@ -265,6 +265,34 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static string CargarTXTSTRING(TextBox txtID, int rol)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                string query = @"SELECT group_concat(' ', B.barrio,' ', calle,' ', numero,' ', piso,' ', dpto,' ', CP) 
+                                 FROM Domicilios D
+                                 INNER JOIN Barrios B ON D.barrio = B.idBarrio
+                                 WHERE rol = @rol and idPersona = @idPersona and D.estado = 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@rol", rol);
+                cmd.Parameters.AddWithValue("@idPersona", txtID.Text);
+
+               string retornar = Convert.ToString(cmd.ExecuteScalar());
+
+                MySQL.DisconnectDB();
+                return retornar;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static void CargarTXTID(int idDomicilio, TextBox txtDomicilio)
         {
             try

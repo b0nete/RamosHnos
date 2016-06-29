@@ -10,12 +10,14 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions; //Para validar Email.
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Interfaz.Contratos;
 
 namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formContacto : Form
     {
         public int tabVar;
+        public int tabUpdateTXT = 1;
 
         public formContacto()
         {
@@ -432,6 +434,57 @@ namespace RamosHermanos.Capas.Interfaz
         private void cbCalle_DropDown(object sender, EventArgs e)
         {
             CalleB.CargarCB(cbCalle, cbBarrio);
+        }
+
+        public string stringDOM;
+        public string stringMAIL;
+        public string stringTEL;
+
+        public void fillStrings(int idRol)
+        {
+            stringDOM = DomicilioB.CargarTXTSTRING(txtIDALL, idRol);
+            stringMAIL = EmailB.CargarTXTString(txtIDALL, idRol);
+            stringTEL = TelefonoB.CargarTXTString(txtIDALL, idRol);
+        }
+
+        private void formContacto_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            IAddItemSTRING miInterfaz = this.Owner as IAddItemSTRING;
+
+            switch (tabUpdateTXT)
+            {
+                case 1:
+                    //Clientes
+                    fillStrings(1);
+
+                    //Actualizar TXT Contacto
+                    
+                    if (miInterfaz != null)
+                    {
+                        miInterfaz.cambiarTexto(stringDOM, stringMAIL, stringTEL);
+                    }
+                    this.Dispose();
+
+                    break;
+                case 2:
+                    //Proveedores
+                    //Actualizar TXT Contacto
+                    string stringDOM = DomicilioB.CargarTXTSTRING(txtIDALL, 2);
+                    string stringMAIL = EmailB.CargarTXTString(txtIDALL, 2);
+                    string stringTEL = TelefonoB.CargarTXTString(txtIDALL, 2);
+
+
+                    if (miInterfaz != null)
+                    {
+                        miInterfaz.cambiarTexto(stringDOM, stringMAIL, stringTEL);
+                    }
+                    this.Dispose();
+
+                    break;
+                default:
+                    Console.WriteLine("Default case");
+                    break;
+            }
         }
 
        
