@@ -20,8 +20,8 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
         private void listCompras_Load(object sender, EventArgs e)
         {
-            ComprasB.ListCompras(dgvCompras);
             dgvCompras.AutoGenerateColumns = false;
+            ComprasB.ListCompras(dgvCompras);
         }
     }
 }

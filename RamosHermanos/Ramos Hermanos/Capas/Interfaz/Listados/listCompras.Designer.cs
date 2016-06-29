@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.dgvCompras = new System.Windows.Forms.DataGridView();
-            this.colFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipoFac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.SuspendLayout();
@@ -44,11 +44,11 @@
             this.dgvCompras.AllowUserToDeleteRows = false;
             this.dgvCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colFactura,
+            this.colCompra,
             this.colTipoFac,
             this.colFecha,
             this.colTotal,
-            this.colNombre,
+            this.colProveedor,
             this.colEstado});
             this.dgvCompras.Location = new System.Drawing.Point(12, 12);
             this.dgvCompras.Name = "dgvCompras";
@@ -56,12 +56,12 @@
             this.dgvCompras.Size = new System.Drawing.Size(760, 537);
             this.dgvCompras.TabIndex = 1;
             // 
-            // colFactura
+            // colCompra
             // 
-            this.colFactura.DataPropertyName = "colFactura";
-            this.colFactura.HeaderText = "Nº Comprobante";
-            this.colFactura.Name = "colFactura";
-            this.colFactura.ReadOnly = true;
+            this.colCompra.DataPropertyName = "colCompra";
+            this.colCompra.HeaderText = "Nº Comprobante";
+            this.colCompra.Name = "colCompra";
+            this.colCompra.ReadOnly = true;
             // 
             // colTipoFac
             // 
@@ -84,12 +84,12 @@
             this.colTotal.Name = "colTotal";
             this.colTotal.ReadOnly = true;
             // 
-            // colNombre
+            // colProveedor
             // 
-            this.colNombre.DataPropertyName = "colNombre";
-            this.colNombre.HeaderText = "Cliente";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.ReadOnly = true;
+            this.colProveedor.DataPropertyName = "colProveedor";
+            this.colProveedor.HeaderText = "Proveedor";
+            this.colProveedor.Name = "colProveedor";
+            this.colProveedor.ReadOnly = true;
             // 
             // colEstado
             // 
@@ -116,11 +116,11 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvCompras;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipoFac;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstado;
     }
 }

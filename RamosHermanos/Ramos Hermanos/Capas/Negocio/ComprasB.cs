@@ -64,6 +64,7 @@ namespace RamosHermanos.Capas.Negocio
                 da.Fill(dt);
 
                 dgvList.DataSource = dt;
+                dgvList.AutoGenerateColumns = false;
 
                 MySQL.DisconnectDB();
             }
