@@ -449,42 +449,42 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formContacto_FormClosed(object sender, FormClosedEventArgs e)
         {
-            IAddItemSTRING miInterfaz = this.Owner as IAddItemSTRING;
+            //IAddItemSTRING miInterfaz = this.Owner as IAddItemSTRING;
 
-            switch (tabUpdateTXT)
-            {
-                case 1:
-                    //Clientes
-                    fillStrings(1);
+            //switch (tabUpdateTXT)
+            //{
+            //    case 1:
+            //        //Clientes
+            //        fillStrings(1);
 
-                    //Actualizar TXT Contacto
+            //        //Actualizar TXT Contacto
                     
-                    if (miInterfaz != null)
-                    {
-                        miInterfaz.cambiarTexto(stringDOM, stringMAIL, stringTEL);
-                    }
-                    this.Dispose();
+            //        if (miInterfaz != null)
+            //        {
+            //            miInterfaz.cambiarTexto(stringDOM, stringMAIL, stringTEL);
+            //        }
+            //        this.Dispose();
 
-                    break;
-                case 2:
-                    //Proveedores
-                    //Actualizar TXT Contacto
-                    string stringDOM = DomicilioB.CargarTXTSTRING(txtIDALL, 2);
-                    string stringMAIL = EmailB.CargarTXTString(txtIDALL, 2);
-                    string stringTEL = TelefonoB.CargarTXTString(txtIDALL, 2);
+            //        break;
+            //    case 2:
+            //        //Proveedores
+            //        //Actualizar TXT Contacto
+            //        string stringDOM = DomicilioB.CargarTXTSTRING(txtIDALL, 2);
+            //        string stringMAIL = EmailB.CargarTXTString(txtIDALL, 2);
+            //        string stringTEL = TelefonoB.CargarTXTString(txtIDALL, 2);
 
 
-                    if (miInterfaz != null)
-                    {
-                        miInterfaz.cambiarTexto(stringDOM, stringMAIL, stringTEL);
-                    }
-                    this.Dispose();
+            //        if (miInterfaz != null)
+            //        {
+            //            miInterfaz.cambiarTexto(stringDOM, stringMAIL, stringTEL);
+            //        }
+            //        this.Dispose();
 
-                    break;
-                default:
-                    Console.WriteLine("Default case");
-                    break;
-            }
+            //        break;
+            //    default:
+            //        Console.WriteLine("Default case");
+            //        break;
+            //}
         }
 
        
