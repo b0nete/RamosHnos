@@ -138,6 +138,51 @@ WHERE factura = @factura and (producto =  1 or producto =  2 or producto =  3 or
             }
         }
 
+        public static itemFacturaEntity CargarDgvVentas(itemFacturaEntity item, DataGridView dgv)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT I.iditemFactura, I.factura, I.producto, I.cantidad, I.precioUnitario, I.subTotal , P.producto
+                                FROM itemsFactura I
+                                INNER JOIN productos P on P.idProducto = I.producto
+                                WHERE I.factura = @factura";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@factura", item.factura);
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado != 0)
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    DataRow row = dt.Rows[0];
+
+                    //item.codProducto = Convert.ToInt32(row["codProducto"]);
+                    item.cantidad = Convert.ToInt32(row["cantidad"]);
+                    item.factura = Convert.ToString(row["factura"]);
+                    item.precioUnitario = Convert.ToDouble(row["precioUnitario"]);
+                    item.subTotal = Convert.ToDouble(row["subTotal"]);
+
+                    
+                    MySQL.DisconnectDB();
+                }
+
+                return item;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static itemFacturaEntity InsertItemFactura(itemFacturaEntity itemFactura)
         {
             try

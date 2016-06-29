@@ -519,6 +519,62 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void CargarDGVParametros(DataGridView dgv, ComboBox cb, string parametro)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                dgv.Rows.Clear();
+                
+                string query = @"SELECT F.idfactura, F.fechaFactura, F.total, C.cliente, F.estado
+                                 FROM facturas F
+                                 INNER JOIN clientes C on F.cliente = C.idCliente
+                                 WHERE";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idfactura", parametro);
+                cmd.Parameters.AddWithValue("@idCliente", parametro);
+                cmd.Parameters.AddWithValue("@apellido", parametro);
+                cmd.Parameters.AddWithValue("@nombre", parametro);
+                cmd.Parameters.AddWithValue("@fechaFactura", parametro);
+                cmd.Parameters.AddWithValue("@estado", parametro);
+
+                if (cb.SelectedIndex == 0)
+                {
+                    cmd.CommandText = query + " F.idFactura LIKE @idFactura";
+
+                }
+                if (cb.SelectedIndex == 1)
+                {
+                    cmd.CommandText = query + " F.fecha LIKE @fechaFactura";
+
+                }
+                
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["idFactura"]),
+                    Convert.ToString(dr["fechaFactura"]),
+                    Convert.ToString(dr["apellido"]),
+                    Convert.ToString(dr["estado"]));
+                                              
+                }
+                dr.Close();
+                MySQL.DisconnectDB();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+
+
+        }
+
         
     }
 }
