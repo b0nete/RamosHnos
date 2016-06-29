@@ -53,6 +53,7 @@
             this.dgvCompras.Location = new System.Drawing.Point(12, 12);
             this.dgvCompras.Name = "dgvCompras";
             this.dgvCompras.ReadOnly = true;
+            this.dgvCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCompras.Size = new System.Drawing.Size(760, 537);
             this.dgvCompras.TabIndex = 1;
             // 

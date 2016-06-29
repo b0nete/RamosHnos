@@ -34,6 +34,9 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formCompras_Load(object sender, EventArgs e)
         {
+            cbTipoFactura.SelectedIndex = 0;
+            cbformaPago.SelectedIndex = 0;
+            cbEstado.SelectedIndex = 1;
             //txtIngreso.Text = DateTime.Now.ToString("hh:mm:ss");
         }
 
@@ -247,6 +250,11 @@ namespace RamosHermanos.Capas.Interfaz
         {
 
             
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
 
            
