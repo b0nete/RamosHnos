@@ -102,6 +102,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtSaldo = new System.Windows.Forms.TextBox();
             this.txtCreditoMax = new System.Windows.Forms.TextBox();
@@ -179,8 +180,6 @@
             this.groupBox19 = new System.Windows.Forms.GroupBox();
             this.txtRetornablePJ = new System.Windows.Forms.TextBox();
             this.label63 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.lbltxtP = new System.Windows.Forms.Label();
             this.lblEstadoPJ = new System.Windows.Forms.Label();
@@ -212,8 +211,11 @@
             this.label60 = new System.Windows.Forms.Label();
             this.txtDomicilioPJ = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.tabVisita = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label34 = new System.Windows.Forms.Label();
             this.cbEstadoVisita = new System.Windows.Forms.CheckBox();
             this.label37 = new System.Windows.Forms.Label();
@@ -229,13 +231,13 @@
             this.checkMa = new System.Windows.Forms.CheckBox();
             this.checkJu = new System.Windows.Forms.CheckBox();
             this.checkMi = new System.Windows.Forms.CheckBox();
-            this.btnSaveVisita = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.i = new System.Windows.Forms.Label();
             this.txtidDistri = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
+            this.btnSaveVisita = new System.Windows.Forms.Button();
             this.label64 = new System.Windows.Forms.Label();
             this.tabMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
@@ -245,6 +247,7 @@
             this.groupBox16.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -261,6 +264,7 @@
             this.groupBox9.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.tabVisita.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox15.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -1076,6 +1080,7 @@
             // 
             // groupBox5
             // 
+            this.groupBox5.Controls.Add(this.pictureBox2);
             this.groupBox5.Controls.Add(this.groupBox2);
             this.groupBox5.Controls.Add(this.groupBox17);
             this.groupBox5.Controls.Add(this.groupBox3);
@@ -1087,6 +1092,15 @@
             this.groupBox5.TabIndex = 67;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Saldos";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::RamosHermanos.Properties.Resources.Cliented;
+            this.pictureBox2.Location = new System.Drawing.Point(143, 198);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(121, 142);
+            this.pictureBox2.TabIndex = 68;
+            this.pictureBox2.TabStop = false;
             // 
             // groupBox2
             // 
@@ -1363,7 +1377,7 @@
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(137, 101);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(126, 153);
+            this.groupBox4.Size = new System.Drawing.Size(126, 45);
             this.groupBox4.TabIndex = 65;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Sodas";
@@ -1532,10 +1546,10 @@
             this.tabInformacionJ.BackColor = System.Drawing.Color.Transparent;
             this.tabInformacionJ.Controls.Add(this.groupBox10);
             this.tabInformacionJ.Controls.Add(this.groupBox11);
-            this.tabInformacionJ.Controls.Add(this.button2);
-            this.tabInformacionJ.Controls.Add(this.button3);
             this.tabInformacionJ.Controls.Add(this.groupBox9);
             this.tabInformacionJ.Controls.Add(this.groupBox14);
+            this.tabInformacionJ.Controls.Add(this.button2);
+            this.tabInformacionJ.Controls.Add(this.button3);
             this.tabInformacionJ.Controls.Add(this.button10);
             this.tabInformacionJ.Location = new System.Drawing.Point(4, 22);
             this.tabInformacionJ.Name = "tabInformacionJ";
@@ -1934,29 +1948,6 @@
             this.label63.TabIndex = 67;
             this.label63.Text = "Retornable";
             // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(672, 500);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 28);
-            this.button2.TabIndex = 78;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button3.Location = new System.Drawing.Point(740, 500);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 77;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.lbltxtP);
@@ -2321,6 +2312,29 @@
             this.label61.TabIndex = 27;
             this.label61.Text = "Telefonos";
             // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(672, 500);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(28, 28);
+            this.button2.TabIndex = 78;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button3.Location = new System.Drawing.Point(740, 500);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(28, 28);
+            this.button3.TabIndex = 77;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // button10
             // 
             this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
@@ -2336,19 +2350,29 @@
             // tabVisita
             // 
             this.tabVisita.BackColor = System.Drawing.Color.Transparent;
+            this.tabVisita.Controls.Add(this.pictureBox1);
             this.tabVisita.Controls.Add(this.label34);
             this.tabVisita.Controls.Add(this.cbEstadoVisita);
             this.tabVisita.Controls.Add(this.label37);
             this.tabVisita.Controls.Add(this.groupBox15);
             this.tabVisita.Controls.Add(this.groupBox8);
-            this.tabVisita.Controls.Add(this.btnSaveVisita);
             this.tabVisita.Controls.Add(this.groupBox7);
+            this.tabVisita.Controls.Add(this.btnSaveVisita);
             this.tabVisita.Location = new System.Drawing.Point(4, 22);
             this.tabVisita.Name = "tabVisita";
             this.tabVisita.Size = new System.Drawing.Size(776, 536);
             this.tabVisita.TabIndex = 7;
             this.tabVisita.Text = "Visita";
             this.tabVisita.Click += new System.EventHandler(this.tabVisita_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RamosHermanos.Properties.Resources.Visita;
+            this.pictureBox1.Location = new System.Drawing.Point(221, 225);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(321, 305);
+            this.pictureBox1.TabIndex = 96;
+            this.pictureBox1.TabStop = false;
             // 
             // label34
             // 
@@ -2519,18 +2543,6 @@
             this.checkMi.Text = "Miércoles";
             this.checkMi.UseVisualStyleBackColor = true;
             // 
-            // btnSaveVisita
-            // 
-            this.btnSaveVisita.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveVisita.BackgroundImage")));
-            this.btnSaveVisita.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveVisita.Location = new System.Drawing.Point(740, 215);
-            this.btnSaveVisita.Name = "btnSaveVisita";
-            this.btnSaveVisita.Size = new System.Drawing.Size(28, 28);
-            this.btnSaveVisita.TabIndex = 72;
-            this.btnSaveVisita.UseVisualStyleBackColor = true;
-            this.btnSaveVisita.Click += new System.EventHandler(this.btnSaveVisita_Click);
-            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.i);
@@ -2597,6 +2609,18 @@
             this.cbDomicilio.DropDown += new System.EventHandler(this.cbDomicilio_DropDown);
             this.cbDomicilio.SelectedIndexChanged += new System.EventHandler(this.cbDomicilio_SelectedIndexChanged);
             // 
+            // btnSaveVisita
+            // 
+            this.btnSaveVisita.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveVisita.BackgroundImage")));
+            this.btnSaveVisita.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveVisita.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveVisita.Location = new System.Drawing.Point(740, 215);
+            this.btnSaveVisita.Name = "btnSaveVisita";
+            this.btnSaveVisita.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveVisita.TabIndex = 72;
+            this.btnSaveVisita.UseVisualStyleBackColor = true;
+            this.btnSaveVisita.Click += new System.EventHandler(this.btnSaveVisita_Click);
+            // 
             // label64
             // 
             this.label64.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -2632,6 +2656,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox17.ResumeLayout(false);
@@ -2661,6 +2686,7 @@
             this.groupBox14.PerformLayout();
             this.tabVisita.ResumeLayout(false);
             this.tabVisita.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
             this.groupBox8.ResumeLayout(false);
@@ -2881,6 +2907,8 @@
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label lbltxtP;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
 
     }
 }
