@@ -299,11 +299,12 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT D.idDomicilio, CONCAT(D.idDomicilio,' ',D.Calle,' ',D.Numero,' ',IFNULL(D.Piso, '-'),' ',IFNULL(D.Dpto, '-'),' - ',IFNULL(D.CP, '-'),' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
+                string query = @"SELECT D.idDomicilio, CONCAT(C.Calle,' ',D.Numero,' ',IFNULL(D.Piso, '-'),' ',IFNULL(D.Dpto, '-'),' - ',IFNULL(D.CP, '-'),' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
                                  FROM Domicilios D 
                                  INNER JOIN Provincias P ON P.idProvincia = D.Provincia
                                  INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
                                  INNER JOIN Barrios B ON D.Barrio = B.idBarrio
+                                 INNER JOIN Calles C ON D.Calle = C.idCalle
                                  WHERE D.idDomicilio = @idDomicilio";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);

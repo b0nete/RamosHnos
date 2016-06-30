@@ -189,7 +189,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 //Encabezado
                 string query = @"SELECT IR.cliente as idCliente, CONCAT(C.nombre, ' ', C.apellido) as clienteCompleto, IR.domicilio as idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' PISO: ',D.Piso,', DPTO: ',D.Dpto) as domicilioCompleto, idComprobante, soda as colSSaldo, (SELECT SUM(agua4 + agua10 + agua12 + agua20 + agua25)
-FROM itemsReparto) as colASaldo, cajon as colCSaldo, canasta as colCCSaldo, pie as colPSaldo, dispenser as colDSaldo, saldo as colSCCSaldo
+FROM itemsReparto WHERE reparto = @reparto) as colASaldo, cajon as colCSaldo, canasta as colCCSaldo, pie as colPSaldo, dispenser as colDSaldo, saldo as colSCCSaldo
                                  FROM itemsReparto IR
                                  INNER JOIN Clientes C ON C.idCliente = IR.cliente
                                  INNER JOIN Domicilios D ON D.idDomicilio = IR.domicilio
