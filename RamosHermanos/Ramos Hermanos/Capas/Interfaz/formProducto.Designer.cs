@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProducto));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabProducto = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.btnEstadisticas = new System.Windows.Forms.Button();
@@ -74,6 +74,13 @@
             this.button8 = new System.Windows.Forms.Button();
             this.txtStockMin = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvStock = new System.Windows.Forms.DataGridView();
+            this.colOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtStockMax = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtStockA = new System.Windows.Forms.TextBox();
@@ -129,19 +136,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dgvStock = new System.Windows.Forms.DataGridView();
-            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFechaComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabStock.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
             this.tabPrecio.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -153,8 +154,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabProducto
@@ -164,7 +163,7 @@
             this.tabProducto.Controls.Add(this.tabPrecio);
             this.tabProducto.Controls.Add(this.tabConformacion);
             this.tabProducto.Controls.Add(this.tabEstadisticas);
-            this.tabProducto.Location = new System.Drawing.Point(187, 61);
+            this.tabProducto.Location = new System.Drawing.Point(187, 36);
             this.tabProducto.Name = "tabProducto";
             this.tabProducto.SelectedIndex = 0;
             this.tabProducto.Size = new System.Drawing.Size(457, 488);
@@ -668,6 +667,68 @@
             this.label11.TabIndex = 123;
             this.label11.Text = "Stock Mínimo";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dgvStock);
+            this.groupBox3.Location = new System.Drawing.Point(0, 71);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(721, 382);
+            this.groupBox3.TabIndex = 122;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Movimientos";
+            // 
+            // dgvStock
+            // 
+            this.dgvStock.AllowUserToAddRows = false;
+            this.dgvStock.AllowUserToDeleteRows = false;
+            this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colOperacion,
+            this.colComprobante,
+            this.colFechaComprobante,
+            this.colCantidad,
+            this.colStock});
+            this.dgvStock.Location = new System.Drawing.Point(-46, 19);
+            this.dgvStock.Name = "dgvStock";
+            this.dgvStock.ReadOnly = true;
+            this.dgvStock.Size = new System.Drawing.Size(482, 202);
+            this.dgvStock.TabIndex = 0;
+            // 
+            // colOperacion
+            // 
+            this.colOperacion.DataPropertyName = "operacion";
+            this.colOperacion.HeaderText = "Operación";
+            this.colOperacion.Name = "colOperacion";
+            this.colOperacion.ReadOnly = true;
+            // 
+            // colComprobante
+            // 
+            this.colComprobante.DataPropertyName = "A";
+            this.colComprobante.HeaderText = "Nº Comprobante";
+            this.colComprobante.Name = "colComprobante";
+            this.colComprobante.ReadOnly = true;
+            // 
+            // colFechaComprobante
+            // 
+            this.colFechaComprobante.DataPropertyName = "B";
+            this.colFechaComprobante.HeaderText = "Fecha Comprobante";
+            this.colFechaComprobante.Name = "colFechaComprobante";
+            this.colFechaComprobante.ReadOnly = true;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.DataPropertyName = "C";
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
+            // 
+            // colStock
+            // 
+            this.colStock.DataPropertyName = "D";
+            this.colStock.HeaderText = "Stock";
+            this.colStock.Name = "colStock";
+            this.colStock.ReadOnly = true;
+            // 
             // txtStockMax
             // 
             this.txtStockMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -726,7 +787,7 @@
             this.tabPrecio.Controls.Add(this.groupBox4);
             this.tabPrecio.Location = new System.Drawing.Point(4, 22);
             this.tabPrecio.Name = "tabPrecio";
-            this.tabPrecio.Size = new System.Drawing.Size(463, 462);
+            this.tabPrecio.Size = new System.Drawing.Size(449, 462);
             this.tabPrecio.TabIndex = 2;
             this.tabPrecio.Text = "Precio";
             // 
@@ -829,7 +890,7 @@
             this.tabConformacion.Location = new System.Drawing.Point(4, 22);
             this.tabConformacion.Name = "tabConformacion";
             this.tabConformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConformacion.Size = new System.Drawing.Size(463, 462);
+            this.tabConformacion.Size = new System.Drawing.Size(449, 462);
             this.tabConformacion.TabIndex = 3;
             this.tabConformacion.Text = "Conformacion";
             // 
@@ -935,23 +996,23 @@
             this.tabEstadisticas.Location = new System.Drawing.Point(4, 22);
             this.tabEstadisticas.Name = "tabEstadisticas";
             this.tabEstadisticas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEstadisticas.Size = new System.Drawing.Size(463, 462);
+            this.tabEstadisticas.Size = new System.Drawing.Size(449, 462);
             this.tabEstadisticas.TabIndex = 4;
             this.tabEstadisticas.Text = "Estadisticas";
             // 
             // chartProductos
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartProductos.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartProductos.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartProductos.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartProductos.Legends.Add(legend2);
             this.chartProductos.Location = new System.Drawing.Point(378, 6);
             this.chartProductos.Name = "chartProductos";
             this.chartProductos.Size = new System.Drawing.Size(349, 287);
             this.chartProductos.TabIndex = 3;
             this.chartProductos.Text = "chart1";
-            title1.Name = "Title1";
-            this.chartProductos.Titles.Add(title1);
+            title2.Name = "Title1";
+            this.chartProductos.Titles.Add(title2);
             // 
             // groupBox7
             // 
@@ -1272,95 +1333,18 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Visible = false;
             // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(0, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(784, 30);
-            this.label7.TabIndex = 103;
-            this.label7.Text = "Productos";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // dgvStock
-            // 
-            this.dgvStock.AllowUserToAddRows = false;
-            this.dgvStock.AllowUserToDeleteRows = false;
-            this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colOperacion,
-            this.colComprobante,
-            this.colFechaComprobante,
-            this.colCantidad,
-            this.colStock});
-            this.dgvStock.Location = new System.Drawing.Point(-46, 19);
-            this.dgvStock.Name = "dgvStock";
-            this.dgvStock.ReadOnly = true;
-            this.dgvStock.Size = new System.Drawing.Size(482, 202);
-            this.dgvStock.TabIndex = 0;
-            // 
-            // colStock
-            // 
-            this.colStock.DataPropertyName = "D";
-            this.colStock.HeaderText = "Stock";
-            this.colStock.Name = "colStock";
-            this.colStock.ReadOnly = true;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.DataPropertyName = "C";
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            this.colCantidad.ReadOnly = true;
-            // 
-            // colFechaComprobante
-            // 
-            this.colFechaComprobante.DataPropertyName = "B";
-            this.colFechaComprobante.HeaderText = "Fecha Comprobante";
-            this.colFechaComprobante.Name = "colFechaComprobante";
-            this.colFechaComprobante.ReadOnly = true;
-            // 
-            // colComprobante
-            // 
-            this.colComprobante.DataPropertyName = "A";
-            this.colComprobante.HeaderText = "Nº Comprobante";
-            this.colComprobante.Name = "colComprobante";
-            this.colComprobante.ReadOnly = true;
-            // 
-            // colOperacion
-            // 
-            this.colOperacion.DataPropertyName = "operacion";
-            this.colOperacion.HeaderText = "Operación";
-            this.colOperacion.Name = "colOperacion";
-            this.colOperacion.ReadOnly = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dgvStock);
-            this.groupBox3.Location = new System.Drawing.Point(0, 71);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(721, 382);
-            this.groupBox3.TabIndex = 122;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Movimientos";
-            // 
             // formProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RamosHermanos.Properties.Resources.BackProducto;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.tabProducto);
             this.MaximizeBox = false;
             this.Name = "formProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Producto";
+            this.Text = "Registrar Producto";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formProducto_FormClosed);
             this.Load += new System.EventHandler(this.formProducto_Load);
             this.tabProducto.ResumeLayout(false);
@@ -1370,6 +1354,8 @@
             this.tabStock.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             this.tabPrecio.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -1384,8 +1370,6 @@
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
-            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1428,7 +1412,6 @@
         public System.Windows.Forms.TextBox txtCantidad;
         public System.Windows.Forms.TabControl tabProducto;
         public System.Windows.Forms.TabPage tabInformacion;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button4;
         public System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TabPage tabStock;

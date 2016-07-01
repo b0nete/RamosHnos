@@ -73,7 +73,6 @@
             this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.tabPedido = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
             this.tabProveedor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -92,7 +91,7 @@
             this.tabProveedor.Controls.Add(this.tabListado);
             this.tabProveedor.Controls.Add(this.tabMovimientos);
             this.tabProveedor.Controls.Add(this.tabPedido);
-            this.tabProveedor.Location = new System.Drawing.Point(156, 89);
+            this.tabProveedor.Location = new System.Drawing.Point(156, 78);
             this.tabProveedor.Name = "tabProveedor";
             this.tabProveedor.SelectedIndex = 0;
             this.tabProveedor.Size = new System.Drawing.Size(521, 398);
@@ -584,31 +583,17 @@
             this.tabPedido.Text = "Pedido";
             this.tabPedido.UseVisualStyleBackColor = true;
             // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(784, 30);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Proveedores";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // formProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RamosHermanos.Properties.Resources.fondoproveedor;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.tabProveedor);
             this.DoubleBuffered = true;
             this.Name = "formProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = " ";
+            this.Text = " Registrar Proveedor";
             this.Load += new System.EventHandler(this.formProveedor_Load);
             this.tabProveedor.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
@@ -667,7 +652,6 @@
         public System.Windows.Forms.TextBox txtEmail;
         public System.Windows.Forms.TextBox txtTel;
         public System.Windows.Forms.TextBox txtDomicilio;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnCompra;
     }
 }

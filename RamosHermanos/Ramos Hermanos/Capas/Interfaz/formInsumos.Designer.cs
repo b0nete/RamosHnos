@@ -100,7 +100,6 @@
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -119,7 +118,7 @@
             this.tabMain.Controls.Add(this.tabInformacion);
             this.tabMain.Controls.Add(this.tabStock);
             this.tabMain.Controls.Add(this.tabPrecio);
-            this.tabMain.Location = new System.Drawing.Point(162, 90);
+            this.tabMain.Location = new System.Drawing.Point(162, 76);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
             this.tabMain.Size = new System.Drawing.Size(480, 397);
@@ -924,30 +923,17 @@
             this.label23.TabIndex = 84;
             this.label23.Text = "*";
             // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(784, 30);
-            this.label4.TabIndex = 115;
-            this.label4.Text = "Registrar Insumos";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // formInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RamosHermanos.Properties.Resources.BackInsumos1;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.tabMain);
             this.MaximizeBox = false;
             this.Name = "formInsumos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registrar Insumos";
             this.Load += new System.EventHandler(this.formInsumos_Load);
             this.tabMain.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
@@ -1035,7 +1021,6 @@
         private System.Windows.Forms.Button button5;
         public System.Windows.Forms.DataGridView dgvStock;
         private System.Windows.Forms.Button btnEstadisticas;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOperacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn colComprobante;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaComprobante;
