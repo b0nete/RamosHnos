@@ -83,6 +83,16 @@ namespace RamosHermanos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BackInsumos1 {
+            get {
+                object obj = ResourceManager.GetObject("BackInsumos1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BackProducto {
             get {
                 object obj = ResourceManager.GetObject("BackProducto", resourceCulture);
@@ -116,6 +126,56 @@ namespace RamosHermanos.Properties {
         internal static System.Drawing.Bitmap fondoproveedor {
             get {
                 object obj = ResourceManager.GetObject("fondoproveedor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grafico_barras {
+            get {
+                object obj = ResourceManager.GetObject("grafico-barras", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_stock {
+            get {
+                object obj = ResourceManager.GetObject("img-stock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap produccion {
+            get {
+                object obj = ResourceManager.GetObject("produccion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap produccion1 {
+            get {
+                object obj = ResourceManager.GetObject("produccion1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap produccionback {
+            get {
+                object obj = ResourceManager.GetObject("produccionback", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
