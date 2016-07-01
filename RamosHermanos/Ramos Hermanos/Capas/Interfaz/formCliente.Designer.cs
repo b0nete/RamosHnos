@@ -2641,7 +2641,9 @@
             this.ClientSize = new System.Drawing.Size(784, 594);
             this.Controls.Add(this.label64);
             this.Controls.Add(this.tabMain);
+            this.MaximizeBox = false;
             this.Name = "formCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.formCliente_Load);
             this.tabMovimientos.ResumeLayout(false);

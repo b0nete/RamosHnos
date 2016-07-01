@@ -35,17 +35,6 @@
             this.tabProducto = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.btnEstadisticas = new System.Windows.Forms.Button();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.cbSubRubro2 = new System.Windows.Forms.ComboBox();
-            this.lblSubRubro2 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.cbSubRubro1 = new System.Windows.Forms.ComboBox();
-            this.lblSubRubro1 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.cbRubro = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvClean = new System.Windows.Forms.Button();
@@ -108,15 +97,16 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.tabConformacion = new System.Windows.Forms.TabPage();
-            this.btnSaveConformacion = new System.Windows.Forms.Button();
-            this.btnDelInsumo = new System.Windows.Forms.Button();
-            this.btnAddInsumo = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dgvConformacion = new System.Windows.Forms.DataGridView();
             this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidadm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelInsumo = new System.Windows.Forms.Button();
+            this.btnAddInsumo = new System.Windows.Forms.Button();
+            this.btnSaveConformacion = new System.Windows.Forms.Button();
             this.tabEstadisticas = new System.Windows.Forms.TabPage();
             this.chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -135,11 +125,20 @@
             this.rbAnual = new System.Windows.Forms.RadioButton();
             this.rbDiario = new System.Windows.Forms.RadioButton();
             this.rbMensual = new System.Windows.Forms.RadioButton();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cbSubRubro2 = new System.Windows.Forms.ComboBox();
+            this.lblSubRubro2 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.cbSubRubro1 = new System.Windows.Forms.ComboBox();
+            this.lblSubRubro1 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.cbRubro = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabStock.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -150,11 +149,12 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrecios)).BeginInit();
             this.tabConformacion.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConformacion)).BeginInit();
             this.tabEstadisticas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).BeginInit();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabProducto
@@ -167,7 +167,7 @@
             this.tabProducto.Location = new System.Drawing.Point(187, 61);
             this.tabProducto.Name = "tabProducto";
             this.tabProducto.SelectedIndex = 0;
-            this.tabProducto.Size = new System.Drawing.Size(438, 453);
+            this.tabProducto.Size = new System.Drawing.Size(457, 453);
             this.tabProducto.TabIndex = 0;
             // 
             // tabInformacion
@@ -175,7 +175,6 @@
             this.tabInformacion.BackColor = System.Drawing.SystemColors.Control;
             this.tabInformacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tabInformacion.Controls.Add(this.btnEstadisticas);
-            this.tabInformacion.Controls.Add(this.groupBox6);
             this.tabInformacion.Controls.Add(this.button4);
             this.tabInformacion.Controls.Add(this.button1);
             this.tabInformacion.Controls.Add(this.dgvClean);
@@ -184,7 +183,7 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(430, 427);
+            this.tabInformacion.Size = new System.Drawing.Size(449, 427);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Información";
             // 
@@ -193,158 +192,19 @@
             this.btnEstadisticas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.BackgroundImage")));
             this.btnEstadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.Location = new System.Drawing.Point(257, 395);
+            this.btnEstadisticas.Location = new System.Drawing.Point(279, 393);
             this.btnEstadisticas.Name = "btnEstadisticas";
             this.btnEstadisticas.Size = new System.Drawing.Size(28, 28);
             this.btnEstadisticas.TabIndex = 115;
             this.btnEstadisticas.UseVisualStyleBackColor = true;
             this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
             // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.pictureBox1);
-            this.groupBox6.Controls.Add(this.cbSubRubro2);
-            this.groupBox6.Controls.Add(this.lblSubRubro2);
-            this.groupBox6.Controls.Add(this.button7);
-            this.groupBox6.Controls.Add(this.cbSubRubro1);
-            this.groupBox6.Controls.Add(this.lblSubRubro1);
-            this.groupBox6.Controls.Add(this.button6);
-            this.groupBox6.Controls.Add(this.cbRubro);
-            this.groupBox6.Controls.Add(this.label4);
-            this.groupBox6.Controls.Add(this.label15);
-            this.groupBox6.Controls.Add(this.button3);
-            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(6, 278);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(413, 111);
-            this.groupBox6.TabIndex = 114;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Rubro";
-            this.groupBox6.Visible = false;
-            // 
-            // cbSubRubro2
-            // 
-            this.cbSubRubro2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSubRubro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbSubRubro2.FormattingEnabled = true;
-            this.cbSubRubro2.Location = new System.Drawing.Point(87, 78);
-            this.cbSubRubro2.Name = "cbSubRubro2";
-            this.cbSubRubro2.Size = new System.Drawing.Size(173, 21);
-            this.cbSubRubro2.TabIndex = 94;
-            this.cbSubRubro2.Visible = false;
-            // 
-            // lblSubRubro2
-            // 
-            this.lblSubRubro2.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.lblSubRubro2.AutoSize = true;
-            this.lblSubRubro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblSubRubro2.Location = new System.Drawing.Point(14, 82);
-            this.lblSubRubro2.Name = "lblSubRubro2";
-            this.lblSubRubro2.Size = new System.Drawing.Size(67, 13);
-            this.lblSubRubro2.TabIndex = 92;
-            this.lblSubRubro2.Text = "Sub Rubro 2";
-            // 
-            // button7
-            // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(266, 75);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(28, 28);
-            this.button7.TabIndex = 95;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Visible = false;
-            // 
-            // cbSubRubro1
-            // 
-            this.cbSubRubro1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSubRubro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbSubRubro1.FormattingEnabled = true;
-            this.cbSubRubro1.Location = new System.Drawing.Point(87, 51);
-            this.cbSubRubro1.Name = "cbSubRubro1";
-            this.cbSubRubro1.Size = new System.Drawing.Size(173, 21);
-            this.cbSubRubro1.TabIndex = 90;
-            this.cbSubRubro1.Visible = false;
-            this.cbSubRubro1.SelectionChangeCommitted += new System.EventHandler(this.cbSubRubro1_SelectionChangeCommitted);
-            // 
-            // lblSubRubro1
-            // 
-            this.lblSubRubro1.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.lblSubRubro1.AutoSize = true;
-            this.lblSubRubro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblSubRubro1.Location = new System.Drawing.Point(14, 55);
-            this.lblSubRubro1.Name = "lblSubRubro1";
-            this.lblSubRubro1.Size = new System.Drawing.Size(67, 13);
-            this.lblSubRubro1.TabIndex = 88;
-            this.lblSubRubro1.Text = "Sub Rubro 1";
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(266, 48);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(28, 28);
-            this.button6.TabIndex = 91;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Visible = false;
-            // 
-            // cbRubro
-            // 
-            this.cbRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbRubro.FormattingEnabled = true;
-            this.cbRubro.Location = new System.Drawing.Point(87, 25);
-            this.cbRubro.Name = "cbRubro";
-            this.cbRubro.Size = new System.Drawing.Size(173, 21);
-            this.cbRubro.TabIndex = 54;
-            this.cbRubro.SelectedIndexChanged += new System.EventHandler(this.cbRubro_SelectedIndexChanged);
-            this.cbRubro.SelectionChangeCommitted += new System.EventHandler(this.cbRubro_SelectionChangeCommitted);
-            // 
-            // label4
-            // 
-            this.label4.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(45, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Rubro";
-            // 
-            // label15
-            // 
-            this.label15.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(37, 27);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(11, 13);
-            this.label15.TabIndex = 44;
-            this.label15.Text = "*";
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(266, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 87;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
-            // 
             // button4
             // 
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(291, 395);
+            this.button4.Location = new System.Drawing.Point(313, 393);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 113;
@@ -356,7 +216,7 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(325, 395);
+            this.button1.Location = new System.Drawing.Point(347, 393);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 28);
             this.button1.TabIndex = 112;
@@ -368,7 +228,7 @@
             this.dgvClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("dgvClean.BackgroundImage")));
             this.dgvClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.dgvClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvClean.Location = new System.Drawing.Point(359, 395);
+            this.dgvClean.Location = new System.Drawing.Point(381, 393);
             this.dgvClean.Name = "dgvClean";
             this.dgvClean.Size = new System.Drawing.Size(28, 28);
             this.dgvClean.TabIndex = 111;
@@ -407,7 +267,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(415, 266);
+            this.groupBox1.Size = new System.Drawing.Size(437, 383);
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Producto";
@@ -418,7 +278,7 @@
             this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
             this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSearch.Location = new System.Drawing.Point(349, 92);
+            this.btnSearch.Location = new System.Drawing.Point(349, 161);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(27, 28);
             this.btnSearch.TabIndex = 119;
@@ -436,7 +296,7 @@
             // txtCantidad
             // 
             this.txtCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtCantidad.Location = new System.Drawing.Point(85, 236);
+            this.txtCantidad.Location = new System.Drawing.Point(85, 272);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(117, 20);
             this.txtCantidad.TabIndex = 118;
@@ -449,7 +309,7 @@
             this.label25.BackColor = System.Drawing.Color.Transparent;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label25.ForeColor = System.Drawing.Color.Red;
-            this.label25.Location = new System.Drawing.Point(25, 238);
+            this.label25.Location = new System.Drawing.Point(25, 274);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(11, 13);
             this.label25.TabIndex = 117;
@@ -460,7 +320,7 @@
             this.label26.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label26.Location = new System.Drawing.Point(33, 239);
+            this.label26.Location = new System.Drawing.Point(33, 275);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(46, 13);
             this.label26.TabIndex = 116;
@@ -469,7 +329,7 @@
             // txtProducto
             // 
             this.txtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtProducto.Location = new System.Drawing.Point(85, 98);
+            this.txtProducto.Location = new System.Drawing.Point(84, 134);
             this.txtProducto.Name = "txtProducto";
             this.txtProducto.Size = new System.Drawing.Size(261, 20);
             this.txtProducto.TabIndex = 60;
@@ -479,7 +339,7 @@
             this.label6.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label6.Location = new System.Drawing.Point(29, 101);
+            this.label6.Location = new System.Drawing.Point(28, 137);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 13);
             this.label6.TabIndex = 59;
@@ -490,7 +350,7 @@
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(349, 233);
+            this.button5.Location = new System.Drawing.Point(159, 301);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(28, 28);
             this.button5.TabIndex = 112;
@@ -503,7 +363,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(21, 98);
+            this.label5.Location = new System.Drawing.Point(20, 134);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(11, 13);
             this.label5.TabIndex = 61;
@@ -516,7 +376,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(219, 239);
+            this.label10.Location = new System.Drawing.Point(29, 307);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(11, 13);
             this.label10.TabIndex = 111;
@@ -527,7 +387,7 @@
             this.cbMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbMedida.FormattingEnabled = true;
-            this.cbMedida.Location = new System.Drawing.Point(274, 236);
+            this.cbMedida.Location = new System.Drawing.Point(84, 304);
             this.cbMedida.Name = "cbMedida";
             this.cbMedida.Size = new System.Drawing.Size(71, 21);
             this.cbMedida.TabIndex = 110;
@@ -538,7 +398,7 @@
             this.label3.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(226, 239);
+            this.label3.Location = new System.Drawing.Point(36, 307);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 109;
@@ -549,7 +409,7 @@
             this.dtpFechaAlta.Enabled = false;
             this.dtpFechaAlta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaAlta.Location = new System.Drawing.Point(85, 71);
+            this.dtpFechaAlta.Location = new System.Drawing.Point(84, 97);
             this.dtpFechaAlta.Name = "dtpFechaAlta";
             this.dtpFechaAlta.Size = new System.Drawing.Size(261, 20);
             this.dtpFechaAlta.TabIndex = 105;
@@ -558,7 +418,7 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label22.Location = new System.Drawing.Point(21, 74);
+            this.label22.Location = new System.Drawing.Point(20, 100);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(58, 13);
             this.label22.TabIndex = 104;
@@ -569,7 +429,7 @@
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(349, 147);
+            this.button2.Location = new System.Drawing.Point(349, 199);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(28, 28);
             this.button2.TabIndex = 103;
@@ -581,7 +441,7 @@
             this.cbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbMarca.FormattingEnabled = true;
-            this.cbMarca.Location = new System.Drawing.Point(85, 151);
+            this.cbMarca.Location = new System.Drawing.Point(85, 171);
             this.cbMarca.Name = "cbMarca";
             this.cbMarca.Size = new System.Drawing.Size(261, 21);
             this.cbMarca.TabIndex = 102;
@@ -594,7 +454,7 @@
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label20.ForeColor = System.Drawing.Color.Red;
-            this.label20.Location = new System.Drawing.Point(36, 153);
+            this.label20.Location = new System.Drawing.Point(36, 173);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(11, 13);
             this.label20.TabIndex = 101;
@@ -605,7 +465,7 @@
             this.label21.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label21.Location = new System.Drawing.Point(44, 154);
+            this.label21.Location = new System.Drawing.Point(44, 174);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(37, 13);
             this.label21.TabIndex = 100;
@@ -615,7 +475,7 @@
             // 
             this.txtIDProd.Enabled = false;
             this.txtIDProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtIDProd.Location = new System.Drawing.Point(85, 45);
+            this.txtIDProd.Location = new System.Drawing.Point(85, 58);
             this.txtIDProd.Name = "txtIDProd";
             this.txtIDProd.Size = new System.Drawing.Size(261, 20);
             this.txtIDProd.TabIndex = 96;
@@ -624,7 +484,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label17.Location = new System.Drawing.Point(13, 48);
+            this.label17.Location = new System.Drawing.Point(13, 61);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(65, 13);
             this.label17.TabIndex = 95;
@@ -637,7 +497,7 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label18.ForeColor = System.Drawing.Color.Red;
-            this.label18.Location = new System.Drawing.Point(9, 180);
+            this.label18.Location = new System.Drawing.Point(6, 238);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(11, 13);
             this.label18.TabIndex = 86;
@@ -695,7 +555,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtDescripcion.Location = new System.Drawing.Point(85, 177);
+            this.txtDescripcion.Location = new System.Drawing.Point(85, 205);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(261, 53);
@@ -705,7 +565,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(16, 180);
+            this.label2.Location = new System.Drawing.Point(16, 208);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 28;
@@ -716,7 +576,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(393, 395);
+            this.btnSave.Location = new System.Drawing.Point(415, 393);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 74;
@@ -725,13 +585,13 @@
             // 
             // tabStock
             // 
+            this.tabStock.BackColor = System.Drawing.SystemColors.Control;
             this.tabStock.Controls.Add(this.groupBox2);
             this.tabStock.Location = new System.Drawing.Point(4, 22);
             this.tabStock.Name = "tabStock";
-            this.tabStock.Size = new System.Drawing.Size(430, 427);
+            this.tabStock.Size = new System.Drawing.Size(449, 427);
             this.tabStock.TabIndex = 1;
             this.tabStock.Text = "Stock";
-            this.tabStock.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -829,7 +689,7 @@
             this.colFechaComprobante,
             this.colCantidad,
             this.colStock});
-            this.dgvStock.Location = new System.Drawing.Point(-48, 19);
+            this.dgvStock.Location = new System.Drawing.Point(-42, 19);
             this.dgvStock.Name = "dgvStock";
             this.dgvStock.ReadOnly = true;
             this.dgvStock.Size = new System.Drawing.Size(482, 202);
@@ -924,13 +784,13 @@
             // 
             // tabPrecio
             // 
+            this.tabPrecio.BackColor = System.Drawing.SystemColors.Control;
             this.tabPrecio.Controls.Add(this.groupBox4);
             this.tabPrecio.Location = new System.Drawing.Point(4, 22);
             this.tabPrecio.Name = "tabPrecio";
-            this.tabPrecio.Size = new System.Drawing.Size(430, 427);
+            this.tabPrecio.Size = new System.Drawing.Size(449, 427);
             this.tabPrecio.TabIndex = 2;
             this.tabPrecio.Text = "Precio";
-            this.tabPrecio.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -1025,52 +885,28 @@
             // 
             // tabConformacion
             // 
+            this.tabConformacion.BackColor = System.Drawing.SystemColors.Control;
+            this.tabConformacion.Controls.Add(this.groupBox8);
             this.tabConformacion.Controls.Add(this.btnSaveConformacion);
-            this.tabConformacion.Controls.Add(this.btnDelInsumo);
-            this.tabConformacion.Controls.Add(this.btnAddInsumo);
-            this.tabConformacion.Controls.Add(this.dgvConformacion);
             this.tabConformacion.Location = new System.Drawing.Point(4, 22);
             this.tabConformacion.Name = "tabConformacion";
             this.tabConformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConformacion.Size = new System.Drawing.Size(430, 427);
+            this.tabConformacion.Size = new System.Drawing.Size(449, 427);
             this.tabConformacion.TabIndex = 3;
             this.tabConformacion.Text = "Conformacion";
-            this.tabConformacion.UseVisualStyleBackColor = true;
             // 
-            // btnSaveConformacion
+            // groupBox8
             // 
-            this.btnSaveConformacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveConformacion.BackgroundImage")));
-            this.btnSaveConformacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveConformacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveConformacion.Location = new System.Drawing.Point(699, 278);
-            this.btnSaveConformacion.Name = "btnSaveConformacion";
-            this.btnSaveConformacion.Size = new System.Drawing.Size(28, 28);
-            this.btnSaveConformacion.TabIndex = 96;
-            this.btnSaveConformacion.UseVisualStyleBackColor = true;
-            this.btnSaveConformacion.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // btnDelInsumo
-            // 
-            this.btnDelInsumo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelInsumo.BackgroundImage")));
-            this.btnDelInsumo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDelInsumo.Location = new System.Drawing.Point(40, 278);
-            this.btnDelInsumo.Name = "btnDelInsumo";
-            this.btnDelInsumo.Size = new System.Drawing.Size(28, 28);
-            this.btnDelInsumo.TabIndex = 95;
-            this.btnDelInsumo.UseVisualStyleBackColor = true;
-            // 
-            // btnAddInsumo
-            // 
-            this.btnAddInsumo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddInsumo.BackgroundImage")));
-            this.btnAddInsumo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnAddInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAddInsumo.Location = new System.Drawing.Point(6, 278);
-            this.btnAddInsumo.Name = "btnAddInsumo";
-            this.btnAddInsumo.Size = new System.Drawing.Size(28, 28);
-            this.btnAddInsumo.TabIndex = 94;
-            this.btnAddInsumo.UseVisualStyleBackColor = true;
-            this.btnAddInsumo.Click += new System.EventHandler(this.btnAddLu_Click);
+            this.groupBox8.Controls.Add(this.dgvConformacion);
+            this.groupBox8.Controls.Add(this.btnDelInsumo);
+            this.groupBox8.Controls.Add(this.btnAddInsumo);
+            this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox8.Location = new System.Drawing.Point(0, 6);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(443, 336);
+            this.groupBox8.TabIndex = 97;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Conformación";
             // 
             // dgvConformacion
             // 
@@ -1083,9 +919,9 @@
             this.colIDMedida,
             this.colMedida,
             this.colCantidadm});
-            this.dgvConformacion.Location = new System.Drawing.Point(6, 6);
+            this.dgvConformacion.Location = new System.Drawing.Point(3, 19);
             this.dgvConformacion.Name = "dgvConformacion";
-            this.dgvConformacion.Size = new System.Drawing.Size(418, 266);
+            this.dgvConformacion.Size = new System.Drawing.Size(431, 266);
             this.dgvConformacion.TabIndex = 0;
             // 
             // colIDInsumo
@@ -1118,6 +954,41 @@
             this.colCantidadm.HeaderText = "Cantidad";
             this.colCantidadm.Name = "colCantidadm";
             // 
+            // btnDelInsumo
+            // 
+            this.btnDelInsumo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelInsumo.BackgroundImage")));
+            this.btnDelInsumo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDelInsumo.Location = new System.Drawing.Point(406, 291);
+            this.btnDelInsumo.Name = "btnDelInsumo";
+            this.btnDelInsumo.Size = new System.Drawing.Size(28, 28);
+            this.btnDelInsumo.TabIndex = 95;
+            this.btnDelInsumo.UseVisualStyleBackColor = true;
+            // 
+            // btnAddInsumo
+            // 
+            this.btnAddInsumo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddInsumo.BackgroundImage")));
+            this.btnAddInsumo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAddInsumo.Location = new System.Drawing.Point(372, 291);
+            this.btnAddInsumo.Name = "btnAddInsumo";
+            this.btnAddInsumo.Size = new System.Drawing.Size(28, 28);
+            this.btnAddInsumo.TabIndex = 94;
+            this.btnAddInsumo.UseVisualStyleBackColor = true;
+            this.btnAddInsumo.Click += new System.EventHandler(this.btnAddLu_Click);
+            // 
+            // btnSaveConformacion
+            // 
+            this.btnSaveConformacion.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveConformacion.BackgroundImage")));
+            this.btnSaveConformacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveConformacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveConformacion.Location = new System.Drawing.Point(699, 278);
+            this.btnSaveConformacion.Name = "btnSaveConformacion";
+            this.btnSaveConformacion.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveConformacion.TabIndex = 96;
+            this.btnSaveConformacion.UseVisualStyleBackColor = true;
+            this.btnSaveConformacion.Click += new System.EventHandler(this.button10_Click);
+            // 
             // tabEstadisticas
             // 
             this.tabEstadisticas.BackColor = System.Drawing.SystemColors.Control;
@@ -1126,7 +997,7 @@
             this.tabEstadisticas.Location = new System.Drawing.Point(4, 22);
             this.tabEstadisticas.Name = "tabEstadisticas";
             this.tabEstadisticas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEstadisticas.Size = new System.Drawing.Size(430, 427);
+            this.tabEstadisticas.Size = new System.Drawing.Size(449, 427);
             this.tabEstadisticas.TabIndex = 4;
             this.tabEstadisticas.Text = "Estadisticas";
             // 
@@ -1325,6 +1196,144 @@
             this.rbMensual.UseVisualStyleBackColor = true;
             this.rbMensual.CheckedChanged += new System.EventHandler(this.rbMensual_CheckedChanged);
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.cbSubRubro2);
+            this.groupBox6.Controls.Add(this.lblSubRubro2);
+            this.groupBox6.Controls.Add(this.button7);
+            this.groupBox6.Controls.Add(this.cbSubRubro1);
+            this.groupBox6.Controls.Add(this.lblSubRubro1);
+            this.groupBox6.Controls.Add(this.button6);
+            this.groupBox6.Controls.Add(this.cbRubro);
+            this.groupBox6.Controls.Add(this.label4);
+            this.groupBox6.Controls.Add(this.label15);
+            this.groupBox6.Controls.Add(this.button3);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(650, 219);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(413, 111);
+            this.groupBox6.TabIndex = 114;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Rubro";
+            this.groupBox6.Visible = false;
+            // 
+            // cbSubRubro2
+            // 
+            this.cbSubRubro2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSubRubro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbSubRubro2.FormattingEnabled = true;
+            this.cbSubRubro2.Location = new System.Drawing.Point(87, 78);
+            this.cbSubRubro2.Name = "cbSubRubro2";
+            this.cbSubRubro2.Size = new System.Drawing.Size(173, 21);
+            this.cbSubRubro2.TabIndex = 94;
+            this.cbSubRubro2.Visible = false;
+            // 
+            // lblSubRubro2
+            // 
+            this.lblSubRubro2.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.lblSubRubro2.AutoSize = true;
+            this.lblSubRubro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblSubRubro2.Location = new System.Drawing.Point(14, 82);
+            this.lblSubRubro2.Name = "lblSubRubro2";
+            this.lblSubRubro2.Size = new System.Drawing.Size(67, 13);
+            this.lblSubRubro2.TabIndex = 92;
+            this.lblSubRubro2.Text = "Sub Rubro 2";
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(266, 75);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(28, 28);
+            this.button7.TabIndex = 95;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Visible = false;
+            // 
+            // cbSubRubro1
+            // 
+            this.cbSubRubro1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSubRubro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbSubRubro1.FormattingEnabled = true;
+            this.cbSubRubro1.Location = new System.Drawing.Point(87, 51);
+            this.cbSubRubro1.Name = "cbSubRubro1";
+            this.cbSubRubro1.Size = new System.Drawing.Size(173, 21);
+            this.cbSubRubro1.TabIndex = 90;
+            this.cbSubRubro1.Visible = false;
+            this.cbSubRubro1.SelectionChangeCommitted += new System.EventHandler(this.cbSubRubro1_SelectionChangeCommitted);
+            // 
+            // lblSubRubro1
+            // 
+            this.lblSubRubro1.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.lblSubRubro1.AutoSize = true;
+            this.lblSubRubro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblSubRubro1.Location = new System.Drawing.Point(14, 55);
+            this.lblSubRubro1.Name = "lblSubRubro1";
+            this.lblSubRubro1.Size = new System.Drawing.Size(67, 13);
+            this.lblSubRubro1.TabIndex = 88;
+            this.lblSubRubro1.Text = "Sub Rubro 1";
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(266, 48);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(28, 28);
+            this.button6.TabIndex = 91;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Visible = false;
+            // 
+            // cbRubro
+            // 
+            this.cbRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbRubro.FormattingEnabled = true;
+            this.cbRubro.Location = new System.Drawing.Point(87, 25);
+            this.cbRubro.Name = "cbRubro";
+            this.cbRubro.Size = new System.Drawing.Size(173, 21);
+            this.cbRubro.TabIndex = 54;
+            this.cbRubro.SelectedIndexChanged += new System.EventHandler(this.cbRubro_SelectedIndexChanged);
+            this.cbRubro.SelectionChangeCommitted += new System.EventHandler(this.cbRubro_SelectionChangeCommitted);
+            // 
+            // label4
+            // 
+            this.label4.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.Location = new System.Drawing.Point(45, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Rubro";
+            // 
+            // label15
+            // 
+            this.label15.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(37, 27);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(11, 13);
+            this.label15.TabIndex = 44;
+            this.label15.Text = "*";
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(266, 20);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(28, 28);
+            this.button3.TabIndex = 87;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
+            // 
             // label7
             // 
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -1339,15 +1348,6 @@
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::RamosHermanos.Properties.Resources.Visita1;
-            this.pictureBox1.Location = new System.Drawing.Point(133, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(146, 91);
-            this.pictureBox1.TabIndex = 96;
-            this.pictureBox1.TabStop = false;
-            // 
             // formProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1355,15 +1355,16 @@
             this.BackgroundImage = global::RamosHermanos.Properties.Resources.BackProducto;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.tabProducto);
+            this.MaximizeBox = false;
             this.Name = "formProducto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Producto";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formProducto_FormClosed);
             this.Load += new System.EventHandler(this.formProducto_Load);
             this.tabProducto.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabStock.ResumeLayout(false);
@@ -1377,12 +1378,14 @@
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrecios)).EndInit();
             this.tabConformacion.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConformacion)).EndInit();
             this.tabEstadisticas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1493,6 +1496,6 @@
         private System.Windows.Forms.DateTimePicker dtpAnualHasta;
         private System.Windows.Forms.DateTimePicker dtpAnualDesde;
         private System.Windows.Forms.Button btnEstadisticas;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox8;
     }
 }

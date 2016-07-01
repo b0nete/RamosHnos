@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formInsumos));
+            this.tabMain = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -69,7 +71,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtRubro = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.tabMain = new System.Windows.Forms.TabControl();
             this.tabStock = new System.Windows.Forms.TabPage();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -102,10 +103,9 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
+            this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabMain.SuspendLayout();
             this.tabStock.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -116,21 +116,43 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrecios)).BeginInit();
             this.SuspendLayout();
             // 
+            // tabMain
+            // 
+            this.tabMain.Controls.Add(this.tabInformacion);
+            this.tabMain.Controls.Add(this.tabStock);
+            this.tabMain.Controls.Add(this.tabPrecio);
+            this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabMain.Location = new System.Drawing.Point(0, 0);
+            this.tabMain.Name = "tabMain";
+            this.tabMain.SelectedIndex = 0;
+            this.tabMain.Size = new System.Drawing.Size(784, 561);
+            this.tabMain.TabIndex = 0;
+            // 
             // tabInformacion
             // 
             this.tabInformacion.BackColor = System.Drawing.SystemColors.Control;
-            this.tabInformacion.Controls.Add(this.btnEstadisticas);
+            this.tabInformacion.BackgroundImage = global::RamosHermanos.Properties.Resources.BackInsumos;
             this.tabInformacion.Controls.Add(this.label4);
-            this.tabInformacion.Controls.Add(this.button11);
             this.tabInformacion.Controls.Add(this.groupBox1);
-            this.tabInformacion.Controls.Add(this.button1);
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(474, 370);
+            this.tabInformacion.Size = new System.Drawing.Size(776, 535);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.Click += new System.EventHandler(this.tabInformacion_Click);
+            // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.BackgroundImage")));
+            this.btnEstadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas.Location = new System.Drawing.Point(357, 329);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(28, 28);
+            this.btnEstadisticas.TabIndex = 116;
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
             // 
             // label4
             // 
@@ -140,7 +162,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(3, 3);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(468, 30);
+            this.label4.Size = new System.Drawing.Size(770, 30);
             this.label4.TabIndex = 114;
             this.label4.Text = "Insumos";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -150,7 +172,7 @@
             this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button11.Location = new System.Drawing.Point(438, 337);
+            this.button11.Location = new System.Drawing.Point(425, 329);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(28, 28);
             this.button11.TabIndex = 113;
@@ -159,9 +181,12 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEstadisticas);
             this.groupBox1.Controls.Add(this.txtInsumo);
             this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.button11);
             this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.labelInsumo);
             this.groupBox1.Controls.Add(this.cbRubro);
             this.groupBox1.Controls.Add(this.lblEstado);
@@ -194,12 +219,13 @@
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtRubro);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 36);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(151, 84);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(465, 295);
+            this.groupBox1.Size = new System.Drawing.Size(465, 363);
             this.groupBox1.TabIndex = 111;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Información Insumos";
             // 
             // txtInsumo
             // 
@@ -331,7 +357,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(269, 265);
+            this.label10.Location = new System.Drawing.Point(30, 289);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(11, 13);
             this.label10.TabIndex = 111;
@@ -341,7 +367,7 @@
             // 
             this.cbMedida.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbMedida.FormattingEnabled = true;
-            this.cbMedida.Location = new System.Drawing.Point(323, 262);
+            this.cbMedida.Location = new System.Drawing.Point(87, 289);
             this.cbMedida.Name = "cbMedida";
             this.cbMedida.Size = new System.Drawing.Size(98, 21);
             this.cbMedida.TabIndex = 110;
@@ -351,7 +377,7 @@
             this.label3.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label3.Location = new System.Drawing.Point(276, 265);
+            this.label3.Location = new System.Drawing.Point(40, 292);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 109;
@@ -598,36 +624,24 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(404, 337);
+            this.button1.Location = new System.Drawing.Point(391, 329);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 28);
             this.button1.TabIndex = 113;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tabMain
-            // 
-            this.tabMain.Controls.Add(this.tabInformacion);
-            this.tabMain.Controls.Add(this.tabStock);
-            this.tabMain.Controls.Add(this.tabPrecio);
-            this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabMain.Location = new System.Drawing.Point(0, 0);
-            this.tabMain.Name = "tabMain";
-            this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(482, 396);
-            this.tabMain.TabIndex = 0;
-            // 
             // tabStock
             // 
+            this.tabStock.BackColor = System.Drawing.SystemColors.Control;
             this.tabStock.Controls.Add(this.label16);
             this.tabStock.Controls.Add(this.groupBox2);
             this.tabStock.Location = new System.Drawing.Point(4, 22);
             this.tabStock.Name = "tabStock";
             this.tabStock.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStock.Size = new System.Drawing.Size(474, 370);
+            this.tabStock.Size = new System.Drawing.Size(776, 535);
             this.tabStock.TabIndex = 1;
             this.tabStock.Text = "Stock";
-            this.tabStock.UseVisualStyleBackColor = true;
             // 
             // label16
             // 
@@ -637,7 +651,7 @@
             this.label16.ForeColor = System.Drawing.Color.White;
             this.label16.Location = new System.Drawing.Point(3, 3);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(468, 39);
+            this.label16.Size = new System.Drawing.Size(770, 39);
             this.label16.TabIndex = 115;
             this.label16.Text = "Stock";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -841,15 +855,15 @@
             // 
             // tabPrecio
             // 
+            this.tabPrecio.BackColor = System.Drawing.SystemColors.Control;
             this.tabPrecio.Controls.Add(this.groupBox4);
             this.tabPrecio.Controls.Add(this.label18);
             this.tabPrecio.Location = new System.Drawing.Point(4, 22);
             this.tabPrecio.Name = "tabPrecio";
             this.tabPrecio.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPrecio.Size = new System.Drawing.Size(474, 370);
+            this.tabPrecio.Size = new System.Drawing.Size(776, 535);
             this.tabPrecio.TabIndex = 2;
             this.tabPrecio.Text = "Precio";
-            this.tabPrecio.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -950,36 +964,25 @@
             this.label18.ForeColor = System.Drawing.Color.White;
             this.label18.Location = new System.Drawing.Point(3, 3);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(468, 39);
+            this.label18.Size = new System.Drawing.Size(770, 39);
             this.label18.TabIndex = 115;
             this.label18.Text = "Precio";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.BackgroundImage")));
-            this.btnEstadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.Location = new System.Drawing.Point(370, 337);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(28, 28);
-            this.btnEstadisticas.TabIndex = 116;
-            this.btnEstadisticas.UseVisualStyleBackColor = true;
-            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
             // 
             // formInsumos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 396);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tabMain);
             this.MaximizeBox = false;
             this.Name = "formInsumos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.formInsumos_Load);
+            this.tabMain.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabMain.ResumeLayout(false);
             this.tabStock.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
