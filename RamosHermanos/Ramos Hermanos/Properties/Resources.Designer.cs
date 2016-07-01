@@ -153,6 +153,16 @@ namespace RamosHermanos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap light_minimalistic_soft_shading_gradient_background_800x600_wallpaper {
+            get {
+                object obj = ResourceManager.GetObject("light-minimalistic-soft-shading-gradient-background-800x600-wallpaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap produccion {
             get {
                 object obj = ResourceManager.GetObject("produccion", resourceCulture);

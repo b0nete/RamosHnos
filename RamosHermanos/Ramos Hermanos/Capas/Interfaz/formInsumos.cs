@@ -456,6 +456,16 @@ namespace RamosHermanos.Capas.Interfaz
 
             frm.txtID.Text = txtidInsumo.Text;
             frm.lblTitle.Text = txtInsumo.Text;
+        }
+
+        private void dgvPrecios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
         }  
           
     }

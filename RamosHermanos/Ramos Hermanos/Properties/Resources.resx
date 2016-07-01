@@ -142,6 +142,9 @@
   <data name="productividad-personal_x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\productividad-personal_x2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="User" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\User.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BackInsumos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\BackInsumos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -151,11 +154,11 @@
   <data name="grafico-barras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\grafico-barras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="produccionback" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\produccionback.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BackProducto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\BackProducto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="produccionback1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IMG\produccionback.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Visita1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\Visita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,7 +175,7 @@
   <data name="Cliented" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\Cliented.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="produccionback" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="produccionback1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\produccionback.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="produccionback3" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -184,7 +187,7 @@
   <data name="BackInsumos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\BackInsumos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="User" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IMG\User.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="light-minimalistic-soft-shading-gradient-background-800x600-wallpaper" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\light-minimalistic-soft-shading-gradient-background-800x600-wallpaper.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

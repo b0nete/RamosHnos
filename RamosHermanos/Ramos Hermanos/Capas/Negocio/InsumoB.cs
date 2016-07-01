@@ -395,6 +395,30 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+//        public static string BuscarNombreInsumo(int idInsumo)
+//        {
+//            try
+//            {
+//                MySQL.ConnectDB();
+
+//                string query = @"SELECT I.idInsumo, I.insumo, I.marca, I.stockMin, P.idProveedor, R.rubro, R.idRubro
+//						    FROM insumos I
+//							INNER JOIN proveedores P on P.idProveedor = I.proveedor
+//							INNER JOIN rubros R on R.idRubro = I.rubro
+//						    WHERE I.idInsumo = @idInsumo";
+
+//                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+//                cmd.Parameters.AddWithValue("@idInsumo", insumo.idInsumo);
+
+//                return nombre;
+//            }
+//            catch (Exception ex)
+//            {
+//                MessageBox.Show("Error: " + ex);
+//                throw;
+//            }
+//        }
 
     }
 }
