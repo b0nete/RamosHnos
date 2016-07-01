@@ -179,6 +179,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
 
                 ClienteB.BuscarClienteID(cliente);
+                frm.lblTitle.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
 
                 if (cliente.tipoPersona == "P")
                 {
@@ -316,7 +317,9 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
                         cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
 
+
                         ClienteB.BuscarClienteID(cliente);
+                        //Actualizar Label
                         frmP.txtidCliente.Text = Convert.ToString(cliente.idCliente);
                         frmP.txtNombre.Text = cliente.apellido + ',' + cliente.nombre;
 

@@ -79,6 +79,9 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
                     insumo.idInsumo = Convert.ToInt32(row.Cells["colIDinsumo"].Value.ToString());
 
+                    //Actualizar Label
+                    frmI.lblTitle.Text = InsumoB.BuscarNombreInsumo(insumo.idInsumo);
+
                     InsumoB.BuscarInsumosID(insumo);
                     frmI.txtidInsumo.Text = Convert.ToString(insumo.idInsumo);
                     frmI.dtpFecha.Value = Convert.ToDateTime(insumo.fecha);
@@ -111,9 +114,11 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                         StockProductoB.StockLogDGV(frmI.dgvStock, frmI.txtidInsumo);
                         frmI.dgvStock.AutoGenerateColumns = false;
 
-                        //Actualizar Label
-                        frmI.lblTitle.Text = insumo.insumo + insumo.cantidad + insumo.medida;
+                        
                     }
+
+                    
+
                     StockInsumoB.cargardgvStock(frmI.dgvStock, frmI.txtidInsumo);
 
                     //frmPro.cbTipoProducto.SelectedValue = producto.tipoProducto;

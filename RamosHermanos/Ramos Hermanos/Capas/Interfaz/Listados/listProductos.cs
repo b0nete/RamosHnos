@@ -104,6 +104,9 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
                 producto.idProducto = Convert.ToInt32(row.Cells["colIDProducto"].Value.ToString());
 
+                //Actualizar Label
+                frmPro.lblTitle.Text = ProductoB.BuscarNombreProducto(producto.idProducto);
+                    
                 ProductoB.BuscarIdProducto(producto);
                 frmPro.txtIDProd.Text = Convert.ToString(producto.idProducto);
                 frmPro.dtpFechaAlta.Value = Convert.ToDateTime(producto.fechaAlta);

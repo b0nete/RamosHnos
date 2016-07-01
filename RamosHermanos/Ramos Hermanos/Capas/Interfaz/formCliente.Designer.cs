@@ -64,14 +64,9 @@
             this.cbMiercoles = new System.Windows.Forms.CheckBox();
             this.cbMartes = new System.Windows.Forms.CheckBox();
             this.cbLunes = new System.Windows.Forms.CheckBox();
-            this.btnPedido = new System.Windows.Forms.Button();
-            this.btnClean = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.lblEstado = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtnumDoc = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbSexo = new System.Windows.Forms.ComboBox();
@@ -102,7 +97,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtSaldo = new System.Windows.Forms.TextBox();
             this.txtCreditoMax = new System.Windows.Forms.TextBox();
@@ -132,16 +126,12 @@
             this.txtRetornable = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDomicilio = new System.Windows.Forms.Button();
-            this.btnEmail = new System.Windows.Forms.Button();
-            this.btnTelefono = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtTel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDomic = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabInformacionJ = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -183,8 +173,6 @@
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.lbltxtP = new System.Windows.Forms.Label();
             this.lblEstadoPJ = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.cbtipoClientePJ = new System.Windows.Forms.ComboBox();
             this.label35 = new System.Windows.Forms.Label();
             this.cbIVAPJ = new System.Windows.Forms.ComboBox();
@@ -202,20 +190,13 @@
             this.txtNombrePJ = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.txtEmailPJ = new System.Windows.Forms.TextBox();
             this.label59 = new System.Windows.Forms.Label();
             this.txtTelefonoPJ = new System.Windows.Forms.TextBox();
             this.label60 = new System.Windows.Forms.Label();
             this.txtDomicilioPJ = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.tabVisita = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label34 = new System.Windows.Forms.Label();
             this.cbEstadoVisita = new System.Windows.Forms.CheckBox();
             this.label37 = new System.Windows.Forms.Label();
@@ -237,7 +218,26 @@
             this.label32 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
+            this.btnPedido = new System.Windows.Forms.Button();
+            this.btnClean = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnDomicilio = new System.Windows.Forms.Button();
+            this.btnEmail = new System.Windows.Forms.Button();
+            this.btnTelefono = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSaveVisita = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.tabMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.tabListado.SuspendLayout();
@@ -246,7 +246,6 @@
             this.groupBox16.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox17.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -263,10 +262,10 @@
             this.groupBox9.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.tabVisita.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox15.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMovimientos
@@ -277,7 +276,7 @@
             this.tabMovimientos.Controls.Add(this.dgvMovimientos);
             this.tabMovimientos.Location = new System.Drawing.Point(4, 22);
             this.tabMovimientos.Name = "tabMovimientos";
-            this.tabMovimientos.Size = new System.Drawing.Size(776, 536);
+            this.tabMovimientos.Size = new System.Drawing.Size(776, 544);
             this.tabMovimientos.TabIndex = 4;
             this.tabMovimientos.Text = "Movimientos";
             this.tabMovimientos.UseVisualStyleBackColor = true;
@@ -352,7 +351,7 @@
             this.tabListado.Controls.Add(this.dgvCliente);
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
-            this.tabListado.Size = new System.Drawing.Size(776, 536);
+            this.tabListado.Size = new System.Drawing.Size(776, 544);
             this.tabListado.TabIndex = 5;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
@@ -494,7 +493,7 @@
             // 
             this.tabFamilia.Location = new System.Drawing.Point(4, 22);
             this.tabFamilia.Name = "tabFamilia";
-            this.tabFamilia.Size = new System.Drawing.Size(776, 536);
+            this.tabFamilia.Size = new System.Drawing.Size(776, 544);
             this.tabFamilia.TabIndex = 3;
             this.tabFamilia.Text = "Familia";
             this.tabFamilia.UseVisualStyleBackColor = true;
@@ -504,7 +503,7 @@
             this.tabSugerencias.Location = new System.Drawing.Point(4, 22);
             this.tabSugerencias.Name = "tabSugerencias";
             this.tabSugerencias.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSugerencias.Size = new System.Drawing.Size(776, 536);
+            this.tabSugerencias.Size = new System.Drawing.Size(776, 544);
             this.tabSugerencias.TabIndex = 2;
             this.tabSugerencias.Text = "Sugerencias";
             this.tabSugerencias.UseVisualStyleBackColor = true;
@@ -514,7 +513,7 @@
             this.tabAdicional.Location = new System.Drawing.Point(4, 22);
             this.tabAdicional.Name = "tabAdicional";
             this.tabAdicional.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdicional.Size = new System.Drawing.Size(776, 536);
+            this.tabAdicional.Size = new System.Drawing.Size(776, 544);
             this.tabAdicional.TabIndex = 1;
             this.tabAdicional.Text = "Adicional";
             this.tabAdicional.UseVisualStyleBackColor = true;
@@ -619,44 +618,6 @@
             this.cbLunes.Text = "Lunes";
             this.cbLunes.UseVisualStyleBackColor = true;
             // 
-            // btnPedido
-            // 
-            this.btnPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPedido.BackgroundImage")));
-            this.btnPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPedido.Location = new System.Drawing.Point(671, 498);
-            this.btnPedido.Name = "btnPedido";
-            this.btnPedido.Size = new System.Drawing.Size(28, 28);
-            this.btnPedido.TabIndex = 2;
-            this.btnPedido.UseVisualStyleBackColor = true;
-            this.btnPedido.Visible = false;
-            this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);
-            // 
-            // btnClean
-            // 
-            this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
-            this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(705, 498);
-            this.btnClean.Name = "btnClean";
-            this.btnClean.Size = new System.Drawing.Size(28, 28);
-            this.btnClean.TabIndex = 1;
-            this.btnClean.UseVisualStyleBackColor = true;
-            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(637, 498);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(28, 28);
-            this.button4.TabIndex = 69;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Visible = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.lblEstado);
@@ -709,18 +670,6 @@
             this.lblEstado.Size = new System.Drawing.Size(0, 13);
             this.lblEstado.TabIndex = 2;
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(463, 312);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 28);
-            this.button1.TabIndex = 17;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // label18
             // 
             this.label18.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
@@ -733,18 +682,6 @@
             this.label18.Size = new System.Drawing.Size(11, 13);
             this.label18.TabIndex = 89;
             this.label18.Text = "*";
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSearch.Location = new System.Drawing.Point(463, 118);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(28, 28);
-            this.btnSearch.TabIndex = 9;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtnumDoc
             // 
@@ -1079,7 +1016,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.pictureBox2);
             this.groupBox5.Controls.Add(this.groupBox2);
             this.groupBox5.Controls.Add(this.groupBox17);
             this.groupBox5.Controls.Add(this.groupBox3);
@@ -1091,15 +1027,6 @@
             this.groupBox5.TabIndex = 67;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Saldos";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::RamosHermanos.Properties.Resources.Cliented;
-            this.pictureBox2.Location = new System.Drawing.Point(143, 198);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(121, 142);
-            this.pictureBox2.TabIndex = 68;
-            this.pictureBox2.TabStop = false;
             // 
             // groupBox2
             // 
@@ -1419,42 +1346,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contacto";
             // 
-            // btnDomicilio
-            // 
-            this.btnDomicilio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDomicilio.BackgroundImage")));
-            this.btnDomicilio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDomicilio.Location = new System.Drawing.Point(463, 55);
-            this.btnDomicilio.Name = "btnDomicilio";
-            this.btnDomicilio.Size = new System.Drawing.Size(28, 28);
-            this.btnDomicilio.TabIndex = 1;
-            this.btnDomicilio.UseVisualStyleBackColor = true;
-            this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
-            // 
-            // btnEmail
-            // 
-            this.btnEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEmail.BackgroundImage")));
-            this.btnEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnEmail.Location = new System.Drawing.Point(463, 27);
-            this.btnEmail.Name = "btnEmail";
-            this.btnEmail.Size = new System.Drawing.Size(28, 28);
-            this.btnEmail.TabIndex = 0;
-            this.btnEmail.UseVisualStyleBackColor = true;
-            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
-            // 
-            // btnTelefono
-            // 
-            this.btnTelefono.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTelefono.BackgroundImage")));
-            this.btnTelefono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnTelefono.Location = new System.Drawing.Point(463, 83);
-            this.btnTelefono.Name = "btnTelefono";
-            this.btnTelefono.Size = new System.Drawing.Size(28, 28);
-            this.btnTelefono.TabIndex = 2;
-            this.btnTelefono.UseVisualStyleBackColor = true;
-            this.btnTelefono.Click += new System.EventHandler(this.btnTelefono_Click_1);
-            // 
             // txtEmail
             // 
             this.txtEmail.Enabled = false;
@@ -1512,18 +1403,6 @@
             this.label7.TabIndex = 27;
             this.label7.Text = "Telefonos";
             // 
-            // btnSave
-            // 
-            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(739, 498);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(28, 28);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // tabMain
             // 
             this.tabMain.Controls.Add(this.tabInformacion);
@@ -1534,7 +1413,7 @@
             this.tabMain.Controls.Add(this.tabListado);
             this.tabMain.Controls.Add(this.tabMovimientos);
             this.tabMain.Controls.Add(this.tabVisita);
-            this.tabMain.Location = new System.Drawing.Point(12, 12);
+            this.tabMain.Location = new System.Drawing.Point(12, 51);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
             this.tabMain.Size = new System.Drawing.Size(784, 570);
@@ -1552,7 +1431,7 @@
             this.tabInformacionJ.Controls.Add(this.button10);
             this.tabInformacionJ.Location = new System.Drawing.Point(4, 22);
             this.tabInformacionJ.Name = "tabInformacionJ";
-            this.tabInformacionJ.Size = new System.Drawing.Size(776, 536);
+            this.tabInformacionJ.Size = new System.Drawing.Size(776, 544);
             this.tabInformacionJ.TabIndex = 6;
             this.tabInformacionJ.Text = "Informacion";
             // 
@@ -1994,29 +1873,6 @@
             this.lblEstadoPJ.Size = new System.Drawing.Size(0, 13);
             this.lblEstadoPJ.TabIndex = 93;
             // 
-            // button5
-            // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(463, 169);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(28, 28);
-            this.button5.TabIndex = 91;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button6.Location = new System.Drawing.Point(463, 91);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(28, 28);
-            this.button6.TabIndex = 88;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // cbtipoClientePJ
             // 
             this.cbtipoClientePJ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -2218,42 +2074,6 @@
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Contacto";
             // 
-            // button7
-            // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button7.Location = new System.Drawing.Point(463, 55);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(28, 28);
-            this.button7.TabIndex = 56;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button8.Location = new System.Drawing.Point(463, 27);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(28, 28);
-            this.button8.TabIndex = 58;
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button9
-            // 
-            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button9.Location = new System.Drawing.Point(463, 83);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(28, 28);
-            this.button9.TabIndex = 57;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
             // txtEmailPJ
             // 
             this.txtEmailPJ.Enabled = false;
@@ -2311,41 +2131,6 @@
             this.label61.TabIndex = 27;
             this.label61.Text = "Telefonos";
             // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(672, 500);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 28);
-            this.button2.TabIndex = 78;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button3.Location = new System.Drawing.Point(740, 500);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 77;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(706, 500);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(28, 28);
-            this.button10.TabIndex = 71;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
             // tabVisita
             // 
             this.tabVisita.BackColor = System.Drawing.Color.Transparent;
@@ -2359,19 +2144,10 @@
             this.tabVisita.Controls.Add(this.btnSaveVisita);
             this.tabVisita.Location = new System.Drawing.Point(4, 22);
             this.tabVisita.Name = "tabVisita";
-            this.tabVisita.Size = new System.Drawing.Size(776, 536);
+            this.tabVisita.Size = new System.Drawing.Size(776, 544);
             this.tabVisita.TabIndex = 7;
             this.tabVisita.Text = "Visita";
             this.tabVisita.Click += new System.EventHandler(this.tabVisita_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::RamosHermanos.Properties.Resources.Visita;
-            this.pictureBox1.Location = new System.Drawing.Point(221, 225);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(321, 305);
-            this.pictureBox1.TabIndex = 96;
-            this.pictureBox1.TabStop = false;
             // 
             // label34
             // 
@@ -2608,6 +2384,219 @@
             this.cbDomicilio.DropDown += new System.EventHandler(this.cbDomicilio_DropDown);
             this.cbDomicilio.SelectedIndexChanged += new System.EventHandler(this.cbDomicilio_SelectedIndexChanged);
             // 
+            // btnPedido
+            // 
+            this.btnPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPedido.BackgroundImage")));
+            this.btnPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPedido.Location = new System.Drawing.Point(671, 498);
+            this.btnPedido.Name = "btnPedido";
+            this.btnPedido.Size = new System.Drawing.Size(28, 28);
+            this.btnPedido.TabIndex = 2;
+            this.btnPedido.UseVisualStyleBackColor = true;
+            this.btnPedido.Visible = false;
+            this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);
+            // 
+            // btnClean
+            // 
+            this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
+            this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClean.Location = new System.Drawing.Point(705, 498);
+            this.btnClean.Name = "btnClean";
+            this.btnClean.Size = new System.Drawing.Size(28, 28);
+            this.btnClean.TabIndex = 1;
+            this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button4.Location = new System.Drawing.Point(637, 498);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(28, 28);
+            this.button4.TabIndex = 69;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(463, 312);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 28);
+            this.button1.TabIndex = 17;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSearch.Location = new System.Drawing.Point(463, 118);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(28, 28);
+            this.btnSearch.TabIndex = 9;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnDomicilio
+            // 
+            this.btnDomicilio.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDomicilio.BackgroundImage")));
+            this.btnDomicilio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDomicilio.Location = new System.Drawing.Point(463, 55);
+            this.btnDomicilio.Name = "btnDomicilio";
+            this.btnDomicilio.Size = new System.Drawing.Size(28, 28);
+            this.btnDomicilio.TabIndex = 1;
+            this.btnDomicilio.UseVisualStyleBackColor = true;
+            this.btnDomicilio.Click += new System.EventHandler(this.btnDomicilio_Click);
+            // 
+            // btnEmail
+            // 
+            this.btnEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEmail.BackgroundImage")));
+            this.btnEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnEmail.Location = new System.Drawing.Point(463, 27);
+            this.btnEmail.Name = "btnEmail";
+            this.btnEmail.Size = new System.Drawing.Size(28, 28);
+            this.btnEmail.TabIndex = 0;
+            this.btnEmail.UseVisualStyleBackColor = true;
+            this.btnEmail.Click += new System.EventHandler(this.btnEmail_Click);
+            // 
+            // btnTelefono
+            // 
+            this.btnTelefono.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTelefono.BackgroundImage")));
+            this.btnTelefono.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnTelefono.Location = new System.Drawing.Point(463, 83);
+            this.btnTelefono.Name = "btnTelefono";
+            this.btnTelefono.Size = new System.Drawing.Size(28, 28);
+            this.btnTelefono.TabIndex = 2;
+            this.btnTelefono.UseVisualStyleBackColor = true;
+            this.btnTelefono.Click += new System.EventHandler(this.btnTelefono_Click_1);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(739, 498);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(28, 28);
+            this.btnSave.TabIndex = 0;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(463, 169);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(28, 28);
+            this.button5.TabIndex = 91;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button6.Location = new System.Drawing.Point(463, 91);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(28, 28);
+            this.button6.TabIndex = 88;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button7.Location = new System.Drawing.Point(463, 55);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(28, 28);
+            this.button7.TabIndex = 56;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button8.Location = new System.Drawing.Point(463, 27);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(28, 28);
+            this.button8.TabIndex = 58;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button9.Location = new System.Drawing.Point(463, 83);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(28, 28);
+            this.button9.TabIndex = 57;
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(672, 500);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(28, 28);
+            this.button2.TabIndex = 78;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button3.Location = new System.Drawing.Point(740, 500);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(28, 28);
+            this.button3.TabIndex = 77;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button10.Location = new System.Drawing.Point(706, 500);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(28, 28);
+            this.button10.TabIndex = 71;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RamosHermanos.Properties.Resources.Visita;
+            this.pictureBox1.Location = new System.Drawing.Point(221, 225);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(321, 305);
+            this.pictureBox1.TabIndex = 96;
+            this.pictureBox1.TabStop = false;
+            // 
             // btnSaveVisita
             // 
             this.btnSaveVisita.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveVisita.BackgroundImage")));
@@ -2620,11 +2609,26 @@
             this.btnSaveVisita.UseVisualStyleBackColor = true;
             this.btnSaveVisita.Click += new System.EventHandler(this.btnSaveVisita_Click);
             // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(806, 40);
+            this.lblTitle.TabIndex = 117;
+            this.lblTitle.Text = "Clientes";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 594);
+            this.BackgroundImage = global::RamosHermanos.Properties.Resources.grey_background_for_site11;
+            this.ClientSize = new System.Drawing.Size(806, 631);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tabMain);
             this.MaximizeBox = false;
             this.Name = "formCliente";
@@ -2643,7 +2647,6 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox17.ResumeLayout(false);
@@ -2673,13 +2676,13 @@
             this.groupBox14.PerformLayout();
             this.tabVisita.ResumeLayout(false);
             this.tabVisita.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox15.ResumeLayout(false);
             this.groupBox15.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2894,7 +2897,7 @@
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label lbltxtP;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.Label lblTitle;
 
     }
 }

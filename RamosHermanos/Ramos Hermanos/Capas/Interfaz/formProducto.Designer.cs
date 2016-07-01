@@ -29,12 +29,23 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProducto));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabProducto = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.btnEstadisticas = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cbSubRubro2 = new System.Windows.Forms.ComboBox();
+            this.lblSubRubro2 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.cbSubRubro1 = new System.Windows.Forms.ComboBox();
+            this.lblSubRubro1 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.cbRubro = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvClean = new System.Windows.Forms.Button();
@@ -68,6 +79,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.tabStock = new System.Windows.Forms.TabPage();
+            this.txtProductoStock = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dtpfechaStock = new System.Windows.Forms.DateTimePicker();
@@ -87,6 +99,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.tabPrecio = new System.Windows.Forms.TabPage();
+            this.txtProductoP = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtnewPrecio = new System.Windows.Forms.MaskedTextBox();
             this.button9 = new System.Windows.Forms.Button();
@@ -97,6 +110,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.tabConformacion = new System.Windows.Forms.TabPage();
+            this.txtProdutoC = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.dgvConformacion = new System.Windows.Forms.DataGridView();
             this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -125,22 +139,10 @@
             this.rbAnual = new System.Windows.Forms.RadioButton();
             this.rbDiario = new System.Windows.Forms.RadioButton();
             this.rbMensual = new System.Windows.Forms.RadioButton();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.cbSubRubro2 = new System.Windows.Forms.ComboBox();
-            this.lblSubRubro2 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.cbSubRubro1 = new System.Windows.Forms.ComboBox();
-            this.lblSubRubro1 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.cbRubro = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.txtProductoStock = new System.Windows.Forms.TextBox();
-            this.txtProductoP = new System.Windows.Forms.TextBox();
-            this.txtProdutoC = new System.Windows.Forms.TextBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabStock.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -156,7 +158,6 @@
             this.tabEstadisticas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).BeginInit();
             this.groupBox7.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabProducto
@@ -166,17 +167,17 @@
             this.tabProducto.Controls.Add(this.tabPrecio);
             this.tabProducto.Controls.Add(this.tabConformacion);
             this.tabProducto.Controls.Add(this.tabEstadisticas);
-            this.tabProducto.Location = new System.Drawing.Point(187, 36);
+            this.tabProducto.Location = new System.Drawing.Point(12, 51);
             this.tabProducto.Name = "tabProducto";
             this.tabProducto.SelectedIndex = 0;
-            this.tabProducto.Size = new System.Drawing.Size(457, 488);
+            this.tabProducto.Size = new System.Drawing.Size(781, 516);
             this.tabProducto.TabIndex = 0;
             // 
             // tabInformacion
             // 
             this.tabInformacion.BackColor = System.Drawing.SystemColors.Control;
-            this.tabInformacion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tabInformacion.Controls.Add(this.btnEstadisticas);
+            this.tabInformacion.Controls.Add(this.groupBox6);
             this.tabInformacion.Controls.Add(this.button4);
             this.tabInformacion.Controls.Add(this.button1);
             this.tabInformacion.Controls.Add(this.dgvClean);
@@ -185,7 +186,7 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(449, 462);
+            this.tabInformacion.Size = new System.Drawing.Size(773, 490);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Información";
             // 
@@ -200,6 +201,144 @@
             this.btnEstadisticas.TabIndex = 115;
             this.btnEstadisticas.UseVisualStyleBackColor = true;
             this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.cbSubRubro2);
+            this.groupBox6.Controls.Add(this.lblSubRubro2);
+            this.groupBox6.Controls.Add(this.button7);
+            this.groupBox6.Controls.Add(this.cbSubRubro1);
+            this.groupBox6.Controls.Add(this.lblSubRubro1);
+            this.groupBox6.Controls.Add(this.button6);
+            this.groupBox6.Controls.Add(this.cbRubro);
+            this.groupBox6.Controls.Add(this.label4);
+            this.groupBox6.Controls.Add(this.label15);
+            this.groupBox6.Controls.Add(this.button3);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(449, 12);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(316, 111);
+            this.groupBox6.TabIndex = 114;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Rubro";
+            this.groupBox6.Visible = false;
+            // 
+            // cbSubRubro2
+            // 
+            this.cbSubRubro2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSubRubro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbSubRubro2.FormattingEnabled = true;
+            this.cbSubRubro2.Location = new System.Drawing.Point(87, 78);
+            this.cbSubRubro2.Name = "cbSubRubro2";
+            this.cbSubRubro2.Size = new System.Drawing.Size(173, 21);
+            this.cbSubRubro2.TabIndex = 94;
+            this.cbSubRubro2.Visible = false;
+            // 
+            // lblSubRubro2
+            // 
+            this.lblSubRubro2.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.lblSubRubro2.AutoSize = true;
+            this.lblSubRubro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblSubRubro2.Location = new System.Drawing.Point(14, 82);
+            this.lblSubRubro2.Name = "lblSubRubro2";
+            this.lblSubRubro2.Size = new System.Drawing.Size(67, 13);
+            this.lblSubRubro2.TabIndex = 92;
+            this.lblSubRubro2.Text = "Sub Rubro 2";
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.Location = new System.Drawing.Point(266, 75);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(28, 28);
+            this.button7.TabIndex = 95;
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Visible = false;
+            // 
+            // cbSubRubro1
+            // 
+            this.cbSubRubro1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSubRubro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbSubRubro1.FormattingEnabled = true;
+            this.cbSubRubro1.Location = new System.Drawing.Point(87, 51);
+            this.cbSubRubro1.Name = "cbSubRubro1";
+            this.cbSubRubro1.Size = new System.Drawing.Size(173, 21);
+            this.cbSubRubro1.TabIndex = 90;
+            this.cbSubRubro1.Visible = false;
+            this.cbSubRubro1.SelectionChangeCommitted += new System.EventHandler(this.cbSubRubro1_SelectionChangeCommitted);
+            // 
+            // lblSubRubro1
+            // 
+            this.lblSubRubro1.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.lblSubRubro1.AutoSize = true;
+            this.lblSubRubro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblSubRubro1.Location = new System.Drawing.Point(14, 55);
+            this.lblSubRubro1.Name = "lblSubRubro1";
+            this.lblSubRubro1.Size = new System.Drawing.Size(67, 13);
+            this.lblSubRubro1.TabIndex = 88;
+            this.lblSubRubro1.Text = "Sub Rubro 1";
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(266, 48);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(28, 28);
+            this.button6.TabIndex = 91;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Visible = false;
+            // 
+            // cbRubro
+            // 
+            this.cbRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbRubro.FormattingEnabled = true;
+            this.cbRubro.Location = new System.Drawing.Point(87, 25);
+            this.cbRubro.Name = "cbRubro";
+            this.cbRubro.Size = new System.Drawing.Size(173, 21);
+            this.cbRubro.TabIndex = 54;
+            this.cbRubro.SelectedIndexChanged += new System.EventHandler(this.cbRubro_SelectedIndexChanged);
+            this.cbRubro.SelectionChangeCommitted += new System.EventHandler(this.cbRubro_SelectionChangeCommitted);
+            // 
+            // label4
+            // 
+            this.label4.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.Location = new System.Drawing.Point(45, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(36, 13);
+            this.label4.TabIndex = 26;
+            this.label4.Text = "Rubro";
+            // 
+            // label15
+            // 
+            this.label15.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label15.ForeColor = System.Drawing.Color.Red;
+            this.label15.Location = new System.Drawing.Point(37, 27);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(11, 13);
+            this.label15.TabIndex = 44;
+            this.label15.Text = "*";
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(266, 20);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(28, 28);
+            this.button3.TabIndex = 87;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             // 
             // button4
             // 
@@ -592,9 +731,20 @@
             this.tabStock.Controls.Add(this.groupBox2);
             this.tabStock.Location = new System.Drawing.Point(4, 22);
             this.tabStock.Name = "tabStock";
-            this.tabStock.Size = new System.Drawing.Size(449, 462);
+            this.tabStock.Size = new System.Drawing.Size(773, 490);
             this.tabStock.TabIndex = 1;
             this.tabStock.Text = "Stock";
+            // 
+            // txtProductoStock
+            // 
+            this.txtProductoStock.Enabled = false;
+            this.txtProductoStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductoStock.Location = new System.Drawing.Point(89, 18);
+            this.txtProductoStock.Name = "txtProductoStock";
+            this.txtProductoStock.Size = new System.Drawing.Size(223, 29);
+            this.txtProductoStock.TabIndex = 61;
+            this.txtProductoStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtProductoStock.TextChanged += new System.EventHandler(this.txtProductoStock_TextChanged);
             // 
             // groupBox2
             // 
@@ -792,9 +942,19 @@
             this.tabPrecio.Controls.Add(this.groupBox4);
             this.tabPrecio.Location = new System.Drawing.Point(4, 22);
             this.tabPrecio.Name = "tabPrecio";
-            this.tabPrecio.Size = new System.Drawing.Size(449, 462);
+            this.tabPrecio.Size = new System.Drawing.Size(773, 490);
             this.tabPrecio.TabIndex = 2;
             this.tabPrecio.Text = "Precio";
+            // 
+            // txtProductoP
+            // 
+            this.txtProductoP.Enabled = false;
+            this.txtProductoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductoP.Location = new System.Drawing.Point(97, 20);
+            this.txtProductoP.Name = "txtProductoP";
+            this.txtProductoP.Size = new System.Drawing.Size(221, 29);
+            this.txtProductoP.TabIndex = 62;
+            this.txtProductoP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox4
             // 
@@ -896,9 +1056,19 @@
             this.tabConformacion.Location = new System.Drawing.Point(4, 22);
             this.tabConformacion.Name = "tabConformacion";
             this.tabConformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabConformacion.Size = new System.Drawing.Size(449, 462);
+            this.tabConformacion.Size = new System.Drawing.Size(773, 490);
             this.tabConformacion.TabIndex = 3;
             this.tabConformacion.Text = "Conformacion";
+            // 
+            // txtProdutoC
+            // 
+            this.txtProdutoC.Enabled = false;
+            this.txtProdutoC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProdutoC.Location = new System.Drawing.Point(107, 20);
+            this.txtProdutoC.Name = "txtProdutoC";
+            this.txtProdutoC.Size = new System.Drawing.Size(256, 29);
+            this.txtProdutoC.TabIndex = 98;
+            this.txtProdutoC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox8
             // 
@@ -1002,23 +1172,23 @@
             this.tabEstadisticas.Location = new System.Drawing.Point(4, 22);
             this.tabEstadisticas.Name = "tabEstadisticas";
             this.tabEstadisticas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEstadisticas.Size = new System.Drawing.Size(449, 462);
+            this.tabEstadisticas.Size = new System.Drawing.Size(773, 490);
             this.tabEstadisticas.TabIndex = 4;
             this.tabEstadisticas.Text = "Estadisticas";
             // 
             // chartProductos
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chartProductos.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chartProductos.Legends.Add(legend6);
+            chartArea2.Name = "ChartArea1";
+            this.chartProductos.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartProductos.Legends.Add(legend2);
             this.chartProductos.Location = new System.Drawing.Point(378, 6);
             this.chartProductos.Name = "chartProductos";
             this.chartProductos.Size = new System.Drawing.Size(349, 287);
             this.chartProductos.TabIndex = 3;
             this.chartProductos.Text = "chart1";
-            title6.Name = "Title1";
-            this.chartProductos.Titles.Add(title6);
+            title2.Name = "Title1";
+            this.chartProductos.Titles.Add(title2);
             // 
             // groupBox7
             // 
@@ -1201,182 +1371,26 @@
             this.rbMensual.UseVisualStyleBackColor = true;
             this.rbMensual.CheckedChanged += new System.EventHandler(this.rbMensual_CheckedChanged);
             // 
-            // groupBox6
+            // lblTitle
             // 
-            this.groupBox6.Controls.Add(this.cbSubRubro2);
-            this.groupBox6.Controls.Add(this.lblSubRubro2);
-            this.groupBox6.Controls.Add(this.button7);
-            this.groupBox6.Controls.Add(this.cbSubRubro1);
-            this.groupBox6.Controls.Add(this.lblSubRubro1);
-            this.groupBox6.Controls.Add(this.button6);
-            this.groupBox6.Controls.Add(this.cbRubro);
-            this.groupBox6.Controls.Add(this.label4);
-            this.groupBox6.Controls.Add(this.label15);
-            this.groupBox6.Controls.Add(this.button3);
-            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(650, 219);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(413, 111);
-            this.groupBox6.TabIndex = 114;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Rubro";
-            this.groupBox6.Visible = false;
-            // 
-            // cbSubRubro2
-            // 
-            this.cbSubRubro2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSubRubro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbSubRubro2.FormattingEnabled = true;
-            this.cbSubRubro2.Location = new System.Drawing.Point(87, 78);
-            this.cbSubRubro2.Name = "cbSubRubro2";
-            this.cbSubRubro2.Size = new System.Drawing.Size(173, 21);
-            this.cbSubRubro2.TabIndex = 94;
-            this.cbSubRubro2.Visible = false;
-            // 
-            // lblSubRubro2
-            // 
-            this.lblSubRubro2.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.lblSubRubro2.AutoSize = true;
-            this.lblSubRubro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblSubRubro2.Location = new System.Drawing.Point(14, 82);
-            this.lblSubRubro2.Name = "lblSubRubro2";
-            this.lblSubRubro2.Size = new System.Drawing.Size(67, 13);
-            this.lblSubRubro2.TabIndex = 92;
-            this.lblSubRubro2.Text = "Sub Rubro 2";
-            // 
-            // button7
-            // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(266, 75);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(28, 28);
-            this.button7.TabIndex = 95;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Visible = false;
-            // 
-            // cbSubRubro1
-            // 
-            this.cbSubRubro1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSubRubro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbSubRubro1.FormattingEnabled = true;
-            this.cbSubRubro1.Location = new System.Drawing.Point(87, 51);
-            this.cbSubRubro1.Name = "cbSubRubro1";
-            this.cbSubRubro1.Size = new System.Drawing.Size(173, 21);
-            this.cbSubRubro1.TabIndex = 90;
-            this.cbSubRubro1.Visible = false;
-            this.cbSubRubro1.SelectionChangeCommitted += new System.EventHandler(this.cbSubRubro1_SelectionChangeCommitted);
-            // 
-            // lblSubRubro1
-            // 
-            this.lblSubRubro1.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.lblSubRubro1.AutoSize = true;
-            this.lblSubRubro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblSubRubro1.Location = new System.Drawing.Point(14, 55);
-            this.lblSubRubro1.Name = "lblSubRubro1";
-            this.lblSubRubro1.Size = new System.Drawing.Size(67, 13);
-            this.lblSubRubro1.TabIndex = 88;
-            this.lblSubRubro1.Text = "Sub Rubro 1";
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(266, 48);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(28, 28);
-            this.button6.TabIndex = 91;
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Visible = false;
-            // 
-            // cbRubro
-            // 
-            this.cbRubro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRubro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.cbRubro.FormattingEnabled = true;
-            this.cbRubro.Location = new System.Drawing.Point(87, 25);
-            this.cbRubro.Name = "cbRubro";
-            this.cbRubro.Size = new System.Drawing.Size(173, 21);
-            this.cbRubro.TabIndex = 54;
-            this.cbRubro.SelectedIndexChanged += new System.EventHandler(this.cbRubro_SelectedIndexChanged);
-            this.cbRubro.SelectionChangeCommitted += new System.EventHandler(this.cbRubro_SelectionChangeCommitted);
-            // 
-            // label4
-            // 
-            this.label4.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label4.Location = new System.Drawing.Point(45, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 13);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Rubro";
-            // 
-            // label15
-            // 
-            this.label15.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(37, 27);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(11, 13);
-            this.label15.TabIndex = 44;
-            this.label15.Text = "*";
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(266, 20);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 87;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
-            // 
-            // txtProductoStock
-            // 
-            this.txtProductoStock.Enabled = false;
-            this.txtProductoStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductoStock.Location = new System.Drawing.Point(89, 18);
-            this.txtProductoStock.Name = "txtProductoStock";
-            this.txtProductoStock.Size = new System.Drawing.Size(223, 29);
-            this.txtProductoStock.TabIndex = 61;
-            this.txtProductoStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtProductoStock.TextChanged += new System.EventHandler(this.txtProductoStock_TextChanged);
-            // 
-            // txtProductoP
-            // 
-            this.txtProductoP.Enabled = false;
-            this.txtProductoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductoP.Location = new System.Drawing.Point(97, 20);
-            this.txtProductoP.Name = "txtProductoP";
-            this.txtProductoP.Size = new System.Drawing.Size(221, 29);
-            this.txtProductoP.TabIndex = 62;
-            this.txtProductoP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtProdutoC
-            // 
-            this.txtProdutoC.Enabled = false;
-            this.txtProdutoC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProdutoC.Location = new System.Drawing.Point(107, 20);
-            this.txtProdutoC.Name = "txtProdutoC";
-            this.txtProdutoC.Size = new System.Drawing.Size(256, 29);
-            this.txtProdutoC.TabIndex = 98;
-            this.txtProdutoC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(784, 40);
+            this.lblTitle.TabIndex = 115;
+            this.lblTitle.Text = "Producto";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // formProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RamosHermanos.Properties.Resources.BackProducto;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tabProducto);
             this.MaximizeBox = false;
             this.Name = "formProducto";
@@ -1386,6 +1400,8 @@
             this.Load += new System.EventHandler(this.formProducto_Load);
             this.tabProducto.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabStock.ResumeLayout(false);
@@ -1408,8 +1424,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1523,5 +1537,6 @@
         public System.Windows.Forms.TextBox txtProductoStock;
         public System.Windows.Forms.TextBox txtProductoP;
         public System.Windows.Forms.TextBox txtProdutoC;
+        public System.Windows.Forms.Label lblTitle;
     }
 }
