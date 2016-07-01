@@ -86,8 +86,7 @@
             this.tabUsuarios.Controls.Add(this.tabInformacion);
             this.tabUsuarios.Controls.Add(this.tabListado);
             this.tabUsuarios.Controls.Add(this.tabLogs);
-            this.tabUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabUsuarios.Location = new System.Drawing.Point(0, 0);
+            this.tabUsuarios.Location = new System.Drawing.Point(131, 82);
             this.tabUsuarios.Name = "tabUsuarios";
             this.tabUsuarios.SelectedIndex = 0;
             this.tabUsuarios.Size = new System.Drawing.Size(514, 397);
@@ -568,10 +567,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 397);
+            this.BackgroundImage = global::RamosHermanos.Properties.Resources.User;
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.tabUsuarios);
+            this.MaximizeBox = false;
             this.Name = "formUsuario";
-            this.Text = "Usuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registrar Usuario";
             this.Load += new System.EventHandler(this.formUsuario_Load);
             this.tabUsuarios.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);

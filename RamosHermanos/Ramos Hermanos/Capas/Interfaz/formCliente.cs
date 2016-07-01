@@ -507,6 +507,7 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 listClientes frm = new listClientes();
                 frm.Show();
+                this.Close();
                 //tabMain.SelectedTab = tabListado;
                 return;
             }
@@ -568,6 +569,7 @@ namespace RamosHermanos.Capas.Interfaz
 
                 //Visita
                 //DomicilioB.CargarCB(cbDomicilio, txtIDcliente);
+                
 
             }
 

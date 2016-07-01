@@ -80,7 +80,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.dgvProduccion);
+            this.MaximizeBox = false;
             this.Name = "listProduccion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado Produccion";
             this.Load += new System.EventHandler(this.listProduccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduccion)).EndInit();

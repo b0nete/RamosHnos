@@ -38,11 +38,11 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvProduccion = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpFechaProduccion = new System.Windows.Forms.DateTimePicker();
             this.colIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtpFechaProduccion = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduccion)).BeginInit();
             this.SuspendLayout();
@@ -60,9 +60,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dtpFechaProduccion);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(185, 58);
+            this.groupBox1.Location = new System.Drawing.Point(107, 58);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(433, 416);
+            this.groupBox1.Size = new System.Drawing.Size(586, 414);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producción";
@@ -72,7 +72,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(143, 71);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(278, 56);
+            this.txtDescripcion.Size = new System.Drawing.Size(437, 56);
             this.txtDescripcion.TabIndex = 100;
             // 
             // label3
@@ -108,7 +108,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(393, 381);
+            this.btnSave.Location = new System.Drawing.Point(552, 380);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 96;
@@ -149,25 +149,8 @@
             this.colCantidad});
             this.dgvProduccion.Location = new System.Drawing.Point(6, 133);
             this.dgvProduccion.Name = "dgvProduccion";
-            this.dgvProduccion.Size = new System.Drawing.Size(415, 242);
+            this.dgvProduccion.Size = new System.Drawing.Size(574, 242);
             this.dgvProduccion.TabIndex = 2;
-            // 
-            // colIDProducto
-            // 
-            this.colIDProducto.HeaderText = "Nº Producto";
-            this.colIDProducto.Name = "colIDProducto";
-            this.colIDProducto.ReadOnly = true;
-            // 
-            // colProducto
-            // 
-            this.colProducto.HeaderText = "Producto";
-            this.colProducto.Name = "colProducto";
-            this.colProducto.ReadOnly = true;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
             // 
             // label1
             // 
@@ -188,6 +171,24 @@
             this.dtpFechaProduccion.Size = new System.Drawing.Size(98, 20);
             this.dtpFechaProduccion.TabIndex = 0;
             this.dtpFechaProduccion.Value = new System.DateTime(2016, 4, 25, 0, 0, 0, 0);
+            // 
+            // colIDProducto
+            // 
+            this.colIDProducto.HeaderText = "Nº Producto";
+            this.colIDProducto.Name = "colIDProducto";
+            this.colIDProducto.ReadOnly = true;
+            // 
+            // colProducto
+            // 
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
+            this.colProducto.Width = 200;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
             // 
             // formProduccion
             // 
@@ -220,10 +221,10 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtIDProduccion;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
-        private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.Label label3;
     }
 }

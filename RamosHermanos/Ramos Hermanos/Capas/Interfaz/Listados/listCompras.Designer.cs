@@ -107,6 +107,7 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.dgvCompras);
             this.Name = "listCompras";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "listCompras";
             this.Load += new System.EventHandler(this.listCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();

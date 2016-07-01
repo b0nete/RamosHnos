@@ -238,7 +238,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.btnSaveVisita = new System.Windows.Forms.Button();
-            this.label64 = new System.Windows.Forms.Label();
             this.tabMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.tabListado.SuspendLayout();
@@ -534,7 +533,7 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(776, 536);
+            this.tabInformacion.Size = new System.Drawing.Size(776, 544);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             // 
@@ -1535,10 +1534,10 @@
             this.tabMain.Controls.Add(this.tabListado);
             this.tabMain.Controls.Add(this.tabMovimientos);
             this.tabMain.Controls.Add(this.tabVisita);
-            this.tabMain.Location = new System.Drawing.Point(0, 30);
+            this.tabMain.Location = new System.Drawing.Point(12, 12);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(784, 562);
+            this.tabMain.Size = new System.Drawing.Size(784, 570);
             this.tabMain.TabIndex = 4;
             // 
             // tabInformacionJ
@@ -2621,30 +2620,16 @@
             this.btnSaveVisita.UseVisualStyleBackColor = true;
             this.btnSaveVisita.Click += new System.EventHandler(this.btnSaveVisita_Click);
             // 
-            // label64
-            // 
-            this.label64.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label64.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.ForeColor = System.Drawing.Color.White;
-            this.label64.Location = new System.Drawing.Point(0, 0);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(784, 30);
-            this.label64.TabIndex = 0;
-            this.label64.Text = "Clientes";
-            this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 594);
-            this.Controls.Add(this.label64);
             this.Controls.Add(this.tabMain);
             this.MaximizeBox = false;
             this.Name = "formCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cliente";
+            this.Text = "Registrar Cliente";
             this.Load += new System.EventHandler(this.formCliente_Load);
             this.tabMovimientos.ResumeLayout(false);
             this.tabMovimientos.PerformLayout();
@@ -2907,7 +2892,6 @@
         private System.Windows.Forms.GroupBox groupBox19;
         public System.Windows.Forms.TextBox txtRetornablePJ;
         private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label lbltxtP;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
