@@ -74,12 +74,17 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvStock = new System.Windows.Forms.DataGridView();
+            this.colOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpfechaStock = new System.Windows.Forms.DateTimePicker();
             this.button8 = new System.Windows.Forms.Button();
             this.txtStockMin = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dgvStock = new System.Windows.Forms.DataGridView();
             this.txtStockMax = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtStockA = new System.Windows.Forms.TextBox();
@@ -96,11 +101,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.colOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFechaComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -668,6 +668,69 @@
             this.label13.TabIndex = 127;
             this.label13.Text = "Fecha Actualización";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dgvStock);
+            this.groupBox3.Location = new System.Drawing.Point(4, 74);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(457, 245);
+            this.groupBox3.TabIndex = 122;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Movimientos";
+            // 
+            // dgvStock
+            // 
+            this.dgvStock.AllowUserToAddRows = false;
+            this.dgvStock.AllowUserToDeleteRows = false;
+            this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colOperacion,
+            this.colComprobante,
+            this.colFechaComprobante,
+            this.colCantidad,
+            this.colStock});
+            this.dgvStock.Location = new System.Drawing.Point(5, 19);
+            this.dgvStock.Name = "dgvStock";
+            this.dgvStock.ReadOnly = true;
+            this.dgvStock.Size = new System.Drawing.Size(454, 220);
+            this.dgvStock.TabIndex = 1;
+            // 
+            // colOperacion
+            // 
+            this.colOperacion.DataPropertyName = "operacion";
+            this.colOperacion.HeaderText = "Operación";
+            this.colOperacion.Name = "colOperacion";
+            this.colOperacion.ReadOnly = true;
+            // 
+            // colComprobante
+            // 
+            this.colComprobante.DataPropertyName = "A";
+            this.colComprobante.HeaderText = "Nº Comprobante";
+            this.colComprobante.Name = "colComprobante";
+            this.colComprobante.ReadOnly = true;
+            // 
+            // colFechaComprobante
+            // 
+            this.colFechaComprobante.DataPropertyName = "B";
+            this.colFechaComprobante.HeaderText = "Fecha Comprobante";
+            this.colFechaComprobante.Name = "colFechaComprobante";
+            this.colFechaComprobante.ReadOnly = true;
+            this.colFechaComprobante.Visible = false;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.DataPropertyName = "C";
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
+            // 
+            // colStock
+            // 
+            this.colStock.DataPropertyName = "D";
+            this.colStock.HeaderText = "Stock";
+            this.colStock.Name = "colStock";
+            this.colStock.ReadOnly = true;
+            // 
             // dtpfechaStock
             // 
             this.dtpfechaStock.CustomFormat = "dd/MM/yyyy";
@@ -707,33 +770,6 @@
             this.label11.Size = new System.Drawing.Size(73, 13);
             this.label11.TabIndex = 123;
             this.label11.Text = "Stock Mínimo";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.dgvStock);
-            this.groupBox3.Location = new System.Drawing.Point(4, 74);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(457, 245);
-            this.groupBox3.TabIndex = 122;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Movimientos";
-            // 
-            // dgvStock
-            // 
-            this.dgvStock.AllowUserToAddRows = false;
-            this.dgvStock.AllowUserToDeleteRows = false;
-            this.dgvStock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colOperacion,
-            this.colComprobante,
-            this.colFechaComprobante,
-            this.colCantidad,
-            this.colStock});
-            this.dgvStock.Location = new System.Drawing.Point(5, 19);
-            this.dgvStock.Name = "dgvStock";
-            this.dgvStock.ReadOnly = true;
-            this.dgvStock.Size = new System.Drawing.Size(454, 220);
-            this.dgvStock.TabIndex = 1;
             // 
             // txtStockMax
             // 
@@ -793,7 +829,7 @@
             this.tabPrecio.Location = new System.Drawing.Point(4, 22);
             this.tabPrecio.Name = "tabPrecio";
             this.tabPrecio.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPrecio.Size = new System.Drawing.Size(472, 395);
+            this.tabPrecio.Size = new System.Drawing.Size(472, 371);
             this.tabPrecio.TabIndex = 2;
             this.tabPrecio.Text = "Precio";
             // 
@@ -898,44 +934,8 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(784, 30);
             this.label4.TabIndex = 115;
-            this.label4.Text = "Insumos";
+            this.label4.Text = "Registrar Insumos";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // colOperacion
-            // 
-            this.colOperacion.DataPropertyName = "operacion";
-            this.colOperacion.HeaderText = "Operación";
-            this.colOperacion.Name = "colOperacion";
-            this.colOperacion.ReadOnly = true;
-            // 
-            // colComprobante
-            // 
-            this.colComprobante.DataPropertyName = "A";
-            this.colComprobante.HeaderText = "Nº Comprobante";
-            this.colComprobante.Name = "colComprobante";
-            this.colComprobante.ReadOnly = true;
-            // 
-            // colFechaComprobante
-            // 
-            this.colFechaComprobante.DataPropertyName = "B";
-            this.colFechaComprobante.HeaderText = "Fecha Comprobante";
-            this.colFechaComprobante.Name = "colFechaComprobante";
-            this.colFechaComprobante.ReadOnly = true;
-            this.colFechaComprobante.Visible = false;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.DataPropertyName = "C";
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            this.colCantidad.ReadOnly = true;
-            // 
-            // colStock
-            // 
-            this.colStock.DataPropertyName = "D";
-            this.colStock.HeaderText = "Stock";
-            this.colStock.Name = "colStock";
-            this.colStock.ReadOnly = true;
             // 
             // formInsumos
             // 

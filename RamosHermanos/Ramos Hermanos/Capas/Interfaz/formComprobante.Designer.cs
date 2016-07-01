@@ -870,7 +870,7 @@
             this.ClientSize = new System.Drawing.Size(784, 729);
             this.Controls.Add(this.tabMain);
             this.Name = "formComprobante";
-            this.Text = "Comprobante";
+            this.Text = "Generar Comprobante";
             this.Load += new System.EventHandler(this.formFactura_Load);
             this.tabMain.ResumeLayout(false);
             this.tabFactura.ResumeLayout(false);

@@ -2631,7 +2631,7 @@
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(784, 30);
             this.label64.TabIndex = 0;
-            this.label64.Text = "Clientes";
+            this.label64.Text = "Registrar Cliente";
             this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // formCliente
@@ -2644,7 +2644,6 @@
             this.MaximizeBox = false;
             this.Name = "formCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cliente";
             this.Load += new System.EventHandler(this.formCliente_Load);
             this.tabMovimientos.ResumeLayout(false);
             this.tabMovimientos.PerformLayout();

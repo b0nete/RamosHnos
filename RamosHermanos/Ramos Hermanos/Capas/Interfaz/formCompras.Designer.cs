@@ -93,7 +93,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(784, 39);
             this.label2.TabIndex = 74;
-            this.label2.Text = "Compras";
+            this.label2.Text = "Registrar Compras";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
@@ -600,7 +600,6 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label2);
             this.Name = "formCompras";
-            this.Text = "Compra";
             this.Load += new System.EventHandler(this.formCompras_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

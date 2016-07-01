@@ -155,6 +155,7 @@
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.Name = "listProductos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "listProductos";
             this.Load += new System.EventHandler(this.listProductos_Load);
             this.groupBox1.ResumeLayout(false);

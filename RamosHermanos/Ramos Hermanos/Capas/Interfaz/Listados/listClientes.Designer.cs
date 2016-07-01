@@ -32,11 +32,6 @@
             this.rbDGVPJ = new System.Windows.Forms.RadioButton();
             this.rbDGV = new System.Windows.Forms.RadioButton();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtParametro = new System.Windows.Forms.MaskedTextBox();
-            this.cbParametro = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +45,11 @@
             this.colCondicionIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtParametro = new System.Windows.Forms.MaskedTextBox();
+            this.cbParametro = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -106,71 +106,6 @@
             this.dgvCliente.TabIndex = 4;
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
             this.dgvCliente.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCliente_MouseDoubleClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.rbDGVPJ);
-            this.groupBox1.Controls.Add(this.txtParametro);
-            this.groupBox1.Controls.Add(this.rbDGV);
-            this.groupBox1.Controls.Add(this.cbParametro);
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(784, 52);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Búsqueda Parametrizada";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(226, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Buscar por";
-            // 
-            // txtParametro
-            // 
-            this.txtParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParametro.Location = new System.Drawing.Point(445, 19);
-            this.txtParametro.Name = "txtParametro";
-            this.txtParametro.Size = new System.Drawing.Size(299, 20);
-            this.txtParametro.TabIndex = 108;
-            this.txtParametro.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtParametro_MaskInputRejected);
-            this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
-            // 
-            // cbParametro
-            // 
-            this.cbParametro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbParametro.FormattingEnabled = true;
-            this.cbParametro.Items.AddRange(new object[] {
-            "Nº Cliente",
-            "DNI",
-            "CUIL/CUIT",
-            "Apellido",
-            "Nombre"});
-            this.cbParametro.Location = new System.Drawing.Point(290, 19);
-            this.cbParametro.Name = "cbParametro";
-            this.cbParametro.Size = new System.Drawing.Size(133, 21);
-            this.cbParametro.TabIndex = 107;
-            this.cbParametro.SelectedIndexChanged += new System.EventHandler(this.cbParametro_SelectedIndexChanged);
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSearch.Location = new System.Drawing.Point(750, 14);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(28, 28);
-            this.btnSearch.TabIndex = 106;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // colIDCliente
             // 
@@ -255,6 +190,71 @@
             this.coltipoCliente.Name = "coltipoCliente";
             this.coltipoCliente.ReadOnly = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.rbDGVPJ);
+            this.groupBox1.Controls.Add(this.txtParametro);
+            this.groupBox1.Controls.Add(this.rbDGV);
+            this.groupBox1.Controls.Add(this.cbParametro);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(784, 52);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Búsqueda Parametrizada";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(226, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Buscar por";
+            // 
+            // txtParametro
+            // 
+            this.txtParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtParametro.Location = new System.Drawing.Point(445, 19);
+            this.txtParametro.Name = "txtParametro";
+            this.txtParametro.Size = new System.Drawing.Size(299, 20);
+            this.txtParametro.TabIndex = 108;
+            this.txtParametro.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtParametro_MaskInputRejected);
+            this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
+            // 
+            // cbParametro
+            // 
+            this.cbParametro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbParametro.FormattingEnabled = true;
+            this.cbParametro.Items.AddRange(new object[] {
+            "Nº Cliente",
+            "DNI",
+            "CUIL/CUIT",
+            "Apellido",
+            "Nombre"});
+            this.cbParametro.Location = new System.Drawing.Point(290, 19);
+            this.cbParametro.Name = "cbParametro";
+            this.cbParametro.Size = new System.Drawing.Size(133, 21);
+            this.cbParametro.TabIndex = 107;
+            this.cbParametro.SelectedIndexChanged += new System.EventHandler(this.cbParametro_SelectedIndexChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSearch.Location = new System.Drawing.Point(750, 14);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(28, 28);
+            this.btnSearch.TabIndex = 106;
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // listClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,6 +264,7 @@
             this.Controls.Add(this.dgvCliente);
             this.MaximizeBox = false;
             this.Name = "listClientes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Listado Clientes";
             this.Load += new System.EventHandler(this.listClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();

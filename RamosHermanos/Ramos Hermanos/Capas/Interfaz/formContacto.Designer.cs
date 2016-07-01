@@ -1138,7 +1138,7 @@
             this.ClientSize = new System.Drawing.Size(784, 562);
             this.Controls.Add(this.tabContacto);
             this.Name = "formContacto";
-            this.Text = "Contacto";
+            this.Text = "Registar Contactos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formContacto_FormClosed);
             this.Load += new System.EventHandler(this.formContacto_Load);
             this.tabContacto.ResumeLayout(false);

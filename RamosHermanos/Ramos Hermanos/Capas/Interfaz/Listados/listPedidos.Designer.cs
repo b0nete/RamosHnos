@@ -169,7 +169,9 @@
             this.ClientSize = new System.Drawing.Size(764, 450);
             this.Controls.Add(this.dgvListadoPedidos);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "listPedidos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "listPedidos";
             this.Load += new System.EventHandler(this.listPedidos_Load);
             this.groupBox1.ResumeLayout(false);

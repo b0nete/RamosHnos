@@ -173,7 +173,9 @@
             this.ClientSize = new System.Drawing.Size(783, 593);
             this.Controls.Add(this.dgvDistribuidores);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "listDistribuidores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "listDistribuidores";
             this.Load += new System.EventHandler(this.listDistribuidores_Load);
             this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listDistribuidores_MouseDoubleClick);
