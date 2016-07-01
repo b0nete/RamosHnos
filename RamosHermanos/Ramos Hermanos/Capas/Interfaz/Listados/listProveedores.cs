@@ -49,7 +49,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 frmP.dtpFechaAlta.Value = proveedor.fecha;
                 frmP.cbIVA.SelectedValue = proveedor.condicioniva;
 
-
+                
                 //Saldo
                 //saldo.rol = 2;
                 //saldo.idPersona = Convert.ToInt32(txtidprov.Text);
