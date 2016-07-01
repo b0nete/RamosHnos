@@ -64,6 +64,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 TelefonoB.CargarTXT(frmP.txtTel, frmP.txtidprov, 2);
 
                 frmP.tabProveedor.SelectedTab = frmP.tabInformacion;
+                this.Close();
 
             }
         }

@@ -607,6 +607,7 @@
             this.Controls.Add(this.tabProveedor);
             this.DoubleBuffered = true;
             this.Name = "formProveedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.formProveedor_Load);
             this.tabProveedor.ResumeLayout(false);

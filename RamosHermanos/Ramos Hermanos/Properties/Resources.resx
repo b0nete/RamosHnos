@@ -133,14 +133,23 @@
   <data name="produccion1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\produccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BackInsumos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IMG\BackInsumos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\truck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="productividad-personal_x2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\productividad-personal_x2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BackInsumos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\BackInsumos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="produccion2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\produccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="grafico-barras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\grafico-barras.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="produccionback" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\produccionback.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BackProducto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\BackProducto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,11 +160,20 @@
   <data name="Proveedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\Proveedores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="produccionback2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\produccionback.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BackInsumo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\BackInsumo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cliented" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\Cliented.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="produccionback1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\produccionback.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="produccionback3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\produccionback.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Visita" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\Visita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,7 +181,7 @@
   <data name="BackInsumos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\BackInsumos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="produccionback" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IMG\produccionback.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="productividad-personal_x21" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\productividad-personal_x2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

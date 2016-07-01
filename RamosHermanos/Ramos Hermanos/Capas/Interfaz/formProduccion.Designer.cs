@@ -59,9 +59,10 @@
             this.groupBox1.Controls.Add(this.dgvProduccion);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dtpFechaProduccion);
-            this.groupBox1.Location = new System.Drawing.Point(30, 81);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(185, 58);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(696, 416);
+            this.groupBox1.Size = new System.Drawing.Size(433, 416);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producción";
@@ -71,12 +72,13 @@
             this.txtDescripcion.Location = new System.Drawing.Point(143, 71);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(547, 56);
+            this.txtDescripcion.Size = new System.Drawing.Size(278, 56);
             this.txtDescripcion.TabIndex = 100;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(74, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
@@ -94,6 +96,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(61, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 13);
@@ -105,7 +108,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(662, 381);
+            this.btnSave.Location = new System.Drawing.Point(393, 381);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 96;
@@ -146,7 +149,7 @@
             this.colCantidad});
             this.dgvProduccion.Location = new System.Drawing.Point(6, 133);
             this.dgvProduccion.Name = "dgvProduccion";
-            this.dgvProduccion.Size = new System.Drawing.Size(684, 242);
+            this.dgvProduccion.Size = new System.Drawing.Size(415, 242);
             this.dgvProduccion.TabIndex = 2;
             // 
             // colIDProducto
@@ -169,6 +172,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(28, 51);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 13);
@@ -177,6 +181,7 @@
             // 
             // dtpFechaProduccion
             // 
+            this.dtpFechaProduccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaProduccion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaProduccion.Location = new System.Drawing.Point(143, 45);
             this.dtpFechaProduccion.Name = "dtpFechaProduccion";
@@ -188,9 +193,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::RamosHermanos.Properties.Resources.productividad_personal_x21;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "formProduccion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registrar Produccion";
             this.Load += new System.EventHandler(this.formProduccion_Load);
             this.groupBox1.ResumeLayout(false);
