@@ -96,15 +96,13 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static double UltimoPrecio(int Insumo)
+        public static DataRow UltimoPrecio(int Insumo)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                double precio;
-
-                string query = @"SELECT precio
+                string query = @"SELECT idPrecioInsumo, precio
                                  FROM precioInsumos
                                  WHERE idInsumo = @idInsumo
                                  ORDER BY fechaActualizacion DESC LIMIT 1";
@@ -113,9 +111,14 @@ namespace RamosHermanos.Capas.Negocio
 
                 cmd.Parameters.AddWithValue("@idInsumo", Insumo);
 
-                precio = Convert.ToDouble(cmd.ExecuteScalar());
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-                return precio;
+                da.Fill(dt);
+
+                DataRow row = dt.Rows[0];
+
+                return row;
             }
 
             catch (Exception ex)

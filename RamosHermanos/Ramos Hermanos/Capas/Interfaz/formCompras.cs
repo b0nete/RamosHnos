@@ -150,8 +150,8 @@ namespace RamosHermanos.Capas.Interfaz
                 {
                     cargarItemCompra(rowA);
                     itemCompraB.InsertItemCompras(itemcompra, dgvCompra);
-                    CargaItemLogStock(rowA);
-                    StockInsumoB.ActualizarStock(logStock);
+                    //CargaItemLogStock(rowA);
+                    //StockInsumoB.ActualizarStock(logStock);
                 }
 
                 MessageBox.Show("guardado");
@@ -190,9 +190,10 @@ namespace RamosHermanos.Capas.Interfaz
         
         private void dgvCompra_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
-            double precioUnitario = PrecioInsumosB.UltimoPrecio(Convert.ToInt32(dgvCompra.CurrentRow.Cells["colIDInsumo"].Value.ToString()));
+            DataRow dr = PrecioInsumosB.UltimoPrecio(Convert.ToInt32(dgvCompra.CurrentRow.Cells["colIDInsumo"].Value.ToString()));
 
-            dgvCompra.CurrentRow.Cells["colPrecioUnitario"].Value = Convert.ToString(precioUnitario);
+            dgvCompra.CurrentRow.Cells["colIDPrecio"].Value = Convert.ToInt32(dr["idPrecioInsumo"]);
+            dgvCompra.CurrentRow.Cells["colPrecioUnitario"].Value = Convert.ToString(dr["precio"]);
 
                 // Se genera la variable para acumular los SubTotales.
                 double total = 0;

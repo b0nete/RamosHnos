@@ -52,13 +52,6 @@
             this.txtCuil = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCompra = new System.Windows.Forms.DataGridView();
-            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -77,6 +70,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.cbformaPago = new System.Windows.Forms.ComboBox();
+            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
@@ -332,6 +333,7 @@
             this.colInsumo,
             this.colRubro,
             this.colMarca,
+            this.colIDPrecio,
             this.colPrecioUnitario,
             this.colCantidad,
             this.colSubTotal});
@@ -341,42 +343,6 @@
             this.dgvCompra.TabIndex = 82;
             this.dgvCompra.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompra_CellLeave);
             this.dgvCompra.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvCompra_CellStateChanged);
-            // 
-            // colIDInsumo
-            // 
-            this.colIDInsumo.HeaderText = "Codigo";
-            this.colIDInsumo.Name = "colIDInsumo";
-            // 
-            // colInsumo
-            // 
-            this.colInsumo.HeaderText = "Insumo";
-            this.colInsumo.Name = "colInsumo";
-            // 
-            // colRubro
-            // 
-            this.colRubro.HeaderText = "Rubro";
-            this.colRubro.Name = "colRubro";
-            this.colRubro.Visible = false;
-            // 
-            // colMarca
-            // 
-            this.colMarca.HeaderText = "Marca";
-            this.colMarca.Name = "colMarca";
-            // 
-            // colPrecioUnitario
-            // 
-            this.colPrecioUnitario.HeaderText = "Precio Unitario";
-            this.colPrecioUnitario.Name = "colPrecioUnitario";
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            // 
-            // colSubTotal
-            // 
-            this.colSubTotal.HeaderText = "SubTotal";
-            this.colSubTotal.Name = "colSubTotal";
             // 
             // btnImprimir
             // 
@@ -578,6 +544,48 @@
             this.cbformaPago.Size = new System.Drawing.Size(210, 21);
             this.cbformaPago.TabIndex = 1;
             // 
+            // colIDInsumo
+            // 
+            this.colIDInsumo.HeaderText = "Codigo";
+            this.colIDInsumo.Name = "colIDInsumo";
+            // 
+            // colInsumo
+            // 
+            this.colInsumo.HeaderText = "Insumo";
+            this.colInsumo.Name = "colInsumo";
+            // 
+            // colRubro
+            // 
+            this.colRubro.HeaderText = "Rubro";
+            this.colRubro.Name = "colRubro";
+            this.colRubro.Visible = false;
+            // 
+            // colMarca
+            // 
+            this.colMarca.HeaderText = "Marca";
+            this.colMarca.Name = "colMarca";
+            // 
+            // colIDPrecio
+            // 
+            this.colIDPrecio.HeaderText = "ID Precio";
+            this.colIDPrecio.Name = "colIDPrecio";
+            this.colIDPrecio.Visible = false;
+            // 
+            // colPrecioUnitario
+            // 
+            this.colPrecioUnitario.HeaderText = "Precio Unitario";
+            this.colPrecioUnitario.Name = "colPrecioUnitario";
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            // 
+            // colSubTotal
+            // 
+            this.colSubTotal.HeaderText = "SubTotal";
+            this.colSubTotal.Name = "colSubTotal";
+            // 
             // formCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -661,6 +669,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;

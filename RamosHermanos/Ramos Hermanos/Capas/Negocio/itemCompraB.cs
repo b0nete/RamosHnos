@@ -31,7 +31,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@marca", itemcompra.marca);
                 cmd.Parameters.AddWithValue("@precio", itemcompra.precioUnitario);
                 cmd.Parameters.AddWithValue("@cantidad", itemcompra.cantidad);
-                cmd.Parameters.AddWithValue("subTotal", itemcompra.subTotal);
+                cmd.Parameters.AddWithValue("@subTotal", itemcompra.subTotal);
 
                 MySQL.DisconnectDB();
 
