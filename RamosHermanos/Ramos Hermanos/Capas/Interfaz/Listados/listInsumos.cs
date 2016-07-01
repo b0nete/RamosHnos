@@ -83,6 +83,8 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     frmI.txtidInsumo.Text = Convert.ToString(insumo.idInsumo);
                     frmI.dtpFecha.Value = Convert.ToDateTime(insumo.fecha);
                     frmI.txtInsumo.Text = Convert.ToString(insumo.insumo);
+                    frmI.txtInsumoPrecio.Text = frmI.txtInsumo.Text;
+                    frmI.txtInsumoStock.Text = frmI.txtInsumo.Text;
                     frmI.txtCantidad.Text = Convert.ToString(insumo.stockMin);
                     frmI.txtDescripcion.Text = Convert.ToString(insumo.descripcion);
                     //frmI.cbMarca.SelectedValue= insumo.marca;

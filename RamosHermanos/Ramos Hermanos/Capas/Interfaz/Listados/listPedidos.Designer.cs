@@ -126,7 +126,7 @@
             // 
             // colIDpedido
             // 
-            this.colIDpedido.HeaderText = "IDPedido";
+            this.colIDpedido.HeaderText = "Nº Pedido";
             this.colIDpedido.Name = "colIDpedido";
             this.colIDpedido.ReadOnly = true;
             // 

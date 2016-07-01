@@ -71,6 +71,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtRubro = new System.Windows.Forms.Label();
             this.tabStock = new System.Windows.Forms.TabPage();
+            this.txtInsumoStock = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -91,6 +92,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.tabPrecio = new System.Windows.Forms.TabPage();
+            this.txtInsumoPrecio = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtnewPrecio = new System.Windows.Forms.MaskedTextBox();
             this.button9 = new System.Windows.Forms.Button();
@@ -118,10 +120,10 @@
             this.tabMain.Controls.Add(this.tabInformacion);
             this.tabMain.Controls.Add(this.tabStock);
             this.tabMain.Controls.Add(this.tabPrecio);
-            this.tabMain.Location = new System.Drawing.Point(162, 76);
+            this.tabMain.Location = new System.Drawing.Point(144, 76);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(480, 397);
+            this.tabMain.Size = new System.Drawing.Size(519, 406);
             this.tabMain.TabIndex = 0;
             // 
             // tabInformacion
@@ -131,7 +133,7 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(472, 371);
+            this.tabInformacion.Size = new System.Drawing.Size(511, 380);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.Click += new System.EventHandler(this.tabInformacion_Click);
@@ -179,7 +181,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(465, 363);
+            this.groupBox1.Size = new System.Drawing.Size(499, 363);
             this.groupBox1.TabIndex = 111;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Insumos";
@@ -189,7 +191,7 @@
             this.btnEstadisticas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.BackgroundImage")));
             this.btnEstadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.Location = new System.Drawing.Point(357, 329);
+            this.btnEstadisticas.Location = new System.Drawing.Point(397, 329);
             this.btnEstadisticas.Name = "btnEstadisticas";
             this.btnEstadisticas.Size = new System.Drawing.Size(28, 28);
             this.btnEstadisticas.TabIndex = 116;
@@ -221,7 +223,7 @@
             this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button11.Location = new System.Drawing.Point(425, 329);
+            this.button11.Location = new System.Drawing.Point(465, 329);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(28, 28);
             this.button11.TabIndex = 113;
@@ -246,7 +248,7 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(391, 329);
+            this.button1.Location = new System.Drawing.Point(431, 329);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 28);
             this.button1.TabIndex = 113;
@@ -615,13 +617,24 @@
             // tabStock
             // 
             this.tabStock.BackColor = System.Drawing.SystemColors.Control;
+            this.tabStock.Controls.Add(this.txtInsumoStock);
             this.tabStock.Controls.Add(this.groupBox2);
             this.tabStock.Location = new System.Drawing.Point(4, 22);
             this.tabStock.Name = "tabStock";
             this.tabStock.Padding = new System.Windows.Forms.Padding(3);
-            this.tabStock.Size = new System.Drawing.Size(472, 371);
+            this.tabStock.Size = new System.Drawing.Size(511, 380);
             this.tabStock.TabIndex = 1;
             this.tabStock.Text = "Stock";
+            // 
+            // txtInsumoStock
+            // 
+            this.txtInsumoStock.Enabled = false;
+            this.txtInsumoStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInsumoStock.Location = new System.Drawing.Point(149, 18);
+            this.txtInsumoStock.Name = "txtInsumoStock";
+            this.txtInsumoStock.Size = new System.Drawing.Size(236, 29);
+            this.txtInsumoStock.TabIndex = 125;
+            this.txtInsumoStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox2
             // 
@@ -638,9 +651,9 @@
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label31);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 6);
+            this.groupBox2.Location = new System.Drawing.Point(6, 53);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(563, 319);
+            this.groupBox2.Size = new System.Drawing.Size(499, 319);
             this.groupBox2.TabIndex = 52;
             this.groupBox2.TabStop = false;
             // 
@@ -672,7 +685,7 @@
             this.groupBox3.Controls.Add(this.dgvStock);
             this.groupBox3.Location = new System.Drawing.Point(4, 74);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(457, 245);
+            this.groupBox3.Size = new System.Drawing.Size(495, 245);
             this.groupBox3.TabIndex = 122;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Movimientos";
@@ -688,10 +701,10 @@
             this.colFechaComprobante,
             this.colCantidad,
             this.colStock});
-            this.dgvStock.Location = new System.Drawing.Point(5, 19);
+            this.dgvStock.Location = new System.Drawing.Point(6, 19);
             this.dgvStock.Name = "dgvStock";
             this.dgvStock.ReadOnly = true;
-            this.dgvStock.Size = new System.Drawing.Size(454, 220);
+            this.dgvStock.Size = new System.Drawing.Size(483, 220);
             this.dgvStock.TabIndex = 1;
             // 
             // colOperacion
@@ -824,13 +837,24 @@
             // tabPrecio
             // 
             this.tabPrecio.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPrecio.Controls.Add(this.txtInsumoPrecio);
             this.tabPrecio.Controls.Add(this.groupBox4);
             this.tabPrecio.Location = new System.Drawing.Point(4, 22);
             this.tabPrecio.Name = "tabPrecio";
             this.tabPrecio.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPrecio.Size = new System.Drawing.Size(472, 371);
+            this.tabPrecio.Size = new System.Drawing.Size(511, 380);
             this.tabPrecio.TabIndex = 2;
             this.tabPrecio.Text = "Precio";
+            // 
+            // txtInsumoPrecio
+            // 
+            this.txtInsumoPrecio.Enabled = false;
+            this.txtInsumoPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInsumoPrecio.Location = new System.Drawing.Point(153, 20);
+            this.txtInsumoPrecio.Name = "txtInsumoPrecio";
+            this.txtInsumoPrecio.Size = new System.Drawing.Size(236, 29);
+            this.txtInsumoPrecio.TabIndex = 126;
+            this.txtInsumoPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox4
             // 
@@ -840,9 +864,9 @@
             this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Controls.Add(this.label23);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(6, 6);
+            this.groupBox4.Location = new System.Drawing.Point(6, 54);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(462, 298);
+            this.groupBox4.Size = new System.Drawing.Size(499, 298);
             this.groupBox4.TabIndex = 116;
             this.groupBox4.TabStop = false;
             // 
@@ -872,7 +896,7 @@
             this.groupBox5.Controls.Add(this.dgvPrecios);
             this.groupBox5.Location = new System.Drawing.Point(0, 48);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(456, 250);
+            this.groupBox5.Size = new System.Drawing.Size(499, 250);
             this.groupBox5.TabIndex = 122;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Precios Anteriores";
@@ -885,7 +909,7 @@
             this.colFecha});
             this.dgvPrecios.Location = new System.Drawing.Point(6, 19);
             this.dgvPrecios.Name = "dgvPrecios";
-            this.dgvPrecios.Size = new System.Drawing.Size(444, 225);
+            this.dgvPrecios.Size = new System.Drawing.Size(487, 225);
             this.dgvPrecios.TabIndex = 0;
             // 
             // colPrecio
@@ -940,11 +964,13 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabStock.ResumeLayout(false);
+            this.tabStock.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             this.tabPrecio.ResumeLayout(false);
+            this.tabPrecio.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -1026,6 +1052,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaComprobante;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
+        public System.Windows.Forms.TextBox txtInsumoStock;
+        public System.Windows.Forms.TextBox txtInsumoPrecio;
 
     }
 }

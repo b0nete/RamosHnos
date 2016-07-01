@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listProveedores));
             this.dgvProveedores = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtParametro = new System.Windows.Forms.MaskedTextBox();
+            this.cbParametro = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.colIDProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colRazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCondicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtParametro = new System.Windows.Forms.MaskedTextBox();
-            this.cbParametro = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -64,44 +64,6 @@
             this.dgvProveedores.Size = new System.Drawing.Size(775, 479);
             this.dgvProveedores.TabIndex = 55;
             this.dgvProveedores.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvProveedores_MouseDoubleClick);
-            // 
-            // colIDProveedor
-            // 
-            this.colIDProveedor.HeaderText = "IdProveedor";
-            this.colIDProveedor.Name = "colIDProveedor";
-            this.colIDProveedor.ReadOnly = true;
-            // 
-            // colRazonSocial
-            // 
-            this.colRazonSocial.HeaderText = "RazonSocial";
-            this.colRazonSocial.Name = "colRazonSocial";
-            this.colRazonSocial.ReadOnly = true;
-            // 
-            // colCuit
-            // 
-            this.colCuit.HeaderText = "CUIT";
-            this.colCuit.Name = "colCuit";
-            this.colCuit.ReadOnly = true;
-            // 
-            // colFechaAlta
-            // 
-            this.colFechaAlta.HeaderText = "FechaAlta";
-            this.colFechaAlta.Name = "colFechaAlta";
-            this.colFechaAlta.ReadOnly = true;
-            // 
-            // colCondicion
-            // 
-            this.colCondicion.HeaderText = "CondicionIVA";
-            this.colCondicion.Name = "colCondicion";
-            this.colCondicion.ReadOnly = true;
-            // 
-            // colEstado
-            // 
-            this.colEstado.HeaderText = "Estado";
-            this.colEstado.Name = "colEstado";
-            this.colEstado.ReadOnly = true;
-            this.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // groupBox1
             // 
@@ -164,6 +126,44 @@
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 106;
             this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // colIDProveedor
+            // 
+            this.colIDProveedor.HeaderText = "Nº Proveedor";
+            this.colIDProveedor.Name = "colIDProveedor";
+            this.colIDProveedor.ReadOnly = true;
+            // 
+            // colRazonSocial
+            // 
+            this.colRazonSocial.HeaderText = "RazonSocial";
+            this.colRazonSocial.Name = "colRazonSocial";
+            this.colRazonSocial.ReadOnly = true;
+            // 
+            // colCuit
+            // 
+            this.colCuit.HeaderText = "CUIT";
+            this.colCuit.Name = "colCuit";
+            this.colCuit.ReadOnly = true;
+            // 
+            // colFechaAlta
+            // 
+            this.colFechaAlta.HeaderText = "FechaAlta";
+            this.colFechaAlta.Name = "colFechaAlta";
+            this.colFechaAlta.ReadOnly = true;
+            // 
+            // colCondicion
+            // 
+            this.colCondicion.HeaderText = "CondicionIVA";
+            this.colCondicion.Name = "colCondicion";
+            this.colCondicion.ReadOnly = true;
+            // 
+            // colEstado
+            // 
+            this.colEstado.HeaderText = "Estado";
+            this.colEstado.Name = "colEstado";
+            this.colEstado.ReadOnly = true;
+            this.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // listProveedores
             // 

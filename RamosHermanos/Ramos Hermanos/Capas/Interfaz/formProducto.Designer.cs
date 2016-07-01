@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProducto));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabProducto = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.btnEstadisticas = new System.Windows.Forms.Button();
@@ -136,6 +136,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.txtProductoStock = new System.Windows.Forms.TextBox();
+            this.txtProductoP = new System.Windows.Forms.TextBox();
+            this.txtProdutoC = new System.Windows.Forms.TextBox();
             this.tabProducto.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -585,6 +588,7 @@
             // tabStock
             // 
             this.tabStock.BackColor = System.Drawing.SystemColors.Control;
+            this.tabStock.Controls.Add(this.txtProductoStock);
             this.tabStock.Controls.Add(this.groupBox2);
             this.tabStock.Location = new System.Drawing.Point(4, 22);
             this.tabStock.Name = "tabStock";
@@ -606,7 +610,7 @@
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label31);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 6);
+            this.groupBox2.Location = new System.Drawing.Point(3, 60);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(721, 298);
             this.groupBox2.TabIndex = 51;
@@ -784,6 +788,7 @@
             // tabPrecio
             // 
             this.tabPrecio.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPrecio.Controls.Add(this.txtProductoP);
             this.tabPrecio.Controls.Add(this.groupBox4);
             this.tabPrecio.Location = new System.Drawing.Point(4, 22);
             this.tabPrecio.Name = "tabPrecio";
@@ -799,7 +804,7 @@
             this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Controls.Add(this.label27);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(6, 7);
+            this.groupBox4.Location = new System.Drawing.Point(3, 60);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(415, 298);
             this.groupBox4.TabIndex = 52;
@@ -885,6 +890,7 @@
             // tabConformacion
             // 
             this.tabConformacion.BackColor = System.Drawing.SystemColors.Control;
+            this.tabConformacion.Controls.Add(this.txtProdutoC);
             this.tabConformacion.Controls.Add(this.groupBox8);
             this.tabConformacion.Controls.Add(this.btnSaveConformacion);
             this.tabConformacion.Location = new System.Drawing.Point(4, 22);
@@ -900,7 +906,7 @@
             this.groupBox8.Controls.Add(this.btnDelInsumo);
             this.groupBox8.Controls.Add(this.btnAddInsumo);
             this.groupBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox8.Location = new System.Drawing.Point(0, 6);
+            this.groupBox8.Location = new System.Drawing.Point(6, 64);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(443, 336);
             this.groupBox8.TabIndex = 97;
@@ -1002,17 +1008,17 @@
             // 
             // chartProductos
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartProductos.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartProductos.Legends.Add(legend2);
+            chartArea6.Name = "ChartArea1";
+            this.chartProductos.ChartAreas.Add(chartArea6);
+            legend6.Name = "Legend1";
+            this.chartProductos.Legends.Add(legend6);
             this.chartProductos.Location = new System.Drawing.Point(378, 6);
             this.chartProductos.Name = "chartProductos";
             this.chartProductos.Size = new System.Drawing.Size(349, 287);
             this.chartProductos.TabIndex = 3;
             this.chartProductos.Text = "chart1";
-            title2.Name = "Title1";
-            this.chartProductos.Titles.Add(title2);
+            title6.Name = "Title1";
+            this.chartProductos.Titles.Add(title6);
             // 
             // groupBox7
             // 
@@ -1333,6 +1339,37 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Visible = false;
             // 
+            // txtProductoStock
+            // 
+            this.txtProductoStock.Enabled = false;
+            this.txtProductoStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductoStock.Location = new System.Drawing.Point(89, 18);
+            this.txtProductoStock.Name = "txtProductoStock";
+            this.txtProductoStock.Size = new System.Drawing.Size(223, 29);
+            this.txtProductoStock.TabIndex = 61;
+            this.txtProductoStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtProductoStock.TextChanged += new System.EventHandler(this.txtProductoStock_TextChanged);
+            // 
+            // txtProductoP
+            // 
+            this.txtProductoP.Enabled = false;
+            this.txtProductoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductoP.Location = new System.Drawing.Point(97, 20);
+            this.txtProductoP.Name = "txtProductoP";
+            this.txtProductoP.Size = new System.Drawing.Size(221, 29);
+            this.txtProductoP.TabIndex = 62;
+            this.txtProductoP.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtProdutoC
+            // 
+            this.txtProdutoC.Enabled = false;
+            this.txtProdutoC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProdutoC.Location = new System.Drawing.Point(107, 20);
+            this.txtProdutoC.Name = "txtProdutoC";
+            this.txtProdutoC.Size = new System.Drawing.Size(256, 29);
+            this.txtProdutoC.TabIndex = 98;
+            this.txtProdutoC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // formProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1352,16 +1389,19 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabStock.ResumeLayout(false);
+            this.tabStock.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
             this.tabPrecio.ResumeLayout(false);
+            this.tabPrecio.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrecios)).EndInit();
             this.tabConformacion.ResumeLayout(false);
+            this.tabConformacion.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvConformacion)).EndInit();
             this.tabEstadisticas.ResumeLayout(false);
@@ -1480,5 +1520,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaComprobante;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
+        public System.Windows.Forms.TextBox txtProductoStock;
+        public System.Windows.Forms.TextBox txtProductoP;
+        public System.Windows.Forms.TextBox txtProdutoC;
     }
 }

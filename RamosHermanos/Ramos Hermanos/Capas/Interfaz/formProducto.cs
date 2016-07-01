@@ -645,6 +645,11 @@ namespace RamosHermanos.Capas.Interfaz
             frm.txtID.Text = txtIDProd.Text;
             frm.lblTitle.Text = txtProducto.Text;
         }
+
+        private void txtProductoStock_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
         
     }
 }
