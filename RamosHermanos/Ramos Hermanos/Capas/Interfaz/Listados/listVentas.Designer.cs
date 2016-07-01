@@ -30,17 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listVentas));
             this.dgvVentas = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtParametro = new System.Windows.Forms.MaskedTextBox();
+            this.cbParametro = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.rbNoPagas = new System.Windows.Forms.RadioButton();
+            this.rbPagas = new System.Windows.Forms.RadioButton();
             this.colFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipoFac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtParametro = new System.Windows.Forms.MaskedTextBox();
-            this.cbParametro = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.rbAnuladas = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,65 +60,25 @@
             this.colTotal,
             this.colNombre,
             this.colEstado});
-            this.dgvVentas.Location = new System.Drawing.Point(2, 70);
+            this.dgvVentas.Location = new System.Drawing.Point(12, 107);
             this.dgvVentas.Name = "dgvVentas";
-            this.dgvVentas.Size = new System.Drawing.Size(760, 456);
+            this.dgvVentas.Size = new System.Drawing.Size(760, 442);
             this.dgvVentas.TabIndex = 0;
             this.dgvVentas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvVentas_MouseDoubleClick);
             // 
-            // colFactura
-            // 
-            this.colFactura.DataPropertyName = "colFactura";
-            this.colFactura.HeaderText = "Nº Comprobante";
-            this.colFactura.Name = "colFactura";
-            this.colFactura.ReadOnly = true;
-            // 
-            // colTipoFac
-            // 
-            this.colTipoFac.HeaderText = "Tipo Factura";
-            this.colTipoFac.Name = "colTipoFac";
-            this.colTipoFac.ReadOnly = true;
-            this.colTipoFac.Visible = false;
-            // 
-            // colFecha
-            // 
-            this.colFecha.DataPropertyName = "colFecha";
-            this.colFecha.HeaderText = "Fecha Factura";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.ReadOnly = true;
-            // 
-            // colTotal
-            // 
-            this.colTotal.DataPropertyName = "colTotal";
-            this.colTotal.HeaderText = "Total";
-            this.colTotal.Name = "colTotal";
-            this.colTotal.ReadOnly = true;
-            // 
-            // colNombre
-            // 
-            this.colNombre.DataPropertyName = "colNombre";
-            this.colNombre.HeaderText = "Cliente";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.ReadOnly = true;
-            // 
-            // colEstado
-            // 
-            this.colEstado.DataPropertyName = "colEstado";
-            this.colEstado.HeaderText = "Estado";
-            this.colEstado.Name = "colEstado";
-            this.colEstado.ReadOnly = true;
-            this.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rbAnuladas);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.rbNoPagas);
             this.groupBox1.Controls.Add(this.txtParametro);
+            this.groupBox1.Controls.Add(this.rbPagas);
             this.groupBox1.Controls.Add(this.cbParametro);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(2, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(775, 52);
+            this.groupBox1.Size = new System.Drawing.Size(760, 89);
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda Parametrizada";
@@ -167,6 +130,82 @@
             this.btnSearch.TabIndex = 106;
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
+            // rbNoPagas
+            // 
+            this.rbNoPagas.AutoSize = true;
+            this.rbNoPagas.Checked = true;
+            this.rbNoPagas.Location = new System.Drawing.Point(70, 57);
+            this.rbNoPagas.Name = "rbNoPagas";
+            this.rbNoPagas.Size = new System.Drawing.Size(80, 17);
+            this.rbNoPagas.TabIndex = 57;
+            this.rbNoPagas.TabStop = true;
+            this.rbNoPagas.Text = "No Pagas";
+            this.rbNoPagas.UseVisualStyleBackColor = true;
+            // 
+            // rbPagas
+            // 
+            this.rbPagas.AutoSize = true;
+            this.rbPagas.Location = new System.Drawing.Point(9, 57);
+            this.rbPagas.Name = "rbPagas";
+            this.rbPagas.Size = new System.Drawing.Size(60, 17);
+            this.rbPagas.TabIndex = 56;
+            this.rbPagas.Text = "Pagas";
+            this.rbPagas.UseVisualStyleBackColor = true;
+            // 
+            // colFactura
+            // 
+            this.colFactura.DataPropertyName = "colFactura";
+            this.colFactura.HeaderText = "Nº Comprobante";
+            this.colFactura.Name = "colFactura";
+            this.colFactura.ReadOnly = true;
+            // 
+            // colTipoFac
+            // 
+            this.colTipoFac.HeaderText = "Tipo Factura";
+            this.colTipoFac.Name = "colTipoFac";
+            this.colTipoFac.ReadOnly = true;
+            this.colTipoFac.Visible = false;
+            // 
+            // colFecha
+            // 
+            this.colFecha.DataPropertyName = "colFecha";
+            this.colFecha.HeaderText = "Fecha Factura";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            // 
+            // colTotal
+            // 
+            this.colTotal.DataPropertyName = "colTotal";
+            this.colTotal.HeaderText = "Total";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.DataPropertyName = "colNombre";
+            this.colNombre.HeaderText = "Cliente";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colEstado
+            // 
+            this.colEstado.DataPropertyName = "colEstado";
+            this.colEstado.HeaderText = "Estado";
+            this.colEstado.Name = "colEstado";
+            this.colEstado.ReadOnly = true;
+            this.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEstado.Visible = false;
+            // 
+            // rbAnuladas
+            // 
+            this.rbAnuladas.AutoSize = true;
+            this.rbAnuladas.Location = new System.Drawing.Point(148, 57);
+            this.rbAnuladas.Name = "rbAnuladas";
+            this.rbAnuladas.Size = new System.Drawing.Size(77, 17);
+            this.rbAnuladas.TabIndex = 58;
+            this.rbAnuladas.Text = "Anuladas";
+            this.rbAnuladas.UseVisualStyleBackColor = true;
+            // 
             // listVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,16 +226,19 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvVentas;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.MaskedTextBox txtParametro;
+        public System.Windows.Forms.ComboBox cbParametro;
+        private System.Windows.Forms.Button btnSearch;
+        public System.Windows.Forms.RadioButton rbNoPagas;
+        public System.Windows.Forms.RadioButton rbPagas;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipoFac;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstado;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox txtParametro;
-        public System.Windows.Forms.ComboBox cbParametro;
-        private System.Windows.Forms.Button btnSearch;
+        public System.Windows.Forms.RadioButton rbAnuladas;
     }
 }

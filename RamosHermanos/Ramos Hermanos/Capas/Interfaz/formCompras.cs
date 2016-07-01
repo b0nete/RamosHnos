@@ -150,8 +150,8 @@ namespace RamosHermanos.Capas.Interfaz
                 {
                     cargarItemCompra(rowA);
                     itemCompraB.InsertItemCompras(itemcompra, dgvCompra);
-                    //CargaItemLogStock(rowA);
-                    //StockInsumoB.ActualizarStock(logStock);
+                    CargaItemLogStock(rowA);
+                    StockInsumoB.ActualizarStock(logStock);
                 }
 
                 MessageBox.Show("guardado");
