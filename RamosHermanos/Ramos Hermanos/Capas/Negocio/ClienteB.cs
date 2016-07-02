@@ -688,7 +688,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT CONCAT(C.idCliente ,' - ', C.apellido, ' ',C.nombre)
+                string query = @"SELECT CONCAT(C.apellido, ' ',C.nombre)
                                 FROM clientes C
                                 WHERE idCliente = @idCliente";
 

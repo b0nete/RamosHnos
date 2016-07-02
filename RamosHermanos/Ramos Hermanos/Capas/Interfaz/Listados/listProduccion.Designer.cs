@@ -83,7 +83,7 @@
             this.MaximizeBox = false;
             this.Name = "listProduccion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Listado Produccion";
+            this.Text = "Listar Produccion";
             this.Load += new System.EventHandler(this.listProduccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduccion)).EndInit();
             this.ResumeLayout(false);

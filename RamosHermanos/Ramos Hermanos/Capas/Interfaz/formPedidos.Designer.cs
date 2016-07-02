@@ -907,6 +907,7 @@
             this.ClientSize = new System.Drawing.Size(790, 712);
             this.Controls.Add(this.tabMain);
             this.Name = "formPedidos";
+            this.Text = "Registrar Pedidos";
             this.Load += new System.EventHandler(this.formPedidos_Load);
             this.tabMain.ResumeLayout(false);
             this.tabPedido.ResumeLayout(false);

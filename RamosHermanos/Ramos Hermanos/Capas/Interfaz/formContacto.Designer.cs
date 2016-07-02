@@ -31,11 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formContacto));
             this.tabContacto = new System.Windows.Forms.TabControl();
             this.tabDomicilios = new System.Windows.Forms.TabPage();
-            this.btnUpdDom = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnSaveDom = new System.Windows.Forms.Button();
+            this.lblTitleDom = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtNombreDom = new System.Windows.Forms.TextBox();
             this.dgvDomicilio = new System.Windows.Forms.DataGridView();
             this.colIDDom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +45,9 @@
             this.colProvincia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstadoDom = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnUpdDom = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.btnSaveDom = new System.Windows.Forms.Button();
             this.cbCalle = new System.Windows.Forms.ComboBox();
             this.lblEstadoDom = new System.Windows.Forms.Label();
             this.cbEstadoDom = new System.Windows.Forms.CheckBox();
@@ -79,11 +78,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabTelefonos = new System.Windows.Forms.TabPage();
-            this.btnUpdTel = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.btnSaveTel = new System.Windows.Forms.Button();
+            this.lblTitleTel = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.txtNombreTel = new System.Windows.Forms.TextBox();
             this.dgvTelefono = new System.Windows.Forms.DataGridView();
             this.colIDTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDTipoTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,7 +89,8 @@
             this.colTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstadoTel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblEstadoTel = new System.Windows.Forms.Label();
+            this.btnUpdTel = new System.Windows.Forms.Button();
+            this.btnSaveTel = new System.Windows.Forms.Button();
             this.cbEstadoTel = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtNumTel = new System.Windows.Forms.TextBox();
@@ -102,24 +99,24 @@
             this.txtCaracteristica = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.tabEmails = new System.Windows.Forms.TabPage();
-            this.btnUpdEmail = new System.Windows.Forms.Button();
+            this.lblTitleEmail = new System.Windows.Forms.Label();
             this.lblRolTel = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.btnSaveEmail = new System.Windows.Forms.Button();
             this.cbRolALL = new System.Windows.Forms.ComboBox();
             this.button11 = new System.Windows.Forms.Button();
-            this.txtNombreEmail = new System.Windows.Forms.TextBox();
             this.dgvEmail = new System.Windows.Forms.DataGridView();
             this.colIDEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.txtIDALL = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblEstadoEmail = new System.Windows.Forms.Label();
+            this.btnUpdEmail = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
             this.cbEstadoEmail = new System.Windows.Forms.CheckBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.btnSaveEmail = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
+            this.txtIDALL = new System.Windows.Forms.TextBox();
+            this.lblEstadoTel = new System.Windows.Forms.Label();
             this.tabContacto.SuspendLayout();
             this.tabDomicilios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDomicilio)).BeginInit();
@@ -147,11 +144,8 @@
             // tabDomicilios
             // 
             this.tabDomicilios.BackColor = System.Drawing.SystemColors.Control;
-            this.tabDomicilios.Controls.Add(this.btnUpdDom);
-            this.tabDomicilios.Controls.Add(this.label5);
-            this.tabDomicilios.Controls.Add(this.btnSaveDom);
+            this.tabDomicilios.Controls.Add(this.lblTitleDom);
             this.tabDomicilios.Controls.Add(this.button1);
-            this.tabDomicilios.Controls.Add(this.txtNombreDom);
             this.tabDomicilios.Controls.Add(this.dgvDomicilio);
             this.tabDomicilios.Controls.Add(this.groupBox2);
             this.tabDomicilios.Location = new System.Drawing.Point(4, 22);
@@ -161,42 +155,18 @@
             this.tabDomicilios.TabIndex = 0;
             this.tabDomicilios.Text = "Domicilios";
             // 
-            // btnUpdDom
+            // lblTitleDom
             // 
-            this.btnUpdDom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdDom.BackgroundImage")));
-            this.btnUpdDom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpdDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpdDom.Location = new System.Drawing.Point(740, 188);
-            this.btnUpdDom.Name = "btnUpdDom";
-            this.btnUpdDom.Size = new System.Drawing.Size(28, 28);
-            this.btnUpdDom.TabIndex = 91;
-            this.btnUpdDom.UseVisualStyleBackColor = true;
-            this.btnUpdDom.Click += new System.EventHandler(this.btnUpdDom_Click);
-            // 
-            // label5
-            // 
-            this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label5.Location = new System.Drawing.Point(112, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
-            this.label5.TabIndex = 82;
-            this.label5.Text = "Nombre";
-            this.label5.Visible = false;
-            // 
-            // btnSaveDom
-            // 
-            this.btnSaveDom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveDom.BackgroundImage")));
-            this.btnSaveDom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSaveDom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveDom.Location = new System.Drawing.Point(706, 188);
-            this.btnSaveDom.Name = "btnSaveDom";
-            this.btnSaveDom.Size = new System.Drawing.Size(28, 28);
-            this.btnSaveDom.TabIndex = 87;
-            this.btnSaveDom.UseVisualStyleBackColor = true;
-            this.btnSaveDom.Click += new System.EventHandler(this.btnSave_Click);
+            this.lblTitleDom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTitleDom.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitleDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleDom.ForeColor = System.Drawing.Color.White;
+            this.lblTitleDom.Location = new System.Drawing.Point(3, 3);
+            this.lblTitleDom.Name = "lblTitleDom";
+            this.lblTitleDom.Size = new System.Drawing.Size(770, 40);
+            this.lblTitleDom.TabIndex = 120;
+            this.lblTitleDom.Text = "Clientes";
+            this.lblTitleDom.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
@@ -209,14 +179,6 @@
             this.button1.TabIndex = 90;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtNombreDom
-            // 
-            this.txtNombreDom.Enabled = false;
-            this.txtNombreDom.Location = new System.Drawing.Point(162, 6);
-            this.txtNombreDom.Name = "txtNombreDom";
-            this.txtNombreDom.Size = new System.Drawing.Size(412, 20);
-            this.txtNombreDom.TabIndex = 89;
             // 
             // dgvDomicilio
             // 
@@ -234,7 +196,7 @@
             this.colLocalidad,
             this.colProvincia,
             this.colEstadoDom});
-            this.dgvDomicilio.Location = new System.Drawing.Point(8, 222);
+            this.dgvDomicilio.Location = new System.Drawing.Point(6, 211);
             this.dgvDomicilio.Name = "dgvDomicilio";
             this.dgvDomicilio.ReadOnly = true;
             this.dgvDomicilio.Size = new System.Drawing.Size(760, 279);
@@ -307,7 +269,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnUpdDom);
             this.groupBox2.Controls.Add(this.button3);
+            this.groupBox2.Controls.Add(this.btnSaveDom);
             this.groupBox2.Controls.Add(this.cbCalle);
             this.groupBox2.Controls.Add(this.lblEstadoDom);
             this.groupBox2.Controls.Add(this.cbEstadoDom);
@@ -338,12 +302,24 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(8, 32);
+            this.groupBox2.Location = new System.Drawing.Point(6, 46);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(760, 150);
+            this.groupBox2.Size = new System.Drawing.Size(760, 161);
             this.groupBox2.TabIndex = 84;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Domicilio";
+            // 
+            // btnUpdDom
+            // 
+            this.btnUpdDom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdDom.BackgroundImage")));
+            this.btnUpdDom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpdDom.Location = new System.Drawing.Point(726, 127);
+            this.btnUpdDom.Name = "btnUpdDom";
+            this.btnUpdDom.Size = new System.Drawing.Size(28, 28);
+            this.btnUpdDom.TabIndex = 91;
+            this.btnUpdDom.UseVisualStyleBackColor = true;
+            this.btnUpdDom.Click += new System.EventHandler(this.btnUpdDom_Click);
             // 
             // button3
             // 
@@ -356,6 +332,19 @@
             this.button3.TabIndex = 113;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // btnSaveDom
+            // 
+            this.btnSaveDom.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveDom.BackgroundImage")));
+            this.btnSaveDom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSaveDom.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveDom.Location = new System.Drawing.Point(692, 127);
+            this.btnSaveDom.Name = "btnSaveDom";
+            this.btnSaveDom.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveDom.TabIndex = 87;
+            this.btnSaveDom.UseVisualStyleBackColor = true;
+            this.btnSaveDom.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cbCalle
             // 
@@ -686,11 +675,8 @@
             // tabTelefonos
             // 
             this.tabTelefonos.BackColor = System.Drawing.SystemColors.Control;
-            this.tabTelefonos.Controls.Add(this.btnUpdTel);
-            this.tabTelefonos.Controls.Add(this.label16);
-            this.tabTelefonos.Controls.Add(this.btnSaveTel);
+            this.tabTelefonos.Controls.Add(this.lblTitleTel);
             this.tabTelefonos.Controls.Add(this.button7);
-            this.tabTelefonos.Controls.Add(this.txtNombreTel);
             this.tabTelefonos.Controls.Add(this.dgvTelefono);
             this.tabTelefonos.Controls.Add(this.groupBox1);
             this.tabTelefonos.Location = new System.Drawing.Point(4, 22);
@@ -700,42 +686,18 @@
             this.tabTelefonos.TabIndex = 1;
             this.tabTelefonos.Text = "Telefonos";
             // 
-            // btnUpdTel
+            // lblTitleTel
             // 
-            this.btnUpdTel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdTel.BackgroundImage")));
-            this.btnUpdTel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpdTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpdTel.Location = new System.Drawing.Point(740, 98);
-            this.btnUpdTel.Name = "btnUpdTel";
-            this.btnUpdTel.Size = new System.Drawing.Size(28, 28);
-            this.btnUpdTel.TabIndex = 102;
-            this.btnUpdTel.UseVisualStyleBackColor = true;
-            this.btnUpdTel.Click += new System.EventHandler(this.btnUpdTel_Click);
-            // 
-            // label16
-            // 
-            this.label16.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label16.Location = new System.Drawing.Point(113, 9);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(44, 13);
-            this.label16.TabIndex = 93;
-            this.label16.Text = "Nombre";
-            this.label16.Visible = false;
-            // 
-            // btnSaveTel
-            // 
-            this.btnSaveTel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveTel.BackgroundImage")));
-            this.btnSaveTel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSaveTel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveTel.Location = new System.Drawing.Point(706, 98);
-            this.btnSaveTel.Name = "btnSaveTel";
-            this.btnSaveTel.Size = new System.Drawing.Size(28, 28);
-            this.btnSaveTel.TabIndex = 98;
-            this.btnSaveTel.UseVisualStyleBackColor = true;
-            this.btnSaveTel.Click += new System.EventHandler(this.button3_Click);
+            this.lblTitleTel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTitleTel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitleTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleTel.ForeColor = System.Drawing.Color.White;
+            this.lblTitleTel.Location = new System.Drawing.Point(3, 3);
+            this.lblTitleTel.Name = "lblTitleTel";
+            this.lblTitleTel.Size = new System.Drawing.Size(770, 40);
+            this.lblTitleTel.TabIndex = 119;
+            this.lblTitleTel.Text = "Clientes";
+            this.lblTitleTel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button7
             // 
@@ -748,14 +710,6 @@
             this.button7.TabIndex = 101;
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // txtNombreTel
-            // 
-            this.txtNombreTel.Enabled = false;
-            this.txtNombreTel.Location = new System.Drawing.Point(157, 6);
-            this.txtNombreTel.Name = "txtNombreTel";
-            this.txtNombreTel.Size = new System.Drawing.Size(412, 20);
-            this.txtNombreTel.TabIndex = 100;
             // 
             // dgvTelefono
             // 
@@ -770,10 +724,10 @@
             this.colnumTel,
             this.colTelefono,
             this.colEstadoTel});
-            this.dgvTelefono.Location = new System.Drawing.Point(8, 132);
+            this.dgvTelefono.Location = new System.Drawing.Point(6, 137);
             this.dgvTelefono.Name = "dgvTelefono";
             this.dgvTelefono.ReadOnly = true;
-            this.dgvTelefono.Size = new System.Drawing.Size(760, 364);
+            this.dgvTelefono.Size = new System.Drawing.Size(760, 358);
             this.dgvTelefono.TabIndex = 99;
             this.dgvTelefono.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTelefono_CellContentClick);
             this.dgvTelefono.SelectionChanged += new System.EventHandler(this.dgvTelefono_SelectionChanged);
@@ -827,6 +781,8 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblEstadoTel);
+            this.groupBox1.Controls.Add(this.btnUpdTel);
+            this.groupBox1.Controls.Add(this.btnSaveTel);
             this.groupBox1.Controls.Add(this.cbEstadoTel);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.txtNumTel);
@@ -835,21 +791,38 @@
             this.groupBox1.Controls.Add(this.txtCaracteristica);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(10, 32);
+            this.groupBox1.Location = new System.Drawing.Point(6, 46);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(760, 60);
+            this.groupBox1.Size = new System.Drawing.Size(764, 85);
             this.groupBox1.TabIndex = 95;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Telefono";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // lblEstadoTel
+            // btnUpdTel
             // 
-            this.lblEstadoTel.AutoSize = true;
-            this.lblEstadoTel.Location = new System.Drawing.Point(684, 25);
-            this.lblEstadoTel.Name = "lblEstadoTel";
-            this.lblEstadoTel.Size = new System.Drawing.Size(0, 13);
-            this.lblEstadoTel.TabIndex = 93;
+            this.btnUpdTel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdTel.BackgroundImage")));
+            this.btnUpdTel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpdTel.Location = new System.Drawing.Point(696, 52);
+            this.btnUpdTel.Name = "btnUpdTel";
+            this.btnUpdTel.Size = new System.Drawing.Size(28, 28);
+            this.btnUpdTel.TabIndex = 102;
+            this.btnUpdTel.UseVisualStyleBackColor = true;
+            this.btnUpdTel.Click += new System.EventHandler(this.btnUpdTel_Click);
+            // 
+            // btnSaveTel
+            // 
+            this.btnSaveTel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveTel.BackgroundImage")));
+            this.btnSaveTel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSaveTel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveTel.Location = new System.Drawing.Point(730, 52);
+            this.btnSaveTel.Name = "btnSaveTel";
+            this.btnSaveTel.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveTel.TabIndex = 98;
+            this.btnSaveTel.UseVisualStyleBackColor = true;
+            this.btnSaveTel.Click += new System.EventHandler(this.button3_Click);
             // 
             // cbEstadoTel
             // 
@@ -923,16 +896,11 @@
             // tabEmails
             // 
             this.tabEmails.BackColor = System.Drawing.SystemColors.Control;
-            this.tabEmails.Controls.Add(this.btnUpdEmail);
+            this.tabEmails.Controls.Add(this.lblTitleEmail);
             this.tabEmails.Controls.Add(this.lblRolTel);
-            this.tabEmails.Controls.Add(this.label26);
-            this.tabEmails.Controls.Add(this.label27);
-            this.tabEmails.Controls.Add(this.btnSaveEmail);
             this.tabEmails.Controls.Add(this.cbRolALL);
             this.tabEmails.Controls.Add(this.button11);
-            this.tabEmails.Controls.Add(this.txtNombreEmail);
             this.tabEmails.Controls.Add(this.dgvEmail);
-            this.tabEmails.Controls.Add(this.txtIDALL);
             this.tabEmails.Controls.Add(this.groupBox3);
             this.tabEmails.Location = new System.Drawing.Point(4, 22);
             this.tabEmails.Name = "tabEmails";
@@ -941,17 +909,18 @@
             this.tabEmails.TabIndex = 2;
             this.tabEmails.Text = "Emails";
             // 
-            // btnUpdEmail
+            // lblTitleEmail
             // 
-            this.btnUpdEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdEmail.BackgroundImage")));
-            this.btnUpdEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnUpdEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpdEmail.Location = new System.Drawing.Point(739, 99);
-            this.btnUpdEmail.Name = "btnUpdEmail";
-            this.btnUpdEmail.Size = new System.Drawing.Size(28, 28);
-            this.btnUpdEmail.TabIndex = 116;
-            this.btnUpdEmail.UseVisualStyleBackColor = true;
-            this.btnUpdEmail.Click += new System.EventHandler(this.btnUpdEmail_Click);
+            this.lblTitleEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTitleEmail.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitleEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitleEmail.ForeColor = System.Drawing.Color.White;
+            this.lblTitleEmail.Location = new System.Drawing.Point(3, 3);
+            this.lblTitleEmail.Name = "lblTitleEmail";
+            this.lblTitleEmail.Size = new System.Drawing.Size(770, 40);
+            this.lblTitleEmail.TabIndex = 118;
+            this.lblTitleEmail.Text = "Clientes";
+            this.lblTitleEmail.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblRolTel
             // 
@@ -965,43 +934,6 @@
             this.lblRolTel.TabIndex = 115;
             this.lblRolTel.Text = "Rol";
             this.lblRolTel.Visible = false;
-            // 
-            // label26
-            // 
-            this.label26.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label26.Location = new System.Drawing.Point(620, 10);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(18, 13);
-            this.label26.TabIndex = 114;
-            this.label26.Text = "ID";
-            this.label26.Visible = false;
-            // 
-            // label27
-            // 
-            this.label27.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label27.Location = new System.Drawing.Point(112, 10);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(44, 13);
-            this.label27.TabIndex = 104;
-            this.label27.Text = "Nombre";
-            this.label27.Visible = false;
-            // 
-            // btnSaveEmail
-            // 
-            this.btnSaveEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveEmail.BackgroundImage")));
-            this.btnSaveEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSaveEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSaveEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveEmail.Location = new System.Drawing.Point(705, 99);
-            this.btnSaveEmail.Name = "btnSaveEmail";
-            this.btnSaveEmail.Size = new System.Drawing.Size(28, 28);
-            this.btnSaveEmail.TabIndex = 109;
-            this.btnSaveEmail.UseVisualStyleBackColor = true;
-            this.btnSaveEmail.Click += new System.EventHandler(this.button9_Click);
             // 
             // cbRolALL
             // 
@@ -1027,14 +959,6 @@
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
-            // txtNombreEmail
-            // 
-            this.txtNombreEmail.Enabled = false;
-            this.txtNombreEmail.Location = new System.Drawing.Point(156, 6);
-            this.txtNombreEmail.Name = "txtNombreEmail";
-            this.txtNombreEmail.Size = new System.Drawing.Size(412, 20);
-            this.txtNombreEmail.TabIndex = 111;
-            // 
             // dgvEmail
             // 
             this.dgvEmail.AllowUserToAddRows = false;
@@ -1044,10 +968,10 @@
             this.colIDEmail,
             this.colEmail,
             this.colEstado});
-            this.dgvEmail.Location = new System.Drawing.Point(7, 133);
+            this.dgvEmail.Location = new System.Drawing.Point(6, 137);
             this.dgvEmail.Name = "dgvEmail";
             this.dgvEmail.ReadOnly = true;
-            this.dgvEmail.Size = new System.Drawing.Size(760, 364);
+            this.dgvEmail.Size = new System.Drawing.Size(760, 359);
             this.dgvEmail.TabIndex = 110;
             this.dgvEmail.SelectionChanged += new System.EventHandler(this.dgvEmail_SelectionChanged);
             // 
@@ -1070,25 +994,20 @@
             this.colEstado.Name = "colEstado";
             this.colEstado.ReadOnly = true;
             // 
-            // txtIDALL
-            // 
-            this.txtIDALL.Enabled = false;
-            this.txtIDALL.Location = new System.Drawing.Point(638, 7);
-            this.txtIDALL.Name = "txtIDALL";
-            this.txtIDALL.Size = new System.Drawing.Size(110, 20);
-            this.txtIDALL.TabIndex = 108;
-            this.txtIDALL.Visible = false;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.lblEstadoEmail);
+            this.groupBox3.Controls.Add(this.btnUpdEmail);
+            this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.cbEstadoEmail);
             this.groupBox3.Controls.Add(this.txtEmail);
+            this.groupBox3.Controls.Add(this.btnSaveEmail);
             this.groupBox3.Controls.Add(this.label29);
+            this.groupBox3.Controls.Add(this.txtIDALL);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(9, 33);
+            this.groupBox3.Location = new System.Drawing.Point(6, 46);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(760, 60);
+            this.groupBox3.Size = new System.Drawing.Size(764, 85);
             this.groupBox3.TabIndex = 106;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Emails";
@@ -1100,6 +1019,30 @@
             this.lblEstadoEmail.Name = "lblEstadoEmail";
             this.lblEstadoEmail.Size = new System.Drawing.Size(0, 13);
             this.lblEstadoEmail.TabIndex = 93;
+            // 
+            // btnUpdEmail
+            // 
+            this.btnUpdEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdEmail.BackgroundImage")));
+            this.btnUpdEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnUpdEmail.Location = new System.Drawing.Point(696, 51);
+            this.btnUpdEmail.Name = "btnUpdEmail";
+            this.btnUpdEmail.Size = new System.Drawing.Size(28, 28);
+            this.btnUpdEmail.TabIndex = 116;
+            this.btnUpdEmail.UseVisualStyleBackColor = true;
+            this.btnUpdEmail.Click += new System.EventHandler(this.btnUpdEmail_Click);
+            // 
+            // label26
+            // 
+            this.label26.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label26.Location = new System.Drawing.Point(310, 63);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(18, 13);
+            this.label26.TabIndex = 114;
+            this.label26.Text = "ID";
+            this.label26.Visible = false;
             // 
             // cbEstadoEmail
             // 
@@ -1116,20 +1059,50 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtEmail.Location = new System.Drawing.Point(63, 23);
+            this.txtEmail.Location = new System.Drawing.Point(49, 23);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(566, 20);
             this.txtEmail.TabIndex = 107;
+            // 
+            // btnSaveEmail
+            // 
+            this.btnSaveEmail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveEmail.BackgroundImage")));
+            this.btnSaveEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSaveEmail.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveEmail.Location = new System.Drawing.Point(730, 51);
+            this.btnSaveEmail.Name = "btnSaveEmail";
+            this.btnSaveEmail.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveEmail.TabIndex = 109;
+            this.btnSaveEmail.UseVisualStyleBackColor = true;
+            this.btnSaveEmail.Click += new System.EventHandler(this.button9_Click);
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label29.Location = new System.Drawing.Point(25, 26);
+            this.label29.Location = new System.Drawing.Point(11, 26);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(32, 13);
             this.label29.TabIndex = 106;
             this.label29.Text = "Email";
+            // 
+            // txtIDALL
+            // 
+            this.txtIDALL.Enabled = false;
+            this.txtIDALL.Location = new System.Drawing.Point(334, 59);
+            this.txtIDALL.Name = "txtIDALL";
+            this.txtIDALL.Size = new System.Drawing.Size(110, 20);
+            this.txtIDALL.TabIndex = 108;
+            this.txtIDALL.Visible = false;
+            // 
+            // lblEstadoTel
+            // 
+            this.lblEstadoTel.AutoSize = true;
+            this.lblEstadoTel.Location = new System.Drawing.Point(637, 60);
+            this.lblEstadoTel.Name = "lblEstadoTel";
+            this.lblEstadoTel.Size = new System.Drawing.Size(0, 13);
+            this.lblEstadoTel.TabIndex = 110;
             // 
             // formContacto
             // 
@@ -1143,12 +1116,10 @@
             this.Load += new System.EventHandler(this.formContacto_Load);
             this.tabContacto.ResumeLayout(false);
             this.tabDomicilios.ResumeLayout(false);
-            this.tabDomicilios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDomicilio)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabTelefonos.ResumeLayout(false);
-            this.tabTelefonos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefono)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1166,10 +1137,8 @@
         private System.Windows.Forms.TabPage tabDomicilios;
         private System.Windows.Forms.TabPage tabTelefonos;
         private System.Windows.Forms.TabPage tabEmails;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSaveDom;
         private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.TextBox txtNombreDom;
         public System.Windows.Forms.DataGridView dgvDomicilio;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
@@ -1198,10 +1167,8 @@
         private System.Windows.Forms.TextBox txtnumCalle;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnSaveTel;
         private System.Windows.Forms.Button button7;
-        public System.Windows.Forms.TextBox txtNombreTel;
         public System.Windows.Forms.DataGridView dgvTelefono;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label17;
@@ -1211,10 +1178,8 @@
         private System.Windows.Forms.TextBox txtCaracteristica;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
         public System.Windows.Forms.ComboBox cbRolALL;
         private System.Windows.Forms.Button button11;
-        public System.Windows.Forms.TextBox txtNombreEmail;
         public System.Windows.Forms.DataGridView dgvEmail;
         public System.Windows.Forms.TextBox txtIDALL;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -1228,7 +1193,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
         private System.Windows.Forms.DataGridViewCheckBoxColumn colEstado;
         private System.Windows.Forms.CheckBox cbEstadoTel;
-        private System.Windows.Forms.Label lblEstadoTel;
         private System.Windows.Forms.Label lblEstadoEmail;
         private System.Windows.Forms.Button btnUpdDom;
         private System.Windows.Forms.Button btnUpdTel;
@@ -1254,5 +1218,9 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn colEstadoDom;
         private System.Windows.Forms.Button button3;
         public System.Windows.Forms.ComboBox cbCalle;
+        public System.Windows.Forms.Label lblTitleTel;
+        public System.Windows.Forms.Label lblTitleEmail;
+        public System.Windows.Forms.Label lblTitleDom;
+        private System.Windows.Forms.Label lblEstadoTel;
     }
 }

@@ -209,7 +209,7 @@
             this.MaximizeBox = false;
             this.Name = "listInsumos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "listInsumos";
+            this.Text = "Listar Insumos";
             this.Load += new System.EventHandler(this.listInsumos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInsumos)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -104,9 +104,12 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.tabUpdateTXT = 2;
                 frm.Show(this);
                 frm.cbRolALL.SelectedValue = 2;
-                frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-                frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-                frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.lblTitleEmail.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                frm.lblTitleDom.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                frm.lblTitleTel.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                //frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                //frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                //frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 frm.CargarDGVs();
             }
         }
@@ -128,9 +131,12 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.tabUpdateTXT = 2;
                 frm.Show(this);
                 frm.cbRolALL.SelectedValue = 2;
-                frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-                frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-                frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.lblTitleEmail.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                frm.lblTitleDom.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                frm.lblTitleTel.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                //frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                //frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                //frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 frm.CargarDGVs();
             }
         }
@@ -218,9 +224,12 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.tabVar = 2;
                 frm.Show();
                 frm.cbRolALL.SelectedValue = 2;
-                frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-                frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-                frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.lblTitleEmail.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                frm.lblTitleDom.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor) ;
+                frm.lblTitleTel.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                //frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                //frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                //frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
             }
         }
 
@@ -418,10 +427,13 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.tabVar = 2;
                 frm.tabUpdateTXT = 2;
                 frm.Show(this);
-                frm.cbRolALL.SelectedValue = 2;                
-                frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-                frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
-                frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                frm.cbRolALL.SelectedValue = 2;
+                frm.lblTitleEmail.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                frm.lblTitleDom.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                frm.lblTitleTel.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                //frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                //frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
+                //frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 frm.CargarDGVs();
             }
         }

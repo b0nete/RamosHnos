@@ -84,7 +84,7 @@
             this.cbParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbParametro.FormattingEnabled = true;
             this.cbParametro.Items.AddRange(new object[] {
-            "ID",
+            "Nº Pedido",
             "IDCliente",
             "Fecha"});
             this.cbParametro.Location = new System.Drawing.Point(73, 23);
@@ -172,7 +172,7 @@
             this.MaximizeBox = false;
             this.Name = "listPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "listPedidos";
+            this.Text = "Listar Pedidos";
             this.Load += new System.EventHandler(this.listPedidos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

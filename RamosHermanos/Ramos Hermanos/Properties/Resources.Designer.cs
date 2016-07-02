@@ -193,6 +193,16 @@ namespace RamosHermanos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap grey_background_for_site115 {
+            get {
+                object obj = ResourceManager.GetObject("grey-background-for-site115", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap img_stock {
             get {
                 object obj = ResourceManager.GetObject("img-stock", resourceCulture);

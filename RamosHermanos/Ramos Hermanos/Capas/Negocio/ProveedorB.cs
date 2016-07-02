@@ -454,6 +454,31 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static string BuscarNombreProveedor(int idProveedor)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT CONCAT(P.idProveedor ,' - ', P.razonSocial)
+                                FROM proveedores P
+                                WHERE idProveedor = @idProveedor";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idProveedor", idProveedor);
+
+                string nombre = Convert.ToString(cmd.ExecuteScalar());
+
+                return nombre;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
     }
 }
  

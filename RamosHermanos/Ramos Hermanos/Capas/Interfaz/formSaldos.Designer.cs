@@ -758,7 +758,7 @@
             this.ClientSize = new System.Drawing.Size(462, 253);
             this.Controls.Add(this.tabMain);
             this.Name = "formSaldos";
-            this.Text = "formSaldos";
+            this.Text = "Registrar Saldos";
             this.tabMain.ResumeLayout(false);
             this.tabCliente.ResumeLayout(false);
             this.tabCliente.PerformLayout();

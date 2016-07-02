@@ -265,7 +265,7 @@
             this.MaximizeBox = false;
             this.Name = "listClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Listado Clientes";
+            this.Text = "Listar Clientes";
             this.Load += new System.EventHandler(this.listClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.groupBox1.ResumeLayout(false);

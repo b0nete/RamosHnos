@@ -181,6 +181,7 @@ namespace RamosHermanos.Capas.Interfaz
             //}
         }
 
+
         private void btnDomicilio_Click(object sender, EventArgs e)
         {
             if (txtIDcliente.Text == string.Empty)
@@ -196,10 +197,16 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.tabUpdateTXT = 1;
                 frm.txtIDALL.Text = txtIDcliente.Text;                 
                 frm.Show(this);
-                frm.cbRolALL.SelectedValue = 1;          
-                frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.cbRolALL.SelectedValue = 1;
+                frm.lblTitleDom.Text = txtApellido.Text + " " + txtNombre.Text;
+                frm.lblTitleTel.Text = txtApellido.Text + " " + txtNombre.Text;
+                frm.lblTitleEmail.Text = txtApellido.Text + " " + txtNombre.Text;
+                //frm.lblTitleDom.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.lblTitleTel.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.lblTitleEmail.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
+                //frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
+                //frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
                 
             }
         }
@@ -219,10 +226,16 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtIDALL.Text = txtIDcliente.Text;
                 frm.tabUpdateTXT = 1;
                 frm.Show(this);
-                frm.cbRolALL.SelectedValue = 1;                
-                frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;                
+                frm.cbRolALL.SelectedValue = 1;
+                frm.lblTitleDom.Text = txtApellido.Text + " " + txtNombre.Text;
+                frm.lblTitleTel.Text = txtApellido.Text + " " + txtNombre.Text;
+                frm.lblTitleEmail.Text = txtApellido.Text + " " + txtNombre.Text;
+                //frm.lblTitleDom.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.lblTitleTel.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.lblTitleEmail.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
+                //frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
+                //frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;                
             }
         }
 
@@ -242,10 +255,14 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.tabUpdateTXT = 1;
                 frm.txtIDALL.Text = txtIDcliente.Text;
                 frm.Show(this);
-                frm.cbRolALL.SelectedValue = 1;                
-                frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.cbRolALL.SelectedValue = 1;
+                frm.lblTitleDom.Text = txtApellido.Text + " " + txtNombre.Text;
+                frm.lblTitleTel.Text = txtApellido.Text + " " + txtNombre.Text;
+                frm.lblTitleEmail.Text = txtApellido.Text + " " + txtNombre.Text;
+                 //ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
+                //frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
+                //frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
                 frm.CargarDGVs();                
             }
         }
@@ -1505,9 +1522,12 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtIDALL.Text = txtIDclientePJ.Text;
                 frm.Show();
                 frm.cbRolALL.SelectedValue = 1;
-                frm.txtNombreEmail.Text = txtNombrePJ.Text;
-                frm.txtNombreTel.Text = txtNombrePJ.Text;
-                frm.txtNombreDom.Text = txtNombrePJ.Text;
+                frm.lblTitleDom.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                frm.lblTitleTel.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                frm.lblTitleEmail.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.txtNombreEmail.Text = txtNombrePJ.Text;
+                //frm.txtNombreTel.Text = txtNombrePJ.Text;
+                //frm.txtNombreDom.Text = txtNombrePJ.Text;
 
             }
         }
@@ -1526,9 +1546,12 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtIDALL.Text = txtIDclientePJ.Text;
                 frm.Show();
                 frm.cbRolALL.SelectedValue = 1;
-                frm.txtNombreEmail.Text = txtNombrePJ.Text;
-                frm.txtNombreTel.Text = txtNombrePJ.Text;
-                frm.txtNombreDom.Text = txtNombrePJ.Text;
+                frm.lblTitleDom.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                frm.lblTitleTel.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                frm.lblTitleEmail.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.txtNombreEmail.Text = txtNombrePJ.Text;
+                //frm.txtNombreTel.Text = txtNombrePJ.Text;
+                //frm.txtNombreDom.Text = txtNombrePJ.Text;
 
             }
         }
@@ -1547,9 +1570,12 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtIDALL.Text = txtIDclientePJ.Text;
                 frm.Show();
                 frm.cbRolALL.SelectedValue = 1;
-                frm.txtNombreEmail.Text = txtNombrePJ.Text;
-                frm.txtNombreTel.Text = txtNombrePJ.Text;
-                frm.txtNombreDom.Text = txtNombrePJ.Text;
+                frm.lblTitleDom.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                frm.lblTitleTel.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                frm.lblTitleEmail.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.txtNombreEmail.Text = txtNombrePJ.Text;
+                //frm.txtNombreTel.Text = txtNombrePJ.Text;
+                //frm.txtNombreDom.Text = txtNombrePJ.Text;
 
             }
         }

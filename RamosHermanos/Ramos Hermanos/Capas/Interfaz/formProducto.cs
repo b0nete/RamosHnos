@@ -260,7 +260,9 @@ namespace RamosHermanos.Capas.Interfaz
         private void btnSearch_Click_1(object sender, EventArgs e)
         {
             listProductos frm = new listProductos();
+            frm.caseSwitch = 1;
             frm.Show();
+            this.Close();
         }
 
         private void cbRubro_SelectedIndexChanged(object sender, EventArgs e)

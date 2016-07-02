@@ -1082,7 +1082,7 @@
             this.ClientSize = new System.Drawing.Size(514, 377);
             this.Controls.Add(this.tabDomicilios);
             this.Name = "formDomicilio";
-            this.Text = "Guardar Domicilio";
+            this.Text = "Registrar Domicilio";
             this.Load += new System.EventHandler(this.formDomicilio_Load);
             this.tabProvincias.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvincias)).EndInit();

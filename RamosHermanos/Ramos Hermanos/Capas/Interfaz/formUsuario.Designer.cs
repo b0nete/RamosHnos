@@ -71,6 +71,7 @@
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.tabLogs = new System.Windows.Forms.TabPage();
             this.dgvLogs = new System.Windows.Forms.DataGridView();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.tabUsuarios.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -86,10 +87,10 @@
             this.tabUsuarios.Controls.Add(this.tabInformacion);
             this.tabUsuarios.Controls.Add(this.tabListado);
             this.tabUsuarios.Controls.Add(this.tabLogs);
-            this.tabUsuarios.Location = new System.Drawing.Point(131, 82);
+            this.tabUsuarios.Location = new System.Drawing.Point(12, 51);
             this.tabUsuarios.Name = "tabUsuarios";
             this.tabUsuarios.SelectedIndex = 0;
-            this.tabUsuarios.Size = new System.Drawing.Size(514, 397);
+            this.tabUsuarios.Size = new System.Drawing.Size(760, 498);
             this.tabUsuarios.TabIndex = 0;
             // 
             // tabInformacion
@@ -104,7 +105,7 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(506, 371);
+            this.tabInformacion.Size = new System.Drawing.Size(752, 472);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             // 
@@ -530,7 +531,7 @@
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(506, 371);
+            this.tabListado.Size = new System.Drawing.Size(752, 472);
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
@@ -541,7 +542,7 @@
             this.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUsuarios.Location = new System.Drawing.Point(3, 3);
             this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.Size = new System.Drawing.Size(500, 365);
+            this.dgvUsuarios.Size = new System.Drawing.Size(746, 466);
             this.dgvUsuarios.TabIndex = 0;
             // 
             // tabLogs
@@ -549,7 +550,7 @@
             this.tabLogs.Controls.Add(this.dgvLogs);
             this.tabLogs.Location = new System.Drawing.Point(4, 22);
             this.tabLogs.Name = "tabLogs";
-            this.tabLogs.Size = new System.Drawing.Size(506, 371);
+            this.tabLogs.Size = new System.Drawing.Size(752, 472);
             this.tabLogs.TabIndex = 2;
             this.tabLogs.Text = "Logs";
             this.tabLogs.UseVisualStyleBackColor = true;
@@ -560,15 +561,29 @@
             this.dgvLogs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvLogs.Location = new System.Drawing.Point(0, 0);
             this.dgvLogs.Name = "dgvLogs";
-            this.dgvLogs.Size = new System.Drawing.Size(506, 371);
+            this.dgvLogs.Size = new System.Drawing.Size(752, 472);
             this.dgvLogs.TabIndex = 0;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(784, 40);
+            this.lblTitle.TabIndex = 118;
+            this.lblTitle.Text = "Usuarios";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // formUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RamosHermanos.Properties.Resources.User;
+            this.BackgroundImage = global::RamosHermanos.Properties.Resources.grey_background_for_site115;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tabUsuarios);
             this.MaximizeBox = false;
             this.Name = "formUsuario";
@@ -633,6 +648,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label lblTitle;
 
     }
 }

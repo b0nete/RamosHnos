@@ -888,6 +888,7 @@
             this.txtnewPrecio.Name = "txtnewPrecio";
             this.txtnewPrecio.Size = new System.Drawing.Size(191, 20);
             this.txtnewPrecio.TabIndex = 124;
+            this.txtnewPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtnewPrecio.TextChanged += new System.EventHandler(this.txtnewPrecio_TextChanged);
             this.txtnewPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtnewPrecio_KeyPress);
             // 

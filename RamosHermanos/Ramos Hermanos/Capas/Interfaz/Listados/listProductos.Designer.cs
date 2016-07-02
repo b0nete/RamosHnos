@@ -38,6 +38,7 @@
             this.colIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
@@ -83,9 +84,8 @@
             this.cbParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbParametro.FormattingEnabled = true;
             this.cbParametro.Items.AddRange(new object[] {
-            "ID",
-            "Nombre",
-            "Marca"});
+            "Nº Producto",
+            "Nombre"});
             this.cbParametro.Location = new System.Drawing.Point(73, 23);
             this.cbParametro.Name = "cbParametro";
             this.cbParametro.Size = new System.Drawing.Size(133, 21);
@@ -112,6 +112,7 @@
             this.colIDProducto,
             this.colMarca,
             this.colProducto,
+            this.colCantidad,
             this.colMedida});
             this.dgvProducto.Location = new System.Drawing.Point(4, 70);
             this.dgvProducto.Name = "dgvProducto";
@@ -139,6 +140,13 @@
             this.colProducto.HeaderText = "Producto";
             this.colProducto.Name = "colProducto";
             this.colProducto.ReadOnly = true;
+            this.colProducto.Width = 250;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.HeaderText = "Tamaño";
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
             // 
             // colMedida
             // 
@@ -156,7 +164,7 @@
             this.MaximizeBox = false;
             this.Name = "listProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "listProductos";
+            this.Text = "Listar Productos";
             this.Load += new System.EventHandler(this.listProductos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -176,6 +184,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMedida;
     }
 }

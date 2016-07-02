@@ -501,9 +501,12 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.tabVar = 2;
                 frm.Show();
                 frm.cbRolALL.SelectedValue = 3;
-                frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.lblTitleEmail.Text = DistribuidorB.BuscarNombreDistribuidor(distribuidor.idDistribuidor);
+                frm.lblTitleDom.Text = DistribuidorB.BuscarNombreDistribuidor(distribuidor.idDistribuidor);
+                frm.lblTitleTel.Text = DistribuidorB.BuscarNombreDistribuidor(distribuidor.idDistribuidor);
+                //frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
+                //frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
+                //frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
                 frm.CargarDGVs();
             }
         }
@@ -521,9 +524,12 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.tabVar = 3;
                 frm.Show();
                 frm.cbRolALL.SelectedValue = 3;
-                frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.lblTitleEmail.Text = DistribuidorB.BuscarNombreDistribuidor(distribuidor.idDistribuidor);
+                frm.lblTitleDom.Text = DistribuidorB.BuscarNombreDistribuidor(distribuidor.idDistribuidor);
+                frm.lblTitleTel.Text = DistribuidorB.BuscarNombreDistribuidor(distribuidor.idDistribuidor);
+                //frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
+                //frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
+                //frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
                 frm.CargarDGVs();
             }
         }
@@ -541,9 +547,12 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.tabVar = 1;
                 frm.Show();
                 frm.cbRolALL.SelectedValue = 3;
-                frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
+                frm.lblTitleEmail.Text = DistribuidorB.BuscarNombreDistribuidor(distribuidor.idDistribuidor);
+                frm.lblTitleDom.Text = DistribuidorB.BuscarNombreDistribuidor(distribuidor.idDistribuidor);
+                frm.lblTitleTel.Text = DistribuidorB.BuscarNombreDistribuidor(distribuidor.idDistribuidor);
+                //frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
+                //frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
+                //frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
                 frm.CargarDGVs();
             }
         }

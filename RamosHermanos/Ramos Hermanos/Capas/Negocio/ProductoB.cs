@@ -190,7 +190,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT idProducto, M.marca, P.producto, cantidad, MM.medida
+                string query = @"SELECT idProducto, M.marca, P.producto, P.cantidad, MM.medida
                                  FROM Productos P
                                  INNER JOIN Marcas M ON M.idMarca = P.Marca
                                  INNER JOIN Medidas MM ON MM.idMedida = P.Medida
@@ -336,7 +336,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT P.idProducto, P.producto, MA.marca, M.medida
+                string query = @"SELECT P.idProducto, P.producto, MA.marca, P.cantidad, M.medida
                                  FROM productos P
                                  INNER JOIN marcas MA ON P.marca = MA.idmarca
                                  INNER JOIN medidas M ON P.medida = M.idMedida
@@ -347,7 +347,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@idProducto", parametro);
-                //cmd.Parameters.AddWithValue("@tipoproductos", parametro);
+                cmd.Parameters.AddWithValue("@cantidad", parametro);
                 cmd.Parameters.AddWithValue("@marcas", parametro);
                 cmd.Parameters.AddWithValue("@producto", parametro);
                 cmd.Parameters.AddWithValue("@medida", parametro);
@@ -365,10 +365,10 @@ namespace RamosHermanos.Capas.Negocio
                     cmd.CommandText = query + " P.producto LIKE @producto";
                 }
 
-                if (cb.SelectedIndex == 2)
-                {
-                    cmd.CommandText = query + " P.marca LIKE @marcas";
-                }
+                //if (cb.SelectedIndex == 2)
+                //{
+                //    cmd.CommandText = query + " P.marca LIKE @marcas";
+                //}
                 
                 //if (cb.SelectedIndex == 3)
                 //{
@@ -384,6 +384,7 @@ namespace RamosHermanos.Capas.Negocio
                     //Convert.ToString(dr["tipoproductos"]),
                     Convert.ToString(dr["marca"]),
                     Convert.ToString(dr["Producto"]),
+                    Convert.ToString(dr["Cantidad"]),
                     Convert.ToString(dr["Medida"]));
                 }
                 
