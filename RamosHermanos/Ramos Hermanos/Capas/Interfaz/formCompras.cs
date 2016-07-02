@@ -102,7 +102,7 @@ namespace RamosHermanos.Capas.Interfaz
         }
         private void CargarCompras()
         {
-            compras.tipoFactura = Convert.ToString(cbTipoFactura.SelectedText);
+            compras.tipoFactura = cbTipoFactura.Text;
             compras.numFactura = txtnumFactura.Text;
             compras.fecha = dtpfechaFactura.Value;
             compras.fechaEntrega = dtpEntrega.Value;

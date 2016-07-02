@@ -68,8 +68,6 @@ namespace RamosHermanos.Capas.Negocio
 
                     MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-
-
                     cmd.Parameters.AddWithValue("@tipoFactura", compras.tipoFactura);
                     cmd.Parameters.AddWithValue("@numFactura", compras.numFactura);
                     cmd.Parameters.AddWithValue("@fecha", compras.fecha);
