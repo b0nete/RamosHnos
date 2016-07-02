@@ -256,9 +256,9 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtIDALL.Text = txtIDcliente.Text;
                 frm.Show(this);
                 frm.cbRolALL.SelectedValue = 1;
-                frm.lblTitleDom.Text = txtApellido.Text + " " + txtNombre.Text;
-                frm.lblTitleTel.Text = txtApellido.Text + " " + txtNombre.Text;
-                frm.lblTitleEmail.Text = txtApellido.Text + " " + txtNombre.Text;
+                frm.lblTitleDom.Text = txtIDcliente.Text + " - " + txtApellido.Text + " " + txtNombre.Text;
+                frm.lblTitleTel.Text = txtIDcliente.Text + " - " + txtApellido.Text + " " + txtNombre.Text;
+                frm.lblTitleEmail.Text = txtIDcliente.Text + " - " + txtApellido.Text + " " + txtNombre.Text;
                  //ClienteB.BuscarNombreCliente(cliente.idCliente);
                 //frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
                 //frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
