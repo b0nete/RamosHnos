@@ -22,7 +22,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 DataTable dt = new DataTable();
 
-                string query = @"SELECT idCompras, C.proveedor, P.cuit, P.condicionIVA, P.razonSocial, fecha, observaciones, total, C.estado, tipofactura
+                string query = @"SELECT idCompras, C.tipoFactura, C.numFactura, C.fechaEntrega, C.fechaVencimiento, C.proveedor, P.cuit, P.condicionIVA, P.razonSocial, fecha, observaciones, total, C.estado, tipofactura, C.formaPago
                                 FROM Compras C
                                 INNER JOIN Proveedores P ON C.proveedor = P.idProveedor
                                 WHERE idCompras = @idCompra";
@@ -62,8 +62,8 @@ namespace RamosHermanos.Capas.Negocio
              try 
 	            {
                     MySQL.ConnectDB();
-                    string query = @"INSERT INTO compras (tipoFactura, numFactura, fecha, fechaEntrega, fechaVencimiento, proveedor, observaciones, total, estado)
-                                 VALUES (@tipoFactura, @numFactura, @fecha, @fechaEntrega, @fechaVencimiento, @proveedor, @observaciones, @total, @estado);
+                    string query = @"INSERT INTO compras (tipoFactura, numFactura, fecha, fechaEntrega, fechaVencimiento, proveedor, observaciones, total, estado, formaPago)
+                                 VALUES (@tipoFactura, @numFactura, @fecha, @fechaEntrega, @fechaVencimiento, @proveedor, @observaciones, @total, @estado, @formaPago);
                                  SELECT LAST_INSERT_ID();";
 
                     MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -77,6 +77,7 @@ namespace RamosHermanos.Capas.Negocio
                     cmd.Parameters.AddWithValue("@observaciones", compras.observaciones);
                     cmd.Parameters.AddWithValue("@total", compras.total);
                     cmd.Parameters.AddWithValue("@estado", compras.estado);
+                    cmd.Parameters.AddWithValue("@formaPago", compras.formaPago);
                                        
                     txtid.Text = Convert.ToString(cmd.ExecuteScalar());
 

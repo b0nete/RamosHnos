@@ -45,8 +45,14 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 DataRow dr = ComprasB.BuscarCompraID(compras.idCompras);
 
                 frm.txtIDproveedor.Text = Convert.ToString(dr["proveedor"]);
+                frm.cbTipoFactura.Text = Convert.ToString(dr["tipoFactura"]);
+                frm.dtpfechaFactura.Value = Convert.ToDateTime(dr["fecha"]);
+                frm.dtpEntrega.Value = Convert.ToDateTime(dr["fechaEntrega"]);
+                frm.dtpVencimiento.Value = Convert.ToDateTime(dr["fechaVencimiento"]);
+                frm.cbformaPago.Text = Convert.ToString(dr["formaPago"]);
                 frm.txtNameProveedor.Text = Convert.ToString(dr["razonSocial"]);
                 frm.txtCuil.Text = Convert.ToString(dr["cuit"]);
+                frm.txtnumFactura.Text = Convert.ToString(dr["numFactura"]);
                 frm.txtCondicionIva.Text = Convert.ToString(dr["condicionIVA"]);
                 frm.dtpfechaFactura.Value = Convert.ToDateTime(dr["fecha"]);
                 frm.txtObservaciones.Text = Convert.ToString(dr["observaciones"]);
