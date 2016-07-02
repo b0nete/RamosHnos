@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listCompras));
             this.dgvCompras = new System.Windows.Forms.DataGridView();
+            this.colCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipoFac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.rbNoPagas = new System.Windows.Forms.RadioButton();
@@ -37,12 +43,6 @@
             this.rbPagas = new System.Windows.Forms.RadioButton();
             this.cbParametro = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.colCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTipoFac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,51 @@
             this.dgvCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCompras.Size = new System.Drawing.Size(760, 442);
             this.dgvCompras.TabIndex = 1;
+            this.dgvCompras.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCompras_MouseDoubleClick);
+            // 
+            // colCompra
+            // 
+            this.colCompra.DataPropertyName = "colCompra";
+            this.colCompra.HeaderText = "Nº Comprobante";
+            this.colCompra.Name = "colCompra";
+            this.colCompra.ReadOnly = true;
+            // 
+            // colTipoFac
+            // 
+            this.colTipoFac.HeaderText = "Tipo Factura";
+            this.colTipoFac.Name = "colTipoFac";
+            this.colTipoFac.ReadOnly = true;
+            this.colTipoFac.Visible = false;
+            // 
+            // colFecha
+            // 
+            this.colFecha.DataPropertyName = "colFecha";
+            this.colFecha.HeaderText = "Fecha Factura";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            // 
+            // colTotal
+            // 
+            this.colTotal.DataPropertyName = "colTotal";
+            this.colTotal.HeaderText = "Total";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.ReadOnly = true;
+            // 
+            // colProveedor
+            // 
+            this.colProveedor.DataPropertyName = "colProveedor";
+            this.colProveedor.HeaderText = "Proveedor";
+            this.colProveedor.Name = "colProveedor";
+            this.colProveedor.ReadOnly = true;
+            // 
+            // colEstado
+            // 
+            this.colEstado.DataPropertyName = "colEstado";
+            this.colEstado.HeaderText = "Estado";
+            this.colEstado.Name = "colEstado";
+            this.colEstado.ReadOnly = true;
+            this.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEstado.Visible = false;
             // 
             // groupBox1
             // 
@@ -150,50 +195,6 @@
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 106;
             this.btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // colCompra
-            // 
-            this.colCompra.DataPropertyName = "colCompra";
-            this.colCompra.HeaderText = "Nº Comprobante";
-            this.colCompra.Name = "colCompra";
-            this.colCompra.ReadOnly = true;
-            // 
-            // colTipoFac
-            // 
-            this.colTipoFac.HeaderText = "Tipo Factura";
-            this.colTipoFac.Name = "colTipoFac";
-            this.colTipoFac.ReadOnly = true;
-            this.colTipoFac.Visible = false;
-            // 
-            // colFecha
-            // 
-            this.colFecha.DataPropertyName = "colFecha";
-            this.colFecha.HeaderText = "Fecha Factura";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.ReadOnly = true;
-            // 
-            // colTotal
-            // 
-            this.colTotal.DataPropertyName = "colTotal";
-            this.colTotal.HeaderText = "Total";
-            this.colTotal.Name = "colTotal";
-            this.colTotal.ReadOnly = true;
-            // 
-            // colProveedor
-            // 
-            this.colProveedor.DataPropertyName = "colProveedor";
-            this.colProveedor.HeaderText = "Proveedor";
-            this.colProveedor.Name = "colProveedor";
-            this.colProveedor.ReadOnly = true;
-            // 
-            // colEstado
-            // 
-            this.colEstado.DataPropertyName = "colEstado";
-            this.colEstado.HeaderText = "Estado";
-            this.colEstado.Name = "colEstado";
-            this.colEstado.ReadOnly = true;
-            this.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEstado.Visible = false;
             // 
             // listCompras
             // 

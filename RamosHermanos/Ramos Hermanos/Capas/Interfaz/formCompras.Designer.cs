@@ -52,7 +52,6 @@
             this.txtCuil = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCompra = new System.Windows.Forms.DataGridView();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -229,9 +228,9 @@
             // 
             this.txtNameProveedor.Enabled = false;
             this.txtNameProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameProveedor.Location = new System.Drawing.Point(142, 17);
+            this.txtNameProveedor.Location = new System.Drawing.Point(75, 17);
             this.txtNameProveedor.Name = "txtNameProveedor";
-            this.txtNameProveedor.Size = new System.Drawing.Size(230, 20);
+            this.txtNameProveedor.Size = new System.Drawing.Size(297, 20);
             this.txtNameProveedor.TabIndex = 90;
             // 
             // btnSearch
@@ -299,9 +298,9 @@
             // 
             this.txtIDproveedor.Enabled = false;
             this.txtIDproveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDproveedor.Location = new System.Drawing.Point(75, 17);
+            this.txtIDproveedor.Location = new System.Drawing.Point(0, 17);
             this.txtIDproveedor.Name = "txtIDproveedor";
-            this.txtIDproveedor.Size = new System.Drawing.Size(61, 20);
+            this.txtIDproveedor.Size = new System.Drawing.Size(20, 20);
             this.txtIDproveedor.TabIndex = 6;
             // 
             // txtCuil
@@ -343,17 +342,6 @@
             this.dgvCompra.TabIndex = 82;
             this.dgvCompra.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompra_CellLeave);
             this.dgvCompra.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvCompra_CellStateChanged);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnImprimir.BackgroundImage")));
-            this.btnImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimir.Location = new System.Drawing.Point(677, 689);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(28, 28);
-            this.btnImprimir.TabIndex = 129;
-            this.btnImprimir.UseVisualStyleBackColor = true;
             // 
             // btnLimpiar
             // 
@@ -546,11 +534,13 @@
             // 
             // colIDInsumo
             // 
+            this.colIDInsumo.DataPropertyName = "idInsumo";
             this.colIDInsumo.HeaderText = "Codigo";
             this.colIDInsumo.Name = "colIDInsumo";
             // 
             // colInsumo
             // 
+            this.colInsumo.DataPropertyName = "insumo";
             this.colInsumo.HeaderText = "Insumo";
             this.colInsumo.Name = "colInsumo";
             // 
@@ -564,6 +554,7 @@
             // 
             this.colMarca.HeaderText = "Marca";
             this.colMarca.Name = "colMarca";
+            this.colMarca.Visible = false;
             // 
             // colIDPrecio
             // 
@@ -573,16 +564,19 @@
             // 
             // colPrecioUnitario
             // 
+            this.colPrecioUnitario.DataPropertyName = "precio";
             this.colPrecioUnitario.HeaderText = "Precio Unitario";
             this.colPrecioUnitario.Name = "colPrecioUnitario";
             // 
             // colCantidad
             // 
+            this.colCantidad.DataPropertyName = "cantidad";
             this.colCantidad.HeaderText = "Cantidad";
             this.colCantidad.Name = "colCantidad";
             // 
             // colSubTotal
             // 
+            this.colSubTotal.DataPropertyName = "subTotal";
             this.colSubTotal.HeaderText = "SubTotal";
             this.colSubTotal.Name = "colSubTotal";
             // 
@@ -600,7 +594,6 @@
             this.Controls.Add(this.label16);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dgvCompra);
@@ -625,7 +618,6 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dtpfechaFactura;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtnumFactura;
@@ -637,7 +629,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnGuardar;
         public System.Windows.Forms.TextBox txtNameProveedor;
@@ -664,6 +655,7 @@
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.ComboBox cbformaPago;
         private System.Windows.Forms.TextBox txtidCompras;
+        public System.Windows.Forms.DateTimePicker dtpfechaFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;

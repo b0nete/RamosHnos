@@ -107,7 +107,6 @@ namespace RamosHermanos.Capas.Interfaz
             compras.estado = cbEstado.Text;
             compras.numfactura = Convert.ToInt32(txtnumFactura.Text);
             compras.tipofactura = Convert.ToString(cbTipoFactura.SelectedValue);
-            
         }
 
         private bool DataCheck()
@@ -124,13 +123,12 @@ namespace RamosHermanos.Capas.Interfaz
        
         private void cargarItemCompra(DataGridViewRow row)
         {
-
+            itemcompra.compra = Convert.ToInt32(txtidCompras.Text);
             itemcompra.idInsumo = Convert.ToInt32(row.Cells["colIDInsumo"].Value);
             itemcompra.marca = Convert.ToString(row.Cells["colMarca"].Value);
             itemcompra.precioUnitario = Convert.ToDouble(row.Cells["colPrecioUnitario"].Value);
             itemcompra.subTotal = Convert.ToDouble(row.Cells["colSubTotal"].Value);
-            itemcompra.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
-            
+            itemcompra.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);            
         }
         
         ComprasEntity compras = new ComprasEntity();
@@ -190,26 +188,26 @@ namespace RamosHermanos.Capas.Interfaz
         
         private void dgvCompra_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
-            DataRow dr = PrecioInsumosB.UltimoPrecio(Convert.ToInt32(dgvCompra.CurrentRow.Cells["colIDInsumo"].Value.ToString()));
+            //DataRow dr = PrecioInsumosB.UltimoPrecio(Convert.ToInt32(dgvCompra.CurrentRow.Cells["colIDInsumo"].Value.ToString()));
 
-            dgvCompra.CurrentRow.Cells["colIDPrecio"].Value = Convert.ToInt32(dr["idPrecioInsumo"]);
-            dgvCompra.CurrentRow.Cells["colPrecioUnitario"].Value = Convert.ToString(dr["precio"]);
+            //dgvCompra.CurrentRow.Cells["colIDPrecio"].Value = Convert.ToInt32(dr["idPrecioInsumo"]);
+            //dgvCompra.CurrentRow.Cells["colPrecioUnitario"].Value = Convert.ToString(dr["precio"]);
 
-                // Se genera la variable para acumular los SubTotales.
-                double total = 0;
+            //    // Se genera la variable para acumular los SubTotales.
+            //    double total = 0;
 
-                // Se recorre cada fila del DGV.
-                foreach (DataGridViewRow row in dgvCompra.Rows)
-                {
-                    if (row.Cells["colCantidad"].ToString() != string.Empty && row.Cells["colPrecioUnitario"].ToString() != string.Empty)
-                    {
-                        row.Cells["colSubTotal"].Value = Convert.ToInt32(row.Cells["colCantidad"].Value) * Convert.ToDouble(row.Cells["colPrecioUnitario"].Value);
+            //    // Se recorre cada fila del DGV.
+            //    foreach (DataGridViewRow row in dgvCompra.Rows)
+            //    {
+            //        if (row.Cells["colCantidad"].ToString() != string.Empty && row.Cells["colPrecioUnitario"].ToString() != string.Empty)
+            //        {
+            //            row.Cells["colSubTotal"].Value = Convert.ToInt32(row.Cells["colCantidad"].Value) * Convert.ToDouble(row.Cells["colPrecioUnitario"].Value);
 
-                        total += Convert.ToDouble(row.Cells["colSubTotal"].Value);
-                    }
+            //            total += Convert.ToDouble(row.Cells["colSubTotal"].Value);
+            //        }
 
-                    txtTotal.Text = Convert.ToString(total);
-                }
+            //        txtTotal.Text = Convert.ToString(total);
+            //    }
         }
 
 
@@ -254,6 +252,11 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
         {
 
         }
