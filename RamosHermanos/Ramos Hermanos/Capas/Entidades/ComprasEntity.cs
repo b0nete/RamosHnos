@@ -9,14 +9,14 @@ namespace RamosHermanos.Capas.Entidades
     class ComprasEntity
     {
         public int idCompras { get; set; }
-        public int proveedor { get; set; }
+        public string tipoFactura { get; set; }
+        public string numFactura { get; set; }
         public DateTime fecha { get; set; }
-        public string hora { get; set; }
+        public DateTime fechaEntrega { get; set; }
+        public DateTime fechaVencimiento { get; set; }
+        public int proveedor { get; set; }
         public string observaciones { get; set; }
         public double total { get; set; }
         public string estado { get; set; }
-        public int numfactura { get; set; }
-        public string tipofactura { get; set; }
-
     }
 }

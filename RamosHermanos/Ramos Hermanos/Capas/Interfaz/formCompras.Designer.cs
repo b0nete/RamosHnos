@@ -66,7 +66,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.cbEstado = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -77,6 +76,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.cbformaPago = new System.Windows.Forms.ComboBox();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
@@ -461,20 +461,6 @@
             this.label20.TabIndex = 143;
             this.label20.Text = "Observaciones:";
             // 
-            // cbEstado
-            // 
-            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Items.AddRange(new object[] {
-            "Pendiente",
-            "Pagado",
-            "Anulado"});
-            this.cbEstado.Location = new System.Drawing.Point(645, 646);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(129, 21);
-            this.cbEstado.TabIndex = 141;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -582,15 +568,29 @@
             this.cbformaPago.Size = new System.Drawing.Size(210, 21);
             this.cbformaPago.TabIndex = 1;
             // 
+            // cbEstado
+            // 
+            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Items.AddRange(new object[] {
+            "Pendiente",
+            "Pagado",
+            "Anulado"});
+            this.cbEstado.Location = new System.Drawing.Point(645, 646);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(129, 21);
+            this.cbEstado.TabIndex = 146;
+            // 
             // formCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 729);
+            this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label16);
@@ -645,7 +645,6 @@
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label label20;
-        public System.Windows.Forms.ComboBox cbEstado;
         private System.Windows.Forms.Label label15;
         public System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label16;
@@ -666,5 +665,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
+        public System.Windows.Forms.ComboBox cbEstado;
     }
 }
