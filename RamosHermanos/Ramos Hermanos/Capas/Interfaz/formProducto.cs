@@ -42,6 +42,7 @@ namespace RamosHermanos.Capas.Interfaz
             dtpMensualHasta.CustomFormat = "MM-yyyy";
             dtpAnualDesde.CustomFormat = "yyyy";
             dtpAnualHasta.CustomFormat = "yyyy";
+            tabProducto.Controls.Remove(tabEstadisticas);
         }
 
         private void cbEstado_CheckedChanged(object sender, EventArgs e)

@@ -113,9 +113,9 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 //frmPro.cbTipoProducto.SelectedValue = producto.tipoProducto;
                 frmPro.cbMarca.SelectedValue = producto.marca;
                 frmPro.txtProducto.Text = producto.producto;
-                frmPro.txtProductoP.Text = producto.producto;
-                frmPro.txtProductoStock.Text = producto.producto;
-                frmPro.txtProdutoC.Text = producto.producto;
+                //frmPro.txtProductoP.Text = producto.producto;
+                //frmPro.txtProductoStock.Text = producto.producto;
+                //frmPro.txtProdutoC.Text = producto.producto;
                 frmPro.txtDescripcion.Text = producto.descripcion;
                 frmPro.txtCantidad.Text = Convert.ToString(producto.cantidad);
                 frmPro.cbMedida.SelectedValue = producto.medida;

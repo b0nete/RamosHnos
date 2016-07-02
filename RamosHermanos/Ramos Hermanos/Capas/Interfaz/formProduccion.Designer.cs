@@ -40,6 +40,7 @@
             this.dgvProduccion = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFechaProduccion = new System.Windows.Forms.DateTimePicker();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.colIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,9 +61,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dtpFechaProduccion);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(107, 58);
+            this.groupBox1.Location = new System.Drawing.Point(12, 51);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(586, 414);
+            this.groupBox1.Size = new System.Drawing.Size(760, 485);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producción";
@@ -72,7 +73,7 @@
             this.txtDescripcion.Location = new System.Drawing.Point(143, 71);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(437, 56);
+            this.txtDescripcion.Size = new System.Drawing.Size(429, 56);
             this.txtDescripcion.TabIndex = 100;
             // 
             // label3
@@ -90,7 +91,7 @@
             this.txtIDProduccion.Enabled = false;
             this.txtIDProduccion.Location = new System.Drawing.Point(143, 19);
             this.txtIDProduccion.Name = "txtIDProduccion";
-            this.txtIDProduccion.Size = new System.Drawing.Size(100, 20);
+            this.txtIDProduccion.Size = new System.Drawing.Size(124, 20);
             this.txtIDProduccion.TabIndex = 98;
             // 
             // label2
@@ -108,7 +109,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(552, 380);
+            this.btnSave.Location = new System.Drawing.Point(726, 450);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 96;
@@ -120,7 +121,7 @@
             this.btnDel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDel.BackgroundImage")));
             this.btnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDel.Location = new System.Drawing.Point(40, 381);
+            this.btnDel.Location = new System.Drawing.Point(692, 450);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(28, 28);
             this.btnDel.TabIndex = 95;
@@ -131,7 +132,7 @@
             this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAdd.Location = new System.Drawing.Point(6, 381);
+            this.btnAdd.Location = new System.Drawing.Point(658, 450);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(28, 28);
             this.btnAdd.TabIndex = 94;
@@ -149,7 +150,7 @@
             this.colCantidad});
             this.dgvProduccion.Location = new System.Drawing.Point(6, 133);
             this.dgvProduccion.Name = "dgvProduccion";
-            this.dgvProduccion.Size = new System.Drawing.Size(574, 242);
+            this.dgvProduccion.Size = new System.Drawing.Size(748, 311);
             this.dgvProduccion.TabIndex = 2;
             // 
             // label1
@@ -168,9 +169,22 @@
             this.dtpFechaProduccion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaProduccion.Location = new System.Drawing.Point(143, 45);
             this.dtpFechaProduccion.Name = "dtpFechaProduccion";
-            this.dtpFechaProduccion.Size = new System.Drawing.Size(98, 20);
+            this.dtpFechaProduccion.Size = new System.Drawing.Size(124, 20);
             this.dtpFechaProduccion.TabIndex = 0;
             this.dtpFechaProduccion.Value = new System.DateTime(2016, 4, 25, 0, 0, 0, 0);
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(784, 40);
+            this.lblTitle.TabIndex = 116;
+            this.lblTitle.Text = "Producción";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // colIDProducto
             // 
@@ -183,7 +197,7 @@
             this.colProducto.HeaderText = "Producto";
             this.colProducto.Name = "colProducto";
             this.colProducto.ReadOnly = true;
-            this.colProducto.Width = 200;
+            this.colProducto.Width = 250;
             // 
             // colCantidad
             // 
@@ -194,9 +208,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RamosHermanos.Properties.Resources.productividad_personal_x21;
+            this.BackgroundImage = global::RamosHermanos.Properties.Resources.grey_background_for_site114;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.Name = "formProduccion";
@@ -223,6 +238,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;

@@ -73,6 +73,7 @@
             this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.tabPedido = new System.Windows.Forms.TabPage();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.tabProveedor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -91,10 +92,10 @@
             this.tabProveedor.Controls.Add(this.tabListado);
             this.tabProveedor.Controls.Add(this.tabMovimientos);
             this.tabProveedor.Controls.Add(this.tabPedido);
-            this.tabProveedor.Location = new System.Drawing.Point(156, 78);
+            this.tabProveedor.Location = new System.Drawing.Point(12, 51);
             this.tabProveedor.Name = "tabProveedor";
             this.tabProveedor.SelectedIndex = 0;
-            this.tabProveedor.Size = new System.Drawing.Size(521, 398);
+            this.tabProveedor.Size = new System.Drawing.Size(760, 498);
             this.tabProveedor.TabIndex = 1;
             this.tabProveedor.TabStop = false;
             // 
@@ -109,7 +110,7 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(513, 372);
+            this.tabInformacion.Size = new System.Drawing.Size(752, 472);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             // 
@@ -160,7 +161,7 @@
             this.groupBox6.Controls.Add(this.label1);
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(494, 211);
+            this.groupBox6.Size = new System.Drawing.Size(740, 211);
             this.groupBox6.TabIndex = 67;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion Personal";
@@ -491,7 +492,7 @@
             // 
             this.tabAdicional.Location = new System.Drawing.Point(4, 22);
             this.tabAdicional.Name = "tabAdicional";
-            this.tabAdicional.Size = new System.Drawing.Size(513, 372);
+            this.tabAdicional.Size = new System.Drawing.Size(752, 472);
             this.tabAdicional.TabIndex = 2;
             this.tabAdicional.Text = "Adicional";
             this.tabAdicional.UseVisualStyleBackColor = true;
@@ -502,7 +503,7 @@
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(513, 372);
+            this.tabListado.Size = new System.Drawing.Size(752, 472);
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
@@ -525,7 +526,7 @@
             this.dgvProveedor.Location = new System.Drawing.Point(3, 3);
             this.dgvProveedor.Name = "dgvProveedor";
             this.dgvProveedor.ReadOnly = true;
-            this.dgvProveedor.Size = new System.Drawing.Size(495, 484);
+            this.dgvProveedor.Size = new System.Drawing.Size(734, 584);
             this.dgvProveedor.TabIndex = 0;
             this.dgvProveedor.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvProveedor_MouseDoubleClick);
             // 
@@ -569,7 +570,7 @@
             // 
             this.tabMovimientos.Location = new System.Drawing.Point(4, 22);
             this.tabMovimientos.Name = "tabMovimientos";
-            this.tabMovimientos.Size = new System.Drawing.Size(513, 372);
+            this.tabMovimientos.Size = new System.Drawing.Size(752, 472);
             this.tabMovimientos.TabIndex = 3;
             this.tabMovimientos.Text = "Movimientos";
             this.tabMovimientos.UseVisualStyleBackColor = true;
@@ -578,17 +579,31 @@
             // 
             this.tabPedido.Location = new System.Drawing.Point(4, 22);
             this.tabPedido.Name = "tabPedido";
-            this.tabPedido.Size = new System.Drawing.Size(513, 372);
+            this.tabPedido.Size = new System.Drawing.Size(752, 472);
             this.tabPedido.TabIndex = 4;
             this.tabPedido.Text = "Pedido";
             this.tabPedido.UseVisualStyleBackColor = true;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(784, 40);
+            this.lblTitle.TabIndex = 117;
+            this.lblTitle.Text = "Proveedor";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // formProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RamosHermanos.Properties.Resources.fondoproveedor;
+            this.BackgroundImage = global::RamosHermanos.Properties.Resources.grey_background_for_site113;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tabProveedor);
             this.DoubleBuffered = true;
             this.Name = "formProveedor";
@@ -653,5 +668,6 @@
         public System.Windows.Forms.TextBox txtTel;
         public System.Windows.Forms.TextBox txtDomicilio;
         private System.Windows.Forms.Button btnCompra;
+        public System.Windows.Forms.Label lblTitle;
     }
 }

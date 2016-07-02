@@ -153,6 +153,46 @@ namespace RamosHermanos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap grey_background_for_site111 {
+            get {
+                object obj = ResourceManager.GetObject("grey-background-for-site111", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grey_background_for_site112 {
+            get {
+                object obj = ResourceManager.GetObject("grey-background-for-site112", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grey_background_for_site113 {
+            get {
+                object obj = ResourceManager.GetObject("grey-background-for-site113", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grey_background_for_site114 {
+            get {
+                object obj = ResourceManager.GetObject("grey-background-for-site114", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap img_stock {
             get {
                 object obj = ResourceManager.GetObject("img-stock", resourceCulture);
@@ -166,6 +206,16 @@ namespace RamosHermanos.Properties {
         internal static System.Drawing.Bitmap light_minimalistic_soft_shading_gradient_background_800x600_wallpaper {
             get {
                 object obj = ResourceManager.GetObject("light-minimalistic-soft-shading-gradient-background-800x600-wallpaper", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mayorista {
+            get {
+                object obj = ResourceManager.GetObject("mayorista", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

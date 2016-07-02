@@ -213,7 +213,7 @@
             // txtNombreDom
             // 
             this.txtNombreDom.Enabled = false;
-            this.txtNombreDom.Location = new System.Drawing.Point(156, 6);
+            this.txtNombreDom.Location = new System.Drawing.Point(162, 6);
             this.txtNombreDom.Name = "txtNombreDom";
             this.txtNombreDom.Size = new System.Drawing.Size(412, 20);
             this.txtNombreDom.TabIndex = 89;
