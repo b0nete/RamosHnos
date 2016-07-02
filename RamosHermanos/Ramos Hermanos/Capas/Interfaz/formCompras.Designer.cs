@@ -52,6 +52,14 @@
             this.txtCuil = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCompra = new System.Windows.Forms.DataGridView();
+            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -69,14 +77,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.cbformaPago = new System.Windows.Forms.ComboBox();
-            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIDPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
@@ -121,6 +121,7 @@
             this.txtidCompras.Name = "txtidCompras";
             this.txtidCompras.Size = new System.Drawing.Size(43, 20);
             this.txtidCompras.TabIndex = 12;
+            this.txtidCompras.Visible = false;
             // 
             // dtpfechaFactura
             // 
@@ -302,6 +303,7 @@
             this.txtIDproveedor.Name = "txtIDproveedor";
             this.txtIDproveedor.Size = new System.Drawing.Size(20, 20);
             this.txtIDproveedor.TabIndex = 6;
+            this.txtIDproveedor.Visible = false;
             // 
             // txtCuil
             // 
@@ -342,6 +344,54 @@
             this.dgvCompra.TabIndex = 82;
             this.dgvCompra.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompra_CellLeave);
             this.dgvCompra.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvCompra_CellStateChanged);
+            // 
+            // colIDInsumo
+            // 
+            this.colIDInsumo.DataPropertyName = "idInsumo";
+            this.colIDInsumo.HeaderText = "Codigo";
+            this.colIDInsumo.Name = "colIDInsumo";
+            // 
+            // colInsumo
+            // 
+            this.colInsumo.DataPropertyName = "insumo";
+            this.colInsumo.HeaderText = "Insumo";
+            this.colInsumo.Name = "colInsumo";
+            // 
+            // colRubro
+            // 
+            this.colRubro.HeaderText = "Rubro";
+            this.colRubro.Name = "colRubro";
+            this.colRubro.Visible = false;
+            // 
+            // colMarca
+            // 
+            this.colMarca.HeaderText = "Marca";
+            this.colMarca.Name = "colMarca";
+            this.colMarca.Visible = false;
+            // 
+            // colIDPrecio
+            // 
+            this.colIDPrecio.HeaderText = "ID Precio";
+            this.colIDPrecio.Name = "colIDPrecio";
+            this.colIDPrecio.Visible = false;
+            // 
+            // colPrecioUnitario
+            // 
+            this.colPrecioUnitario.DataPropertyName = "precio";
+            this.colPrecioUnitario.HeaderText = "Precio Unitario";
+            this.colPrecioUnitario.Name = "colPrecioUnitario";
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.DataPropertyName = "cantidad";
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            // 
+            // colSubTotal
+            // 
+            this.colSubTotal.DataPropertyName = "subTotal";
+            this.colSubTotal.HeaderText = "SubTotal";
+            this.colSubTotal.Name = "colSubTotal";
             // 
             // btnLimpiar
             // 
@@ -531,54 +581,6 @@
             this.cbformaPago.Name = "cbformaPago";
             this.cbformaPago.Size = new System.Drawing.Size(210, 21);
             this.cbformaPago.TabIndex = 1;
-            // 
-            // colIDInsumo
-            // 
-            this.colIDInsumo.DataPropertyName = "idInsumo";
-            this.colIDInsumo.HeaderText = "Codigo";
-            this.colIDInsumo.Name = "colIDInsumo";
-            // 
-            // colInsumo
-            // 
-            this.colInsumo.DataPropertyName = "insumo";
-            this.colInsumo.HeaderText = "Insumo";
-            this.colInsumo.Name = "colInsumo";
-            // 
-            // colRubro
-            // 
-            this.colRubro.HeaderText = "Rubro";
-            this.colRubro.Name = "colRubro";
-            this.colRubro.Visible = false;
-            // 
-            // colMarca
-            // 
-            this.colMarca.HeaderText = "Marca";
-            this.colMarca.Name = "colMarca";
-            this.colMarca.Visible = false;
-            // 
-            // colIDPrecio
-            // 
-            this.colIDPrecio.HeaderText = "ID Precio";
-            this.colIDPrecio.Name = "colIDPrecio";
-            this.colIDPrecio.Visible = false;
-            // 
-            // colPrecioUnitario
-            // 
-            this.colPrecioUnitario.DataPropertyName = "precio";
-            this.colPrecioUnitario.HeaderText = "Precio Unitario";
-            this.colPrecioUnitario.Name = "colPrecioUnitario";
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.DataPropertyName = "cantidad";
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            // 
-            // colSubTotal
-            // 
-            this.colSubTotal.DataPropertyName = "subTotal";
-            this.colSubTotal.HeaderText = "SubTotal";
-            this.colSubTotal.Name = "colSubTotal";
             // 
             // formCompras
             // 
