@@ -21,6 +21,8 @@ namespace RamosHermanos.Capas.Interfaz
     {
         public int caseSwitch = 1;
         public int switchCase = 1;
+        //Case para saber si la factura es a generar o se está buscando de una ya generada.
+        public int caseNueva = 1;
 
         public formCompras()
         {
@@ -34,9 +36,9 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formCompras_Load(object sender, EventArgs e)
         {
-            cbTipoFactura.SelectedIndex = 0;
-            cbformaPago.SelectedIndex = 0;
-            cbEstado.SelectedIndex = 1;
+            //cbTipoFactura.SelectedIndex = 0;
+            //cbformaPago.SelectedIndex = 0;
+            //cbEstado.SelectedIndex = 1;
             //txtIngreso.Text = DateTime.Now.ToString("hh:mm:ss");
         }
 
@@ -100,13 +102,15 @@ namespace RamosHermanos.Capas.Interfaz
         }
         private void CargarCompras()
         {
+            compras.tipoFactura = Convert.ToString(cbTipoFactura.SelectedText);
+            compras.numFactura = txtnumFactura.Text;
             compras.fecha = dtpfechaFactura.Value;
+            compras.fechaEntrega = dtpEntrega.Value;
+            compras.fechaVencimiento = dtpVencimiento.Value;
             compras.observaciones = txtObservaciones.Text;
             compras.proveedor = Convert.ToInt32(txtIDproveedor.Text);
             compras.total = Convert.ToDouble(txtTotal.Text);
-            compras.estado = cbEstado.Text;
-            compras.numfactura = Convert.ToInt32(txtnumFactura.Text);
-            compras.tipofactura = Convert.ToString(cbTipoFactura.SelectedValue);
+            compras.estado = cbEstado.Text;            
         }
 
         private bool DataCheck()
@@ -188,26 +192,29 @@ namespace RamosHermanos.Capas.Interfaz
         
         private void dgvCompra_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
-            //DataRow dr = PrecioInsumosB.UltimoPrecio(Convert.ToInt32(dgvCompra.CurrentRow.Cells["colIDInsumo"].Value.ToString()));
+            if (caseNueva == 1)
+            {
+                DataRow dr = PrecioInsumosB.UltimoPrecio(Convert.ToInt32(dgvCompra.CurrentRow.Cells["colIDInsumo"].Value.ToString()));
 
-            //dgvCompra.CurrentRow.Cells["colIDPrecio"].Value = Convert.ToInt32(dr["idPrecioInsumo"]);
-            //dgvCompra.CurrentRow.Cells["colPrecioUnitario"].Value = Convert.ToString(dr["precio"]);
+                dgvCompra.CurrentRow.Cells["colIDPrecio"].Value = Convert.ToInt32(dr["idPrecioInsumo"]);
+                dgvCompra.CurrentRow.Cells["colPrecioUnitario"].Value = Convert.ToString(dr["precio"]);
 
-            //    // Se genera la variable para acumular los SubTotales.
-            //    double total = 0;
+                // Se genera la variable para acumular los SubTotales.
+                double total = 0;
 
-            //    // Se recorre cada fila del DGV.
-            //    foreach (DataGridViewRow row in dgvCompra.Rows)
-            //    {
-            //        if (row.Cells["colCantidad"].ToString() != string.Empty && row.Cells["colPrecioUnitario"].ToString() != string.Empty)
-            //        {
-            //            row.Cells["colSubTotal"].Value = Convert.ToInt32(row.Cells["colCantidad"].Value) * Convert.ToDouble(row.Cells["colPrecioUnitario"].Value);
+                // Se recorre cada fila del DGV.
+                foreach (DataGridViewRow row in dgvCompra.Rows)
+                {
+                    if (row.Cells["colCantidad"].ToString() != string.Empty && row.Cells["colPrecioUnitario"].ToString() != string.Empty)
+                    {
+                        row.Cells["colSubTotal"].Value = Convert.ToInt32(row.Cells["colCantidad"].Value) * Convert.ToDouble(row.Cells["colPrecioUnitario"].Value);
 
-            //            total += Convert.ToDouble(row.Cells["colSubTotal"].Value);
-            //        }
+                        total += Convert.ToDouble(row.Cells["colSubTotal"].Value);
+                    }
 
-            //        txtTotal.Text = Convert.ToString(total);
-            //    }
+                    txtTotal.Text = Convert.ToString(total);
+                }
+            }
         }
 
 

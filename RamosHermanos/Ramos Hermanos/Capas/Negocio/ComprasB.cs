@@ -22,7 +22,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 DataTable dt = new DataTable();
 
-                string query = @"SELECT idCompras, C.proveedor, P.razonSocial, fecha, observaciones, total, C.estado, tipofactura
+                string query = @"SELECT idCompras, C.proveedor, P.cuit, P.condicionIVA, P.razonSocial, fecha, observaciones, total, C.estado, tipofactura
                                 FROM Compras C
                                 INNER JOIN Proveedores P ON C.proveedor = P.idProveedor
                                 WHERE idCompras = @idCompra";
@@ -62,14 +62,20 @@ namespace RamosHermanos.Capas.Negocio
              try 
 	            {
                     MySQL.ConnectDB();
-                    string query = @"INSERT INTO compras (proveedor,fecha,observaciones,total,estado)
-                                 VALUES (@proveedor,@fecha,@observaciones,@total,@estado);
+                    string query = @"INSERT INTO compras (tipoFactura, numFactura, fecha, fechaEntrega, fechaVencimiento, proveedor, observaciones, total, estado)
+                                 VALUES (@tipoFactura, @numFactura, @fecha, @fechaEntrega, @fechaVencimiento, @proveedor, @observaciones, @total, @estado);
                                  SELECT LAST_INSERT_ID();";
 
                     MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                    cmd.Parameters.AddWithValue("@proveedor", compras.proveedor);
+
+
+                    cmd.Parameters.AddWithValue("@tipoFactura", compras.tipoFactura);
+                    cmd.Parameters.AddWithValue("@numFactura", compras.numFactura);
                     cmd.Parameters.AddWithValue("@fecha", compras.fecha);
+                    cmd.Parameters.AddWithValue("@fechaEntrega", compras.fechaEntrega);
+                    cmd.Parameters.AddWithValue("@fechaVencimiento", compras.fechaVencimiento);
+                    cmd.Parameters.AddWithValue("@proveedor", compras.proveedor);                 
                     cmd.Parameters.AddWithValue("@observaciones", compras.observaciones);
                     cmd.Parameters.AddWithValue("@total", compras.total);
                     cmd.Parameters.AddWithValue("@estado", compras.estado);

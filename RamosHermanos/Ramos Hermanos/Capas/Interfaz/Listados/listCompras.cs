@@ -46,21 +46,24 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
                 frm.txtIDproveedor.Text = Convert.ToString(dr["proveedor"]);
                 frm.txtNameProveedor.Text = Convert.ToString(dr["razonSocial"]);
+                frm.txtCuil.Text = Convert.ToString(dr["cuit"]);
+                frm.txtCondicionIva.Text = Convert.ToString(dr["condicionIVA"]);
                 frm.dtpfechaFactura.Value = Convert.ToDateTime(dr["fecha"]);
                 frm.txtObservaciones.Text = Convert.ToString(dr["observaciones"]);
                 frm.txtTotal.Text = Convert.ToString(dr["total"]);
                 frm.cbEstado.Text = Convert.ToString(dr["estado"]);
+                frm.txtDomicilio.Text = DomicilioB.CargarTXTSTRING(frm.txtIDproveedor, 2);
+                frm.txtTel.Text = TelefonoB.CargarTXTString(frm.txtIDproveedor, 2);
 
                 //Buscamos ItemsCompra
-
                 itemCompraB.BuscarItemCompra(compras.idCompras, frm.dgvCompra);
 
-
-                //DomicilioB.CargarTXTID(factura.domicilio, frmP.txtDomicilio);
+                
 
                 //ClienteEntity cliente = ClienteB.BuscarClienteCIVAyCP(factura.cliente);
                 //frmP.txtIVA.Text = cliente.condicionIVA;
                 //frmP.cbformaPago.Text = "Contado";
+                frm.caseNueva = 2;
                 frm.Show();
             }
         }

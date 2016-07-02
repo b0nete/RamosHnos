@@ -501,7 +501,8 @@ namespace RamosHermanos.Capas.Interfaz
             frm.txtCuil.Text = proveedor.cuit;
             frm.txtCondicionIva.Text = proveedor.condicioniva;
 
-            DomicilioB.CargarTXT(txtDomicilio, txtidprov, 2);
+            frm.txtDomicilio.Text = DomicilioB.CargarTXTSTRING(txtidprov, 2);
+
             TelefonoB.CargarTXT(frm.txtTel, frm.txtIDproveedor, 2);
         }
 
