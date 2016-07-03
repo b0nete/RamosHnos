@@ -43,6 +43,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
                 proveedor.idProveedor = Convert.ToInt32(row.Cells["colIDProveedor"].Value.ToString());
                 ProveedorB.BuscarIdProv(proveedor);
+                frmP.lblTitle.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
                 frmP.txtidprov.Text = Convert.ToString(proveedor.idProveedor);
                 frmP.txtRazonSocial.Text = proveedor.razsocial;
                 frmP.txtcuit.Text = proveedor.cuit;

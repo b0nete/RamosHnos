@@ -1153,7 +1153,7 @@ namespace RamosHermanos.Capas.Interfaz
                         //VisitaB.UpdateDias(visita);
                         //CargarOrden();
                         //VisitaB.UpdateOrden(visita);
-
+                        lblTitle.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
                         BuscarCliente();
                         return;
                     }
@@ -1177,7 +1177,7 @@ namespace RamosHermanos.Capas.Interfaz
                     //VisitaB.InsertDias(visita);
                     //CargarOrden();
                     //VisitaB.InsertOrden(visita);
-
+                    lblTitle.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
                     ClienteB.CargarDGV(dgvCliente);
                 }
             }
@@ -1522,9 +1522,12 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtIDALL.Text = txtIDclientePJ.Text;
                 frm.Show();
                 frm.cbRolALL.SelectedValue = 1;
-                frm.lblTitleDom.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
-                frm.lblTitleTel.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
-                frm.lblTitleEmail.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                frm.lblTitleDom.Text = txtIDclientePJ.Text + " - " + txtNombrePJ.Text;
+                frm.lblTitleTel.Text = txtIDclientePJ.Text + " - " + txtNombrePJ.Text;
+                frm.lblTitleEmail.Text = txtIDclientePJ.Text + " - " + txtNombrePJ.Text;
+                //frm.lblTitleDom.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.lblTitleTel.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.lblTitleEmail.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
                 //frm.txtNombreEmail.Text = txtNombrePJ.Text;
                 //frm.txtNombreTel.Text = txtNombrePJ.Text;
                 //frm.txtNombreDom.Text = txtNombrePJ.Text;
@@ -1546,9 +1549,12 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtIDALL.Text = txtIDclientePJ.Text;
                 frm.Show();
                 frm.cbRolALL.SelectedValue = 1;
-                frm.lblTitleDom.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
-                frm.lblTitleTel.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
-                frm.lblTitleEmail.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                frm.lblTitleDom.Text = txtIDclientePJ.Text + " - " + txtNombrePJ.Text;
+                frm.lblTitleTel.Text = txtIDclientePJ.Text + " - " + txtNombrePJ.Text;
+                frm.lblTitleEmail.Text = txtIDclientePJ.Text + " - " + txtNombrePJ.Text;
+                //frm.lblTitleDom.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.lblTitleTel.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.lblTitleEmail.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
                 //frm.txtNombreEmail.Text = txtNombrePJ.Text;
                 //frm.txtNombreTel.Text = txtNombrePJ.Text;
                 //frm.txtNombreDom.Text = txtNombrePJ.Text;
@@ -1570,9 +1576,12 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.txtIDALL.Text = txtIDclientePJ.Text;
                 frm.Show();
                 frm.cbRolALL.SelectedValue = 1;
-                frm.lblTitleDom.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
-                frm.lblTitleTel.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
-                frm.lblTitleEmail.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                frm.lblTitleDom.Text = txtIDclientePJ.Text + " - " + txtNombrePJ.Text;
+                frm.lblTitleTel.Text = txtIDclientePJ.Text + " - " + txtNombrePJ.Text;
+                frm.lblTitleEmail.Text = txtIDclientePJ.Text + " - " + txtNombrePJ.Text;
+                //frm.lblTitleDom.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.lblTitleTel.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //frm.lblTitleEmail.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
                 //frm.txtNombreEmail.Text = txtNombrePJ.Text;
                 //frm.txtNombreTel.Text = txtNombrePJ.Text;
                 //frm.txtNombreDom.Text = txtNombrePJ.Text;

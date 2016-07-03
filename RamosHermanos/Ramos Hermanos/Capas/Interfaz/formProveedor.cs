@@ -104,9 +104,13 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.tabUpdateTXT = 2;
                 frm.Show(this);
                 frm.cbRolALL.SelectedValue = 2;
-                frm.lblTitleEmail.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
-                frm.lblTitleDom.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
-                frm.lblTitleTel.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                //lblTitle.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                frm.lblTitleEmail.Text = txtidprov.Text + " - " + txtRazonSocial.Text;
+                frm.lblTitleDom.Text = txtidprov.Text + " - " + txtRazonSocial.Text;
+                frm.lblTitleTel.Text = txtidprov.Text + " - " + txtRazonSocial.Text;
+                //ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                //frm.lblTitleDom.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                //frm.lblTitleTel.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
                 //frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 //frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 //frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
@@ -131,9 +135,12 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.tabUpdateTXT = 2;
                 frm.Show(this);
                 frm.cbRolALL.SelectedValue = 2;
-                frm.lblTitleEmail.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
-                frm.lblTitleDom.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
-                frm.lblTitleTel.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                frm.lblTitleEmail.Text = txtidprov.Text + " - " + txtRazonSocial.Text;
+                frm.lblTitleDom.Text = txtidprov.Text + " - " + txtRazonSocial.Text;
+                frm.lblTitleTel.Text = txtidprov.Text + " - " + txtRazonSocial.Text;
+                //frm.lblTitleEmail.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                //frm.lblTitleDom.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                //frm.lblTitleTel.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
                 //frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 //frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 //frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
@@ -236,6 +243,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void btnGuardarProv_Click(object sender, EventArgs e)
         {
             GuardarProveedor();
+            lblTitle.Text = txtidprov.Text + " - " + txtRazonSocial.Text;
             ProveedorB.cargardgv(dgvProveedor);
 
 
@@ -428,9 +436,12 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.tabUpdateTXT = 2;
                 frm.Show(this);
                 frm.cbRolALL.SelectedValue = 2;
-                frm.lblTitleEmail.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
-                frm.lblTitleDom.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
-                frm.lblTitleTel.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                frm.lblTitleEmail.Text = txtidprov.Text + " - " + txtRazonSocial.Text;
+                frm.lblTitleDom.Text = txtidprov.Text + " - " + txtRazonSocial.Text;
+                frm.lblTitleTel.Text = txtidprov.Text + " - " + txtRazonSocial.Text;
+                //frm.lblTitleEmail.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                //frm.lblTitleDom.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
+                //frm.lblTitleTel.Text = ProveedorB.BuscarNombreProveedor(proveedor.idProveedor);
                 //frm.txtNombreEmail.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 //frm.txtNombreDom.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
                 //frm.txtNombreTel.Text = txtRazonSocial.Text + " - " + txtidprov.Text;
@@ -460,15 +471,15 @@ namespace RamosHermanos.Capas.Interfaz
         private void txtRazonSocial_KeyPress(object sender, KeyPressEventArgs e)
         {
            
-        if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
-        {
-            MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            e.Handled = true;
-            return;
+        //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+        //{
+        //    MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        //    e.Handled = true;
+        //    return;
 
-        }
+        //}
         
-}
+        }
 
      
         private void CheckColor()

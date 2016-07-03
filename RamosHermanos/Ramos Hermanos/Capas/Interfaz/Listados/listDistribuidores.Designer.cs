@@ -176,7 +176,7 @@
             this.MaximizeBox = false;
             this.Name = "listDistribuidores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "listDistribuidores";
+            this.Text = "Listar Distribuidores";
             this.Load += new System.EventHandler(this.listDistribuidores_Load);
             this.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listDistribuidores_MouseDoubleClick);
             this.groupBox1.ResumeLayout(false);

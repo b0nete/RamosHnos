@@ -179,13 +179,15 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
 
                 ClienteB.BuscarClienteID(cliente);
-                frm.lblTitle.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
 
+                
+                
                 if (cliente.tipoPersona == "P")
                 {
                     this.Close();
+                    //Actualizar Label
+                    frm.lblTitle.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
                     frm.Show();                    
-
                     frm.txtIDcliente.Text = Convert.ToString(cliente.idCliente);
                     frm.dtpFechaAlta.Value = cliente.fechaAlta;
                     frm.cbTipoDoc.SelectedValue = cliente.tipoDoc;
@@ -240,11 +242,14 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     //Tabs
                     frm.CasePersona();
                 }
+
                 else if (cliente.tipoPersona == "PJ")
                 {
                     this.Close();
-                    frm.Show(); 
+                    frm.lblTitle.Text = ClienteB.BuscarNombreClientePJ(cliente.idCliente);
+                    frm.Show();
 
+                    //frm.lblTitle.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
                     frm.txtIDclientePJ.Text = Convert.ToString(cliente.idCliente);
                     frm.dtpFechaAltaPJ.Value = cliente.fechaAlta;
                     frm.txtCUILPJ.Text = cliente.cuil;

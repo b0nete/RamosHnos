@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formDistribuidores));
             this.tabDistribuidor = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.btnClean = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -149,12 +149,6 @@
             this.btnDelLu = new System.Windows.Forms.Button();
             this.btnAddLu = new System.Windows.Forms.Button();
             this.dgvRecorridoLu = new System.Windows.Forms.DataGridView();
-            this.colLuIDcalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLuDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLuHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLuSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colLuEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnSaveRecMa = new System.Windows.Forms.Button();
             this.btnSaveRecorridoMa = new System.Windows.Forms.Button();
@@ -251,6 +245,12 @@
             this.colDoHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDoSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDoEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colLuIDcalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLuDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLuHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLuSentido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colLuEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabDistribuidor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -307,14 +307,14 @@
             this.tabDistribuidor.Location = new System.Drawing.Point(0, 0);
             this.tabDistribuidor.Name = "tabDistribuidor";
             this.tabDistribuidor.SelectedIndex = 0;
-            this.tabDistribuidor.Size = new System.Drawing.Size(518, 656);
+            this.tabDistribuidor.Size = new System.Drawing.Size(784, 684);
             this.tabDistribuidor.TabIndex = 0;
             this.tabDistribuidor.SelectedIndexChanged += new System.EventHandler(this.tabDistribuidor_SelectedIndexChanged);
             // 
             // tabInformacion
             // 
             this.tabInformacion.BackColor = System.Drawing.SystemColors.Control;
-            this.tabInformacion.Controls.Add(this.label28);
+            this.tabInformacion.Controls.Add(this.lblTitle);
             this.tabInformacion.Controls.Add(this.btnClean);
             this.tabInformacion.Controls.Add(this.button4);
             this.tabInformacion.Controls.Add(this.groupBox6);
@@ -324,29 +324,29 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(510, 630);
+            this.tabInformacion.Size = new System.Drawing.Size(776, 658);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             // 
-            // label28
+            // lblTitle
             // 
-            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label28.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(3, 3);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(504, 30);
-            this.label28.TabIndex = 79;
-            this.label28.Text = "Distribuidores";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(3, 3);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(770, 40);
+            this.lblTitle.TabIndex = 79;
+            this.lblTitle.Text = "Distribuidores";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnClean
             // 
             this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
             this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(405, 595);
+            this.btnClean.Location = new System.Drawing.Point(407, 622);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
             this.btnClean.TabIndex = 78;
@@ -357,7 +357,7 @@
             // 
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(473, 595);
+            this.button4.Location = new System.Drawing.Point(441, 622);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 77;
@@ -397,9 +397,9 @@
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.label2);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(6, 51);
+            this.groupBox6.Location = new System.Drawing.Point(12, 51);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(494, 351);
+            this.groupBox6.Size = new System.Drawing.Size(496, 377);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion Personal";
@@ -735,7 +735,7 @@
             this.groupBox5.Controls.Add(this.cbVehiculo);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(6, 407);
+            this.groupBox5.Location = new System.Drawing.Point(12, 434);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(496, 51);
             this.groupBox5.TabIndex = 75;
@@ -786,7 +786,7 @@
             this.groupBox1.Controls.Add(this.txtDomic);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(8, 464);
+            this.groupBox1.Location = new System.Drawing.Point(12, 491);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(494, 125);
             this.groupBox1.TabIndex = 73;
@@ -890,7 +890,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(439, 595);
+            this.btnSave.Location = new System.Drawing.Point(475, 622);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 1;
@@ -905,7 +905,7 @@
             this.tabVehiculos.Controls.Add(this.groupBox2);
             this.tabVehiculos.Location = new System.Drawing.Point(4, 22);
             this.tabVehiculos.Name = "tabVehiculos";
-            this.tabVehiculos.Size = new System.Drawing.Size(510, 630);
+            this.tabVehiculos.Size = new System.Drawing.Size(776, 535);
             this.tabVehiculos.TabIndex = 2;
             this.tabVehiculos.Text = "Vehiculos";
             // 
@@ -932,10 +932,10 @@
             this.colPatente,
             this.colColor,
             this.colEstado});
-            this.dgvVehiculos.Location = new System.Drawing.Point(6, 229);
+            this.dgvVehiculos.Location = new System.Drawing.Point(8, 229);
             this.dgvVehiculos.Name = "dgvVehiculos";
             this.dgvVehiculos.ReadOnly = true;
-            this.dgvVehiculos.Size = new System.Drawing.Size(507, 295);
+            this.dgvVehiculos.Size = new System.Drawing.Size(760, 298);
             this.dgvVehiculos.TabIndex = 72;
             this.dgvVehiculos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvVehiculos_MouseDoubleClick);
             // 
@@ -996,9 +996,9 @@
             this.groupBox2.Controls.Add(this.label25);
             this.groupBox2.Controls.Add(this.label26);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(6, 9);
+            this.groupBox2.Location = new System.Drawing.Point(6, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(507, 214);
+            this.groupBox2.Size = new System.Drawing.Size(762, 214);
             this.groupBox2.TabIndex = 71;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Vehiculos";
@@ -1265,7 +1265,7 @@
             this.btnUpdVeh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdVeh.BackgroundImage")));
             this.btnUpdVeh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpdVeh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpdVeh.Location = new System.Drawing.Point(461, 180);
+            this.btnUpdVeh.Location = new System.Drawing.Point(694, 180);
             this.btnUpdVeh.Name = "btnUpdVeh";
             this.btnUpdVeh.Size = new System.Drawing.Size(28, 28);
             this.btnUpdVeh.TabIndex = 65;
@@ -1289,7 +1289,7 @@
             this.btnSaveVehi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveVehi.BackgroundImage")));
             this.btnSaveVehi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveVehi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveVehi.Location = new System.Drawing.Point(427, 180);
+            this.btnSaveVehi.Location = new System.Drawing.Point(728, 180);
             this.btnSaveVehi.Name = "btnSaveVehi";
             this.btnSaveVehi.Size = new System.Drawing.Size(28, 28);
             this.btnSaveVehi.TabIndex = 64;
@@ -1359,7 +1359,7 @@
             this.tabHojaRuta.Controls.Add(this.tabDias);
             this.tabHojaRuta.Location = new System.Drawing.Point(4, 22);
             this.tabHojaRuta.Name = "tabHojaRuta";
-            this.tabHojaRuta.Size = new System.Drawing.Size(510, 630);
+            this.tabHojaRuta.Size = new System.Drawing.Size(776, 535);
             this.tabHojaRuta.TabIndex = 3;
             this.tabHojaRuta.Text = "Hoja de Ruta";
             this.tabHojaRuta.UseVisualStyleBackColor = true;
@@ -1377,7 +1377,7 @@
             this.tabDias.Location = new System.Drawing.Point(0, 0);
             this.tabDias.Name = "tabDias";
             this.tabDias.SelectedIndex = 0;
-            this.tabDias.Size = new System.Drawing.Size(510, 630);
+            this.tabDias.Size = new System.Drawing.Size(776, 535);
             this.tabDias.TabIndex = 0;
             // 
             // tabLunes
@@ -1386,7 +1386,7 @@
             this.tabLunes.Location = new System.Drawing.Point(4, 22);
             this.tabLunes.Name = "tabLunes";
             this.tabLunes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabLunes.Size = new System.Drawing.Size(502, 604);
+            this.tabLunes.Size = new System.Drawing.Size(768, 509);
             this.tabLunes.TabIndex = 0;
             this.tabLunes.Text = "Lunes";
             this.tabLunes.UseVisualStyleBackColor = true;
@@ -1403,7 +1403,7 @@
             this.dgvLun.Location = new System.Drawing.Point(3, 3);
             this.dgvLun.Name = "dgvLun";
             this.dgvLun.ReadOnly = true;
-            this.dgvLun.Size = new System.Drawing.Size(496, 598);
+            this.dgvLun.Size = new System.Drawing.Size(762, 503);
             this.dgvLun.TabIndex = 0;
             // 
             // colCliente
@@ -1539,10 +1539,11 @@
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(510, 630);
+            this.tabListado.Size = new System.Drawing.Size(776, 535);
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
+            this.tabListado.Click += new System.EventHandler(this.tabListado_Click);
             // 
             // dgvDistribuidores
             // 
@@ -1566,7 +1567,7 @@
             this.dgvDistribuidores.Name = "dgvDistribuidores";
             this.dgvDistribuidores.ReadOnly = true;
             this.dgvDistribuidores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDistribuidores.Size = new System.Drawing.Size(504, 624);
+            this.dgvDistribuidores.Size = new System.Drawing.Size(770, 529);
             this.dgvDistribuidores.TabIndex = 2;
             this.dgvDistribuidores.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvDistribuidores_MouseDoubleClick);
             // 
@@ -1642,7 +1643,7 @@
             this.tabRecorrido.Controls.Add(this.btnDownSa);
             this.tabRecorrido.Location = new System.Drawing.Point(4, 22);
             this.tabRecorrido.Name = "tabRecorrido";
-            this.tabRecorrido.Size = new System.Drawing.Size(510, 630);
+            this.tabRecorrido.Size = new System.Drawing.Size(776, 535);
             this.tabRecorrido.TabIndex = 4;
             this.tabRecorrido.Text = "Recorrido";
             this.tabRecorrido.UseVisualStyleBackColor = true;
@@ -1660,7 +1661,7 @@
             this.btnDownSa.Location = new System.Drawing.Point(0, 0);
             this.btnDownSa.Name = "btnDownSa";
             this.btnDownSa.SelectedIndex = 0;
-            this.btnDownSa.Size = new System.Drawing.Size(510, 630);
+            this.btnDownSa.Size = new System.Drawing.Size(776, 535);
             this.btnDownSa.TabIndex = 1;
             // 
             // tabPage1
@@ -1677,7 +1678,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(502, 604);
+            this.tabPage1.Size = new System.Drawing.Size(768, 509);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lunes";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1787,49 +1788,12 @@
             this.colLuHasta,
             this.colLuSentido,
             this.colLuEstado});
-            this.dgvRecorridoLu.Location = new System.Drawing.Point(6, 6);
+            this.dgvRecorridoLu.Location = new System.Drawing.Point(8, 6);
             this.dgvRecorridoLu.Name = "dgvRecorridoLu";
-            this.dgvRecorridoLu.Size = new System.Drawing.Size(490, 558);
+            this.dgvRecorridoLu.Size = new System.Drawing.Size(756, 497);
             this.dgvRecorridoLu.TabIndex = 4;
             this.dgvRecorridoLu.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvRecorridoLu_CellStateChanged);
             this.dgvRecorridoLu.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecorridoLu_CellValueChanged);
-            // 
-            // colLuIDcalle
-            // 
-            this.colLuIDcalle.HeaderText = "Nº Calle";
-            this.colLuIDcalle.Name = "colLuIDcalle";
-            this.colLuIDcalle.ReadOnly = true;
-            this.colLuIDcalle.Visible = false;
-            // 
-            // colCalle
-            // 
-            this.colCalle.HeaderText = "Calle";
-            this.colCalle.Name = "colCalle";
-            this.colCalle.ReadOnly = true;
-            // 
-            // colLuDesde
-            // 
-            this.colLuDesde.HeaderText = "Desde";
-            this.colLuDesde.Name = "colLuDesde";
-            // 
-            // colLuHasta
-            // 
-            this.colLuHasta.HeaderText = "Hasta";
-            this.colLuHasta.Name = "colLuHasta";
-            // 
-            // colLuSentido
-            // 
-            this.colLuSentido.HeaderText = "Sentido";
-            this.colLuSentido.Name = "colLuSentido";
-            this.colLuSentido.Visible = false;
-            // 
-            // colLuEstado
-            // 
-            this.colLuEstado.HeaderText = "Estado";
-            this.colLuEstado.IndeterminateValue = "True";
-            this.colLuEstado.Name = "colLuEstado";
-            this.colLuEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colLuEstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tabPage2
             // 
@@ -2816,13 +2780,54 @@
             this.colDoEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colDoEstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // colLuIDcalle
+            // 
+            this.colLuIDcalle.HeaderText = "Nº Calle";
+            this.colLuIDcalle.Name = "colLuIDcalle";
+            this.colLuIDcalle.ReadOnly = true;
+            this.colLuIDcalle.Visible = false;
+            // 
+            // colCalle
+            // 
+            this.colCalle.HeaderText = "Calle";
+            this.colCalle.Name = "colCalle";
+            this.colCalle.ReadOnly = true;
+            this.colCalle.Width = 350;
+            // 
+            // colLuDesde
+            // 
+            this.colLuDesde.HeaderText = "Desde";
+            this.colLuDesde.Name = "colLuDesde";
+            // 
+            // colLuHasta
+            // 
+            this.colLuHasta.HeaderText = "Hasta";
+            this.colLuHasta.Name = "colLuHasta";
+            // 
+            // colLuSentido
+            // 
+            this.colLuSentido.HeaderText = "Sentido";
+            this.colLuSentido.Name = "colLuSentido";
+            this.colLuSentido.Visible = false;
+            // 
+            // colLuEstado
+            // 
+            this.colLuEstado.HeaderText = "Estado";
+            this.colLuEstado.IndeterminateValue = "True";
+            this.colLuEstado.Name = "colLuEstado";
+            this.colLuEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colLuEstado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // formDistribuidores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 656);
+            this.ClientSize = new System.Drawing.Size(784, 684);
             this.Controls.Add(this.tabDistribuidor);
+            this.MaximizeBox = false;
             this.Name = "formDistribuidores";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registrar Distribuidor";
             this.Load += new System.EventHandler(this.formDistribuidores_Load);
             this.tabDistribuidor.ResumeLayout(false);
             this.tabInformacion.ResumeLayout(false);
@@ -2988,12 +2993,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colDomicilio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLuIDcalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLuDesde;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLuHasta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colLuSentido;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colLuEstado;
         private System.Windows.Forms.Button btnSaveRecorridoMa;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btnUpMa;
@@ -3105,6 +3104,12 @@
         public System.Windows.Forms.ComboBox cbColor;
         public System.Windows.Forms.CheckBox cbEstadoVeh;
         public System.Windows.Forms.TextBox txtIDvehiculo;
-        private System.Windows.Forms.Label label28;
+        public System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLuIDcalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLuDesde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLuHasta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colLuSentido;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colLuEstado;
     }
 }

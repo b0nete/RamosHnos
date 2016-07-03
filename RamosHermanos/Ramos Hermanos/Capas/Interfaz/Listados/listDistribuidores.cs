@@ -144,6 +144,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 distribuidor.numDoc = row.Cells["colnumDoc"].Value.ToString();
 
                 DistribuidorB.BuscarDistribuidorDOC(distribuidor);
+                frmD.lblTitle.Text = DistribuidorB.BuscarNombreDistribuidor(distribuidor.idDistribuidor);
                 frmD.txtIDdistribuidor.Text = Convert.ToString(distribuidor.idDistribuidor);
                 frmD.dtpFechaAlta.Value = distribuidor.fechaAlta;
                 frmD.cbTipoDoc.SelectedValue = distribuidor.tipoDoc;
@@ -233,6 +234,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
                 //Case
                 frmD.CaseDistribuidor();
+                this.Close();
         }
 
     }
