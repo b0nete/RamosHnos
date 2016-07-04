@@ -1616,6 +1616,11 @@ namespace RamosHermanos.Capas.Interfaz
             //decimal val = Convert.ToDecimal(txtCreditoMax.Text);
             //txtCreditoMax.Text = val.ToString("N2");
         }
+
+        private void Distribuidor(object sender, EventArgs e)
+        {
+
+        }
         }
 
           

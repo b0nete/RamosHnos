@@ -101,7 +101,7 @@
             "Pendiente",
             "Pagado",
             "Anulado"});
-            this.cbEstado.Location = new System.Drawing.Point(643, 604);
+            this.cbEstado.Location = new System.Drawing.Point(373, 45);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(129, 21);
             this.cbEstado.TabIndex = 106;
@@ -111,7 +111,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(603, 607);
+            this.label12.Location = new System.Drawing.Point(333, 48);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(40, 13);
             this.label12.TabIndex = 107;
@@ -164,18 +164,19 @@
             // txtTotal
             // 
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(643, 578);
+            this.txtTotal.Location = new System.Drawing.Point(643, 594);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(129, 20);
             this.txtTotal.TabIndex = 98;
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(601, 581);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(596, 597);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 13);
+            this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 97;
             this.label2.Text = "TOTAL";
             // 
@@ -327,6 +328,7 @@
             // 
             // txtIDFactura
             // 
+            this.txtIDFactura.Enabled = false;
             this.txtIDFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIDFactura.Location = new System.Drawing.Point(83, 44);
             this.txtIDFactura.Name = "txtIDFactura";
@@ -346,6 +348,8 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dtpEntrega);
+            this.groupBox2.Controls.Add(this.cbEstado);
+            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.dtpVencimiento);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label10);
@@ -566,8 +570,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 729);
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.cbEstado);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.txtObservaciones);

@@ -316,7 +316,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 string query = @"SELECT idFactura, fechaFactura
                                  FROM facturas
-                                 WHERE estado = 'Pagado' and cliente = @cliente";
+                                 WHERE estado = 'Pagado' and cliente = @cliente and total > 0";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
                 cmd.Parameters.AddWithValue("@cliente", cliente.idCliente);
@@ -356,7 +356,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 string query = @"SELECT idFactura, fechaFactura
                                  FROM facturas
-                                 WHERE estado = 'Pendiente' and cliente = @cliente";
+                                 WHERE estado = 'Pendiente' and cliente = @cliente and total > 0";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
                 cmd.Parameters.AddWithValue("@cliente", cliente.idCliente);
@@ -396,7 +396,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 string query = @"SELECT idFactura, fechaFactura
                                  FROM facturas
-                                 WHERE estado = 'Anulado' and cliente = @cliente";
+                                 WHERE estado = 'Anulado' and cliente = @cliente and total > 0";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
                 cmd.Parameters.AddWithValue("@cliente", cliente.idCliente);
@@ -493,19 +493,32 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void ListFacturas(DataGridView dgvList)
+        public static void ListFacturas(DataGridView dgvList, string WHERE)
         {
             try
             {
                 MySQL.ConnectDB();
 
+                string addQuery = "";
+
                 string query = @"SELECT idFactura as colFactura, fechaFactura as colFecha, CONCAT(C.nombre, ' ' ,C.apellido) as colNombre, total as colTotal, F.estado as colEstado
                                 FROM Facturas F
                                 INNER JOIN Clientes C ON C.idCliente = F.cliente
-                                WHERE total > 0";
+                                WHERE total > 0 ";
 
                 DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(query, MySQL.sqlcnx);
+
+                if (WHERE == "Pagado")
+                {                    
+                    addQuery = " and F.estado = 'Pagado'";
+                }
+                else if (WHERE == "Pendiente")
+                {
+                    
+                    addQuery = " and F.estado = 'Pendiente'";
+                }
+
+                MySqlDataAdapter da = new MySqlDataAdapter(query + addQuery, MySQL.sqlcnx);
 
                 da.Fill(dt);
 

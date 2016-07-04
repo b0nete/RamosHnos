@@ -465,7 +465,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(599, 649);
+            this.label15.Location = new System.Drawing.Point(327, 48);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(40, 13);
             this.label15.TabIndex = 142;
@@ -474,26 +474,29 @@
             // txtTotal
             // 
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(645, 620);
+            this.txtTotal.Location = new System.Drawing.Point(645, 639);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(129, 20);
             this.txtTotal.TabIndex = 140;
+            this.txtTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(599, 623);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(599, 642);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(42, 13);
+            this.label16.Size = new System.Drawing.Size(47, 13);
             this.label16.TabIndex = 139;
             this.label16.Text = "TOTAL";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbEstado);
             this.groupBox2.Controls.Add(this.dtpEntrega);
             this.groupBox2.Controls.Add(this.dtpVencimiento);
             this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.cbformaPago);
@@ -577,7 +580,7 @@
             "Pendiente",
             "Pagado",
             "Anulado"});
-            this.cbEstado.Location = new System.Drawing.Point(645, 646);
+            this.cbEstado.Location = new System.Drawing.Point(373, 45);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(129, 21);
             this.cbEstado.TabIndex = 146;
@@ -587,11 +590,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 729);
-            this.Controls.Add(this.cbEstado);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.label15);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.button3);

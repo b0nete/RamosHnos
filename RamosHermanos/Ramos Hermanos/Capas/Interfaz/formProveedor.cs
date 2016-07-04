@@ -33,7 +33,6 @@ namespace RamosHermanos.Capas.Interfaz
         {
             cbIVA.SelectedIndex = 0;
             tabProveedor.Controls.Remove(tabListado);
-            tabProveedor.Controls.Remove(tabMovimientos);
             tabProveedor.Controls.Remove(tabPedido);
             tabProveedor.Controls.Remove(tabAdicional);
             ProveedorB.cargardgv(dgvProveedor);

@@ -237,6 +237,12 @@
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.btnSaveVisita = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
             this.tabMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.tabListado.SuspendLayout();
@@ -536,16 +542,19 @@
             // 
             // groupBox16
             // 
+            this.groupBox16.Controls.Add(this.comboBox1);
+            this.groupBox16.Controls.Add(this.label64);
             this.groupBox16.Controls.Add(this.cbSabado);
+            this.groupBox16.Controls.Add(this.label65);
             this.groupBox16.Controls.Add(this.cbViernes);
             this.groupBox16.Controls.Add(this.cbJueves);
             this.groupBox16.Controls.Add(this.cbMiercoles);
             this.groupBox16.Controls.Add(this.cbMartes);
             this.groupBox16.Controls.Add(this.cbLunes);
             this.groupBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox16.Location = new System.Drawing.Point(503, 403);
+            this.groupBox16.Location = new System.Drawing.Point(503, 299);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(264, 89);
+            this.groupBox16.Size = new System.Drawing.Size(264, 193);
             this.groupBox16.TabIndex = 72;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Visita";
@@ -1082,7 +1091,7 @@
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.Location = new System.Drawing.Point(502, 10);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(265, 391);
+            this.groupBox5.Size = new System.Drawing.Size(265, 283);
             this.groupBox5.TabIndex = 67;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Saldos";
@@ -1157,7 +1166,7 @@
             this.groupBox17.Controls.Add(this.txtCajon);
             this.groupBox17.Controls.Add(this.label48);
             this.groupBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox17.Location = new System.Drawing.Point(4, 260);
+            this.groupBox17.Location = new System.Drawing.Point(136, 152);
             this.groupBox17.Name = "groupBox17";
             this.groupBox17.Size = new System.Drawing.Size(126, 127);
             this.groupBox17.TabIndex = 66;
@@ -1255,7 +1264,7 @@
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(4, 101);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(126, 153);
+            this.groupBox3.Size = new System.Drawing.Size(126, 176);
             this.groupBox3.TabIndex = 64;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Agua";
@@ -1544,6 +1553,9 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.comboBox2);
+            this.groupBox10.Controls.Add(this.label66);
+            this.groupBox10.Controls.Add(this.label67);
             this.groupBox10.Controls.Add(this.cbSabadoPJ);
             this.groupBox10.Controls.Add(this.cbViernesPJ);
             this.groupBox10.Controls.Add(this.cbJuevesPJ);
@@ -1551,9 +1563,9 @@
             this.groupBox10.Controls.Add(this.cbMartesPJ);
             this.groupBox10.Controls.Add(this.cbLunesPJ);
             this.groupBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox10.Location = new System.Drawing.Point(506, 403);
+            this.groupBox10.Location = new System.Drawing.Point(506, 299);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(264, 89);
+            this.groupBox10.Size = new System.Drawing.Size(264, 193);
             this.groupBox10.TabIndex = 80;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Visita";
@@ -1633,7 +1645,7 @@
             this.groupBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox11.Location = new System.Drawing.Point(505, 10);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(265, 391);
+            this.groupBox11.Size = new System.Drawing.Size(265, 283);
             this.groupBox11.TabIndex = 79;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Saldos";
@@ -1660,6 +1672,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(165, 20);
             this.textBox1.TabIndex = 69;
+            this.textBox1.Text = "00,00";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtCreditoMaxPJ
@@ -1669,6 +1682,7 @@
             this.txtCreditoMaxPJ.Name = "txtCreditoMaxPJ";
             this.txtCreditoMaxPJ.Size = new System.Drawing.Size(165, 20);
             this.txtCreditoMaxPJ.TabIndex = 67;
+            this.txtCreditoMaxPJ.Text = "50,00";
             this.txtCreditoMaxPJ.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label46
@@ -1704,7 +1718,7 @@
             this.groupBox13.Controls.Add(this.textBox6);
             this.groupBox13.Controls.Add(this.label54);
             this.groupBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox13.Location = new System.Drawing.Point(4, 260);
+            this.groupBox13.Location = new System.Drawing.Point(136, 152);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(126, 127);
             this.groupBox13.TabIndex = 66;
@@ -1909,7 +1923,7 @@
             this.groupBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox19.Location = new System.Drawing.Point(137, 101);
             this.groupBox19.Name = "groupBox19";
-            this.groupBox19.Size = new System.Drawing.Size(126, 153);
+            this.groupBox19.Size = new System.Drawing.Size(126, 45);
             this.groupBox19.TabIndex = 65;
             this.groupBox19.TabStop = false;
             this.groupBox19.Text = "Sodas";
@@ -2609,6 +2623,79 @@
             this.lblTitle.Text = "Clientes";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Masculino\t",
+            "Femenino"});
+            this.comboBox1.Location = new System.Drawing.Point(74, 100);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(178, 21);
+            this.comboBox1.TabIndex = 91;
+            // 
+            // label64
+            // 
+            this.label64.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label64.AutoSize = true;
+            this.label64.BackColor = System.Drawing.Color.Transparent;
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label64.ForeColor = System.Drawing.Color.Red;
+            this.label64.Location = new System.Drawing.Point(6, 105);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(11, 13);
+            this.label64.TabIndex = 92;
+            this.label64.Text = "*";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label65.Location = new System.Drawing.Point(14, 105);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(59, 13);
+            this.label65.TabIndex = 93;
+            this.label65.Text = "Distribuidor";
+            this.label65.Enter += new System.EventHandler(this.Distribuidor);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Masculino\t",
+            "Femenino"});
+            this.comboBox2.Location = new System.Drawing.Point(74, 100);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(178, 21);
+            this.comboBox2.TabIndex = 94;
+            // 
+            // label66
+            // 
+            this.label66.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label66.AutoSize = true;
+            this.label66.BackColor = System.Drawing.Color.Transparent;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label66.ForeColor = System.Drawing.Color.Red;
+            this.label66.Location = new System.Drawing.Point(5, 104);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(11, 13);
+            this.label66.TabIndex = 95;
+            this.label66.Text = "*";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label67.Location = new System.Drawing.Point(13, 104);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(59, 13);
+            this.label67.TabIndex = 96;
+            this.label67.Text = "Distribuidor";
+            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2883,6 +2970,12 @@
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label lbltxtP;
         public System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label65;
+        public System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label67;
 
     }
 }

@@ -119,7 +119,7 @@
             this.btnCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCompra.BackgroundImage")));
             this.btnCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompra.Location = new System.Drawing.Point(404, 340);
+            this.btnCompra.Location = new System.Drawing.Point(650, 438);
             this.btnCompra.Name = "btnCompra";
             this.btnCompra.Size = new System.Drawing.Size(28, 28);
             this.btnCompra.TabIndex = 68;
@@ -132,7 +132,7 @@
             this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
             this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(438, 340);
+            this.btnClean.Location = new System.Drawing.Point(684, 438);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
             this.btnClean.TabIndex = 1;
@@ -161,7 +161,7 @@
             this.groupBox6.Controls.Add(this.label1);
             this.groupBox6.Location = new System.Drawing.Point(6, 6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(740, 211);
+            this.groupBox6.Size = new System.Drawing.Size(493, 211);
             this.groupBox6.TabIndex = 67;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion Personal";
@@ -378,7 +378,7 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Location = new System.Drawing.Point(6, 223);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(494, 111);
+            this.groupBox1.Size = new System.Drawing.Size(493, 111);
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contacto";
@@ -481,7 +481,7 @@
             this.btnGuardarProv.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardarProv.BackgroundImage")));
             this.btnGuardarProv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGuardarProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarProv.Location = new System.Drawing.Point(472, 340);
+            this.btnGuardarProv.Location = new System.Drawing.Point(718, 438);
             this.btnGuardarProv.Name = "btnGuardarProv";
             this.btnGuardarProv.Size = new System.Drawing.Size(28, 28);
             this.btnGuardarProv.TabIndex = 10;

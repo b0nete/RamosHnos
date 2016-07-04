@@ -22,7 +22,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         private void listVentas_Load(object sender, EventArgs e)
         {
             cbParametro.SelectedIndex = 0;
-            FacturaB.ListFacturas(dgvVentas);
+            FacturaB.ListFacturas(dgvVentas, "Pagado");
             dgvVentas.AutoGenerateColumns = false;
         }
 
@@ -83,6 +83,18 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         private void txtParametro_TextChanged(object sender, EventArgs e)
         {
             SearchParametro();
+        }
+
+        private void rbPagas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbPagas.Checked == true)
+            FacturaB.ListFacturas(dgvVentas, "Pagado");
+        }
+
+        private void rbNoPagas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbNoPagas.Checked == true)
+            FacturaB.ListFacturas(dgvVentas, "Pendiente");
         }
 
     }

@@ -132,6 +132,21 @@ namespace RamosHermanos.Capas.Interfaz
                 double precioUnitario = PrecioProductosB.UltimoPrecio(Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCodigo"].Value.ToString()));
                 dgvFactura.CurrentRow.Cells["colSubTotal"].Value = Convert.ToString(cantidad * precioUnitario);
             }
+
+            // Se recorre cada fila del DGV.
+            double total = 0;
+
+            foreach (DataGridViewRow row in dgvFactura.Rows)
+            {
+                if (row.Cells["colCantidad"].ToString() != string.Empty && row.Cells["colPrecio"].ToString() != string.Empty)
+                {
+                    row.Cells["colSubTotal"].Value = Convert.ToInt32(row.Cells["colCantidad"].Value) * Convert.ToDouble(row.Cells["colPrecio"].Value);
+
+                    total += Convert.ToDouble(row.Cells["colSubTotal"].Value);
+                }
+
+                txtTotal.Text = Convert.ToString(total);
+            }
         }
     }
 }

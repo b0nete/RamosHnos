@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listVentas));
             this.dgvVentas = new System.Windows.Forms.DataGridView();
+            this.colFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipoFac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbAnuladas = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,12 +44,6 @@
             this.rbPagas = new System.Windows.Forms.RadioButton();
             this.cbParametro = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.colFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTipoFac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,105 +62,10 @@
             this.colEstado});
             this.dgvVentas.Location = new System.Drawing.Point(12, 107);
             this.dgvVentas.Name = "dgvVentas";
+            this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVentas.Size = new System.Drawing.Size(760, 442);
             this.dgvVentas.TabIndex = 0;
             this.dgvVentas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvVentas_MouseDoubleClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.rbAnuladas);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.rbNoPagas);
-            this.groupBox1.Controls.Add(this.txtParametro);
-            this.groupBox1.Controls.Add(this.rbPagas);
-            this.groupBox1.Controls.Add(this.cbParametro);
-            this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(760, 89);
-            this.groupBox1.TabIndex = 55;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Búsqueda Parametrizada";
-            // 
-            // rbAnuladas
-            // 
-            this.rbAnuladas.AutoSize = true;
-            this.rbAnuladas.Location = new System.Drawing.Point(148, 57);
-            this.rbAnuladas.Name = "rbAnuladas";
-            this.rbAnuladas.Size = new System.Drawing.Size(77, 17);
-            this.rbAnuladas.TabIndex = 58;
-            this.rbAnuladas.Text = "Anuladas";
-            this.rbAnuladas.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Buscar por:";
-            // 
-            // rbNoPagas
-            // 
-            this.rbNoPagas.AutoSize = true;
-            this.rbNoPagas.Checked = true;
-            this.rbNoPagas.Location = new System.Drawing.Point(70, 57);
-            this.rbNoPagas.Name = "rbNoPagas";
-            this.rbNoPagas.Size = new System.Drawing.Size(80, 17);
-            this.rbNoPagas.TabIndex = 57;
-            this.rbNoPagas.TabStop = true;
-            this.rbNoPagas.Text = "No Pagas";
-            this.rbNoPagas.UseVisualStyleBackColor = true;
-            // 
-            // txtParametro
-            // 
-            this.txtParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtParametro.Location = new System.Drawing.Point(223, 23);
-            this.txtParametro.Name = "txtParametro";
-            this.txtParametro.Size = new System.Drawing.Size(299, 20);
-            this.txtParametro.TabIndex = 108;
-            this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
-            // 
-            // rbPagas
-            // 
-            this.rbPagas.AutoSize = true;
-            this.rbPagas.Location = new System.Drawing.Point(9, 57);
-            this.rbPagas.Name = "rbPagas";
-            this.rbPagas.Size = new System.Drawing.Size(60, 17);
-            this.rbPagas.TabIndex = 56;
-            this.rbPagas.Text = "Pagas";
-            this.rbPagas.UseVisualStyleBackColor = true;
-            // 
-            // cbParametro
-            // 
-            this.cbParametro.AutoCompleteCustomSource.AddRange(new string[] {
-            "ID",
-            "RazonSocial",
-            "CUIT"});
-            this.cbParametro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbParametro.FormattingEnabled = true;
-            this.cbParametro.Items.AddRange(new object[] {
-            "Nº Factura",
-            "Fecha"});
-            this.cbParametro.Location = new System.Drawing.Point(73, 23);
-            this.cbParametro.Name = "cbParametro";
-            this.cbParametro.Size = new System.Drawing.Size(133, 21);
-            this.cbParametro.TabIndex = 107;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnSearch.Location = new System.Drawing.Point(528, 18);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(28, 28);
-            this.btnSearch.TabIndex = 106;
-            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // colFactura
             // 
@@ -207,6 +112,105 @@
             this.colEstado.ReadOnly = true;
             this.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.colEstado.Visible = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbAnuladas);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.rbNoPagas);
+            this.groupBox1.Controls.Add(this.txtParametro);
+            this.groupBox1.Controls.Add(this.rbPagas);
+            this.groupBox1.Controls.Add(this.cbParametro);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(760, 89);
+            this.groupBox1.TabIndex = 55;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Búsqueda Parametrizada";
+            // 
+            // rbAnuladas
+            // 
+            this.rbAnuladas.AutoSize = true;
+            this.rbAnuladas.Location = new System.Drawing.Point(148, 57);
+            this.rbAnuladas.Name = "rbAnuladas";
+            this.rbAnuladas.Size = new System.Drawing.Size(77, 17);
+            this.rbAnuladas.TabIndex = 58;
+            this.rbAnuladas.Text = "Anuladas";
+            this.rbAnuladas.UseVisualStyleBackColor = true;
+            this.rbAnuladas.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(61, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Buscar por:";
+            // 
+            // rbNoPagas
+            // 
+            this.rbNoPagas.AutoSize = true;
+            this.rbNoPagas.Location = new System.Drawing.Point(70, 57);
+            this.rbNoPagas.Name = "rbNoPagas";
+            this.rbNoPagas.Size = new System.Drawing.Size(80, 17);
+            this.rbNoPagas.TabIndex = 57;
+            this.rbNoPagas.Text = "No Pagas";
+            this.rbNoPagas.UseVisualStyleBackColor = true;
+            this.rbNoPagas.CheckedChanged += new System.EventHandler(this.rbNoPagas_CheckedChanged);
+            // 
+            // txtParametro
+            // 
+            this.txtParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtParametro.Location = new System.Drawing.Point(223, 23);
+            this.txtParametro.Name = "txtParametro";
+            this.txtParametro.Size = new System.Drawing.Size(299, 20);
+            this.txtParametro.TabIndex = 108;
+            this.txtParametro.TextChanged += new System.EventHandler(this.txtParametro_TextChanged);
+            // 
+            // rbPagas
+            // 
+            this.rbPagas.AutoSize = true;
+            this.rbPagas.Checked = true;
+            this.rbPagas.Location = new System.Drawing.Point(9, 57);
+            this.rbPagas.Name = "rbPagas";
+            this.rbPagas.Size = new System.Drawing.Size(60, 17);
+            this.rbPagas.TabIndex = 56;
+            this.rbPagas.TabStop = true;
+            this.rbPagas.Text = "Pagas";
+            this.rbPagas.UseVisualStyleBackColor = true;
+            this.rbPagas.CheckedChanged += new System.EventHandler(this.rbPagas_CheckedChanged);
+            // 
+            // cbParametro
+            // 
+            this.cbParametro.AutoCompleteCustomSource.AddRange(new string[] {
+            "ID",
+            "RazonSocial",
+            "CUIT"});
+            this.cbParametro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbParametro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbParametro.FormattingEnabled = true;
+            this.cbParametro.Items.AddRange(new object[] {
+            "Nº Factura",
+            "Fecha"});
+            this.cbParametro.Location = new System.Drawing.Point(73, 23);
+            this.cbParametro.Name = "cbParametro";
+            this.cbParametro.Size = new System.Drawing.Size(133, 21);
+            this.cbParametro.TabIndex = 107;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSearch.BackgroundImage")));
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSearch.Location = new System.Drawing.Point(528, 18);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(28, 28);
+            this.btnSearch.TabIndex = 106;
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // listVentas
             // 
