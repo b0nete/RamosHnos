@@ -12,14 +12,25 @@ using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Reportes;
 using RamosHermanos.Capas.Reportes.Comprobante;
+using RamosHermanos.Capas.Interfaz.Listados;
+using RamosHermanos.Capas.Interfaz.Contratos;
 
 namespace RamosHermanos.Capas.Interfaz
 {
-    public partial class formVentas : Form
+    public partial class formVentas : Form, produccionForm
     {
         public formVentas()
         {
             InitializeComponent();
+        }
+
+        public void pasarDatos(DataGridViewRow row)
+        {
+            string idProducto = row.Cells["colIDProducto"].Value.ToString();
+            string producto = row.Cells["colProducto"].Value.ToString();
+            //string check = "true";
+
+            this.dgvFactura.Rows.Add(new[] { idProducto, producto });
         }
 
         private void formFactura_Load(object sender, EventArgs e)
@@ -89,6 +100,38 @@ namespace RamosHermanos.Capas.Interfaz
             //rd.Load("C:/Users/b0nete/Documents/GitHub/RamosHnos/RamosHermanos/Ramos Hermanos/Capas/Reportes/Recorridos/crFactura.rpt");
             rd.SetDataSource(ds);
             frm.crvReporte.ReportSource = rd;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            listProductos frm = new listProductos();
+            frm.caseSwitch = 2;
+            frm.Show(this);
+        }
+
+        private void dgvFactura_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            double precioUnitario;
+
+            foreach (DataGridViewRow dRow in dgvFactura.Rows)
+            {                
+                if (dRow.Cells["colCodigo"].Value.ToString() != string.Empty)
+                {
+                    int codProducto = Convert.ToInt32(dRow.Cells["colCodigo"].Value.ToString());
+                    precioUnitario = PrecioProductosB.UltimoPrecio(codProducto);
+                    dRow.Cells["colPrecio"].Value = precioUnitario;
+                }
+            }
+        }
+
+        private void dgvFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvFactura.CurrentRow.Cells["colCodigo"].Value.ToString() != string.Empty && dgvFactura.CurrentRow.Cells["colCantidad"].Value.ToString() != string.Empty)
+            {
+                int cantidad = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCantidad"].Value.ToString());
+                double precioUnitario = PrecioProductosB.UltimoPrecio(Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCodigo"].Value.ToString()));
+                dgvFactura.CurrentRow.Cells["colSubTotal"].Value = Convert.ToString(cantidad * precioUnitario);
+            }
         }
     }
 }

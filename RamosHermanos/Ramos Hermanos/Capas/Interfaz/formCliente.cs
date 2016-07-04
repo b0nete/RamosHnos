@@ -1252,6 +1252,12 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnPedido_Click(object sender, EventArgs e)
         {
+            if (txtIDcliente.Text == string.Empty)
+            {
+                MessageBox.Show("Registre un cliente para generar el pedido");
+                return;
+            }
+
             formVentas frm = new formVentas();
             frm.Show();
 

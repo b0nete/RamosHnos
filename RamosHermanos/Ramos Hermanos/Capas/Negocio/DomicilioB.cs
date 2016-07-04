@@ -243,9 +243,12 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT group_concat(' ', B.barrio,' ', calle,' ', numero,' ', piso,' ', dpto,' ', CP) 
-                                 FROM Domicilios D
-                                 INNER JOIN Barrios B ON D.barrio = B.idBarrio
+                string query = @"SELECT CONCAT(C.Calle,' ',D.Numero,' ',IFNULL(D.Piso, '-'),' ',IFNULL(D.Dpto, '-'),' - ',IFNULL(D.CP, '-'),', ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
+                                 FROM Domicilios D 
+                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
+                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
+                                 INNER JOIN Barrios B ON D.Barrio = B.idBarrio
+                                 INNER JOIN Calles C ON D.Calle = C.idCalle
                                  WHERE rol = @rol and idPersona = @idPersona and D.estado = 1";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -254,6 +257,8 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@idPersona", txt2.Text);
 
                 txt.Text = Convert.ToString(cmd.ExecuteScalar());
+                txt.Text = txt.Text.Replace("-", String.Empty);
+                txt.Text = txt.Text.Replace("  ", String.Empty);
 
                 MySQL.DisconnectDB();
             }
@@ -270,10 +275,13 @@ namespace RamosHermanos.Capas.Negocio
             try
             {
                 MySQL.ConnectDB();
-                string query = @"SELECT group_concat(' ', B.barrio,' ', calle,' ', numero,' ', piso,' ', dpto,' ', CP) 
-                                 FROM Domicilios D
-                                 INNER JOIN Barrios B ON D.barrio = B.idBarrio
-                                 WHERE rol = @rol and idPersona = @idPersona and D.estado = 1";
+                string query = @"SELECT CONCAT(C.Calle,' ',D.Numero,' ',IFNULL(D.Piso, '-'),' ',IFNULL(D.Dpto, '-'),' - ',IFNULL(D.CP, '-'),', ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
+                                 FROM Domicilios D 
+                                 INNER JOIN Provincias P ON P.idProvincia = D.Provincia
+                                 INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
+                                 INNER JOIN Barrios B ON D.Barrio = B.idBarrio
+                                 INNER JOIN Calles C ON D.Calle = C.idCalle
+                                 WHERE D.rol = @rol and D.idPersona = @idPersona";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -281,6 +289,8 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@idPersona", txtID.Text);
 
                string retornar = Convert.ToString(cmd.ExecuteScalar());
+               retornar = retornar.Replace("-", String.Empty);
+               retornar = retornar.Replace("  ", String.Empty);
 
                 MySQL.DisconnectDB();
                 return retornar;
