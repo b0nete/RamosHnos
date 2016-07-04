@@ -89,6 +89,7 @@
             this.colTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEstadoTel = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblEstadoTel = new System.Windows.Forms.Label();
             this.btnUpdTel = new System.Windows.Forms.Button();
             this.btnSaveTel = new System.Windows.Forms.Button();
             this.cbEstadoTel = new System.Windows.Forms.CheckBox();
@@ -116,7 +117,6 @@
             this.btnSaveEmail = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
             this.txtIDALL = new System.Windows.Forms.TextBox();
-            this.lblEstadoTel = new System.Windows.Forms.Label();
             this.tabContacto.SuspendLayout();
             this.tabDomicilios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDomicilio)).BeginInit();
@@ -799,6 +799,14 @@
             this.groupBox1.Text = "Telefono";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // lblEstadoTel
+            // 
+            this.lblEstadoTel.AutoSize = true;
+            this.lblEstadoTel.Location = new System.Drawing.Point(678, 25);
+            this.lblEstadoTel.Name = "lblEstadoTel";
+            this.lblEstadoTel.Size = new System.Drawing.Size(0, 13);
+            this.lblEstadoTel.TabIndex = 110;
+            // 
             // btnUpdTel
             // 
             this.btnUpdTel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdTel.BackgroundImage")));
@@ -1095,14 +1103,6 @@
             this.txtIDALL.Size = new System.Drawing.Size(110, 20);
             this.txtIDALL.TabIndex = 108;
             this.txtIDALL.Visible = false;
-            // 
-            // lblEstadoTel
-            // 
-            this.lblEstadoTel.AutoSize = true;
-            this.lblEstadoTel.Location = new System.Drawing.Point(637, 60);
-            this.lblEstadoTel.Name = "lblEstadoTel";
-            this.lblEstadoTel.Size = new System.Drawing.Size(0, 13);
-            this.lblEstadoTel.TabIndex = 110;
             // 
             // formContacto
             // 
