@@ -1263,11 +1263,14 @@ namespace RamosHermanos.Capas.Interfaz
 
             ClienteEntity cliente = ClienteB.BuscarClienteIDINT(Convert.ToInt32(txtIDcliente.Text));
 
+            frm.txtIDcliente.Text = txtIDcliente.Text;
             frm.txtNombre.Text = cliente.apellido + cliente.nombre;
             frm.txtnumDoc.Text = cliente.numDoc;
             frm.txtTel.Text = TelefonoB.CargarTXTString(txtIDcliente, 1);
             frm.txtDomicilio.Text = DomicilioB.CargarTXTSTRING(txtIDcliente, 1);
             frm.txtIVA.Text = cliente.condicionIVA;
+
+            frm.cbEstado.SelectedIndex = 1;
 
 
             //if (txtIDcliente.Text == string.Empty)

@@ -44,12 +44,41 @@ namespace RamosHermanos.Capas.Interfaz
             FacturaB.UpdateFactura(factura);
         }
 
-        // Entidades
+        // Entidades        
         FacturaEntity factura = new FacturaEntity();
+        private void cargarFactura()
+        {
+            factura.cliente = Convert.ToInt32(txtIDcliente.Text);
+            factura.tipoFactura = cbTipoFactura.Text;
+            factura.fechaFactura = dtpfechaFactura.Value;
+            factura.total = Convert.ToDouble(txtTotal.Text);
+            factura.formaPago = cbformaPago.Text;
+            factura.fechaVencimiento = dtpVencimiento.Value;
+            factura.fechaEntrega = dtpEntrega.Value;
+            factura.observaciones = txtObservaciones.Text;
+        }
+
+        itemFacturaEntity itemFactura = new itemFacturaEntity();
+        private void cargarItemsFactura(DataGridView dgv)
+        {
+            foreach (DataGridViewRow dRow in dgv.Rows)
+            {
+                itemFactura.factura = txtIDFactura.Text;
+                itemFactura.producto = Convert.ToInt32(dRow.Cells["colCodigo"].Value.ToString());
+                itemFactura.precioUnitario = Convert.ToDouble(dRow.Cells["colPrecio"].Value.ToString());
+                itemFactura.cantidad = Convert.ToInt32(dRow.Cells["colCantidad"].Value.ToString());
+                itemFactura.subTotal = Convert.ToDouble(dRow.Cells["colSubTotal"].Value.ToString());
+                itemFactura.carga = "C";
+            }
+        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            cargarFactura();
+            FacturaB.InsertFactura(factura);
 
+            cargarItemsFactura(dgvFactura);
+            itemsFacturaB.InsertItemFactura(itemFactura);
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -147,6 +176,11 @@ namespace RamosHermanos.Capas.Interfaz
 
                 txtTotal.Text = Convert.ToString(total);
             }
+        }
+
+        private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -58,7 +58,10 @@
             this.tabAdicional = new System.Windows.Forms.TabPage();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.cbDistribuidor = new System.Windows.Forms.ComboBox();
+            this.label64 = new System.Windows.Forms.Label();
             this.cbSabado = new System.Windows.Forms.CheckBox();
+            this.label65 = new System.Windows.Forms.Label();
             this.cbViernes = new System.Windows.Forms.CheckBox();
             this.cbJueves = new System.Windows.Forms.CheckBox();
             this.cbMiercoles = new System.Windows.Forms.CheckBox();
@@ -144,6 +147,9 @@
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabInformacionJ = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
             this.cbSabadoPJ = new System.Windows.Forms.CheckBox();
             this.cbViernesPJ = new System.Windows.Forms.CheckBox();
             this.cbJuevesPJ = new System.Windows.Forms.CheckBox();
@@ -220,7 +226,7 @@
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.cbDistribuidor = new System.Windows.Forms.ComboBox();
+            this.cbDistribuidora = new System.Windows.Forms.ComboBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.checkDo = new System.Windows.Forms.CheckBox();
             this.checkSa = new System.Windows.Forms.CheckBox();
@@ -237,12 +243,6 @@
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.btnSaveVisita = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label64 = new System.Windows.Forms.Label();
-            this.label65 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
             this.tabMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.tabListado.SuspendLayout();
@@ -542,7 +542,7 @@
             // 
             // groupBox16
             // 
-            this.groupBox16.Controls.Add(this.comboBox1);
+            this.groupBox16.Controls.Add(this.cbDistribuidor);
             this.groupBox16.Controls.Add(this.label64);
             this.groupBox16.Controls.Add(this.cbSabado);
             this.groupBox16.Controls.Add(this.label65);
@@ -559,6 +559,32 @@
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Visita";
             // 
+            // cbDistribuidor
+            // 
+            this.cbDistribuidor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDistribuidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbDistribuidor.FormattingEnabled = true;
+            this.cbDistribuidor.Items.AddRange(new object[] {
+            "Masculino\t",
+            "Femenino"});
+            this.cbDistribuidor.Location = new System.Drawing.Point(74, 100);
+            this.cbDistribuidor.Name = "cbDistribuidor";
+            this.cbDistribuidor.Size = new System.Drawing.Size(178, 21);
+            this.cbDistribuidor.TabIndex = 91;
+            // 
+            // label64
+            // 
+            this.label64.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label64.AutoSize = true;
+            this.label64.BackColor = System.Drawing.Color.Transparent;
+            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label64.ForeColor = System.Drawing.Color.Red;
+            this.label64.Location = new System.Drawing.Point(6, 105);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(11, 13);
+            this.label64.TabIndex = 92;
+            this.label64.Text = "*";
+            // 
             // cbSabado
             // 
             this.cbSabado.AutoSize = true;
@@ -569,6 +595,17 @@
             this.cbSabado.TabIndex = 5;
             this.cbSabado.Text = "Sabado";
             this.cbSabado.UseVisualStyleBackColor = true;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label65.Location = new System.Drawing.Point(14, 105);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(59, 13);
+            this.label65.TabIndex = 93;
+            this.label65.Text = "Distribuidor";
+            this.label65.Enter += new System.EventHandler(this.Distribuidor);
             // 
             // cbViernes
             // 
@@ -1570,6 +1607,42 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Visita";
             // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Masculino\t",
+            "Femenino"});
+            this.comboBox2.Location = new System.Drawing.Point(74, 100);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(178, 21);
+            this.comboBox2.TabIndex = 94;
+            // 
+            // label66
+            // 
+            this.label66.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label66.AutoSize = true;
+            this.label66.BackColor = System.Drawing.Color.Transparent;
+            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label66.ForeColor = System.Drawing.Color.Red;
+            this.label66.Location = new System.Drawing.Point(5, 104);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(11, 13);
+            this.label66.TabIndex = 95;
+            this.label66.Text = "*";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label67.Location = new System.Drawing.Point(13, 104);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(59, 13);
+            this.label67.TabIndex = 96;
+            this.label67.Text = "Distribuidor";
+            // 
             // cbSabadoPJ
             // 
             this.cbSabadoPJ.AutoSize = true;
@@ -2396,7 +2469,7 @@
             // 
             this.groupBox15.Controls.Add(this.label33);
             this.groupBox15.Controls.Add(this.label30);
-            this.groupBox15.Controls.Add(this.cbDistribuidor);
+            this.groupBox15.Controls.Add(this.cbDistribuidora);
             this.groupBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox15.Location = new System.Drawing.Point(8, 95);
             this.groupBox15.Name = "groupBox15";
@@ -2428,14 +2501,14 @@
             this.label30.TabIndex = 2;
             this.label30.Text = "Seleccionar";
             // 
-            // cbDistribuidor
+            // cbDistribuidora
             // 
-            this.cbDistribuidor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbDistribuidor.FormattingEnabled = true;
-            this.cbDistribuidor.Location = new System.Drawing.Point(79, 19);
-            this.cbDistribuidor.Name = "cbDistribuidor";
-            this.cbDistribuidor.Size = new System.Drawing.Size(416, 21);
-            this.cbDistribuidor.TabIndex = 0;
+            this.cbDistribuidora.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDistribuidora.FormattingEnabled = true;
+            this.cbDistribuidora.Location = new System.Drawing.Point(79, 19);
+            this.cbDistribuidora.Name = "cbDistribuidora";
+            this.cbDistribuidora.Size = new System.Drawing.Size(416, 21);
+            this.cbDistribuidora.TabIndex = 0;
             // 
             // groupBox8
             // 
@@ -2623,79 +2696,6 @@
             this.lblTitle.Text = "Clientes";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Masculino\t",
-            "Femenino"});
-            this.comboBox1.Location = new System.Drawing.Point(74, 100);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 21);
-            this.comboBox1.TabIndex = 91;
-            // 
-            // label64
-            // 
-            this.label64.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label64.AutoSize = true;
-            this.label64.BackColor = System.Drawing.Color.Transparent;
-            this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label64.ForeColor = System.Drawing.Color.Red;
-            this.label64.Location = new System.Drawing.Point(6, 105);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(11, 13);
-            this.label64.TabIndex = 92;
-            this.label64.Text = "*";
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label65.Location = new System.Drawing.Point(14, 105);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(59, 13);
-            this.label65.TabIndex = 93;
-            this.label65.Text = "Distribuidor";
-            this.label65.Enter += new System.EventHandler(this.Distribuidor);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Masculino\t",
-            "Femenino"});
-            this.comboBox2.Location = new System.Drawing.Point(74, 100);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(178, 21);
-            this.comboBox2.TabIndex = 94;
-            // 
-            // label66
-            // 
-            this.label66.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label66.AutoSize = true;
-            this.label66.BackColor = System.Drawing.Color.Transparent;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label66.ForeColor = System.Drawing.Color.Red;
-            this.label66.Location = new System.Drawing.Point(5, 104);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(11, 13);
-            this.label66.TabIndex = 95;
-            this.label66.Text = "*";
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label67.Location = new System.Drawing.Point(13, 104);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(59, 13);
-            this.label67.TabIndex = 96;
-            this.label67.Text = "Distribuidor";
-            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2880,7 +2880,7 @@
         private System.Windows.Forms.CheckBox checkMi;
         private System.Windows.Forms.GroupBox groupBox15;
         private System.Windows.Forms.Label label30;
-        public System.Windows.Forms.ComboBox cbDistribuidor;
+        public System.Windows.Forms.ComboBox cbDistribuidora;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label21;
         public System.Windows.Forms.ComboBox cbDomicilio;
@@ -2970,7 +2970,7 @@
         private System.Windows.Forms.Label label63;
         private System.Windows.Forms.Label lbltxtP;
         public System.Windows.Forms.Label lblTitle;
-        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.ComboBox cbDistribuidor;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label65;
         public System.Windows.Forms.ComboBox comboBox2;

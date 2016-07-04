@@ -209,7 +209,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     TelefonoB.CargarTXT(frm.txtTel, frm.txtIDcliente, 1);
                     
                     DomicilioB.CargarCB(frm.cbDomicilio, frm.txtIDcliente, "1");
-                    DistribuidorB.CargarCB(frm.cbDistribuidor, frm.txtIDcliente);
+                    DistribuidorB.CargarCB(frm.cbDistribuidora, frm.txtIDcliente);
 
                     //Movimientos
                         if (frm.rbNoPagas.Checked == true)
