@@ -54,7 +54,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(746, 52);
+            this.groupBox1.Size = new System.Drawing.Size(760, 52);
             this.groupBox1.TabIndex = 54;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda Parametrizada";
@@ -119,7 +119,7 @@
             this.dgvListadoPedidos.Location = new System.Drawing.Point(12, 70);
             this.dgvListadoPedidos.Name = "dgvListadoPedidos";
             this.dgvListadoPedidos.ReadOnly = true;
-            this.dgvListadoPedidos.Size = new System.Drawing.Size(746, 686);
+            this.dgvListadoPedidos.Size = new System.Drawing.Size(760, 479);
             this.dgvListadoPedidos.TabIndex = 55;
             this.dgvListadoPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListadoPedidos_CellContentClick);
             this.dgvListadoPedidos.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvListadoPedidos_MouseDoubleClick);
@@ -166,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 450);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.dgvListadoPedidos);
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;

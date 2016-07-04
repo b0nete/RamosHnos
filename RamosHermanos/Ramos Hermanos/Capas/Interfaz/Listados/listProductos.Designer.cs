@@ -114,11 +114,11 @@
             this.colProducto,
             this.colCantidad,
             this.colMedida});
-            this.dgvProducto.Location = new System.Drawing.Point(4, 70);
+            this.dgvProducto.Location = new System.Drawing.Point(4, 71);
             this.dgvProducto.Name = "dgvProducto";
             this.dgvProducto.ReadOnly = true;
             this.dgvProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProducto.Size = new System.Drawing.Size(775, 368);
+            this.dgvProducto.Size = new System.Drawing.Size(775, 484);
             this.dgvProducto.TabIndex = 53;
             this.dgvProducto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducto_CellContentClick);
             this.dgvProducto.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvProducto_MouseDoubleClick);
