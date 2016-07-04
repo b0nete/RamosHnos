@@ -306,7 +306,7 @@
             this.tabDistribuidor.Location = new System.Drawing.Point(12, 51);
             this.tabDistribuidor.Name = "tabDistribuidor";
             this.tabDistribuidor.SelectedIndex = 0;
-            this.tabDistribuidor.Size = new System.Drawing.Size(772, 643);
+            this.tabDistribuidor.Size = new System.Drawing.Size(760, 643);
             this.tabDistribuidor.TabIndex = 0;
             this.tabDistribuidor.SelectedIndexChanged += new System.EventHandler(this.tabDistribuidor_SelectedIndexChanged);
             // 
@@ -331,7 +331,7 @@
             this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
             this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(402, 577);
+            this.btnClean.Location = new System.Drawing.Point(527, 577);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
             this.btnClean.TabIndex = 78;
@@ -343,7 +343,7 @@
             this.button4.BackgroundImage = global::RamosHermanos.Properties.Resources.modificar;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(436, 577);
+            this.button4.Location = new System.Drawing.Point(561, 577);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 77;
@@ -383,7 +383,7 @@
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.label2);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(6, 6);
+            this.groupBox6.Location = new System.Drawing.Point(127, 6);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(496, 377);
             this.groupBox6.TabIndex = 0;
@@ -721,7 +721,7 @@
             this.groupBox5.Controls.Add(this.cbVehiculo);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(6, 389);
+            this.groupBox5.Location = new System.Drawing.Point(127, 389);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(496, 51);
             this.groupBox5.TabIndex = 75;
@@ -773,9 +773,9 @@
             this.groupBox1.Controls.Add(this.txtDomic);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(6, 446);
+            this.groupBox1.Location = new System.Drawing.Point(127, 446);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(494, 125);
+            this.groupBox1.Size = new System.Drawing.Size(496, 125);
             this.groupBox1.TabIndex = 73;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contacto";
@@ -878,7 +878,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(470, 577);
+            this.btnSave.Location = new System.Drawing.Point(595, 577);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 1;
@@ -893,7 +893,7 @@
             this.tabVehiculos.Controls.Add(this.groupBox2);
             this.tabVehiculos.Location = new System.Drawing.Point(4, 22);
             this.tabVehiculos.Name = "tabVehiculos";
-            this.tabVehiculos.Size = new System.Drawing.Size(752, 628);
+            this.tabVehiculos.Size = new System.Drawing.Size(752, 617);
             this.tabVehiculos.TabIndex = 2;
             this.tabVehiculos.Text = "Vehiculos";
             // 
@@ -1347,7 +1347,7 @@
             this.tabHojaRuta.Controls.Add(this.tabDias);
             this.tabHojaRuta.Location = new System.Drawing.Point(4, 22);
             this.tabHojaRuta.Name = "tabHojaRuta";
-            this.tabHojaRuta.Size = new System.Drawing.Size(752, 628);
+            this.tabHojaRuta.Size = new System.Drawing.Size(752, 617);
             this.tabHojaRuta.TabIndex = 3;
             this.tabHojaRuta.Text = "Hoja de Ruta";
             this.tabHojaRuta.UseVisualStyleBackColor = true;
@@ -1528,7 +1528,7 @@
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(752, 628);
+            this.tabListado.Size = new System.Drawing.Size(752, 617);
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
@@ -1556,7 +1556,7 @@
             this.dgvDistribuidores.Name = "dgvDistribuidores";
             this.dgvDistribuidores.ReadOnly = true;
             this.dgvDistribuidores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDistribuidores.Size = new System.Drawing.Size(746, 622);
+            this.dgvDistribuidores.Size = new System.Drawing.Size(746, 611);
             this.dgvDistribuidores.TabIndex = 2;
             this.dgvDistribuidores.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvDistribuidores_MouseDoubleClick);
             // 
@@ -1632,7 +1632,7 @@
             this.tabRecorrido.Controls.Add(this.btnDownSa);
             this.tabRecorrido.Location = new System.Drawing.Point(4, 22);
             this.tabRecorrido.Name = "tabRecorrido";
-            this.tabRecorrido.Size = new System.Drawing.Size(764, 617);
+            this.tabRecorrido.Size = new System.Drawing.Size(752, 617);
             this.tabRecorrido.TabIndex = 4;
             this.tabRecorrido.Text = "Recorrido";
             this.tabRecorrido.UseVisualStyleBackColor = true;
@@ -1650,7 +1650,7 @@
             this.btnDownSa.Location = new System.Drawing.Point(0, 0);
             this.btnDownSa.Name = "btnDownSa";
             this.btnDownSa.SelectedIndex = 0;
-            this.btnDownSa.Size = new System.Drawing.Size(764, 617);
+            this.btnDownSa.Size = new System.Drawing.Size(752, 617);
             this.btnDownSa.TabIndex = 1;
             // 
             // tabPage1
@@ -1667,7 +1667,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(756, 591);
+            this.tabPage1.Size = new System.Drawing.Size(744, 591);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lunes";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1836,7 +1836,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(756, 591);
+            this.tabPage2.Size = new System.Drawing.Size(744, 591);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Martes";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -2001,7 +2001,7 @@
             this.tabPage3.Controls.Add(this.btnAddMi);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(756, 591);
+            this.tabPage3.Size = new System.Drawing.Size(744, 591);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Miercoles";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -2166,7 +2166,7 @@
             this.tabPage4.Controls.Add(this.btnAddJu);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(756, 591);
+            this.tabPage4.Size = new System.Drawing.Size(744, 591);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Jueves";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -2331,7 +2331,7 @@
             this.tabPage5.Controls.Add(this.btnAddVi);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(756, 591);
+            this.tabPage5.Size = new System.Drawing.Size(744, 591);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Viernes";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -2497,7 +2497,7 @@
             this.tabPage6.Controls.Add(this.btnAddSa);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(756, 591);
+            this.tabPage6.Size = new System.Drawing.Size(744, 591);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Sabado";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -2663,7 +2663,7 @@
             this.tabPage7.Controls.Add(this.btnAddDo);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(756, 591);
+            this.tabPage7.Size = new System.Drawing.Size(744, 591);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Domingo";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -2830,6 +2830,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::RamosHermanos.Properties.Resources.grey_background_for_site119;
             this.ClientSize = new System.Drawing.Size(784, 706);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tabDistribuidor);

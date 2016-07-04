@@ -63,6 +63,26 @@ namespace RamosHermanos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _20080720_777 {
+            get {
+                object obj = ResourceManager.GetObject("20080720_777", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _20080720_7771 {
+            get {
+                object obj = ResourceManager.GetObject("20080720_7771", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agregar {
             get {
                 object obj = ResourceManager.GetObject("agregar", resourceCulture);
@@ -153,6 +173,26 @@ namespace RamosHermanos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fondoVerde {
+            get {
+                object obj = ResourceManager.GetObject("fondoVerde", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fondoVerde1 {
+            get {
+                object obj = ResourceManager.GetObject("fondoVerde1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap grafico_barras {
             get {
                 object obj = ResourceManager.GetObject("grafico-barras", resourceCulture);
@@ -216,6 +256,46 @@ namespace RamosHermanos.Properties {
         internal static System.Drawing.Bitmap grey_background_for_site115 {
             get {
                 object obj = ResourceManager.GetObject("grey-background-for-site115", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grey_background_for_site116 {
+            get {
+                object obj = ResourceManager.GetObject("grey-background-for-site116", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grey_background_for_site117 {
+            get {
+                object obj = ResourceManager.GetObject("grey-background-for-site117", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grey_background_for_site118 {
+            get {
+                object obj = ResourceManager.GetObject("grey-background-for-site118", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grey_background_for_site119 {
+            get {
+                object obj = ResourceManager.GetObject("grey-background-for-site119", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
