@@ -601,7 +601,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::RamosHermanos.Properties.Resources.grey_background_for_site113;
+            this.BackgroundImage = global::RamosHermanos.Properties.Resources.grey_background_for_site118;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tabProveedor);
