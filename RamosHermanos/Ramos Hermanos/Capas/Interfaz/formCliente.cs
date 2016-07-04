@@ -1255,13 +1255,12 @@ namespace RamosHermanos.Capas.Interfaz
             formVentas frm = new formVentas();
             frm.Show();
 
-            CargarCliente();
-            ClienteB.BuscarClienteID(cliente);
+            ClienteEntity cliente = ClienteB.BuscarClienteIDINT(Convert.ToInt32(txtIDcliente.Text));
 
             frm.txtNombre.Text = cliente.apellido + cliente.nombre;
             frm.txtnumDoc.Text = cliente.numDoc;
-            frm.txtTel.Text = DomicilioB.CargarTXTSTRING(txtIDcliente, 1);
-            //frm.txtDomicilio.Text
+            frm.txtTel.Text = TelefonoB.CargarTXTString(txtIDcliente, 1);
+            frm.txtDomicilio.Text = DomicilioB.CargarTXTSTRING(txtIDcliente, 1);
             frm.txtIVA.Text = cliente.condicionIVA;
 
 

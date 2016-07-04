@@ -538,6 +538,7 @@
             this.txtIDcliente.Name = "txtIDcliente";
             this.txtIDcliente.Size = new System.Drawing.Size(26, 20);
             this.txtIDcliente.TabIndex = 6;
+            this.txtIDcliente.Visible = false;
             // 
             // txtnumDoc
             // 
