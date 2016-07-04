@@ -626,7 +626,6 @@
             this.btnPedido.Size = new System.Drawing.Size(28, 28);
             this.btnPedido.TabIndex = 2;
             this.btnPedido.UseVisualStyleBackColor = true;
-            this.btnPedido.Visible = false;
             this.btnPedido.Click += new System.EventHandler(this.btnPedido_Click);
             // 
             // btnClean

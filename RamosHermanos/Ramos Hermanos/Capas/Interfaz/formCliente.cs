@@ -1252,20 +1252,32 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnPedido_Click(object sender, EventArgs e)
         {
-            if (txtIDcliente.Text == string.Empty)
-            {
-                listClientes frm = new listClientes();
-                frm.Show();
-            }
-            else
-            {
-                formPedidos frm = new formPedidos();
-                frm.txtidCliente.Text = txtIDcliente.Text;
-                frm.txtNombre.Text = txtApellido.Text + " " + txtNombre.Text;
-                frm.Show();
-                //frm.cbDomicilio.Value= txtDomic.Text;
-                
-            }
+            formVentas frm = new formVentas();
+            frm.Show();
+
+            CargarCliente();
+            ClienteB.BuscarClienteID(cliente);
+
+            frm.txtNombre.Text = cliente.apellido + cliente.nombre;
+            frm.txtnumDoc.Text = cliente.numDoc;
+            frm.txtTel.Text = DomicilioB.CargarTXTSTRING(txtIDcliente, 1);
+            //frm.txtDomicilio.Text
+            frm.txtIVA.Text = cliente.condicionIVA;
+
+
+            //if (txtIDcliente.Text == string.Empty)
+            //{
+            //    listClientes frm = new listClientes();
+            //    frm.Show();
+            //}
+            //else
+            //{
+            //    formPedidos frm = new formPedidos();
+            //    frm.txtidCliente.Text = txtIDcliente.Text;
+            //    frm.txtNombre.Text = txtApellido.Text + " " + txtNombre.Text;
+            //    frm.Show();
+            //    //frm.cbDomicilio.Value= txtDomic.Text;                
+            //}
         }
 
         public void CargarTXTSaldo()

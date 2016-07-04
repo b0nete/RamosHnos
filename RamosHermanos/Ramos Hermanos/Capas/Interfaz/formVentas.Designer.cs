@@ -456,9 +456,9 @@
             // 
             this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(142, 17);
+            this.txtNombre.Location = new System.Drawing.Point(75, 17);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(230, 20);
+            this.txtNombre.Size = new System.Drawing.Size(297, 20);
             this.txtNombre.TabIndex = 90;
             // 
             // btnSearch
@@ -534,9 +534,9 @@
             // 
             this.txtIDcliente.Enabled = false;
             this.txtIDcliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDcliente.Location = new System.Drawing.Point(75, 17);
+            this.txtIDcliente.Location = new System.Drawing.Point(6, 17);
             this.txtIDcliente.Name = "txtIDcliente";
-            this.txtIDcliente.Size = new System.Drawing.Size(61, 20);
+            this.txtIDcliente.Size = new System.Drawing.Size(26, 20);
             this.txtIDcliente.TabIndex = 6;
             // 
             // txtnumDoc

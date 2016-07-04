@@ -62,9 +62,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 frm.txtTel.Text = TelefonoB.CargarTXTString(frm.txtIDproveedor, 2);
 
                 //Buscamos ItemsCompra
-                itemCompraB.BuscarItemCompra(compras.idCompras, frm.dgvCompra);
-
-                
+                itemCompraB.BuscarItemCompra(compras.idCompras, frm.dgvCompra);                
 
                 //ClienteEntity cliente = ClienteB.BuscarClienteCIVAyCP(factura.cliente);
                 //frmP.txtIVA.Text = cliente.condicionIVA;

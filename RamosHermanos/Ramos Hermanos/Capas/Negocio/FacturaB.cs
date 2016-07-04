@@ -499,9 +499,10 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT idFactura as colFactura, fechaFactura as colFecha, CONCAT(C.nombre, '' ,C.apellido) as colNombre, total as colTotal, F.estado as colEstado
+                string query = @"SELECT idFactura as colFactura, fechaFactura as colFecha, CONCAT(C.nombre, ' ' ,C.apellido) as colNombre, total as colTotal, F.estado as colEstado
                                 FROM Facturas F
-                                INNER JOIN Clientes C ON C.idCliente = F.cliente";
+                                INNER JOIN Clientes C ON C.idCliente = F.cliente
+                                WHERE total > 0";
 
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(query, MySQL.sqlcnx);
