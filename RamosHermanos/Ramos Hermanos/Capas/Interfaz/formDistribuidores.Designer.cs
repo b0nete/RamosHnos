@@ -306,7 +306,7 @@
             this.tabDistribuidor.Location = new System.Drawing.Point(12, 51);
             this.tabDistribuidor.Name = "tabDistribuidor";
             this.tabDistribuidor.SelectedIndex = 0;
-            this.tabDistribuidor.Size = new System.Drawing.Size(760, 643);
+            this.tabDistribuidor.Size = new System.Drawing.Size(760, 582);
             this.tabDistribuidor.TabIndex = 0;
             this.tabDistribuidor.SelectedIndexChanged += new System.EventHandler(this.tabDistribuidor_SelectedIndexChanged);
             // 
@@ -322,7 +322,7 @@
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInformacion.Size = new System.Drawing.Size(752, 617);
+            this.tabInformacion.Size = new System.Drawing.Size(752, 556);
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             // 
@@ -331,7 +331,7 @@
             this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
             this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(527, 577);
+            this.btnClean.Location = new System.Drawing.Point(561, 519);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
             this.btnClean.TabIndex = 78;
@@ -343,11 +343,12 @@
             this.button4.BackgroundImage = global::RamosHermanos.Properties.Resources.modificar;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(561, 577);
+            this.button4.Location = new System.Drawing.Point(527, 519);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 77;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // groupBox6
@@ -385,7 +386,7 @@
             this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.Location = new System.Drawing.Point(127, 6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(496, 377);
+            this.groupBox6.Size = new System.Drawing.Size(496, 320);
             this.groupBox6.TabIndex = 0;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion Personal";
@@ -721,7 +722,7 @@
             this.groupBox5.Controls.Add(this.cbVehiculo);
             this.groupBox5.Controls.Add(this.label20);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(127, 389);
+            this.groupBox5.Location = new System.Drawing.Point(127, 331);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(496, 51);
             this.groupBox5.TabIndex = 75;
@@ -733,7 +734,7 @@
             this.button2.BackgroundImage = global::RamosHermanos.Properties.Resources.agregar;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button2.Location = new System.Drawing.Point(304, 11);
+            this.button2.Location = new System.Drawing.Point(462, 11);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(28, 28);
             this.button2.TabIndex = 1;
@@ -773,7 +774,7 @@
             this.groupBox1.Controls.Add(this.txtDomic);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(127, 446);
+            this.groupBox1.Location = new System.Drawing.Point(127, 388);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(496, 125);
             this.groupBox1.TabIndex = 73;
@@ -878,7 +879,7 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(595, 577);
+            this.btnSave.Location = new System.Drawing.Point(595, 519);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 1;
@@ -893,7 +894,7 @@
             this.tabVehiculos.Controls.Add(this.groupBox2);
             this.tabVehiculos.Location = new System.Drawing.Point(4, 22);
             this.tabVehiculos.Name = "tabVehiculos";
-            this.tabVehiculos.Size = new System.Drawing.Size(752, 617);
+            this.tabVehiculos.Size = new System.Drawing.Size(752, 556);
             this.tabVehiculos.TabIndex = 2;
             this.tabVehiculos.Text = "Vehiculos";
             // 
@@ -1347,7 +1348,7 @@
             this.tabHojaRuta.Controls.Add(this.tabDias);
             this.tabHojaRuta.Location = new System.Drawing.Point(4, 22);
             this.tabHojaRuta.Name = "tabHojaRuta";
-            this.tabHojaRuta.Size = new System.Drawing.Size(752, 617);
+            this.tabHojaRuta.Size = new System.Drawing.Size(752, 556);
             this.tabHojaRuta.TabIndex = 3;
             this.tabHojaRuta.Text = "Hoja de Ruta";
             this.tabHojaRuta.UseVisualStyleBackColor = true;
@@ -1528,7 +1529,7 @@
             this.tabListado.Location = new System.Drawing.Point(4, 22);
             this.tabListado.Name = "tabListado";
             this.tabListado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabListado.Size = new System.Drawing.Size(752, 617);
+            this.tabListado.Size = new System.Drawing.Size(752, 556);
             this.tabListado.TabIndex = 1;
             this.tabListado.Text = "Listado";
             this.tabListado.UseVisualStyleBackColor = true;
@@ -1556,7 +1557,7 @@
             this.dgvDistribuidores.Name = "dgvDistribuidores";
             this.dgvDistribuidores.ReadOnly = true;
             this.dgvDistribuidores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDistribuidores.Size = new System.Drawing.Size(746, 611);
+            this.dgvDistribuidores.Size = new System.Drawing.Size(746, 550);
             this.dgvDistribuidores.TabIndex = 2;
             this.dgvDistribuidores.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvDistribuidores_MouseDoubleClick);
             // 
@@ -1632,7 +1633,7 @@
             this.tabRecorrido.Controls.Add(this.btnDownSa);
             this.tabRecorrido.Location = new System.Drawing.Point(4, 22);
             this.tabRecorrido.Name = "tabRecorrido";
-            this.tabRecorrido.Size = new System.Drawing.Size(752, 617);
+            this.tabRecorrido.Size = new System.Drawing.Size(752, 556);
             this.tabRecorrido.TabIndex = 4;
             this.tabRecorrido.Text = "Recorrido";
             this.tabRecorrido.UseVisualStyleBackColor = true;
@@ -1650,7 +1651,7 @@
             this.btnDownSa.Location = new System.Drawing.Point(0, 0);
             this.btnDownSa.Name = "btnDownSa";
             this.btnDownSa.SelectedIndex = 0;
-            this.btnDownSa.Size = new System.Drawing.Size(752, 617);
+            this.btnDownSa.Size = new System.Drawing.Size(752, 556);
             this.btnDownSa.TabIndex = 1;
             // 
             // tabPage1
@@ -1667,7 +1668,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(744, 591);
+            this.tabPage1.Size = new System.Drawing.Size(744, 530);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Lunes";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1678,7 +1679,7 @@
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(689, 509);
+            this.button5.Location = new System.Drawing.Point(676, 493);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(28, 28);
             this.button5.TabIndex = 99;
@@ -1687,10 +1688,10 @@
             // 
             // button3
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImage = global::RamosHermanos.Properties.Resources.print;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(655, 509);
+            this.button3.Location = new System.Drawing.Point(642, 493);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(28, 28);
             this.button3.TabIndex = 98;
@@ -1702,7 +1703,7 @@
             this.btnUpLu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpLu.BackgroundImage")));
             this.btnUpLu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpLu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpLu.Location = new System.Drawing.Point(353, 509);
+            this.btnUpLu.Location = new System.Drawing.Point(349, 493);
             this.btnUpLu.Name = "btnUpLu";
             this.btnUpLu.Size = new System.Drawing.Size(28, 28);
             this.btnUpLu.TabIndex = 97;
@@ -1714,7 +1715,7 @@
             this.btnDownLu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownLu.BackgroundImage")));
             this.btnDownLu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDownLu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDownLu.Location = new System.Drawing.Point(387, 509);
+            this.btnDownLu.Location = new System.Drawing.Point(383, 493);
             this.btnDownLu.Name = "btnDownLu";
             this.btnDownLu.Size = new System.Drawing.Size(28, 28);
             this.btnDownLu.TabIndex = 96;
@@ -1734,7 +1735,7 @@
             this.btnSaveRecLu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecLu.BackgroundImage")));
             this.btnSaveRecLu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecLu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecLu.Location = new System.Drawing.Point(723, 509);
+            this.btnSaveRecLu.Location = new System.Drawing.Point(710, 493);
             this.btnSaveRecLu.Name = "btnSaveRecLu";
             this.btnSaveRecLu.Size = new System.Drawing.Size(28, 28);
             this.btnSaveRecLu.TabIndex = 94;
@@ -1746,7 +1747,7 @@
             this.btnDelLu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelLu.BackgroundImage")));
             this.btnDelLu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelLu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDelLu.Location = new System.Drawing.Point(42, 509);
+            this.btnDelLu.Location = new System.Drawing.Point(42, 493);
             this.btnDelLu.Name = "btnDelLu";
             this.btnDelLu.Size = new System.Drawing.Size(28, 28);
             this.btnDelLu.TabIndex = 93;
@@ -1758,7 +1759,7 @@
             this.btnAddLu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddLu.BackgroundImage")));
             this.btnAddLu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAddLu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAddLu.Location = new System.Drawing.Point(8, 509);
+            this.btnAddLu.Location = new System.Drawing.Point(8, 493);
             this.btnAddLu.Name = "btnAddLu";
             this.btnAddLu.Size = new System.Drawing.Size(28, 28);
             this.btnAddLu.TabIndex = 92;
@@ -1779,7 +1780,7 @@
             this.colLuEstado});
             this.dgvRecorridoLu.Location = new System.Drawing.Point(8, 6);
             this.dgvRecorridoLu.Name = "dgvRecorridoLu";
-            this.dgvRecorridoLu.Size = new System.Drawing.Size(744, 497);
+            this.dgvRecorridoLu.Size = new System.Drawing.Size(730, 481);
             this.dgvRecorridoLu.TabIndex = 4;
             this.dgvRecorridoLu.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvRecorridoLu_CellStateChanged);
             this.dgvRecorridoLu.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecorridoLu_CellValueChanged);
@@ -1836,7 +1837,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(744, 591);
+            this.tabPage2.Size = new System.Drawing.Size(744, 530);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Martes";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1846,7 +1847,7 @@
             this.btnSaveRecMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecMa.BackgroundImage")));
             this.btnSaveRecMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecMa.Location = new System.Drawing.Point(723, 509);
+            this.btnSaveRecMa.Location = new System.Drawing.Point(710, 493);
             this.btnSaveRecMa.Name = "btnSaveRecMa";
             this.btnSaveRecMa.Size = new System.Drawing.Size(28, 28);
             this.btnSaveRecMa.TabIndex = 109;
@@ -1858,7 +1859,7 @@
             this.btnSaveRecorridoMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecorridoMa.BackgroundImage")));
             this.btnSaveRecorridoMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecorridoMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecorridoMa.Location = new System.Drawing.Point(689, 509);
+            this.btnSaveRecorridoMa.Location = new System.Drawing.Point(676, 493);
             this.btnSaveRecorridoMa.Name = "btnSaveRecorridoMa";
             this.btnSaveRecorridoMa.Size = new System.Drawing.Size(28, 28);
             this.btnSaveRecorridoMa.TabIndex = 108;
@@ -1867,10 +1868,10 @@
             // 
             // button7
             // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImage = global::RamosHermanos.Properties.Resources.print;
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(655, 509);
+            this.button7.Location = new System.Drawing.Point(642, 493);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(28, 28);
             this.button7.TabIndex = 107;
@@ -1882,7 +1883,7 @@
             this.btnUpMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpMa.BackgroundImage")));
             this.btnUpMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpMa.Location = new System.Drawing.Point(353, 509);
+            this.btnUpMa.Location = new System.Drawing.Point(353, 493);
             this.btnUpMa.Name = "btnUpMa";
             this.btnUpMa.Size = new System.Drawing.Size(28, 28);
             this.btnUpMa.TabIndex = 106;
@@ -1894,7 +1895,7 @@
             this.btnDownMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownMa.BackgroundImage")));
             this.btnDownMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDownMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDownMa.Location = new System.Drawing.Point(387, 509);
+            this.btnDownMa.Location = new System.Drawing.Point(387, 493);
             this.btnDownMa.Name = "btnDownMa";
             this.btnDownMa.Size = new System.Drawing.Size(28, 28);
             this.btnDownMa.TabIndex = 105;
@@ -1922,7 +1923,7 @@
             this.colMaEstado});
             this.dgvRecorridoMa.Location = new System.Drawing.Point(8, 6);
             this.dgvRecorridoMa.Name = "dgvRecorridoMa";
-            this.dgvRecorridoMa.Size = new System.Drawing.Size(744, 497);
+            this.dgvRecorridoMa.Size = new System.Drawing.Size(730, 481);
             this.dgvRecorridoMa.TabIndex = 100;
             this.dgvRecorridoMa.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecorridoMa_CellValueChanged);
             // 
@@ -1969,7 +1970,7 @@
             this.btnDelMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelMa.BackgroundImage")));
             this.btnDelMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDelMa.Location = new System.Drawing.Point(42, 509);
+            this.btnDelMa.Location = new System.Drawing.Point(42, 493);
             this.btnDelMa.Name = "btnDelMa";
             this.btnDelMa.Size = new System.Drawing.Size(28, 28);
             this.btnDelMa.TabIndex = 102;
@@ -1981,7 +1982,7 @@
             this.btnAddMa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddMa.BackgroundImage")));
             this.btnAddMa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAddMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAddMa.Location = new System.Drawing.Point(8, 509);
+            this.btnAddMa.Location = new System.Drawing.Point(8, 493);
             this.btnAddMa.Name = "btnAddMa";
             this.btnAddMa.Size = new System.Drawing.Size(28, 28);
             this.btnAddMa.TabIndex = 101;
@@ -2001,7 +2002,7 @@
             this.tabPage3.Controls.Add(this.btnAddMi);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(744, 591);
+            this.tabPage3.Size = new System.Drawing.Size(744, 530);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Miercoles";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -2011,7 +2012,7 @@
             this.btnSaveRecMi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecMi.BackgroundImage")));
             this.btnSaveRecMi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecMi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecMi.Location = new System.Drawing.Point(723, 509);
+            this.btnSaveRecMi.Location = new System.Drawing.Point(710, 493);
             this.btnSaveRecMi.Name = "btnSaveRecMi";
             this.btnSaveRecMi.Size = new System.Drawing.Size(28, 28);
             this.btnSaveRecMi.TabIndex = 109;
@@ -2023,7 +2024,7 @@
             this.btnSaveRecorridoMi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecorridoMi.BackgroundImage")));
             this.btnSaveRecorridoMi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecorridoMi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecorridoMi.Location = new System.Drawing.Point(689, 509);
+            this.btnSaveRecorridoMi.Location = new System.Drawing.Point(676, 493);
             this.btnSaveRecorridoMi.Name = "btnSaveRecorridoMi";
             this.btnSaveRecorridoMi.Size = new System.Drawing.Size(28, 28);
             this.btnSaveRecorridoMi.TabIndex = 108;
@@ -2032,10 +2033,10 @@
             // 
             // button14
             // 
-            this.button14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button14.BackgroundImage")));
+            this.button14.BackgroundImage = global::RamosHermanos.Properties.Resources.print;
             this.button14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button14.Location = new System.Drawing.Point(655, 509);
+            this.button14.Location = new System.Drawing.Point(642, 493);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(28, 28);
             this.button14.TabIndex = 107;
@@ -2047,7 +2048,7 @@
             this.btnUpMi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpMi.BackgroundImage")));
             this.btnUpMi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpMi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpMi.Location = new System.Drawing.Point(353, 509);
+            this.btnUpMi.Location = new System.Drawing.Point(353, 493);
             this.btnUpMi.Name = "btnUpMi";
             this.btnUpMi.Size = new System.Drawing.Size(28, 28);
             this.btnUpMi.TabIndex = 106;
@@ -2059,7 +2060,7 @@
             this.btnDownMi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownMi.BackgroundImage")));
             this.btnDownMi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDownMi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDownMi.Location = new System.Drawing.Point(387, 509);
+            this.btnDownMi.Location = new System.Drawing.Point(387, 493);
             this.btnDownMi.Name = "btnDownMi";
             this.btnDownMi.Size = new System.Drawing.Size(28, 28);
             this.btnDownMi.TabIndex = 105;
@@ -2087,7 +2088,7 @@
             this.colMiEstado});
             this.dgvRecorridoMi.Location = new System.Drawing.Point(8, 6);
             this.dgvRecorridoMi.Name = "dgvRecorridoMi";
-            this.dgvRecorridoMi.Size = new System.Drawing.Size(744, 497);
+            this.dgvRecorridoMi.Size = new System.Drawing.Size(730, 481);
             this.dgvRecorridoMi.TabIndex = 100;
             this.dgvRecorridoMi.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecorridoMi_CellValueChanged);
             // 
@@ -2134,7 +2135,7 @@
             this.btnDelMi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelMi.BackgroundImage")));
             this.btnDelMi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelMi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDelMi.Location = new System.Drawing.Point(42, 509);
+            this.btnDelMi.Location = new System.Drawing.Point(42, 493);
             this.btnDelMi.Name = "btnDelMi";
             this.btnDelMi.Size = new System.Drawing.Size(28, 28);
             this.btnDelMi.TabIndex = 102;
@@ -2146,7 +2147,7 @@
             this.btnAddMi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddMi.BackgroundImage")));
             this.btnAddMi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAddMi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAddMi.Location = new System.Drawing.Point(8, 509);
+            this.btnAddMi.Location = new System.Drawing.Point(8, 493);
             this.btnAddMi.Name = "btnAddMi";
             this.btnAddMi.Size = new System.Drawing.Size(28, 28);
             this.btnAddMi.TabIndex = 101;
@@ -2166,7 +2167,7 @@
             this.tabPage4.Controls.Add(this.btnAddJu);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(744, 591);
+            this.tabPage4.Size = new System.Drawing.Size(744, 530);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Jueves";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -2176,7 +2177,7 @@
             this.btnSaveRecJu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecJu.BackgroundImage")));
             this.btnSaveRecJu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecJu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecJu.Location = new System.Drawing.Point(723, 509);
+            this.btnSaveRecJu.Location = new System.Drawing.Point(710, 493);
             this.btnSaveRecJu.Name = "btnSaveRecJu";
             this.btnSaveRecJu.Size = new System.Drawing.Size(28, 28);
             this.btnSaveRecJu.TabIndex = 109;
@@ -2188,7 +2189,7 @@
             this.btnSaveRecorridoJu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecorridoJu.BackgroundImage")));
             this.btnSaveRecorridoJu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecorridoJu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecorridoJu.Location = new System.Drawing.Point(689, 509);
+            this.btnSaveRecorridoJu.Location = new System.Drawing.Point(676, 493);
             this.btnSaveRecorridoJu.Name = "btnSaveRecorridoJu";
             this.btnSaveRecorridoJu.Size = new System.Drawing.Size(28, 28);
             this.btnSaveRecorridoJu.TabIndex = 108;
@@ -2197,10 +2198,10 @@
             // 
             // button21
             // 
-            this.button21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button21.BackgroundImage")));
+            this.button21.BackgroundImage = global::RamosHermanos.Properties.Resources.print;
             this.button21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button21.Location = new System.Drawing.Point(655, 509);
+            this.button21.Location = new System.Drawing.Point(642, 493);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(28, 28);
             this.button21.TabIndex = 107;
@@ -2212,7 +2213,7 @@
             this.btnUpJu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpJu.BackgroundImage")));
             this.btnUpJu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpJu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpJu.Location = new System.Drawing.Point(353, 509);
+            this.btnUpJu.Location = new System.Drawing.Point(353, 493);
             this.btnUpJu.Name = "btnUpJu";
             this.btnUpJu.Size = new System.Drawing.Size(28, 28);
             this.btnUpJu.TabIndex = 106;
@@ -2224,7 +2225,7 @@
             this.btnDownJu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownJu.BackgroundImage")));
             this.btnDownJu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDownJu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDownJu.Location = new System.Drawing.Point(387, 509);
+            this.btnDownJu.Location = new System.Drawing.Point(387, 493);
             this.btnDownJu.Name = "btnDownJu";
             this.btnDownJu.Size = new System.Drawing.Size(28, 28);
             this.btnDownJu.TabIndex = 105;
@@ -2252,7 +2253,7 @@
             this.colJuEstado});
             this.dgvRecorridoJu.Location = new System.Drawing.Point(8, 6);
             this.dgvRecorridoJu.Name = "dgvRecorridoJu";
-            this.dgvRecorridoJu.Size = new System.Drawing.Size(744, 497);
+            this.dgvRecorridoJu.Size = new System.Drawing.Size(730, 481);
             this.dgvRecorridoJu.TabIndex = 100;
             this.dgvRecorridoJu.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecorridoJu_CellValueChanged);
             // 
@@ -2299,7 +2300,7 @@
             this.btnDelJu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelJu.BackgroundImage")));
             this.btnDelJu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelJu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDelJu.Location = new System.Drawing.Point(42, 509);
+            this.btnDelJu.Location = new System.Drawing.Point(42, 493);
             this.btnDelJu.Name = "btnDelJu";
             this.btnDelJu.Size = new System.Drawing.Size(28, 28);
             this.btnDelJu.TabIndex = 102;
@@ -2311,7 +2312,7 @@
             this.btnAddJu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddJu.BackgroundImage")));
             this.btnAddJu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAddJu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAddJu.Location = new System.Drawing.Point(8, 509);
+            this.btnAddJu.Location = new System.Drawing.Point(8, 493);
             this.btnAddJu.Name = "btnAddJu";
             this.btnAddJu.Size = new System.Drawing.Size(28, 28);
             this.btnAddJu.TabIndex = 101;
@@ -2331,7 +2332,7 @@
             this.tabPage5.Controls.Add(this.btnAddVi);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(744, 591);
+            this.tabPage5.Size = new System.Drawing.Size(744, 530);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Viernes";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -2341,7 +2342,7 @@
             this.btnSaveRecorridoVi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecorridoVi.BackgroundImage")));
             this.btnSaveRecorridoVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecorridoVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecorridoVi.Location = new System.Drawing.Point(689, 509);
+            this.btnSaveRecorridoVi.Location = new System.Drawing.Point(676, 493);
             this.btnSaveRecorridoVi.Name = "btnSaveRecorridoVi";
             this.btnSaveRecorridoVi.Size = new System.Drawing.Size(28, 28);
             this.btnSaveRecorridoVi.TabIndex = 108;
@@ -2350,10 +2351,10 @@
             // 
             // button28
             // 
-            this.button28.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button28.BackgroundImage")));
+            this.button28.BackgroundImage = global::RamosHermanos.Properties.Resources.print;
             this.button28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button28.Location = new System.Drawing.Point(655, 509);
+            this.button28.Location = new System.Drawing.Point(642, 493);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(28, 28);
             this.button28.TabIndex = 107;
@@ -2365,7 +2366,7 @@
             this.btnUpVi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpVi.BackgroundImage")));
             this.btnUpVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpVi.Location = new System.Drawing.Point(353, 509);
+            this.btnUpVi.Location = new System.Drawing.Point(352, 493);
             this.btnUpVi.Name = "btnUpVi";
             this.btnUpVi.Size = new System.Drawing.Size(28, 28);
             this.btnUpVi.TabIndex = 106;
@@ -2377,7 +2378,7 @@
             this.btnDownVi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownVi.BackgroundImage")));
             this.btnDownVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDownVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDownVi.Location = new System.Drawing.Point(387, 509);
+            this.btnDownVi.Location = new System.Drawing.Point(386, 493);
             this.btnDownVi.Name = "btnDownVi";
             this.btnDownVi.Size = new System.Drawing.Size(28, 28);
             this.btnDownVi.TabIndex = 105;
@@ -2406,7 +2407,7 @@
             this.colViEstado});
             this.dgvRecorridoVi.Location = new System.Drawing.Point(8, 6);
             this.dgvRecorridoVi.Name = "dgvRecorridoVi";
-            this.dgvRecorridoVi.Size = new System.Drawing.Size(744, 497);
+            this.dgvRecorridoVi.Size = new System.Drawing.Size(730, 481);
             this.dgvRecorridoVi.TabIndex = 100;
             this.dgvRecorridoVi.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecorridoVi_CellValueChanged);
             // 
@@ -2453,7 +2454,7 @@
             this.btnSaveRecVi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecVi.BackgroundImage")));
             this.btnSaveRecVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecVi.Location = new System.Drawing.Point(723, 509);
+            this.btnSaveRecVi.Location = new System.Drawing.Point(710, 493);
             this.btnSaveRecVi.Name = "btnSaveRecVi";
             this.btnSaveRecVi.Size = new System.Drawing.Size(28, 28);
             this.btnSaveRecVi.TabIndex = 103;
@@ -2465,7 +2466,7 @@
             this.btnDelVi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelVi.BackgroundImage")));
             this.btnDelVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDelVi.Location = new System.Drawing.Point(42, 509);
+            this.btnDelVi.Location = new System.Drawing.Point(42, 493);
             this.btnDelVi.Name = "btnDelVi";
             this.btnDelVi.Size = new System.Drawing.Size(28, 28);
             this.btnDelVi.TabIndex = 102;
@@ -2477,7 +2478,7 @@
             this.btnAddVi.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddVi.BackgroundImage")));
             this.btnAddVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAddVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAddVi.Location = new System.Drawing.Point(8, 509);
+            this.btnAddVi.Location = new System.Drawing.Point(8, 493);
             this.btnAddVi.Name = "btnAddVi";
             this.btnAddVi.Size = new System.Drawing.Size(28, 28);
             this.btnAddVi.TabIndex = 101;
@@ -2497,7 +2498,7 @@
             this.tabPage6.Controls.Add(this.btnAddSa);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(744, 591);
+            this.tabPage6.Size = new System.Drawing.Size(744, 530);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Sabado";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -2507,7 +2508,7 @@
             this.btnSaveRecorridoSa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecorridoSa.BackgroundImage")));
             this.btnSaveRecorridoSa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecorridoSa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecorridoSa.Location = new System.Drawing.Point(689, 509);
+            this.btnSaveRecorridoSa.Location = new System.Drawing.Point(676, 493);
             this.btnSaveRecorridoSa.Name = "btnSaveRecorridoSa";
             this.btnSaveRecorridoSa.Size = new System.Drawing.Size(28, 28);
             this.btnSaveRecorridoSa.TabIndex = 108;
@@ -2516,10 +2517,10 @@
             // 
             // button35
             // 
-            this.button35.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button35.BackgroundImage")));
+            this.button35.BackgroundImage = global::RamosHermanos.Properties.Resources.print;
             this.button35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button35.Location = new System.Drawing.Point(655, 509);
+            this.button35.Location = new System.Drawing.Point(642, 493);
             this.button35.Name = "button35";
             this.button35.Size = new System.Drawing.Size(28, 28);
             this.button35.TabIndex = 107;
@@ -2531,7 +2532,7 @@
             this.btnUpSa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpSa.BackgroundImage")));
             this.btnUpSa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpSa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpSa.Location = new System.Drawing.Point(353, 509);
+            this.btnUpSa.Location = new System.Drawing.Point(355, 493);
             this.btnUpSa.Name = "btnUpSa";
             this.btnUpSa.Size = new System.Drawing.Size(28, 28);
             this.btnUpSa.TabIndex = 106;
@@ -2543,7 +2544,7 @@
             this.button37.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button37.BackgroundImage")));
             this.button37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button37.Location = new System.Drawing.Point(387, 509);
+            this.button37.Location = new System.Drawing.Point(389, 493);
             this.button37.Name = "button37";
             this.button37.Size = new System.Drawing.Size(28, 28);
             this.button37.TabIndex = 105;
@@ -2572,7 +2573,7 @@
             this.colSaEstado});
             this.dgvRecorridoSa.Location = new System.Drawing.Point(8, 6);
             this.dgvRecorridoSa.Name = "dgvRecorridoSa";
-            this.dgvRecorridoSa.Size = new System.Drawing.Size(744, 497);
+            this.dgvRecorridoSa.Size = new System.Drawing.Size(730, 481);
             this.dgvRecorridoSa.TabIndex = 100;
             this.dgvRecorridoSa.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecorridoSa_CellValueChanged);
             // 
@@ -2619,7 +2620,7 @@
             this.btnSaveRecSa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecSa.BackgroundImage")));
             this.btnSaveRecSa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecSa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecSa.Location = new System.Drawing.Point(723, 509);
+            this.btnSaveRecSa.Location = new System.Drawing.Point(710, 493);
             this.btnSaveRecSa.Name = "btnSaveRecSa";
             this.btnSaveRecSa.Size = new System.Drawing.Size(28, 28);
             this.btnSaveRecSa.TabIndex = 103;
@@ -2631,7 +2632,7 @@
             this.btnDelSa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelSa.BackgroundImage")));
             this.btnDelSa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelSa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDelSa.Location = new System.Drawing.Point(42, 509);
+            this.btnDelSa.Location = new System.Drawing.Point(42, 493);
             this.btnDelSa.Name = "btnDelSa";
             this.btnDelSa.Size = new System.Drawing.Size(28, 28);
             this.btnDelSa.TabIndex = 102;
@@ -2643,7 +2644,7 @@
             this.btnAddSa.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddSa.BackgroundImage")));
             this.btnAddSa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAddSa.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAddSa.Location = new System.Drawing.Point(8, 509);
+            this.btnAddSa.Location = new System.Drawing.Point(8, 493);
             this.btnAddSa.Name = "btnAddSa";
             this.btnAddSa.Size = new System.Drawing.Size(28, 28);
             this.btnAddSa.TabIndex = 101;
@@ -2663,16 +2664,17 @@
             this.tabPage7.Controls.Add(this.btnAddDo);
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(744, 591);
+            this.tabPage7.Size = new System.Drawing.Size(744, 530);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Domingo";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // btnSaveRecorridoDo
             // 
+            this.btnSaveRecorridoDo.BackgroundImage = global::RamosHermanos.Properties.Resources.listar;
             this.btnSaveRecorridoDo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecorridoDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecorridoDo.Location = new System.Drawing.Point(689, 509);
+            this.btnSaveRecorridoDo.Location = new System.Drawing.Point(676, 493);
             this.btnSaveRecorridoDo.Name = "btnSaveRecorridoDo";
             this.btnSaveRecorridoDo.Size = new System.Drawing.Size(28, 28);
             this.btnSaveRecorridoDo.TabIndex = 108;
@@ -2681,14 +2683,16 @@
             // 
             // button42
             // 
+            this.button42.BackgroundImage = global::RamosHermanos.Properties.Resources.print;
             this.button42.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button42.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button42.Location = new System.Drawing.Point(655, 509);
+            this.button42.Location = new System.Drawing.Point(642, 493);
             this.button42.Name = "button42";
             this.button42.Size = new System.Drawing.Size(28, 28);
             this.button42.TabIndex = 107;
             this.button42.UseVisualStyleBackColor = true;
             this.button42.Visible = false;
+            this.button42.Click += new System.EventHandler(this.button42_Click);
             // 
             // txtIDRecorridoDo
             // 
@@ -2712,7 +2716,7 @@
             this.colDoEstado});
             this.dgvRecorridoDo.Location = new System.Drawing.Point(8, 6);
             this.dgvRecorridoDo.Name = "dgvRecorridoDo";
-            this.dgvRecorridoDo.Size = new System.Drawing.Size(744, 497);
+            this.dgvRecorridoDo.Size = new System.Drawing.Size(730, 481);
             this.dgvRecorridoDo.TabIndex = 100;
             this.dgvRecorridoDo.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecorridoDo_CellValueChanged);
             // 
@@ -2759,7 +2763,7 @@
             this.btnUpDo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpDo.BackgroundImage")));
             this.btnUpDo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnUpDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnUpDo.Location = new System.Drawing.Point(353, 509);
+            this.btnUpDo.Location = new System.Drawing.Point(354, 493);
             this.btnUpDo.Name = "btnUpDo";
             this.btnUpDo.Size = new System.Drawing.Size(28, 28);
             this.btnUpDo.TabIndex = 106;
@@ -2771,7 +2775,7 @@
             this.btnDownDo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDownDo.BackgroundImage")));
             this.btnDownDo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDownDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDownDo.Location = new System.Drawing.Point(387, 509);
+            this.btnDownDo.Location = new System.Drawing.Point(388, 493);
             this.btnDownDo.Name = "btnDownDo";
             this.btnDownDo.Size = new System.Drawing.Size(28, 28);
             this.btnDownDo.TabIndex = 105;
@@ -2782,7 +2786,7 @@
             this.btnSaveRecDo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveRecDo.BackgroundImage")));
             this.btnSaveRecDo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSaveRecDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveRecDo.Location = new System.Drawing.Point(723, 509);
+            this.btnSaveRecDo.Location = new System.Drawing.Point(710, 493);
             this.btnSaveRecDo.Name = "btnSaveRecDo";
             this.btnSaveRecDo.Size = new System.Drawing.Size(28, 28);
             this.btnSaveRecDo.TabIndex = 103;
@@ -2794,7 +2798,7 @@
             this.btnDelDo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelDo.BackgroundImage")));
             this.btnDelDo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDelDo.Location = new System.Drawing.Point(42, 509);
+            this.btnDelDo.Location = new System.Drawing.Point(42, 493);
             this.btnDelDo.Name = "btnDelDo";
             this.btnDelDo.Size = new System.Drawing.Size(28, 28);
             this.btnDelDo.TabIndex = 102;
@@ -2806,7 +2810,7 @@
             this.btnAddDo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddDo.BackgroundImage")));
             this.btnAddDo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAddDo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnAddDo.Location = new System.Drawing.Point(8, 509);
+            this.btnAddDo.Location = new System.Drawing.Point(8, 493);
             this.btnAddDo.Name = "btnAddDo";
             this.btnAddDo.Size = new System.Drawing.Size(28, 28);
             this.btnAddDo.TabIndex = 101;
@@ -2831,7 +2835,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RamosHermanos.Properties.Resources.grey_background_for_site119;
-            this.ClientSize = new System.Drawing.Size(784, 706);
+            this.ClientSize = new System.Drawing.Size(784, 643);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.tabDistribuidor);
             this.MaximizeBox = false;

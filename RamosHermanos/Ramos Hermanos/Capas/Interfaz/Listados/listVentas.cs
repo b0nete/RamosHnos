@@ -21,6 +21,9 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
         private void listVentas_Load(object sender, EventArgs e)
         {
+            this.dgvVentas.Columns["colTotal"].DefaultCellStyle.Format = "c";
+            this.dgvVentas.Columns["colTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
             cbParametro.SelectedIndex = 0;
             FacturaB.ListFacturas(dgvVentas, "Pagado");
             dgvVentas.AutoGenerateColumns = false;
@@ -62,7 +65,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 FacturaB.BuscarFacturaID(factura);
                 frmV.txtIDFactura.Text = Convert.ToString(factura.idFactura);
                 frmV.txtNombre.Text = Convert.ToString(factura.nombreCompleto);
-                frmV.txtDomicilio.Text = Convert.ToString(factura.domicilioCompleto);
+                //frmV.txtDomicilio.Text = Convert.ToString(factura.domicilioCompleto);
                 
                 CargarItemFactura(row);
 

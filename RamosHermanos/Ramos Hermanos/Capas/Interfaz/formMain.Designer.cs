@@ -67,6 +67,9 @@
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.categorizaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.backUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.importarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.test1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,9 +87,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tmrHora = new System.Windows.Forms.Timer(this.components);
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.backUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exportarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.msPrincipal.SuspendLayout();
             this.pnlInfo.SuspendLayout();
             this.SuspendLayout();
@@ -390,6 +390,30 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(207, 6);
             // 
+            // backUToolStripMenuItem
+            // 
+            this.backUToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importarToolStripMenuItem,
+            this.exportarToolStripMenuItem});
+            this.backUToolStripMenuItem.Name = "backUToolStripMenuItem";
+            this.backUToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
+            this.backUToolStripMenuItem.Text = "BackUp";
+            this.backUToolStripMenuItem.Click += new System.EventHandler(this.backUToolStripMenuItem_Click);
+            // 
+            // importarToolStripMenuItem
+            // 
+            this.importarToolStripMenuItem.Name = "importarToolStripMenuItem";
+            this.importarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.importarToolStripMenuItem.Text = "Importar";
+            this.importarToolStripMenuItem.Click += new System.EventHandler(this.importarToolStripMenuItem_Click);
+            // 
+            // exportarToolStripMenuItem
+            // 
+            this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
+            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportarToolStripMenuItem.Text = "Exportar";
+            this.exportarToolStripMenuItem.Click += new System.EventHandler(this.exportarToolStripMenuItem_Click);
+            // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
@@ -538,28 +562,6 @@
             this.monthCalendar1.Location = new System.Drawing.Point(526, 33);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 27;
-            // 
-            // backUToolStripMenuItem
-            // 
-            this.backUToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.importarToolStripMenuItem,
-            this.exportarToolStripMenuItem});
-            this.backUToolStripMenuItem.Name = "backUToolStripMenuItem";
-            this.backUToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.backUToolStripMenuItem.Text = "BackUp";
-            this.backUToolStripMenuItem.Click += new System.EventHandler(this.backUToolStripMenuItem_Click);
-            // 
-            // importarToolStripMenuItem
-            // 
-            this.importarToolStripMenuItem.Name = "importarToolStripMenuItem";
-            this.importarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.importarToolStripMenuItem.Text = "Importar";
-            // 
-            // exportarToolStripMenuItem
-            // 
-            this.exportarToolStripMenuItem.Name = "exportarToolStripMenuItem";
-            this.exportarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exportarToolStripMenuItem.Text = "Exportar";
             // 
             // formMain
             // 

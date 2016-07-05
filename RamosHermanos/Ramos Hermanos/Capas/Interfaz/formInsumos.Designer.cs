@@ -128,7 +128,10 @@
             // tabInformacion
             // 
             this.tabInformacion.BackColor = System.Drawing.SystemColors.Control;
+            this.tabInformacion.Controls.Add(this.btnEstadisticas);
             this.tabInformacion.Controls.Add(this.groupBox1);
+            this.tabInformacion.Controls.Add(this.button1);
+            this.tabInformacion.Controls.Add(this.button11);
             this.tabInformacion.Location = new System.Drawing.Point(4, 22);
             this.tabInformacion.Name = "tabInformacion";
             this.tabInformacion.Padding = new System.Windows.Forms.Padding(3);
@@ -139,12 +142,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnEstadisticas);
             this.groupBox1.Controls.Add(this.txtInsumo);
             this.groupBox1.Controls.Add(this.btnSearch);
-            this.groupBox1.Controls.Add(this.button11);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.labelInsumo);
             this.groupBox1.Controls.Add(this.cbRubro);
             this.groupBox1.Controls.Add(this.lblEstado);
@@ -177,9 +177,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtRubro);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Location = new System.Drawing.Point(125, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(740, 460);
+            this.groupBox1.Size = new System.Drawing.Size(496, 426);
             this.groupBox1.TabIndex = 111;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Insumos";
@@ -189,7 +189,7 @@
             this.btnEstadisticas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.BackgroundImage")));
             this.btnEstadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.Location = new System.Drawing.Point(361, 338);
+            this.btnEstadisticas.Location = new System.Drawing.Point(525, 438);
             this.btnEstadisticas.Name = "btnEstadisticas";
             this.btnEstadisticas.Size = new System.Drawing.Size(28, 28);
             this.btnEstadisticas.TabIndex = 116;
@@ -221,7 +221,7 @@
             this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button11.Location = new System.Drawing.Point(429, 338);
+            this.button11.Location = new System.Drawing.Point(593, 438);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(28, 28);
             this.button11.TabIndex = 113;
@@ -246,7 +246,7 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(395, 338);
+            this.button1.Location = new System.Drawing.Point(559, 438);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(28, 28);
             this.button1.TabIndex = 113;

@@ -205,7 +205,7 @@
             this.Controls.Add(this.dgvCompras);
             this.Name = "listCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "listCompras";
+            this.Text = "Listar Compras";
             this.Load += new System.EventHandler(this.listCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).EndInit();
             this.groupBox1.ResumeLayout(false);

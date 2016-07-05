@@ -74,12 +74,20 @@
             this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.tabPedido = new System.Windows.Forms.TabPage();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.rbAnuladas = new System.Windows.Forms.RadioButton();
+            this.rbNoPagas = new System.Windows.Forms.RadioButton();
+            this.rbPagas = new System.Windows.Forms.RadioButton();
+            this.dgvMovimientos = new System.Windows.Forms.DataGridView();
+            this.colIDFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProveedor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabListado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
+            this.tabMovimientos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.SuspendLayout();
             // 
             // tabProveedor
@@ -119,7 +127,7 @@
             this.btnCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCompra.BackgroundImage")));
             this.btnCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompra.Location = new System.Drawing.Point(650, 438);
+            this.btnCompra.Location = new System.Drawing.Point(524, 438);
             this.btnCompra.Name = "btnCompra";
             this.btnCompra.Size = new System.Drawing.Size(28, 28);
             this.btnCompra.TabIndex = 68;
@@ -132,7 +140,7 @@
             this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
             this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(684, 438);
+            this.btnClean.Location = new System.Drawing.Point(558, 438);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
             this.btnClean.TabIndex = 1;
@@ -159,9 +167,10 @@
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.txtRazonSocial);
             this.groupBox6.Controls.Add(this.label1);
-            this.groupBox6.Location = new System.Drawing.Point(6, 6);
+            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox6.Location = new System.Drawing.Point(124, 6);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(493, 211);
+            this.groupBox6.Size = new System.Drawing.Size(496, 309);
             this.groupBox6.TabIndex = 67;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Informacion Personal";
@@ -376,9 +385,10 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtDomicilio);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Location = new System.Drawing.Point(6, 223);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(124, 321);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(493, 111);
+            this.groupBox1.Size = new System.Drawing.Size(496, 111);
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contacto";
@@ -481,7 +491,7 @@
             this.btnGuardarProv.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnGuardarProv.BackgroundImage")));
             this.btnGuardarProv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnGuardarProv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarProv.Location = new System.Drawing.Point(718, 438);
+            this.btnGuardarProv.Location = new System.Drawing.Point(592, 438);
             this.btnGuardarProv.Name = "btnGuardarProv";
             this.btnGuardarProv.Size = new System.Drawing.Size(28, 28);
             this.btnGuardarProv.TabIndex = 10;
@@ -568,6 +578,10 @@
             // 
             // tabMovimientos
             // 
+            this.tabMovimientos.Controls.Add(this.rbAnuladas);
+            this.tabMovimientos.Controls.Add(this.rbNoPagas);
+            this.tabMovimientos.Controls.Add(this.rbPagas);
+            this.tabMovimientos.Controls.Add(this.dgvMovimientos);
             this.tabMovimientos.Location = new System.Drawing.Point(4, 22);
             this.tabMovimientos.Name = "tabMovimientos";
             this.tabMovimientos.Size = new System.Drawing.Size(752, 472);
@@ -597,6 +611,66 @@
             this.lblTitle.Text = "Proveedor";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // rbAnuladas
+            // 
+            this.rbAnuladas.AutoSize = true;
+            this.rbAnuladas.Location = new System.Drawing.Point(150, 11);
+            this.rbAnuladas.Name = "rbAnuladas";
+            this.rbAnuladas.Size = new System.Drawing.Size(69, 17);
+            this.rbAnuladas.TabIndex = 7;
+            this.rbAnuladas.Text = "Anuladas";
+            this.rbAnuladas.UseVisualStyleBackColor = true;
+            // 
+            // rbNoPagas
+            // 
+            this.rbNoPagas.AutoSize = true;
+            this.rbNoPagas.Checked = true;
+            this.rbNoPagas.Location = new System.Drawing.Point(72, 11);
+            this.rbNoPagas.Name = "rbNoPagas";
+            this.rbNoPagas.Size = new System.Drawing.Size(72, 17);
+            this.rbNoPagas.TabIndex = 6;
+            this.rbNoPagas.TabStop = true;
+            this.rbNoPagas.Text = "No Pagas";
+            this.rbNoPagas.UseVisualStyleBackColor = true;
+            // 
+            // rbPagas
+            // 
+            this.rbPagas.AutoSize = true;
+            this.rbPagas.Location = new System.Drawing.Point(11, 11);
+            this.rbPagas.Name = "rbPagas";
+            this.rbPagas.Size = new System.Drawing.Size(55, 17);
+            this.rbPagas.TabIndex = 5;
+            this.rbPagas.Text = "Pagas";
+            this.rbPagas.UseVisualStyleBackColor = true;
+            // 
+            // dgvMovimientos
+            // 
+            this.dgvMovimientos.AllowUserToAddRows = false;
+            this.dgvMovimientos.AllowUserToDeleteRows = false;
+            this.dgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMovimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDFactura,
+            this.colFecha});
+            this.dgvMovimientos.Location = new System.Drawing.Point(10, 34);
+            this.dgvMovimientos.Name = "dgvMovimientos";
+            this.dgvMovimientos.ReadOnly = true;
+            this.dgvMovimientos.Size = new System.Drawing.Size(729, 427);
+            this.dgvMovimientos.TabIndex = 4;
+            // 
+            // colIDFactura
+            // 
+            this.colIDFactura.DataPropertyName = "idFactura";
+            this.colIDFactura.HeaderText = "Nº Factura";
+            this.colIDFactura.Name = "colIDFactura";
+            this.colIDFactura.ReadOnly = true;
+            // 
+            // colFecha
+            // 
+            this.colFecha.DataPropertyName = "fechaFactura";
+            this.colFecha.HeaderText = "Fecha Factura";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            // 
             // formProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -618,6 +692,9 @@
             this.groupBox1.PerformLayout();
             this.tabListado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).EndInit();
+            this.tabMovimientos.ResumeLayout(false);
+            this.tabMovimientos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -669,5 +746,11 @@
         public System.Windows.Forms.TextBox txtDomicilio;
         private System.Windows.Forms.Button btnCompra;
         public System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.RadioButton rbAnuladas;
+        public System.Windows.Forms.RadioButton rbNoPagas;
+        public System.Windows.Forms.RadioButton rbPagas;
+        public System.Windows.Forms.DataGridView dgvMovimientos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIDFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
     }
 }

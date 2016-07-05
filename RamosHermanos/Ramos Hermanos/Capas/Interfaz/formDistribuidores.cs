@@ -1483,5 +1483,10 @@ namespace RamosHermanos.Capas.Interfaz
         {
 
         }
+
+        private void button42_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

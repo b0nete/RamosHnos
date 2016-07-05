@@ -121,14 +121,23 @@
   <data name="fondoVerde1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\fondoVerde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="grey-background-for-site119" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\grey-background-for-site11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="20080720_777" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\20080720_777.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Visita1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IMG\Visita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mayorista" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\mayorista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\imprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Visita" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\Visita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondoVerde" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\fondoVerde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,8 +157,8 @@
   <data name="grey-background-for-site114" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\grey-background-for-site11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="domicilio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IMG\domicilio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Visita1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\Visita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BackProducto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\BackProducto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -175,6 +184,9 @@
   <data name="productividad-personal_x21" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\productividad-personal_x2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ico-printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\ico-printer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="produccion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\produccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,8 +205,8 @@
   <data name="produccion1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\produccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="User" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IMG\User.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="domicilio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\domicilio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="img-stock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\img-stock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,11 +235,11 @@
   <data name="grey-background-for-site116" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\grey-background-for-site11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="User" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\User.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="truck" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\truck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IMG\clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="produccion2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\produccion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,10 +250,10 @@
   <data name="modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG\modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mayorista" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IMG\mayorista.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="grey-background-for-site119" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\IMG\grey-background-for-site11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="listar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IMG\listar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

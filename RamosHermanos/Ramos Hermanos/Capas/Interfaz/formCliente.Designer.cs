@@ -243,6 +243,7 @@
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.btnSaveVisita = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
             this.tabMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.tabListado.SuspendLayout();
@@ -1146,14 +1147,15 @@
             this.groupBox2.TabIndex = 67;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cuenta Corriente";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // txtSaldo
             // 
             this.txtSaldo.Enabled = false;
             this.txtSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtSaldo.Location = new System.Drawing.Point(84, 46);
+            this.txtSaldo.Location = new System.Drawing.Point(113, 46);
             this.txtSaldo.Name = "txtSaldo";
-            this.txtSaldo.Size = new System.Drawing.Size(165, 20);
+            this.txtSaldo.Size = new System.Drawing.Size(136, 20);
             this.txtSaldo.TabIndex = 1;
             this.txtSaldo.Text = "00,00";
             this.txtSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1161,12 +1163,13 @@
             // txtCreditoMax
             // 
             this.txtCreditoMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtCreditoMax.Location = new System.Drawing.Point(84, 20);
+            this.txtCreditoMax.Location = new System.Drawing.Point(113, 20);
             this.txtCreditoMax.Name = "txtCreditoMax";
-            this.txtCreditoMax.Size = new System.Drawing.Size(165, 20);
+            this.txtCreditoMax.Size = new System.Drawing.Size(136, 20);
             this.txtCreditoMax.TabIndex = 0;
             this.txtCreditoMax.Text = "50,00";
             this.txtCreditoMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCreditoMax.TextChanged += new System.EventHandler(this.txtCreditoMax_TextChanged_1);
             this.txtCreditoMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCreditoMax_KeyPress_1);
             this.txtCreditoMax.Leave += new System.EventHandler(this.txtCreditoMax_Leave);
             // 
@@ -1175,22 +1178,22 @@
             this.label28.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label28.Location = new System.Drawing.Point(6, 23);
+            this.label28.Location = new System.Drawing.Point(13, 23);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(79, 13);
+            this.label28.Size = new System.Drawing.Size(94, 13);
             this.label28.TabIndex = 68;
-            this.label28.Text = "Credito Máximo";
+            this.label28.Text = "Credito Máximo - $";
             // 
             // label29
             // 
             this.label29.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label29.Location = new System.Drawing.Point(17, 49);
+            this.label29.Location = new System.Drawing.Point(25, 49);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(67, 13);
+            this.label29.Size = new System.Drawing.Size(82, 13);
             this.label29.TabIndex = 70;
-            this.label29.Text = "Saldo Actual";
+            this.label29.Text = "Saldo Actual - $";
             // 
             // groupBox17
             // 
@@ -1575,6 +1578,7 @@
             // tabInformacionJ
             // 
             this.tabInformacionJ.BackColor = System.Drawing.Color.Transparent;
+            this.tabInformacionJ.Controls.Add(this.button11);
             this.tabInformacionJ.Controls.Add(this.groupBox10);
             this.tabInformacionJ.Controls.Add(this.groupBox11);
             this.tabInformacionJ.Controls.Add(this.groupBox9);
@@ -1741,9 +1745,9 @@
             // 
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.textBox1.Location = new System.Drawing.Point(84, 46);
+            this.textBox1.Location = new System.Drawing.Point(108, 46);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(165, 20);
+            this.textBox1.Size = new System.Drawing.Size(136, 20);
             this.textBox1.TabIndex = 69;
             this.textBox1.Text = "00,00";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1751,9 +1755,9 @@
             // txtCreditoMaxPJ
             // 
             this.txtCreditoMaxPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtCreditoMaxPJ.Location = new System.Drawing.Point(84, 20);
+            this.txtCreditoMaxPJ.Location = new System.Drawing.Point(108, 20);
             this.txtCreditoMaxPJ.Name = "txtCreditoMaxPJ";
-            this.txtCreditoMaxPJ.Size = new System.Drawing.Size(165, 20);
+            this.txtCreditoMaxPJ.Size = new System.Drawing.Size(136, 20);
             this.txtCreditoMaxPJ.TabIndex = 67;
             this.txtCreditoMaxPJ.Text = "50,00";
             this.txtCreditoMaxPJ.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -1763,22 +1767,22 @@
             this.label46.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label46.Location = new System.Drawing.Point(6, 23);
+            this.label46.Location = new System.Drawing.Point(8, 23);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(79, 13);
+            this.label46.Size = new System.Drawing.Size(94, 13);
             this.label46.TabIndex = 68;
-            this.label46.Text = "Credito Máximo";
+            this.label46.Text = "Credito Máximo - $";
             // 
             // label50
             // 
             this.label50.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label50.Location = new System.Drawing.Point(17, 49);
+            this.label50.Location = new System.Drawing.Point(19, 49);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(67, 13);
+            this.label50.Size = new System.Drawing.Size(82, 13);
             this.label50.TabIndex = 70;
-            this.label50.Text = "Saldo Actual";
+            this.label50.Text = "Saldo Actual - $";
             // 
             // groupBox13
             // 
@@ -2389,7 +2393,7 @@
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(672, 500);
+            this.button2.Location = new System.Drawing.Point(705, 498);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(28, 28);
             this.button2.TabIndex = 78;
@@ -2401,7 +2405,7 @@
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button3.Location = new System.Drawing.Point(740, 500);
+            this.button3.Location = new System.Drawing.Point(637, 498);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(28, 28);
             this.button3.TabIndex = 77;
@@ -2412,7 +2416,7 @@
             this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(706, 500);
+            this.button10.Location = new System.Drawing.Point(739, 498);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(28, 28);
             this.button10.TabIndex = 71;
@@ -2696,6 +2700,17 @@
             this.lblTitle.Text = "Clientes";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button11
+            // 
+            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(671, 498);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(28, 28);
+            this.button11.TabIndex = 81;
+            this.button11.UseVisualStyleBackColor = true;
+            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2976,6 +2991,7 @@
         public System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Button button11;
 
     }
 }

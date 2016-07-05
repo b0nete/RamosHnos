@@ -42,8 +42,14 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 case 2:
                     DataGridViewRow rowA = this.dgvProducto.CurrentRow as DataGridViewRow;
 
-                    formVentas formInterface = this.Owner as formVentas;
+                    formProduccion formInterface = this.Owner as formProduccion;
                     formInterface.pasarDatos(rowA);
+                    break;
+                case 3:
+                    DataGridViewRow rowB = this.dgvProducto.CurrentRow as DataGridViewRow;
+
+                    formVentas formInter = this.Owner as formVentas;
+                    formInter.pasarDatos(rowB);
                     break;
                 default:
                     Console.WriteLine("Default case");

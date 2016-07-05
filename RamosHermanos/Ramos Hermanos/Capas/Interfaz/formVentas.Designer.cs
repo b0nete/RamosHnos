@@ -62,11 +62,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cbformaPago = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtDomicilio = new System.Windows.Forms.TextBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtIVA = new System.Windows.Forms.TextBox();
-            this.txtTel = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -82,10 +82,10 @@
             // 
             // btnPrint
             // 
-            this.btnPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrint.BackgroundImage")));
+            this.btnPrint.BackgroundImage = global::RamosHermanos.Properties.Resources.print;
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(642, 673);
+            this.btnPrint.Location = new System.Drawing.Point(676, 644);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(28, 28);
             this.btnPrint.TabIndex = 108;
@@ -155,6 +155,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(13, 578);
             this.label9.Name = "label9";
@@ -174,6 +175,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(596, 597);
             this.label2.Name = "label2";
@@ -186,7 +188,7 @@
             this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
             this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(676, 673);
+            this.btnClean.Location = new System.Drawing.Point(710, 644);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
             this.btnClean.TabIndex = 101;
@@ -197,18 +199,19 @@
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(744, 673);
+            this.button4.Location = new System.Drawing.Point(642, 644);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 100;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
             // 
             // btnSave
             // 
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(710, 673);
+            this.btnSave.Location = new System.Drawing.Point(744, 644);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 99;
@@ -387,7 +390,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(14, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
@@ -397,7 +400,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(307, 22);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 13);
@@ -429,11 +432,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtDomicilio);
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cbDomicilio);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.txtIVA);
-            this.groupBox1.Controls.Add(this.txtTel);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -449,14 +452,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles";
             // 
-            // txtDomicilio
+            // comboBox2
             // 
-            this.txtDomicilio.Enabled = false;
-            this.txtDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDomicilio.Location = new System.Drawing.Point(75, 69);
-            this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(331, 20);
-            this.txtDomicilio.TabIndex = 91;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(251, 43);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(155, 21);
+            this.comboBox2.TabIndex = 92;
+            // 
+            // cbDomicilio
+            // 
+            this.cbDomicilio.FormattingEnabled = true;
+            this.cbDomicilio.Location = new System.Drawing.Point(75, 68);
+            this.cbDomicilio.Name = "cbDomicilio";
+            this.cbDomicilio.Size = new System.Drawing.Size(331, 21);
+            this.cbDomicilio.TabIndex = 91;
             // 
             // txtNombre
             // 
@@ -486,15 +496,6 @@
             this.txtIVA.Name = "txtIVA";
             this.txtIVA.Size = new System.Drawing.Size(172, 20);
             this.txtIVA.TabIndex = 11;
-            // 
-            // txtTel
-            // 
-            this.txtTel.Enabled = false;
-            this.txtTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTel.Location = new System.Drawing.Point(253, 43);
-            this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(154, 20);
-            this.txtTel.TabIndex = 10;
             // 
             // label6
             // 
@@ -569,7 +570,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 729);
+            this.BackgroundImage = global::RamosHermanos.Properties.Resources.grey_background_for_site11;
+            this.ClientSize = new System.Drawing.Size(784, 682);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -585,7 +587,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "formVentas";
-            this.Text = "Comprobante";
+            this.Text = "Generar Comprobante";
             this.Load += new System.EventHandler(this.formFactura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -633,7 +635,6 @@
         public System.Windows.Forms.ComboBox cbformaPago;
         public System.Windows.Forms.TextBox txtNombre;
         public System.Windows.Forms.TextBox txtIVA;
-        public System.Windows.Forms.TextBox txtTel;
         public System.Windows.Forms.TextBox txtIDcliente;
         public System.Windows.Forms.TextBox txtnumDoc;
         public System.Windows.Forms.ComboBox cbEstado;
@@ -645,6 +646,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
-        public System.Windows.Forms.TextBox txtDomicilio;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbDomicilio;
     }
 }

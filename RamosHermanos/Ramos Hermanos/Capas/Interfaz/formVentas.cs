@@ -35,6 +35,12 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formFactura_Load(object sender, EventArgs e)
         {
+            this.dgvFactura.Columns["colPrecio"].DefaultCellStyle.Format = "c";
+            this.dgvFactura.Columns["colPrecio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            this.dgvFactura.Columns["colSubTotal"].DefaultCellStyle.Format = "c";
+            this.dgvFactura.Columns["colSubTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
             dgvFactura.AutoGenerateColumns = false;
         }
 
@@ -99,7 +105,7 @@ namespace RamosHermanos.Capas.Interfaz
                     //Convert.ToString(valor + Convert.ToInt32(txtIDFactura.Text)),
                     dtpfechaFactura.Text,
                     txtNombre.Text,
-                    txtDomicilio.Text,
+                    cbDomicilio.Text,
                     txtTotal.Text,
                     txtIVA.Text,
                     cbformaPago.Text
@@ -134,7 +140,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void button2_Click(object sender, EventArgs e)
         {
             listProductos frm = new listProductos();
-            frm.caseSwitch = 2;
+            frm.caseSwitch = 3;
             frm.Show(this);
         }
 

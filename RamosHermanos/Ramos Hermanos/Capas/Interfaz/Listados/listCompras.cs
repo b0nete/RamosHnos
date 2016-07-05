@@ -21,6 +21,9 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
         private void listCompras_Load(object sender, EventArgs e)
         {
+            this.dgvCompras.Columns["colTotal"].DefaultCellStyle.Format = "c";
+            this.dgvCompras.Columns["colTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
             dgvCompras.AutoGenerateColumns = false;
             ComprasB.ListCompras(dgvCompras);
         }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using RamosHermanos.Capas.Datos;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Interfaz.ABMs;
 using RamosHermanos.Libs;
@@ -383,6 +384,16 @@ namespace RamosHermanos.Capas.Interfaz
         private void backUToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void importarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MySQL.GoImport();
+        }
+
+        private void exportarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MySQL.GoExport();
         }
 
        

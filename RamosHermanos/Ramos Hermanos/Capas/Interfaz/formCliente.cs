@@ -1266,8 +1266,8 @@ namespace RamosHermanos.Capas.Interfaz
             frm.txtIDcliente.Text = txtIDcliente.Text;
             frm.txtNombre.Text = cliente.apellido + cliente.nombre;
             frm.txtnumDoc.Text = cliente.numDoc;
-            frm.txtTel.Text = TelefonoB.CargarTXTString(txtIDcliente, 1);
-            frm.txtDomicilio.Text = DomicilioB.CargarTXTSTRING(txtIDcliente, 1);
+            //frm.txtTel.Text = TelefonoB.CargarTXTString(txtIDcliente, 1);
+            //frm.txtDomicilio.Text = DomicilioB.CargarTXTSTRING(txtIDcliente, 1);
             frm.txtIVA.Text = cliente.condicionIVA;
 
             frm.cbEstado.SelectedIndex = 1;
@@ -1621,6 +1621,16 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         private void Distribuidor(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCreditoMax_TextChanged_1(object sender, EventArgs e)
+        {
+            txtCreditoMax.Text = "$" + txtCreditoMax.Text;
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
         {
 
         }
