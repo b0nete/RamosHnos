@@ -62,7 +62,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.cbformaPago = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbTelefono = new System.Windows.Forms.ComboBox();
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -103,7 +103,7 @@
             "Anulado"});
             this.cbEstado.Location = new System.Drawing.Point(373, 45);
             this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(129, 21);
+            this.cbEstado.Size = new System.Drawing.Size(200, 21);
             this.cbEstado.TabIndex = 106;
             this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.cbEstado_SelectedIndexChanged);
             this.cbEstado.SelectionChangeCommitted += new System.EventHandler(this.cbEstado_SelectionChangeCommitted);
@@ -432,7 +432,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cbTelefono);
             this.groupBox1.Controls.Add(this.cbDomicilio);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.btnSearch);
@@ -452,16 +452,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Detalles";
             // 
-            // comboBox2
+            // cbTelefono
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(251, 43);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(155, 21);
-            this.comboBox2.TabIndex = 92;
+            this.cbTelefono.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTelefono.FormattingEnabled = true;
+            this.cbTelefono.Location = new System.Drawing.Point(251, 43);
+            this.cbTelefono.Name = "cbTelefono";
+            this.cbTelefono.Size = new System.Drawing.Size(155, 21);
+            this.cbTelefono.TabIndex = 92;
             // 
             // cbDomicilio
             // 
+            this.cbDomicilio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDomicilio.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDomicilio.FormattingEnabled = true;
             this.cbDomicilio.Location = new System.Drawing.Point(75, 68);
             this.cbDomicilio.Name = "cbDomicilio";
@@ -646,7 +650,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox cbDomicilio;
+        public System.Windows.Forms.ComboBox cbTelefono;
+        public System.Windows.Forms.ComboBox cbDomicilio;
     }
 }

@@ -149,6 +149,46 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+
+        public static FacturaEntity InsertFacturaNEW(FacturaEntity factura, TextBox txtIDFactura)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"INSERT INTO Facturas (tipoFactura, numFactura, fechaFactura, fechaVencimiento, fechaEntrega, formaPago, cliente, domicilio, observaciones, total, estado) 
+                                 VALUES (@tipoFactura, @numFactura, @fechaFactura, @fechaVencimiento, @fechaEntrega, @formaPago, @cliente, @domicilio, @observaciones, @total, @estado);
+                                 SELECT LAST_INSERT_ID();";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@tipoFactura", factura.tipoFactura);
+                cmd.Parameters.AddWithValue("@numFactura", factura.numFactura);
+                cmd.Parameters.AddWithValue("@fechaFactura", factura.fechaFactura);
+                cmd.Parameters.AddWithValue("@fechaVencimiento", factura.fechaVencimiento);
+                cmd.Parameters.AddWithValue("@fechaEntrega", factura.fechaEntrega);
+                cmd.Parameters.AddWithValue("@formaPago", factura.formaPago);
+                cmd.Parameters.AddWithValue("@cliente", factura.cliente);
+                cmd.Parameters.AddWithValue("@domicilio", factura.domicilio);
+                cmd.Parameters.AddWithValue("@observaciones", factura.observaciones);
+                cmd.Parameters.AddWithValue("@total", factura.total);
+                cmd.Parameters.AddWithValue("@estado", factura.estado);
+
+                txtIDFactura.Text = Convert.ToString(cmd.ExecuteScalar());
+
+                //MessageBox.Show("Guardado!");
+                MySQL.DisconnectDB();
+
+                return factura;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static FacturaEntity InsertFactura(FacturaEntity factura)
         {
             try

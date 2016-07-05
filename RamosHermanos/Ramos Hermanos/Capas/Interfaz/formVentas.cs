@@ -62,6 +62,7 @@ namespace RamosHermanos.Capas.Interfaz
             factura.fechaVencimiento = dtpVencimiento.Value;
             factura.fechaEntrega = dtpEntrega.Value;
             factura.observaciones = txtObservaciones.Text;
+            factura.estado = cbEstado.Text;
         }
 
         itemFacturaEntity itemFactura = new itemFacturaEntity();
@@ -81,7 +82,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void btnSave_Click(object sender, EventArgs e)
         {
             cargarFactura();
-            FacturaB.InsertFactura(factura);
+            FacturaB.InsertFacturaNEW(factura, txtIDFactura);
 
             cargarItemsFactura(dgvFactura);
             itemsFacturaB.InsertItemFactura(itemFactura);

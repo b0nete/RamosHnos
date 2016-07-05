@@ -1266,6 +1266,8 @@ namespace RamosHermanos.Capas.Interfaz
             frm.txtIDcliente.Text = txtIDcliente.Text;
             frm.txtNombre.Text = cliente.apellido + cliente.nombre;
             frm.txtnumDoc.Text = cliente.numDoc;
+            DomicilioB.CargarCB(frm.cbDomicilio, txtIDcliente, "1");
+            TelefonoB.CargarCB(frm.cbTelefono, txtIDcliente, 1);
             //frm.txtTel.Text = TelefonoB.CargarTXTString(txtIDcliente, 1);
             //frm.txtDomicilio.Text = DomicilioB.CargarTXTSTRING(txtIDcliente, 1);
             frm.txtIVA.Text = cliente.condicionIVA;
