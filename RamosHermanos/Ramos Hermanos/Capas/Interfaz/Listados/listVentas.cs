@@ -45,11 +45,14 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
         formVentas frmV = new formVentas();
         FacturaEntity factura = new FacturaEntity();
-        itemFacturaEntity item = new itemFacturaEntity();
+        itemFacturaEntity itemFactura = new itemFacturaEntity();
 
        
         private void SeleccionarDgv()
         {
+            formVentas frmP = new formVentas();
+            
+
             DataGridViewCell cell = null;
             foreach (DataGridViewCell selectedCell in dgvVentas.SelectedCells)
             {
@@ -60,20 +63,35 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             {
                 DataGridViewRow row = cell.OwningRow;
 
-                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos la venta para cargarlo.
-                factura.idFactura =  Convert.ToInt32(row.Cells["colFactura"].Value.ToString());
+                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el pedido para cargarlo.
+                factura.idFactura = Convert.ToInt32(row.Cells["colFactura"].Value.ToString());
                 FacturaB.BuscarFacturaID(factura);
-                frmV.txtIDFactura.Text = Convert.ToString(factura.idFactura);
-                frmV.txtNombre.Text = Convert.ToString(factura.nombreCompleto);
-                //frmV.txtDomicilio.Text = Convert.ToString(factura.domicilioCompleto);
-                
-                CargarItemFactura(row);
+                frmP.txtIDFactura.Text = Convert.ToString(factura.idFactura);
+                frmP.cbTipoFactura.Text = factura.tipoFactura;
+                frmP.txtIDcliente.Text = Convert.ToString(factura.cliente);
+                frmP.cbformaPago.Text = factura.formaPago;
 
-                itemsFacturaB.CargarDgvVentas(item, frmV.dgvFactura);
+                ClienteEntity cliente = ClienteB.BuscarClienteIDINT(factura.cliente);
+                frmP.txtnumDoc.Text = cliente.numDoc;
 
-                //DomicilioB.CargarCB(frmV.cbDomicilio, frmV.txtidCliente, "1");
-                frmV.Show();
-                //frmP.tabMain.SelectedTab = frmP.tabPedido;
+                frmP.dtpfechaFactura.Value = factura.fechaFactura;
+                frmP.dtpEntrega.Value = factura.fechaEntrega;
+                frmP.cbEstado.SelectedItem = factura.estado;
+                frmP.txtObservaciones.Text = Convert.ToString(factura.observaciones);
+                frmP.txtNombre.Text = Convert.ToString(factura.nombreCompleto);
+                frmP.txtTotal.Text = Convert.ToString(factura.total);
+                DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtIDcliente, "1");
+                frmP.cbDomicilio.SelectedValue = factura.domicilio;
+                TelefonoB.CargarCB(frmP.cbDomicilio, frmP.txtIDcliente, 1);
+
+                itemFactura.factura = dgvVentas.CurrentRow.Cells["colFactura"].Value.ToString();
+                itemsFacturaB.BuscarItemFacturaDGV(itemFactura, frmP.dgvFactura, frmP.txtTotal);
+
+                //DomicilioB.CargarTXTID(factura.domicilio, frmP.txtDomicilio);
+
+                cliente = ClienteB.BuscarClienteCIVAyCP(factura.cliente);
+                frmP.txtIVA.Text = cliente.condicionIVA;
+                frmP.Show();
             }
         }
 

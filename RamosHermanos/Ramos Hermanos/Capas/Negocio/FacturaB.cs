@@ -298,12 +298,17 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT P.idFactura, P.cliente, P.domicilio, P.fechaFactura, P.fechaEntrega, p.Observaciones, P.estado, P.total,
-                               C.Nombre, C.Apellido, D.idDomicilio, D.calle, D.numero
-                               FROM Facturas P
-                               INNER JOIN clientes C on C.idCliente = P.cliente
-                               INNER JOIN domicilios D on D.idDomicilio = P.domicilio
-                               WHERE P.idFactura = @idFactura";
+//                string query = @"SELECT P.idFactura, P.cliente, P.domicilio, P.fechaFactura, P.fechaEntrega, p.Observaciones, P.estado, P.total,
+//                               C.Nombre, C.Apellido, D.idDomicilio, D.calle, D.numero
+//                               FROM Facturas P
+//                               INNER JOIN clientes C on C.idCliente = P.cliente
+//                               INNER JOIN domicilios D on D.idDomicilio = P.domicilio
+//                               WHERE P.idFactura = @idFactura";
+
+                string query = @"SELECT idFactura, tipoFactura, numFactura, fechaFactura, fechaVencimiento, fechaEntrega, formaPago, cliente, CONCAT(C.apellido, ' ', C.apellido) as nombreCompleto, domicilio, observaciones, total, F.estado
+                               FROM Facturas F
+                               INNER JOIN Clientes C ON F.cliente = C.idCliente
+                               WHERE F.idFactura = @idFactura";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -324,16 +329,18 @@ namespace RamosHermanos.Capas.Negocio
                     DataRow row = dt.Rows[0];
 
                     factura.idFactura = Convert.ToInt32(row["idFactura"]);
+                    factura.tipoFactura = row["tipoFactura"].ToString();
+                    factura.formaPago = row["formaPago"].ToString();
                     factura.cliente = Convert.ToInt32(row["cliente"]);
                     factura.domicilio = Convert.ToInt32(row["domicilio"]);
                     factura.fechaFactura = Convert.ToDateTime(row["FechaFactura"]);
                     factura.fechaEntrega = Convert.ToDateTime(row["FechaEntrega"]);
+                    factura.fechaVencimiento = Convert.ToDateTime(row["fechaVencimiento"]);
                     factura.observaciones = Convert.ToString(row["observaciones"]);
                     factura.total = Convert.ToDouble(row["total"]);
-                    factura.nombreCompleto = Convert.ToString(row["Nombre"]) + ' ' + Convert.ToString(row["Apellido"]);
+                    factura.nombreCompleto = Convert.ToString(row["nombreCompleto"]);
                     factura.domicilioCompleto = 
                     factura.estado = Convert.ToString(row["estado"]);
-
 
                     MySQL.DisconnectDB();
                 }

@@ -108,8 +108,8 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySQL.ConnectDB();
 
-                string query = @"SELECT MAX(idComprobante) as idComprobante
-                                 FROM itemsReparto;";
+                string query = @"SELECT MAX(idFactura) as idFactura
+                                 FROM Facturas;";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCompras));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtidCompras = new System.Windows.Forms.TextBox();
@@ -52,14 +54,6 @@
             this.txtCuil = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCompra = new System.Windows.Forms.DataGridView();
-            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIDPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -70,13 +64,21 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbEstado = new System.Windows.Forms.ComboBox();
             this.dtpEntrega = new System.Windows.Forms.DateTimePicker();
             this.dtpVencimiento = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.cbformaPago = new System.Windows.Forms.ComboBox();
-            this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRubro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
@@ -345,54 +347,6 @@
             this.dgvCompra.CellLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCompra_CellLeave);
             this.dgvCompra.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvCompra_CellStateChanged);
             // 
-            // colIDInsumo
-            // 
-            this.colIDInsumo.DataPropertyName = "idInsumo";
-            this.colIDInsumo.HeaderText = "Codigo";
-            this.colIDInsumo.Name = "colIDInsumo";
-            // 
-            // colInsumo
-            // 
-            this.colInsumo.DataPropertyName = "insumo";
-            this.colInsumo.HeaderText = "Insumo";
-            this.colInsumo.Name = "colInsumo";
-            // 
-            // colRubro
-            // 
-            this.colRubro.HeaderText = "Rubro";
-            this.colRubro.Name = "colRubro";
-            this.colRubro.Visible = false;
-            // 
-            // colMarca
-            // 
-            this.colMarca.HeaderText = "Marca";
-            this.colMarca.Name = "colMarca";
-            this.colMarca.Visible = false;
-            // 
-            // colIDPrecio
-            // 
-            this.colIDPrecio.HeaderText = "ID Precio";
-            this.colIDPrecio.Name = "colIDPrecio";
-            this.colIDPrecio.Visible = false;
-            // 
-            // colPrecioUnitario
-            // 
-            this.colPrecioUnitario.DataPropertyName = "precio";
-            this.colPrecioUnitario.HeaderText = "Precio Unitario";
-            this.colPrecioUnitario.Name = "colPrecioUnitario";
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.DataPropertyName = "cantidad";
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            // 
-            // colSubTotal
-            // 
-            this.colSubTotal.DataPropertyName = "subTotal";
-            this.colSubTotal.HeaderText = "SubTotal";
-            this.colSubTotal.Name = "colSubTotal";
-            // 
             // btnLimpiar
             // 
             this.btnLimpiar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLimpiar.BackgroundImage")));
@@ -508,6 +462,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles Pago";
             // 
+            // cbEstado
+            // 
+            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEstado.FormattingEnabled = true;
+            this.cbEstado.Items.AddRange(new object[] {
+            "Pendiente",
+            "Pagado",
+            "Anulado"});
+            this.cbEstado.Location = new System.Drawing.Point(373, 45);
+            this.cbEstado.Name = "cbEstado";
+            this.cbEstado.Size = new System.Drawing.Size(129, 21);
+            this.cbEstado.TabIndex = 146;
+            // 
             // dtpEntrega
             // 
             this.dtpEntrega.CustomFormat = "dd/MM/yyyy";
@@ -571,19 +539,59 @@
             this.cbformaPago.Size = new System.Drawing.Size(210, 21);
             this.cbformaPago.TabIndex = 1;
             // 
-            // cbEstado
+            // colIDInsumo
             // 
-            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Items.AddRange(new object[] {
-            "Pendiente",
-            "Pagado",
-            "Anulado"});
-            this.cbEstado.Location = new System.Drawing.Point(373, 45);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(129, 21);
-            this.cbEstado.TabIndex = 146;
+            this.colIDInsumo.DataPropertyName = "idInsumo";
+            this.colIDInsumo.HeaderText = "Codigo";
+            this.colIDInsumo.Name = "colIDInsumo";
+            // 
+            // colInsumo
+            // 
+            this.colInsumo.DataPropertyName = "insumo";
+            this.colInsumo.HeaderText = "Insumo";
+            this.colInsumo.Name = "colInsumo";
+            // 
+            // colRubro
+            // 
+            this.colRubro.HeaderText = "Rubro";
+            this.colRubro.Name = "colRubro";
+            this.colRubro.Visible = false;
+            // 
+            // colMarca
+            // 
+            this.colMarca.HeaderText = "Marca";
+            this.colMarca.Name = "colMarca";
+            this.colMarca.Visible = false;
+            // 
+            // colIDPrecio
+            // 
+            this.colIDPrecio.HeaderText = "ID Precio";
+            this.colIDPrecio.Name = "colIDPrecio";
+            this.colIDPrecio.Visible = false;
+            // 
+            // colPrecioUnitario
+            // 
+            this.colPrecioUnitario.DataPropertyName = "precio";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "c";
+            this.colPrecioUnitario.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colPrecioUnitario.HeaderText = "Precio Unitario";
+            this.colPrecioUnitario.Name = "colPrecioUnitario";
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.DataPropertyName = "cantidad";
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            // 
+            // colSubTotal
+            // 
+            this.colSubTotal.DataPropertyName = "subTotal";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "c";
+            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colSubTotal.HeaderText = "SubTotal";
+            this.colSubTotal.Name = "colSubTotal";
             // 
             // formCompras
             // 
@@ -657,6 +665,8 @@
         public System.Windows.Forms.ComboBox cbformaPago;
         private System.Windows.Forms.TextBox txtidCompras;
         public System.Windows.Forms.DateTimePicker dtpfechaFactura;
+        public System.Windows.Forms.ComboBox cbEstado;
+        public System.Windows.Forms.TextBox txtnumFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colRubro;
@@ -665,7 +675,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
-        public System.Windows.Forms.ComboBox cbEstado;
-        public System.Windows.Forms.TextBox txtnumFactura;
     }
 }

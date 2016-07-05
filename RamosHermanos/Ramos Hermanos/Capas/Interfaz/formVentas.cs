@@ -19,6 +19,8 @@ namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formVentas : Form, produccionForm
     {
+        public int newORupdate = 1;
+
         public formVentas()
         {
             InitializeComponent();
@@ -35,19 +37,17 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formFactura_Load(object sender, EventArgs e)
         {
-            this.dgvFactura.Columns["colPrecio"].DefaultCellStyle.Format = "c";
-            this.dgvFactura.Columns["colPrecio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            this.dgvFactura.Columns["colSubTotal"].DefaultCellStyle.Format = "c";
-            this.dgvFactura.Columns["colSubTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
-            dgvFactura.AutoGenerateColumns = false;
+             dgvFactura.AutoGenerateColumns = false;
         }
 
         private void cbEstado_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            factura.estado = cbEstado.Text;
-            FacturaB.UpdateFactura(factura);
+            if (newORupdate != 1)
+            {
+                factura.estado = cbEstado.Text;
+                FacturaB.UpdateFactura(factura);
+            }
+            
         }
 
         // Entidades        
@@ -76,6 +76,8 @@ namespace RamosHermanos.Capas.Interfaz
                 itemFactura.cantidad = Convert.ToInt32(dRow.Cells["colCantidad"].Value.ToString());
                 itemFactura.subTotal = Convert.ToDouble(dRow.Cells["colSubTotal"].Value.ToString());
                 itemFactura.carga = "C";
+
+                itemsFacturaB.InsertItemFactura(itemFactura);
             }
         }
 
@@ -85,7 +87,7 @@ namespace RamosHermanos.Capas.Interfaz
             FacturaB.InsertFacturaNEW(factura, txtIDFactura);
 
             cargarItemsFactura(dgvFactura);
-            itemsFacturaB.InsertItemFactura(itemFactura);
+            
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
@@ -186,6 +188,16 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvFactura_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvFactura_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
 
         }
