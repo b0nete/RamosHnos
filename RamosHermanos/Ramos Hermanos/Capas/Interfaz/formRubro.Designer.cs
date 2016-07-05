@@ -256,7 +256,7 @@
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnSave);
             this.Name = "formRubro";
-            this.Text = "formRubro";
+            this.Text = "Registrar Rubro";
             this.Load += new System.EventHandler(this.formRubro_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
