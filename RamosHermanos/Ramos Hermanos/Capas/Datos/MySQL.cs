@@ -50,48 +50,48 @@ namespace RamosHermanos.Capas.Datos
             sqlcnx.Close();
         }
 
-        public static void GoExport()
-        {
-            string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");   
-            string rep = @"\Backup\";
-            string constring = cadenaConexion;
+        //public static void GoExport()
+        //{
+        //    string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");   
+        //    string rep = @"\Backup\";
+        //    string constring = cadenaConexion;
 
-            using (MySqlConnection conn = new MySqlConnection(constring))
-            {
-                using (MySqlCommand cmd = new MySqlCommand())
-                {
-                    using (MySqlBackup mb = new MySqlBackup(cmd))
-                    {
-                        cmd.Connection = conn;
-                        conn.Open();
-                        mb.ExportToFile(ruta + rep + "backup.sql");
-                        conn.Close();
-                    }
-                }
-            }
-            MessageBox.Show("Backup creado!");
-        }
+        //    using (MySqlConnection conn = new MySqlConnection(constring))
+        //    {
+        //        using (MySqlCommand cmd = new MySqlCommand())
+        //        {
+        //            using (MySqlBackup mb = new MySqlBackup(cmd))
+        //            {
+        //                cmd.Connection = conn;
+        //                conn.Open();
+        //                mb.ExportToFile(ruta + rep + "backup.sql");
+        //                conn.Close();
+        //            }
+        //        }
+        //    }
+        //    MessageBox.Show("Backup creado!");
+        //}
 
-        public static void GoImport()
-        {
-            string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
-            string rep = @"\Backup\";
-            string constring = cadenaConexion;
+        //public static void GoImport()
+        //{
+        //    string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
+        //    string rep = @"\Backup\";
+        //    string constring = cadenaConexion;
 
-            using (MySqlConnection conn = new MySqlConnection(constring))
-            {
-                using (MySqlCommand cmd = new MySqlCommand())
-                {
-                    using (MySqlBackup mb = new MySqlBackup(cmd))
-                    {
-                        cmd.Connection = conn;
-                        conn.Open();
-                        mb.ImportFromFile(ruta + rep + "backup.sql");
-                        conn.Close();
-                    }
-                }
-            }
-            MessageBox.Show("Backup restaurado!");
+        //    using (MySqlConnection conn = new MySqlConnection(constring))
+        //    {
+        //        using (MySqlCommand cmd = new MySqlCommand())
+        //        {
+        //            using (MySqlBackup mb = new MySqlBackup(cmd))
+        //            {
+        //                cmd.Connection = conn;
+        //                conn.Open();
+        //                mb.ImportFromFile(ruta + rep + "backup.sql");
+        //                conn.Close();
+        //            }
+        //        }
+        //    }
+        //    MessageBox.Show("Backup restaurado!");
         }
     }
-}
+
