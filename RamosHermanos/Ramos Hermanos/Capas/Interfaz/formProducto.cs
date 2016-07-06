@@ -494,12 +494,13 @@ namespace RamosHermanos.Capas.Interfaz
         public void AddNewItem(DataGridViewRow row)
         {
             string idinsumo = row.Cells["colIDInsumo"].Value.ToString();
-            string insumo = row.Cells["colInsumo"].Value.ToString();
+            string insumo = InsumoB.BuscarNombreInsumo(Convert.ToInt32(idinsumo));
             string idMedida = row.Cells["colIDMedida"].Value.ToString();
             string medida = row.Cells["colMedida"].Value.ToString();
+            DataRow dr = PrecioInsumosB.UltimoPrecio(Convert.ToInt32(idinsumo));
+            string precio = dr["precio"].ToString();
 
-            this.dgvConformacion.Rows.Add(new[] { idinsumo, insumo, idMedida, medida });
-
+            this.dgvConformacion.Rows.Add(new[] { idinsumo, insumo, idMedida, medida, precio });
         }
 
         private void btnAddLu_Click(object sender, EventArgs e)
@@ -653,6 +654,35 @@ namespace RamosHermanos.Capas.Interfaz
         {
           
         }
+
+        private void dgvConformacion_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvConformacion.CurrentRow.Cells["colCantidadm"].Value.ToString() != string.Empty)
+            {
+                int idInsumo = Convert.ToInt32(dgvConformacion.CurrentRow.Cells["colIDInsumo"].Value.ToString());
+                double cantidad = Convert.ToDouble(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value.ToString());
+
+                dgvConformacion.CurrentRow.Cells["colSubTotal"].Value = InsumoB.CalcularCU(idInsumo, cantidad);
+            }
+        }
+
+        private void btnDelInsumo_Click(object sender, EventArgs e)
+        {
+            double costo = 0;
+            double costo1 = 0;
+            double ganancia = 0;
+
+            foreach (DataGridViewRow dRow in dgvConformacion.Rows)
+            {
+                costo = Convert.ToDouble(dRow.Cells["colSubTotal"].Value.ToString());
+                costo1 = costo + costo1;
+                txtCostoProd.Text = costo1.ToString();
+            }
+
+            ganancia = costo1 * Convert.ToDouble(Convert.ToString("1," + txtGanancia.Text));
+            txtPrecioSugerido.Text = ganancia.ToString();
+        }
+
         
     }
 }

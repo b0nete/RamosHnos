@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProducto));
             this.lblTitle = new System.Windows.Forms.Label();
             this.tabEstadisticas = new System.Windows.Forms.TabPage();
@@ -131,17 +131,19 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tabProducto = new System.Windows.Forms.TabControl();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtCostoProd = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtGanancia = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecioM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidadm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
+            this.txtPrecioSugerido = new System.Windows.Forms.TextBox();
             this.tabEstadisticas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -189,17 +191,17 @@
             // 
             // chartProductos
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartProductos.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartProductos.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartProductos.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartProductos.Legends.Add(legend2);
             this.chartProductos.Location = new System.Drawing.Point(378, 6);
             this.chartProductos.Name = "chartProductos";
             this.chartProductos.Size = new System.Drawing.Size(349, 287);
             this.chartProductos.TabIndex = 3;
             this.chartProductos.Text = "chart1";
-            title1.Name = "Title1";
-            this.chartProductos.Titles.Add(title1);
+            title2.Name = "Title1";
+            this.chartProductos.Titles.Add(title2);
             // 
             // groupBox7
             // 
@@ -395,11 +397,12 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.txtPrecioSugerido);
             this.groupBox8.Controls.Add(this.label33);
-            this.groupBox8.Controls.Add(this.textBox2);
+            this.groupBox8.Controls.Add(this.txtGanancia);
             this.groupBox8.Controls.Add(this.label32);
             this.groupBox8.Controls.Add(this.label30);
-            this.groupBox8.Controls.Add(this.textBox1);
+            this.groupBox8.Controls.Add(this.txtCostoProd);
             this.groupBox8.Controls.Add(this.label7);
             this.groupBox8.Controls.Add(this.dgvConformacion);
             this.groupBox8.Controls.Add(this.btnSaveConformacion);
@@ -423,12 +426,14 @@
             this.colInsumo,
             this.colIDMedida,
             this.colMedida,
+            this.colPrecioM,
             this.colCantidadm,
             this.colSubTotal});
             this.dgvConformacion.Location = new System.Drawing.Point(6, 18);
             this.dgvConformacion.Name = "dgvConformacion";
             this.dgvConformacion.Size = new System.Drawing.Size(728, 344);
             this.dgvConformacion.TabIndex = 0;
+            this.dgvConformacion.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConformacion_CellEndEdit);
             // 
             // btnSaveConformacion
             // 
@@ -452,6 +457,7 @@
             this.btnDelInsumo.Size = new System.Drawing.Size(28, 28);
             this.btnDelInsumo.TabIndex = 95;
             this.btnDelInsumo.UseVisualStyleBackColor = true;
+            this.btnDelInsumo.Click += new System.EventHandler(this.btnDelInsumo_Click);
             // 
             // btnAddInsumo
             // 
@@ -1311,11 +1317,58 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(235, 379);
+            this.label7.Location = new System.Drawing.Point(395, 371);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 13);
             this.label7.TabIndex = 97;
             this.label7.Text = "Costo del Producto";
+            // 
+            // txtCostoProd
+            // 
+            this.txtCostoProd.Enabled = false;
+            this.txtCostoProd.Location = new System.Drawing.Point(498, 368);
+            this.txtCostoProd.Name = "txtCostoProd";
+            this.txtCostoProd.Size = new System.Drawing.Size(100, 20);
+            this.txtCostoProd.TabIndex = 98;
+            this.txtCostoProd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(488, 405);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(119, 13);
+            this.label30.TabIndex = 99;
+            this.label30.Text = "________________";
+            // 
+            // txtGanancia
+            // 
+            this.txtGanancia.Location = new System.Drawing.Point(498, 393);
+            this.txtGanancia.Name = "txtGanancia";
+            this.txtGanancia.Size = new System.Drawing.Size(100, 20);
+            this.txtGanancia.TabIndex = 101;
+            this.txtGanancia.Text = "30";
+            this.txtGanancia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(413, 396);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(79, 13);
+            this.label32.TabIndex = 100;
+            this.label32.Text = "% de Ganancia";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(446, 421);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(46, 13);
+            this.label33.TabIndex = 103;
+            this.label33.Text = "Precio $";
             // 
             // colIDInsumo
             // 
@@ -1329,7 +1382,7 @@
             this.colInsumo.HeaderText = "Insumo";
             this.colInsumo.Name = "colInsumo";
             this.colInsumo.ReadOnly = true;
-            this.colInsumo.Width = 200;
+            this.colInsumo.Width = 250;
             // 
             // colIDMedida
             // 
@@ -1345,6 +1398,11 @@
             this.colMedida.ReadOnly = true;
             this.colMedida.Visible = false;
             // 
+            // colPrecioM
+            // 
+            this.colPrecioM.HeaderText = "Precio";
+            this.colPrecioM.Name = "colPrecioM";
+            // 
             // colCantidadm
             // 
             this.colCantidadm.HeaderText = "Cantidad";
@@ -1355,49 +1413,14 @@
             this.colSubTotal.HeaderText = "SubTotal";
             this.colSubTotal.Name = "colSubTotal";
             // 
-            // textBox1
+            // txtPrecioSugerido
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(338, 376);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 98;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(328, 413);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(119, 13);
-            this.label30.TabIndex = 99;
-            this.label30.Text = "________________";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(338, 401);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 101;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(253, 404);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(79, 13);
-            this.label32.TabIndex = 100;
-            this.label32.Text = "% de Ganancia";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(286, 429);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(46, 13);
-            this.label33.TabIndex = 103;
-            this.label33.Text = "Precio $";
+            this.txtPrecioSugerido.Enabled = false;
+            this.txtPrecioSugerido.Location = new System.Drawing.Point(498, 421);
+            this.txtPrecioSugerido.Name = "txtPrecioSugerido";
+            this.txtPrecioSugerido.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecioSugerido.TabIndex = 104;
+            this.txtPrecioSugerido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // formProducto
             // 
@@ -1543,15 +1566,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtGanancia;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCostoProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMedida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecioM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidadm;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
+        private System.Windows.Forms.TextBox txtPrecioSugerido;
     }
 }

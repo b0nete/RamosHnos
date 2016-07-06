@@ -421,5 +421,38 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static double CalcularCU(int idInsumo, double cantidad)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT cantidad
+                                FROM Insumos I
+                                INNER JOIN Medidas M ON M.idMedida = I.medida
+                                WHERE idInsumo = @idInsumo";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idInsumo", idInsumo);
+
+                int cantProd = Convert.ToInt32(cmd.ExecuteScalar());
+
+                double var3 = cantProd;
+                DataRow dr = PrecioInsumosB.UltimoPrecio(idInsumo);
+                double var2 = Convert.ToDouble(dr["precio"]);
+                double var1 = cantidad;
+
+                double total = (var1 * var2) / var3;
+
+                return total;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
     }
 }
