@@ -245,7 +245,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);
             this.Name = "formRoles";
-            this.Text = "Registrar Roles";
+            this.Text = "Registrar Rol";
             this.Load += new System.EventHandler(this.formRoles_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
