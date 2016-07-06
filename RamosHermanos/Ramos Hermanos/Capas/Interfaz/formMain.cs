@@ -388,12 +388,12 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void importarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //MySQL.GoImport();
+            MySQL.GoImport();
         }
 
         private void exportarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //MySQL.GoExport();
+            MySQL.GoExport();
         }
 
        
