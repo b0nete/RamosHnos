@@ -64,6 +64,78 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void UpdateStock2(StockProductoEntity stockProducto)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string queryConsulta = @"SELECT * FROM stockProducto WHERE idProducto = @idProducto";
+
+                MySqlCommand cmdConsulta = new MySqlCommand(queryConsulta, MySQL.sqlcnx);
+
+                cmdConsulta.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
+
+                //Buscamos valor anterior del stockActual
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmdConsulta);
+
+                da.Fill(dt);
+                DataRow dr = dt.Rows[0];
+
+                stockProducto.stockActual = Convert.ToInt32(dr["stockActual"].ToString());   
+
+                //Hacemos la actualizacion del stock
+
+                string query = @"SET @@sql_safe_updates = 0; 
+                                 UPDATE stockProducto
+                                 SET stockActual = @stockActual, fechaActualizacion = @fechaActualizacion
+                                 WHERE idProducto = @idProducto;
+                                 SET @@sql_safe_updates = 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                //cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
+                //cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);
+                //cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
+                //cmd.Parameters.AddWithValue("@valorAnterior", stockProducto.valorAnterior);
+                //cmd.Parameters.AddWithValue("@valorNuevo", stockProducto.valorNuevo);
+
+                if (stockProducto.valorAnterior < stockProducto.valorNuevo)
+                {
+                    int valorResultante = stockProducto.valorNuevo - stockProducto.valorAnterior;
+                    stockProducto.stockActual = stockProducto.stockActual - valorResultante;
+
+                    cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
+                    cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);
+                    cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@valorAnterior", stockProducto.valorAnterior);
+                    cmd.Parameters.AddWithValue("@valorNuevo", stockProducto.valorNuevo);
+
+                    cmd.ExecuteNonQuery();
+                }
+                else
+                {
+                    int valorResultante = stockProducto.valorNuevo + stockProducto.valorAnterior;
+                    stockProducto.stockActual = stockProducto.stockActual + valorResultante;
+
+                    cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
+                    cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);
+                    cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@valorAnterior", stockProducto.valorAnterior);
+                    cmd.Parameters.AddWithValue("@valorNuevo", stockProducto.valorNuevo);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static StockProductoEntity BuscarStock(int idProducto)
         {
             try

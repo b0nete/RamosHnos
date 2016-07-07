@@ -20,6 +20,8 @@ namespace RamosHermanos.Capas.Interfaz
     public partial class formVentas : Form, produccionForm
     {
         public int newORupdate = 1;
+        public int cantidadValorAnterior;
+        public int cantidadValorNuevo;
 
         public formVentas()
         {
@@ -66,6 +68,8 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         itemFacturaEntity itemFactura = new itemFacturaEntity();
+        StockProductoEntity stockProducto = new StockProductoEntity();
+
         private void cargarItemsFactura(DataGridView dgv)
         {
             foreach (DataGridViewRow dRow in dgv.Rows)
@@ -76,17 +80,31 @@ namespace RamosHermanos.Capas.Interfaz
                 itemFactura.cantidad = Convert.ToInt32(dRow.Cells["colCantidad"].Value.ToString());
                 itemFactura.subTotal = Convert.ToDouble(dRow.Cells["colSubTotal"].Value.ToString());
                 itemFactura.carga = "C";
-
                 itemsFacturaB.InsertItemFactura(itemFactura);
+
+                stockProducto.idProducto = itemFactura.producto;
+                stockProducto.valorAnterior = cantidadValorAnterior;
+                stockProducto.valorNuevo = cantidadValorNuevo;
+                StockProductoB.UpdateStock2(stockProducto);
             }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            cargarFactura();
-            FacturaB.InsertFacturaNEW(factura, txtIDFactura);
+            if (FacturaB.ExisteFactura(Convert.ToInt32(txtIDFactura.Text)) == true)
+            {
+                cargarFactura();
 
-            cargarItemsFactura(dgvFactura);
+                cargarItemsFactura(dgvFactura);
+            }
+            else
+            {
+                FacturaB.InsertFacturaNEW(factura, txtIDFactura);
+            }
+            
+            
+
+            
             
         }
 
@@ -164,6 +182,13 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            //Valor Nuevo
+            if (dgvFactura.CurrentRow.Cells["colCantidad"].Value.ToString() != string.Empty)
+            {
+                cantidadValorNuevo = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCantidad"].Value.ToString());
+                //MessageBox.Show("Valor Nuevo: " + cantidadValorNuevo);
+            }
+
             if (dgvFactura.CurrentRow.Cells["colCodigo"].Value.ToString() != string.Empty && dgvFactura.CurrentRow.Cells["colCantidad"].Value.ToString() != string.Empty)
             {
                 int cantidad = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCantidad"].Value.ToString());
@@ -200,6 +225,15 @@ namespace RamosHermanos.Capas.Interfaz
         private void dgvFactura_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
 
+        }
+
+        private void dgvFactura_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (dgvFactura.CurrentRow.Cells["colCantidad"].Value.ToString() != string.Empty)
+            {
+                cantidadValorAnterior = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCantidad"].Value.ToString());
+                //MessageBox.Show("Valor Anterior: " + cantidadValorAnterior);
+            }
         }
     }
 }

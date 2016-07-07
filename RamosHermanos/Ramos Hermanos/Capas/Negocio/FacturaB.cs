@@ -13,6 +13,24 @@ namespace RamosHermanos.Capas.Negocio
 {
     class FacturaB
     {
+        public static bool ExisteFactura(int idFactura)
+        {
+            MySQL.ConnectDB();
+
+            string query = @"SELECT COUNT(*) FROM Facturas
+                             WHERE idFactura = @idFactura";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+            cmd.Parameters.AddWithValue("@idFactura", idFactura);
+
+            int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+            if (resultado == 0)
+                return false;
+            else
+                return true;
+        }
+
         public static FacturaEntity UpdateFactura(FacturaEntity factura)
         {
             try
