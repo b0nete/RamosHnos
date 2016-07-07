@@ -130,7 +130,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
                 //Cargar Datos Stock
                 stockPo.idProducto = producto.idProducto;
-                if (StockProductoB.ExisteStock(stockPo) == false)
+                if (StockProductoB.ExisteStock(stockPo.idProducto) == false)
                     MessageBox.Show("No existe stock");
                 else
                 {
@@ -146,9 +146,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
                 //Conformacion
                 itemsProductoB.CargarDGV(Convert.ToInt32(frmPro.txtIDProd.Text), frmPro.dgvConformacion);
-                //StockProductoB.cargardgvStock(frmPro.dgvStock, frmPro.txtIDProd);
                 this.Close();
-
             }
         }
     }

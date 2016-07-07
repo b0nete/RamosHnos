@@ -43,6 +43,8 @@ namespace RamosHermanos.Capas.Interfaz
             dtpAnualDesde.CustomFormat = "yyyy";
             dtpAnualHasta.CustomFormat = "yyyy";
             tabProducto.Controls.Remove(tabEstadisticas);
+
+            dgvConformacion.AutoGenerateColumns = false;
         }
 
         private void cbEstado_CheckedChanged(object sender, EventArgs e)
@@ -365,8 +367,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button8_Click(object sender, EventArgs e)
         {
-            SaveStock();
-            
+            SaveStock();            
         }
 
         private void SaveStock()
@@ -377,9 +378,16 @@ namespace RamosHermanos.Capas.Interfaz
             }
             else
             {
-                CargarStock();
-                StockProductoB.InsertStock(stock);
-
+                if (StockProductoB.ExisteStock(Convert.ToInt32(txtIDProd.Text)) == true)
+                {
+                    CargarStock();
+                    StockProductoB.UpdateStock(stock);
+                }
+                else
+                {
+                    CargarStock();
+                    StockProductoB.InsertStock(stock);
+                }
             }
         
         
@@ -387,6 +395,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         // Entidades
         StockProductoEntity stock = new StockProductoEntity();
+
         private void CargarStock()
         {
             stock.idProducto = Convert.ToInt32(txtIDProd.Text);
@@ -657,13 +666,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvConformacion_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvConformacion.CurrentRow.Cells["colCantidadm"].Value.ToString() != string.Empty)
-            {
-                int idInsumo = Convert.ToInt32(dgvConformacion.CurrentRow.Cells["colIDInsumo"].Value.ToString());
-                double cantidad = Convert.ToDouble(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value.ToString());
-
-                dgvConformacion.CurrentRow.Cells["colSubTotal"].Value = InsumoB.CalcularCU(idInsumo, cantidad);
-            }
+            calcularSubTotales();
         }
 
         private void btnDelInsumo_Click(object sender, EventArgs e)
@@ -683,7 +686,74 @@ namespace RamosHermanos.Capas.Interfaz
             txtPrecioSugerido.Text = ganancia.ToString();
         }
 
-        
+        public void calcularSubTotales()
+        {
+                if (dgvConformacion.CurrentRow.Cells["colCantidadm"].Value.ToString() != string.Empty)
+                {
+                    int idInsumo = Convert.ToInt32(dgvConformacion.CurrentRow.Cells["colIDInsumo"].Value.ToString());
+                    double cantidad = Convert.ToDouble(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value.ToString());
+
+                    dgvConformacion.CurrentRow.Cells["colSubTotal"].Value = InsumoB.CalcularCU(idInsumo, cantidad);
+                }         
+        }
+
+        public void calcularAfterSearch()
+        {
+            if (dgvConformacion.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow dRow in dgvConformacion.Rows)
+                {
+                    int idInsumo = Convert.ToInt32(dRow.Cells["colIDInsumo"].Value.ToString());
+                    double cantidad = Convert.ToDouble(dRow.Cells["colCantidadm"].Value.ToString());
+
+                    dRow.Cells["colSubTotal"].Value = InsumoB.CalcularCU(idInsumo, cantidad);
+                }
+
+                double costo = 0;
+                double costo1 = 0;
+                double ganancia = 0;
+
+                foreach (DataGridViewRow dRow in dgvConformacion.Rows)
+                {
+                    costo = Convert.ToDouble(dRow.Cells["colSubTotal"].Value.ToString());
+                    costo1 = costo + costo1;
+                    txtCostoProd.Text = costo1.ToString();
+                }
+
+                ganancia = costo1 * Convert.ToDouble(Convert.ToString("1," + txtGanancia.Text));
+                txtPrecioSugerido.Text = ganancia.ToString();
+            }
+        }
+
+        private void dgvConformacion_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void dgvConformacion_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+            
+        }
+
+        private void dgvConformacion_CurrentCellChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvConformacion_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvConformacion_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
+        {
+            calcularSubTotales();
+        }
+
+        private void dgvConformacion_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            calcularAfterSearch();
+        }
     }
 }
 

@@ -37,7 +37,17 @@ namespace RamosHermanos.Capas.Interfaz
             tabProveedor.Controls.Remove(tabAdicional);
             ProveedorB.cargardgv(dgvProveedor);
             CheckColor();
-                        
+
+            //Movimiento
+            if (txtidprov.Text != string.Empty)
+            {
+                int proveedor = Convert.ToInt32(txtidprov.Text);
+
+                if (rbNoPagas.Checked == true)
+                {
+                    ComprasB.SearchPendientes(proveedor, dgvMovimientos);
+                }
+            }
         }
 
         ProveedorEntity proveedor = new ProveedorEntity();
@@ -526,6 +536,41 @@ namespace RamosHermanos.Capas.Interfaz
             frm.txtDomicilio.Text = DomicilioB.CargarTXTSTRING(txtidprov, 2);
 
             TelefonoB.CargarTXT(frm.txtTel, frm.txtIDproveedor, 2);
+        }
+
+        private void ChangeCheck()
+        {
+            dgvMovimientos.DataSource = "";
+
+            if (txtidprov.Text != string.Empty)
+            {
+                int proveedor = Convert.ToInt32(txtidprov.Text);
+
+                if (rbNoPagas.Checked == true)
+                {
+                    ComprasB.SearchPendientes(proveedor, dgvMovimientos);
+                }
+                else if (rbPagas.Checked == true)
+                {
+                    ComprasB.SearchPagas(proveedor, dgvMovimientos);
+                }
+                else if (rbAnuladas.Checked == true)
+                {
+                    //FacturaB.SearchAnuladas(proveedor, dgvMovimientos);
+                }
+            }
+        }
+
+        private void rbPagas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbPagas.Checked == true)
+                ChangeCheck(); 
+        }
+
+        private void rbNoPagas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbNoPagas.Checked == true)
+                ChangeCheck(); 
         }
 
         }

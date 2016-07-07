@@ -72,12 +72,12 @@
             this.colTipoIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabMovimientos = new System.Windows.Forms.TabPage();
-            this.tabPedido = new System.Windows.Forms.TabPage();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.rbAnuladas = new System.Windows.Forms.RadioButton();
             this.rbNoPagas = new System.Windows.Forms.RadioButton();
             this.rbPagas = new System.Windows.Forms.RadioButton();
             this.dgvMovimientos = new System.Windows.Forms.DataGridView();
+            this.tabPedido = new System.Windows.Forms.TabPage();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.colIDFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabProveedor.SuspendLayout();
@@ -589,6 +589,54 @@
             this.tabMovimientos.Text = "Movimientos";
             this.tabMovimientos.UseVisualStyleBackColor = true;
             // 
+            // rbAnuladas
+            // 
+            this.rbAnuladas.AutoSize = true;
+            this.rbAnuladas.Location = new System.Drawing.Point(150, 11);
+            this.rbAnuladas.Name = "rbAnuladas";
+            this.rbAnuladas.Size = new System.Drawing.Size(69, 17);
+            this.rbAnuladas.TabIndex = 7;
+            this.rbAnuladas.Text = "Anuladas";
+            this.rbAnuladas.UseVisualStyleBackColor = true;
+            // 
+            // rbNoPagas
+            // 
+            this.rbNoPagas.AutoSize = true;
+            this.rbNoPagas.Checked = true;
+            this.rbNoPagas.Location = new System.Drawing.Point(72, 11);
+            this.rbNoPagas.Name = "rbNoPagas";
+            this.rbNoPagas.Size = new System.Drawing.Size(72, 17);
+            this.rbNoPagas.TabIndex = 6;
+            this.rbNoPagas.TabStop = true;
+            this.rbNoPagas.Text = "No Pagas";
+            this.rbNoPagas.UseVisualStyleBackColor = true;
+            this.rbNoPagas.CheckedChanged += new System.EventHandler(this.rbNoPagas_CheckedChanged);
+            // 
+            // rbPagas
+            // 
+            this.rbPagas.AutoSize = true;
+            this.rbPagas.Location = new System.Drawing.Point(11, 11);
+            this.rbPagas.Name = "rbPagas";
+            this.rbPagas.Size = new System.Drawing.Size(55, 17);
+            this.rbPagas.TabIndex = 5;
+            this.rbPagas.Text = "Pagas";
+            this.rbPagas.UseVisualStyleBackColor = true;
+            this.rbPagas.CheckedChanged += new System.EventHandler(this.rbPagas_CheckedChanged);
+            // 
+            // dgvMovimientos
+            // 
+            this.dgvMovimientos.AllowUserToAddRows = false;
+            this.dgvMovimientos.AllowUserToDeleteRows = false;
+            this.dgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMovimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIDFactura,
+            this.colFecha});
+            this.dgvMovimientos.Location = new System.Drawing.Point(10, 34);
+            this.dgvMovimientos.Name = "dgvMovimientos";
+            this.dgvMovimientos.ReadOnly = true;
+            this.dgvMovimientos.Size = new System.Drawing.Size(729, 427);
+            this.dgvMovimientos.TabIndex = 4;
+            // 
             // tabPedido
             // 
             this.tabPedido.Location = new System.Drawing.Point(4, 22);
@@ -611,62 +659,16 @@
             this.lblTitle.Text = "Proveedor";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // rbAnuladas
-            // 
-            this.rbAnuladas.AutoSize = true;
-            this.rbAnuladas.Location = new System.Drawing.Point(150, 11);
-            this.rbAnuladas.Name = "rbAnuladas";
-            this.rbAnuladas.Size = new System.Drawing.Size(69, 17);
-            this.rbAnuladas.TabIndex = 7;
-            this.rbAnuladas.Text = "Anuladas";
-            this.rbAnuladas.UseVisualStyleBackColor = true;
-            // 
-            // rbNoPagas
-            // 
-            this.rbNoPagas.AutoSize = true;
-            this.rbNoPagas.Checked = true;
-            this.rbNoPagas.Location = new System.Drawing.Point(72, 11);
-            this.rbNoPagas.Name = "rbNoPagas";
-            this.rbNoPagas.Size = new System.Drawing.Size(72, 17);
-            this.rbNoPagas.TabIndex = 6;
-            this.rbNoPagas.TabStop = true;
-            this.rbNoPagas.Text = "No Pagas";
-            this.rbNoPagas.UseVisualStyleBackColor = true;
-            // 
-            // rbPagas
-            // 
-            this.rbPagas.AutoSize = true;
-            this.rbPagas.Location = new System.Drawing.Point(11, 11);
-            this.rbPagas.Name = "rbPagas";
-            this.rbPagas.Size = new System.Drawing.Size(55, 17);
-            this.rbPagas.TabIndex = 5;
-            this.rbPagas.Text = "Pagas";
-            this.rbPagas.UseVisualStyleBackColor = true;
-            // 
-            // dgvMovimientos
-            // 
-            this.dgvMovimientos.AllowUserToAddRows = false;
-            this.dgvMovimientos.AllowUserToDeleteRows = false;
-            this.dgvMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMovimientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colIDFactura,
-            this.colFecha});
-            this.dgvMovimientos.Location = new System.Drawing.Point(10, 34);
-            this.dgvMovimientos.Name = "dgvMovimientos";
-            this.dgvMovimientos.ReadOnly = true;
-            this.dgvMovimientos.Size = new System.Drawing.Size(729, 427);
-            this.dgvMovimientos.TabIndex = 4;
-            // 
             // colIDFactura
             // 
-            this.colIDFactura.DataPropertyName = "idFactura";
+            this.colIDFactura.DataPropertyName = "numFactura";
             this.colIDFactura.HeaderText = "Nº Factura";
             this.colIDFactura.Name = "colIDFactura";
             this.colIDFactura.ReadOnly = true;
             // 
             // colFecha
             // 
-            this.colFecha.DataPropertyName = "fechaFactura";
+            this.colFecha.DataPropertyName = "fecha";
             this.colFecha.HeaderText = "Fecha Factura";
             this.colFecha.Name = "colFecha";
             this.colFecha.ReadOnly = true;

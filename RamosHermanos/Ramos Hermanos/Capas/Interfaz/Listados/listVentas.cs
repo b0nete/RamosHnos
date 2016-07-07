@@ -21,9 +21,6 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
         private void listVentas_Load(object sender, EventArgs e)
         {
-            this.dgvVentas.Columns["colTotal"].DefaultCellStyle.Format = "c";
-            this.dgvVentas.Columns["colTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-
             cbParametro.SelectedIndex = 0;
             FacturaB.ListFacturas(dgvVentas, "Pagado");
             dgvVentas.AutoGenerateColumns = false;

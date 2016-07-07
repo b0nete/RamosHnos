@@ -52,7 +52,7 @@ namespace RamosHermanos.Capas.Datos
 
         public static void GoExport()
         {
-            string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");   
+            string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
             string rep = @"\Backup\";
             string constring = cadenaConexion;
 
@@ -94,4 +94,5 @@ namespace RamosHermanos.Capas.Datos
             MessageBox.Show("Backup restaurado!");
         }
     }
+}
 

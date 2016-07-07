@@ -18,57 +18,26 @@ namespace RamosHermanos.Capas.Negocio
         {
             try
             {
-//                MySQL.ConnectDB();
-
-//                DataTable dt = new DataTable();                
-
-//                string query = @"SELECT idItemProducto as idItemProducto, IP.Insumo as idInsumo, I.Insumo as Insumo, IP.Medida as idMedida, M.Medida as Medida, IP.cantidad
-//                                FROM itemsProducto IP
-//                                INNER JOIN Insumos I ON I.idInsumo = IP.insumo
-//                                INNER JOIN Medidas M ON M.idMedida = IP.medida
-//                                WHERE IP.producto = @producto";
-
-//                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-
-//                cmd.Parameters.AddWithValue("@producto", idProducto);
-
-//                MySqlDataAdapter da = new MySqlDataAdapter(query, MySQL.sqlcnx);
-
-//                cmd.ExecuteNonQuery();
-                
-//                da.Fill(dt);
-
-//                dgvItemProducto.DataSource = dt;
-
-//                MySQL.DisconnectDB();
-
                 MySQL.ConnectDB();
                 dgvItemProducto.Rows.Clear();
 
-                string query = @"SELECT idItemProducto as idItemProducto, IP.Insumo as idInsumo, I.Insumo as Insumo, IP.Medida as idMedida, M.Medida as Medida, IP.cantidad
+                string query = @"SELECT IP.insumo as IDinsumo, I.insumo, IP.cantidad, PI.precio
                                FROM itemsProducto IP
                                INNER JOIN Insumos I ON I.idInsumo = IP.insumo
                                INNER JOIN Medidas M ON M.idMedida = IP.medida
+                               INNER JOIN precioInsumos PI ON PI.idInsumo = IP.insumo
                                WHERE IP.producto = @producto";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@producto", idProducto);
 
-                MySqlDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
-                while (dr.Read())
-                {
-                    dgvItemProducto.Rows.Add(
-                    Convert.ToString(dr["idItemProducto"]),
-                    Convert.ToString(dr["idInsumo"]),
-                    Convert.ToString(dr["Insumo"]),
-                    Convert.ToString(dr["idMedida"]),
-                    Convert.ToString(dr["Medida"]),
-                    Convert.ToString(dr["cantidad"]));
-                }
+                da.Fill(dt);
+                dgvItemProducto.DataSource = dt;                
 
-                dr.Close();
                 MySQL.DisconnectDB();
             }
 

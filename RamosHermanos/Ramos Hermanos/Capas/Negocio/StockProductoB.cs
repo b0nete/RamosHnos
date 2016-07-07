@@ -14,7 +14,7 @@ namespace RamosHermanos.Capas.Negocio
 {
     class StockProductoB
     {
-        public static bool ExisteStock(StockProductoEntity stockP)
+        public static bool ExisteStock(int idProducto)
         {
             MySQL.ConnectDB();
 
@@ -22,7 +22,7 @@ namespace RamosHermanos.Capas.Negocio
                              WHERE idProducto = @idProducto";
 
             MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-            cmd.Parameters.AddWithValue("@idProducto", stockP.idProducto);
+            cmd.Parameters.AddWithValue("@idProducto", idProducto);
 
             int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -30,6 +30,38 @@ namespace RamosHermanos.Capas.Negocio
                 return false;
             else
                 return true;
+        }
+
+        public static void UpdateStock(StockProductoEntity stockProducto)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SET @@sql_safe_updates = 0; 
+                                 UPDATE stockProducto
+                                 SET stockMinimo = @stockMinimo, stockMaximo = @stockMaximo, stockActual = @stockActual, fechaActualizacion = @fechaActualizacion
+                                 WHERE idProducto = @idProducto;
+                                 SET @@sql_safe_updates = 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("idProducto", stockProducto.idProducto);
+                cmd.Parameters.AddWithValue("@stockMinimo", stockProducto.stockMinimo);
+                cmd.Parameters.AddWithValue("@stockMaximo", stockProducto.stockMaximo);
+                cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);
+                cmd.Parameters.AddWithValue("@fechaActualizacion", stockProducto.fechaActualizacion);
+                
+                cmd.ExecuteNonQuery();
+
+                // MessageBox.Show("Cliente Actualizado!");
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
         }
 
         public static StockProductoEntity BuscarStock(int idProducto)

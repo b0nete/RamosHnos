@@ -39,7 +39,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             {
                 DataGridViewRow row = cell.OwningRow;
                 formProveedor frmP = new formProveedor();
-                frmP.Show();
+                
                 //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
                 proveedor.idProveedor = Convert.ToInt32(row.Cells["colIDProveedor"].Value.ToString());
                 ProveedorB.BuscarIdProv(proveedor);
@@ -65,6 +65,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 TelefonoB.CargarTXT(frmP.txtTel, frmP.txtidprov, 2);
 
                 frmP.tabProveedor.SelectedTab = frmP.tabInformacion;
+                frmP.Show();
                 this.Close();
 
             }

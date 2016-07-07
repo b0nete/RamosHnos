@@ -146,6 +146,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabInformacionJ = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label66 = new System.Windows.Forms.Label();
@@ -243,7 +244,6 @@
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.btnSaveVisita = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
             this.tabMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.tabListado.SuspendLayout();
@@ -295,6 +295,7 @@
             this.rbAnuladas.TabIndex = 3;
             this.rbAnuladas.Text = "Anuladas";
             this.rbAnuladas.UseVisualStyleBackColor = true;
+            this.rbAnuladas.Visible = false;
             this.rbAnuladas.CheckedChanged += new System.EventHandler(this.rbAnuladas_CheckedChanged);
             // 
             // rbNoPagas
@@ -1592,6 +1593,17 @@
             this.tabInformacionJ.TabIndex = 6;
             this.tabInformacionJ.Text = "Informacion";
             // 
+            // button11
+            // 
+            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.Location = new System.Drawing.Point(671, 498);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(28, 28);
+            this.button11.TabIndex = 81;
+            this.button11.UseVisualStyleBackColor = true;
+            // 
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.comboBox2);
@@ -2699,17 +2711,6 @@
             this.lblTitle.TabIndex = 117;
             this.lblTitle.Text = "Clientes";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button11
-            // 
-            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(671, 498);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(28, 28);
-            this.button11.TabIndex = 81;
-            this.button11.UseVisualStyleBackColor = true;
             // 
             // formCliente
             // 

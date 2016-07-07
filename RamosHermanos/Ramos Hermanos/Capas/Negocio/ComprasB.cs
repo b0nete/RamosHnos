@@ -119,5 +119,88 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static DataTable SearchPagas(int idProveedor, DataGridView dgvMovimientos)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                DataTable dt = new DataTable();
+
+                string query = @"SELECT tipofactura, fecha, numFactura, fechaVencimiento, total, formaPago
+                                FROM Compras C
+                                INNER JOIN Proveedores P ON P.idProveedor = C.proveedor
+                                WHERE proveedor = @proveedor and C.estado = 'Pagado' and total > 0";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                cmd.Parameters.AddWithValue("@proveedor", idProveedor);
+
+                int resultado = 1;
+                if (resultado == 0)
+                {
+                    //MessageBox.Show("No existen facturas pagas!");
+                }
+                else
+                {
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    dgvMovimientos.AutoGenerateColumns = false;
+                    dgvMovimientos.DataSource = dt;
+                }
+
+                MySQL.DisconnectDB();
+                return dt;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static DataTable SearchPendientes(int idProveedor, DataGridView dgvMovimientos)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                DataTable dt = new DataTable();
+
+                string query = @"SELECT tipofactura, fecha, numFactura, fechaVencimiento, total, formaPago
+                                FROM Compras C
+                                INNER JOIN Proveedores P ON P.idProveedor = C.proveedor
+                                WHERE proveedor = @proveedor and C.estado = 'Pendiente' and total > 0";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                cmd.Parameters.AddWithValue("@proveedor", idProveedor);
+
+                int resultado = 1;
+                if (resultado == 0)
+                {
+                    //MessageBox.Show("No existen facturas pendientes!");
+                }
+                else
+                {
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    dgvMovimientos.AutoGenerateColumns = false;
+                    dgvMovimientos.DataSource = dt;
+                }
+
+                MySQL.DisconnectDB();
+                return dt;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         }
 }
