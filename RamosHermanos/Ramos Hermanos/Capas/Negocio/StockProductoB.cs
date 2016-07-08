@@ -95,16 +95,11 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                //cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
-                //cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);
-                //cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
-                //cmd.Parameters.AddWithValue("@valorAnterior", stockProducto.valorAnterior);
-                //cmd.Parameters.AddWithValue("@valorNuevo", stockProducto.valorNuevo);
-
                 if (stockProducto.valorAnterior < stockProducto.valorNuevo)
                 {
                     int valorResultante = stockProducto.valorNuevo - stockProducto.valorAnterior;
-                    stockProducto.stockActual = stockProducto.stockActual - valorResultante;
+                    MessageBox.Show(Convert.ToString(stockProducto.stockActual));
+                    stockProducto.stockActual = stockProducto.stockActual + valorResultante;
 
                     cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
                     cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);
@@ -113,11 +108,13 @@ namespace RamosHermanos.Capas.Negocio
                     cmd.Parameters.AddWithValue("@valorNuevo", stockProducto.valorNuevo);
 
                     cmd.ExecuteNonQuery();
+                    // OK
                 }
-                else
+                else if (stockProducto.valorAnterior > stockProducto.valorNuevo)
                 {
-                    int valorResultante = stockProducto.valorNuevo + stockProducto.valorAnterior;
-                    stockProducto.stockActual = stockProducto.stockActual + valorResultante;
+                    int valorResultante = stockProducto.valorAnterior - stockProducto.valorNuevo;
+                    MessageBox.Show(Convert.ToString(stockProducto.stockActual));
+                    stockProducto.stockActual = stockProducto.stockActual - valorResultante;
 
                     cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
                     cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);

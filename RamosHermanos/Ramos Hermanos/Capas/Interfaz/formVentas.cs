@@ -81,11 +81,6 @@ namespace RamosHermanos.Capas.Interfaz
                 itemFactura.subTotal = Convert.ToDouble(dRow.Cells["colSubTotal"].Value.ToString());
                 itemFactura.carga = "C";
                 itemsFacturaB.InsertItemFactura(itemFactura);
-
-                stockProducto.idProducto = itemFactura.producto;
-                stockProducto.valorAnterior = cantidadValorAnterior;
-                stockProducto.valorNuevo = cantidadValorNuevo;
-                StockProductoB.UpdateStock2(stockProducto);
             }
         }
 
@@ -210,6 +205,11 @@ namespace RamosHermanos.Capas.Interfaz
 
                 txtTotal.Text = Convert.ToString(total);
             }
+
+            stockProducto.idProducto = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCodigo"].Value.ToString());
+            stockProducto.valorAnterior = cantidadValorAnterior;
+            stockProducto.valorNuevo = cantidadValorNuevo;
+            StockProductoB.UpdateStock2(stockProducto);
         }
 
         private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
