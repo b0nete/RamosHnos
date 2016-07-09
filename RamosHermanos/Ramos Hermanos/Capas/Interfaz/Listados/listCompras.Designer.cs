@@ -148,6 +148,7 @@
             this.rbNoPagas.TabStop = true;
             this.rbNoPagas.Text = "No Pagas";
             this.rbNoPagas.UseVisualStyleBackColor = true;
+            this.rbNoPagas.CheckedChanged += new System.EventHandler(this.rbNoPagas_CheckedChanged);
             // 
             // txtParametro
             // 
@@ -166,6 +167,7 @@
             this.rbPagas.TabIndex = 56;
             this.rbPagas.Text = "Pagas";
             this.rbPagas.UseVisualStyleBackColor = true;
+            this.rbPagas.CheckedChanged += new System.EventHandler(this.rbPagas_CheckedChanged);
             // 
             // cbParametro
             // 

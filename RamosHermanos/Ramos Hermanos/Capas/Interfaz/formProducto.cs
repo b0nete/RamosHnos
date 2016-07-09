@@ -372,23 +372,23 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void SaveStock()
         {
-            if (VerificarCamposStock() == false)
-            {
-                return;
-            }
-            else
-            {
-                if (StockProductoB.ExisteStock(Convert.ToInt32(txtIDProd.Text)) == true)
-                {
-                    CargarStock();
-                    StockProductoB.UpdateStock(stock);
-                }
-                else
-                {
-                    CargarStock();
-                    StockProductoB.InsertStock(stock);
-                }
-            }
+            //if (VerificarCamposStock() == false)
+            //{
+            //    return;
+            //}
+            //else
+            //{
+            //    if (StockProductoB.ExisteStock(Convert.ToInt32(txtIDProd.Text)) == true)
+            //    {
+            //        CargarStock();
+            //        StockProductoB.UpdateStock(stock);
+            //    }
+            //    else
+            //    {
+            //        CargarStock();
+            //        StockProductoB.InsertStock(stock);
+            //    }
+            //}
         
         
         }

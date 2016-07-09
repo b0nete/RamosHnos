@@ -573,7 +573,7 @@
             // 
             this.colPrecioUnitario.DataPropertyName = "precio";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "c";
+            dataGridViewCellStyle1.Format = "C2";
             this.colPrecioUnitario.DefaultCellStyle = dataGridViewCellStyle1;
             this.colPrecioUnitario.HeaderText = "Precio Unitario";
             this.colPrecioUnitario.Name = "colPrecioUnitario";
@@ -588,7 +588,7 @@
             // 
             this.colSubTotal.DataPropertyName = "subTotal";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "c";
+            dataGridViewCellStyle2.Format = "C2";
             this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle2;
             this.colSubTotal.HeaderText = "SubTotal";
             this.colSubTotal.Name = "colSubTotal";

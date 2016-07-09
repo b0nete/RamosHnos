@@ -93,23 +93,36 @@ namespace RamosHermanos.Capas.Negocio
 	}
         }
 
-        public static void ListCompras(DataGridView dgvList)
+        public static void ListCompras(DataGridView dgvList, string WHERE)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT idcompras as colCompra, fecha as colFecha, total as colTotal, razonSocial as colProveedor, total as colTotal
+                string addQuery = "";
+
+                string query = @"SELECT idCompras as colCompra, fecha as colFecha, P.razonSocial as colProveedor, total as colTotal, C.estado as colEstado
                                 FROM Compras C
-                                INNER JOIN Proveedores P ON P.idProveedor = C.proveedor";
+                                INNER JOIN Proveedores P ON P.idProveedor = C.proveedor
+                                WHERE total > 0";
 
                 DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(query, MySQL.sqlcnx);
+
+                if (WHERE == "Pagado")
+                {
+                    addQuery = " and C.estado = 'Pagado'";
+                }
+                else if (WHERE == "Pendiente")
+                {
+
+                    addQuery = " and C.estado = 'Pendiente'";
+                }
+
+                MySqlDataAdapter da = new MySqlDataAdapter(query + addQuery, MySQL.sqlcnx);
 
                 da.Fill(dt);
 
                 dgvList.DataSource = dt;
-                dgvList.AutoGenerateColumns = false;
 
                 MySQL.DisconnectDB();
             }

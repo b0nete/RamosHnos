@@ -32,7 +32,25 @@ namespace RamosHermanos.Capas.Negocio
                 return true;
         }
 
-        public static void UpdateStock(StockProductoEntity stockProducto)
+//        public static int stockDisponible(int idProducto)
+//        {
+//            MySQL.ConnectDB();
+
+//            string query = @"SELECT COUNT(*) FROM stockProducto
+//                             WHERE idProducto = @idProducto";
+
+//            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+//            cmd.Parameters.AddWithValue("@idProducto", idProducto);
+
+//            int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+
+//            if (resultado == 0)
+//                return false;
+//            else
+//                return true;
+//        }
+
+        public static void UpdateStockInicial(StockProductoEntity stockProducto)
         {
             try
             {
@@ -40,7 +58,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 string query = @"SET @@sql_safe_updates = 0; 
                                  UPDATE stockProducto
-                                 SET stockMinimo = @stockMinimo, stockMaximo = @stockMaximo, stockActual = @stockActual, fechaActualizacion = @fechaActualizacion
+                                 SET stockMinimo = @stockMinimo, stockMaximo = @stockMaximo, fechaActualizacion = @fechaActualizacion
                                  WHERE idProducto = @idProducto;
                                  SET @@sql_safe_updates = 1";
 
@@ -64,7 +82,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void UpdateStock2(StockProductoEntity stockProducto)
+        public static void UpdateStockUpdate(StockProductoEntity stockProducto)
         {
             try
             {
@@ -98,7 +116,6 @@ namespace RamosHermanos.Capas.Negocio
                 if (stockProducto.valorAnterior < stockProducto.valorNuevo)
                 {
                     int valorResultante = stockProducto.valorNuevo - stockProducto.valorAnterior;
-                    MessageBox.Show(Convert.ToString(stockProducto.stockActual));
                     stockProducto.stockActual = stockProducto.stockActual + valorResultante;
 
                     cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
@@ -108,12 +125,10 @@ namespace RamosHermanos.Capas.Negocio
                     cmd.Parameters.AddWithValue("@valorNuevo", stockProducto.valorNuevo);
 
                     cmd.ExecuteNonQuery();
-                    // OK
                 }
                 else if (stockProducto.valorAnterior > stockProducto.valorNuevo)
                 {
                     int valorResultante = stockProducto.valorAnterior - stockProducto.valorNuevo;
-                    MessageBox.Show(Convert.ToString(stockProducto.stockActual));
                     stockProducto.stockActual = stockProducto.stockActual - valorResultante;
 
                     cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
@@ -124,6 +139,55 @@ namespace RamosHermanos.Capas.Negocio
 
                     cmd.ExecuteNonQuery();
                 }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void UpdateStockInsert(StockProductoEntity stockProducto, string carga)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = "";      
+
+                if (carga == "C")
+                {
+                    string queryLess = @"SET @@sql_safe_updates = 0; 
+                                 UPDATE stockProducto
+                                 SET stockActual = stockActual - @valorNuevo, fechaActualizacion = @fechaActualizacion
+                                 WHERE idProducto = @idProducto;
+                                 SET @@sql_safe_updates = 1";
+
+                    query = queryLess;
+                }
+                else if (carga == "D")
+                {
+                    string queryPlus = @"SET @@sql_safe_updates = 0; 
+                                 UPDATE stockProducto
+                                 SET stockActual = stockActual + @valorNuevo, fechaActualizacion = @fechaActualizacion
+                                 WHERE idProducto = @idProducto;
+                                 SET @@sql_safe_updates = 1";
+
+                    query = queryPlus;
+                }
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);               
+
+                cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
+                cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);
+                cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
+                cmd.Parameters.AddWithValue("@valorAnterior", stockProducto.valorAnterior);
+                cmd.Parameters.AddWithValue("@valorNuevo", stockProducto.valorNuevo);
+
+                cmd.ExecuteNonQuery();
+
+                MySQL.DisconnectDB();
             }
 
             catch (Exception ex)
@@ -341,9 +405,9 @@ namespace RamosHermanos.Capas.Negocio
         {
             MySQL.ConnectDB();
 
-            string query = @"SELECT * 
-                            FROM stockProductoLog
-                            WHERE idProducto = @idProducto and idStockProductoLog = (SELECT MAX(idStockProductoLog) FROM stockproductolog WHERE idProducto = @idProducto)";
+            string query = @"SELECT stockActual
+                            FROM stockProducto
+                            WHERE idProducto = @idProducto";
 
             MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
             cmd.Parameters.AddWithValue("@idProducto", idProducto);
@@ -353,9 +417,11 @@ namespace RamosHermanos.Capas.Negocio
 
             da.Fill(dt);
 
-            if (Convert.ToInt32(dt.Rows[0]["stockNuevo"].ToString()) < cantidad)
+            int stockDisponible = Convert.ToInt32(dt.Rows[0]["stockActual"].ToString());
+
+            if (stockDisponible < cantidad)
             {
-                MessageBox.Show("No hay stock disponible!");
+                MessageBox.Show("Disponibilidad stock: " + stockDisponible + " unidades");
                 return false;
             }
             else

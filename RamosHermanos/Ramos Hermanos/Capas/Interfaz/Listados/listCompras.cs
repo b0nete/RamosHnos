@@ -25,7 +25,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             this.dgvCompras.Columns["colTotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
 
             dgvCompras.AutoGenerateColumns = false;
-            ComprasB.ListCompras(dgvCompras);
+            ComprasB.ListCompras(dgvCompras, "Pendiente");
         }
 
         private void BuscarFactura()
@@ -84,6 +84,18 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         private void dgvCompras_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             BuscarFactura();
+        }
+
+        private void rbPagas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbPagas.Checked == true)
+                ComprasB.ListCompras(dgvCompras, "Pagado");
+        }
+
+        private void rbNoPagas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbNoPagas.Checked == true)
+                ComprasB.ListCompras(dgvCompras, "Pendiente");
         }
     }
 }

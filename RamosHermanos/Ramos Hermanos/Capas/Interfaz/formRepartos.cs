@@ -26,6 +26,7 @@ namespace RamosHermanos.Capas.Interfaz
         public int iRow;
         public int iFactura;
         public int cantidadPreEdit;
+        public int cantidadAfterEdit;
         //public int total;
 
         public formRepartos()
@@ -152,6 +153,8 @@ namespace RamosHermanos.Capas.Interfaz
         PedidoEntity pedido = new PedidoEntity();
 
         itemPedidoEntity itemPedido = new itemPedidoEntity();
+
+        StockProductoEntity stockProducto = new StockProductoEntity();
 
 
         private void InsertFactura(string nombreColumna)
@@ -340,7 +343,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvRepartos_CellEndEdit_1(object sender, DataGridViewCellEventArgs e)
         {
-            itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+            itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();            
 
             //CARGAS
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colSCarga")
@@ -725,13 +728,45 @@ namespace RamosHermanos.Capas.Interfaz
             itemFactura.producto = idProducto;
             itemFactura.carga = carga;
 
+            cantidadAfterEdit = Convert.ToInt32(dgvRepartos.CurrentRow.Cells[colCarga].Value);
+
             //Corroborar Stock
-            bool dispStock = StockProductoB.DisponiblidadStock(idProducto, Convert.ToInt32(dgvRepartos.CurrentRow.Cells[colCarga].Value.ToString()));
-            if (dispStock == false)
+            if (Convert.ToString(dgvRepartos.CurrentRow.Cells[colCarga].Value) != string.Empty)
             {
-                dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
-                return;
+                bool dispStock = StockProductoB.DisponiblidadStock(idProducto, Convert.ToInt32(dgvRepartos.CurrentRow.Cells[colCarga].Value.ToString()));
+                if (dispStock == false)
+                {
+                    dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
+                    return;
+                }
             }
+            else
+            {
+                int cantidadResultante = Math.Abs(cantidadPreEdit - cantidadAfterEdit);
+                bool dispStock = StockProductoB.DisponiblidadStock(idProducto, cantidadResultante);
+                if (dispStock == false)
+                {
+                    dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
+                    return;
+                }
+            }
+            
+
+            //Actualizamos stock
+            stockProducto.idProducto = idProducto;
+            stockProducto.valorNuevo = cantidadAfterEdit;
+            stockProducto.valorAnterior = cantidadPreEdit;
+
+            if (Convert.ToString(dgvRepartos.CurrentRow.Cells[colCarga].Value) == string.Empty)
+            {
+                StockProductoB.UpdateStockInsert(stockProducto, carga);
+            }
+            else
+            {
+                StockProductoB.UpdateStockUpdate(stockProducto);
+            }
+            
+            
 
             if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
             {
