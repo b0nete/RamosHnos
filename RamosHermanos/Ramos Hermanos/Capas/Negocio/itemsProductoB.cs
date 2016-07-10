@@ -18,7 +18,11 @@ namespace RamosHermanos.Capas.Negocio
         {
             try
             {
-                MySQL.ConnectDB();
+                //MySQL.ConnectDB();
+
+                MySqlConnection sqlc = new MySqlConnection("Server = localhost; Database = ramosdb; UID = root; Password = adminroot;");
+                sqlc.Open();
+
                 dgv.Rows.Clear();
 
                 string query = @"SELECT IP.insumo as IDinsumo, I.insumo, IP.cantidad, PI.precio
@@ -28,7 +32,7 @@ namespace RamosHermanos.Capas.Negocio
                                INNER JOIN precioInsumos PI ON PI.idInsumo = IP.insumo
                                WHERE IP.producto = @idProducto";
 
-                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                MySqlCommand cmd = new MySqlCommand(query, sqlc);
 
                 cmd.Parameters.AddWithValue("@idProducto", idProducto);
 
@@ -41,8 +45,8 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["insumo"]),
                     Convert.ToString(""),
                     Convert.ToString(""),
-                    Convert.ToString(dr["cantidad"]),
                     Convert.ToString(dr["precio"]),
+                    Convert.ToString(dr["cantidad"]),
                     Convert.ToString(""));
                 }
 
@@ -95,6 +99,9 @@ namespace RamosHermanos.Capas.Negocio
                 //Buscamos valor anterior del itemFactura
                 MySQL.ConnectDB();
 
+
+                int retorno;
+
                 string queryConsultaValor = @"SELECT *
                                             FROM itemsProducto
                                             WHERE insumo = @insumo and cantidad = @cantidad";
@@ -108,9 +115,17 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlDataAdapter daValor = new MySqlDataAdapter(cmdConsultaValor);
 
                 daValor.Fill(dtValor);
-                DataRow drValor = dtValor.Rows[0];
 
-                int retorno = Convert.ToInt32(drValor["cantidad"].ToString());
+                if (dtValor.Rows.Count == 0)
+                {
+                    retorno = 0;
+                }
+                else
+                {
+                    DataRow drValor = dtValor.Rows[0];
+
+                    retorno = Convert.ToInt32(drValor["cantidad"].ToString());
+                }
 
                 MySQL.DisconnectDB();
                 return retorno;

@@ -70,6 +70,8 @@ namespace RamosHermanos.Capas.Negocio
                 //Buscamos valor anterior del itemFactura
                 MySQL.ConnectDB();
 
+                int cantidad;
+
                 string queryConsultaValor = @"SELECT *
                                               FROM itemsFactura 
                                               WHERE factura = @idFactura and producto = @producto and carga = @carga";
@@ -84,9 +86,16 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlDataAdapter daValor = new MySqlDataAdapter(cmdConsultaValor);
 
                 daValor.Fill(dtValor);
-                DataRow drValor = dtValor.Rows[0];
 
-                int cantidad = Convert.ToInt32(drValor["cantidad"].ToString());   
+                if (dtValor.Rows.Count == 0)
+                {
+                    cantidad = 0;
+                }
+                else
+                {
+                    DataRow drValor = dtValor.Rows[0];
+                    cantidad = Convert.ToInt32(drValor["cantidad"].ToString());
+                }
 
                 MySQL.DisconnectDB();
                 return cantidad;
@@ -149,11 +158,12 @@ WHERE (producto = 1 or producto = 2 or producto = 3  or producto = 4 or producto
 
                 string query = @"SELECT *
 FROM itemsFactura 
-WHERE factura = @factura and (producto =  1 or producto =  2 or producto =  3 or producto =  4 or producto =  5 or producto =  6)";
+WHERE factura = @factura and (producto =  1 or producto =  2 or producto =  3 or producto =  4 or producto =  5 or producto =  6) and carga = @carga";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
+                cmd.Parameters.AddWithValue("@carga", itemFactura.carga);
 
                 int resultado = Convert.ToInt32(cmd.ExecuteScalar());
                 if (resultado != 0)

@@ -719,8 +719,19 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 foreach (DataGridViewRow dRow in dgvConformacion.Rows)
                 {
-                    int idInsumo = Convert.ToInt32(dRow.Cells["colIDInsumo"].Value.ToString());
-                    double cantidad = Convert.ToDouble(dRow.Cells["colCantidadm"].Value.ToString());
+                    int idInsumo;
+                    double cantidad;
+                    if (Convert.ToString(dRow.Cells["colCantidadm"].Value) != string.Empty && Convert.ToString(dRow.Cells["colIDInsumo"].Value) != string.Empty)
+                    {
+                        idInsumo = Convert.ToInt32(dRow.Cells["colIDInsumo"].Value.ToString());
+                        cantidad = Convert.ToDouble(dRow.Cells["colCantidadm"].Value);
+                    }
+                    else
+                    {
+                        return;
+                    }
+
+                    
 
                     dRow.Cells["colSubTotal"].Value = InsumoB.CalcularCU(idInsumo, cantidad);
                 }
@@ -776,6 +787,10 @@ namespace RamosHermanos.Capas.Interfaz
             if (Convert.ToString(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value) != string.Empty)
             {
                 cantidadPreEdit = Convert.ToInt32(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value);
+            }
+            else
+            {
+                cantidadPreEdit = 0;
             }
         }
     }

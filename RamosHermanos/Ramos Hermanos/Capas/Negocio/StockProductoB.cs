@@ -243,6 +243,44 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void ListarStock(int idProducto, DataGridView dgvStock)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"(SELECT 'PRODUCCION' as operacion, IP.Produccion as numOperacion, IP.cantidad, P.fechaProduccion as fecha
+                                FROM itemsProduccion IP
+                                INNER JOIN Produccion P ON P.idProduccion = IP.produccion
+                                WHERE IP.producto = @idProducto
+                                ORDER BY P.fechaProduccion DESC)
+
+                                UNION
+
+                                (SELECT 'VENTA' as operacion, F.idFactura as numOperacion, -(FI.cantidad), F.fechaFactura as fecha
+                                FROM itemsFactura FI
+                                INNER JOIN Facturas F ON FI.factura = F.idFactura
+                                WHERE FI.producto = @idProducto
+                                ORDER BY F.fechaFactura DESC)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idProducto", idProducto);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                dgvStock.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static void ActualizarStock(LogStockProductoEntity logStock)
         {
             try

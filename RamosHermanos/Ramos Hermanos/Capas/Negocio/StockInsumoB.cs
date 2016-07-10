@@ -78,6 +78,45 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void ListarStock(int idInsumo, DataGridView dgvStock)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"(SELECT 'PRODUCCION' as operacion, P.idproduccion as numOperacion, -(IP.cantidad * IIP.cantidad) as cantidad, P.fechaProduccion as fecha
+                                FROM itemsProducto IP
+                                INNER JOIN Produccion P ON P.idProduccion = IP.insumo
+                                INNER JOIN itemsProduccion IIP ON IIP.produccion = P.idProduccion  
+                                WHERE IP.Insumo = @idInsumo
+                                ORDER BY P.fechaProduccion DESC)
+
+                                UNION
+
+                                (SELECT 'COMPRA' as operacion, C.idCompras as numOperacion, PI.cantidad, C.fecha as fecha
+                                FROM itemsCompra PI
+                                INNER JOIN Compras C ON PI.compra = C.idCompras
+                                WHERE PI.idInsumo = @idInsumo
+                                ORDER BY C.fecha DESC)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idInsumo", idInsumo);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                dgvStock.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static void UpdateStockInicial(StockInsumoEntity stockInsumo)
         {
             try

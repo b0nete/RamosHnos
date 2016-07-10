@@ -198,7 +198,13 @@ namespace RamosHermanos.Capas.Interfaz
             //Verificamos stock
             int idProducto = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCodigo"].Value);
             int cantidad = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCantidad"].Value);
-            cantidadValorAnterior = itemsFacturaB.BuscarCantidadAnterior(Convert.ToInt32(txtIDFactura.Text), idProducto, dgvFactura.CurrentRow.Cells["colCarga"].Value.ToString());
+
+            if (Convert.ToString(dgvFactura.CurrentRow.Cells["colCarga"].Value) != string.Empty && txtIDFactura.Text != string.Empty)
+            {
+                cantidadValorAnterior = itemsFacturaB.BuscarCantidadAnterior(Convert.ToInt32(txtIDFactura.Text), idProducto, dgvFactura.CurrentRow.Cells["colCarga"].Value.ToString());
+            }
+
+            
 
             int cantidadResultante = Math.Abs(cantidadValorAnterior - cantidadValorNuevo);
             bool dispStock = StockProductoB.DisponiblidadStock(idProducto, cantidadResultante);

@@ -110,16 +110,14 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                         frmI.txtStockA.Text = Convert.ToString(stockInsumo.stockNuevo);
 
                         //Cargar Operaciones Stock      
-                        
-                        StockProductoB.StockLogDGV(frmI.dgvStock, frmI.txtidInsumo);
-                        frmI.dgvStock.AutoGenerateColumns = false;
 
-                        
+                        StockInsumoB.ListarStock(insumo.idInsumo, frmI.dgvStock);
+                        frmI.dgvStock.AutoGenerateColumns = false;                        
                     }
 
                     
 
-                    StockInsumoB.cargardgvStock(frmI.dgvStock, frmI.txtidInsumo);
+                    //StockInsumoB.cargardgvStock(frmI.dgvStock, frmI.txtidInsumo);
 
                     //frmPro.cbTipoProducto.SelectedValue = producto.tipoProducto;
                     //frmI.txtInsumo.Text= Convert.ToString(insumo.insumo);

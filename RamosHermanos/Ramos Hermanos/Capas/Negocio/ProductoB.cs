@@ -188,6 +188,7 @@ namespace RamosHermanos.Capas.Negocio
             try
             {
                 MySQL.ConnectDB();
+
                 dgv.Rows.Clear();
 
                 string query = @"SELECT idProducto, M.marca, P.producto, P.cantidad, MM.medida

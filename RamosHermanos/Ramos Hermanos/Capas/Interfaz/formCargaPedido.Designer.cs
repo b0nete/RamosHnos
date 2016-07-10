@@ -41,11 +41,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.btnSave);
             this.groupBox1.Controls.Add(this.txt4);
             this.groupBox1.Controls.Add(this.txt10);
@@ -69,11 +71,12 @@
             this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(145, 106);
+            this.btnSave.Location = new System.Drawing.Point(145, 77);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(28, 28);
             this.btnSave.TabIndex = 6;
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txt4
@@ -83,6 +86,8 @@
             this.txt4.Size = new System.Drawing.Size(66, 20);
             this.txt4.TabIndex = 5;
             this.txt4.Text = "0";
+            this.txt4.TextChanged += new System.EventHandler(this.txt4_TextChanged);
+            this.txt4.Validated += new System.EventHandler(this.txt4_Validated);
             // 
             // txt10
             // 
@@ -91,6 +96,8 @@
             this.txt10.Size = new System.Drawing.Size(66, 20);
             this.txt10.TabIndex = 4;
             this.txt10.Text = "0";
+            this.txt10.TextChanged += new System.EventHandler(this.txt10_TextChanged);
+            this.txt10.Validated += new System.EventHandler(this.txt10_Validated);
             // 
             // txt12
             // 
@@ -99,6 +106,8 @@
             this.txt12.Size = new System.Drawing.Size(66, 20);
             this.txt12.TabIndex = 3;
             this.txt12.Text = "0";
+            this.txt12.TextChanged += new System.EventHandler(this.txt12_TextChanged);
+            this.txt12.Validated += new System.EventHandler(this.txt12_Validated);
             // 
             // txt20
             // 
@@ -107,6 +116,8 @@
             this.txt20.Size = new System.Drawing.Size(66, 20);
             this.txt20.TabIndex = 6;
             this.txt20.Text = "0";
+            this.txt20.TextChanged += new System.EventHandler(this.txt20_TextChanged);
+            this.txt20.Validated += new System.EventHandler(this.txt20_Validated);
             // 
             // txt25
             // 
@@ -115,6 +126,8 @@
             this.txt25.Size = new System.Drawing.Size(66, 20);
             this.txt25.TabIndex = 1;
             this.txt25.Text = "0";
+            this.txt25.TextChanged += new System.EventHandler(this.txt25_TextChanged);
+            this.txt25.Validated += new System.EventHandler(this.txt25_Validated);
             // 
             // label5
             // 
@@ -161,6 +174,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "5 (25LTs)";
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button1.Location = new System.Drawing.Point(145, 106);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 28);
+            this.button1.TabIndex = 91;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // formCargaPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,7 +193,7 @@
             this.ClientSize = new System.Drawing.Size(201, 166);
             this.Controls.Add(this.groupBox1);
             this.Name = "formCargaPedido";
-            this.Text = "formCargaPedido";
+            this.Text = "Carga";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formCargaPedido_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formCargaPedido_FormClosed);
             this.Load += new System.EventHandler(this.formCargaPedido_Load);
@@ -192,5 +217,6 @@
         public System.Windows.Forms.TextBox txt12;
         public System.Windows.Forms.TextBox txt20;
         public System.Windows.Forms.TextBox txt25;
+        private System.Windows.Forms.Button button1;
     }
 }

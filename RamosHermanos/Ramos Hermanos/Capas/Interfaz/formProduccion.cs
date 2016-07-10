@@ -57,8 +57,9 @@ namespace RamosHermanos.Capas.Interfaz
                 CargaItemProduccion(rowA);
                 itemProduccionB.InsertItemProduccion(itemProduccion);
 
-                CargaItemLogStock(rowA);
-                StockProductoB.ActualizarStock(logStock);
+                stockProducto.idProducto = Convert.ToInt32(rowA.Cells["colIDProducto"].Value);
+                stockProducto.valorNuevo = Convert.ToInt32(rowA.Cells["colCantidad"].Value);
+                StockProductoB.UpdateStockInsert(stockProducto, "D");
             }
         }
 
@@ -87,9 +88,9 @@ namespace RamosHermanos.Capas.Interfaz
             //Buscamos el stockActual
             StockProductoEntity stockP = StockProductoB.BuscarStock(logStock.idProducto);
             logStock.stockNuevo = stockP.stockNuevo;
-            
-
         }
+
+        StockProductoEntity stockProducto = new StockProductoEntity();
 
     }
 }

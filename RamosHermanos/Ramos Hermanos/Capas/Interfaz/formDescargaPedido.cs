@@ -14,7 +14,8 @@ namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formDescargaPedido : Form
     {
-
+        public int cantidadPreEdit;
+        public int cantidadAfterEdit;
         public string comprobante;
 
         public formDescargaPedido()
@@ -79,5 +80,115 @@ namespace RamosHermanos.Capas.Interfaz
 
         //Entidades
         itemFacturaEntity itemFactura = new itemFacturaEntity();
+
+        StockProductoEntity stockProducto = new StockProductoEntity();
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int total = Suma();
+
+            IForm formInterface = this.Owner as IForm;
+
+            if (formInterface != null)
+                formInterface.CompletarCelda(Convert.ToString(total));
+
+            this.Close();
+        }
+
+        private void CargaTXT(TextBox txt, int producto)
+        {
+            if (txt.Text == string.Empty)
+            {
+                txt.Text = "0";
+                return;
+            }
+
+            if (txt.Text != string.Empty && txt.Text != "0")
+            {
+                cantidadAfterEdit = Convert.ToInt32(txt.Text);
+                cantidadPreEdit = itemsFacturaB.BuscarCantidadAnterior(Convert.ToInt32(comprobante), producto, "D");
+
+                itemFactura.producto = producto;
+                itemFactura.cantidad = Convert.ToInt32(txt.Text);
+                itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
+                itemFactura.subTotal = itemFactura.precioUnitario * itemFactura.cantidad;
+                itemFactura.factura = comprobante;
+                itemFactura.carga = "D";
+
+                if (txt.Text != string.Empty)
+                {
+                    if (cantidadPreEdit > cantidadAfterEdit)
+                    {
+                        //Stock
+                        stockProducto.idProducto = producto;
+                        stockProducto.valorAnterior = cantidadPreEdit;
+                        stockProducto.valorNuevo = cantidadAfterEdit;
+                        StockProductoB.UpdateStockUpdate(stockProducto);
+                    }
+                    else
+                    {
+                        int cantidadResultante = cantidadAfterEdit - cantidadPreEdit;
+                        bool dispStock = StockProductoB.DisponiblidadStock(producto, cantidadResultante);
+                        if (dispStock == false)
+                        {
+                            txt.Text = cantidadPreEdit.ToString();
+                            return;
+                        }
+
+                        //Stock
+                        stockProducto.idProducto = Convert.ToInt32(producto);
+                        stockProducto.valorAnterior = cantidadPreEdit;
+                        stockProducto.valorNuevo = cantidadAfterEdit;
+                        StockProductoB.UpdateStockUpdate(stockProducto);
+                    }
+                }
+
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                {
+                    itemsFacturaB.UpdateItemFactura(itemFactura);
+                }
+                else
+                {
+                    itemsFacturaB.InsertItemFactura(itemFactura);
+                }
+            }
+        }
+
+        private void txt25_Validated(object sender, EventArgs e)
+        {
+            CargaTXT(txt25, 6);
+        }
+
+        private void txt20_Validated(object sender, EventArgs e)
+        {
+            CargaTXT(txt20, 5);
+        }
+
+        private void txt12_Validated(object sender, EventArgs e)
+        {
+            CargaTXT(txt12, 4);
+        }
+
+        private void txt10_Validated(object sender, EventArgs e)
+        {
+            CargaTXT(txt10, 3);
+        }
+
+        private void txt4_Validated(object sender, EventArgs e)
+        {
+            CargaTXT(txt4, 1);
+        }
+
+        private void formDescargaPedido_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            int total = Suma();
+
+            IForm formInterface = this.Owner as IForm;
+
+            if (formInterface != null)
+                formInterface.CompletarCelda(Convert.ToString(total));
+
+            this.Close();
+        }
     }
 }

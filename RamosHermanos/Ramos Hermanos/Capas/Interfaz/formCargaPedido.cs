@@ -18,6 +18,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         public string comprobante;
         public int iRow;
+        public int cantidadPreEdit;
+        public int cantidadAfterEdit;
 
         public formCargaPedido()
         {
@@ -68,6 +70,9 @@ namespace RamosHermanos.Capas.Interfaz
 
             if (txt.Text != string.Empty && txt.Text != "0")
             {
+                cantidadAfterEdit = Convert.ToInt32(txt.Text);
+                cantidadPreEdit = itemsFacturaB.BuscarCantidadAnterior(Convert.ToInt32(comprobante), producto, "C");
+
                 itemFactura.producto = producto;
                 itemFactura.cantidad = Convert.ToInt32(txt.Text);
                 itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
@@ -75,9 +80,40 @@ namespace RamosHermanos.Capas.Interfaz
                 itemFactura.factura = comprobante;
                 itemFactura.carga = "C";
 
+                if (txt.Text != string.Empty)
+                {
+                    if (cantidadPreEdit > cantidadAfterEdit)
+                    {
+                        //Stock
+                        stockProducto.idProducto = producto;
+                        stockProducto.valorAnterior = cantidadPreEdit;
+                        stockProducto.valorNuevo = cantidadAfterEdit;
+                        StockProductoB.UpdateStockUpdate(stockProducto);
+                    }
+                    else
+                    {
+                        int cantidadResultante = cantidadAfterEdit - cantidadPreEdit;
+                        bool dispStock = StockProductoB.DisponiblidadStock(producto, cantidadResultante);
+                        if (dispStock == false)
+                        {
+                            txt.Text = cantidadPreEdit.ToString();
+                            return;
+                        }
+
+                        //Stock
+                        stockProducto.idProducto = Convert.ToInt32(producto);
+                        stockProducto.valorAnterior = cantidadPreEdit;
+                        stockProducto.valorNuevo = cantidadAfterEdit;
+                        StockProductoB.UpdateStockUpdate(stockProducto);
+                    }
+                }
+
                 if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
                 {
+                    //DB
                     itemsFacturaB.UpdateItemFactura(itemFactura);
+                    //Stock
+
                 }
                 else
                 {
@@ -101,6 +137,95 @@ namespace RamosHermanos.Capas.Interfaz
             //frm.UpdateTotalFactura();
         }
 
-            
+        StockProductoEntity stockProducto = new StockProductoEntity();
+
+        private void verificarStockTXT(TextBox txt, int producto)
+        {
+            cantidadAfterEdit = Convert.ToInt32(txt.Text);
+            cantidadPreEdit = itemsFacturaB.BuscarCantidadAnterior(Convert.ToInt32(comprobante), producto, "C");
+
+            if (txt.Text != string.Empty)
+            {
+                if (cantidadPreEdit > cantidadAfterEdit)
+                {
+                    //Stock
+                    stockProducto.idProducto = producto;
+                    stockProducto.valorAnterior = cantidadPreEdit;
+                    stockProducto.valorNuevo = cantidadAfterEdit;
+                    StockProductoB.UpdateStockUpdate(stockProducto);
+                }
+                else
+                {
+                    int cantidadResultante = cantidadAfterEdit - cantidadPreEdit;
+                    bool dispStock = StockProductoB.DisponiblidadStock(producto, cantidadResultante);
+                    if (dispStock == false)
+                    {
+                        txt.Text = cantidadPreEdit.ToString();
+                        return;
+                    }
+
+                    //Stock
+                    stockProducto.idProducto = Convert.ToInt32(producto);
+                    stockProducto.valorAnterior = cantidadPreEdit;
+                    stockProducto.valorNuevo = cantidadAfterEdit;
+                    StockProductoB.UpdateStockUpdate(stockProducto);
+                }
+            }
+        }
+
+        private void txt25_TextChanged(object sender, EventArgs e)
+        {
+            //verificarStockTXT(txt25, 6);
+        }
+
+        private void txt20_TextChanged(object sender, EventArgs e)
+        {
+            //verificarStockTXT(txt25, 5);
+        }
+
+        private void txt12_TextChanged(object sender, EventArgs e)
+        {
+            //verificarStockTXT(txt25, 4);
+        }
+
+        private void txt10_TextChanged(object sender, EventArgs e)
+        {
+            //verificarStockTXT(txt25, 3);
+        }
+
+        private void txt4_TextChanged(object sender, EventArgs e)
+        {
+            //verificarStockTXT(txt25, 1);
+        }
+
+        private void txt25_Validated(object sender, EventArgs e)
+        {
+            CargaTXT(txt25, 6);
+        }
+
+        private void txt20_Validated(object sender, EventArgs e)
+        {
+            CargaTXT(txt20, 5);
+        }
+
+        private void txt12_Validated(object sender, EventArgs e)
+        {
+            CargaTXT(txt12, 4);
+        }
+
+        private void txt10_Validated(object sender, EventArgs e)
+        {
+            CargaTXT(txt10, 3);
+        }
+
+        private void txt4_Validated(object sender, EventArgs e)
+        {
+            CargaTXT(txt4, 1);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
