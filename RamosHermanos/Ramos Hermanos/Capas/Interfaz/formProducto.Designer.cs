@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title7 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProducto));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tabEstadisticas = new System.Windows.Forms.TabPage();
             this.chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -63,6 +63,13 @@
             this.txtCostoProd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvConformacion = new System.Windows.Forms.DataGridView();
+            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecioM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidadm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSaveConformacion = new System.Windows.Forms.Button();
             this.btnDelInsumo = new System.Windows.Forms.Button();
             this.btnAddInsumo = new System.Windows.Forms.Button();
@@ -139,13 +146,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.tabProducto = new System.Windows.Forms.TabControl();
-            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIDMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecioM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidadm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabEstadisticas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -193,17 +193,17 @@
             // 
             // chartProductos
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartProductos.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chartProductos.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            this.chartProductos.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartProductos.Legends.Add(legend1);
             this.chartProductos.Location = new System.Drawing.Point(378, 6);
             this.chartProductos.Name = "chartProductos";
             this.chartProductos.Size = new System.Drawing.Size(349, 287);
             this.chartProductos.TabIndex = 3;
             this.chartProductos.Text = "chart1";
-            title7.Name = "Title1";
-            this.chartProductos.Titles.Add(title7);
+            title1.Name = "Title1";
+            this.chartProductos.Titles.Add(title1);
             // 
             // groupBox7
             // 
@@ -501,6 +501,7 @@
             this.dgvConformacion.Name = "dgvConformacion";
             this.dgvConformacion.Size = new System.Drawing.Size(728, 344);
             this.dgvConformacion.TabIndex = 0;
+            this.dgvConformacion.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvConformacion_CellBeginEdit);
             this.dgvConformacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConformacion_CellContentClick);
             this.dgvConformacion.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConformacion_CellEndEdit);
             this.dgvConformacion.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvConformacion_CellStateChanged);
@@ -508,6 +509,61 @@
             this.dgvConformacion.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvConformacion_CurrentCellDirtyStateChanged);
             this.dgvConformacion.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvConformacion_RowsAdded);
             this.dgvConformacion.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgvConformacion_RowStateChanged);
+            // 
+            // colIDInsumo
+            // 
+            this.colIDInsumo.DataPropertyName = "IDinsumo";
+            this.colIDInsumo.HeaderText = "Nº Insumo";
+            this.colIDInsumo.Name = "colIDInsumo";
+            this.colIDInsumo.ReadOnly = true;
+            this.colIDInsumo.Visible = false;
+            // 
+            // colInsumo
+            // 
+            this.colInsumo.DataPropertyName = "insumo";
+            this.colInsumo.HeaderText = "Insumo";
+            this.colInsumo.Name = "colInsumo";
+            this.colInsumo.ReadOnly = true;
+            this.colInsumo.Width = 250;
+            // 
+            // colIDMedida
+            // 
+            this.colIDMedida.HeaderText = "ID Medida";
+            this.colIDMedida.Name = "colIDMedida";
+            this.colIDMedida.ReadOnly = true;
+            this.colIDMedida.Visible = false;
+            // 
+            // colMedida
+            // 
+            this.colMedida.HeaderText = "Unidad Medida";
+            this.colMedida.Name = "colMedida";
+            this.colMedida.ReadOnly = true;
+            this.colMedida.Visible = false;
+            // 
+            // colPrecioM
+            // 
+            this.colPrecioM.DataPropertyName = "precio";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.colPrecioM.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colPrecioM.HeaderText = "Precio";
+            this.colPrecioM.Name = "colPrecioM";
+            // 
+            // colCantidadm
+            // 
+            this.colCantidadm.DataPropertyName = "cantidad";
+            this.colCantidadm.HeaderText = "Cantidad";
+            this.colCantidadm.Name = "colCantidadm";
+            // 
+            // colSubTotal
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colSubTotal.HeaderText = "SubTotal";
+            this.colSubTotal.Name = "colSubTotal";
             // 
             // btnSaveConformacion
             // 
@@ -1386,61 +1442,6 @@
             this.tabProducto.SelectedIndex = 0;
             this.tabProducto.Size = new System.Drawing.Size(760, 498);
             this.tabProducto.TabIndex = 0;
-            // 
-            // colIDInsumo
-            // 
-            this.colIDInsumo.DataPropertyName = "IDinsumo";
-            this.colIDInsumo.HeaderText = "Nº Insumo";
-            this.colIDInsumo.Name = "colIDInsumo";
-            this.colIDInsumo.ReadOnly = true;
-            this.colIDInsumo.Visible = false;
-            // 
-            // colInsumo
-            // 
-            this.colInsumo.DataPropertyName = "insumo";
-            this.colInsumo.HeaderText = "Insumo";
-            this.colInsumo.Name = "colInsumo";
-            this.colInsumo.ReadOnly = true;
-            this.colInsumo.Width = 250;
-            // 
-            // colIDMedida
-            // 
-            this.colIDMedida.HeaderText = "ID Medida";
-            this.colIDMedida.Name = "colIDMedida";
-            this.colIDMedida.ReadOnly = true;
-            this.colIDMedida.Visible = false;
-            // 
-            // colMedida
-            // 
-            this.colMedida.HeaderText = "Unidad Medida";
-            this.colMedida.Name = "colMedida";
-            this.colMedida.ReadOnly = true;
-            this.colMedida.Visible = false;
-            // 
-            // colPrecioM
-            // 
-            this.colPrecioM.DataPropertyName = "precio";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.Format = "C2";
-            dataGridViewCellStyle13.NullValue = null;
-            this.colPrecioM.DefaultCellStyle = dataGridViewCellStyle13;
-            this.colPrecioM.HeaderText = "Precio";
-            this.colPrecioM.Name = "colPrecioM";
-            // 
-            // colCantidadm
-            // 
-            this.colCantidadm.DataPropertyName = "cantidad";
-            this.colCantidadm.HeaderText = "Cantidad";
-            this.colCantidadm.Name = "colCantidadm";
-            // 
-            // colSubTotal
-            // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "C2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle14;
-            this.colSubTotal.HeaderText = "SubTotal";
-            this.colSubTotal.Name = "colSubTotal";
             // 
             // formProducto
             // 

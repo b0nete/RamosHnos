@@ -19,6 +19,10 @@ namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formProducto : Form, IAddItem
     {
+
+        public int cantidadPreEdit;
+        public int cantidadAfterEdit;
+
         public formProducto()
         {
             InitializeComponent();
@@ -666,6 +670,18 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvConformacion_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            int idInsumo = Convert.ToInt32(dgvConformacion.CurrentRow.Cells["colIDInsumo"].Value);
+            int cantidad = Convert.ToInt32(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value);
+            cantidadPreEdit = itemsProductoB.BuscarCantidadAnterior(idInsumo, cantidad);
+
+            int cantidadResultante = Math.Abs(cantidadPreEdit - cantidadAfterEdit);
+            bool dispStock = StockInsumoB.DisponibilidadStock(idInsumo, cantidadResultante);
+            if (dispStock == false)
+            {
+                dgvConformacion.CurrentCell.Value = cantidadAfterEdit.ToString();
+                return;
+            }
+
             calcularSubTotales();
         }
 
@@ -753,6 +769,14 @@ namespace RamosHermanos.Capas.Interfaz
         private void dgvConformacion_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             calcularAfterSearch();
+        }
+
+        private void dgvConformacion_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (Convert.ToString(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value) != string.Empty)
+            {
+                cantidadPreEdit = Convert.ToInt32(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value);
+            }
         }
     }
 }

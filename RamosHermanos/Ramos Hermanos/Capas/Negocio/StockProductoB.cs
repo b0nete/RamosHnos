@@ -86,22 +86,22 @@ namespace RamosHermanos.Capas.Negocio
         {
             try
             {
+                //Buscamos valor anterior del stockActual
                 MySQL.ConnectDB();
 
-                string queryConsulta = @"SELECT * FROM stockProducto WHERE idProducto = @idProducto";
+                string queryConsultaStock = @"SELECT * FROM stockProducto WHERE idProducto = @idProducto";
 
-                MySqlCommand cmdConsulta = new MySqlCommand(queryConsulta, MySQL.sqlcnx);
+                MySqlCommand cmdConsultaStock = new MySqlCommand(queryConsultaStock, MySQL.sqlcnx);
 
-                cmdConsulta.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
-
-                //Buscamos valor anterior del stockActual
+                cmdConsultaStock.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
+                
                 DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmdConsulta);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmdConsultaStock);
 
                 da.Fill(dt);
                 DataRow dr = dt.Rows[0];
 
-                stockProducto.stockActual = Convert.ToInt32(dr["stockActual"].ToString());   
+                stockProducto.stockActual = Convert.ToInt32(dr["stockActual"].ToString());
 
                 //Hacemos la actualizacion del stock
 
@@ -116,7 +116,7 @@ namespace RamosHermanos.Capas.Negocio
                 if (stockProducto.valorAnterior < stockProducto.valorNuevo)
                 {
                     int valorResultante = stockProducto.valorNuevo - stockProducto.valorAnterior;
-                    stockProducto.stockActual = stockProducto.stockActual + valorResultante;
+                    stockProducto.stockActual = stockProducto.stockActual - valorResultante;
 
                     cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
                     cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);
@@ -129,7 +129,7 @@ namespace RamosHermanos.Capas.Negocio
                 else if (stockProducto.valorAnterior > stockProducto.valorNuevo)
                 {
                     int valorResultante = stockProducto.valorAnterior - stockProducto.valorNuevo;
-                    stockProducto.stockActual = stockProducto.stockActual - valorResultante;
+                    stockProducto.stockActual = stockProducto.stockActual + valorResultante;
 
                     cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
                     cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);

@@ -139,28 +139,69 @@ namespace RamosHermanos.Capas.Interfaz
         ComprasEntity compras = new ComprasEntity();
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
+
             if (DataCheck() == false)
             {
                 return;
             }
             else
             {
-                CargarCompras();
-                ComprasB.InsertCompras(compras, txtidCompras);
-
-                foreach (DataGridViewRow rowA in dgvCompra.Rows)
+                if (txtnumFactura.Text != string.Empty)
                 {
-                    cargarItemCompra(rowA);
-                    itemCompraB.InsertItemCompras(itemcompra, dgvCompra);
-                    CargaItemLogStock(rowA);
-                    StockInsumoB.ActualizarStock(logStock);
+                    //CargarCompras();
+                    //ComprasB.update
+
+                    //foreach (DataGridViewRow dR in dgvFactura.Rows)
+                    //{
+                    //    // Entidad
+                    //    cargarItemsFactura(dgvFactura, dR);
+                    //    //Stock
+                    //    stockProducto.idProducto = Convert.ToInt32(dR.Cells["colCodigo"].Value.ToString());
+                    //    stockProducto.valorAnterior = itemsFacturaB.BuscarCantidadAnterior(Convert.ToInt32(txtIDFactura.Text), Convert.ToInt32(dR.Cells["colCodigo"].Value), Convert.ToString(dR.Cells["colCarga"].Value));
+                    //    stockProducto.valorNuevo = Convert.ToInt32(dR.Cells["colCantidad"].Value);
+                    //    StockProductoB.UpdateStockUpdate(stockProducto);
+                    //    // DB
+                    //    itemsFacturaB.UpdateItemFactura(itemFactura);
+                    //}
                 }
+                else
+                {
+                    //Encabezado
+                    CargarCompras();
+                    ComprasB.InsertCompras(compras, txtidCompras);
 
-                MessageBox.Show("guardado");
+                    //ItemsFactura
+                    foreach (DataGridViewRow dR in dgvCompra.Rows)
+                    {
+                        cargarItemCompra(dR);
+                        itemCompraB.InsertItemCompras(itemcompra, dgvCompra);
+                        stockInsumo.idInsumo = Convert.ToInt32(dR.Cells["colCodigo"].Value.ToString());
+                        stockInsumo.valorNuevo = Convert.ToInt32(dR.Cells["colCantidad"].Value);
+                        string carga = dR.Cells["colCarga"].Value.ToString();
+                        StockInsumoB.UpdateStockInsert(stockInsumo, carga);
 
+                        //cargarItemsFactura(dgvFactura, dR);
+                        //itemsFacturaB.InsertItemFactura(itemFactura);
+                        //stockProducto.idProducto = Convert.ToInt32(dR.Cells["colCodigo"].Value.ToString());
+                        //stockProducto.valorNuevo = Convert.ToInt32(dR.Cells["colCantidad"].Value);
+                        //string carga = dR.Cells["colCarga"].Value.ToString();
+                        //StockProductoB.UpdateStockInsert(stockProducto, carga);
+                    }
+                }
             }
-            
+        }
+
+        StockInsumoEntity stockInsumo = new StockInsumoEntity();
+        public void CargaItemStock(DataGridViewRow row)
+        {
+            logStock.operacion = "P";
+            logStock.comprobante = Convert.ToInt32(txtidCompras.Text);
+            logStock.idInsumo = Convert.ToInt32(row.Cells["colIDInsumo"].Value);
+            logStock.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
+
+            //Buscamos el stockActual
+            StockInsumoEntity stockP = StockInsumoB.BuscarStock(logStock.idInsumo);
+            logStock.stockNuevo = stockP.stockNuevo;
         }
 
         LogStockInsumoEntity logStock = new LogStockInsumoEntity();
@@ -174,9 +215,8 @@ namespace RamosHermanos.Capas.Interfaz
             //Buscamos el stockActual
             StockInsumoEntity stockP = StockInsumoB.BuscarStock(logStock.idInsumo);
             logStock.stockNuevo = stockP.stockNuevo;
-            
-
         }
+
         private void txtIngreso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 

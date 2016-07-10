@@ -392,10 +392,22 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (VerificarCamposStock()== true)
+            if (VerificarCamposStock() == false)
             {
-                CargarStock();
-                StockInsumoB.InsertStock(stock);
+                return;
+            }
+            else
+            {
+                if (StockInsumoB.ExisteStock(Convert.ToInt32(txtidInsumo.Text)) == true)
+                {
+                    CargarStock();
+                    StockInsumoB.UpdateStockInicial(stock);
+                }
+                else
+                {
+                    CargarStock();
+                    StockInsumoB.InsertStock(stock);
+                }
             }
         }
 

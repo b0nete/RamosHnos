@@ -86,8 +86,8 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     frmI.txtidInsumo.Text = Convert.ToString(insumo.idInsumo);
                     frmI.dtpFecha.Value = Convert.ToDateTime(insumo.fecha);
                     frmI.txtInsumo.Text = Convert.ToString(insumo.insumo);
-                    frmI.txtInsumoPrecio.Text = frmI.txtInsumo.Text;
-                    frmI.txtInsumoStock.Text = frmI.txtInsumo.Text;
+                    //frmI.txtInsumoPrecio.Text = frmI.txtInsumo.Text;
+                    //frmI.txtInsumoStock.Text = frmI.txtInsumo.Text;
                     frmI.txtCantidad.Text = Convert.ToString(insumo.stockMin);
                     frmI.txtDescripcion.Text = Convert.ToString(insumo.descripcion);
                     //frmI.cbMarca.SelectedValue= insumo.marca;
@@ -100,7 +100,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
                     //cargarDatosStock
                     stockIns.idInsumo = insumo.idInsumo;
-                    if (StockInsumoB.ExisteStock(stockIns) == false)
+                    if (StockInsumoB.ExisteStock(insumo.idInsumo) == false)
                         MessageBox.Show("No existe stock");
                     else
                     {

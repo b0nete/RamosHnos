@@ -14,7 +14,7 @@ namespace RamosHermanos.Capas.Negocio
 {
     class StockInsumoB
     {
-        public static bool ExisteStock(StockInsumoEntity stockI)
+        public static bool ExisteStock(int idInsumo)
         {
             MySQL.ConnectDB();
 
@@ -22,7 +22,7 @@ namespace RamosHermanos.Capas.Negocio
                              WHERE idInsumo = @idInsumo";
 
             MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-            cmd.Parameters.AddWithValue("@idInsumo", stockI.idInsumo);
+            cmd.Parameters.AddWithValue("@idInsumo", idInsumo);
 
             int resultado = Convert.ToInt32(cmd.ExecuteScalar());
 
@@ -78,6 +78,153 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void UpdateStockInicial(StockInsumoEntity stockInsumo)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SET @@sql_safe_updates = 0; 
+                                 UPDATE stockInsumos
+                                 SET stockMinimo = @stockMinimo, stockMaximo = @stockMaximo, fechaActualizacion = @fechaActualizacion
+                                 WHERE idInsumo = @idInsumo;
+                                 SET @@sql_safe_updates = 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idInsumo", stockInsumo.idInsumo);
+                cmd.Parameters.AddWithValue("@stockMinimo", stockInsumo.stockMinimo);
+                cmd.Parameters.AddWithValue("@stockMaximo", stockInsumo.stockMaximo);
+                cmd.Parameters.AddWithValue("@stockActual", stockInsumo.stockActual);
+                cmd.Parameters.AddWithValue("@fechaActualizacion", stockInsumo.fechaActualizacion);
+
+                cmd.ExecuteNonQuery();
+
+                // MessageBox.Show("Cliente Actualizado!");
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void UpdateStockUpdate(StockProductoEntity stockProducto)
+        {
+            try
+            {
+                //Buscamos valor anterior del stockActual
+                MySQL.ConnectDB();
+
+                string queryConsultaStock = @"SELECT * FROM stockProducto WHERE idProducto = @idProducto";
+
+                MySqlCommand cmdConsultaStock = new MySqlCommand(queryConsultaStock, MySQL.sqlcnx);
+
+                cmdConsultaStock.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmdConsultaStock);
+
+                da.Fill(dt);
+                DataRow dr = dt.Rows[0];
+
+                stockProducto.stockActual = Convert.ToInt32(dr["stockActual"].ToString());
+
+                //Hacemos la actualizacion del stock
+
+                string query = @"SET @@sql_safe_updates = 0; 
+                                 UPDATE stockProducto
+                                 SET stockActual = @stockActual, fechaActualizacion = @fechaActualizacion
+                                 WHERE idProducto = @idProducto;
+                                 SET @@sql_safe_updates = 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                if (stockProducto.valorAnterior < stockProducto.valorNuevo)
+                {
+                    int valorResultante = stockProducto.valorNuevo - stockProducto.valorAnterior;
+                    stockProducto.stockActual = stockProducto.stockActual - valorResultante;
+
+                    cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
+                    cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);
+                    cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@valorAnterior", stockProducto.valorAnterior);
+                    cmd.Parameters.AddWithValue("@valorNuevo", stockProducto.valorNuevo);
+
+                    cmd.ExecuteNonQuery();
+                }
+                else if (stockProducto.valorAnterior > stockProducto.valorNuevo)
+                {
+                    int valorResultante = stockProducto.valorAnterior - stockProducto.valorNuevo;
+                    stockProducto.stockActual = stockProducto.stockActual + valorResultante;
+
+                    cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
+                    cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);
+                    cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@valorAnterior", stockProducto.valorAnterior);
+                    cmd.Parameters.AddWithValue("@valorNuevo", stockProducto.valorNuevo);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void UpdateStockInsert(StockInsumoEntity stockInsumo, string carga)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = "";
+
+                if (carga == "C")
+                {
+                    string queryLess = @"SET @@sql_safe_updates = 0; 
+                                 UPDATE stockInsumos
+                                SET stockActual = stockActual - @valorNuevo, fechaActualizacion = @fechaActualizacion
+                                WHERE idInsumo = @idInsumo;
+                                 SET @@sql_safe_updates = 1";
+
+                    query = queryLess;
+                }
+                else if (carga == "D")
+                {
+                    string queryPlus = @"SET @@sql_safe_updates = 0; 
+                                 UPDATE stockInsumos
+                                SET stockActual = stockActual + @valorNuevo, fechaActualizacion = @fechaActualizacion
+                                WHERE idInsumo = @idInsumo;
+                                 SET @@sql_safe_updates = 1";
+
+                    query = queryPlus;
+                }
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idProducto", stockInsumo.idInsumo);
+                cmd.Parameters.AddWithValue("@stockActual", stockInsumo.stockActual);
+                cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
+                cmd.Parameters.AddWithValue("@valorAnterior", stockInsumo.valorAnterior);
+                cmd.Parameters.AddWithValue("@valorNuevo", stockInsumo.valorNuevo);
+
+                cmd.ExecuteNonQuery();
+
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static void ActualizarStock(LogStockInsumoEntity logStock)
         {
             try
@@ -122,15 +269,15 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
 
-                string query = @"INSERT INTO stockinsumos (idInsumo, stockMinimo, stockMaximo, stockActual,fechaActualizacion) 
-                                 VALUES (@idInsumo, @stockMinimo, @stockMaximo, 0,@fechaActualizacion)";
+                string query = @"INSERT INTO stockinsumos (idInsumo, stockMinimo, stockMaximo, fechaActualizacion) 
+                                 VALUES (@idInsumo, @stockMinimo, @stockMaximo, @fechaActualizacion)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@idinsumo", stock.idInsumo);
                 cmd.Parameters.AddWithValue("@stockMinimo", stock.stockMinimo);
                 cmd.Parameters.AddWithValue("@stockMaximo", stock.stockMaximo);
-                cmd.Parameters.AddWithValue("@fechaActualizacion", stock.fechaActualizacion);
+                cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
 
                 cmd.ExecuteNonQuery();
 
@@ -234,6 +381,33 @@ namespace RamosHermanos.Capas.Negocio
                 MessageBox.Show(ex + "ERROR");
                 throw;
             }
+        }
+
+        public static bool DisponibilidadStock(int idInsumo, int cantidad)
+        {
+            MySQL.ConnectDB();
+
+            string query = @"SELECT stockActual
+                            FROM stockInsumos
+                            WHERE idInsumo = @idInsumo";
+
+            MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+            cmd.Parameters.AddWithValue("@idInsumo", idInsumo);
+
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+            da.Fill(dt);
+
+            int stockDisponible = Convert.ToInt32(dt.Rows[0]["stockActual"].ToString());
+
+            if (stockDisponible < cantidad)
+            {
+                MessageBox.Show("Disponibilidad stock: " + stockDisponible + " unidades");
+                return false;
+            }
+            else
+                return true;
         }
     }
 }

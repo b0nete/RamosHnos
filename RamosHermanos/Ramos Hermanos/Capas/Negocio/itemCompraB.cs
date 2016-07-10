@@ -83,5 +83,41 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static int BuscarCantidadAnterior(int idCompra, int idInsumo, string carga)
+        {
+            try
+            {
+                //Buscamos valor anterior del itemFactura
+                MySQL.ConnectDB();
+
+                string queryConsultaValor = @"SELECT *
+                                              FROM itemsCompras
+                                              WHERE compra = @idCompra and insumo = @insumo and carga = @carga";
+
+                MySqlCommand cmdConsultaValor = new MySqlCommand(queryConsultaValor, MySQL.sqlcnx);
+
+                cmdConsultaValor.Parameters.AddWithValue("@idCompra", idCompra);
+                cmdConsultaValor.Parameters.AddWithValue("@insumo", idInsumo);
+                cmdConsultaValor.Parameters.AddWithValue("@carga", carga);
+
+                DataTable dtValor = new DataTable();
+                MySqlDataAdapter daValor = new MySqlDataAdapter(cmdConsultaValor);
+
+                daValor.Fill(dtValor);
+                DataRow drValor = dtValor.Rows[0];
+
+                int cantidad = Convert.ToInt32(drValor["cantidad"].ToString());
+
+                MySQL.DisconnectDB();
+                return cantidad;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
     }
 }

@@ -31,13 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formInsumos));
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabInformacion = new System.Windows.Forms.TabPage();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEstadisticas = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtInsumo = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.labelInsumo = new System.Windows.Forms.Label();
             this.cbRubro = new System.Windows.Forms.ComboBox();
             this.lblEstado = new System.Windows.Forms.Label();
@@ -69,6 +67,8 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtRubro = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.tabStock = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvStock = new System.Windows.Forms.DataGridView();
@@ -78,7 +78,6 @@
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.txtInsumoStock = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.dtpfechaStock = new System.Windows.Forms.DateTimePicker();
@@ -95,7 +94,6 @@
             this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtInsumoPrecio = new System.Windows.Forms.TextBox();
             this.txtnewPrecio = new System.Windows.Forms.MaskedTextBox();
             this.button9 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
@@ -139,6 +137,18 @@
             this.tabInformacion.TabIndex = 0;
             this.tabInformacion.Text = "Informacion";
             this.tabInformacion.Click += new System.EventHandler(this.tabInformacion_Click);
+            // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.BackgroundImage")));
+            this.btnEstadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas.Location = new System.Drawing.Point(525, 438);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(28, 28);
+            this.btnEstadisticas.TabIndex = 116;
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
             // 
             // groupBox1
             // 
@@ -184,18 +194,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Insumos";
             // 
-            // btnEstadisticas
-            // 
-            this.btnEstadisticas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.BackgroundImage")));
-            this.btnEstadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.Location = new System.Drawing.Point(525, 438);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(28, 28);
-            this.btnEstadisticas.TabIndex = 116;
-            this.btnEstadisticas.UseVisualStyleBackColor = true;
-            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
-            // 
             // txtInsumo
             // 
             this.txtInsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -216,18 +214,6 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click_1);
             // 
-            // button11
-            // 
-            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button11.Location = new System.Drawing.Point(593, 438);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(28, 28);
-            this.button11.TabIndex = 113;
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
             // label5
             // 
             this.label5.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
@@ -240,18 +226,6 @@
             this.label5.Size = new System.Drawing.Size(11, 13);
             this.label5.TabIndex = 124;
             this.label5.Text = "*";
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(559, 438);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 28);
-            this.button1.TabIndex = 113;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // labelInsumo
             // 
@@ -602,6 +576,30 @@
             this.txtRubro.TabIndex = 26;
             this.txtRubro.Text = "Rubro";
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(559, 438);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 28);
+            this.button1.TabIndex = 113;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button11
+            // 
+            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button11.Location = new System.Drawing.Point(593, 438);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(28, 28);
+            this.button11.TabIndex = 113;
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // tabStock
             // 
             this.tabStock.BackColor = System.Drawing.SystemColors.Control;
@@ -680,7 +678,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtInsumoStock);
             this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.dtpfechaStock);
@@ -698,16 +695,6 @@
             this.groupBox2.TabIndex = 52;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stock";
-            // 
-            // txtInsumoStock
-            // 
-            this.txtInsumoStock.Enabled = false;
-            this.txtInsumoStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInsumoStock.Location = new System.Drawing.Point(678, -9);
-            this.txtInsumoStock.Name = "txtInsumoStock";
-            this.txtInsumoStock.Size = new System.Drawing.Size(37, 29);
-            this.txtInsumoStock.TabIndex = 125;
-            this.txtInsumoStock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // button5
             // 
@@ -859,7 +846,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.txtInsumoPrecio);
             this.groupBox4.Controls.Add(this.txtnewPrecio);
             this.groupBox4.Controls.Add(this.button9);
             this.groupBox4.Controls.Add(this.label19);
@@ -871,16 +857,6 @@
             this.groupBox4.TabIndex = 116;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Actualizar Precio";
-            // 
-            // txtInsumoPrecio
-            // 
-            this.txtInsumoPrecio.Enabled = false;
-            this.txtInsumoPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInsumoPrecio.Location = new System.Drawing.Point(665, -17);
-            this.txtInsumoPrecio.Name = "txtInsumoPrecio";
-            this.txtInsumoPrecio.Size = new System.Drawing.Size(38, 29);
-            this.txtInsumoPrecio.TabIndex = 126;
-            this.txtInsumoPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtnewPrecio
             // 
@@ -1033,8 +1009,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button btnEstadisticas;
-        public System.Windows.Forms.TextBox txtInsumoStock;
-        public System.Windows.Forms.TextBox txtInsumoPrecio;
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.DataGridView dgvStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn colOperacion;

@@ -63,6 +63,42 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static int BuscarCantidadAnterior(int idFactura, int idProducto, string carga)
+        {
+            try
+            {
+                //Buscamos valor anterior del itemFactura
+                MySQL.ConnectDB();
+
+                string queryConsultaValor = @"SELECT *
+                                              FROM itemsFactura 
+                                              WHERE factura = @idFactura and producto = @producto and carga = @carga";
+
+                MySqlCommand cmdConsultaValor = new MySqlCommand(queryConsultaValor, MySQL.sqlcnx);
+
+                cmdConsultaValor.Parameters.AddWithValue("@idFactura", idFactura);
+                cmdConsultaValor.Parameters.AddWithValue("@producto", idProducto);
+                cmdConsultaValor.Parameters.AddWithValue("@carga", carga);
+
+                DataTable dtValor = new DataTable();
+                MySqlDataAdapter daValor = new MySqlDataAdapter(cmdConsultaValor);
+
+                daValor.Fill(dtValor);
+                DataRow drValor = dtValor.Rows[0];
+
+                int cantidad = Convert.ToInt32(drValor["cantidad"].ToString());   
+
+                MySQL.DisconnectDB();
+                return cantidad;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static bool ExisteItemFactura(itemFacturaEntity itemFactura)
         {
             MySQL.ConnectDB();

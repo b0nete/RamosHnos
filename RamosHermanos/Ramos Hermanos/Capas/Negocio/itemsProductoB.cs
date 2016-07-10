@@ -14,40 +14,49 @@ namespace RamosHermanos.Capas.Negocio
     class itemsProductoB
     {
 
-        public static void CargarDGV(int idProducto, DataGridView dgvItemProducto)
+        public static void CargarDGV(int idProducto, DataGridView dgv)
         {
             try
             {
                 MySQL.ConnectDB();
-                dgvItemProducto.Rows.Clear();
+                dgv.Rows.Clear();
 
                 string query = @"SELECT IP.insumo as IDinsumo, I.insumo, IP.cantidad, PI.precio
                                FROM itemsProducto IP
                                INNER JOIN Insumos I ON I.idInsumo = IP.insumo
                                INNER JOIN Medidas M ON M.idMedida = IP.medida
                                INNER JOIN precioInsumos PI ON PI.idInsumo = IP.insumo
-                               WHERE IP.producto = @producto";
+                               WHERE IP.producto = @idProducto";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@producto", idProducto);
+                cmd.Parameters.AddWithValue("@idProducto", idProducto);
 
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr = cmd.ExecuteReader();
 
-                da.Fill(dt);
-                dgvItemProducto.DataSource = dt;                
+                while (dr.Read())
+                {
+                    dgv.Rows.Add(
+                    Convert.ToString(dr["IDinsumo"]),
+                    Convert.ToString(dr["insumo"]),
+                    Convert.ToString(""),
+                    Convert.ToString(""),
+                    Convert.ToString(dr["cantidad"]),
+                    Convert.ToString(dr["precio"]),
+                    Convert.ToString(""));
+                }
 
+                dr.Close();
                 MySQL.DisconnectDB();
             }
 
-
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR" + ex);
+                MessageBox.Show("Error: " + ex);
                 throw;
             }
         }
+
 
 
         public static void InsertItemProducto(itemsProductoEntity itemProducto)
@@ -75,6 +84,41 @@ namespace RamosHermanos.Capas.Negocio
             catch (Exception ex)
             {
                 MessageBox.Show("ERROR" + ex);
+                throw;
+            }
+        }
+
+        public static int BuscarCantidadAnterior(int idInsumo, int cantidad)
+        {
+            try
+            {
+                //Buscamos valor anterior del itemFactura
+                MySQL.ConnectDB();
+
+                string queryConsultaValor = @"SELECT *
+                                            FROM itemsProducto
+                                            WHERE insumo = @insumo and cantidad = @cantidad";
+
+                MySqlCommand cmdConsultaValor = new MySqlCommand(queryConsultaValor, MySQL.sqlcnx);
+
+                cmdConsultaValor.Parameters.AddWithValue("@insumo", idInsumo);
+                cmdConsultaValor.Parameters.AddWithValue("@cantidad", cantidad);
+
+                DataTable dtValor = new DataTable();
+                MySqlDataAdapter daValor = new MySqlDataAdapter(cmdConsultaValor);
+
+                daValor.Fill(dtValor);
+                DataRow drValor = dtValor.Rows[0];
+
+                int retorno = Convert.ToInt32(drValor["cantidad"].ToString());
+
+                MySQL.DisconnectDB();
+                return retorno;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
                 throw;
             }
         }

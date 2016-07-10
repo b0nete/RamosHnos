@@ -49,7 +49,6 @@ namespace RamosHermanos.Capas.Interfaz
                 factura.estado = cbEstado.Text;
                 FacturaB.UpdateFactura(factura);
             }
-            
         }
 
         // Entidades        
@@ -91,13 +90,13 @@ namespace RamosHermanos.Capas.Interfaz
                 {
                     // Entidad
                     cargarItemsFactura(dgvFactura, dR);
-                    // DB
-                    itemsFacturaB.UpdateItemFactura(itemFactura);
                     //Stock
-                    stockProducto.idProducto = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCodigo"].Value.ToString());
-                    stockProducto.valorAnterior = cantidadValorAnterior;
+                    stockProducto.idProducto = Convert.ToInt32(dR.Cells["colCodigo"].Value.ToString());
+                    stockProducto.valorAnterior = itemsFacturaB.BuscarCantidadAnterior(Convert.ToInt32(txtIDFactura.Text), Convert.ToInt32(dR.Cells["colCodigo"].Value), Convert.ToString(dR.Cells["colCarga"].Value));
                     stockProducto.valorNuevo = Convert.ToInt32(dR.Cells["colCantidad"].Value);
                     StockProductoB.UpdateStockUpdate(stockProducto);
+                    // DB
+                    itemsFacturaB.UpdateItemFactura(itemFactura);
                 }
             }
             else
@@ -194,14 +193,25 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            cantidadValorNuevo = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCantidad"].Value);
+
             //Verificamos stock
             int idProducto = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCodigo"].Value);
             int cantidad = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCantidad"].Value);
+            cantidadValorAnterior = itemsFacturaB.BuscarCantidadAnterior(Convert.ToInt32(txtIDFactura.Text), idProducto, dgvFactura.CurrentRow.Cells["colCarga"].Value.ToString());
 
-            if (StockProductoB.DisponiblidadStock(idProducto, cantidad) == false)
+            int cantidadResultante = Math.Abs(cantidadValorAnterior - cantidadValorNuevo);
+            bool dispStock = StockProductoB.DisponiblidadStock(idProducto, cantidadResultante);
+            if (dispStock == false)
             {
-                dgvFactura.CurrentRow.Cells["colCantidad"].Value = cantidadValorAnterior; 
+                dgvFactura.CurrentCell.Value = cantidadValorAnterior.ToString();
+                return;
             }
+
+            //if (StockProductoB.DisponiblidadStock(idProducto, cantidad) == false)
+            //{
+            //    dgvFactura.CurrentRow.Cells["colCantidad"].Value = cantidadValorAnterior; 
+            //}
 
             //Valor Nuevo
             if (dgvFactura.CurrentRow.Cells["colCantidad"].Value.ToString() != string.Empty)

@@ -15,5 +15,10 @@ namespace RamosHermanos.Capas.Entidades
         public int stockActual { get; set; }
         public int stockNuevo { get; set; }
         public DateTime fechaActualizacion { get; set; }
+
+        //
+
+        public int valorAnterior { get; set; }
+        public int valorNuevo { get; set; }
     }
 }
