@@ -50,6 +50,14 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
                     formVentas formInter = this.Owner as formVentas;
                     formInter.pasarDatos(rowB);
+
+                    bool bull = formInter.comprobarItemRepetido();
+
+                    if (bull == true)
+                    {
+                        return;
+                    }
+
                     break;
                 default:
                     Console.WriteLine("Default case");

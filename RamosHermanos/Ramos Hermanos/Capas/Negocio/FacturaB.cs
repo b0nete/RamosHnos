@@ -598,6 +598,49 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void ListFacturasCliente(DataGridView dgvList, string WHERE, int idCliente)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string addQuery = "";
+
+                string query = @"SELECT idFactura as colFactura, fechaFactura as colFecha, CONCAT(C.nombre, ' ' ,C.apellido) as colNombre, total as colTotal, F.estado as colEstado
+                                FROM Facturas F
+                                INNER JOIN Clientes C ON C.idCliente = F.cliente
+                                WHERE total > 0 and idCliente = @idCliente";
+
+                MySqlCommand cmd = new MySqlCommand();
+
+                cmd.Parameters.AddWithValue("@idCliente", idCliente);
+
+                DataTable dt = new DataTable();
+
+                if (WHERE == "Pagado")
+                {
+                    addQuery = " and F.estado = 'Pagado'";
+                }
+                else if (WHERE == "Pendiente")
+                {
+                    addQuery = " and F.estado = 'Pendiente'";
+                }
+
+                MySqlDataAdapter da = new MySqlDataAdapter(query + addQuery, MySQL.sqlcnx);
+
+                da.Fill(dt);
+
+                dgvList.DataSource = dt;
+
+                MySQL.DisconnectDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static void CargarDGVParametros(DataGridView dgv, ComboBox cb, string parametro)
         {
             try

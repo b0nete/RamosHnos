@@ -309,7 +309,22 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-           
+        public bool comprobarItemRepetido()
+        {
+            bool bul = false;
+
+            int ultimaFila = dgvCompra.Rows.Count;
+            if (dgvCompra.Rows.Count > 1)
+            {
+                if (Convert.ToString(dgvCompra.Rows[ultimaFila - 2].Cells["colIDInsumo"].Value) == Convert.ToString(dgvCompra.Rows[ultimaFila].Cells["colIDInsumo"].Value))
+                {
+                    dgvCompra.Rows.Remove(dgvCompra.Rows[ultimaFila - 1]);
+                    MessageBox.Show("Ya existe este insumo en la factura!");
+                    bul = true;                        
+                }
+            }
+            return bul;
+        }
               
     }
 }

@@ -145,8 +145,15 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             {
                 DataGridViewRow rowA = this.dgvInsumos.CurrentRow as DataGridViewRow;
 
-                IAddItem parent = this.Owner as IAddItem;
+                formCompras parent = this.Owner as formCompras;
                 parent.AddNewItem(rowA);
+
+                bool bull = parent.comprobarItemRepetido();
+
+                if (bull == true)
+                {
+                    return;
+                }
 
                 //this.Close();
             }

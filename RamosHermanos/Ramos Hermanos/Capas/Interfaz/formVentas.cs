@@ -317,11 +317,33 @@ namespace RamosHermanos.Capas.Interfaz
                     dR.Cells["colCarga"].Value = "C";
                 }
             }
+
+
+                     
         }
 
         private void txtTotal_TextChanged(object sender, EventArgs e)
         {
             
         }
+
+        public bool comprobarItemRepetido()
+        {
+            bool bul = false;
+
+            int ultimaFila = dgvFactura.Rows.Count;
+            if (dgvFactura.Rows.Count > 1)
+            {
+                if (Convert.ToString(dgvFactura.Rows[ultimaFila - 2].Cells["colCodigo"].Value) == Convert.ToString(dgvFactura.Rows[ultimaFila].Cells["colCodigo"].Value))
+                {
+                    dgvFactura.Rows.Remove(dgvFactura.Rows[ultimaFila - 1]);
+                    MessageBox.Show("Ya existe este producto en la factura!");
+                    bul = true;
+                        
+                }
+            }
+            return bul;
+        }
+
     }
 }
