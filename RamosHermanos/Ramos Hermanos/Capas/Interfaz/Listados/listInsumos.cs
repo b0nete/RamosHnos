@@ -110,7 +110,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                         StockInsumoEntity stockInsumo = StockInsumoB.BuscarStock(Convert.ToInt32(frmI.txtidInsumo.Text));
                         frmI.txtStockMin.Text = Convert.ToString(stockInsumo.stockMinimo);
                         frmI.txtStockMax.Text = Convert.ToString(stockInsumo.stockMaximo);
-                        frmI.txtStockA.Text = Convert.ToString(stockInsumo.stockNuevo);
+                        frmI.txtStockA.Text = Convert.ToString(stockInsumo.stockActual);
 
                         //Cargar Operaciones Stock      
 

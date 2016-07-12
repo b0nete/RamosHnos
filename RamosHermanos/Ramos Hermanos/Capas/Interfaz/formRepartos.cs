@@ -743,85 +743,143 @@ namespace RamosHermanos.Capas.Interfaz
         private void editCellProductos(int idProducto, string carga, string colCarga)
         {
             cantidadAfterEdit = Convert.ToInt32(dgvRepartos.CurrentRow.Cells[colCarga].Value);
-            int cantidadResultante = cantidadAfterEdit - cantidadPreEdit;
-            
+            int cantidadResultante = cantidadAfterEdit - cantidadPreEdit;            
 
             itemFactura.producto = idProducto;
             itemFactura.carga = carga;
 
-            if (cantidadPreEdit == 0)
+            if (carga == "C")
             {
-                if (carga == "C")
+                if (verificarStock(idProducto, cantidadResultante) == false)
                 {
-                    if (verificarStock(idProducto, cantidadResultante) == false)
-                    {
-                        dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
-                        return;
-                    }
-
-                    //Stock
-                    stockProducto.idProducto = Convert.ToInt32(idProducto);
-                    stockProducto.valorAnterior = cantidadPreEdit;
-                    stockProducto.valorNuevo = cantidadAfterEdit;
-                    StockProductoB.UpdateStockInsert(stockProducto, carga);
+                    dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
+                    return;
                 }
-                else if (carga == "D")
-                {
-                    DataTable dtInsumosRetornables = InsumoB.BuscarInsumosRetornables(idProducto);
+            }
 
-                    foreach (DataRow dr in dtInsumosRetornables.Rows)
-                    {
-                        stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
-                        stockInsumo.valorAnterior = cantidadPreEdit;
-                        stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
+            if (carga == "C")
+            {
+                //Stock
+                stockProducto.idProducto = Convert.ToInt32(idProducto);
+                stockProducto.valorAnterior = cantidadPreEdit;
+                stockProducto.valorNuevo = cantidadAfterEdit;
+                StockProductoB.UpdateStockInsert(stockProducto, carga);
+            }
+            else if (carga == "D")
+            {
+                DataTable dtInsumosRetornables = InsumoB.BuscarInsumosRetornables(idProducto);
+                DataRow dr = dtInsumosRetornables.Rows[0];
 
-                        StockInsumoB.UpdateStockInsert(stockInsumo, carga);
-                    }
-                }
+                stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
+                stockInsumo.valorAnterior = cantidadPreEdit * Convert.ToInt32(dr["cantidad"].ToString());
+                stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
+
+                StockInsumoB.UpdateStockInsert(stockInsumo, carga);
+            }
+
+            //if (cantidadPreEdit == 0)
+            //{
+            //    if (carga == "C")
+            //    {
+            //        if (verificarStock(idProducto, cantidadResultante) == false)
+            //        {
+            //            dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
+            //            return;
+            //        }
+
+            //        //Stock
+            //        stockProducto.idProducto = Convert.ToInt32(idProducto);
+            //        stockProducto.valorAnterior = cantidadPreEdit;
+            //        stockProducto.valorNuevo = cantidadAfterEdit;
+            //        StockProductoB.UpdateStockInsert(stockProducto, carga);
+            //    }
+            //    else if (carga == "D")
+            //    {
+            //        DataTable dtInsumosRetornables = InsumoB.BuscarInsumosRetornables(idProducto);
+
+            //        foreach (DataRow dr in dtInsumosRetornables.Rows)
+            //        {
+            //            stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
+            //            stockInsumo.valorAnterior = cantidadPreEdit;
+            //            stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
+
+            //            StockInsumoB.UpdateStockInsert(stockInsumo, carga);
+            //        }
+            //    }
 
                 
 
-                return;
-            }
+            //    return;
+            //}
 
-            //Corroborar Stock
-            if (Convert.ToString(dgvRepartos.CurrentRow.Cells[colCarga].Value) != string.Empty)
-            {
-                if (cantidadPreEdit > cantidadAfterEdit)
-                {
-                    if (carga == "C")
-                    {
-                        if (verificarStock(idProducto, cantidadResultante) == false)
-                        {
-                            dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
-                            return;
-                        }
-                    } 
+            ////Corroborar Stock
+            //if (Convert.ToString(dgvRepartos.CurrentRow.Cells[colCarga].Value) != string.Empty)
+            //{
+            //    if (cantidadPreEdit > cantidadAfterEdit)
+            //    {
+            //        if (carga == "C")
+            //        {
+            //            if (verificarStock(idProducto, cantidadResultante) == false)
+            //            {
+            //                dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
+            //                return;
+            //            }
+            //        }
 
-                    //Stock
-                    stockProducto.idProducto = Convert.ToInt32(idProducto);
-                    stockProducto.valorAnterior = cantidadPreEdit;
-                    stockProducto.valorNuevo = cantidadAfterEdit;
-                    StockProductoB.UpdateStockUpdate(stockProducto);
-                }
-                else
-                {
-                    if (carga == "C")
-                    {
-                        if (verificarStock(idProducto, cantidadResultante) == false)
-                        {
-                            dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
-                            return;
-                        }
-                    }                    
+            //        if (carga == "C")
+            //        {
+            //            //Stock
+            //            stockProducto.idProducto = Convert.ToInt32(idProducto);
+            //            stockProducto.valorAnterior = cantidadPreEdit;
+            //            stockProducto.valorNuevo = cantidadAfterEdit;
+            //            StockProductoB.UpdateStockUpdate(stockProducto);
+            //        }
+            //        else if (carga == "D")
+            //        {
+            //            DataTable dtInsumosRetornables = InsumoB.BuscarInsumosRetornables(idProducto);
+            //            DataRow dr = dtInsumosRetornables.Rows[0];
 
-                    //Stock
-                    stockProducto.idProducto = Convert.ToInt32(idProducto);
-                    stockProducto.valorAnterior = cantidadPreEdit;
-                    stockProducto.valorNuevo = cantidadAfterEdit;
-                    StockProductoB.UpdateStockUpdate(stockProducto);
-                }
-            }
+            //            stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
+            //            stockInsumo.valorAnterior = cantidadPreEdit * Convert.ToInt32(dr["cantidad"].ToString());
+            //            stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
+
+            //            StockInsumoB.UpdateStockInsert(stockInsumo, carga);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        if (carga == "C")
+            //        {
+            //            if (verificarStock(idProducto, cantidadResultante) == false)
+            //            {
+            //                dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
+            //                return;
+            //            }
+            //        }
+
+
+            //        if (carga == "C")
+            //        {
+            //            //Stock
+            //            stockProducto.idProducto = Convert.ToInt32(idProducto);
+            //            stockProducto.valorAnterior = cantidadPreEdit;
+            //            stockProducto.valorNuevo = cantidadAfterEdit;
+            //            StockProductoB.UpdateStockUpdate(stockProducto);
+            //        }
+            //        else if (carga == "D")
+            //        {
+            //            DataTable dtInsumosRetornables = InsumoB.BuscarInsumosRetornables(idProducto);
+            //            DataRow dr = dtInsumosRetornables.Rows[0];
+
+            //            stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
+            //            stockInsumo.valorAnterior = cantidadPreEdit * Convert.ToInt32(dr["cantidad"].ToString());
+            //            stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
+
+            //            StockInsumoB.UpdateStockInsert(stockInsumo, carga);
+            //        }
+                    
+            //    }
+            //}
 
 
             if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)

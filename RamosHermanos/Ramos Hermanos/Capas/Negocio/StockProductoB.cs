@@ -155,30 +155,40 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = "";      
+                string queryDevolver = @"SET @@sql_safe_updates = 0; 
+                                   UPDATE stockProducto
+                                   SET stockActual = stockActual + @valorAnterior, fechaActualizacion = @fechaActualizacion
+                                   WHERE idProducto = @idProducto;
+                                   SET @@sql_safe_updates = 1";
 
-                if (carga == "C")
-                {
-                    string queryLess = @"SET @@sql_safe_updates = 0; 
-                                 UPDATE stockProducto
-                                 SET stockActual = stockActual - @valorNuevo, fechaActualizacion = @fechaActualizacion
-                                 WHERE idProducto = @idProducto;
-                                 SET @@sql_safe_updates = 1";
+                string querySacar = @"SET @@sql_safe_updates = 0; 
+                                   UPDATE stockProducto
+                                   SET stockActual = stockActual - @valorNuevo, fechaActualizacion = @fechaActualizacion
+                                   WHERE idProducto = @idProducto;
+                                   SET @@sql_safe_updates = 1";
 
-                    query = queryLess;
-                }
-                else if (carga == "D")
-                {
-                    string queryPlus = @"SET @@sql_safe_updates = 0; 
-                                 UPDATE stockProducto
-                                 SET stockActual = stockActual + @valorNuevo, fechaActualizacion = @fechaActualizacion
-                                 WHERE idProducto = @idProducto;
-                                 SET @@sql_safe_updates = 1";
+                //                if (carga == "C")
+                //                {
+                //                    string queryLess = @"SET @@sql_safe_updates = 0; 
+                //                                 UPDATE stockInsumos
+                //                                SET stockActual = stockActual - @valorNuevo, fechaActualizacion = @fechaActualizacion
+                //                                WHERE idInsumo = @idInsumo;
+                //                                 SET @@sql_safe_updates = 1";
 
-                    query = queryPlus;
-                }
+                //                    query = queryLess;
+                //                }
+                //                else if (carga == "D")
+                //                {
+                //                    string queryPlus = @"SET @@sql_safe_updates = 0; 
+                //                                 UPDATE stockInsumos
+                //                                SET stockActual = stockActual + @valorNuevo, fechaActualizacion = @fechaActualizacion
+                //                                WHERE idInsumo = @idInsumo;
+                //                                 SET @@sql_safe_updates = 1";
 
-                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);               
+                //                    query = queryPlus;
+                //                }
+
+                MySqlCommand cmd = new MySqlCommand();
 
                 cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
                 cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);
@@ -186,6 +196,12 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@valorAnterior", stockProducto.valorAnterior);
                 cmd.Parameters.AddWithValue("@valorNuevo", stockProducto.valorNuevo);
 
+                cmd.CommandText = queryDevolver;
+                cmd.Connection = MySQL.sqlcnx;
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = querySacar;
+                cmd.Connection = MySQL.sqlcnx;
                 cmd.ExecuteNonQuery();
 
                 MySQL.DisconnectDB();

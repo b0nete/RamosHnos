@@ -38,12 +38,9 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                StockInsumoEntity stockI = new StockInsumoEntity();
+                StockInsumoEntity stockP = new StockInsumoEntity();
 
-                string query = @"SELECT SI.stockMinimo, SI.stockMaximo, MAX(SIL.stockActual) as stockActual, MAX(SIL.stockNuevo) as stockNuevo
-                                FROM stockInsumos SI
-                                INNER JOIN stockInsumoLog SIL ON SIL.idInsumo = SI.idInsumo
-                                WHERE SI.idInsumo = @idInsumo";
+                string query = @"SELECT * FROM stockInsumos WHERE idInsumo = @idInsumo";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -60,16 +57,16 @@ namespace RamosHermanos.Capas.Negocio
 
                     DataRow row = dt.Rows[0];
 
-                    stockI.stockMinimo = Convert.ToInt32(row["stockMinimo"]);
-                    stockI.stockMaximo = Convert.ToInt32(row["stockMaximo"]);
-                    stockI.stockActual = Convert.ToInt32(row["stockActual"]);
-                    stockI.stockNuevo = Convert.ToInt32(row["stockNuevo"]);
+                    stockP.stockMinimo = Convert.ToInt32(row["stockMinimo"]);
+                    stockP.stockMaximo = Convert.ToInt32(row["stockMaximo"]);
+                    stockP.stockActual = Convert.ToInt32(row["stockActual"]);
+                    //stockP.stockNuevo = Convert.ToInt32(row["stockNuevo"]);
                     //stockP.fechaActualizacion = Convert.ToDateTime(row["fechaActualizacion"]);
 
                     MySQL.DisconnectDB();
                 }
 
-                return stockI;
+                return stockP;
             }
             catch (Exception ex)
             {
@@ -221,30 +218,40 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = "";
+                string queryDevolver = @"SET @@sql_safe_updates = 0; 
+                                   UPDATE stockInsumos
+                                   SET stockActual = stockActual + @valorAnterior, fechaActualizacion = @fechaActualizacion
+                                   WHERE idInsumo = @idInsumo;
+                                   SET @@sql_safe_updates = 1";
 
-                if (carga == "C")
-                {
-                    string queryLess = @"SET @@sql_safe_updates = 0; 
-                                 UPDATE stockInsumos
-                                SET stockActual = stockActual - @valorNuevo, fechaActualizacion = @fechaActualizacion
-                                WHERE idInsumo = @idInsumo;
-                                 SET @@sql_safe_updates = 1";
+                string querySacar = @"SET @@sql_safe_updates = 0; 
+                                   UPDATE stockInsumos
+                                   SET stockActual = stockActual - @valorNuevo, fechaActualizacion = @fechaActualizacion
+                                   WHERE idInsumo = @idInsumo;
+                                   SET @@sql_safe_updates = 1";
 
-                    query = queryLess;
-                }
-                else if (carga == "D")
-                {
-                    string queryPlus = @"SET @@sql_safe_updates = 0; 
-                                 UPDATE stockInsumos
-                                SET stockActual = stockActual + @valorNuevo, fechaActualizacion = @fechaActualizacion
-                                WHERE idInsumo = @idInsumo;
-                                 SET @@sql_safe_updates = 1";
+//                if (carga == "C")
+//                {
+//                    string queryLess = @"SET @@sql_safe_updates = 0; 
+//                                 UPDATE stockInsumos
+//                                SET stockActual = stockActual - @valorNuevo, fechaActualizacion = @fechaActualizacion
+//                                WHERE idInsumo = @idInsumo;
+//                                 SET @@sql_safe_updates = 1";
 
-                    query = queryPlus;
-                }
+//                    query = queryLess;
+//                }
+//                else if (carga == "D")
+//                {
+//                    string queryPlus = @"SET @@sql_safe_updates = 0; 
+//                                 UPDATE stockInsumos
+//                                SET stockActual = stockActual + @valorNuevo, fechaActualizacion = @fechaActualizacion
+//                                WHERE idInsumo = @idInsumo;
+//                                 SET @@sql_safe_updates = 1";
 
-                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+//                    query = queryPlus;
+//                }
+
+                MySqlCommand cmd = new MySqlCommand();
 
                 cmd.Parameters.AddWithValue("@idInsumo", stockInsumo.idInsumo);
                 cmd.Parameters.AddWithValue("@stockActual", stockInsumo.stockActual);
@@ -252,6 +259,12 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@valorAnterior", stockInsumo.valorAnterior);
                 cmd.Parameters.AddWithValue("@valorNuevo", stockInsumo.valorNuevo);
 
+                cmd.CommandText = queryDevolver;
+                cmd.Connection = MySQL.sqlcnx;
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = querySacar;
+                cmd.Connection = MySQL.sqlcnx;
                 cmd.ExecuteNonQuery();
 
                 MySQL.DisconnectDB();
