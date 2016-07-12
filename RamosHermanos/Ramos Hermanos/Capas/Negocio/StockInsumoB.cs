@@ -246,7 +246,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@idProducto", stockInsumo.idInsumo);
+                cmd.Parameters.AddWithValue("@idInsumo", stockInsumo.idInsumo);
                 cmd.Parameters.AddWithValue("@stockActual", stockInsumo.stockActual);
                 cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
                 cmd.Parameters.AddWithValue("@valorAnterior", stockInsumo.valorAnterior);
@@ -448,5 +448,7 @@ namespace RamosHermanos.Capas.Negocio
             else
                 return true;
         }
+
+        
     }
 }

@@ -147,7 +147,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     StockProductoEntity stockP = StockProductoB.BuscarStock(Convert.ToInt32(frmPro.txtIDProd.Text));
                     frmPro.txtStockMin.Text = Convert.ToString(stockP.stockMinimo);
                     frmPro.txtStockMax.Text = Convert.ToString(stockP.stockMaximo);
-                    frmPro.txtStockA.Text = Convert.ToString(stockP.stockNuevo);
+                    frmPro.txtStockA.Text = Convert.ToString(stockP.stockActual);
 
                     //Cargar Operaciones Stock                    
                     StockProductoB.ListarStock(producto.idProducto, frmPro.dgvStock);

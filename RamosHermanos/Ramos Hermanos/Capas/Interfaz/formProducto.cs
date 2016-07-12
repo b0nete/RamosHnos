@@ -376,25 +376,25 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void SaveStock()
         {
-            //if (VerificarCamposStock() == false)
-            //{
-            //    return;
-            //}
-            //else
-            //{
-            //    if (StockProductoB.ExisteStock(Convert.ToInt32(txtIDProd.Text)) == true)
-            //    {
-            //        CargarStock();
-            //        StockProductoB.UpdateStock(stock);
-            //    }
-            //    else
-            //    {
-            //        CargarStock();
-            //        StockProductoB.InsertStock(stock);
-            //    }
-            //}
-        
-        
+            //ARREGLAR 
+
+            if (VerificarCamposStock() == false)
+            {
+                return;
+            }
+            else
+            {
+                if (StockProductoB.ExisteStock(Convert.ToInt32(txtIDProd.Text)) == true)
+                {
+                    CargarStock();
+                    StockProductoB.UpdateEncabezadoStock(stock);
+                }
+                else
+                {
+                    CargarStock();
+                    StockProductoB.InsertStock(stock);
+                }
+            }
         }
 
         // Entidades
@@ -528,7 +528,7 @@ namespace RamosHermanos.Capas.Interfaz
             else
             {
                 listInsumos frm = new listInsumos();
-                frm.caseSwitch = 1;
+                frm.caseSwitch = 3;
                 frm.Show(this);
 
             }     
@@ -704,7 +704,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         public void calcularSubTotales()
         {
-                if (dgvConformacion.CurrentRow.Cells["colCantidadm"].Value.ToString() != string.Empty)
+                if (Convert.ToString(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value) != string.Empty)
                 {
                     int idInsumo = Convert.ToInt32(dgvConformacion.CurrentRow.Cells["colIDInsumo"].Value.ToString());
                     double cantidad = Convert.ToDouble(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value.ToString());
@@ -791,6 +791,27 @@ namespace RamosHermanos.Capas.Interfaz
             else
             {
                 cantidadPreEdit = 0;
+            }
+        }
+
+        private void dgvConformacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 082 || e.KeyChar == 114)
+            {
+                // 082 = R
+                // 114 = r
+                dgvConformacion.CurrentRow.Cells["colRetornable"].Value = "R";
+            }
+        }
+
+        private void dgvConformacion_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow dr in dgvConformacion.Rows)
+            {
+                if (Convert.ToString(dr.Cells["colRetornable"].Value) == "R")
+                {
+                    dr.DefaultCellStyle.BackColor = Color.LightGreen;
+                }
             }
         }
     }

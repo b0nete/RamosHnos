@@ -111,6 +111,7 @@ namespace RamosHermanos.Capas.Negocio
                                  WHERE idProducto = @idProducto;
                                  SET @@sql_safe_updates = 1";
 
+
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 if (stockProducto.valorAnterior < stockProducto.valorNuevo)
@@ -124,7 +125,7 @@ namespace RamosHermanos.Capas.Negocio
                     cmd.Parameters.AddWithValue("@valorAnterior", stockProducto.valorAnterior);
                     cmd.Parameters.AddWithValue("@valorNuevo", stockProducto.valorNuevo);
 
-                    cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery();                    
                 }
                 else if (stockProducto.valorAnterior > stockProducto.valorNuevo)
                 {
@@ -205,10 +206,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 StockProductoEntity stockP = new StockProductoEntity();
 
-                string query = @"SELECT SP.stockMinimo, SP.stockMaximo, SPL.stockActual as stockActual, SPL.stockNuevo as stockNuevo
-                                FROM stockProducto SP
-                                INNER JOIN stockProductoLog SPL ON SPL.idProducto = SP.idProducto
-                                WHERE SP.idProducto = @idProducto and idStockProductoLog = (SELECT MAX(idStockProductoLog) FROM stockProductoLog WHERE idProducto = @idProducto)";
+                string query = @"SELECT * FROM stockProducto WHERE idProducto = @idProducto";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
@@ -228,7 +226,7 @@ namespace RamosHermanos.Capas.Negocio
                     stockP.stockMinimo = Convert.ToInt32(row["stockMinimo"]);
                     stockP.stockMaximo = Convert.ToInt32(row["stockMaximo"]);
                     stockP.stockActual = Convert.ToInt32(row["stockActual"]);
-                    stockP.stockNuevo = Convert.ToInt32(row["stockNuevo"]);
+                    //stockP.stockNuevo = Convert.ToInt32(row["stockNuevo"]);
                     //stockP.fechaActualizacion = Convert.ToDateTime(row["fechaActualizacion"]);
 
                     MySQL.DisconnectDB();
@@ -325,16 +323,49 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
 
-                string query = @"INSERT INTO stockproducto (idProducto, stockMinimo, stockMaximo, stockActual,fechaActualizacion) 
-                                 VALUES (@idProducto, @stockMinimo, @stockMaximo, 0, @fechaActualizacion)";
+                string query = @"INSERT INTO stockproducto (idProducto, stockMinimo, stockMaximon) 
+                                 VALUES (@idProducto, @stockMinimo, @stockMaximo)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
                 cmd.Parameters.AddWithValue("@idproducto", stock.idProducto);
                 cmd.Parameters.AddWithValue("@stockMinimo", stock.stockMinimo);
                 cmd.Parameters.AddWithValue("@stockMaximo", stock.stockMaximo);
-                cmd.Parameters.AddWithValue("@stockActual", stock.stockActual);
-                cmd.Parameters.AddWithValue("@fechaActualizacion", stock.fechaActualizacion);
+                //cmd.Parameters.AddWithValue("@stockActual", stock.stockActual);
+                //cmd.Parameters.AddWithValue("@fechaActualizacion", stock.fechaActualizacion);
+
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Stock Guardado!");
+                MySQL.DisconnectDB();
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static void UpdateEncabezadoStock(StockProductoEntity stock)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+
+                string query = @"UPDATE stockproducto
+                                 SET stockMinimo = @stockMinimo, stockMaximo = @stockMaximo 
+                                 WHERE idProducto = @idProducto";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idproducto", stock.idProducto);
+                cmd.Parameters.AddWithValue("@stockMinimo", stock.stockMinimo);
+                cmd.Parameters.AddWithValue("@stockMaximo", stock.stockMaximo);
+                //cmd.Parameters.AddWithValue("@stockActual", stock.stockActual);
+                //cmd.Parameters.AddWithValue("@fechaActualizacion", stock.fechaActualizacion);
 
                 cmd.ExecuteNonQuery();
 

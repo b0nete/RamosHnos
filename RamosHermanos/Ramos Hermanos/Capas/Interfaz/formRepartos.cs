@@ -157,6 +157,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         StockProductoEntity stockProducto = new StockProductoEntity();
 
+        StockInsumoEntity stockInsumo = new StockInsumoEntity();
+
 
         private void InsertFactura(string nombreColumna)
         {
@@ -732,21 +734,53 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 cantidadPreEdit = Convert.ToInt32(dgvRepartos.CurrentCell.Value.ToString());
             }
+            else
+            {
+                cantidadPreEdit = 0;
+            }
         }
 
         private void editCellProductos(int idProducto, string carga, string colCarga)
         {
             cantidadAfterEdit = Convert.ToInt32(dgvRepartos.CurrentRow.Cells[colCarga].Value);
+            int cantidadResultante = cantidadAfterEdit - cantidadPreEdit;
+            
 
             itemFactura.producto = idProducto;
             itemFactura.carga = carga;
 
             if (cantidadPreEdit == 0)
             {
-                stockProducto.idProducto = Convert.ToInt32(idProducto);
-                stockProducto.valorAnterior = cantidadPreEdit;
-                stockProducto.valorNuevo = cantidadAfterEdit;
-                StockProductoB.UpdateStockInsert(stockProducto, carga);
+                if (carga == "C")
+                {
+                    if (verificarStock(idProducto, cantidadResultante) == false)
+                    {
+                        dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
+                        return;
+                    }
+
+                    //Stock
+                    stockProducto.idProducto = Convert.ToInt32(idProducto);
+                    stockProducto.valorAnterior = cantidadPreEdit;
+                    stockProducto.valorNuevo = cantidadAfterEdit;
+                    StockProductoB.UpdateStockInsert(stockProducto, carga);
+                }
+                else if (carga == "D")
+                {
+                    DataTable dtInsumosRetornables = InsumoB.BuscarInsumosRetornables(idProducto);
+
+                    foreach (DataRow dr in dtInsumosRetornables.Rows)
+                    {
+                        stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
+                        stockInsumo.valorAnterior = cantidadPreEdit;
+                        stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
+
+                        StockInsumoB.UpdateStockInsert(stockInsumo, carga);
+                    }
+                }
+
+                
+
                 return;
             }
 
@@ -755,6 +789,15 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 if (cantidadPreEdit > cantidadAfterEdit)
                 {
+                    if (carga == "C")
+                    {
+                        if (verificarStock(idProducto, cantidadResultante) == false)
+                        {
+                            dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
+                            return;
+                        }
+                    } 
+
                     //Stock
                     stockProducto.idProducto = Convert.ToInt32(idProducto);
                     stockProducto.valorAnterior = cantidadPreEdit;
@@ -763,13 +806,14 @@ namespace RamosHermanos.Capas.Interfaz
                 }
                 else
                 {
-                    int cantidadResultante = cantidadAfterEdit - cantidadPreEdit;
-                    bool dispStock = StockProductoB.DisponiblidadStock(idProducto, cantidadResultante);
-                    if (dispStock == false)
+                    if (carga == "C")
                     {
-                        dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
-                        return;
-                    }
+                        if (verificarStock(idProducto, cantidadResultante) == false)
+                        {
+                            dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
+                            return;
+                        }
+                    }                    
 
                     //Stock
                     stockProducto.idProducto = Convert.ToInt32(idProducto);
@@ -797,6 +841,16 @@ namespace RamosHermanos.Capas.Interfaz
             return m.Success;
         }
 
+        private bool verificarStock(int idProducto, int cantidadResultante)
+        {
+            bool dispStock = StockProductoB.DisponiblidadStock(idProducto, cantidadResultante);
+            if (dispStock == false)
+            {
+                dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
+            }
+
+            return dispStock;
+        }
     }
 }
 

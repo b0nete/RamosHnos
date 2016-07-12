@@ -51,6 +51,9 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 case 2:
                     SeleccionarDGV();
                     break;
+                case 3:
+                    SeleccionarDgvInsumosConformacion();
+                    break;
                 default:
                     Console.WriteLine("Default case");
                     break;
@@ -156,9 +159,33 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 }
 
                 //this.Close();
+            }     
+        }
+
+        private void SeleccionarDgvInsumosConformacion()
+        {
+            DataGridViewCell cell = null;
+            foreach (DataGridViewCell selectedCell in dgvInsumos.SelectedCells)
+            {
+                cell = selectedCell;
+                break;
             }
-        
-        
+            if (cell != null)
+            {
+                DataGridViewRow rowA = this.dgvInsumos.CurrentRow as DataGridViewRow;
+
+                IAddItem parent = this.Owner as IAddItem;
+                parent.AddNewItem(rowA);
+
+                //bool bull = parent.comprobarItemRepetido();
+
+                //if (bull == true)
+                //{
+                //    return;
+                //}
+
+                //this.Close();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

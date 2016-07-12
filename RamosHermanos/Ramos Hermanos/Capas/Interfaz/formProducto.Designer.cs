@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProducto));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tabEstadisticas = new System.Windows.Forms.TabPage();
             this.chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -63,13 +63,6 @@
             this.txtCostoProd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvConformacion = new System.Windows.Forms.DataGridView();
-            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIDMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecioM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidadm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSaveConformacion = new System.Windows.Forms.Button();
             this.btnDelInsumo = new System.Windows.Forms.Button();
             this.btnAddInsumo = new System.Windows.Forms.Button();
@@ -97,6 +90,11 @@
             this.label31 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvStock = new System.Windows.Forms.DataGridView();
+            this.colOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.btnEstadisticas = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -141,11 +139,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.tabProducto = new System.Windows.Forms.TabControl();
-            this.colOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFechaComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecioM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidadm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRetornable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabEstadisticas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -193,17 +194,17 @@
             // 
             // chartProductos
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartProductos.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartProductos.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartProductos.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartProductos.Legends.Add(legend2);
             this.chartProductos.Location = new System.Drawing.Point(378, 6);
             this.chartProductos.Name = "chartProductos";
             this.chartProductos.Size = new System.Drawing.Size(349, 287);
             this.chartProductos.TabIndex = 3;
             this.chartProductos.Text = "chart1";
-            title1.Name = "Title1";
-            this.chartProductos.Titles.Add(title1);
+            title2.Name = "Title1";
+            this.chartProductos.Titles.Add(title2);
             // 
             // groupBox7
             // 
@@ -496,7 +497,8 @@
             this.colMedida,
             this.colPrecioM,
             this.colCantidadm,
-            this.colSubTotal});
+            this.colSubTotal,
+            this.colRetornable});
             this.dgvConformacion.Location = new System.Drawing.Point(6, 18);
             this.dgvConformacion.Name = "dgvConformacion";
             this.dgvConformacion.Size = new System.Drawing.Size(728, 344);
@@ -505,65 +507,12 @@
             this.dgvConformacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConformacion_CellContentClick);
             this.dgvConformacion.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConformacion_CellEndEdit);
             this.dgvConformacion.CellStateChanged += new System.Windows.Forms.DataGridViewCellStateChangedEventHandler(this.dgvConformacion_CellStateChanged);
+            this.dgvConformacion.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConformacion_CellValueChanged);
             this.dgvConformacion.CurrentCellChanged += new System.EventHandler(this.dgvConformacion_CurrentCellChanged);
             this.dgvConformacion.CurrentCellDirtyStateChanged += new System.EventHandler(this.dgvConformacion_CurrentCellDirtyStateChanged);
             this.dgvConformacion.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvConformacion_RowsAdded);
             this.dgvConformacion.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgvConformacion_RowStateChanged);
-            // 
-            // colIDInsumo
-            // 
-            this.colIDInsumo.DataPropertyName = "IDinsumo";
-            this.colIDInsumo.HeaderText = "Nº Insumo";
-            this.colIDInsumo.Name = "colIDInsumo";
-            this.colIDInsumo.ReadOnly = true;
-            this.colIDInsumo.Visible = false;
-            // 
-            // colInsumo
-            // 
-            this.colInsumo.DataPropertyName = "insumo";
-            this.colInsumo.HeaderText = "Insumo";
-            this.colInsumo.Name = "colInsumo";
-            this.colInsumo.ReadOnly = true;
-            this.colInsumo.Width = 250;
-            // 
-            // colIDMedida
-            // 
-            this.colIDMedida.HeaderText = "ID Medida";
-            this.colIDMedida.Name = "colIDMedida";
-            this.colIDMedida.ReadOnly = true;
-            this.colIDMedida.Visible = false;
-            // 
-            // colMedida
-            // 
-            this.colMedida.HeaderText = "Unidad Medida";
-            this.colMedida.Name = "colMedida";
-            this.colMedida.ReadOnly = true;
-            this.colMedida.Visible = false;
-            // 
-            // colPrecioM
-            // 
-            this.colPrecioM.DataPropertyName = "precio";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.colPrecioM.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colPrecioM.HeaderText = "Precio";
-            this.colPrecioM.Name = "colPrecioM";
-            // 
-            // colCantidadm
-            // 
-            this.colCantidadm.DataPropertyName = "cantidad";
-            this.colCantidadm.HeaderText = "Cantidad";
-            this.colCantidadm.Name = "colCantidadm";
-            // 
-            // colSubTotal
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colSubTotal.HeaderText = "SubTotal";
-            this.colSubTotal.Name = "colSubTotal";
+            this.dgvConformacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvConformacion_KeyPress);
             // 
             // btnSaveConformacion
             // 
@@ -866,6 +815,43 @@
             this.dgvStock.ReadOnly = true;
             this.dgvStock.Size = new System.Drawing.Size(731, 367);
             this.dgvStock.TabIndex = 0;
+            // 
+            // colOperacion
+            // 
+            this.colOperacion.DataPropertyName = "operacion";
+            this.colOperacion.HeaderText = "Operación";
+            this.colOperacion.Name = "colOperacion";
+            this.colOperacion.ReadOnly = true;
+            this.colOperacion.Width = 120;
+            // 
+            // colComprobante
+            // 
+            this.colComprobante.DataPropertyName = "numOperacion";
+            this.colComprobante.HeaderText = "Nº Comprobante";
+            this.colComprobante.Name = "colComprobante";
+            this.colComprobante.ReadOnly = true;
+            // 
+            // colFechaComprobante
+            // 
+            this.colFechaComprobante.DataPropertyName = "fecha";
+            this.colFechaComprobante.HeaderText = "Fecha Comprobante";
+            this.colFechaComprobante.Name = "colFechaComprobante";
+            this.colFechaComprobante.ReadOnly = true;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.DataPropertyName = "cantidad";
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
+            // 
+            // colStock
+            // 
+            this.colStock.DataPropertyName = "D";
+            this.colStock.HeaderText = "Stock";
+            this.colStock.Name = "colStock";
+            this.colStock.ReadOnly = true;
+            this.colStock.Visible = false;
             // 
             // tabInformacion
             // 
@@ -1406,42 +1392,65 @@
             this.tabProducto.Size = new System.Drawing.Size(760, 498);
             this.tabProducto.TabIndex = 0;
             // 
-            // colOperacion
+            // colIDInsumo
             // 
-            this.colOperacion.DataPropertyName = "operacion";
-            this.colOperacion.HeaderText = "Operación";
-            this.colOperacion.Name = "colOperacion";
-            this.colOperacion.ReadOnly = true;
-            this.colOperacion.Width = 120;
+            this.colIDInsumo.DataPropertyName = "IDinsumo";
+            this.colIDInsumo.HeaderText = "Nº Insumo";
+            this.colIDInsumo.Name = "colIDInsumo";
+            this.colIDInsumo.ReadOnly = true;
+            this.colIDInsumo.Visible = false;
             // 
-            // colComprobante
+            // colInsumo
             // 
-            this.colComprobante.DataPropertyName = "numOperacion";
-            this.colComprobante.HeaderText = "Nº Comprobante";
-            this.colComprobante.Name = "colComprobante";
-            this.colComprobante.ReadOnly = true;
+            this.colInsumo.DataPropertyName = "insumo";
+            this.colInsumo.HeaderText = "Insumo";
+            this.colInsumo.Name = "colInsumo";
+            this.colInsumo.ReadOnly = true;
+            this.colInsumo.Width = 250;
             // 
-            // colFechaComprobante
+            // colIDMedida
             // 
-            this.colFechaComprobante.DataPropertyName = "fecha";
-            this.colFechaComprobante.HeaderText = "Fecha Comprobante";
-            this.colFechaComprobante.Name = "colFechaComprobante";
-            this.colFechaComprobante.ReadOnly = true;
+            this.colIDMedida.HeaderText = "ID Medida";
+            this.colIDMedida.Name = "colIDMedida";
+            this.colIDMedida.ReadOnly = true;
+            this.colIDMedida.Visible = false;
             // 
-            // colCantidad
+            // colMedida
             // 
-            this.colCantidad.DataPropertyName = "cantidad";
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            this.colCantidad.ReadOnly = true;
+            this.colMedida.HeaderText = "Unidad Medida";
+            this.colMedida.Name = "colMedida";
+            this.colMedida.ReadOnly = true;
+            this.colMedida.Visible = false;
             // 
-            // colStock
+            // colPrecioM
             // 
-            this.colStock.DataPropertyName = "D";
-            this.colStock.HeaderText = "Stock";
-            this.colStock.Name = "colStock";
-            this.colStock.ReadOnly = true;
-            this.colStock.Visible = false;
+            this.colPrecioM.DataPropertyName = "precio";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.colPrecioM.DefaultCellStyle = dataGridViewCellStyle3;
+            this.colPrecioM.HeaderText = "Precio";
+            this.colPrecioM.Name = "colPrecioM";
+            // 
+            // colCantidadm
+            // 
+            this.colCantidadm.DataPropertyName = "cantidad";
+            this.colCantidadm.HeaderText = "Cantidad";
+            this.colCantidadm.Name = "colCantidadm";
+            // 
+            // colSubTotal
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colSubTotal.HeaderText = "SubTotal";
+            this.colSubTotal.Name = "colSubTotal";
+            // 
+            // colRetornable
+            // 
+            this.colRetornable.HeaderText = "Retornable";
+            this.colRetornable.Name = "colRetornable";
             // 
             // formProducto
             // 
@@ -1587,6 +1596,11 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox txtCostoProd;
         private System.Windows.Forms.TextBox txtPrecioSugerido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colOperacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colComprobante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaComprobante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colInsumo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDMedida;
@@ -1594,10 +1608,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecioM;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidadm;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colOperacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colComprobante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFechaComprobante;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colRetornable;
     }
 }

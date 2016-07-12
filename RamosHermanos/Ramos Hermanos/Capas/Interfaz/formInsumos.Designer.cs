@@ -72,6 +72,11 @@
             this.tabStock = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvStock = new System.Windows.Forms.DataGridView();
+            this.colOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFechaComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -94,11 +99,10 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.colOperacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFechaComprobante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -152,6 +156,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.txtInsumo);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.label5);
@@ -640,6 +648,42 @@
             this.dgvStock.Size = new System.Drawing.Size(724, 346);
             this.dgvStock.TabIndex = 1;
             // 
+            // colOperacion
+            // 
+            this.colOperacion.DataPropertyName = "operacion";
+            this.colOperacion.HeaderText = "Operación";
+            this.colOperacion.Name = "colOperacion";
+            this.colOperacion.ReadOnly = true;
+            // 
+            // colComprobante
+            // 
+            this.colComprobante.DataPropertyName = "numOperacion";
+            this.colComprobante.HeaderText = "Nº Comprobante";
+            this.colComprobante.Name = "colComprobante";
+            this.colComprobante.ReadOnly = true;
+            // 
+            // colFechaComprobante
+            // 
+            this.colFechaComprobante.DataPropertyName = "fecha";
+            this.colFechaComprobante.HeaderText = "Fecha Comprobante";
+            this.colFechaComprobante.Name = "colFechaComprobante";
+            this.colFechaComprobante.ReadOnly = true;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.DataPropertyName = "cantidad";
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            this.colCantidad.ReadOnly = true;
+            // 
+            // colStock
+            // 
+            this.colStock.DataPropertyName = "D";
+            this.colStock.HeaderText = "Stock";
+            this.colStock.Name = "colStock";
+            this.colStock.ReadOnly = true;
+            this.colStock.Visible = false;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button5);
@@ -881,41 +925,47 @@
             this.lblTitle.Text = "Insumos";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // colOperacion
+            // label4
             // 
-            this.colOperacion.DataPropertyName = "operacion";
-            this.colOperacion.HeaderText = "Operación";
-            this.colOperacion.Name = "colOperacion";
-            this.colOperacion.ReadOnly = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(112, 323);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(0, 13);
+            this.label4.TabIndex = 127;
             // 
-            // colComprobante
+            // label16
             // 
-            this.colComprobante.DataPropertyName = "numOperacion";
-            this.colComprobante.HeaderText = "Nº Comprobante";
-            this.colComprobante.Name = "colComprobante";
-            this.colComprobante.ReadOnly = true;
+            this.label16.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label16.ForeColor = System.Drawing.Color.Red;
+            this.label16.Location = new System.Drawing.Point(19, 323);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(11, 13);
+            this.label16.TabIndex = 130;
+            this.label16.Text = "*";
             // 
-            // colFechaComprobante
+            // checkBox1
             // 
-            this.colFechaComprobante.DataPropertyName = "fecha";
-            this.colFechaComprobante.HeaderText = "Fecha Comprobante";
-            this.colFechaComprobante.Name = "colFechaComprobante";
-            this.colFechaComprobante.ReadOnly = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.checkBox1.Location = new System.Drawing.Point(91, 323);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 129;
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // colCantidad
+            // label18
             // 
-            this.colCantidad.DataPropertyName = "cantidad";
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            this.colCantidad.ReadOnly = true;
-            // 
-            // colStock
-            // 
-            this.colStock.DataPropertyName = "D";
-            this.colStock.HeaderText = "Stock";
-            this.colStock.Name = "colStock";
-            this.colStock.ReadOnly = true;
-            this.colStock.Visible = false;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label18.Location = new System.Drawing.Point(26, 323);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(59, 13);
+            this.label18.TabIndex = 128;
+            this.label18.Text = "Retornable";
             // 
             // formInsumos
             // 
@@ -1021,6 +1071,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaComprobante;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label16;
+        public System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label18;
 
     }
 }

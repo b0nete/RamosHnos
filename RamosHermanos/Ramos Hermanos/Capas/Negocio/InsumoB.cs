@@ -454,5 +454,37 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static DataTable BuscarInsumosRetornables(int idProducto)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT IP.insumo, IP.cantidad
+                                FROM itemsProducto IP
+                                INNER JOIN Insumos I ON I.idInsumo = IP.insumo
+                                WHERE producto = @idProducto and I.retornable = 1";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idProducto", idProducto);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                return dt;
+
+                // MessageBox.Show("Cliente Actualizado!");
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
     }
 }
