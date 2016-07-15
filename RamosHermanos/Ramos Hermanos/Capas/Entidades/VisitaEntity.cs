@@ -11,6 +11,7 @@ namespace RamosHermanos.Capas.Entidades
         public int idVisita { get; set; }
         public int cliente { get; set; }
         public int domicilio { get; set; }
+        public int distribuidor { get; set; }
         public bool lunes { get; set; }
         public bool martes { get; set; }
         public bool miercoles { get; set; }

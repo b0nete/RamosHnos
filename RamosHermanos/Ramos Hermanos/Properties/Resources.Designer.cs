@@ -133,6 +133,16 @@ namespace RamosHermanos.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Book_icon {
+            get {
+                object obj = ResourceManager.GetObject("Book-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cliented {
             get {
                 object obj = ResourceManager.GetObject("Cliented", resourceCulture);

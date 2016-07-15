@@ -97,8 +97,39 @@ namespace RamosHermanos.Capas.Negocio
                 //cmd.ExecuteNonQuery();
                 domicilio.idDomicilio = Convert.ToInt32(cmd.ExecuteScalar());
 
-                MessageBox.Show("Domicilio Guardado!");
+                //MessageBox.Show("Domicilio Guardado!");
                 MySQL.DisconnectDB();
+                return domicilio;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static int BuscarIDPrimerDomicilio(int idCliente, int rol)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT idDomicilio FROM Domicilios WHERE idPersona = idPersona and rol = @rol";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                cmd.CommandText = query;
+
+                cmd.Parameters.AddWithValue("@rol", rol);
+                cmd.Parameters.AddWithValue("@idPersona", idCliente);
+
+                //cmd.ExecuteNonQuery();
+                int domicilio = Convert.ToInt32(cmd.ExecuteScalar());
+
+                //MessageBox.Show("Domicilio Guardado!");
+
+                MySQL.DisconnectDB();
+
                 return domicilio;
             }
 

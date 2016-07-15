@@ -8,6 +8,7 @@ using System.Data;
 using MySql.Data.MySqlClient;
 using RamosHermanos.Capas.Datos;
 using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Interfaz;
 
 namespace RamosHermanos.Capas.Negocio
 {
@@ -693,10 +694,7 @@ namespace RamosHermanos.Capas.Negocio
                 MessageBox.Show("Error: " + ex);
                 throw;
             }
-
-
         }
-
         
     }
 }

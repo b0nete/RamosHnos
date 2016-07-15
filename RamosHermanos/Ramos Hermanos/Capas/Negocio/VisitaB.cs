@@ -134,6 +134,54 @@ namespace RamosHermanos.Capas.Negocio
 //            }
 //        }
 
+        public static VisitaEntity BuscarVisita(int idCliente, int domicilio)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                VisitaEntity visita = new VisitaEntity();
+
+                string query = @"SELECT * FROM Visitas WHERE cliente = @idCliente and domicilio = @domicilio";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idCliente", idCliente);
+                cmd.Parameters.AddWithValue("@domicilio", domicilio);
+
+                cmd.ExecuteNonQuery();
+
+                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
+                if (resultado != 0)
+                {
+                    DataTable dt = new DataTable();
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    da.Fill(dt);
+
+                    DataRow row = dt.Rows[0];
+
+                    visita.lunes = Convert.ToBoolean(row["lunes"]);
+                    visita.martes = Convert.ToBoolean(row["martes"]);
+                    visita.miercoles = Convert.ToBoolean(row["miercoles"]);
+                    visita.jueves = Convert.ToBoolean(row["jueves"]);
+                    visita.viernes = Convert.ToBoolean(row["viernes"]);
+                    visita.sabado = Convert.ToBoolean(row["sabado"]);
+                }
+
+                //MessageBox.Show("Visita Guardada!");
+                MySQL.DisconnectDB();
+
+                return visita;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static VisitaEntity InsertVisita(VisitaEntity visita)
         {
             try
@@ -147,6 +195,44 @@ namespace RamosHermanos.Capas.Negocio
 
                 cmd.Parameters.AddWithValue("@cliente", visita.cliente);
                 cmd.Parameters.AddWithValue("@domicilio", visita.domicilio);
+                cmd.Parameters.AddWithValue("@lunes", visita.lunes);
+                cmd.Parameters.AddWithValue("@martes", visita.martes);
+                cmd.Parameters.AddWithValue("@miercoles", visita.miercoles);
+                cmd.Parameters.AddWithValue("@jueves", visita.jueves);
+                cmd.Parameters.AddWithValue("@viernes", visita.viernes);
+                cmd.Parameters.AddWithValue("@sabado", visita.sabado);
+
+                cmd.ExecuteNonQuery();
+
+                //MessageBox.Show("Visita Guardada!");
+                MySQL.DisconnectDB();
+
+                return visita;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static VisitaEntity UpdateVisita(VisitaEntity visita)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SET @@sql_safe_updates = 0;
+                                 UPDATE visitas 
+                                 SET distribuidor = @distribuidor, domicilio = @domicilio, lunes = @lunes, martes = @martes, miercoles = @miercoles, jueves = @jueves, viernes = @viernes, sabado = @sabado
+                                 WHERE cliente = @cliente and domicilio = @domicilio";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@cliente", visita.cliente);
+                cmd.Parameters.AddWithValue("@domicilio", visita.domicilio);
+                cmd.Parameters.AddWithValue("@distribuidor", visita.distribuidor);
                 cmd.Parameters.AddWithValue("@lunes", visita.lunes);
                 cmd.Parameters.AddWithValue("@martes", visita.martes);
                 cmd.Parameters.AddWithValue("@miercoles", visita.miercoles);

@@ -13,7 +13,7 @@ namespace RamosHermanos.Capas.Negocio
 {
     class itemsFacturaB
     {
-        public static void BuscarItemFacturaDGV(itemFacturaEntity itemFactura, DataGridView dgv, TextBox txtTotal)
+        public static itemFacturaEntity BuscarItemFacturaDGV(itemFacturaEntity itemFactura, DataGridView dgv, TextBox txtTotal)
         {
             try
             {
@@ -33,27 +33,34 @@ namespace RamosHermanos.Capas.Negocio
 
                 cmd.Parameters.AddWithValue("@factura", itemFactura.factura);
 
-                int resultado = Convert.ToInt32(cmd.ExecuteScalar());
-                if (resultado != 0)
-                {
-                    DataTable dt = new DataTable();
-                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                    MySqlDataReader dr = cmd.ExecuteReader();
 
-                    da.Fill(dt);
-                    dgv.AutoGenerateColumns = false;
-                    dgv.DataSource = dt;
-                }
+                    while (dr.Read())
+                    {
+                        dgv.Rows.Add(
+                            Convert.ToString(dr["codProducto"]),
+                            Convert.ToString(dr["producto"]),
+                            Convert.ToString(dr["cantidad"]),
+                            Convert.ToString(dr["precioUnitario"]),
+                            Convert.ToString(dr["subTotal"]),
+                            Convert.ToString(dr["carga"]));
+                    }
+
+                    dr.Close();
 
                 double c;
                 double total = 0;
 
                 foreach (DataGridViewRow row in dgv.Rows)
                 {
-                    c = Convert.ToDouble(row.Cells["colSubTotal"].Value);
+                    c = Convert.ToDouble(row.Cells["colSubTotal"].Value.ToString());
                     total = Convert.ToDouble(c + total);
                 }
 
                 txtTotal.Text = Convert.ToString(total);
+                MySQL.DisconnectDB();
+
+                return itemFactura;
             }
 
             catch (Exception ex)
@@ -319,6 +326,31 @@ WHERE factura = @factura and (producto =  1 or producto =  2 or producto =  3 or
             catch (Exception ex)
             {
                 MessageBox.Show("Error:" + ex); 
+                throw;
+            }
+        }
+
+        public static void DeleteItemsFactura(int idFactura)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SET SQL_SAFE_UPDATES = 0;
+                                 DELETE FROM itemsFactura
+                                 WHERE factura = @idFactura";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idFactura", idFactura);
+
+                cmd.ExecuteNonQuery();
+
+                MySQL.DisconnectDB();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex);
                 throw;
             }
         }

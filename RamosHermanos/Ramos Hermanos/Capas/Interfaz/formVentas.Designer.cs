@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formVentas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnPrint = new System.Windows.Forms.Button();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -44,6 +44,12 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvFactura = new System.Windows.Forms.DataGridView();
+            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtpfechaFactura = new System.Windows.Forms.DateTimePicker();
             this.cbTipoFactura = new System.Windows.Forms.ComboBox();
@@ -71,12 +77,6 @@
             this.txtIDcliente = new System.Windows.Forms.TextBox();
             this.txtnumDoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -246,6 +246,54 @@
             this.dgvFactura.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFactura_CellValueChanged);
             this.dgvFactura.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFactura_RowsAdded);
             this.dgvFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvFactura_KeyPress);
+            // 
+            // colCodigo
+            // 
+            this.colCodigo.DataPropertyName = "codProducto";
+            this.colCodigo.HeaderText = "Código";
+            this.colCodigo.Name = "colCodigo";
+            this.colCodigo.ReadOnly = true;
+            // 
+            // colProducto
+            // 
+            this.colProducto.DataPropertyName = "producto";
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.DataPropertyName = "cantidad";
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.DataPropertyName = "precioUnitario";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.colPrecio.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colPrecio.HeaderText = "Precio Unitario";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
+            // 
+            // colSubTotal
+            // 
+            this.colSubTotal.DataPropertyName = "subTotal";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colSubTotal.HeaderText = "SubTotal";
+            this.colSubTotal.Name = "colSubTotal";
+            this.colSubTotal.ReadOnly = true;
+            // 
+            // colCarga
+            // 
+            this.colCarga.DataPropertyName = "carga";
+            this.colCarga.HeaderText = "C/D";
+            this.colCarga.Name = "colCarga";
             // 
             // groupBox3
             // 
@@ -526,7 +574,6 @@
             this.txtIDcliente.Name = "txtIDcliente";
             this.txtIDcliente.Size = new System.Drawing.Size(26, 20);
             this.txtIDcliente.TabIndex = 6;
-            this.txtIDcliente.Visible = false;
             // 
             // txtnumDoc
             // 
@@ -546,54 +593,6 @@
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Cliente";
-            // 
-            // colCodigo
-            // 
-            this.colCodigo.DataPropertyName = "codProducto";
-            this.colCodigo.HeaderText = "Código";
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.ReadOnly = true;
-            // 
-            // colProducto
-            // 
-            this.colProducto.DataPropertyName = "producto";
-            this.colProducto.HeaderText = "Producto";
-            this.colProducto.Name = "colProducto";
-            this.colProducto.ReadOnly = true;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.DataPropertyName = "cantidad";
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.DataPropertyName = "precioUnitario";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colPrecio.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colPrecio.HeaderText = "Precio Unitario";
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.ReadOnly = true;
-            // 
-            // colSubTotal
-            // 
-            this.colSubTotal.DataPropertyName = "subTotal";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colSubTotal.HeaderText = "SubTotal";
-            this.colSubTotal.Name = "colSubTotal";
-            this.colSubTotal.ReadOnly = true;
-            // 
-            // colCarga
-            // 
-            this.colCarga.DataPropertyName = "carga";
-            this.colCarga.HeaderText = "C/D";
-            this.colCarga.Name = "colCarga";
             // 
             // formVentas
             // 

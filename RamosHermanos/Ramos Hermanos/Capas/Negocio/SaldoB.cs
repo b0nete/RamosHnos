@@ -30,7 +30,7 @@ namespace RamosHermanos.Capas.Negocio
                 int resultado = Convert.ToInt32(cmd.ExecuteScalar());
                 if (resultado == 0)
                 {
-                    MessageBox.Show("No hay saldo");
+                    //MessageBox.Show("No hay saldo");
                 }
                 else
                 {

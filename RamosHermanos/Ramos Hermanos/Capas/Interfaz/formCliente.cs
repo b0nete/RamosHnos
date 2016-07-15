@@ -127,8 +127,8 @@ namespace RamosHermanos.Capas.Interfaz
                         CargarSaldo(txtIDcliente);
                         SaldoB.UpdateSaldo(saldo);
 
-                        //CargarVisita(txtIDcliente);
-                        //VisitaB.UpdateVisita(visita);
+                        CargarVisita(Convert.ToInt32(txtIDcliente.Text));
+                        VisitaB.UpdateVisita(visita);
                         //visita.idVisita = Convert.ToInt32(txtIDVisita.Text);
                         //CargarDias();
                         //VisitaB.UpdateDias(visita);
@@ -151,8 +151,8 @@ namespace RamosHermanos.Capas.Interfaz
                     CargarSaldo(txtIDcliente);
                     SaldoB.InsertSaldo(saldo);
 
-                    //CargarVisita(txtIDcliente);
-                    //VisitaB.InsertVisita(visita);
+                    CargarVisita(Convert.ToInt32(txtIDcliente.Text));
+                    VisitaB.InsertVisita(visita);
                     //CargarDias();
                     //VisitaB.InsertDias(visita);
                     //CargarOrden();
@@ -557,18 +557,18 @@ namespace RamosHermanos.Capas.Interfaz
                 txtCreditoMax.Text = Convert.ToString(saldo.creditoMax);
                 txtSaldo.Text = Convert.ToString(saldo.saldoActual);
 
-                //CargarVisita(txtIDcliente);
+                CargarVisita(Convert.ToInt32(txtIDcliente.Text));
                 //VisitaB.BuscarVisita(visita);
                 //txtIDVisita.Text = Convert.ToString(visita.idVisita);
                 //dtpA.Text = visita.horarioVisitaA;
                 //dtpB.Text = visita.horarioVisitaB;
                 ////Dias
-                //cbLunes.Checked = visita.dlunes;
-                //cbMartes.Checked = visita.dmartes;
-                //cbMiercoles.Checked = visita.dmiercoles;
-                //cbJueves.Checked = visita.djueves;
-                //cbViernes.Checked = visita.dviernes;
-                //cbSabado.Checked = visita.dsabado;
+                cbLunes.Checked = visita.lunes;
+                cbMartes.Checked = visita.martes;
+                cbMiercoles.Checked = visita.miercoles;
+                cbJueves.Checked = visita.jueves;
+                cbViernes.Checked = visita.viernes;
+                cbSabado.Checked = visita.sabado;
                 //cbDomingo.Checked = visita.ddomingo;
                 ////Orden
                 //txtLun.Text = Convert.ToString(visita.olunes);
@@ -1089,10 +1089,17 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         VisitaEntity visita = new VisitaEntity();
-        private void CargarVisita(DataGridView dgv)
+        public void CargarVisita(int idCliente)
         {
-            //visita.rol = 1;
-            //visita.idPersona = Convert.ToInt32(dgv.CurrentRow.Cells["colVLucliente"].Value);
+            visita.cliente = Convert.ToInt32(txtIDcliente.Text);
+            visita.domicilio = DomicilioB.BuscarIDPrimerDomicilio(idCliente, 1);
+            visita.distribuidor = Convert.ToInt32(cbDistribuidor.SelectedValue);
+            visita.lunes = Convert.ToBoolean(cbLunes.Checked);
+            visita.martes = Convert.ToBoolean(cbMartes.Checked);
+            visita.miercoles = Convert.ToBoolean(cbMiercoles.Checked);
+            visita.jueves = Convert.ToBoolean(cbJueves.Checked);
+            visita.viernes = Convert.ToBoolean(cbViernes.Checked);
+            visita.sabado = Convert.ToBoolean(cbSabado.Checked);
         }
 
         
@@ -1629,10 +1636,15 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void txtCreditoMax_TextChanged_1(object sender, EventArgs e)
         {
-            txtCreditoMax.Text = "$" + txtCreditoMax.Text;
+            //txtCreditoMax.Text = "$" + txtCreditoMax.Text;
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
         {
 
         }

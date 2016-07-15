@@ -2711,6 +2711,7 @@
             this.lblTitle.TabIndex = 117;
             this.lblTitle.Text = "Clientes";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // formCliente
             // 
@@ -2942,12 +2943,6 @@
         public System.Windows.Forms.TextBox txtRetornable;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.GroupBox groupBox16;
-        private System.Windows.Forms.CheckBox cbSabado;
-        private System.Windows.Forms.CheckBox cbViernes;
-        private System.Windows.Forms.CheckBox cbJueves;
-        private System.Windows.Forms.CheckBox cbMiercoles;
-        private System.Windows.Forms.CheckBox cbMartes;
-        private System.Windows.Forms.CheckBox cbLunes;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.CheckBox cbSabadoPJ;
         private System.Windows.Forms.CheckBox cbViernesPJ;
@@ -2993,6 +2988,12 @@
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Button button11;
+        public System.Windows.Forms.CheckBox cbSabado;
+        public System.Windows.Forms.CheckBox cbViernes;
+        public System.Windows.Forms.CheckBox cbJueves;
+        public System.Windows.Forms.CheckBox cbMiercoles;
+        public System.Windows.Forms.CheckBox cbMartes;
+        public System.Windows.Forms.CheckBox cbLunes;
 
     }
 }

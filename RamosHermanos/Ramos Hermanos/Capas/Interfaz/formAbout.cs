@@ -31,5 +31,20 @@ namespace RamosHermanos.Capas.Interfaz
         {
 
         }
+
+        private void btnDelCalle_Click(object sender, EventArgs e)
+        {
+            string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
+
+            //this.Application.Documents.Open(ruta + "ManualDeUsuario.docx", ReadOnly: true);
+
+            System.Diagnostics.Process prohelp = new System.Diagnostics.Process();
+            //MessageBox.Show(ruta + @"\ManualDeUsuario.docx");
+            prohelp.StartInfo.FileName = "D:\\GitHub Repos\\RamosHnos\\RamosHermanos\\Ramos Hermanos\\ManualDeUsuario.docx"; //ruta de donde se encuentre el archivo
+
+
+            prohelp.Start();
+            prohelp.Close();
+        }
     }
 }

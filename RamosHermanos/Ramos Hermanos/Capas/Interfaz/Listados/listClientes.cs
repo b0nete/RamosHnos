@@ -111,6 +111,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
         //Entidades
         ClienteEntity cliente = new ClienteEntity();
+        VisitaEntity visita = new VisitaEntity();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -239,6 +240,14 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     frm.txtDispenser.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 11));
                     //Salgo Envase Soda
                     frm.txtRetornable.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 7));
+                    //Visitas
+                    visita = VisitaB.BuscarVisita(Convert.ToInt32(frm.txtIDcliente.Text), DomicilioB.BuscarIDPrimerDomicilio(Convert.ToInt32(frm.txtIDcliente.Text), 1));
+                    frm.cbLunes.Checked = visita.lunes;
+                    frm.cbMartes.Checked = visita.martes;
+                    frm.cbMiercoles.Checked = visita.miercoles;
+                    frm.cbJueves.Checked = visita.jueves;
+                    frm.cbViernes.Checked = visita.viernes;
+                    frm.cbSabado.Checked = visita.sabado;
                     //Tabs
                     frm.CasePersona();
                 }
@@ -293,6 +302,10 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     frm.txt12LTPJ.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 4));
                     frm.txt20LTPJ.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 5));
                     frm.txt25LTPJ.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 6));
+
+                    //Visitas
+                    frm.CargarVisita(Convert.ToInt32(frm.txtIDcliente.Text));
+                    //VisitaB.BuscarVisita(visita);
 
                     //Tabs
                     frm.CasePersonaJuridica();

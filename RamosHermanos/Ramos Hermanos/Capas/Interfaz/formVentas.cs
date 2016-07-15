@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Interfaz;
 using RamosHermanos.Capas.Reportes;
 using RamosHermanos.Capas.Reportes.Comprobante;
 using RamosHermanos.Capas.Interfaz.Listados;
@@ -19,6 +20,7 @@ namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formVentas : Form, produccionForm
     {
+        public int facturaNuevaoRegistrada; //1 nueva, 2 registrada.
         public int newORupdate = 1;
         public int cantidadValorAnterior;
         public int cantidadValorNuevo;
@@ -171,6 +173,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button2_Click(object sender, EventArgs e)
         {
+            facturaNuevaoRegistrada = 1; //Se cambia valor a uno para poder editar la factura.
+
             listProductos frm = new listProductos();
             frm.caseSwitch = 3;
             frm.Show(this);
@@ -178,74 +182,74 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvFactura_CellStateChanged(object sender, DataGridViewCellStateChangedEventArgs e)
         {
-            double precioUnitario;
+            if (facturaNuevaoRegistrada == 1)
+            {
+                double precioUnitario;
 
-            foreach (DataGridViewRow dRow in dgvFactura.Rows)
-            {                
-                if (dRow.Cells["colCodigo"].Value.ToString() != string.Empty)
+                foreach (DataGridViewRow dRow in dgvFactura.Rows)
                 {
-                    int codProducto = Convert.ToInt32(dRow.Cells["colCodigo"].Value.ToString());
-                    precioUnitario = PrecioProductosB.UltimoPrecio(codProducto);
-                    dRow.Cells["colPrecio"].Value = precioUnitario;
+                    if (dRow.Cells["colCodigo"].Value.ToString() != string.Empty)
+                    {
+                        int codProducto = Convert.ToInt32(dRow.Cells["colCodigo"].Value.ToString());
+                        precioUnitario = PrecioProductosB.UltimoPrecio(codProducto);
+                        dRow.Cells["colPrecio"].Value = precioUnitario;
+                    }
                 }
             }
+            
         }
 
         private void dgvFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             cantidadValorNuevo = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCantidad"].Value);
-
-            //Verificamos stock
             int idProducto = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCodigo"].Value);
-            int cantidad = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCantidad"].Value);
+            int cantidadResultante = cantidadValorNuevo - cantidadValorAnterior;
+            string carga = "";
 
-            if (Convert.ToString(dgvFactura.CurrentRow.Cells["colCarga"].Value) != string.Empty && txtIDFactura.Text != string.Empty)
+            if (Convert.ToString(dgvFactura.CurrentRow.Cells["colCarga"].Value) == "C")
             {
-                cantidadValorAnterior = itemsFacturaB.BuscarCantidadAnterior(Convert.ToInt32(txtIDFactura.Text), idProducto, dgvFactura.CurrentRow.Cells["colCarga"].Value.ToString());
+                dgvFactura.CurrentRow.Cells["colSubTotal"].Value = cantidadValorNuevo * Convert.ToDouble(dgvFactura.CurrentRow.Cells["colPrecio"].Value);
+                carga = "C";
             }
-
-            
-
-            int cantidadResultante = Math.Abs(cantidadValorAnterior - cantidadValorNuevo);
-            bool dispStock = StockProductoB.DisponiblidadStock(idProducto, cantidadResultante);
-            if (dispStock == false)
+            else if (Convert.ToString(dgvFactura.CurrentRow.Cells["colCarga"]) == "D")
             {
-                dgvFactura.CurrentCell.Value = cantidadValorAnterior.ToString();
-                return;
+                dgvFactura.CurrentRow.Cells["colSubTotal"].Value = 0;
+                carga = "D";
             }
+                
 
-            //if (StockProductoB.DisponiblidadStock(idProducto, cantidad) == false)
-            //{
-            //    dgvFactura.CurrentRow.Cells["colCantidad"].Value = cantidadValorAnterior; 
-            //}
-
-            //Valor Nuevo
-            if (dgvFactura.CurrentRow.Cells["colCantidad"].Value.ToString() != string.Empty)
+            if (carga == "C")
             {
-                cantidadValorNuevo = Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCantidad"].Value.ToString());
-                //MessageBox.Show("Valor Nuevo: " + cantidadValorNuevo);
-            }
-
-            if (dgvFactura.CurrentRow.Cells["colCodigo"].Value.ToString() != string.Empty && dgvFactura.CurrentRow.Cells["colCantidad"].Value.ToString() != string.Empty)
-            {
-                double precioUnitario = PrecioProductosB.UltimoPrecio(Convert.ToInt32(dgvFactura.CurrentRow.Cells["colCodigo"].Value.ToString()));
-                dgvFactura.CurrentRow.Cells["colSubTotal"].Value = Convert.ToString(cantidad * precioUnitario);               
-            }
-
-            // Se recorre cada fila del DGV.
-            double total = 0;
-
-            foreach (DataGridViewRow row in dgvFactura.Rows)
-            {
-                if (row.Cells["colCantidad"].ToString() != string.Empty && row.Cells["colPrecio"].ToString() != string.Empty)
+                if (verificarStock(idProducto, cantidadResultante) == false)
                 {
-                    row.Cells["colSubTotal"].Value = Convert.ToInt32(row.Cells["colCantidad"].Value) * Convert.ToDouble(row.Cells["colPrecio"].Value);
-
-                    total += Convert.ToDouble(row.Cells["colSubTotal"].Value);
+                    dgvFactura.CurrentCell.Value = cantidadValorAnterior.ToString();
+                    return;
                 }
-
-                txtTotal.Text = Convert.ToString(total);
             }
+
+            if (carga == "C")
+            {
+                //Stock
+                stockProducto.idProducto = Convert.ToInt32(idProducto);
+                stockProducto.valorAnterior = cantidadValorAnterior;
+                stockProducto.valorNuevo = cantidadValorNuevo;
+                StockProductoB.UpdateStockInsert(stockProducto, carga);
+            }
+            else if (carga == "D")
+            {
+                DataTable dtInsumosRetornables = InsumoB.BuscarInsumosRetornables(idProducto);
+                DataRow dr = dtInsumosRetornables.Rows[0];
+
+                stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
+                stockInsumo.valorAnterior = cantidadValorAnterior * Convert.ToInt32(dr["cantidad"].ToString());
+                stockInsumo.valorNuevo = cantidadValorNuevo * Convert.ToInt32(dr["cantidad"].ToString());
+
+                StockInsumoB.UpdateStockInsert(stockInsumo, carga);
+            }
+
+            calcularTotal();
+
+            UpdateFacturaEXEC();
         }
 
         private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
@@ -265,7 +269,6 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvFactura_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-
             string var = Convert.ToString(dgvFactura.CurrentRow.Cells["colCantidad"].Value);
 
             if (var != string.Empty)
@@ -298,28 +301,83 @@ namespace RamosHermanos.Capas.Interfaz
                 if (Convert.ToString(dgvFactura.CurrentRow.Cells["colCarga"].Value) == "D")
                 {
                     double st = Convert.ToDouble(dgvFactura.CurrentRow.Cells["colSubTotal"].Value.ToString());
-                    dgvFactura.CurrentRow.Cells["colSubTotal"].Value = -(st);
+                    dgvFactura.CurrentRow.Cells["colPrecio"].Value = 0;
+                    dgvFactura.CurrentRow.Cells["colSubTotal"].Value = 0;
                 }
             }
+
+            if (e.KeyChar == 112 || e.KeyChar == 80)
+            {
+                // 112 = p
+                // 80 = P
+                dgvFactura.CurrentRow.Cells["colCarga"].Value = "P";
+
+                if (Convert.ToString(dgvFactura.CurrentRow.Cells["colCarga"].Value) == "P")
+                {
+                    double st = Convert.ToDouble(dgvFactura.CurrentRow.Cells["colSubTotal"].Value.ToString());
+                    dgvFactura.CurrentRow.Cells["colSubTotal"].Value = 0;
+                }
+            }
+
+            UpdateFacturaEXEC();
         }
 
         private void dgvFactura_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            
+            foreach (DataGridViewRow dr in dgvFactura.Rows)
+            {
+                if (Convert.ToString(dr.Cells["colCarga"].Value) == "C")
+                {
+                    dr.DefaultCellStyle.BackColor = Color.LightGreen;
+                    calcularTotal();
+                }
+
+                if (Convert.ToString(dr.Cells["colCarga"].Value) == "D")
+                {
+                    dr.DefaultCellStyle.BackColor = Color.LightCoral;
+                    calcularTotal();
+                }
+
+                if (Convert.ToString(dr.Cells["colCarga"].Value) == "P")
+                {
+                    dr.DefaultCellStyle.BackColor = Color.Yellow;
+                    calcularTotal();
+                }
+            }
         }
 
         private void dgvFactura_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            foreach (DataGridViewRow dR in dgvFactura.Rows)
+            if (facturaNuevaoRegistrada == 1)
             {
-                if (Convert.ToString(dR.Cells["colCarga"].Value) == string.Empty)
+                foreach (DataGridViewRow dR in dgvFactura.Rows)
                 {
-                    dR.Cells["colCarga"].Value = "C";
+                    if (Convert.ToString(dR.Cells["colCarga"].Value) == string.Empty)
+                    {
+                        dR.Cells["colCarga"].Value = "C";
+                    }
                 }
             }
+            else
+            {
+                foreach (DataGridViewRow dr in dgvFactura.Rows)
+                {
+                    if (Convert.ToString(dr.Cells["colCarga"].Value) == "C")
+                    {
+                        dr.DefaultCellStyle.BackColor = Color.LightGreen;
+                    }
 
+                    if (Convert.ToString(dr.Cells["colCarga"].Value) == "D")
+                    {
+                        dr.DefaultCellStyle.BackColor = Color.LightCoral;
+                    }
 
-                     
+                    if (Convert.ToString(dr.Cells["colCarga"].Value) == "P")
+                    {
+                        dr.DefaultCellStyle.BackColor = Color.Yellow;
+                    }
+                }
+            }
         }
 
         private void txtTotal_TextChanged(object sender, EventArgs e)
@@ -334,7 +392,7 @@ namespace RamosHermanos.Capas.Interfaz
             int ultimaFila = dgvFactura.Rows.Count;
             if (dgvFactura.Rows.Count > 1)
             {
-                if (Convert.ToString(dgvFactura.Rows[ultimaFila - 2].Cells["colCodigo"].Value) == Convert.ToString(dgvFactura.Rows[ultimaFila].Cells["colCodigo"].Value))
+                if (Convert.ToString(dgvFactura.Rows[ultimaFila - 2].Cells["colCodigo"].Value) == Convert.ToString(dgvFactura.Rows[ultimaFila - 1].Cells["colCodigo"].Value))
                 {
                     dgvFactura.Rows.Remove(dgvFactura.Rows[ultimaFila - 1]);
                     MessageBox.Show("Ya existe este producto en la factura!");
@@ -343,6 +401,86 @@ namespace RamosHermanos.Capas.Interfaz
                 }
             }
             return bul;
+        }
+
+        private void calcularTotal()
+        {
+            // Se recorre cada fila del DGV.
+            double carga = 0;
+
+                foreach (DataGridViewRow row in dgvFactura.Rows)
+            {
+                if (row.Cells["colCantidad"].ToString() != string.Empty && row.Cells["colPrecio"].ToString() != string.Empty && row.Cells["colCarga"].Value.ToString() == "C")
+                {
+                    row.Cells["colSubTotal"].Value = Convert.ToInt32(row.Cells["colCantidad"].Value) * Convert.ToDouble(row.Cells["colPrecio"].Value);
+
+                    carga += Convert.ToDouble(row.Cells["colSubTotal"].Value);
+                }
+
+                txtTotal.Text = Convert.ToString(carga);
+            }
+            
+        }
+
+        private bool verificarStock(int idProducto, int cantidadResultante)
+        {
+            bool dispStock = StockProductoB.DisponiblidadStock(idProducto, cantidadResultante);
+            if (dispStock == false)
+            {
+                dgvFactura.CurrentCell.Value = cantidadValorAnterior.ToString();
+            }
+
+            return dispStock;
+        }
+
+        StockInsumoEntity stockInsumo = new StockInsumoEntity();
+
+        private void UpdateFacturaEXEC()
+        {
+            if (txtIDFactura.Text == string.Empty)
+            {
+                txtIDFactura.Text = Convert.ToString(FacturaB.UltimaFactura() + 1);
+            }
+
+            //Factura
+            factura.tipoFactura = cbTipoFactura.Text;
+            factura.estado = cbEstado.Text;
+            factura.fechaFactura = dtpfechaFactura.Value;
+            factura.fechaVencimiento = dtpVencimiento.Value;
+            factura.fechaEntrega = dtpEntrega.Value;
+            factura.cliente = Convert.ToInt32(txtIDcliente.Text);
+            factura.domicilio = Convert.ToInt32(cbDomicilio.SelectedValue);
+            factura.formaPago = cbformaPago.Text;
+            //factura.numFactura = FacturaB.UltimaFactura() + 1;
+            factura.idFactura = Convert.ToInt32(txtIDFactura.Text);
+            factura.total = Convert.ToDouble(txtTotal.Text);
+            factura.observaciones = txtObservaciones.Text;
+            factura.estado = cbEstado.Text;
+
+            FacturaB.UpdateFactura(factura);
+
+            //ItemsFactura
+            itemsFacturaB.DeleteItemsFactura(factura.idFactura); //Borramos itemsFactura
+            foreach (DataGridViewRow dr in dgvFactura.Rows)
+            {
+                string cantidad, precio, subtotal;
+                cantidad = Convert.ToString(dr.Cells["colCantidad"].Value);
+                precio = Convert.ToString(dr.Cells["colPrecio"].Value);
+                subtotal = Convert.ToString(dr.Cells["colSubTotal"].Value);
+
+                if (cantidad != string.Empty && precio != string.Empty && subtotal != string.Empty)
+                {
+                    itemFactura.producto = Convert.ToInt32(dr.Cells["colCodigo"].Value.ToString());
+                    itemFactura.factura = factura.idFactura.ToString();
+                    itemFactura.cantidad = Convert.ToInt32(dr.Cells["colCantidad"].Value.ToString());
+                    itemFactura.precioUnitario = Convert.ToDouble(dr.Cells["colPrecio"].Value.ToString());
+                    itemFactura.subTotal = Convert.ToInt32(dr.Cells["colSubTotal"].Value.ToString());
+                    itemFactura.carga = Convert.ToString(dr.Cells["colCarga"].Value.ToString());
+
+                    itemsFacturaB.InsertItemFactura(itemFactura);
+                }
+                
+            }
         }
 
     }

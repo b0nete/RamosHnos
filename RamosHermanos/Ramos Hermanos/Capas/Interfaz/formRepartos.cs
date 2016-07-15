@@ -184,10 +184,20 @@ namespace RamosHermanos.Capas.Interfaz
                 FacturaB.InsertFactura(factura);
 
                 //ItemsFactura
-                itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
-                itemFactura.cantidad = Convert.ToInt32(dgvRepartos.CurrentRow.Cells[nombreColumna].Value.ToString());
-                itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
-                itemFactura.subTotal = itemFactura.precioUnitario * itemFactura.cantidad;
+                if (itemFactura.carga == "C")
+                {
+                    itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+                    itemFactura.cantidad = Convert.ToInt32(dgvRepartos.CurrentRow.Cells[nombreColumna].Value.ToString());
+                    itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
+                    itemFactura.subTotal = itemFactura.precioUnitario * itemFactura.cantidad;
+                }
+                else
+                {
+                    itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+                    itemFactura.cantidad = Convert.ToInt32(dgvRepartos.CurrentRow.Cells[nombreColumna].Value.ToString());
+                    itemFactura.precioUnitario = 0;
+                    itemFactura.subTotal = 0;
+                }
 
                 itemsFacturaB.InsertItemFactura(itemFactura);
 
@@ -222,10 +232,20 @@ namespace RamosHermanos.Capas.Interfaz
                 FacturaB.UpdateFactura(factura);
 
                 //ItemsFactura
-                itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
-                itemFactura.cantidad = Convert.ToInt32(dgvRepartos.CurrentRow.Cells[nombreColumna].Value.ToString());
-                itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
-                itemFactura.subTotal = itemFactura.precioUnitario * itemFactura.cantidad;
+                if (itemFactura.carga == "C")
+                {
+                    itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+                    itemFactura.cantidad = Convert.ToInt32(dgvRepartos.CurrentRow.Cells[nombreColumna].Value.ToString());
+                    itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
+                    itemFactura.subTotal = itemFactura.precioUnitario * itemFactura.cantidad;
+                }
+                else
+                {
+                    itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+                    itemFactura.cantidad = Convert.ToInt32(dgvRepartos.CurrentRow.Cells[nombreColumna].Value.ToString());
+                    itemFactura.precioUnitario = 0;
+                    itemFactura.subTotal = 0;
+                }
 
                 itemsFacturaB.UpdateItemFactura(itemFactura);
 
@@ -244,14 +264,7 @@ namespace RamosHermanos.Capas.Interfaz
             if (Convert.ToString(dgvRepartos.CurrentCell.Value) == string.Empty)
             {
                 cantidadPreEdit = 0;
-            }
-
-
-            //if (EsNumerico(dgvRepartos.CurrentCell.Value.ToString()))
-            //{
-            //    cantidadPreEdit = Convert.ToInt32(dgvRepartos.CurrentCell.Value);
-            //}
-            
+            }            
         }
 
         private void SeleccionarDgv()

@@ -45,6 +45,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnDelCalle = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +86,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnDelCalle);
+            this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
@@ -228,9 +232,31 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(590, 40);
             this.label3.TabIndex = 147;
-            this.label3.Text = "Software de Gestión Ramos Hnos.";
+            this.label3.Text = "IDMA Soft";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label15.Location = new System.Drawing.Point(368, 25);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(99, 13);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Manual de Usuario:";
+            // 
+            // btnDelCalle
+            // 
+            this.btnDelCalle.BackgroundImage = global::RamosHermanos.Properties.Resources.Book_icon;
+            this.btnDelCalle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDelCalle.Location = new System.Drawing.Point(467, 17);
+            this.btnDelCalle.Name = "btnDelCalle";
+            this.btnDelCalle.Size = new System.Drawing.Size(28, 28);
+            this.btnDelCalle.TabIndex = 104;
+            this.btnDelCalle.UseVisualStyleBackColor = true;
+            this.btnDelCalle.Click += new System.EventHandler(this.btnDelCalle_Click);
             // 
             // formAbout
             // 
@@ -272,5 +298,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnDelCalle;
     }
 }
