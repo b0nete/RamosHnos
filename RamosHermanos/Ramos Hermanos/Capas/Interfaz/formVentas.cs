@@ -36,7 +36,7 @@ namespace RamosHermanos.Capas.Interfaz
             string producto = row.Cells["colProducto"].Value.ToString();
             //string check = "true";
 
-            this.dgvFactura.Rows.Add(new[] { idProducto, producto });
+            this.dgvFactura.Rows.Add(new[] { idProducto, producto, "1"});
         }
 
         private void formFactura_Load(object sender, EventArgs e)
@@ -480,6 +480,20 @@ namespace RamosHermanos.Capas.Interfaz
                     itemsFacturaB.InsertItemFactura(itemFactura);
                 }
                 
+            }
+        }
+
+        public void columnasNegativasTotal()
+        {
+            foreach (DataGridViewRow dRow in dgvFactura.Rows)
+            {
+                if (Convert.ToString(dRow.Cells["colCarga"].Value) == "D")
+                {
+                    dRow.Cells["colPrecio"].Value = 0;
+                    dRow.Cells["colSubTotal"].Value = 0;           
+                }
+
+                calcularTotal();
             }
         }
 

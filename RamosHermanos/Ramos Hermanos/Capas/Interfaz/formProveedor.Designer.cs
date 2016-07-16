@@ -76,10 +76,10 @@
             this.rbNoPagas = new System.Windows.Forms.RadioButton();
             this.rbPagas = new System.Windows.Forms.RadioButton();
             this.dgvMovimientos = new System.Windows.Forms.DataGridView();
-            this.tabPedido = new System.Windows.Forms.TabPage();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.colIDFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPedido = new System.Windows.Forms.TabPage();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.tabProveedor.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -598,6 +598,7 @@
             this.rbAnuladas.TabIndex = 7;
             this.rbAnuladas.Text = "Anuladas";
             this.rbAnuladas.UseVisualStyleBackColor = true;
+            this.rbAnuladas.Visible = false;
             // 
             // rbNoPagas
             // 
@@ -637,6 +638,20 @@
             this.dgvMovimientos.Size = new System.Drawing.Size(729, 427);
             this.dgvMovimientos.TabIndex = 4;
             // 
+            // colIDFactura
+            // 
+            this.colIDFactura.DataPropertyName = "numFactura";
+            this.colIDFactura.HeaderText = "Nº Factura";
+            this.colIDFactura.Name = "colIDFactura";
+            this.colIDFactura.ReadOnly = true;
+            // 
+            // colFecha
+            // 
+            this.colFecha.DataPropertyName = "fecha";
+            this.colFecha.HeaderText = "Fecha Factura";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            // 
             // tabPedido
             // 
             this.tabPedido.Location = new System.Drawing.Point(4, 22);
@@ -658,20 +673,6 @@
             this.lblTitle.TabIndex = 117;
             this.lblTitle.Text = "Proveedor";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // colIDFactura
-            // 
-            this.colIDFactura.DataPropertyName = "numFactura";
-            this.colIDFactura.HeaderText = "Nº Factura";
-            this.colIDFactura.Name = "colIDFactura";
-            this.colIDFactura.ReadOnly = true;
-            // 
-            // colFecha
-            // 
-            this.colFecha.DataPropertyName = "fecha";
-            this.colFecha.HeaderText = "Fecha Factura";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.ReadOnly = true;
             // 
             // formProveedor
             // 

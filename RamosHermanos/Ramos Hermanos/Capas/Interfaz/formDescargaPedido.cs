@@ -70,8 +70,8 @@ namespace RamosHermanos.Capas.Interfaz
                 itemFactura.factura = comprobante;
                 itemFactura.producto = producto;
                 itemFactura.cantidad = Convert.ToInt32(txt.Text);
-                itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
-                itemFactura.subTotal = itemFactura.precioUnitario * itemFactura.cantidad;
+                itemFactura.precioUnitario = 0;
+                itemFactura.subTotal = 0;
                 itemFactura.carga = "D";
 
                 itemsFacturaB.InsertItemFactura(itemFactura);
@@ -110,8 +110,10 @@ namespace RamosHermanos.Capas.Interfaz
 
                 itemFactura.producto = producto;
                 itemFactura.cantidad = Convert.ToInt32(txt.Text);
-                itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
-                itemFactura.subTotal = itemFactura.precioUnitario * itemFactura.cantidad;
+                //itemFactura.precioUnitario = PrecioProductosB.UltimoPrecio(itemFactura.producto);
+                itemFactura.precioUnitario = 0;
+                //itemFactura.subTotal = itemFactura.precioUnitario * itemFactura.cantidad;
+                itemFactura.subTotal = 0;
                 itemFactura.factura = comprobante;
                 itemFactura.carga = "D";
 
@@ -181,14 +183,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formDescargaPedido_FormClosed(object sender, FormClosedEventArgs e)
         {
-            int total = Suma();
 
-            IForm formInterface = this.Owner as IForm;
-
-            if (formInterface != null)
-                formInterface.CompletarCelda(Convert.ToString(total));
-
-            this.Close();
         }
     }
 }

@@ -34,7 +34,14 @@ namespace RamosHermanos.Capas.Interfaz
           insumo.proveedor = Convert.ToInt32(cbProv.SelectedValue);
           insumo.rubro = Convert.ToString(cbRubro.SelectedValue);
           insumo.medida = Convert.ToInt32(cbMedida.SelectedValue);
-          insumo.cantidad = Convert.ToDouble(txtCantidad.Text);               
+          insumo.cantidad = Convert.ToDouble(txtCantidad.Text);
+
+          if (rbNR.Checked == true)
+              insumo.tipoStock = "NR";
+          else if (rbR.Checked == true)
+              insumo.tipoStock = "R";
+          else if (rbC.Checked == true)
+              insumo.tipoStock = "C";
         }
 
         

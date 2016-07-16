@@ -40,8 +40,7 @@ namespace RamosHermanos.Capas.Interfaz
 
             System.Diagnostics.Process prohelp = new System.Diagnostics.Process();
             //MessageBox.Show(ruta + @"\ManualDeUsuario.docx");
-            prohelp.StartInfo.FileName = "D:\\GitHub Repos\\RamosHnos\\RamosHermanos\\Ramos Hermanos\\ManualDeUsuario.docx"; //ruta de donde se encuentre el archivo
-
+            prohelp.StartInfo.FileName = ruta + @"\ManualDeUsuario.doc"; //ruta de donde se encuentre el archivo
 
             prohelp.Start();
             prohelp.Close();

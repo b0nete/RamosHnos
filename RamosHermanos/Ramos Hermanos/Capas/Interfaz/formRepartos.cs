@@ -270,6 +270,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void SeleccionarDgv()
         {
             formVentas frmP = new formVentas();
+            
 
             DataGridViewCell cell = null;
             foreach (DataGridViewCell selectedCell in dgvRepartos.SelectedCells)
@@ -285,23 +286,66 @@ namespace RamosHermanos.Capas.Interfaz
                 factura.idFactura = Convert.ToInt32(row.Cells["colComprobante"].Value.ToString());
                 FacturaB.BuscarFacturaID(factura);
                 frmP.txtIDFactura.Text = Convert.ToString(factura.idFactura);
+                frmP.cbTipoFactura.Text = factura.tipoFactura;
                 frmP.txtIDcliente.Text = Convert.ToString(factura.cliente);
+                frmP.cbformaPago.Text = factura.formaPago;
+
+                ClienteEntity cliente = ClienteB.BuscarClienteIDINT(factura.cliente);
+                frmP.txtnumDoc.Text = cliente.numDoc;
+
                 frmP.dtpfechaFactura.Value = factura.fechaFactura;
                 frmP.dtpEntrega.Value = factura.fechaEntrega;
                 frmP.cbEstado.SelectedItem = factura.estado;
-                frmP.txtObservaciones.Text = Convert.ToString(pedido.observaciones);
+                frmP.txtObservaciones.Text = Convert.ToString(factura.observaciones);
                 frmP.txtNombre.Text = Convert.ToString(factura.nombreCompleto);
                 frmP.txtTotal.Text = Convert.ToString(factura.total);
+                DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtIDcliente, "1");
+                frmP.cbDomicilio.SelectedValue = factura.domicilio;
+                TelefonoB.CargarCB(frmP.cbDomicilio, frmP.txtIDcliente, 1);
 
                 itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
                 itemsFacturaB.BuscarItemFacturaDGV(itemFactura, frmP.dgvFactura, frmP.txtTotal);
 
                 //DomicilioB.CargarTXTID(factura.domicilio, frmP.txtDomicilio);
 
-                ClienteEntity cliente = ClienteB.BuscarClienteCIVAyCP(factura.cliente);
+                cliente = ClienteB.BuscarClienteCIVAyCP(factura.cliente);
                 frmP.txtIVA.Text = cliente.condicionIVA;
-                frmP.cbformaPago.Text = "Contado";
+                frmP.columnasNegativasTotal();
                 frmP.Show();
+
+            //formVentas frmP = new formVentas();
+
+            //DataGridViewCell cell = null;
+            //foreach (DataGridViewCell selectedCell in dgvRepartos.SelectedCells)
+            //{
+            //    cell = selectedCell;
+            //    break;
+            //}
+            //if (cell != null)
+            //{
+            //    DataGridViewRow row = cell.OwningRow;
+
+            //    //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el pedido para cargarlo.
+            //    factura.idFactura = Convert.ToInt32(row.Cells["colComprobante"].Value.ToString());
+            //    FacturaB.BuscarFacturaID(factura);
+            //    frmP.txtIDFactura.Text = Convert.ToString(factura.idFactura);
+            //    frmP.txtIDcliente.Text = Convert.ToString(factura.cliente);
+            //    frmP.dtpfechaFactura.Value = factura.fechaFactura;
+            //    frmP.dtpEntrega.Value = factura.fechaEntrega;
+            //    frmP.cbEstado.SelectedItem = factura.estado;
+            //    frmP.txtObservaciones.Text = Convert.ToString(pedido.observaciones);
+            //    frmP.txtNombre.Text = Convert.ToString(factura.nombreCompleto);
+            //    frmP.txtTotal.Text = Convert.ToString(factura.total);
+
+            //    itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
+            //    itemsFacturaB.BuscarItemFacturaDGV(itemFactura, frmP.dgvFactura, frmP.txtTotal);
+
+            //    //DomicilioB.CargarTXTID(factura.domicilio, frmP.txtDomicilio);
+
+            //    ClienteEntity cliente = ClienteB.BuscarClienteCIVAyCP(factura.cliente);
+            //    frmP.txtIVA.Text = cliente.condicionIVA;
+            //    frmP.cbformaPago.Text = "Contado";
+            //    frmP.Show();
             }
         }
 

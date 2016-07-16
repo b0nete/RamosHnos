@@ -333,6 +333,7 @@
             this.dgvMovimientos.Location = new System.Drawing.Point(8, 35);
             this.dgvMovimientos.Name = "dgvMovimientos";
             this.dgvMovimientos.ReadOnly = true;
+            this.dgvMovimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMovimientos.Size = new System.Drawing.Size(760, 493);
             this.dgvMovimientos.TabIndex = 0;
             // 

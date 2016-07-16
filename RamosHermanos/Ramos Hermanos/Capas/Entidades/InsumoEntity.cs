@@ -19,5 +19,6 @@ namespace RamosHermanos.Capas.Entidades
         public bool estado { get; set; }
         public int medida { get; set; }
         public double cantidad { get; set; }
+        public string tipoStock { get; set; }
     }
 }

@@ -127,14 +127,26 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formCargaPedido_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //formRepartos frm = new formRepartos();
-            //frm.UpdateTotalFactura();
+            //int total = Suma();
+
+            //IForm formInterface = this.Owner as IForm;
+
+            //if (formInterface != null)
+            //    formInterface.CompletarCelda(Convert.ToString(total));
+
+            //this.Close();
         }
 
         private void formCargaPedido_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //formRepartos frm = new formRepartos();
-            //frm.UpdateTotalFactura();
+            //int total = Suma();
+
+            //IForm formInterface = this.Owner as IForm;
+
+            //if (formInterface != null)
+            //    formInterface.CompletarCelda(Convert.ToString(total));
+
+            //this.Close();
         }
 
         StockProductoEntity stockProducto = new StockProductoEntity();
@@ -225,6 +237,13 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int total = Suma();
+
+            IForm formInterface = this.Owner as IForm;
+
+            if (formInterface != null)
+                formInterface.CompletarCelda(Convert.ToString(total));
+
             this.Close();
         }
     }

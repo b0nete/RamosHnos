@@ -98,6 +98,12 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     frmI.cbRubro.SelectedValue = insumo.rubro;
                     frmI.cbMedida.SelectedValue = insumo.medida;
                     frmI.txtCantidad.Text = Convert.ToString(insumo.cantidad);
+                    if (insumo.tipoStock == "NR")
+                        frmI.rbNR.Checked = true;
+                    else if (insumo.tipoStock == "R")
+                        frmI.rbR.Checked = true;
+                    else if (insumo.tipoStock == "C")
+                        frmI.rbC.Checked = true;
 
                     PrecioInsumosB.UltimoPrecioDGV(frmI.dgvPrecios, frmI.txtidInsumo);
 

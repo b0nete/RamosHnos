@@ -99,10 +99,10 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.rbNR = new System.Windows.Forms.RadioButton();
+            this.rbR = new System.Windows.Forms.RadioButton();
+            this.rbC = new System.Windows.Forms.RadioButton();
             this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -114,6 +114,7 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrecios)).BeginInit();
             this.groupBox4.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMain
@@ -156,10 +157,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label16);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Controls.Add(this.txtInsumo);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.label5);
@@ -925,47 +923,53 @@
             this.lblTitle.Text = "Insumos";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // groupBox6
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(112, 323);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
-            this.label4.TabIndex = 127;
+            this.groupBox6.Controls.Add(this.rbC);
+            this.groupBox6.Controls.Add(this.rbR);
+            this.groupBox6.Controls.Add(this.rbNR);
+            this.groupBox6.Location = new System.Drawing.Point(6, 326);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(484, 49);
+            this.groupBox6.TabIndex = 131;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Tipo";
             // 
-            // label16
+            // rbNR
             // 
-            this.label16.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(19, 323);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(11, 13);
-            this.label16.TabIndex = 130;
-            this.label16.Text = "*";
+            this.rbNR.AutoSize = true;
+            this.rbNR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbNR.Location = new System.Drawing.Point(29, 19);
+            this.rbNR.Name = "rbNR";
+            this.rbNR.Size = new System.Drawing.Size(94, 17);
+            this.rbNR.TabIndex = 0;
+            this.rbNR.TabStop = true;
+            this.rbNR.Text = "No Retornable";
+            this.rbNR.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // rbR
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.checkBox1.Location = new System.Drawing.Point(91, 323);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 129;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.rbR.AutoSize = true;
+            this.rbR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbR.Location = new System.Drawing.Point(196, 19);
+            this.rbR.Name = "rbR";
+            this.rbR.Size = new System.Drawing.Size(77, 17);
+            this.rbR.TabIndex = 1;
+            this.rbR.TabStop = true;
+            this.rbR.Text = "Retornable";
+            this.rbR.UseVisualStyleBackColor = true;
             // 
-            // label18
+            // rbC
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label18.Location = new System.Drawing.Point(26, 323);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(59, 13);
-            this.label18.TabIndex = 128;
-            this.label18.Text = "Retornable";
+            this.rbC.AutoSize = true;
+            this.rbC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbC.Location = new System.Drawing.Point(359, 19);
+            this.rbC.Name = "rbC";
+            this.rbC.Size = new System.Drawing.Size(87, 17);
+            this.rbC.TabIndex = 2;
+            this.rbC.TabStop = true;
+            this.rbC.Text = "por Consumo";
+            this.rbC.UseVisualStyleBackColor = true;
             // 
             // formInsumos
             // 
@@ -995,6 +999,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrecios)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1071,10 +1077,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaComprobante;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colStock;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label16;
-        public System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.GroupBox groupBox6;
+        public System.Windows.Forms.RadioButton rbC;
+        public System.Windows.Forms.RadioButton rbR;
+        public System.Windows.Forms.RadioButton rbNR;
 
     }
 }
