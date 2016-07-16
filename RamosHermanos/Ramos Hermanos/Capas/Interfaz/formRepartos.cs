@@ -175,7 +175,7 @@ namespace RamosHermanos.Capas.Interfaz
                 factura.fechaEntrega = DateTime.Today;
                 factura.cliente = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value.ToString());
                 factura.domicilio = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDDomicilio"].Value.ToString());
-                factura.numFactura = FacturaB.UltimaFactura() + 1;
+                //factura.numFactura = FacturaB.UltimaFactura() + 1;
                 factura.idFactura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
                 factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
                 factura.observaciones = "";
@@ -223,7 +223,7 @@ namespace RamosHermanos.Capas.Interfaz
                 factura.fechaEntrega = DateTime.Today;
                 factura.cliente = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value.ToString());
                 factura.domicilio = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDDomicilio"].Value.ToString());
-                factura.numFactura = FacturaB.UltimaFactura() + 1;
+                //factura.numFactura = FacturaB.UltimaFactura() + 1;
                 factura.idFactura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
                 factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
                 factura.observaciones = "";
@@ -824,14 +824,22 @@ namespace RamosHermanos.Capas.Interfaz
             }
             else if (carga == "D")
             {
-                DataTable dtInsumosRetornables = InsumoB.BuscarInsumosRetornables(idProducto);
-                DataRow dr = dtInsumosRetornables.Rows[0];
+                DataTable DTitemsProducto = itemsProductoB.BuscarItemsProducto(idProducto);
 
-                stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
-                stockInsumo.valorAnterior = cantidadPreEdit * Convert.ToInt32(dr["cantidad"].ToString());
-                stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
+                foreach (DataRow dr in DTitemsProducto.Rows)
+                {
+                    stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
+                    stockInsumo.tipoStock = Convert.ToString(dr["tipoStock"].ToString());
+                    stockInsumo.valorAnterior = cantidadPreEdit * Convert.ToInt32(dr["cantidad"].ToString());
+                    stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
+                    DateTime fechaActual = DateTime.Now;
+                    stockInsumo.mesAño = Convert.ToDateTime(fechaActual.ToString("MM-yyyy"));
 
-                StockInsumoB.UpdateStockInsert(stockInsumo, carga);
+                    if (stockInsumo.tipoStock == "R")
+                    {
+                        StockInsumoB.UpdateStockInsert(stockInsumo, carga);
+                    }
+                }
             }
 
             //if (cantidadPreEdit == 0)

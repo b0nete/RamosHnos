@@ -834,7 +834,7 @@ namespace RamosHermanos.Capas.Interfaz
                 factura.fechaEntrega = DateTime.Today;
                 factura.cliente = itemsReparto.cliente;
                 factura.domicilio = itemsReparto.domicilio;
-                factura.numFactura = FacturaB.UltimaFactura() + 1;
+                //factura.numFactura = FacturaB.UltimaFactura() + 1;
                 FacturaB.InsertFactura(factura);
             }
 

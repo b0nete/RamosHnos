@@ -313,16 +313,42 @@ namespace RamosHermanos.Capas.Interfaz
         {
             bool bul = false;
 
-            int ultimaFila = dgvCompra.Rows.Count;
-            if (dgvCompra.Rows.Count > 1)
+            int ultimaFila = dgvCompra.Rows.Count - 1;
+            int c = 0;
+            //if (dgvCompra.Rows.Count > 1)
+            //{
+            //    if (Convert.ToString(dgvCompra.Rows[ultimaFila - 2].Cells["colIDInsumo"].Value) == Convert.ToString(dgvCompra.Rows[ultimaFila - 1].Cells["colIDInsumo"].Value))
+            //    {
+            //        dgvCompra.Rows.Remove(dgvCompra.Rows[ultimaFila - 1]);
+            //        MessageBox.Show("Ya existe este insumo en la factura!");
+            //        bul = true;                        
+            //    }
+            //}
+
+            foreach (DataGridViewRow dr in dgvCompra.Rows)
             {
-                if (Convert.ToString(dgvCompra.Rows[ultimaFila - 2].Cells["colIDInsumo"].Value) == Convert.ToString(dgvCompra.Rows[ultimaFila - 1].Cells["colIDInsumo"].Value))
+                if (Convert.ToString(dgvCompra.Rows[ultimaFila].Cells["colIDInsumo"].Value) == Convert.ToString(dr.Cells["colIDInsumo"].Value))
                 {
-                    dgvCompra.Rows.Remove(dgvCompra.Rows[ultimaFila - 1]);
-                    MessageBox.Show("Ya existe este insumo en la factura!");
-                    bul = true;                        
+                    //Si ya existen dos insumos iguales, evitamos agregar.
+                    c = c + 1;
+                    if (c == 3)
+                    {
+                        if (Convert.ToString(dgvCompra.Rows[ultimaFila - 1].Cells["colIDInsumo"].Value) == Convert.ToString(dr.Cells["colIDInsumo"].Value))
+                        {
+                            dgvCompra.Rows.Remove(dgvCompra.Rows[ultimaFila - 1]);
+                            MessageBox.Show("Ya existe este insumo en la factura!");
+                            bul = true;
+                        }
+                        else
+                        {
+                            dgvCompra.Rows.Remove(dgvCompra.Rows[ultimaFila ]);
+                            MessageBox.Show("Ya existe este insumo en la factura!");
+                            bul = true;
+                        }
+                    }
                 }
             }
+
             return bul;
         }
               

@@ -33,6 +33,10 @@
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.btnEstadisticas = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.rbC = new System.Windows.Forms.RadioButton();
+            this.rbR = new System.Windows.Forms.RadioButton();
+            this.rbNR = new System.Windows.Forms.RadioButton();
             this.txtInsumo = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -99,13 +103,12 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.rbNR = new System.Windows.Forms.RadioButton();
-            this.rbR = new System.Windows.Forms.RadioButton();
-            this.rbC = new System.Windows.Forms.RadioButton();
+            this.txtConsumoMensual = new System.Windows.Forms.TextBox();
+            this.lblConsumo = new System.Windows.Forms.Label();
             this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.tabStock.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).BeginInit();
@@ -114,7 +117,6 @@
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrecios)).BeginInit();
             this.groupBox4.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabMain
@@ -157,6 +159,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtConsumoMensual);
+            this.groupBox1.Controls.Add(this.lblConsumo);
             this.groupBox1.Controls.Add(this.groupBox6);
             this.groupBox1.Controls.Add(this.txtInsumo);
             this.groupBox1.Controls.Add(this.btnSearch);
@@ -199,6 +203,54 @@
             this.groupBox1.TabIndex = 111;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Insumos";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.rbC);
+            this.groupBox6.Controls.Add(this.rbR);
+            this.groupBox6.Controls.Add(this.rbNR);
+            this.groupBox6.Location = new System.Drawing.Point(6, 326);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(484, 49);
+            this.groupBox6.TabIndex = 131;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Tipo";
+            // 
+            // rbC
+            // 
+            this.rbC.AutoSize = true;
+            this.rbC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbC.Location = new System.Drawing.Point(359, 19);
+            this.rbC.Name = "rbC";
+            this.rbC.Size = new System.Drawing.Size(87, 17);
+            this.rbC.TabIndex = 2;
+            this.rbC.TabStop = true;
+            this.rbC.Text = "por Consumo";
+            this.rbC.UseVisualStyleBackColor = true;
+            // 
+            // rbR
+            // 
+            this.rbR.AutoSize = true;
+            this.rbR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbR.Location = new System.Drawing.Point(196, 19);
+            this.rbR.Name = "rbR";
+            this.rbR.Size = new System.Drawing.Size(77, 17);
+            this.rbR.TabIndex = 1;
+            this.rbR.TabStop = true;
+            this.rbR.Text = "Retornable";
+            this.rbR.UseVisualStyleBackColor = true;
+            // 
+            // rbNR
+            // 
+            this.rbNR.AutoSize = true;
+            this.rbNR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbNR.Location = new System.Drawing.Point(29, 19);
+            this.rbNR.Name = "rbNR";
+            this.rbNR.Size = new System.Drawing.Size(94, 17);
+            this.rbNR.TabIndex = 0;
+            this.rbNR.TabStop = true;
+            this.rbNR.Text = "No Retornable";
+            this.rbNR.UseVisualStyleBackColor = true;
             // 
             // txtInsumo
             // 
@@ -923,53 +975,26 @@
             this.lblTitle.Text = "Insumos";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupBox6
+            // txtConsumoMensual
             // 
-            this.groupBox6.Controls.Add(this.rbC);
-            this.groupBox6.Controls.Add(this.rbR);
-            this.groupBox6.Controls.Add(this.rbNR);
-            this.groupBox6.Location = new System.Drawing.Point(6, 326);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(484, 49);
-            this.groupBox6.TabIndex = 131;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Tipo";
+            this.txtConsumoMensual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtConsumoMensual.Location = new System.Drawing.Point(91, 381);
+            this.txtConsumoMensual.Name = "txtConsumoMensual";
+            this.txtConsumoMensual.Size = new System.Drawing.Size(98, 20);
+            this.txtConsumoMensual.TabIndex = 134;
+            this.txtConsumoMensual.Visible = false;
             // 
-            // rbNR
+            // lblConsumo
             // 
-            this.rbNR.AutoSize = true;
-            this.rbNR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbNR.Location = new System.Drawing.Point(29, 19);
-            this.rbNR.Name = "rbNR";
-            this.rbNR.Size = new System.Drawing.Size(94, 17);
-            this.rbNR.TabIndex = 0;
-            this.rbNR.TabStop = true;
-            this.rbNR.Text = "No Retornable";
-            this.rbNR.UseVisualStyleBackColor = true;
-            // 
-            // rbR
-            // 
-            this.rbR.AutoSize = true;
-            this.rbR.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbR.Location = new System.Drawing.Point(196, 19);
-            this.rbR.Name = "rbR";
-            this.rbR.Size = new System.Drawing.Size(77, 17);
-            this.rbR.TabIndex = 1;
-            this.rbR.TabStop = true;
-            this.rbR.Text = "Retornable";
-            this.rbR.UseVisualStyleBackColor = true;
-            // 
-            // rbC
-            // 
-            this.rbC.AutoSize = true;
-            this.rbC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbC.Location = new System.Drawing.Point(359, 19);
-            this.rbC.Name = "rbC";
-            this.rbC.Size = new System.Drawing.Size(87, 17);
-            this.rbC.TabIndex = 2;
-            this.rbC.TabStop = true;
-            this.rbC.Text = "por Consumo";
-            this.rbC.UseVisualStyleBackColor = true;
+            this.lblConsumo.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.lblConsumo.AutoSize = true;
+            this.lblConsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblConsumo.Location = new System.Drawing.Point(1, 384);
+            this.lblConsumo.Name = "lblConsumo";
+            this.lblConsumo.Size = new System.Drawing.Size(84, 13);
+            this.lblConsumo.TabIndex = 132;
+            this.lblConsumo.Text = "Consumo Actual";
+            this.lblConsumo.Visible = false;
             // 
             // formInsumos
             // 
@@ -989,6 +1014,8 @@
             this.tabInformacion.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.tabStock.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStock)).EndInit();
@@ -999,8 +1026,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrecios)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1081,6 +1106,8 @@
         public System.Windows.Forms.RadioButton rbC;
         public System.Windows.Forms.RadioButton rbR;
         public System.Windows.Forms.RadioButton rbNR;
+        public System.Windows.Forms.TextBox txtConsumoMensual;
+        public System.Windows.Forms.Label lblConsumo;
 
     }
 }

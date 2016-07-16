@@ -36,6 +36,7 @@ namespace RamosHermanos.Capas.Negocio
                 return true;
         
         }
+
         public static InsumoEntity BuscarInsumosID(InsumoEntity insumo)
         {
             try
@@ -79,6 +80,41 @@ namespace RamosHermanos.Capas.Negocio
                     MySQL.DisconnectDB();
                 }
                 return insumo;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static double BuscarConsumoMesActual(int idInsumo)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = "SELECT * FROM stockInsumosConsumo WHERE insumo = @idInsumo and mesAño like @mesAño";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idInsumo", idInsumo);
+                DateTime mesAño = DateTime.Now;      
+                string mesAñoString = mesAño.ToString("yyyy-MM");
+                string parametro = mesAñoString + "%";
+                MessageBox.Show(parametro);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                DataRow dr = dt.Rows[0];
+
+                double retorno = Convert.ToDouble(dr["cantidad"]);
+
+                return retorno;
             }
 
             catch (Exception ex)
@@ -465,7 +501,7 @@ namespace RamosHermanos.Capas.Negocio
                 string query = @"SELECT IP.insumo, IP.cantidad
                                 FROM itemsProducto IP
                                 INNER JOIN Insumos I ON I.idInsumo = IP.insumo
-                                WHERE producto = @idProducto and I.retornable = 1";
+                                WHERE producto = @idProducto and I.tipoStock = 'R'";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 

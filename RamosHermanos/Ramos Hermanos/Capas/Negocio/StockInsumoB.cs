@@ -218,54 +218,87 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string queryDevolver = @"SET @@sql_safe_updates = 0; 
+                //Buscamos valor anterior del stockActual
+                MySQL.ConnectDB();
+
+                string queryConsultaStock = @"SELECT * FROM Insumos WHERE idInsumo = @idInsumo";
+
+                MySqlCommand cmdConsultaStock = new MySqlCommand(queryConsultaStock, MySQL.sqlcnx);
+
+                cmdConsultaStock.Parameters.AddWithValue("@idInsumo", stockInsumo.idInsumo);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmdConsultaStock);
+
+                da.Fill(dt);
+                DataRow dr = dt.Rows[0];
+
+                stockInsumo.tipoStock = Convert.ToString(dr["tipoStock"].ToString());
+
+                /////////////////////////////////////////////////////////////////////////////
+
+                if (stockInsumo.tipoStock == "R" || stockInsumo.tipoStock == "NR")
+                {
+                    string queryDevolver = @"SET @@sql_safe_updates = 0; 
                                    UPDATE stockInsumos
                                    SET stockActual = stockActual + @valorAnterior, fechaActualizacion = @fechaActualizacion
                                    WHERE idInsumo = @idInsumo;
                                    SET @@sql_safe_updates = 1";
 
-                string querySacar = @"SET @@sql_safe_updates = 0; 
+                    string querySacar = @"SET @@sql_safe_updates = 0; 
                                    UPDATE stockInsumos
                                    SET stockActual = stockActual - @valorNuevo, fechaActualizacion = @fechaActualizacion
                                    WHERE idInsumo = @idInsumo;
                                    SET @@sql_safe_updates = 1";
 
-//                if (carga == "C")
-//                {
-//                    string queryLess = @"SET @@sql_safe_updates = 0; 
-//                                 UPDATE stockInsumos
-//                                SET stockActual = stockActual - @valorNuevo, fechaActualizacion = @fechaActualizacion
-//                                WHERE idInsumo = @idInsumo;
-//                                 SET @@sql_safe_updates = 1";
+                    MySqlCommand cmd = new MySqlCommand();
 
-//                    query = queryLess;
-//                }
-//                else if (carga == "D")
-//                {
-//                    string queryPlus = @"SET @@sql_safe_updates = 0; 
-//                                 UPDATE stockInsumos
-//                                SET stockActual = stockActual + @valorNuevo, fechaActualizacion = @fechaActualizacion
-//                                WHERE idInsumo = @idInsumo;
-//                                 SET @@sql_safe_updates = 1";
+                    cmd.Parameters.AddWithValue("@idInsumo", stockInsumo.idInsumo);
+                    cmd.Parameters.AddWithValue("@stockActual", stockInsumo.stockActual);
+                    cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@valorAnterior", stockInsumo.valorAnterior);
+                    cmd.Parameters.AddWithValue("@valorNuevo", stockInsumo.valorNuevo);
 
-//                    query = queryPlus;
-//                }
+                    cmd.CommandText = queryDevolver;
+                    cmd.Connection = MySQL.sqlcnx;
+                    cmd.ExecuteNonQuery();
 
-                MySqlCommand cmd = new MySqlCommand();
+                    cmd.CommandText = querySacar;
+                    cmd.Connection = MySQL.sqlcnx;
+                    cmd.ExecuteNonQuery();
+                }
+                else if (stockInsumo.tipoStock == "C")
+                {
+                    string queryDevolver = @"SET @@sql_safe_updates = 0; 
+                                   UPDATE stockInsumosConsumo
+                                   SET cantidad = cantidad - @valorAnterior, mesAño = @mesAño
+                                   WHERE insumo = @insumo and mesAño = @mesAño;
+                                   SET @@sql_safe_updates = 1";
 
-                cmd.Parameters.AddWithValue("@idInsumo", stockInsumo.idInsumo);
-                cmd.Parameters.AddWithValue("@stockActual", stockInsumo.stockActual);
-                cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
-                cmd.Parameters.AddWithValue("@valorAnterior", stockInsumo.valorAnterior);
-                cmd.Parameters.AddWithValue("@valorNuevo", stockInsumo.valorNuevo);
+                    string querySacar = @"SET @@sql_safe_updates = 0; 
+                                   UPDATE stockInsumosConsumo
+                                   SET cantidad = cantidad + @valorNuevo, mesAño = @mesAño
+                                   WHERE insumo = @insumo and mesAño = @mesAño;
+                                   SET @@sql_safe_updates = 1";
 
-                cmd.CommandText = queryDevolver;
-                cmd.Connection = MySQL.sqlcnx;
-                cmd.ExecuteNonQuery();
+                    MySqlCommand cmd = new MySqlCommand();
 
-                cmd.CommandText = querySacar;
-                cmd.Connection = MySQL.sqlcnx;
-                cmd.ExecuteNonQuery();
+                    cmd.Parameters.AddWithValue("@insumo", stockInsumo.idInsumo);
+                    cmd.Parameters.AddWithValue("@stockActual", stockInsumo.stockActual);
+                    cmd.Parameters.AddWithValue("@mesAño", stockInsumo.mesAño);
+                    cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@valorAnterior", stockInsumo.valorAnterior);
+                    cmd.Parameters.AddWithValue("@valorNuevo", stockInsumo.valorNuevo);
+
+                    cmd.CommandText = queryDevolver;
+                    cmd.Connection = MySQL.sqlcnx;
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = querySacar;
+                    cmd.Connection = MySQL.sqlcnx;
+                    cmd.ExecuteNonQuery();
+
+                }
 
                 MySQL.DisconnectDB();
             }

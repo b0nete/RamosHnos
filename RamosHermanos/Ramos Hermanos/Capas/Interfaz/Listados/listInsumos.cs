@@ -103,7 +103,13 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     else if (insumo.tipoStock == "R")
                         frmI.rbR.Checked = true;
                     else if (insumo.tipoStock == "C")
+                    {
                         frmI.rbC.Checked = true;
+                        frmI.lblConsumo.Visible = true;
+                        frmI.txtConsumoMensual.Visible = true;
+                        frmI.txtConsumoMensual.Text = Convert.ToString(InsumoB.BuscarConsumoMesActual(insumo.idInsumo));
+                    }
+
 
                     PrecioInsumosB.UltimoPrecioDGV(frmI.dgvPrecios, frmI.txtidInsumo);
 

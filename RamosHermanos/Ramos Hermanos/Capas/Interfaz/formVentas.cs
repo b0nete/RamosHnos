@@ -372,10 +372,10 @@ namespace RamosHermanos.Capas.Interfaz
                         dr.DefaultCellStyle.BackColor = Color.LightCoral;
                     }
 
-                    if (Convert.ToString(dr.Cells["colCarga"].Value) == "P")
-                    {
-                        dr.DefaultCellStyle.BackColor = Color.Yellow;
-                    }
+                    //if (Convert.ToString(dr.Cells["colCarga"].Value) == "P")
+                    //{
+                    //    dr.DefaultCellStyle.BackColor = Color.Yellow;
+                    //}
                 }
             }
         }
@@ -389,17 +389,33 @@ namespace RamosHermanos.Capas.Interfaz
         {
             bool bul = false;
 
-            int ultimaFila = dgvFactura.Rows.Count;
-            if (dgvFactura.Rows.Count > 1)
+            int ultimaFila = dgvFactura.Rows.Count - 1;
+            int c = 0;
+
+            foreach (DataGridViewRow dr in dgvFactura.Rows)
             {
-                if (Convert.ToString(dgvFactura.Rows[ultimaFila - 2].Cells["colCodigo"].Value) == Convert.ToString(dgvFactura.Rows[ultimaFila - 1].Cells["colCodigo"].Value))
+                if (Convert.ToString(dgvFactura.Rows[ultimaFila].Cells["colCodigo"].Value) == Convert.ToString(dr.Cells["colCodigo"].Value))
                 {
-                    dgvFactura.Rows.Remove(dgvFactura.Rows[ultimaFila - 1]);
-                    MessageBox.Show("Ya existe este producto en la factura!");
-                    bul = true;
-                        
+                    //Si ya existen dos insumos iguales, evitamos agregar.
+                    c = c + 1;
+                    if (c == 3)
+                    {
+                        if (Convert.ToString(dgvFactura.Rows[ultimaFila - 1].Cells["colCodigo"].Value) == Convert.ToString(dr.Cells["colCodigo"].Value))
+                        {
+                            dgvFactura.Rows.Remove(dgvFactura.Rows[ultimaFila - 1]);
+                            MessageBox.Show("Ya existe este producto en la factura!");
+                            bul = true;
+                        }
+                        else
+                        {
+                            dgvFactura.Rows.Remove(dgvFactura.Rows[ultimaFila]);
+                            MessageBox.Show("Ya existe este producto en la factura!");
+                            bul = true;
+                        }
+                    }
                 }
             }
+
             return bul;
         }
 
@@ -497,5 +513,37 @@ namespace RamosHermanos.Capas.Interfaz
             }
         }
 
+        private void comprobarCargaRepetida()
+        {
+            int ultimaFila = dgvFactura.Rows.Count - 1;
+
+            //if (Convert.ToString(dgvFactura.CurrentRow.Cells["colCarga"].Value) != string.Empty)
+            //{
+            //    string currentCarga = Convert.ToString(dgvFactura.CurrentRow.Cells["colCarga"].Value);
+            //}
+
+            //if (Convert.ToString(dgvFactura.CurrentRow.Cells["colCodigo"].Value) != string.Empty)
+            //{
+            //    string currentInsumo = Convert.ToString(dgvFactura.CurrentRow.Cells["colCodigo"].Value);
+            //}
+
+            if (dgvFactura.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow dr in dgvFactura.Rows)
+                {
+                    string currentCarga = Convert.ToString(dgvFactura.CurrentRow.Cells["colCarga"]);
+                    string currentInsumo = Convert.ToString(dgvFactura.CurrentRow.Cells["colCodigo"]);
+
+                    if (dr.Cells["colCarga"].Value.ToString() == "C")
+                    {
+                        dgvFactura.Rows[ultimaFila].Cells["colCarga"].Value = "D";
+                    }
+                    else
+                    {
+                        dgvFactura.Rows[ultimaFila].Cells["colCarga"].Value = "C";
+                    }
+                }
+            }            
+        }
     }
 }

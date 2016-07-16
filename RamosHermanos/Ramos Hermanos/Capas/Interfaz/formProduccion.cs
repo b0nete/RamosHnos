@@ -16,6 +16,9 @@ namespace RamosHermanos.Capas.Interfaz
 {
     public partial class formProduccion : Form, produccionForm
     {
+        public int cantidadPreEdit;
+        public int cantidadAfterEdit;
+
         public formProduccion()
         {
             InitializeComponent();
@@ -57,9 +60,19 @@ namespace RamosHermanos.Capas.Interfaz
                 CargaItemProduccion(rowA);
                 itemProduccionB.InsertItemProduccion(itemProduccion);
 
-                stockProducto.idProducto = Convert.ToInt32(rowA.Cells["colIDProducto"].Value);
-                stockProducto.valorNuevo = Convert.ToInt32(rowA.Cells["colCantidad"].Value);
-                StockProductoB.UpdateStockInsert(stockProducto, "D");
+                DataTable DTitemsProducto = itemsProductoB.BuscarItemsProducto(Convert.ToInt32(rowA.Cells["colIDProducto"].Value));
+
+                foreach (DataRow dr in DTitemsProducto.Rows)
+                {
+                    stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
+                    stockInsumo.tipoStock = Convert.ToString(dr["tipoStock"].ToString());
+                    stockInsumo.valorAnterior = cantidadPreEdit * Convert.ToInt32(dr["cantidad"].ToString());
+                    stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
+                    DateTime fechaActual = DateTime.Now;
+                    stockInsumo.mesAño = Convert.ToDateTime(fechaActual.ToString("MM-yyyy"));
+
+                    StockInsumoB.UpdateStockInsert(stockInsumo, "D");
+                }
             }
         }
 
@@ -75,8 +88,8 @@ namespace RamosHermanos.Capas.Interfaz
             itemProduccion.cantidad = Convert.ToInt32(row.Cells["colCantidad"].Value);
         }
 
-
-
+        StockInsumoEntity stockInsumo = new StockInsumoEntity();
+        
         LogStockProductoEntity logStock = new LogStockProductoEntity();
         public void CargaItemLogStock(DataGridViewRow row)
         {
@@ -91,6 +104,22 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         StockProductoEntity stockProducto = new StockProductoEntity();
+
+        private void dgvProduccion_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            if (dgvProduccion.CurrentCell.OwningColumn.Name == "colCantidad")
+            {
+                cantidadPreEdit = Convert.ToInt32(dgvProduccion.CurrentCell.Value);
+            }            
+        }
+
+        private void dgvProduccion_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvProduccion.CurrentCell.OwningColumn.Name == "colCantidad")
+            {
+                cantidadAfterEdit = Convert.ToInt32(dgvProduccion.CurrentCell.Value);
+            }     
+        }
 
     }
 }

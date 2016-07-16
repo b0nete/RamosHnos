@@ -38,12 +38,12 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvProduccion = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtpFechaProduccion = new System.Windows.Forms.DateTimePicker();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.colIDProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpFechaProduccion = new System.Windows.Forms.DateTimePicker();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduccion)).BeginInit();
             this.SuspendLayout();
@@ -152,6 +152,26 @@
             this.dgvProduccion.Name = "dgvProduccion";
             this.dgvProduccion.Size = new System.Drawing.Size(748, 311);
             this.dgvProduccion.TabIndex = 2;
+            this.dgvProduccion.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvProduccion_CellBeginEdit);
+            this.dgvProduccion.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduccion_CellEndEdit);
+            // 
+            // colIDProducto
+            // 
+            this.colIDProducto.HeaderText = "Nº Producto";
+            this.colIDProducto.Name = "colIDProducto";
+            this.colIDProducto.ReadOnly = true;
+            // 
+            // colProducto
+            // 
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
+            this.colProducto.Width = 250;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
             // 
             // label1
             // 
@@ -185,24 +205,6 @@
             this.lblTitle.TabIndex = 116;
             this.lblTitle.Text = "Producción";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // colIDProducto
-            // 
-            this.colIDProducto.HeaderText = "Nº Producto";
-            this.colIDProducto.Name = "colIDProducto";
-            this.colIDProducto.ReadOnly = true;
-            // 
-            // colProducto
-            // 
-            this.colProducto.HeaderText = "Producto";
-            this.colProducto.Name = "colProducto";
-            this.colProducto.ReadOnly = true;
-            this.colProducto.Width = 250;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
             // 
             // formProduccion
             // 

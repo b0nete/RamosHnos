@@ -92,6 +92,39 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static DataTable BuscarItemsProducto(int idProducto)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT * 
+                                FROM itemsProducto IP
+                                INNER JOIN Insumos I ON I.idInsumo = IP.insumo
+                                WHERE producto = @producto";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@producto", idProducto);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                MySQL.DisconnectDB();
+
+                return dt;
+            }
+
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR" + ex);
+                throw;
+            }
+        }
+
         public static int BuscarCantidadAnterior(int idInsumo, int cantidad)
         {
             try

@@ -18,7 +18,12 @@ namespace RamosHermanos.Capas.Entidades
 
         //
 
+        public DateTime mesAño { get; set; }
+
+        //
+
         public int valorAnterior { get; set; }
         public int valorNuevo { get; set; }
+        public string tipoStock { get; set; }
     }
 }
