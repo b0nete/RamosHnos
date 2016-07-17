@@ -110,14 +110,15 @@ namespace RamosHermanos.Capas.Interfaz
 
                 if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
                 {
-                    //DB
                     itemsFacturaB.UpdateItemFactura(itemFactura);
-                    //Stock
-
                 }
                 else
                 {
                     itemsFacturaB.InsertItemFactura(itemFactura);
+
+                    // Actualizamos total de factura
+                    double subTotal = PrecioProductosB.UltimoPrecio(producto) * itemFactura.cantidad;
+                    FacturaB.UpdateTotalFactura(Convert.ToInt32(comprobante), subTotal);
                 }
             }
         }
@@ -245,6 +246,11 @@ namespace RamosHermanos.Capas.Interfaz
                 formInterface.CompletarCelda(Convert.ToString(total));
 
             this.Close();
+        }
+
+        private void CalcularSubTotal()
+        {
+
         }
     }
 }

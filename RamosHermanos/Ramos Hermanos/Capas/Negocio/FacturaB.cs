@@ -208,6 +208,34 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void UpdateTotalFactura(int idFactura, double subTotal)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"UPDATE Facturas 
+                                 SET total = total + @subTotal
+                                 WHERE idFactura = @idFactura";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idFactura", idFactura);
+                cmd.Parameters.AddWithValue("@subTotal", subTotal);
+
+                cmd.ExecuteNonQuery();
+
+                //MessageBox.Show("Guardado!");
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static FacturaEntity InsertFactura(FacturaEntity factura)
         {
             try
