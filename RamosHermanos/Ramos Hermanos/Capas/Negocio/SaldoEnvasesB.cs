@@ -32,6 +32,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 da.Fill(dtFacturas);
 
+
                 foreach (DataRow dr in dtFacturas.Rows)
                 {
                     //                    string queryPrueba = @"SELECT totalCarga.cantidadCarga - totalDescarga.cantidadDescarga as total
@@ -73,9 +74,8 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MessageBox.Show("Error: " + ex);
                 throw;
-            }        
+            }
         }
-
 
     }
 }

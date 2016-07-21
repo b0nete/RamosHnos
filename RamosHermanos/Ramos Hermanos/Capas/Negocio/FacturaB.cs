@@ -138,7 +138,7 @@ namespace RamosHermanos.Capas.Negocio
                 else
                     cmd1.Parameters.AddWithValue("@domicilio", factura.domicilio);
 
-                if (Convert.ToString(factura.observaciones) == string.Empty || factura.observaciones.ToString() == null)
+                if (Convert.ToString(factura.observaciones) == string.Empty || Convert.ToString(factura.observaciones) == null)
                     cmd1.Parameters.AddWithValue("@observaciones", observacionesORIG);
                 else
                     cmd1.Parameters.AddWithValue("@observaciones", factura.observaciones);
@@ -148,7 +148,7 @@ namespace RamosHermanos.Capas.Negocio
                 else
                     cmd1.Parameters.AddWithValue("@total", factura.total);
 
-                if (Convert.ToString(factura.estado) == string.Empty || factura.estado.ToString() == null)
+                if (Convert.ToString(factura.estado) == string.Empty || Convert.ToString(factura.estado) == null)
                     cmd1.Parameters.AddWithValue("@estado", estadoORIG);
                 else
                     cmd1.Parameters.AddWithValue("@estado", factura.estado);

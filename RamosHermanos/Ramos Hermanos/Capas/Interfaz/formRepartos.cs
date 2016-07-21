@@ -167,21 +167,24 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
 
-                //Factura
-                factura.tipoFactura = "C";
-                factura.estado = "Pendiente";
-                factura.fechaFactura = DateTime.Today;
-                factura.fechaVencimiento = factura.fechaVencimiento.AddDays(7); //Sumamos 7 días al actual.
-                factura.fechaEntrega = DateTime.Today;
-                factura.cliente = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value.ToString());
-                factura.domicilio = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDDomicilio"].Value.ToString());
-                //factura.numFactura = FacturaB.UltimaFactura() + 1;
-                factura.idFactura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
-                factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
-                factura.observaciones = "";
-                factura.estado = "";
+                if (FacturaB.ExisteFactura(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString())) == false)
+                {
+                    //Factura
+                    factura.tipoFactura = "C";
+                    factura.estado = "Pendiente";
+                    factura.fechaFactura = DateTime.Today;
+                    factura.fechaVencimiento = factura.fechaVencimiento.AddDays(7); //Sumamos 7 días al actual.
+                    factura.fechaEntrega = DateTime.Today;
+                    factura.cliente = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value.ToString());
+                    factura.domicilio = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDDomicilio"].Value.ToString());
+                    //factura.numFactura = FacturaB.UltimaFactura() + 1;
+                    factura.idFactura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
+                    factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
+                    factura.observaciones = "";
+                    factura.estado = "";
 
-                FacturaB.InsertFactura(factura);
+                    FacturaB.InsertFactura(factura);
+                }
 
                 //ItemsFactura
                 if (itemFactura.carga == "C")
@@ -425,25 +428,25 @@ namespace RamosHermanos.Capas.Interfaz
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCarga")
             {
                 //Cajon
-                editCellProductos(8, "C", "colSCarga");
+                editCellProductos(8, "C", "colCCarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCCarga")
             {
                 //Canasta
-                editCellProductos(9, "C", "colSCarga");
+                editCellProductos(9, "C", "colCCCarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colPCarga")
             {
                 //Pie
-                editCellProductos(10, "C", "colSCarga");
+                editCellProductos(10, "C", "colPCarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colDCarga")
             {
                 //Dispenser
-                editCellProductos(11, "C", "colSCarga");
+                editCellProductos(11, "C", "colDCarga");
             }
 
 
@@ -457,25 +460,25 @@ namespace RamosHermanos.Capas.Interfaz
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCDescarga")
             {
                 //Cajon
-                editCellProductos(8, "D", "colSDescarga");
+                editCellProductos(8, "D", "colCDescarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCCDescarga")
             {
                 //Canasta
-                editCellProductos(9, "D", "colSDescarga");
+                editCellProductos(9, "D", "colCCDescarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colPDescarga")
             {
                 //Pie
-                editCellProductos(10, "D", "colSDescarga");
+                editCellProductos(10, "D", "colPDescarga");
             }
 
             if (dgvRepartos.Columns[e.ColumnIndex].Name == "colDDescarga")
             {
                 //Dispenser
-                editCellProductos(11, "D", "colSDescarga");
+                editCellProductos(11, "D", "colDDescarga");
             }
 
             //if (dgvRepartos.Columns[e.ColumnIndex].Name == "colCobro")
@@ -842,119 +845,19 @@ namespace RamosHermanos.Capas.Interfaz
                 }
             }
 
-            //if (cantidadPreEdit == 0)
-            //{
-            //    if (carga == "C")
-            //    {
-            //        if (verificarStock(idProducto, cantidadResultante) == false)
-            //        {
-            //            dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
-            //            return;
-            //        }
 
-            //        //Stock
-            //        stockProducto.idProducto = Convert.ToInt32(idProducto);
-            //        stockProducto.valorAnterior = cantidadPreEdit;
-            //        stockProducto.valorNuevo = cantidadAfterEdit;
-            //        StockProductoB.UpdateStockInsert(stockProducto, carga);
-            //    }
-            //    else if (carga == "D")
-            //    {
-            //        DataTable dtInsumosRetornables = InsumoB.BuscarInsumosRetornables(idProducto);
-
-            //        foreach (DataRow dr in dtInsumosRetornables.Rows)
-            //        {
-            //            stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
-            //            stockInsumo.valorAnterior = cantidadPreEdit;
-            //            stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
-
-            //            StockInsumoB.UpdateStockInsert(stockInsumo, carga);
-            //        }
-            //    }
-
-                
-
-            //    return;
-            //}
-
-            ////Corroborar Stock
-            //if (Convert.ToString(dgvRepartos.CurrentRow.Cells[colCarga].Value) != string.Empty)
-            //{
-            //    if (cantidadPreEdit > cantidadAfterEdit)
-            //    {
-            //        if (carga == "C")
-            //        {
-            //            if (verificarStock(idProducto, cantidadResultante) == false)
-            //            {
-            //                dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
-            //                return;
-            //            }
-            //        }
-
-            //        if (carga == "C")
-            //        {
-            //            //Stock
-            //            stockProducto.idProducto = Convert.ToInt32(idProducto);
-            //            stockProducto.valorAnterior = cantidadPreEdit;
-            //            stockProducto.valorNuevo = cantidadAfterEdit;
-            //            StockProductoB.UpdateStockUpdate(stockProducto);
-            //        }
-            //        else if (carga == "D")
-            //        {
-            //            DataTable dtInsumosRetornables = InsumoB.BuscarInsumosRetornables(idProducto);
-            //            DataRow dr = dtInsumosRetornables.Rows[0];
-
-            //            stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
-            //            stockInsumo.valorAnterior = cantidadPreEdit * Convert.ToInt32(dr["cantidad"].ToString());
-            //            stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
-
-            //            StockInsumoB.UpdateStockInsert(stockInsumo, carga);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        if (carga == "C")
-            //        {
-            //            if (verificarStock(idProducto, cantidadResultante) == false)
-            //            {
-            //                dgvRepartos.CurrentCell.Value = cantidadPreEdit.ToString();
-            //                return;
-            //            }
-            //        }
-
-
-            //        if (carga == "C")
-            //        {
-            //            //Stock
-            //            stockProducto.idProducto = Convert.ToInt32(idProducto);
-            //            stockProducto.valorAnterior = cantidadPreEdit;
-            //            stockProducto.valorNuevo = cantidadAfterEdit;
-            //            StockProductoB.UpdateStockUpdate(stockProducto);
-            //        }
-            //        else if (carga == "D")
-            //        {
-            //            DataTable dtInsumosRetornables = InsumoB.BuscarInsumosRetornables(idProducto);
-            //            DataRow dr = dtInsumosRetornables.Rows[0];
-
-            //            stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
-            //            stockInsumo.valorAnterior = cantidadPreEdit * Convert.ToInt32(dr["cantidad"].ToString());
-            //            stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
-
-            //            StockInsumoB.UpdateStockInsert(stockInsumo, carga);
-            //        }
-                    
-            //    }
-            //}
-
-
-            if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+            if (FacturaB.ExisteFactura(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value)) == true)
             {
-                UpdateFactura(colCarga);
+                if (itemsFacturaB.ExisteItemFactura(itemFactura) == true)
+                {
+                    UpdateFactura(colCarga);
+                }
+                else
+                {
+                    InsertFactura(colCarga);
+                }
             }
-            else
-            {
-                InsertFactura(colCarga);
-            }
+            
         }
 
         protected bool EsNumerico(string val)
