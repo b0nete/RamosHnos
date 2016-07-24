@@ -685,16 +685,72 @@ namespace RamosHermanos.Capas.Interfaz
             string rep = @"\Capas\Reportes\Recorridos\crRecorridos.rpt";
 
             // dsHojaRuta contiene dtRecorrido y dtItemsRecorrido
-            DataSet ds = GenerarReparto(dgvRecorridoLu, "Lu", txtIDRecorridoLu, "colLuSentido", "colLuIDcalle"); 
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
 
-            //Cargar Reporte
-            formReports frm = new formReports();
-            frm.Show();
-            ReportDocument rd = new ReportDocument();
-            rd.Load(ruta + rep);
-            //rd.Load("C:/Users/b0nete/Documents/GitHub/RamosHnos/RamosHermanos/Ramos Hermanos/Capas/Reportes/Recorridos/crFactura.rpt");
-            rd.SetDataSource(ds);
-            frm.crvReporte.ReportSource = rd;
+            if (dgvRecorridoLu.Rows.Count == 0)
+            {
+                MessageBox.Show("No existe ningun recorrido, no se puede generar reparto!");
+            }
+            else
+            {
+                // Verificamos que ya no se haya generado un reparto para ese mismo día y el mismo distribuidor.
+                reparto.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
+                reparto.fecha = DateTime.Today;
+                reparto.dia = "Lu";
+
+                if (RepartoB.ExisteReparto(reparto) == true)
+                {
+                    RepartoB.BuscarReparto(reparto);
+
+                    itemsReparto.reparto = reparto.idReparto;
+                    dt = itemsRepartoB.BuscarItemsReparto(itemsReparto);
+
+                    //foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
+                    //{
+                    //    dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
+                    //    dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    //    dRow.Cells["colCobro"].Value = FacturaB.EstadoPago(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    //}
+                }
+                else
+                {
+                    ds = GenerarReparto(dgvRecorridoLu, "Lu", txtIDRecorridoLu, "colLuSentido", "colLuIDcalle");
+
+                    RepartoB.BuscarReparto(reparto);
+
+                    itemsReparto.reparto = reparto.idReparto;
+                    dt = itemsRepartoB.BuscarItemsReparto(itemsReparto);
+
+                    //foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
+                    //{
+                    //    dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
+                    //    dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    //    dRow.Cells["colCobro"].Value = FacturaB.EstadoPago(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    //}
+                }
+
+                //frm.setRowNumber(frm.dgvRepartos);
+
+                //Cargar Reporte
+                formReports frm1 = new formReports();
+                frm1.Show();
+                ReportDocument rd = new ReportDocument();
+                rd.Load(ruta + rep);
+                //rd.Load("C:/Users/b0nete/Documents/GitHub/RamosHnos/RamosHermanos/Ramos Hermanos/Capas/Reportes/Recorridos/crFactura.rpt");
+
+                //
+                dt.TableName = "mydtimage";
+
+                if (!ds.Tables.Contains(dt.TableName))
+                    ds.Tables.Add(dt);
+                //
+
+                ds = GenerarReparto(dgvRecorridoLu, "Lu", txtIDRecorridoLu, "colLuSentido", "colLuIDcalle"); 
+
+                rd.SetDataSource(ds);
+                frm1.crvReporte.ReportSource = rd;
+            }
         }
 
         private void GetFecha(out string fechaRecorrido, out string diaSemana)
@@ -737,7 +793,7 @@ namespace RamosHermanos.Capas.Interfaz
                     frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
 
                     itemsReparto.reparto = reparto.idReparto;
-                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
 
                     foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     {
@@ -756,7 +812,7 @@ namespace RamosHermanos.Capas.Interfaz
                     frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
 
                     itemsReparto.reparto = reparto.idReparto;
-                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
 
                     foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     {
@@ -817,6 +873,20 @@ namespace RamosHermanos.Capas.Interfaz
                     dtItemsRecorridoTest.Rows[i][3].ToString() //domicilioCompleto
                 }
                 );
+
+                ds.Tables["dtEnvases"].Rows.Add
+                (
+                new object[]
+                {
+                    SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 7).ToString(), //saldoSoda
+                    Convert.ToString(Convert.ToInt32(SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 1).ToString()) + Convert.ToInt32(SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 3).ToString()) + Convert.ToInt32(SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 4).ToString()) + Convert.ToInt32(SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 5).ToString()) + Convert.ToInt32(SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 6).ToString())),
+                    SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 8).ToString(), //saldoCajon
+                    SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 9).ToString(), //saldoCanasta
+                    SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 10).ToString(), //saldoPie
+                    SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 11).ToString(), //saldoDispenser
+                    itemsRepartoB.CalcularVenta(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString())), //saldoCC
+                }
+                );
             }
 
             //Guardamos los items del Reparto
@@ -842,8 +912,8 @@ namespace RamosHermanos.Capas.Interfaz
             //Buscamos y guardamos los Saldos
             //foreach (DataRow dr in ds.Tables["dtItemsRecorrido"].Rows)
             //{
-            //    dr["colSaldo"] = SaldoB.GenerarSaldo(Convert.ToInt32(dr["idCliente"].ToString()));
-            //    dr["colVenta"]= itemsRepartoB.CalcularVenta(Convert.ToInt32(dr["colComprobante"].ToString()));
+            //    dr["saldoCC"] = SaldoB.GenerarSaldo(Convert.ToInt32(dr["idCliente"].ToString()));
+            //    //dr["colVenta"]= itemsRepartoB.CalcularVenta(Convert.ToInt32(dr["colComprobante"].ToString()));
             //}
 
             return ds;
@@ -1100,7 +1170,7 @@ namespace RamosHermanos.Capas.Interfaz
                     frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
 
                     itemsReparto.reparto = reparto.idReparto;
-                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
 
                     foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     {
@@ -1119,7 +1189,7 @@ namespace RamosHermanos.Capas.Interfaz
                     frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
 
                     itemsReparto.reparto = reparto.idReparto;
-                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
 
                     //foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     //{
@@ -1160,7 +1230,7 @@ namespace RamosHermanos.Capas.Interfaz
                     frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
 
                     itemsReparto.reparto = reparto.idReparto;
-                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
 
                     foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     {
@@ -1179,7 +1249,7 @@ namespace RamosHermanos.Capas.Interfaz
                     frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
 
                     itemsReparto.reparto = reparto.idReparto;
-                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
 
                     //foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     //{
@@ -1220,7 +1290,7 @@ namespace RamosHermanos.Capas.Interfaz
                     frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
 
                     itemsReparto.reparto = reparto.idReparto;
-                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
 
                     foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     {
@@ -1239,7 +1309,7 @@ namespace RamosHermanos.Capas.Interfaz
                     frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
 
                     itemsReparto.reparto = reparto.idReparto;
-                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
 
                     //foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     //{
@@ -1297,7 +1367,7 @@ namespace RamosHermanos.Capas.Interfaz
                     frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
 
                     itemsReparto.reparto = reparto.idReparto;
-                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
 
                     foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     {
@@ -1316,7 +1386,7 @@ namespace RamosHermanos.Capas.Interfaz
                     frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
 
                     itemsReparto.reparto = reparto.idReparto;
-                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
 
                     //foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     //{
@@ -1357,7 +1427,7 @@ namespace RamosHermanos.Capas.Interfaz
                     frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
 
                     itemsReparto.reparto = reparto.idReparto;
-                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
 
                     foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     {
@@ -1376,7 +1446,7 @@ namespace RamosHermanos.Capas.Interfaz
                     frm.txtReparto.Text = Convert.ToString(reparto.idReparto);
 
                     itemsReparto.reparto = reparto.idReparto;
-                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, frm.dgvRepartos);
+                    frm.dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
 
                     //foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     //{

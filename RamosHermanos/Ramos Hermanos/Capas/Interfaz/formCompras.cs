@@ -36,10 +36,14 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void formCompras_Load(object sender, EventArgs e)
         {
-            //cbTipoFactura.SelectedIndex = 0;
-            //cbformaPago.SelectedIndex = 0;
-            //cbEstado.SelectedIndex = 1;
-            //txtIngreso.Text = DateTime.Now.ToString("hh:mm:ss");
+            if (caseNueva == 1)
+            {
+                cbTipoFactura.SelectedIndex = 0;
+                cbformaPago.SelectedIndex = 0;
+                cbEstado.SelectedIndex = 1;
+                //txtIngreso.Text = DateTime.Now.ToString("hh:mm:ss");
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -146,47 +150,26 @@ namespace RamosHermanos.Capas.Interfaz
             }
             else
             {
-                if (txtnumFactura.Text != string.Empty)
+                //Encabezado
+                CargarCompras();
+                ComprasB.InsertCompras(compras, txtidCompras);
+
+                //ItemsFactura
+                foreach (DataGridViewRow dR in dgvCompra.Rows)
                 {
-                    //CargarCompras();
-                    //ComprasB.update
+                    cargarItemCompra(dR);
+                    itemCompraB.InsertItemCompras(itemcompra, dgvCompra);
+                    stockInsumo.idInsumo = Convert.ToInt32(dR.Cells["colIDInsumo"].Value.ToString());
+                    stockInsumo.valorNuevo = Convert.ToInt32(dR.Cells["colCantidad"].Value);
+                    //string carga = dR.Cells["colCarga"].Value.ToString();
+                    StockInsumoB.UpdateStockInsert(stockInsumo, "D");
 
-                    //foreach (DataGridViewRow dR in dgvFactura.Rows)
-                    //{
-                    //    // Entidad
-                    //    cargarItemsFactura(dgvFactura, dR);
-                    //    //Stock
-                    //    stockProducto.idProducto = Convert.ToInt32(dR.Cells["colCodigo"].Value.ToString());
-                    //    stockProducto.valorAnterior = itemsFacturaB.BuscarCantidadAnterior(Convert.ToInt32(txtIDFactura.Text), Convert.ToInt32(dR.Cells["colCodigo"].Value), Convert.ToString(dR.Cells["colCarga"].Value));
-                    //    stockProducto.valorNuevo = Convert.ToInt32(dR.Cells["colCantidad"].Value);
-                    //    StockProductoB.UpdateStockUpdate(stockProducto);
-                    //    // DB
-                    //    itemsFacturaB.UpdateItemFactura(itemFactura);
-                    //}
-                }
-                else
-                {
-                    //Encabezado
-                    CargarCompras();
-                    ComprasB.InsertCompras(compras, txtidCompras);
-
-                    //ItemsFactura
-                    foreach (DataGridViewRow dR in dgvCompra.Rows)
-                    {
-                        cargarItemCompra(dR);
-                        itemCompraB.InsertItemCompras(itemcompra, dgvCompra);
-                        stockInsumo.idInsumo = Convert.ToInt32(dR.Cells["colCodigo"].Value.ToString());
-                        stockInsumo.valorNuevo = Convert.ToInt32(dR.Cells["colCantidad"].Value);
-                        string carga = dR.Cells["colCarga"].Value.ToString();
-                        StockInsumoB.UpdateStockInsert(stockInsumo, carga);
-
-                        //cargarItemsFactura(dgvFactura, dR);
-                        //itemsFacturaB.InsertItemFactura(itemFactura);
-                        //stockProducto.idProducto = Convert.ToInt32(dR.Cells["colCodigo"].Value.ToString());
-                        //stockProducto.valorNuevo = Convert.ToInt32(dR.Cells["colCantidad"].Value);
-                        //string carga = dR.Cells["colCarga"].Value.ToString();
-                        //StockProductoB.UpdateStockInsert(stockProducto, carga);
-                    }
+                    //cargarItemsFactura(dgvFactura, dR);
+                    //itemsFacturaB.InsertItemFactura(itemFactura);
+                    //stockProducto.idProducto = Convert.ToInt32(dR.Cells["colCodigo"].Value.ToString());
+                    //stockProducto.valorNuevo = Convert.ToInt32(dR.Cells["colCantidad"].Value);
+                    //string carga = dR.Cells["colCarga"].Value.ToString();
+                    //StockProductoB.UpdateStockInsert(stockProducto, carga);
                 }
             }
         }

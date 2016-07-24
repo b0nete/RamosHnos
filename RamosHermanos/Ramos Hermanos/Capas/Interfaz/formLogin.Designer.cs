@@ -54,7 +54,7 @@
             // DNI
             // 
             this.DNI.AutoSize = true;
-            this.DNI.Location = new System.Drawing.Point(45, 24);
+            this.DNI.Location = new System.Drawing.Point(39, 24);
             this.DNI.Name = "DNI";
             this.DNI.Size = new System.Drawing.Size(43, 13);
             this.DNI.TabIndex = 2;
@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 50);
+            this.label2.Location = new System.Drawing.Point(21, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 3;
@@ -74,9 +74,9 @@
             this.btnLogin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLogin.BackgroundImage")));
             this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Location = new System.Drawing.Point(122, 73);
+            this.btnLogin.Location = new System.Drawing.Point(134, 85);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(136, 53);
+            this.btnLogin.Size = new System.Drawing.Size(104, 39);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -85,6 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::RamosHermanos.Properties.Resources.grey_background_for_site111;
             this.ClientSize = new System.Drawing.Size(372, 136);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);

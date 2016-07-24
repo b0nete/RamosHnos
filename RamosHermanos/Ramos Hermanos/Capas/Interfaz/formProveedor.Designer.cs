@@ -127,7 +127,7 @@
             this.btnCompra.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCompra.BackgroundImage")));
             this.btnCompra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCompra.Location = new System.Drawing.Point(524, 438);
+            this.btnCompra.Location = new System.Drawing.Point(558, 438);
             this.btnCompra.Name = "btnCompra";
             this.btnCompra.Size = new System.Drawing.Size(28, 28);
             this.btnCompra.TabIndex = 68;
@@ -140,12 +140,13 @@
             this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
             this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(558, 438);
+            this.btnClean.Location = new System.Drawing.Point(524, 438);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
             this.btnClean.TabIndex = 1;
             this.btnClean.TabStop = false;
             this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Visible = false;
             this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
             // groupBox6

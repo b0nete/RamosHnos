@@ -521,9 +521,13 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnCompra_Click(object sender, EventArgs e)
         {
+            if (VerificarExistenciaDeContacto() == true)
+            {
+                return;
+            } //Verificamos si el proveedor tiene al menos un domicilio y un telefono de contacto registrados.
+
             formCompras frm = new formCompras();
             frm.Show();
-
 
             //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
             proveedor.idProveedor = Convert.ToInt32(txtidprov.Text);
@@ -571,6 +575,32 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (rbNoPagas.Checked == true)
                 ChangeCheck(); 
+        }
+
+        private bool VerificarExistenciaDeContacto()
+        {
+            if (txtidprov.Text != string.Empty)
+            {
+                proveedor.idProveedor = Convert.ToInt32(txtidprov.Text);
+            }
+
+            //
+
+            bool boli = false;
+
+            if (DomicilioB.CantidadDomicilios(2, proveedor.idProveedor) == 0)
+            {
+                MessageBox.Show("Registre un domicilio para generar la compra");
+                boli = true;
+            }
+
+            if (TelefonoB.CantidadTelefonos(2, proveedor.idProveedor) == 0)
+            {
+                MessageBox.Show("Registre un telefono para generar la compra!");
+                boli = true;
+            }
+
+            return boli;
         }
 
         }

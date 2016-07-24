@@ -396,6 +396,7 @@
             this.btnLimpiar.Size = new System.Drawing.Size(28, 28);
             this.btnLimpiar.TabIndex = 126;
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Visible = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnGuardar

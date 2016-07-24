@@ -144,7 +144,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmdPagado.Parameters.AddWithValue("@cliente", cliente);
                 int totalPagado = Convert.ToInt32(cmdPagado.ExecuteScalar());
 
-                string queryPendiente = @"SELECT IFNULL((SELECT SUM(total) as total2
+                string queryPendiente = @"SELECT IFNULL((SELECT SUM(-total) as total2
                                         FROM Facturas
                                         WHERE estado = 'Pendiente' and cliente = @cliente), 0)";
 

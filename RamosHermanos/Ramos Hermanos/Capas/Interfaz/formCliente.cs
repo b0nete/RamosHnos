@@ -79,6 +79,7 @@ namespace RamosHermanos.Capas.Interfaz
             // ----------------- Persona Juridica ----------------- //
             // Cargar ComboBoxs.
             tipoClienteB.CargarTipoCliente(cbtipoClientePJ);
+            DistribuidorB.CargarCB(cbDistribuidorPJ, txtIDcliente);
 
             // Valores Iniciales
             cbIVAPJ.SelectedIndex = 0;
@@ -1265,6 +1266,12 @@ namespace RamosHermanos.Capas.Interfaz
                 return;
             }
 
+
+            if (VerificarExistenciaDeContacto() == true)
+            {
+                return;
+            } //Verificamos si el cliente tiene al menos un domicilio y un telefono de contacto registrados.
+
             formVentas frm = new formVentas();
             frm.Show();
 
@@ -1647,6 +1654,36 @@ namespace RamosHermanos.Capas.Interfaz
         private void lblTitle_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private bool VerificarExistenciaDeContacto()
+        {
+            if (txtIDcliente.Text != string.Empty)
+            {
+                cliente.idCliente = Convert.ToInt32(txtIDcliente.Text);
+            }
+            else
+            {
+                cliente.idCliente = Convert.ToInt32(txtIDclientePJ.Text);
+            }
+
+            //
+
+            bool boli = false;
+
+            if (DomicilioB.CantidadDomicilios(1, cliente.idCliente) == 0)
+            {
+                MessageBox.Show("Registre un domicilio para generar la venta");
+                boli = true;
+            }
+
+            if (TelefonoB.CantidadTelefonos(1, cliente.idCliente) == 0)
+            {
+                MessageBox.Show("Registre un telefono para generar la venta");
+                boli = true;
+            }
+
+            return boli;
         }
         }
 

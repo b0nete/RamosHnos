@@ -227,5 +227,31 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static int CantidadTelefonos(int rol, int idPersona)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT COUNT(T.idTelefono)
+                                FROM Telefonos T
+                                WHERE T.rol = @rol and T.idPersona = @idPersona";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@rol", rol);
+                cmd.Parameters.AddWithValue("@idPersona", idPersona);
+
+                int cantTelefonos = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return cantTelefonos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
     }
 }

@@ -42,6 +42,12 @@ namespace RamosHermanos.Capas.Interfaz
         private void formFactura_Load(object sender, EventArgs e)
         {
              dgvFactura.AutoGenerateColumns = false;
+
+             if (newORupdate == 1)
+             {
+                 cbTipoFactura.Text = "C";
+                 cbformaPago.Text = "Contado";
+             }
         }
 
         private void cbEstado_SelectionChangeCommitted(object sender, EventArgs e)
@@ -60,6 +66,8 @@ namespace RamosHermanos.Capas.Interfaz
             factura.cliente = Convert.ToInt32(txtIDcliente.Text);
             factura.tipoFactura = cbTipoFactura.Text;
             factura.fechaFactura = dtpfechaFactura.Value;
+            factura.formaPago = cbformaPago.Text;
+            factura.tipoFactura = cbTipoFactura.Text;
             factura.total = Convert.ToDouble(txtTotal.Text);
             factura.formaPago = cbformaPago.Text;
             factura.fechaVencimiento = dtpVencimiento.Value;
@@ -249,7 +257,10 @@ namespace RamosHermanos.Capas.Interfaz
 
             calcularTotal();
 
-            UpdateFacturaEXEC();
+            if (newORupdate != 1)
+            {
+                UpdateFacturaEXEC();
+            }            
         }
 
         private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
@@ -319,7 +330,10 @@ namespace RamosHermanos.Capas.Interfaz
                 }
             }
 
-            UpdateFacturaEXEC();
+            if (newORupdate != 1)
+            {
+                UpdateFacturaEXEC();
+            } 
         }
 
         private void dgvFactura_CellValueChanged(object sender, DataGridViewCellEventArgs e)

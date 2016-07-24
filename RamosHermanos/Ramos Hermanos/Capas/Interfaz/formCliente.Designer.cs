@@ -148,7 +148,7 @@
             this.tabInformacionJ = new System.Windows.Forms.TabPage();
             this.button11 = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbDistribuidorPJ = new System.Windows.Forms.ComboBox();
             this.label66 = new System.Windows.Forms.Label();
             this.label67 = new System.Windows.Forms.Label();
             this.cbSabadoPJ = new System.Windows.Forms.CheckBox();
@@ -670,7 +670,7 @@
             this.btnPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPedido.BackgroundImage")));
             this.btnPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPedido.Location = new System.Drawing.Point(671, 498);
+            this.btnPedido.Location = new System.Drawing.Point(705, 498);
             this.btnPedido.Name = "btnPedido";
             this.btnPedido.Size = new System.Drawing.Size(28, 28);
             this.btnPedido.TabIndex = 2;
@@ -682,11 +682,12 @@
             this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
             this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(705, 498);
+            this.btnClean.Location = new System.Drawing.Point(637, 498);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
             this.btnClean.TabIndex = 1;
             this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Visible = false;
             this.btnClean.Click += new System.EventHandler(this.btnClean_Click);
             // 
             // button4
@@ -694,7 +695,7 @@
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(637, 498);
+            this.button4.Location = new System.Drawing.Point(671, 498);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 69;
@@ -789,6 +790,7 @@
             this.btnSearch.Size = new System.Drawing.Size(28, 28);
             this.btnSearch.TabIndex = 9;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Visible = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtnumDoc
@@ -1599,7 +1601,7 @@
             this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
             this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.Location = new System.Drawing.Point(671, 498);
+            this.button11.Location = new System.Drawing.Point(705, 498);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(28, 28);
             this.button11.TabIndex = 81;
@@ -1607,7 +1609,7 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.comboBox2);
+            this.groupBox10.Controls.Add(this.cbDistribuidorPJ);
             this.groupBox10.Controls.Add(this.label66);
             this.groupBox10.Controls.Add(this.label67);
             this.groupBox10.Controls.Add(this.cbSabadoPJ);
@@ -1624,18 +1626,15 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Visita";
             // 
-            // comboBox2
+            // cbDistribuidorPJ
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Masculino\t",
-            "Femenino"});
-            this.comboBox2.Location = new System.Drawing.Point(74, 100);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(178, 21);
-            this.comboBox2.TabIndex = 94;
+            this.cbDistribuidorPJ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDistribuidorPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.cbDistribuidorPJ.FormattingEnabled = true;
+            this.cbDistribuidorPJ.Location = new System.Drawing.Point(74, 100);
+            this.cbDistribuidorPJ.Name = "cbDistribuidorPJ";
+            this.cbDistribuidorPJ.Size = new System.Drawing.Size(178, 21);
+            this.cbDistribuidorPJ.TabIndex = 94;
             // 
             // label66
             // 
@@ -2406,11 +2405,12 @@
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(705, 498);
+            this.button2.Location = new System.Drawing.Point(637, 498);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(28, 28);
             this.button2.TabIndex = 78;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
@@ -2418,7 +2418,7 @@
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button3.Location = new System.Drawing.Point(637, 498);
+            this.button3.Location = new System.Drawing.Point(671, 498);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(28, 28);
             this.button3.TabIndex = 77;
@@ -2985,7 +2985,7 @@
         public System.Windows.Forms.ComboBox cbDistribuidor;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.Label label65;
-        public System.Windows.Forms.ComboBox comboBox2;
+        public System.Windows.Forms.ComboBox cbDistribuidorPJ;
         private System.Windows.Forms.Label label66;
         private System.Windows.Forms.Label label67;
         private System.Windows.Forms.Button button11;

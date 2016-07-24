@@ -939,6 +939,8 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             
             private global::System.Data.DataColumn columndispenser;
             
+            private global::System.Data.DataColumn columnsaldoCC;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtEnvasesDataTable() {
@@ -1022,6 +1024,14 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn saldoCCColumn {
+                get {
+                    return this.columnsaldoCC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1057,7 +1067,7 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtEnvasesRow AdddtEnvasesRow(string soda, string agua, string cajon, string canasta, string pie, string dispenser) {
+            public dtEnvasesRow AdddtEnvasesRow(string soda, string agua, string cajon, string canasta, string pie, string dispenser, string saldoCC) {
                 dtEnvasesRow rowdtEnvasesRow = ((dtEnvasesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         soda,
@@ -1065,7 +1075,8 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
                         cajon,
                         canasta,
                         pie,
-                        dispenser};
+                        dispenser,
+                        saldoCC};
                 rowdtEnvasesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtEnvasesRow);
                 return rowdtEnvasesRow;
@@ -1094,6 +1105,7 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
                 this.columncanasta = base.Columns["canasta"];
                 this.columnpie = base.Columns["pie"];
                 this.columndispenser = base.Columns["dispenser"];
+                this.columnsaldoCC = base.Columns["saldoCC"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1111,6 +1123,8 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
                 base.Columns.Add(this.columnpie);
                 this.columndispenser = new global::System.Data.DataColumn("dispenser", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndispenser);
+                this.columnsaldoCC = new global::System.Data.DataColumn("saldoCC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsaldoCC);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1603,6 +1617,22 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string saldoCC {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtEnvases.saldoCCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'saldoCC\' de la tabla \'dtEnvases\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtEnvases.saldoCCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IssodaNull() {
                 return this.IsNull(this.tabledtEnvases.sodaColumn);
             }
@@ -1671,6 +1701,18 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetdispenserNull() {
                 this[this.tabledtEnvases.dispenserColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IssaldoCCNull() {
+                return this.IsNull(this.tabledtEnvases.saldoCCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetsaldoCCNull() {
+                this[this.tabledtEnvases.saldoCCColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -180,8 +180,6 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 cliente.idCliente = Convert.ToInt32(row.Cells["colIDCliente"].Value.ToString());
 
                 ClienteB.BuscarClienteID(cliente);
-
-                
                 
                 if (cliente.tipoPersona == "P")
                 {
@@ -257,6 +255,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     this.Close();
                     frm.lblTitle.Text = ClienteB.BuscarNombreClientePJ(cliente.idCliente);
                     frm.Show();
+                    frm.txtIDcliente.Text = Convert.ToString(cliente.idCliente);
 
                     //frm.lblTitle.Text = ClienteB.BuscarNombreCliente(cliente.idCliente);
                     frm.txtIDclientePJ.Text = Convert.ToString(cliente.idCliente);
@@ -279,6 +278,9 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     DomicilioB.CargarTXT(frm.txtDomic, frm.txtIDcliente, 1);
                     EmailB.CargarTXT(frm.txtEmail, frm.txtIDcliente, 1);
                     TelefonoB.CargarTXT(frm.txtTel, frm.txtIDcliente, 1);
+
+                    DomicilioB.CargarCB(frm.cbDomicilio, frm.txtIDcliente, "1");
+                    DistribuidorB.CargarCB(frm.cbDistribuidorPJ, frm.txtIDcliente);
 
                     //Movimientos
                     if (frm.rbNoPagas.Checked == true)
@@ -304,7 +306,13 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     frm.txt25LTPJ.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 6));
 
                     //Visitas
-                    frm.CargarVisita(Convert.ToInt32(frm.txtIDcliente.Text));
+                    visita = VisitaB.BuscarVisita(Convert.ToInt32(frm.txtIDcliente.Text), DomicilioB.BuscarIDPrimerDomicilio(Convert.ToInt32(frm.txtIDcliente.Text), 1));
+                    frm.cbLunes.Checked = visita.lunes;
+                    frm.cbMartes.Checked = visita.martes;
+                    frm.cbMiercoles.Checked = visita.miercoles;
+                    frm.cbJueves.Checked = visita.jueves;
+                    frm.cbViernes.Checked = visita.viernes;
+                    frm.cbSabado.Checked = visita.sabado;
                     //VisitaB.BuscarVisita(visita);
 
                     //Tabs

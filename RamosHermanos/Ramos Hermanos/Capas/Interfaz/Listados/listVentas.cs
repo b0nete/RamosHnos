@@ -60,13 +60,15 @@ namespace RamosHermanos.Capas.Interfaz.Listados
             {
                 DataGridViewRow row = cell.OwningRow;
 
+                frmP.newORupdate = 2; //Update o Busqueda
+
                 //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el pedido para cargarlo.
                 factura.idFactura = Convert.ToInt32(row.Cells["colFactura"].Value.ToString());
                 FacturaB.BuscarFacturaID(factura);
                 frmP.txtIDFactura.Text = Convert.ToString(factura.idFactura);
-                frmP.cbTipoFactura.Text = factura.tipoFactura;
+                frmP.cbTipoFactura.SelectedItem = factura.tipoFactura;
                 frmP.txtIDcliente.Text = Convert.ToString(factura.cliente);
-                frmP.cbformaPago.Text = factura.formaPago;
+                frmP.cbformaPago.SelectedItem = factura.formaPago;
 
                 ClienteEntity cliente = ClienteB.BuscarClienteIDINT(factura.cliente);
                 frmP.txtnumDoc.Text = cliente.numDoc;
@@ -78,8 +80,8 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 frmP.txtNombre.Text = Convert.ToString(factura.nombreCompleto);
                 frmP.txtTotal.Text = Convert.ToString(factura.total);
                 DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtIDcliente, "1");
-                frmP.cbDomicilio.SelectedValue = factura.domicilio;
-                TelefonoB.CargarCB(frmP.cbDomicilio, frmP.txtIDcliente, 1);
+                //frmP.cbDomicilio.SelectedValue = factura.domicilio;
+                TelefonoB.CargarCB(frmP.cbTelefono, frmP.txtIDcliente, 1);
 
                 itemFactura.factura = dgvVentas.CurrentRow.Cells["colFactura"].Value.ToString();
                 itemsFacturaB.BuscarItemFacturaDGV(itemFactura, frmP.dgvFactura, frmP.txtTotal);

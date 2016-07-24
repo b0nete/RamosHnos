@@ -751,7 +751,7 @@ namespace RamosHermanos.Capas.Interfaz
                 txtReparto.Text = Convert.ToString(reparto.idReparto);
 
                 itemsReparto.reparto = reparto.idReparto;
-                dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto, dgvRepartos);
+                dgvRepartos.DataSource = itemsRepartoB.BuscarItemsReparto(itemsReparto);
 
                 foreach (DataGridViewRow dRow in dgvRepartos.Rows)
                 {

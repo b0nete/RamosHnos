@@ -236,11 +236,12 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT D.idDomicilio, CONCAT(D.idDomicilio,' ',D.Calle,' ',D.Numero,' ',D.Piso,' ',D.Dpto,' - ',D.CP,' - ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
+                string query = @"SELECT D.idDomicilio, CONCAT(C.Calle,' ',D.Numero,' ',IFNULL(D.Piso, '-'),' ',IFNULL(D.Dpto, '-'),' - ',IFNULL(D.CP, '-'),', ',B.Barrio,', ',L.Localidad,', ',P.Provincia) domCompleto
                                  FROM Domicilios D 
                                  INNER JOIN Provincias P ON P.idProvincia = D.Provincia
                                  INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
                                  INNER JOIN Barrios B ON D.Barrio = B.idBarrio
+                                 INNER JOIN Calles C ON D.Calle = C.idCalle
                                  WHERE rol = @rol and idPersona = @idPersona";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -255,8 +256,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 cb.DataSource = dt;
                 cb.ValueMember = "idDomicilio";
-                cb.DisplayMember = "domCompleto";
-                
+                cb.DisplayMember = "domCompleto";                
 
                 MySQL.DisconnectDB();
             }
@@ -417,6 +417,32 @@ namespace RamosHermanos.Capas.Negocio
             domicilio.domCompleto = Convert.ToString(dr["domCompleto"]);
 
             return domicilio;
+        }
+
+        public static int CantidadDomicilios(int rol, int idPersona)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT COUNT(D.idDomicilio)
+                                FROM Domicilios D
+                                WHERE D.rol = @rol and D.idPersona = @idPersona";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@rol", rol);
+                cmd.Parameters.AddWithValue("@idPersona", idPersona);
+
+                int cantDomicilios = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return cantDomicilios;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
         }
     }
 }

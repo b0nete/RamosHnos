@@ -68,9 +68,9 @@ namespace RamosHermanos.Capas.Interfaz
         UsuarioEntity usuario = new UsuarioEntity();
         
         private void CargarUsuario()
-        {
-            usuario.apellido = UsuarioB.BuscarNomUsuario(Convert.ToInt32(usuario.numDoc));
+        {            
             usuario.numDoc = txtUsuario.Text;
+            usuario.apellido = UsuarioB.BuscarNomUsuario(Convert.ToInt32(usuario.numDoc));
             usuario.password = txtPassword.Text;
         }
 

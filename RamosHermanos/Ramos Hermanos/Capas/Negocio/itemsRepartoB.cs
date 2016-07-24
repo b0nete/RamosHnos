@@ -130,7 +130,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static DataTable BuscarItemsReparto(itemsRepartoEntity itemsReparto, DataGridView dgv)
+        public static DataTable BuscarItemsReparto(itemsRepartoEntity itemsReparto)
         {
             try
             {
