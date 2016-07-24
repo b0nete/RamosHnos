@@ -27,6 +27,7 @@ namespace RamosHermanos.Capas.Interfaz
                 return;
             else
             {
+
                 CargarUsuario();
 
                 if (UsuarioB.VerificarUsuario(usuario) == true)
@@ -56,7 +57,7 @@ namespace RamosHermanos.Capas.Interfaz
         private void OpenMain()
         {
             formMain frm = new formMain();
-            frm.usr = usuario.numDoc;
+            frm.usr = usuario.numDoc + " - " + usuario.apellido + "," + usuario.nombre;
             frm.Show();
         }
 
@@ -65,8 +66,10 @@ namespace RamosHermanos.Capas.Interfaz
         // Entidades
 
         UsuarioEntity usuario = new UsuarioEntity();
+        
         private void CargarUsuario()
         {
+            usuario.apellido = UsuarioB.BuscarNomUsuario(Convert.ToInt32(usuario.numDoc));
             usuario.numDoc = txtUsuario.Text;
             usuario.password = txtPassword.Text;
         }

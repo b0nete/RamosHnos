@@ -137,6 +137,12 @@
     <Compile Include="Capas\Graficos\formGProductos.Designer.cs">
       <DependentUpon>formGProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Interfaz\ABMs\formBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Interfaz\ABMs\formBackup.Designer.cs">
+      <DependentUpon>formBackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Interfaz\ABMs\formBuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -514,6 +520,9 @@
     <EmbeddedResource Include="Capas\Graficos\formGProductos.resx">
       <DependentUpon>formGProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Interfaz\ABMs\formBackup.resx">
+      <DependentUpon>formBackup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\ABMs\formBuscarCliente.resx">
       <DependentUpon>formBuscarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -833,6 +842,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IMG\Book-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG\import-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG\icono_descarga.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG\import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IMG\export.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

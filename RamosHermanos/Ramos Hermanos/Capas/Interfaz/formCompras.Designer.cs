@@ -596,6 +596,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Name = "formCompras";
+            this.Text = "Registrar Compra";
             this.Load += new System.EventHandler(this.formCompras_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

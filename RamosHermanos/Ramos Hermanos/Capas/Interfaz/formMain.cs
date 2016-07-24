@@ -383,17 +383,18 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void backUToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            formBackup frm = new formBackup();
+            frm.Show();
         }
 
         private void importarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MySQL.GoImport();
+           
         }
 
         private void exportarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MySQL.GoExport();
+            
         }
 
        
