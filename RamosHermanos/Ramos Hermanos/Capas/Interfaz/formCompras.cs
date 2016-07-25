@@ -162,7 +162,8 @@ namespace RamosHermanos.Capas.Interfaz
                     stockInsumo.idInsumo = Convert.ToInt32(dR.Cells["colIDInsumo"].Value.ToString());
                     stockInsumo.valorNuevo = Convert.ToInt32(dR.Cells["colCantidad"].Value);
                     //string carga = dR.Cells["colCarga"].Value.ToString();
-                    StockInsumoB.UpdateStockInsert(stockInsumo, "D");
+
+                    StockInsumoB.SumarStock(stockInsumo);
 
                     //cargarItemsFactura(dgvFactura, dR);
                     //itemsFacturaB.InsertItemFactura(itemFactura);
@@ -175,6 +176,9 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         StockInsumoEntity stockInsumo = new StockInsumoEntity();
+        public void cargarStockInsumo()
+        {
+        }
         public void CargaItemStock(DataGridViewRow row)
         {
             logStock.operacion = "P";

@@ -20,8 +20,8 @@ namespace RamosHermanos.Capas.Interfaz
     public partial class formProducto : Form, IAddItem
     {
 
-        public int cantidadPreEdit;
-        public int cantidadAfterEdit;
+        public double cantidadPreEdit;
+        public double cantidadAfterEdit;
 
         public formProducto()
         {
@@ -536,6 +536,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button10_Click(object sender, EventArgs e)
         {
+            itemsProductoB.DeleteItemsProducto(Convert.ToInt32(txtIDProd.Text));
+
             foreach (DataGridViewRow dr in dgvConformacion.Rows)
             {
                 cargarItemsProducto(dr);
@@ -671,10 +673,10 @@ namespace RamosHermanos.Capas.Interfaz
         private void dgvConformacion_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             int idInsumo = Convert.ToInt32(dgvConformacion.CurrentRow.Cells["colIDInsumo"].Value);
-            int cantidad = Convert.ToInt32(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value);
+            double cantidad = Convert.ToDouble(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value.ToString());
             cantidadPreEdit = itemsProductoB.BuscarCantidadAnterior(idInsumo, cantidad);
 
-            int cantidadResultante = Math.Abs(cantidadPreEdit - cantidadAfterEdit);
+            double cantidadResultante = Math.Abs(cantidadPreEdit - cantidadAfterEdit);
             bool dispStock = StockInsumoB.DisponibilidadStock(idInsumo, cantidadResultante);
             if (dispStock == false)
             {
@@ -786,7 +788,7 @@ namespace RamosHermanos.Capas.Interfaz
         {
             if (Convert.ToString(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value) != string.Empty)
             {
-                cantidadPreEdit = Convert.ToInt32(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value);
+                cantidadPreEdit = Convert.ToDouble(dgvConformacion.CurrentRow.Cells["colCantidadm"].Value);
             }
             else
             {

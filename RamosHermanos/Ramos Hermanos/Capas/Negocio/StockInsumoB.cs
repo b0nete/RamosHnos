@@ -114,6 +114,10 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+
+
+
+
         public static void UpdateStockInicial(StockInsumoEntity stockInsumo)
         {
             try
@@ -146,63 +150,29 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static void UpdateStockUpdate(StockProductoEntity stockProducto)
+        public static void SumarStock(StockInsumoEntity stockInsumo)
         {
             try
             {
-                //Buscamos valor anterior del stockActual
                 MySQL.ConnectDB();
 
-                string queryConsultaStock = @"SELECT * FROM stockProducto WHERE idProducto = @idProducto";
-
-                MySqlCommand cmdConsultaStock = new MySqlCommand(queryConsultaStock, MySQL.sqlcnx);
-
-                cmdConsultaStock.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
-
-                DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter(cmdConsultaStock);
-
-                da.Fill(dt);
-                DataRow dr = dt.Rows[0];
-
-                stockProducto.stockActual = Convert.ToInt32(dr["stockActual"].ToString());
-
-                //Hacemos la actualizacion del stock
-
                 string query = @"SET @@sql_safe_updates = 0; 
-                                 UPDATE stockProducto
-                                 SET stockActual = @stockActual, fechaActualizacion = @fechaActualizacion
-                                 WHERE idProducto = @idProducto;
-                                 SET @@sql_safe_updates = 1";
+                                   UPDATE stockInsumos
+                                   SET stockActual = stockActual + @valorNuevo, fechaActualizacion = @fechaActualizacion
+                                   WHERE idInsumo = @idInsumo;
+                                   SET @@sql_safe_updates = 1";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                if (stockProducto.valorAnterior < stockProducto.valorNuevo)
-                {
-                    int valorResultante = stockProducto.valorNuevo - stockProducto.valorAnterior;
-                    stockProducto.stockActual = stockProducto.stockActual - valorResultante;
+                cmd.Parameters.AddWithValue("@idInsumo", stockInsumo.idInsumo);
+                cmd.Parameters.AddWithValue("@stockActual", stockInsumo.stockActual);
+                cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
+                cmd.Parameters.AddWithValue("@valorAnterior", stockInsumo.valorAnterior);
+                cmd.Parameters.AddWithValue("@valorNuevo", stockInsumo.valorNuevo);
 
-                    cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
-                    cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);
-                    cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@valorAnterior", stockProducto.valorAnterior);
-                    cmd.Parameters.AddWithValue("@valorNuevo", stockProducto.valorNuevo);
+                cmd.ExecuteNonQuery();
 
-                    cmd.ExecuteNonQuery();
-                }
-                else if (stockProducto.valorAnterior > stockProducto.valorNuevo)
-                {
-                    int valorResultante = stockProducto.valorAnterior - stockProducto.valorNuevo;
-                    stockProducto.stockActual = stockProducto.stockActual + valorResultante;
-
-                    cmd.Parameters.AddWithValue("@idProducto", stockProducto.idProducto);
-                    cmd.Parameters.AddWithValue("@stockActual", stockProducto.stockActual);
-                    cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
-                    cmd.Parameters.AddWithValue("@valorAnterior", stockProducto.valorAnterior);
-                    cmd.Parameters.AddWithValue("@valorNuevo", stockProducto.valorNuevo);
-
-                    cmd.ExecuteNonQuery();
-                }
+                // MessageBox.Show("Cliente Actualizado!");
             }
 
             catch (Exception ex)
@@ -468,7 +438,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static bool DisponibilidadStock(int idInsumo, int cantidad)
+        public static bool DisponibilidadStock(int idInsumo, double cantidad)
         {
             MySQL.ConnectDB();
 

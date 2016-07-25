@@ -32,7 +32,7 @@ namespace RamosHermanos.Capas.Negocio
                 return true;
         }
 
-        public static FacturaEntity UpdateFactura(FacturaEntity factura)
+        public static FacturaEntity UpdateEstadoFactura(FacturaEntity factura)
         {
             try
             {
@@ -167,6 +167,37 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static FacturaEntity UpdateFactura(FacturaEntity factura)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query1 = @"UPDATE Facturas 
+                                 SET estado = @estado
+                                 WHERE idFactura = @idFactura";
+
+                MySqlCommand cmd1 = new MySqlCommand(query1, MySQL.sqlcnx);
+
+                cmd1.Parameters.AddWithValue("@idFactura", factura.idFactura);
+                cmd1.Parameters.AddWithValue("@estado", factura.estado);
+
+                cmd1.ExecuteNonQuery();
+
+                //MessageBox.Show("Guardado!");
+                MySQL.DisconnectDB();
+
+                return factura;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
 
 
         public static FacturaEntity InsertFacturaNEW(FacturaEntity factura, TextBox txtIDFactura)

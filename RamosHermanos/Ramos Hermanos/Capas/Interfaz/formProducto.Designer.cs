@@ -31,9 +31,9 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProducto));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formProducto));
             this.lblTitle = new System.Windows.Forms.Label();
             this.tabEstadisticas = new System.Windows.Forms.TabPage();
             this.chartProductos = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -63,6 +63,14 @@
             this.txtCostoProd = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvConformacion = new System.Windows.Forms.DataGridView();
+            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colIDMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecioM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidadm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colRetornable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSaveConformacion = new System.Windows.Forms.Button();
             this.btnDelInsumo = new System.Windows.Forms.Button();
             this.btnAddInsumo = new System.Windows.Forms.Button();
@@ -139,14 +147,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.tabProducto = new System.Windows.Forms.TabControl();
-            this.colIDInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colInsumo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colIDMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecioM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidadm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colRetornable = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabEstadisticas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartProductos)).BeginInit();
             this.groupBox7.SuspendLayout();
@@ -422,6 +422,7 @@
             // txtPrecioSugerido
             // 
             this.txtPrecioSugerido.Enabled = false;
+            this.txtPrecioSugerido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecioSugerido.Location = new System.Drawing.Point(498, 421);
             this.txtPrecioSugerido.Name = "txtPrecioSugerido";
             this.txtPrecioSugerido.Size = new System.Drawing.Size(100, 20);
@@ -440,6 +441,7 @@
             // 
             // txtGanancia
             // 
+            this.txtGanancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGanancia.Location = new System.Drawing.Point(498, 393);
             this.txtGanancia.Name = "txtGanancia";
             this.txtGanancia.Size = new System.Drawing.Size(100, 20);
@@ -469,6 +471,7 @@
             // txtCostoProd
             // 
             this.txtCostoProd.Enabled = false;
+            this.txtCostoProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCostoProd.Location = new System.Drawing.Point(498, 368);
             this.txtCostoProd.Name = "txtCostoProd";
             this.txtCostoProd.Size = new System.Drawing.Size(100, 20);
@@ -513,6 +516,63 @@
             this.dgvConformacion.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvConformacion_RowsAdded);
             this.dgvConformacion.RowStateChanged += new System.Windows.Forms.DataGridViewRowStateChangedEventHandler(this.dgvConformacion_RowStateChanged);
             this.dgvConformacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvConformacion_KeyPress);
+            // 
+            // colIDInsumo
+            // 
+            this.colIDInsumo.DataPropertyName = "IDinsumo";
+            this.colIDInsumo.HeaderText = "Nº Insumo";
+            this.colIDInsumo.Name = "colIDInsumo";
+            this.colIDInsumo.Visible = false;
+            // 
+            // colInsumo
+            // 
+            this.colInsumo.DataPropertyName = "insumo";
+            this.colInsumo.HeaderText = "Insumo";
+            this.colInsumo.Name = "colInsumo";
+            this.colInsumo.Width = 250;
+            // 
+            // colIDMedida
+            // 
+            this.colIDMedida.HeaderText = "ID Medida";
+            this.colIDMedida.Name = "colIDMedida";
+            this.colIDMedida.Visible = false;
+            // 
+            // colMedida
+            // 
+            this.colMedida.HeaderText = "Unidad Medida";
+            this.colMedida.Name = "colMedida";
+            this.colMedida.Visible = false;
+            // 
+            // colPrecioM
+            // 
+            this.colPrecioM.DataPropertyName = "precio";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.colPrecioM.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colPrecioM.HeaderText = "Precio";
+            this.colPrecioM.Name = "colPrecioM";
+            // 
+            // colCantidadm
+            // 
+            this.colCantidadm.DataPropertyName = "cantidad";
+            this.colCantidadm.HeaderText = "Cantidad";
+            this.colCantidadm.Name = "colCantidadm";
+            // 
+            // colSubTotal
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colSubTotal.HeaderText = "SubTotal";
+            this.colSubTotal.Name = "colSubTotal";
+            // 
+            // colRetornable
+            // 
+            this.colRetornable.HeaderText = "Retornable";
+            this.colRetornable.Name = "colRetornable";
+            this.colRetornable.Visible = false;
             // 
             // btnSaveConformacion
             // 
@@ -1391,67 +1451,6 @@
             this.tabProducto.SelectedIndex = 0;
             this.tabProducto.Size = new System.Drawing.Size(760, 498);
             this.tabProducto.TabIndex = 0;
-            // 
-            // colIDInsumo
-            // 
-            this.colIDInsumo.DataPropertyName = "IDinsumo";
-            this.colIDInsumo.HeaderText = "Nº Insumo";
-            this.colIDInsumo.Name = "colIDInsumo";
-            this.colIDInsumo.ReadOnly = true;
-            this.colIDInsumo.Visible = false;
-            // 
-            // colInsumo
-            // 
-            this.colInsumo.DataPropertyName = "insumo";
-            this.colInsumo.HeaderText = "Insumo";
-            this.colInsumo.Name = "colInsumo";
-            this.colInsumo.ReadOnly = true;
-            this.colInsumo.Width = 250;
-            // 
-            // colIDMedida
-            // 
-            this.colIDMedida.HeaderText = "ID Medida";
-            this.colIDMedida.Name = "colIDMedida";
-            this.colIDMedida.ReadOnly = true;
-            this.colIDMedida.Visible = false;
-            // 
-            // colMedida
-            // 
-            this.colMedida.HeaderText = "Unidad Medida";
-            this.colMedida.Name = "colMedida";
-            this.colMedida.ReadOnly = true;
-            this.colMedida.Visible = false;
-            // 
-            // colPrecioM
-            // 
-            this.colPrecioM.DataPropertyName = "precio";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.colPrecioM.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colPrecioM.HeaderText = "Precio";
-            this.colPrecioM.Name = "colPrecioM";
-            // 
-            // colCantidadm
-            // 
-            this.colCantidadm.DataPropertyName = "cantidad";
-            this.colCantidadm.HeaderText = "Cantidad";
-            this.colCantidadm.Name = "colCantidadm";
-            // 
-            // colSubTotal
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colSubTotal.HeaderText = "SubTotal";
-            this.colSubTotal.Name = "colSubTotal";
-            // 
-            // colRetornable
-            // 
-            this.colRetornable.HeaderText = "Retornable";
-            this.colRetornable.Name = "colRetornable";
-            this.colRetornable.Visible = false;
             // 
             // formProducto
             // 
