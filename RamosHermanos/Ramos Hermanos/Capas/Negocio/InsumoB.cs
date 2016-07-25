@@ -103,7 +103,7 @@ namespace RamosHermanos.Capas.Negocio
                 DateTime mesAño = DateTime.Now;      
                 string mesAñoString = mesAño.ToString("yyyy-MM");
                 string parametro = mesAñoString + "%";
-                MessageBox.Show(parametro);
+                cmd.Parameters.AddWithValue("@mesAño", parametro);
 
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);

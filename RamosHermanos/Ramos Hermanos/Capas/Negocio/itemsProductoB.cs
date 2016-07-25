@@ -25,7 +25,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 dgv.Rows.Clear();
 
-                string query = @"SELECT IP.insumo as IDinsumo, I.insumo, IP.cantidad, PI.precio
+                string query = @"SELECT IP.insumo as IDinsumo, I.insumo, IP.cantidad, PI.precio, IP.medida
                                FROM itemsProducto IP
                                INNER JOIN Insumos I ON I.idInsumo = IP.insumo
                                INNER JOIN Medidas M ON M.idMedida = IP.medida
@@ -43,7 +43,7 @@ namespace RamosHermanos.Capas.Negocio
                     dgv.Rows.Add(
                     Convert.ToString(dr["IDinsumo"]),
                     Convert.ToString(dr["insumo"]),
-                    Convert.ToString(""),
+                    Convert.ToString(dr["medida"]),
                     Convert.ToString(""),
                     Convert.ToString(dr["precio"]),
                     Convert.ToString(dr["cantidad"]),
@@ -61,7 +61,32 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void DeleteItemsProducto(int idProducto)
+        {
+            try
+            {
+                MySQL.ConnectDB();
 
+                string query = @"DELETE
+                                 FROM itemsProducto
+                                 WHERE producto = @producto";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@producto", idProducto);
+
+                cmd.ExecuteNonQuery();
+
+                MySQL.DisconnectDB();
+            }
+
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERROR" + ex);
+                throw;
+            }
+        }
 
         public static void InsertItemProducto(itemsProductoEntity itemProducto)
         {
@@ -125,7 +150,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static int BuscarCantidadAnterior(int idInsumo, int cantidad)
+        public static double BuscarCantidadAnterior(int idInsumo, double cantidad)
         {
             try
             {
@@ -133,7 +158,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
 
-                int retorno;
+                double retorno;
 
                 string queryConsultaValor = @"SELECT *
                                             FROM itemsProducto
@@ -157,7 +182,7 @@ namespace RamosHermanos.Capas.Negocio
                 {
                     DataRow drValor = dtValor.Rows[0];
 
-                    retorno = Convert.ToInt32(drValor["cantidad"].ToString());
+                    retorno = Convert.ToDouble(drValor["cantidad"].ToString());
                 }
 
                 MySQL.DisconnectDB();

@@ -14,7 +14,7 @@ using RamosHermanos.Capas.Interfaz.Contratos;
 
 namespace RamosHermanos.Capas.Interfaz
 {
-    
+
     public partial class formCliente : Form, IAddItemSTRING
     {
         public int switchcase;
@@ -36,12 +36,12 @@ namespace RamosHermanos.Capas.Interfaz
         // Eventos        
 
         private void formCliente_Load(object sender, EventArgs e)
-        {            
+        {
             // Tabs Inutilizados.
             tabMain.Controls.Remove(tabAdicional);
             tabMain.Controls.Remove(tabSugerencias);
             tabMain.Controls.Remove(tabFamilia);
-            
+
             // Listado
             CheckListado();
 
@@ -53,7 +53,7 @@ namespace RamosHermanos.Capas.Interfaz
                     break;
                 case 2:
                     CasePersonaJuridica();
-                    break;                   
+                    break;
                 case 3:
                     CaseListado();
                     break;
@@ -61,7 +61,7 @@ namespace RamosHermanos.Capas.Interfaz
                     tabMain.Controls.Remove(tabInformacion);
                     tabMain.Controls.Remove(tabInformacionJ);
                     tabMain.Controls.Remove(tabMovimientos);
-                    break;                    
+                    break;
             }
             // ----------------- Persona ----------------- //
             // Cargar ComboBoxs.            
@@ -160,14 +160,14 @@ namespace RamosHermanos.Capas.Interfaz
                     //VisitaB.InsertOrden(visita);
 
                     ClienteB.CargarDGV(dgvCliente);
-                    
+
                 }
             }
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-           BuscarCliente();
+            BuscarCliente();
         }
 
         private void txtCreditoMax_TextChanged(object sender, EventArgs e)
@@ -196,7 +196,7 @@ namespace RamosHermanos.Capas.Interfaz
                 formContacto frm = new formContacto();
                 frm.tabVar = 0;
                 frm.tabUpdateTXT = 1;
-                frm.txtIDALL.Text = txtIDcliente.Text;                 
+                frm.txtIDALL.Text = txtIDcliente.Text;
                 frm.Show(this);
                 frm.cbRolALL.SelectedValue = 1;
                 frm.lblTitleDom.Text = txtApellido.Text + " " + txtNombre.Text;
@@ -208,7 +208,7 @@ namespace RamosHermanos.Capas.Interfaz
                 //frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
                 //frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
                 //frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
-                
+
             }
         }
 
@@ -260,16 +260,16 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.lblTitleDom.Text = txtIDcliente.Text + " - " + txtApellido.Text + " " + txtNombre.Text;
                 frm.lblTitleTel.Text = txtIDcliente.Text + " - " + txtApellido.Text + " " + txtNombre.Text;
                 frm.lblTitleEmail.Text = txtIDcliente.Text + " - " + txtApellido.Text + " " + txtNombre.Text;
-                 //ClienteB.BuscarNombreCliente(cliente.idCliente);
+                //ClienteB.BuscarNombreCliente(cliente.idCliente);
                 //frm.txtNombreEmail.Text = txtNombre.Text + " " + txtApellido.Text;
                 //frm.txtNombreTel.Text = txtNombre.Text + " " + txtApellido.Text;
                 //frm.txtNombreDom.Text = txtNombre.Text + " " + txtApellido.Text;
-                frm.CargarDGVs();                
+                frm.CargarDGVs();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {            
+        {
             formtipoCliente frm = new formtipoCliente();
             frm.Show();
         }
@@ -300,7 +300,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         //private void txtLun_TextChanged(object sender, EventArgs e)
         //{
-            
+
         //}
 
         //private void cbMartes_CheckedChanged(object sender, EventArgs e)
@@ -363,7 +363,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void groupBox6_Enter(object sender, EventArgs e)
         {
-            
+
         }
 
         private void groupBox4_Enter(object sender, EventArgs e)
@@ -377,7 +377,7 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 return;
             }
-            else 
+            else
             {
                 if (txtIDcliente.Text == string.Empty)
                 {
@@ -387,7 +387,7 @@ namespace RamosHermanos.Capas.Interfaz
                         tabMain.SelectedTab = tabListado;
                         return;
                     }
-                    return;                                
+                    return;
                 }
                 DialogResult result = MessageBox.Show("Desea actualizar los datos del cliente?", "Actualizar", MessageBoxButtons.OKCancel);
                 if (result == DialogResult.OK)
@@ -397,7 +397,7 @@ namespace RamosHermanos.Capas.Interfaz
 
                     CargarSaldo(txtIDcliente);
                     SaldoB.UpdateSaldo(saldo);
-                                        
+
                     //CargarVisita(txtIDcliente);
                     //VisitaB.UpdateVisita(visita);
                     //visita.idVisita = Convert.ToInt32(txtIDVisita.Text);
@@ -408,8 +408,8 @@ namespace RamosHermanos.Capas.Interfaz
 
                     BuscarCliente();
                     ClienteB.CargarDGV(dgvCliente);
-                }             
-            }        
+                }
+            }
         }
 
         private void cbTipoCliente_DropDown(object sender, EventArgs e)
@@ -419,7 +419,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void dgvCliente_SelectionChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cbIVA_SelectedIndexChanged(object sender, EventArgs e)
@@ -427,7 +427,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-        
+
 
         private void dgvCliente_MouseDoubleClick(object sender, MouseEventArgs e)
         {
@@ -459,7 +459,7 @@ namespace RamosHermanos.Capas.Interfaz
                         frmP.tabMain.SelectedTab = frmP.tabPedido;
                         Close();
                         frmP.Show();
-                        
+
                     }
                     break;
 
@@ -468,7 +468,7 @@ namespace RamosHermanos.Capas.Interfaz
                         SeleccionarDGV();
                     }
                     break;
-                    }
+            }
         }
 
         private void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -476,14 +476,14 @@ namespace RamosHermanos.Capas.Interfaz
 
         }
 
-         
+
         private void btnClean_Click(object sender, EventArgs e)
         {
             Clean();
         }
 
         private void cbLunes_Validated(object sender, EventArgs e)
-        {        
+        {
 
         }
 
@@ -516,7 +516,7 @@ namespace RamosHermanos.Capas.Interfaz
                 dgvCliente.Columns[9].Visible = false;
                 ClienteB.CargarDGVPJ(dgvCliente);
             }
-                
+
         }
 
         private void BuscarCliente()
@@ -587,7 +587,7 @@ namespace RamosHermanos.Capas.Interfaz
 
                 //Visita
                 //DomicilioB.CargarCB(cbDomicilio, txtIDcliente);
-                
+
 
             }
 
@@ -794,7 +794,7 @@ namespace RamosHermanos.Capas.Interfaz
                     //Tabs
                     CasePersonaJuridica();
                 }
-                
+
             }
         }
 
@@ -1103,7 +1103,7 @@ namespace RamosHermanos.Capas.Interfaz
             visita.sabado = Convert.ToBoolean(cbSabado.Checked);
         }
 
-        
+
         private void CargarItemsVisita(string strDia, DataGridViewRow row)
         {
             //visita.rol = 1;
@@ -1273,7 +1273,8 @@ namespace RamosHermanos.Capas.Interfaz
             } //Verificamos si el cliente tiene al menos un domicilio y un telefono de contacto registrados.
 
             formVentas frm = new formVentas();
-            frm.Show();
+            frm.abiertoformCliente = 1;
+            frm.Show(this);
 
             ClienteEntity cliente = ClienteB.BuscarClienteIDINT(Convert.ToInt32(txtIDcliente.Text));
 
@@ -1307,11 +1308,11 @@ namespace RamosHermanos.Capas.Interfaz
         public void CargarTXTSaldo()
         {
             //Se creo el método ya que ejecutando el método de otro form no se llenaba la entidad.
-            if (txtIDcliente.Text != string.Empty)            
-                CargarSaldo(txtIDcliente);            
+            if (txtIDcliente.Text != string.Empty)
+                CargarSaldo(txtIDcliente);
             else
                 CargarSaldo(txtIDclientePJ);
-            
+
             SaldoB.BuscarSaldo(saldo);
             txtCreditoMax.Text = Convert.ToString(saldo.creditoMax);
             txtSaldo.Text = Convert.ToString(saldo.saldoActual);
@@ -1334,11 +1335,11 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void cbDomicilio_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
-        
-          
+
+
 
         private void cbDomicilio_DropDown(object sender, EventArgs e)
         {
@@ -1353,8 +1354,8 @@ namespace RamosHermanos.Capas.Interfaz
             //v.domicilio = Convert.ToInt32(cbDomicilio.SelectedValue);
             //v.estado = cbEstadoVisita.Checked;
             //v.distribuidor = Convert.ToInt32(cbDomicilio.SelectedValue);
-         
-            
+
+
         }
 
         private void btnSaveVisita_Click(object sender, EventArgs e)
@@ -1366,79 +1367,79 @@ namespace RamosHermanos.Capas.Interfaz
             //    v.dia = "Lu";
             //    cargarVisita();
             //    VisitaB.InsertVisitaCliente(v);
-                
+
             //}
             //if (checkMa.Checked == true)
             //{
             //    v.dia = "Ma";
             //    cargarVisita();
             //    VisitaB.InsertVisitaCliente(v);
-                
+
             //}
             //if (checkMi.Checked == true)
             //{
             //    v.dia = "Mi";
             //    cargarVisita();
             //    VisitaB.InsertVisitaCliente(v);
-                
+
             //}
             //if (checkJu.Checked == true)
             //{
             //    v.dia = "Ju";
             //    cargarVisita();
             //    VisitaB.InsertVisitaCliente(v);
-                
+
             //}
             //if (checkVi.Checked == true)
             //{
             //    v.dia = "Vi";
             //    cargarVisita();
             //    VisitaB.InsertVisitaCliente(v);
-                
+
             //}
             //if (checkSa.Checked == true)
             //{
             //    v.dia = "Sa";
             //    cargarVisita();
             //    VisitaB.InsertVisitaCliente(v);
-                
+
             //}
             //if (checkDo.Checked == true)
             //{
             //    v.dia = "Do";
             //    cargarVisita();
             //    VisitaB.InsertVisitaCliente(v);
-                
+
             //}
-            
+
         }
 
         private void rbPagas_CheckedChanged(object sender, EventArgs e)
         {
             if (rbPagas.Checked == true)
-                ChangeCheck(); 
+                ChangeCheck();
         }
 
         private void rbNoPagas_CheckedChanged(object sender, EventArgs e)
         {
             if (rbNoPagas.Checked == true)
-                ChangeCheck(); 
+                ChangeCheck();
         }
 
         private void rbAnuladas_CheckedChanged(object sender, EventArgs e)
         {
             if (rbAnuladas.Checked == true)
-                ChangeCheck();            
+                ChangeCheck();
         }
 
         private void ChangeCheck()
         {
-            dgvMovimientos.DataSource = "";                
+            dgvMovimientos.DataSource = "";
 
             if (txtIDcliente.Text != string.Empty)
             {
                 cliente.idCliente = Convert.ToInt32(txtIDcliente.Text);
-                
+
                 if (rbNoPagas.Checked == true)
                 {
                     FacturaB.SearchPendientes(cliente, dgvMovimientos);
@@ -1475,36 +1476,36 @@ namespace RamosHermanos.Capas.Interfaz
                 }
             }
             //MessageBox.Show(Convert.ToInt16(e.KeyChar).ToString());
-       
-       //if (e.KeyChar == 8 ) {
-       //  e.Handled = false;
-       //  return;
-       //}
+
+            //if (e.KeyChar == 8 ) {
+            //  e.Handled = false;
+            //  return;
+            //}
 
 
-       //bool IsDec = false;
-       // int nroDec = 0;
+            //bool IsDec = false;
+            // int nroDec = 0;
 
-       //for (int i=0 ; i<txtCreditoMax.Text.Length; i++) {
-       //  if ( txtCreditoMax.Text[i] == '.' )
-       //     IsDec = true;
+            //for (int i=0 ; i<txtCreditoMax.Text.Length; i++) {
+            //  if ( txtCreditoMax.Text[i] == '.' )
+            //     IsDec = true;
 
-       //  if ( IsDec && nroDec++ >=2) {
-       //     e.Handled = true;
-       //     return;
-       //  }
+            //  if ( IsDec && nroDec++ >=2) {
+            //     e.Handled = true;
+            //     return;
+            //  }
 
 
-       //}
+            //}
 
-       //if ( e.KeyChar>=48 && e.KeyChar<=57)
-       //  e.Handled = false;
-       //else if (e.KeyChar==46)         
-       //  e.Handled = (IsDec) ? true:false;
-       //else
-       //  e.Handled = true;
+            //if ( e.KeyChar>=48 && e.KeyChar<=57)
+            //  e.Handled = false;
+            //else if (e.KeyChar==46)         
+            //  e.Handled = (IsDec) ? true:false;
+            //else
+            //  e.Handled = true;
 
-     }
+        }
 
         private void CleanPJ()
         {
@@ -1512,7 +1513,7 @@ namespace RamosHermanos.Capas.Interfaz
             txtCUILPJ.Text = "";
             txtNombrePJ.Text = "";
             cbIVAPJ.SelectedIndex = 4;
-            cbtipoClientePJ.SelectedIndex= 0;
+            cbtipoClientePJ.SelectedIndex = 0;
             txtEmailPJ.Text = "";
             txtDomicilioPJ.Text = "";
             txtTelefonoPJ.Text = "";
@@ -1685,9 +1686,27 @@ namespace RamosHermanos.Capas.Interfaz
 
             return boli;
         }
-        }
 
-          
+        public void ActualizarSaldos()
+        {
+            cliente.idCliente = Convert.ToInt32(txtIDcliente.Text);
+
+            //Saldo $
+            txtSaldo.Text = SaldoB.GenerarSaldo(Convert.ToInt32(txtIDcliente.Text));
+            //Saldo Envases Aguas
+            txt4LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 1));
+            txt10LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 3));
+            txt12LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 4));
+            txt20LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 5));
+            txt25LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 6));
+            txtCajon.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 8));
+            txtCanasta.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 9));
+            txtPie.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 10));
+            txtDispenser.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 11));
+            //Salgo Envase Soda
+            txtRetornable.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 7));
+        }
+    }      
 }
 
 

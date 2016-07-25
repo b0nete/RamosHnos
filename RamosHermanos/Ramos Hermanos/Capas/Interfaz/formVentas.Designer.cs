@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formVentas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnPrint = new System.Windows.Forms.Button();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -270,10 +270,10 @@
             // colPrecio
             // 
             this.colPrecio.DataPropertyName = "precioUnitario";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.colPrecio.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.colPrecio.DefaultCellStyle = dataGridViewCellStyle5;
             this.colPrecio.HeaderText = "Precio Unitario";
             this.colPrecio.Name = "colPrecio";
             this.colPrecio.ReadOnly = true;
@@ -281,10 +281,10 @@
             // colSubTotal
             // 
             this.colSubTotal.DataPropertyName = "subTotal";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle6;
             this.colSubTotal.HeaderText = "SubTotal";
             this.colSubTotal.Name = "colSubTotal";
             this.colSubTotal.ReadOnly = true;
@@ -497,6 +497,7 @@
             this.cbDomicilio.Name = "cbDomicilio";
             this.cbDomicilio.Size = new System.Drawing.Size(331, 21);
             this.cbDomicilio.TabIndex = 91;
+            this.cbDomicilio.DataSourceChanged += new System.EventHandler(this.cbDomicilio_DataSourceChanged);
             // 
             // txtNombre
             // 
@@ -618,6 +619,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "formVentas";
             this.Text = "Registrar Venta";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formVentas_FormClosed);
             this.Load += new System.EventHandler(this.formFactura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).EndInit();
             this.groupBox3.ResumeLayout(false);

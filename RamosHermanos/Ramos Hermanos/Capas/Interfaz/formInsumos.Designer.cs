@@ -33,6 +33,8 @@
             this.tabInformacion = new System.Windows.Forms.TabPage();
             this.btnEstadisticas = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtConsumoMensual = new System.Windows.Forms.TextBox();
+            this.lblConsumo = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.rbC = new System.Windows.Forms.RadioButton();
             this.rbR = new System.Windows.Forms.RadioButton();
@@ -103,8 +105,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.txtConsumoMensual = new System.Windows.Forms.TextBox();
-            this.lblConsumo = new System.Windows.Forms.Label();
             this.tabMain.SuspendLayout();
             this.tabInformacion.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -203,6 +203,27 @@
             this.groupBox1.TabIndex = 111;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Insumos";
+            // 
+            // txtConsumoMensual
+            // 
+            this.txtConsumoMensual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtConsumoMensual.Location = new System.Drawing.Point(91, 381);
+            this.txtConsumoMensual.Name = "txtConsumoMensual";
+            this.txtConsumoMensual.Size = new System.Drawing.Size(98, 20);
+            this.txtConsumoMensual.TabIndex = 134;
+            this.txtConsumoMensual.Visible = false;
+            // 
+            // lblConsumo
+            // 
+            this.lblConsumo.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
+            this.lblConsumo.AutoSize = true;
+            this.lblConsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.lblConsumo.Location = new System.Drawing.Point(1, 384);
+            this.lblConsumo.Name = "lblConsumo";
+            this.lblConsumo.Size = new System.Drawing.Size(84, 13);
+            this.lblConsumo.TabIndex = 132;
+            this.lblConsumo.Text = "Consumo Actual";
+            this.lblConsumo.Visible = false;
             // 
             // groupBox6
             // 
@@ -780,6 +801,7 @@
             // dtpfechaStock
             // 
             this.dtpfechaStock.CustomFormat = "dd/MM/yyyy";
+            this.dtpfechaStock.Enabled = false;
             this.dtpfechaStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpfechaStock.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpfechaStock.Location = new System.Drawing.Point(119, 17);
@@ -827,6 +849,7 @@
             // 
             // txtStockA
             // 
+            this.txtStockA.Enabled = false;
             this.txtStockA.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtStockA.Location = new System.Drawing.Point(119, 43);
             this.txtStockA.Name = "txtStockA";
@@ -974,27 +997,6 @@
             this.lblTitle.TabIndex = 116;
             this.lblTitle.Text = "Insumos";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtConsumoMensual
-            // 
-            this.txtConsumoMensual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtConsumoMensual.Location = new System.Drawing.Point(91, 381);
-            this.txtConsumoMensual.Name = "txtConsumoMensual";
-            this.txtConsumoMensual.Size = new System.Drawing.Size(98, 20);
-            this.txtConsumoMensual.TabIndex = 134;
-            this.txtConsumoMensual.Visible = false;
-            // 
-            // lblConsumo
-            // 
-            this.lblConsumo.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.lblConsumo.AutoSize = true;
-            this.lblConsumo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.lblConsumo.Location = new System.Drawing.Point(1, 384);
-            this.lblConsumo.Name = "lblConsumo";
-            this.lblConsumo.Size = new System.Drawing.Size(84, 13);
-            this.lblConsumo.TabIndex = 132;
-            this.lblConsumo.Text = "Consumo Actual";
-            this.lblConsumo.Visible = false;
             // 
             // formInsumos
             // 

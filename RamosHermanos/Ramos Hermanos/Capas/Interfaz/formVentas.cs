@@ -24,6 +24,7 @@ namespace RamosHermanos.Capas.Interfaz
         public int newORupdate = 1;
         public int cantidadValorAnterior;
         public int cantidadValorNuevo;
+        public int abiertoformCliente;
 
         public formVentas()
         {
@@ -47,7 +48,7 @@ namespace RamosHermanos.Capas.Interfaz
              {
                  cbTipoFactura.Text = "C";
                  cbformaPago.Text = "Contado";
-             }
+             }             
         }
 
         private void cbEstado_SelectionChangeCommitted(object sender, EventArgs e)
@@ -55,6 +56,7 @@ namespace RamosHermanos.Capas.Interfaz
             if (newORupdate != 1)
             {
                 factura.estado = cbEstado.Text;
+                factura.idFactura = Convert.ToInt32(txtIDFactura.Text);
                 FacturaB.UpdateFactura(factura);
             }
         }
@@ -557,6 +559,20 @@ namespace RamosHermanos.Capas.Interfaz
                         dgvFactura.Rows[ultimaFila].Cells["colCarga"].Value = "C";
                     }
                 }
+            }            
+        }
+
+        private void cbDomicilio_DataSourceChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void formVentas_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (abiertoformCliente == 1)
+            {
+                formCliente frm = this.Owner as formCliente;
+                frm.ActualizarSaldos();
             }            
         }
     }

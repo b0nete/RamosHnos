@@ -256,7 +256,12 @@ namespace RamosHermanos.Capas.Negocio
 
                 cb.DataSource = dt;
                 cb.ValueMember = "idDomicilio";
-                cb.DisplayMember = "domCompleto";                
+                cb.DisplayMember = "domCompleto";
+
+                cb.DisplayMember = cb.DisplayMember.Replace("-", String.Empty);
+                cb.DisplayMember = cb.DisplayMember.Replace("  ", String.Empty);
+                cb.Text = cb.Text.Replace("-", String.Empty);
+                cb.Text = cb.Text.Replace("  ", String.Empty);
 
                 MySQL.DisconnectDB();
             }

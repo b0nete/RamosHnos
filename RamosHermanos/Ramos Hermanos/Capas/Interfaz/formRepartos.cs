@@ -831,12 +831,15 @@ namespace RamosHermanos.Capas.Interfaz
 
                 foreach (DataRow dr in DTitemsProducto.Rows)
                 {
-                    stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
-                    stockInsumo.tipoStock = Convert.ToString(dr["tipoStock"].ToString());
-                    stockInsumo.valorAnterior = cantidadPreEdit * Convert.ToInt32(dr["cantidad"].ToString());
-                    stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
-                    DateTime fechaActual = DateTime.Now;
-                    stockInsumo.mesAño = Convert.ToDateTime(fechaActual.ToString("MM-yyyy"));
+                    if (dr["tipoStock"].ToString() != "C")
+                    {
+                        stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
+                        stockInsumo.tipoStock = Convert.ToString(dr["tipoStock"].ToString());
+                        stockInsumo.valorAnterior = cantidadPreEdit * Convert.ToInt32(dr["cantidad"].ToString());
+                        stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
+                        DateTime fechaActual = DateTime.Now;
+                        stockInsumo.mesAño = Convert.ToDateTime(fechaActual.ToString("MM-yyyy"));
+                    }
 
                     if (stockInsumo.tipoStock == "R")
                     {
