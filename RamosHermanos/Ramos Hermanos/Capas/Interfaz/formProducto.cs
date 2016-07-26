@@ -749,7 +749,15 @@ namespace RamosHermanos.Capas.Interfaz
                     txtCostoProd.Text = costo1.ToString();
                 }
 
-                ganancia = costo1 * Convert.ToDouble(Convert.ToString("1," + txtGanancia.Text));
+                //ganancia = costo1 * Convert.ToDouble(Convert.ToString("1," + txtGanancia.Text));
+
+                int length = 2;
+                if (txtGanancia.Text != string.Empty)
+                {               
+                    double porc = Convert.ToDouble("1," + txtGanancia.Text.PadLeft(length, '0'));
+                    ganancia = costo1 * porc;
+                }
+                
                 txtPrecioSugerido.Text = ganancia.ToString();
             }
         }
@@ -815,6 +823,11 @@ namespace RamosHermanos.Capas.Interfaz
                     dr.DefaultCellStyle.BackColor = Color.LightGreen;
                 }
             }
+        }
+
+        private void txtGanancia_TextChanged(object sender, EventArgs e)
+        {
+            calcularAfterSearch();
         }
     }
 }

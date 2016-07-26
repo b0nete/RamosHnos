@@ -110,6 +110,9 @@ namespace RamosHermanos.Capas.Interfaz
                 case 1:
                     tabMain.SelectedTab = tabPrecio;
                     break;
+                case 2:
+                    tabMain.Controls.Remove(tabStock);
+                    break;
             }
         }
 

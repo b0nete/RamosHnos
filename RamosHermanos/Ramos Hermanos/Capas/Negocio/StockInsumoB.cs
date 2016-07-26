@@ -241,21 +241,21 @@ namespace RamosHermanos.Capas.Negocio
                 {
                     string queryDevolver = @"SET @@sql_safe_updates = 0; 
                                    UPDATE stockInsumosConsumo
-                                   SET cantidad = cantidad - @valorAnterior, mesAño = @mesAño
-                                   WHERE insumo = @insumo and mesAño = @mesAño;
+                                   SET cantidad = cantidad - @valorAnterior
+                                   WHERE insumo = @insumo and mesAño like @mesAño;
                                    SET @@sql_safe_updates = 1";
 
                     string querySacar = @"SET @@sql_safe_updates = 0; 
                                    UPDATE stockInsumosConsumo
-                                   SET cantidad = cantidad + @valorNuevo, mesAño = @mesAño
-                                   WHERE insumo = @insumo and mesAño = @mesAño;
+                                   SET cantidad = cantidad + @valorNuevo
+                                   WHERE insumo = @insumo and mesAño like @mesAño;
                                    SET @@sql_safe_updates = 1";
 
                     MySqlCommand cmd = new MySqlCommand();
 
                     cmd.Parameters.AddWithValue("@insumo", stockInsumo.idInsumo);
                     cmd.Parameters.AddWithValue("@stockActual", stockInsumo.stockActual);
-                    cmd.Parameters.AddWithValue("@mesAño", stockInsumo.mesAño);
+                    cmd.Parameters.AddWithValue("@mesAño", stockInsumo.mesAño.ToString("yyyy-MM") + '%');
                     cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
                     cmd.Parameters.AddWithValue("@valorAnterior", stockInsumo.valorAnterior);
                     cmd.Parameters.AddWithValue("@valorNuevo", stockInsumo.valorNuevo);

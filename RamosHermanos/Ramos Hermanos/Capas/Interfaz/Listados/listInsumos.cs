@@ -75,7 +75,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     StockInsumoEntity stockIns = new StockInsumoEntity();
                     formInsumos frmI = new formInsumos();
                     InsumoEntity insumo = new InsumoEntity();
-                    frmI.Show();
+                    
                     DataGridViewRow row = cell.OwningRow;
                     
                     //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
@@ -108,6 +108,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                         frmI.lblConsumo.Visible = true;
                         frmI.txtConsumoMensual.Visible = true;
                         frmI.txtConsumoMensual.Text = Convert.ToString(InsumoB.BuscarConsumoMesActual(insumo.idInsumo));
+                        frmI.tabVar = 2;
                     }
 
 
@@ -130,7 +131,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                         frmI.dgvStock.AutoGenerateColumns = false;                        
                     }
 
-                    
+                    frmI.Show();
 
                     //StockInsumoB.cargardgvStock(frmI.dgvStock, frmI.txtidInsumo);
 
