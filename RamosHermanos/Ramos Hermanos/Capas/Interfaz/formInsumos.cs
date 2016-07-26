@@ -17,6 +17,8 @@ namespace RamosHermanos.Capas.Interfaz
     public partial class formInsumos : Form
     {
         public int caseSwitch = 2;
+        public int tabVar = 0;
+
         public formInsumos()
         {
             InitializeComponent();
@@ -100,6 +102,15 @@ namespace RamosHermanos.Capas.Interfaz
             MarcaB.CargarCB(cbMarca);
             MedidaB.CargarCB(cbMedida);
             checkcolor();
+
+            switch (tabVar)
+            {
+                case 0:
+                    break;
+                case 1:
+                    tabMain.SelectedTab = tabPrecio;
+                    break;
+            }
         }
 
         
@@ -483,6 +494,11 @@ namespace RamosHermanos.Capas.Interfaz
         }
 
         private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTitle_Click(object sender, EventArgs e)
         {
 
         }  

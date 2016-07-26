@@ -997,6 +997,7 @@
             this.lblTitle.TabIndex = 116;
             this.lblTitle.Text = "Insumos";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // formInsumos
             // 
@@ -1084,7 +1085,6 @@
         public System.Windows.Forms.TextBox txtStockA;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TabPage tabPrecio;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.MaskedTextBox txtnewPrecio;
         private System.Windows.Forms.Button button9;
@@ -1110,6 +1110,7 @@
         public System.Windows.Forms.RadioButton rbNR;
         public System.Windows.Forms.TextBox txtConsumoMensual;
         public System.Windows.Forms.Label lblConsumo;
+        public System.Windows.Forms.TabPage tabPrecio;
 
     }
 }

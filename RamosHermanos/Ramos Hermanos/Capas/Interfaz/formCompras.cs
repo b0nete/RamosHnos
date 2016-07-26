@@ -338,6 +338,78 @@ namespace RamosHermanos.Capas.Interfaz
 
             return bul;
         }
+
+        private void dgvCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void dgvCompra_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Capture F5 KeyPress
+            if (e.KeyCode == Keys.F5)
+            {
+                StockInsumoEntity stockIns = new StockInsumoEntity();
+                formInsumos frmI = new formInsumos();
+                InsumoEntity insumo = new InsumoEntity();
+                frmI.tabVar = 1;
+                frmI.Show();
+
+                //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el cliente para cargarlo en tabInformación.
+
+                insumo.idInsumo = Convert.ToInt32(dgvCompra.CurrentRow.Cells["colIDInsumo"].Value);
+
+                //Actualizar Label
+                frmI.lblTitle.Text = InsumoB.BuscarNombreInsumo(insumo.idInsumo);
+
+                InsumoB.BuscarInsumosID(insumo);
+                frmI.txtidInsumo.Text = Convert.ToString(insumo.idInsumo);
+                frmI.dtpFecha.Value = Convert.ToDateTime(insumo.fecha);
+                frmI.txtInsumo.Text = Convert.ToString(insumo.insumo);
+                //frmI.txtInsumoPrecio.Text = frmI.txtInsumo.Text;
+                //frmI.txtInsumoStock.Text = frmI.txtInsumo.Text;
+                frmI.txtCantidad.Text = Convert.ToString(insumo.stockMin);
+                frmI.txtDescripcion.Text = Convert.ToString(insumo.descripcion);
+                //frmI.cbMarca.SelectedValue= insumo.marca;
+                frmI.cbProv.SelectedValue = insumo.proveedor;
+                frmI.cbRubro.SelectedValue = insumo.rubro;
+                frmI.cbMedida.SelectedValue = insumo.medida;
+                frmI.txtCantidad.Text = Convert.ToString(insumo.cantidad);
+                if (insumo.tipoStock == "NR")
+                    frmI.rbNR.Checked = true;
+                else if (insumo.tipoStock == "R")
+                    frmI.rbR.Checked = true;
+                else if (insumo.tipoStock == "C")
+                {
+                    frmI.rbC.Checked = true;
+                    frmI.lblConsumo.Visible = true;
+                    frmI.txtConsumoMensual.Visible = true;
+                    frmI.txtConsumoMensual.Text = Convert.ToString(InsumoB.BuscarConsumoMesActual(insumo.idInsumo));
+                }
+
+
+                PrecioInsumosB.UltimoPrecioDGV(frmI.dgvPrecios, frmI.txtidInsumo);
+
+                //cargarDatosStock
+                stockIns.idInsumo = insumo.idInsumo;
+                if (StockInsumoB.ExisteStock(insumo.idInsumo) == false)
+                    MessageBox.Show("No existe stock");
+                else
+                {
+                    StockInsumoEntity stockInsumo = StockInsumoB.BuscarStock(Convert.ToInt32(frmI.txtidInsumo.Text));
+                    frmI.txtStockMin.Text = Convert.ToString(stockInsumo.stockMinimo);
+                    frmI.txtStockMax.Text = Convert.ToString(stockInsumo.stockMaximo);
+                    frmI.txtStockA.Text = Convert.ToString(stockInsumo.stockActual);
+
+                    //Cargar Operaciones Stock      
+
+                    StockInsumoB.ListarStock(insumo.idInsumo, frmI.dgvStock);
+                    frmI.dgvStock.AutoGenerateColumns = false;
+                }
+
+                
+            }
+        }
               
     }
 }

@@ -336,6 +336,7 @@
             this.btnClean.Size = new System.Drawing.Size(28, 28);
             this.btnClean.TabIndex = 78;
             this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Visible = false;
             this.btnClean.Click += new System.EventHandler(this.btnClean_Click_1);
             // 
             // button4

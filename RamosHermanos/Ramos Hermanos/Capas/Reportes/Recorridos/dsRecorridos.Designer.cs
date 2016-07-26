@@ -646,6 +646,20 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             
             private global::System.Data.DataColumn columndomicilio;
             
+            private global::System.Data.DataColumn columnsoda;
+            
+            private global::System.Data.DataColumn columnagua;
+            
+            private global::System.Data.DataColumn columncajon;
+            
+            private global::System.Data.DataColumn columncanasta;
+            
+            private global::System.Data.DataColumn columnpie;
+            
+            private global::System.Data.DataColumn columndispenser;
+            
+            private global::System.Data.DataColumn columnsaldoCC;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtItemsRecorridoDataTable() {
@@ -713,6 +727,62 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn sodaColumn {
+                get {
+                    return this.columnsoda;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn aguaColumn {
+                get {
+                    return this.columnagua;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn cajonColumn {
+                get {
+                    return this.columncajon;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn canastaColumn {
+                get {
+                    return this.columncanasta;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pieColumn {
+                get {
+                    return this.columnpie;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn dispenserColumn {
+                get {
+                    return this.columndispenser;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn saldoCCColumn {
+                get {
+                    return this.columnsaldoCC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -748,13 +818,20 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtItemsRecorridoRow AdddtItemsRecorridoRow(string idCliente, string cliente, string idDomicilio, string domicilio) {
+            public dtItemsRecorridoRow AdddtItemsRecorridoRow(string idCliente, string cliente, string idDomicilio, string domicilio, string soda, string agua, string cajon, string canasta, string pie, string dispenser, string saldoCC) {
                 dtItemsRecorridoRow rowdtItemsRecorridoRow = ((dtItemsRecorridoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         idCliente,
                         cliente,
                         idDomicilio,
-                        domicilio};
+                        domicilio,
+                        soda,
+                        agua,
+                        cajon,
+                        canasta,
+                        pie,
+                        dispenser,
+                        saldoCC};
                 rowdtItemsRecorridoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtItemsRecorridoRow);
                 return rowdtItemsRecorridoRow;
@@ -781,6 +858,13 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
                 this.columncliente = base.Columns["cliente"];
                 this.columnidDomicilio = base.Columns["idDomicilio"];
                 this.columndomicilio = base.Columns["domicilio"];
+                this.columnsoda = base.Columns["soda"];
+                this.columnagua = base.Columns["agua"];
+                this.columncajon = base.Columns["cajon"];
+                this.columncanasta = base.Columns["canasta"];
+                this.columnpie = base.Columns["pie"];
+                this.columndispenser = base.Columns["dispenser"];
+                this.columnsaldoCC = base.Columns["saldoCC"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -794,6 +878,20 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
                 base.Columns.Add(this.columnidDomicilio);
                 this.columndomicilio = new global::System.Data.DataColumn("domicilio", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndomicilio);
+                this.columnsoda = new global::System.Data.DataColumn("soda", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsoda);
+                this.columnagua = new global::System.Data.DataColumn("agua", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnagua);
+                this.columncajon = new global::System.Data.DataColumn("cajon", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncajon);
+                this.columncanasta = new global::System.Data.DataColumn("canasta", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncanasta);
+                this.columnpie = new global::System.Data.DataColumn("pie", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpie);
+                this.columndispenser = new global::System.Data.DataColumn("dispenser", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndispenser);
+                this.columnsaldoCC = new global::System.Data.DataColumn("saldoCC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsaldoCC);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1458,6 +1556,118 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string soda {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtItemsRecorrido.sodaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'soda\' de la tabla \'dtItemsRecorrido\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtItemsRecorrido.sodaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string agua {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtItemsRecorrido.aguaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'agua\' de la tabla \'dtItemsRecorrido\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtItemsRecorrido.aguaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string cajon {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtItemsRecorrido.cajonColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cajon\' de la tabla \'dtItemsRecorrido\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtItemsRecorrido.cajonColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string canasta {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtItemsRecorrido.canastaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'canasta\' de la tabla \'dtItemsRecorrido\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtItemsRecorrido.canastaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pie {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtItemsRecorrido.pieColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'pie\' de la tabla \'dtItemsRecorrido\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtItemsRecorrido.pieColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string dispenser {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtItemsRecorrido.dispenserColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'dispenser\' de la tabla \'dtItemsRecorrido\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtItemsRecorrido.dispenserColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string saldoCC {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtItemsRecorrido.saldoCCColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'saldoCC\' de la tabla \'dtItemsRecorrido\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtItemsRecorrido.saldoCCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsidClienteNull() {
                 return this.IsNull(this.tabledtItemsRecorrido.idClienteColumn);
             }
@@ -1502,6 +1712,90 @@ namespace RamosHermanos.Capas.Reportes.Recorridos {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetdomicilioNull() {
                 this[this.tabledtItemsRecorrido.domicilioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IssodaNull() {
+                return this.IsNull(this.tabledtItemsRecorrido.sodaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetsodaNull() {
+                this[this.tabledtItemsRecorrido.sodaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsaguaNull() {
+                return this.IsNull(this.tabledtItemsRecorrido.aguaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetaguaNull() {
+                this[this.tabledtItemsRecorrido.aguaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscajonNull() {
+                return this.IsNull(this.tabledtItemsRecorrido.cajonColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcajonNull() {
+                this[this.tabledtItemsRecorrido.cajonColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscanastaNull() {
+                return this.IsNull(this.tabledtItemsRecorrido.canastaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcanastaNull() {
+                this[this.tabledtItemsRecorrido.canastaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IspieNull() {
+                return this.IsNull(this.tabledtItemsRecorrido.pieColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetpieNull() {
+                this[this.tabledtItemsRecorrido.pieColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdispenserNull() {
+                return this.IsNull(this.tabledtItemsRecorrido.dispenserColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdispenserNull() {
+                this[this.tabledtItemsRecorrido.dispenserColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IssaldoCCNull() {
+                return this.IsNull(this.tabledtItemsRecorrido.saldoCCColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetsaldoCCNull() {
+                this[this.tabledtItemsRecorrido.saldoCCColumn] = global::System.Convert.DBNull;
             }
         }
         

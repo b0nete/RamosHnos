@@ -870,21 +870,17 @@ namespace RamosHermanos.Capas.Interfaz
                     dtItemsRecorridoTest.Rows[i][0].ToString(),//idCliente
                     dtItemsRecorridoTest.Rows[i][1].ToString(),//clienteCompleto
                     dtItemsRecorridoTest.Rows[i][2].ToString(),//idDomicilio
-                    dtItemsRecorridoTest.Rows[i][3].ToString() //domicilioCompleto
-                }
-                );
+                    dtItemsRecorridoTest.Rows[i][3].ToString(), //domicilioCompleto
 
-                ds.Tables["dtEnvases"].Rows.Add
-                (
-                new object[]
-                {
+                    //
+
                     SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 7).ToString(), //saldoSoda
                     Convert.ToString(Convert.ToInt32(SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 1).ToString()) + Convert.ToInt32(SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 3).ToString()) + Convert.ToInt32(SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 4).ToString()) + Convert.ToInt32(SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 5).ToString()) + Convert.ToInt32(SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 6).ToString())),
                     SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 8).ToString(), //saldoCajon
                     SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 9).ToString(), //saldoCanasta
                     SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 10).ToString(), //saldoPie
                     SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 11).ToString(), //saldoDispenser
-                    itemsRepartoB.CalcularVenta(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString())), //saldoCC
+                    itemsRepartoB.CalcularVenta(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()))
                 }
                 );
             }

@@ -575,5 +575,15 @@ namespace RamosHermanos.Capas.Interfaz
                 frm.ActualizarSaldos();
             }            
         }
+
+        public void cargarCBDesdeFormRepartos(string formaPago)
+        {
+            //No se realizaba la carga de los CBs por eso se utiliza este método
+
+            cbformaPago.Text = formaPago;
+            DomicilioB.CargarCB(cbDomicilio, txtIDcliente, "1");
+            //frmP.cbDomicilio.SelectedValue = factura.domicilio;
+            TelefonoB.CargarCB(cbTelefono, txtIDcliente, 1);
+        }
     }
 }

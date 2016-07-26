@@ -172,6 +172,7 @@ namespace RamosHermanos.Capas.Interfaz
                     //Factura
                     factura.tipoFactura = "C";
                     factura.estado = "Pendiente";
+                    factura.formaPago = "Contado";
                     factura.fechaFactura = DateTime.Today;
                     factura.fechaVencimiento = factura.fechaVencimiento.AddDays(7); //Sumamos 7 días al actual.
                     factura.fechaEntrega = DateTime.Today;
@@ -221,6 +222,7 @@ namespace RamosHermanos.Capas.Interfaz
                 //Factura
                 factura.tipoFactura = "C";
                 factura.estado = "Pendiente";
+                factura.formaPago = "Contado";
                 factura.fechaFactura = DateTime.Today;
                 factura.fechaVencimiento = factura.fechaVencimiento.AddDays(7); //Sumamos 7 días al actual.
                 factura.fechaEntrega = DateTime.Today;
@@ -285,13 +287,15 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 DataGridViewRow row = cell.OwningRow;
 
+                frmP.newORupdate = 2; //Update o Busqueda
+
                 //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el pedido para cargarlo.
                 factura.idFactura = Convert.ToInt32(row.Cells["colComprobante"].Value.ToString());
                 FacturaB.BuscarFacturaID(factura);
                 frmP.txtIDFactura.Text = Convert.ToString(factura.idFactura);
                 frmP.cbTipoFactura.Text = factura.tipoFactura;
                 frmP.txtIDcliente.Text = Convert.ToString(factura.cliente);
-                frmP.cbformaPago.Text = factura.formaPago;
+                frmP.cbformaPago.SelectedItem = factura.formaPago;
 
                 ClienteEntity cliente = ClienteB.BuscarClienteIDINT(factura.cliente);
                 frmP.txtnumDoc.Text = cliente.numDoc;
@@ -303,8 +307,8 @@ namespace RamosHermanos.Capas.Interfaz
                 frmP.txtNombre.Text = Convert.ToString(factura.nombreCompleto);
                 frmP.txtTotal.Text = Convert.ToString(factura.total);
                 DomicilioB.CargarCB(frmP.cbDomicilio, frmP.txtIDcliente, "1");
-                frmP.cbDomicilio.SelectedValue = factura.domicilio;
-                TelefonoB.CargarCB(frmP.cbDomicilio, frmP.txtIDcliente, 1);
+                //frmP.cbDomicilio.SelectedValue = factura.domicilio;
+                TelefonoB.CargarCB(frmP.cbTelefono, frmP.txtIDcliente, 1);
 
                 itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
                 itemsFacturaB.BuscarItemFacturaDGV(itemFactura, frmP.dgvFactura, frmP.txtTotal);
@@ -315,40 +319,7 @@ namespace RamosHermanos.Capas.Interfaz
                 frmP.txtIVA.Text = cliente.condicionIVA;
                 frmP.columnasNegativasTotal();
                 frmP.Show();
-
-            //formVentas frmP = new formVentas();
-
-            //DataGridViewCell cell = null;
-            //foreach (DataGridViewCell selectedCell in dgvRepartos.SelectedCells)
-            //{
-            //    cell = selectedCell;
-            //    break;
-            //}
-            //if (cell != null)
-            //{
-            //    DataGridViewRow row = cell.OwningRow;
-
-            //    //Cargamos el ID de acuerdo a la celda seleccionada y buscamos el pedido para cargarlo.
-            //    factura.idFactura = Convert.ToInt32(row.Cells["colComprobante"].Value.ToString());
-            //    FacturaB.BuscarFacturaID(factura);
-            //    frmP.txtIDFactura.Text = Convert.ToString(factura.idFactura);
-            //    frmP.txtIDcliente.Text = Convert.ToString(factura.cliente);
-            //    frmP.dtpfechaFactura.Value = factura.fechaFactura;
-            //    frmP.dtpEntrega.Value = factura.fechaEntrega;
-            //    frmP.cbEstado.SelectedItem = factura.estado;
-            //    frmP.txtObservaciones.Text = Convert.ToString(pedido.observaciones);
-            //    frmP.txtNombre.Text = Convert.ToString(factura.nombreCompleto);
-            //    frmP.txtTotal.Text = Convert.ToString(factura.total);
-
-            //    itemFactura.factura = dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString();
-            //    itemsFacturaB.BuscarItemFacturaDGV(itemFactura, frmP.dgvFactura, frmP.txtTotal);
-
-            //    //DomicilioB.CargarTXTID(factura.domicilio, frmP.txtDomicilio);
-
-            //    ClienteEntity cliente = ClienteB.BuscarClienteCIVAyCP(factura.cliente);
-            //    frmP.txtIVA.Text = cliente.condicionIVA;
-            //    frmP.cbformaPago.Text = "Contado";
-            //    frmP.Show();
+                //frmP.cargarCBDesdeFormRepartos(factura.formaPago);
             }
         }
 
