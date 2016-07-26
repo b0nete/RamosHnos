@@ -215,7 +215,7 @@ namespace RamosHermanos.Capas.Interfaz
                 txtPiso.Text = row.Cells["colPiso"].Value.ToString();
                 txtDpto.Text = row.Cells["colDpto"].Value.ToString();
                 txtCP.Text = row.Cells["colCP"].Value.ToString();
-                cbEstadoDom.Checked = Convert.ToBoolean(row.Cells["colEstadoDom"].Value.ToString());
+                //cbEstadoDom.Checked = Convert.ToBoolean(row.Cells["colEstadoDom"].Value.ToString());
             }
         }
 

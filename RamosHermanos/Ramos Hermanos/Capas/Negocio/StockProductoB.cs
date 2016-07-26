@@ -274,7 +274,7 @@ namespace RamosHermanos.Capas.Negocio
                                 (SELECT 'VENTA' as operacion, F.idFactura as numOperacion, -(FI.cantidad), F.fechaFactura as fecha
                                 FROM itemsFactura FI
                                 INNER JOIN Facturas F ON FI.factura = F.idFactura
-                                WHERE FI.producto = @idProducto
+                                WHERE FI.producto = @idProducto and FI.carga = 'C'
                                 ORDER BY F.fechaFactura DESC)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);

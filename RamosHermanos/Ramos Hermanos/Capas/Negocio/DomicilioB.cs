@@ -285,7 +285,7 @@ namespace RamosHermanos.Capas.Negocio
                                  INNER JOIN Localidades L ON L.idLocalidad = D.Localidad
                                  INNER JOIN Barrios B ON D.Barrio = B.idBarrio
                                  INNER JOIN Calles C ON D.Calle = C.idCalle
-                                 WHERE rol = @rol and idPersona = @idPersona and D.estado = 1";
+                                 WHERE rol = @rol and idPersona = @idPersona";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 

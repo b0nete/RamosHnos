@@ -814,7 +814,14 @@ namespace RamosHermanos.Capas.Interfaz
 
                     if (stockInsumo.tipoStock == "R")
                     {
-                        StockInsumoB.UpdateStockInsert(stockInsumo, carga);
+                        stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
+                        stockInsumo.tipoStock = Convert.ToString(dr["tipoStock"].ToString());
+                        stockInsumo.valorAnterior = cantidadPreEdit * Convert.ToInt32(dr["cantidad"].ToString());
+                        stockInsumo.valorNuevo = cantidadAfterEdit * Convert.ToInt32(dr["cantidad"].ToString());
+                        DateTime fechaActual = DateTime.Now;
+                        stockInsumo.mesAño = Convert.ToDateTime(fechaActual.ToString("MM-yyyy"));
+
+                        StockInsumoB.UpdateStockInsertReparto(stockInsumo);
                     }
                 }
             }

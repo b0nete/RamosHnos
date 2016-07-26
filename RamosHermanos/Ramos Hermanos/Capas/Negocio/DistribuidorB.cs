@@ -291,7 +291,7 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT D.idDistribuidor, CONCAT(D.apellido,' ',D.nombre,' -', ' Vehículo:',' ', V.marca,', ',
+                string query = @"SELECT D.idDistribuidor, CONCAT(D.idDistribuidor, ' - ', D.apellido,' ',D.nombre) as distr, CONCAT(D.apellido,' ',D.nombre,' -', ' Vehículo:',' ', V.marca,', ',
                                  'Modelo: ', V.modelo,', ', 'Patente: ', V.patente) distrCompleto                                                            
                                  FROM distribuidores D
                                  INNER JOIN Vehiculos V on V.idVehiculo = D.vehiculo";
@@ -308,7 +308,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 cb.DataSource = dt;
                 cb.ValueMember = "idDistribuidor";
-                cb.DisplayMember = "distrCompleto";
+                cb.DisplayMember = "distr";
 
 
                 MySQL.DisconnectDB();

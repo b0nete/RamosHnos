@@ -1279,7 +1279,7 @@ namespace RamosHermanos.Capas.Interfaz
             ClienteEntity cliente = ClienteB.BuscarClienteIDINT(Convert.ToInt32(txtIDcliente.Text));
 
             frm.txtIDcliente.Text = txtIDcliente.Text;
-            frm.txtNombre.Text = cliente.apellido + cliente.nombre;
+            frm.txtNombre.Text = cliente.apellido + ' ' + cliente.nombre;
             frm.txtnumDoc.Text = cliente.numDoc;
             DomicilioB.CargarCB(frm.cbDomicilio, txtIDcliente, "1");
             TelefonoB.CargarCB(frm.cbTelefono, txtIDcliente, 1);

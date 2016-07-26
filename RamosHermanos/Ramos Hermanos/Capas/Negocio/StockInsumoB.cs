@@ -280,6 +280,73 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static void UpdateStockInsertReparto(StockInsumoEntity stockInsumo)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                //Buscamos valor anterior del stockActual
+                MySQL.ConnectDB();
+
+                string queryConsultaStock = @"SELECT * FROM Insumos WHERE idInsumo = @idInsumo";
+
+                MySqlCommand cmdConsultaStock = new MySqlCommand(queryConsultaStock, MySQL.sqlcnx);
+
+                cmdConsultaStock.Parameters.AddWithValue("@idInsumo", stockInsumo.idInsumo);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmdConsultaStock);
+
+                da.Fill(dt);
+                DataRow dr = dt.Rows[0];
+
+                stockInsumo.tipoStock = Convert.ToString(dr["tipoStock"].ToString());
+
+                /////////////////////////////////////////////////////////////////////////////
+
+                if (stockInsumo.tipoStock == "R")
+                {
+                    string queryDevolver = @"SET @@sql_safe_updates = 0; 
+                                   UPDATE stockInsumos
+                                   SET stockActual = stockActual - @valorAnterior, fechaActualizacion = @fechaActualizacion
+                                   WHERE idInsumo = @idInsumo;
+                                   SET @@sql_safe_updates = 1";
+
+                    string querySacar = @"SET @@sql_safe_updates = 0; 
+                                   UPDATE stockInsumos
+                                   SET stockActual = stockActual + @valorNuevo, fechaActualizacion = @fechaActualizacion
+                                   WHERE idInsumo = @idInsumo;
+                                   SET @@sql_safe_updates = 1";
+
+                    MySqlCommand cmd = new MySqlCommand();
+
+                    cmd.Parameters.AddWithValue("@idInsumo", stockInsumo.idInsumo);
+                    cmd.Parameters.AddWithValue("@stockActual", stockInsumo.stockActual);
+                    cmd.Parameters.AddWithValue("@fechaActualizacion", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@valorAnterior", stockInsumo.valorAnterior);
+                    cmd.Parameters.AddWithValue("@valorNuevo", stockInsumo.valorNuevo);
+
+                    cmd.CommandText = queryDevolver;
+                    cmd.Connection = MySQL.sqlcnx;
+                    cmd.ExecuteNonQuery();
+
+                    cmd.CommandText = querySacar;
+                    cmd.Connection = MySQL.sqlcnx;
+                    cmd.ExecuteNonQuery();
+                }
+               
+
+                MySQL.DisconnectDB();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
         public static void ActualizarStock(LogStockInsumoEntity logStock)
         {
             try
