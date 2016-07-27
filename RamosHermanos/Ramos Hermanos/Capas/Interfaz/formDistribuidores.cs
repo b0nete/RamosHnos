@@ -797,7 +797,7 @@ namespace RamosHermanos.Capas.Interfaz
 
                     foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     {
-                        dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
+                        //dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
                         dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value), Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
                         dRow.Cells["colCobro"].Value = FacturaB.EstadoPago(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
                     }
@@ -816,7 +816,7 @@ namespace RamosHermanos.Capas.Interfaz
 
                     foreach (DataGridViewRow dRow in frm.dgvRepartos.Rows)
                     {
-                        dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
+                        //dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
                         dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value), Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
                         dRow.Cells["colCobro"].Value = FacturaB.EstadoPago(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
                     }
@@ -880,7 +880,7 @@ namespace RamosHermanos.Capas.Interfaz
                     SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 9).ToString(), //saldoCanasta
                     SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 10).ToString(), //saldoPie
                     SaldoEnvasesB.GenerarSaldoEnvases(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), 11).ToString(), //saldoDispenser
-                    //itemsRepartoB.CalcularVenta(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString(), ))
+                    itemsRepartoB.CalcularVenta(Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()), Convert.ToInt32(dtItemsRecorridoTest.Rows[i][0].ToString()))
                 }
                 );
             }

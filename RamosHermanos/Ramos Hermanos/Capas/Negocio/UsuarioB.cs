@@ -117,6 +117,35 @@ namespace RamosHermanos.Capas.Negocio
             }
         
         }
+
+        public static int BuscarIDUsuario(int numDoc)
+        {
+
+            try
+            {
+                UsuarioEntity usuario = new UsuarioEntity();
+                MySQL.ConnectDB();
+
+                string query = @" Select idUsuario 
+                           from usuarios 
+                           where numDoc = @numDoc";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@numDoc", numDoc);
+
+                int id = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return id;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
         
     }
 }

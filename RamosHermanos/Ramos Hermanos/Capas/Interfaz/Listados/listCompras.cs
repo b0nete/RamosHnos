@@ -57,6 +57,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 frm.txtCuil.Text = Convert.ToString(dr["cuit"]);
                 frm.txtnumFactura.Text = Convert.ToString(dr["numFactura"]);
                 frm.txtCondicionIva.Text = Convert.ToString(dr["condicionIVA"]);
+                frm.cbformaPago.Text = Convert.ToString(dr["formaPago"]);
                 frm.dtpfechaFactura.Value = Convert.ToDateTime(dr["fecha"]);
                 frm.txtObservaciones.Text = Convert.ToString(dr["observaciones"]);
                 frm.txtTotal.Text = Convert.ToString(dr["total"]);

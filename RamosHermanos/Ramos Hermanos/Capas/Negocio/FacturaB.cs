@@ -175,7 +175,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query1 = @"UPDATE Facturas 
-                                 SET estado = @estado, total = @total
+                                 SET estado = @estado, total = @total, formaPago = @formaPago
                                  WHERE idFactura = @idFactura";
 
                 MySqlCommand cmd1 = new MySqlCommand(query1, MySQL.sqlcnx);
@@ -183,6 +183,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmd1.Parameters.AddWithValue("@idFactura", factura.idFactura);
                 cmd1.Parameters.AddWithValue("@estado", factura.estado);
                 cmd1.Parameters.AddWithValue("@total", factura.total);
+                cmd1.Parameters.AddWithValue("@formaPago", factura.formaPago);
 
                 cmd1.ExecuteNonQuery();
 

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using RamosHermanos.Capas.Datos;
+using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
 using RamosHermanos.Capas.Interfaz.ABMs;
 using RamosHermanos.Libs;
@@ -21,6 +22,7 @@ namespace RamosHermanos.Capas.Interfaz
     {   
         //Variables
         public string usr;
+        public int IDusr;
         DateTime tiempo1 = DateTime.Now;        
     
         public formMain()
@@ -403,6 +405,21 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show();
         }
 
+        private void formMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CargarLog();
+            LogB.InsertLog(log);
+        }
+
+        // Entidades
+
+        logEntity log = new logEntity();
+        private void CargarLog()
+        {
+            log.usuario = IDusr;
+            log.accion = "Cierre Sesion";
+            log.hora = DateTime.Now;
+        }
        
        
        

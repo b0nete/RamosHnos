@@ -211,6 +211,7 @@ namespace RamosHermanos.Capas.Interfaz
                 factura.estado = "Pendiente";
                 factura.idFactura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
                 factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
+                factura.formaPago = "Contado";
 
                 FacturaB.UpdateFactura(factura);
             }
