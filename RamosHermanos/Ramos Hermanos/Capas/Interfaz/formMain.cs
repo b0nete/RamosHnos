@@ -397,6 +397,12 @@ namespace RamosHermanos.Capas.Interfaz
             
         }
 
+        private void logsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formLogs frm = new formLogs();
+            frm.Show();
+        }
+
        
        
        

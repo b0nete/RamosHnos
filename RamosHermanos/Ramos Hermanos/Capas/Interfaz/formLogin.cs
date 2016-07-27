@@ -33,6 +33,8 @@ namespace RamosHermanos.Capas.Interfaz
                 if (UsuarioB.VerificarUsuario(usuario) == true)
                 {
                     OpenMain();
+                    
+                    
                 }
                 else
                 {
@@ -57,8 +59,10 @@ namespace RamosHermanos.Capas.Interfaz
         private void OpenMain()
         {
             formMain frm = new formMain();
-            frm.usr = usuario.numDoc + " - " + usuario.apellido + "," + usuario.nombre;
+            frm.usr = usuario.numDoc + " - " + usuario.apellido + "," + usuario.nombre;   
             frm.Show();
+
+            LogB.InsertLog(log);
         }
 
 
@@ -68,10 +72,16 @@ namespace RamosHermanos.Capas.Interfaz
         UsuarioEntity usuario = new UsuarioEntity();
         
         private void CargarUsuario()
-        {            
+        {                        
             usuario.numDoc = txtUsuario.Text;
             usuario.apellido = UsuarioB.BuscarNomUsuario(Convert.ToInt32(usuario.numDoc));
             usuario.password = txtPassword.Text;
+        }
+
+        logEntity log = new logEntity();
+        private void CargarLog()
+        {
+            log.usuario = Convert.ToInt32(usuario.numDoc);
         }
 
 

@@ -28,33 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvLogs = new System.Windows.Forms.DataGridView();
+            this.colUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colAccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvLogs
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 57);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(502, 325);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvLogs.AllowUserToAddRows = false;
+            this.dgvLogs.AllowUserToDeleteRows = false;
+            this.dgvLogs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLogs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colUsuario,
+            this.colAccion,
+            this.colHora});
+            this.dgvLogs.Location = new System.Drawing.Point(12, 12);
+            this.dgvLogs.Name = "dgvLogs";
+            this.dgvLogs.ReadOnly = true;
+            this.dgvLogs.Size = new System.Drawing.Size(423, 325);
+            this.dgvLogs.TabIndex = 0;
+            // 
+            // colUsuario
+            // 
+            this.colUsuario.DataPropertyName = "nombreC";
+            this.colUsuario.HeaderText = "Usuario";
+            this.colUsuario.Name = "colUsuario";
+            // 
+            // colAccion
+            // 
+            this.colAccion.DataPropertyName = "accion";
+            this.colAccion.HeaderText = "Accion";
+            this.colAccion.Name = "colAccion";
+            // 
+            // colHora
+            // 
+            this.colHora.DataPropertyName = "hora";
+            this.colHora.HeaderText = "Hora";
+            this.colHora.Name = "colHora";
             // 
             // formLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 394);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(447, 349);
+            this.Controls.Add(this.dgvLogs);
             this.Name = "formLogs";
             this.Text = "Logs";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.formLogs_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLogs)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvLogs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colAccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colHora;
     }
 }

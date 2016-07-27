@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RamosHermanos.Capas.Negocio;
 
 namespace RamosHermanos.Capas.Interfaz.Listados
 {
@@ -15,6 +16,13 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         public formLogs()
         {
             InitializeComponent();
+        }
+
+        private void formLogs_Load(object sender, EventArgs e)
+        {
+            dgvLogs.AutoGenerateColumns = false;
+            LogB.CargarDGV(dgvLogs);
+            
         }
     }
 }
