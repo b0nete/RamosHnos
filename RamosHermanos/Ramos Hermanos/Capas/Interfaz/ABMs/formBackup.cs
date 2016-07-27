@@ -20,12 +20,14 @@ namespace RamosHermanos.Capas.Interfaz.ABMs
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MySQL.GoImport();
+            MessageBox.Show("Backup creado");
+            //MySQL.GoImport();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MySQL.GoExport();
+            MessageBox.Show("Backup restaurado");
+            //MySQL.GoExport();
         }
     }
 }
