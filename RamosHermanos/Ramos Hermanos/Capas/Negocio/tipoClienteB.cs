@@ -165,6 +165,77 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        
+        public static string BuscarCategoriaClienteTXT(int idCliente)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                string query = @"SELECT TC.tipoCliente, TC.porcDescuento
+                                 FROM Clientes C
+                                 INNER JOIN tipoCliente TC ON TC.idTipoCliente = C.tipoCliente
+                                 WHERE idCliente = @idCliente";  
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idCliente", idCliente);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                DataRow dr = dt.Rows[0];
+
+                string retorno = dr["tipoCliente"].ToString() + " - " + dr["porcDescuento"].ToString() + "%";
+
+                MySQL.DisconnectDB();
+
+                return retorno;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        //
+
+        public static int BuscarCategoriaClientePorc(int idCliente)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+                string query = @"SELECT TC.tipoCliente, TC.porcDescuento
+                                 FROM Clientes C
+                                 INNER JOIN tipoCliente TC ON TC.idTipoCliente = C.tipoCliente
+                                 WHERE idCliente = @idCliente";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@idCliente", idCliente);
+
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                DataRow dr = dt.Rows[0];
+
+                int retorno = Convert.ToInt32(dr["porcDescuento"].ToString());
+
+                MySQL.DisconnectDB();
+
+                return retorno;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
     }
 }

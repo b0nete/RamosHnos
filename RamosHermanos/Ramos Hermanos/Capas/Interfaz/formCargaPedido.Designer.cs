@@ -194,7 +194,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Name = "formCargaPedido";
-            this.Text = "Carga";
+            this.Text = "Carga Aguas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formCargaPedido_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formCargaPedido_FormClosed);
             this.Load += new System.EventHandler(this.formCargaPedido_Load);

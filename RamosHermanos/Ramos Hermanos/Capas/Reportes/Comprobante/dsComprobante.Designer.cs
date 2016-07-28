@@ -617,6 +617,8 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             
             private global::System.Data.DataColumn columnconVenta;
             
+            private global::System.Data.DataColumn columnporcDescuento;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public facturaDataTable() {
@@ -708,6 +710,14 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn porcDescuentoColumn {
+                get {
+                    return this.columnporcDescuento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -743,7 +753,7 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public facturaRow AddfacturaRow(string factura, string fechaFactura, string cliente, string domicilio, string total, string condIVA, string conVenta) {
+            public facturaRow AddfacturaRow(string factura, string fechaFactura, string cliente, string domicilio, string total, string condIVA, string conVenta, string porcDescuento) {
                 facturaRow rowfacturaRow = ((facturaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         factura,
@@ -752,7 +762,8 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
                         domicilio,
                         total,
                         condIVA,
-                        conVenta};
+                        conVenta,
+                        porcDescuento};
                 rowfacturaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowfacturaRow);
                 return rowfacturaRow;
@@ -782,6 +793,7 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
                 this.columntotal = base.Columns["total"];
                 this.columncondIVA = base.Columns["condIVA"];
                 this.columnconVenta = base.Columns["conVenta"];
+                this.columnporcDescuento = base.Columns["porcDescuento"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -801,6 +813,8 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
                 base.Columns.Add(this.columncondIVA);
                 this.columnconVenta = new global::System.Data.DataColumn("conVenta", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnconVenta);
+                this.columnporcDescuento = new global::System.Data.DataColumn("porcDescuento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnporcDescuento);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1182,6 +1196,22 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string porcDescuento {
+                get {
+                    try {
+                        return ((string)(this[this.tablefactura.porcDescuentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'porcDescuento\' de la tabla \'factura\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablefactura.porcDescuentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsfacturaNull() {
                 return this.IsNull(this.tablefactura.facturaColumn);
             }
@@ -1262,6 +1292,18 @@ namespace RamosHermanos.Capas.Reportes.Comprobante {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetconVentaNull() {
                 this[this.tablefactura.conVentaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsporcDescuentoNull() {
+                return this.IsNull(this.tablefactura.porcDescuentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetporcDescuentoNull() {
+                this[this.tablefactura.porcDescuentoColumn] = global::System.Convert.DBNull;
             }
         }
         

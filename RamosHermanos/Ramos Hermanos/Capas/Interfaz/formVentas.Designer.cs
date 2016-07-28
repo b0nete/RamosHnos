@@ -44,6 +44,12 @@
             this.button4 = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.dgvFactura = new System.Windows.Forms.DataGridView();
+            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtpfechaFactura = new System.Windows.Forms.DateTimePicker();
             this.cbTipoFactura = new System.Windows.Forms.ComboBox();
@@ -52,6 +58,8 @@
             this.txtIDFactura = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtDescuento = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.dtpEntrega = new System.Windows.Forms.DateTimePicker();
             this.dtpVencimiento = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
@@ -71,12 +79,8 @@
             this.txtIDcliente = new System.Windows.Forms.TextBox();
             this.txtnumDoc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.colCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCarga = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTotalDescuento = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFactura)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -88,7 +92,7 @@
             this.btnPrint.BackgroundImage = global::RamosHermanos.Properties.Resources.print;
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(676, 644);
+            this.btnPrint.Location = new System.Drawing.Point(710, 644);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(28, 28);
             this.btnPrint.TabIndex = 108;
@@ -104,9 +108,9 @@
             "Pendiente",
             "Pagado",
             "Anulado"});
-            this.cbEstado.Location = new System.Drawing.Point(373, 45);
+            this.cbEstado.Location = new System.Drawing.Point(351, 19);
             this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(200, 21);
+            this.cbEstado.Size = new System.Drawing.Size(191, 21);
             this.cbEstado.TabIndex = 106;
             this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.cbEstado_SelectedIndexChanged);
             this.cbEstado.SelectionChangeCommitted += new System.EventHandler(this.cbEstado_SelectionChangeCommitted);
@@ -115,7 +119,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(333, 48);
+            this.label12.Location = new System.Drawing.Point(311, 22);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(40, 13);
             this.label12.TabIndex = 107;
@@ -152,7 +156,7 @@
             this.txtObservaciones.Location = new System.Drawing.Point(12, 594);
             this.txtObservaciones.Multiline = true;
             this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(573, 78);
+            this.txtObservaciones.Size = new System.Drawing.Size(542, 78);
             this.txtObservaciones.TabIndex = 103;
             // 
             // label9
@@ -169,7 +173,7 @@
             // txtTotal
             // 
             this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotal.Location = new System.Drawing.Point(643, 594);
+            this.txtTotal.Location = new System.Drawing.Point(637, 594);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(129, 20);
             this.txtTotal.TabIndex = 98;
@@ -181,29 +185,30 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(596, 597);
+            this.label2.Location = new System.Drawing.Point(562, 597);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 97;
-            this.label2.Text = "TOTAL";
+            this.label2.Text = "SubTotal $";
             // 
             // btnClean
             // 
             this.btnClean.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClean.BackgroundImage")));
             this.btnClean.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClean.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.Location = new System.Drawing.Point(710, 644);
+            this.btnClean.Location = new System.Drawing.Point(643, 644);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(28, 28);
             this.btnClean.TabIndex = 101;
             this.btnClean.UseVisualStyleBackColor = true;
+            this.btnClean.Visible = false;
             // 
             // button4
             // 
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.button4.Location = new System.Drawing.Point(642, 644);
+            this.button4.Location = new System.Drawing.Point(676, 644);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(28, 28);
             this.button4.TabIndex = 100;
@@ -247,6 +252,57 @@
             this.dgvFactura.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvFactura_RowsAdded);
             this.dgvFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvFactura_KeyPress);
             // 
+            // colCodigo
+            // 
+            this.colCodigo.DataPropertyName = "codProducto";
+            this.colCodigo.HeaderText = "Código";
+            this.colCodigo.Name = "colCodigo";
+            this.colCodigo.ReadOnly = true;
+            // 
+            // colProducto
+            // 
+            this.colProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.colProducto.DataPropertyName = "producto";
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.Name = "colProducto";
+            this.colProducto.ReadOnly = true;
+            this.colProducto.Width = 75;
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.DataPropertyName = "cantidad";
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.DataPropertyName = "precioUnitario";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.colPrecio.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colPrecio.HeaderText = "Precio Unitario";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.ReadOnly = true;
+            // 
+            // colSubTotal
+            // 
+            this.colSubTotal.DataPropertyName = "subTotal";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colSubTotal.HeaderText = "SubTotal";
+            this.colSubTotal.Name = "colSubTotal";
+            this.colSubTotal.ReadOnly = true;
+            // 
+            // colCarga
+            // 
+            this.colCarga.DataPropertyName = "carga";
+            this.colCarga.HeaderText = "C/D";
+            this.colCarga.Name = "colCarga";
+            this.colCarga.Visible = false;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dtpfechaFactura);
@@ -268,9 +324,9 @@
             this.dtpfechaFactura.CustomFormat = "dd/MM/yyyy";
             this.dtpfechaFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpfechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpfechaFactura.Location = new System.Drawing.Point(83, 70);
+            this.dtpfechaFactura.Location = new System.Drawing.Point(116, 70);
             this.dtpfechaFactura.Name = "dtpfechaFactura";
-            this.dtpfechaFactura.Size = new System.Drawing.Size(253, 20);
+            this.dtpfechaFactura.Size = new System.Drawing.Size(192, 20);
             this.dtpfechaFactura.TabIndex = 11;
             // 
             // cbTipoFactura
@@ -283,7 +339,7 @@
             "C",
             "E",
             "X"});
-            this.cbTipoFactura.Location = new System.Drawing.Point(83, 17);
+            this.cbTipoFactura.Location = new System.Drawing.Point(116, 17);
             this.cbTipoFactura.Name = "cbTipoFactura";
             this.cbTipoFactura.Size = new System.Drawing.Size(60, 21);
             this.cbTipoFactura.TabIndex = 9;
@@ -294,9 +350,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(16, 20);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 13);
+            this.label8.Size = new System.Drawing.Size(94, 13);
             this.label8.TabIndex = 10;
-            this.label8.Text = "Tipo Factura";
+            this.label8.Text = "Tipo Comprobante";
             // 
             // label13
             // 
@@ -304,17 +360,17 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label13.Location = new System.Drawing.Point(7, 72);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 13);
+            this.label13.Size = new System.Drawing.Size(103, 13);
             this.label13.TabIndex = 7;
-            this.label13.Text = "Fecha Factura";
+            this.label13.Text = "Fecha Comprobante";
             // 
             // txtIDFactura
             // 
             this.txtIDFactura.Enabled = false;
             this.txtIDFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDFactura.Location = new System.Drawing.Point(83, 44);
+            this.txtIDFactura.Location = new System.Drawing.Point(116, 44);
             this.txtIDFactura.Name = "txtIDFactura";
-            this.txtIDFactura.Size = new System.Drawing.Size(253, 20);
+            this.txtIDFactura.Size = new System.Drawing.Size(192, 20);
             this.txtIDFactura.TabIndex = 6;
             // 
             // label14
@@ -323,12 +379,14 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(25, 47);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(58, 13);
+            this.label14.Size = new System.Drawing.Size(85, 13);
             this.label14.TabIndex = 2;
-            this.label14.Text = "Nº Factura";
+            this.label14.Text = "Nº Comprobante";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.txtDescuento);
+            this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.dtpEntrega);
             this.groupBox2.Controls.Add(this.cbEstado);
             this.groupBox2.Controls.Add(this.label12);
@@ -345,45 +403,68 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalles Cobro";
             // 
+            // txtDescuento
+            // 
+            this.txtDescuento.Enabled = false;
+            this.txtDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescuento.Location = new System.Drawing.Point(91, 46);
+            this.txtDescuento.Name = "txtDescuento";
+            this.txtDescuento.Size = new System.Drawing.Size(190, 20);
+            this.txtDescuento.TabIndex = 109;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(21, 50);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(70, 13);
+            this.label15.TabIndex = 108;
+            this.label15.Text = "% Descuento";
+            // 
             // dtpEntrega
             // 
             this.dtpEntrega.CustomFormat = "dd/MM/yyyy";
             this.dtpEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEntrega.Location = new System.Drawing.Point(91, 46);
+            this.dtpEntrega.Location = new System.Drawing.Point(645, 47);
             this.dtpEntrega.Name = "dtpEntrega";
-            this.dtpEntrega.Size = new System.Drawing.Size(210, 20);
+            this.dtpEntrega.Size = new System.Drawing.Size(96, 20);
             this.dtpEntrega.TabIndex = 13;
+            this.dtpEntrega.Visible = false;
             // 
             // dtpVencimiento
             // 
             this.dtpVencimiento.CustomFormat = "dd/MM/yyyy";
             this.dtpVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpVencimiento.Location = new System.Drawing.Point(373, 19);
+            this.dtpVencimiento.Location = new System.Drawing.Point(472, 47);
             this.dtpVencimiento.Name = "dtpVencimiento";
-            this.dtpVencimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpVencimiento.Size = new System.Drawing.Size(90, 20);
             this.dtpVencimiento.TabIndex = 12;
+            this.dtpVencimiento.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(14, 48);
+            this.label7.Location = new System.Drawing.Point(568, 49);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 13);
             this.label7.TabIndex = 8;
             this.label7.Text = "Fecha Entrega";
+            this.label7.Visible = false;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(307, 22);
+            this.label10.Location = new System.Drawing.Point(406, 50);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 13);
             this.label10.TabIndex = 7;
             this.label10.Text = "Vencimiento";
+            this.label10.Visible = false;
             // 
             // label11
             // 
@@ -401,11 +482,10 @@
             this.cbformaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbformaPago.FormattingEnabled = true;
             this.cbformaPago.Items.AddRange(new object[] {
-            "Contado",
-            "Cuenta Corriente"});
+            "Contado"});
             this.cbformaPago.Location = new System.Drawing.Point(91, 19);
             this.cbformaPago.Name = "cbformaPago";
-            this.cbformaPago.Size = new System.Drawing.Size(210, 21);
+            this.cbformaPago.Size = new System.Drawing.Size(190, 21);
             this.cbformaPago.TabIndex = 1;
             // 
             // groupBox1
@@ -550,56 +630,25 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Cliente";
             // 
-            // colCodigo
+            // txtTotalDescuento
             // 
-            this.colCodigo.DataPropertyName = "codProducto";
-            this.colCodigo.HeaderText = "Código";
-            this.colCodigo.Name = "colCodigo";
-            this.colCodigo.ReadOnly = true;
+            this.txtTotalDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalDescuento.Location = new System.Drawing.Point(637, 618);
+            this.txtTotalDescuento.Name = "txtTotalDescuento";
+            this.txtTotalDescuento.Size = new System.Drawing.Size(129, 20);
+            this.txtTotalDescuento.TabIndex = 110;
+            this.txtTotalDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // colProducto
+            // label16
             // 
-            this.colProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.colProducto.DataPropertyName = "producto";
-            this.colProducto.HeaderText = "Producto";
-            this.colProducto.Name = "colProducto";
-            this.colProducto.ReadOnly = true;
-            this.colProducto.Width = 75;
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.DataPropertyName = "cantidad";
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.DataPropertyName = "precioUnitario";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.colPrecio.DefaultCellStyle = dataGridViewCellStyle1;
-            this.colPrecio.HeaderText = "Precio Unitario";
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.ReadOnly = true;
-            // 
-            // colSubTotal
-            // 
-            this.colSubTotal.DataPropertyName = "subTotal";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle2;
-            this.colSubTotal.HeaderText = "SubTotal";
-            this.colSubTotal.Name = "colSubTotal";
-            this.colSubTotal.ReadOnly = true;
-            // 
-            // colCarga
-            // 
-            this.colCarga.DataPropertyName = "carga";
-            this.colCarga.HeaderText = "C/D";
-            this.colCarga.Name = "colCarga";
-            this.colCarga.Visible = false;
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(584, 621);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(47, 13);
+            this.label16.TabIndex = 109;
+            this.label16.Text = "Total $";
             // 
             // formVentas
             // 
@@ -607,6 +656,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::RamosHermanos.Properties.Resources.grey_background_for_site11;
             this.ClientSize = new System.Drawing.Size(784, 682);
+            this.Controls.Add(this.txtTotalDescuento);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -685,5 +736,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCarga;
+        public System.Windows.Forms.TextBox txtDescuento;
+        private System.Windows.Forms.Label label15;
+        public System.Windows.Forms.TextBox txtTotalDescuento;
+        private System.Windows.Forms.Label label16;
     }
 }

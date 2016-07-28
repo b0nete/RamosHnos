@@ -39,9 +39,8 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@canasta", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 9));
                 cmd.Parameters.AddWithValue("@pie", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 10));
                 cmd.Parameters.AddWithValue("@dispenser", SaldoEnvasesB.GenerarSaldoEnvases(itemReparto.cliente, 11));
-                cmd.Parameters.AddWithValue("@saldo", itemsRepartoB.CalcularVenta(itemReparto.idComprobante));
-
-
+                //cmd.Parameters.AddWithValue("@saldo", itemsRepartoB.CalcularVenta(itemReparto.idComprobante, itemReparto.cliente));
+                
                 cmd.ExecuteNonQuery();
 
                 //MessageBox.Show("Guardado!");
@@ -465,7 +464,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static string CalcularVenta(int idFactura)
+        public static string CalcularVenta(int idFactura, int idCliente)
         {
             try
             {
@@ -477,7 +476,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySqlCommand cmdCarga = new MySqlCommand(queryCarga, MySQL.sqlcnx);
                 cmdCarga.Parameters.AddWithValue("@factura", idFactura);
-                int cantCarga = Convert.ToInt32(cmdCarga.ExecuteScalar());
+                double cantCarga = Convert.ToInt32(cmdCarga.ExecuteScalar());
 
 
                 string queryDescarga = @"SELECT IFNULL((SELECT SUM(subTotal) as STDescarga
@@ -486,9 +485,12 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySqlCommand cmdDescarga = new MySqlCommand(queryDescarga, MySQL.sqlcnx);
                 cmdDescarga.Parameters.AddWithValue("@factura", idFactura);
-                int cantDescarga = Convert.ToInt32(cmdDescarga.ExecuteScalar());
+                double cantDescarga = Convert.ToInt32(cmdDescarga.ExecuteScalar());
 
-                string total = Convert.ToString(cantCarga - cantDescarga);
+                double porcDescuento = tipoClienteB.BuscarCategoriaClientePorc(idCliente);
+
+                string casiTotal = Convert.ToString(((cantCarga - cantDescarga) * porcDescuento) / 100);
+                string total = Convert.ToString((cantCarga - cantDescarga) + Convert.ToDouble(casiTotal));
 
                 return total;
             }

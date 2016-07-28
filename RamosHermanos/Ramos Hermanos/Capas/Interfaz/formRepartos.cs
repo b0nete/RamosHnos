@@ -117,7 +117,7 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show(this);
 
             //Para todos, actualizar total de la Venta.
-            dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
+            dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value), Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
         }
 
         private void EjecDescarga()
@@ -131,7 +131,7 @@ namespace RamosHermanos.Capas.Interfaz
             frm.Show(this);
 
             //Para todos, actualizar total de la Venta.
-            dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
+            dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value), Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
         }
 
         private void Ejec2(KeyEventArgs e)
@@ -165,7 +165,7 @@ namespace RamosHermanos.Capas.Interfaz
 
             if (dgvRepartos.CurrentCell.Value.ToString() != string.Empty)
             {
-                dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
+                dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value), Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
 
                 if (FacturaB.ExisteFactura(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString())) == false)
                 {
@@ -182,7 +182,6 @@ namespace RamosHermanos.Capas.Interfaz
                     factura.idFactura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
                     factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
                     factura.observaciones = "";
-                    factura.estado = "";
 
                     FacturaB.InsertFactura(factura);
                 }
@@ -207,8 +206,10 @@ namespace RamosHermanos.Capas.Interfaz
 
                 //Actualizamos el total de la factura ya que los itemsFactura se guardan despues de la Factura, por lo tanto el total se calcula después.
                 //Para todos, actualizar total de la Venta.
-                dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
+                dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value), Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
 
+                factura.estado = "Pendiente";
+                factura.idFactura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
                 factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
 
                 FacturaB.UpdateFactura(factura);
@@ -232,7 +233,6 @@ namespace RamosHermanos.Capas.Interfaz
                 factura.idFactura = Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value.ToString());
                 factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
                 factura.observaciones = "";
-                factura.estado = "";
 
                 FacturaB.UpdateFactura(factura);
 
@@ -256,7 +256,7 @@ namespace RamosHermanos.Capas.Interfaz
 
                 //Actualizamos el total de la factura ya que los itemsFactura se guardan despues de la Factura, por lo tanto el total se calcula después.
                 //Para todos, actualizar total de la Venta.
-                dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
+                dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value), Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
 
                 factura.total = Convert.ToDouble(dgvRepartos.CurrentRow.Cells["colVenta"].Value.ToString());
 
@@ -296,6 +296,7 @@ namespace RamosHermanos.Capas.Interfaz
                 frmP.cbTipoFactura.Text = factura.tipoFactura;
                 frmP.txtIDcliente.Text = Convert.ToString(factura.cliente);
                 frmP.cbformaPago.SelectedItem = factura.formaPago;
+                frmP.txtDescuento.Text = tipoClienteB.BuscarCategoriaClienteTXT(factura.cliente);
 
                 ClienteEntity cliente = ClienteB.BuscarClienteIDINT(factura.cliente);
                 frmP.txtnumDoc.Text = cliente.numDoc;
@@ -472,7 +473,7 @@ namespace RamosHermanos.Capas.Interfaz
             //}
 
             //Para todos, actualizar total de la Venta.
-            dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
+            dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value), Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
 
         }
 
@@ -609,7 +610,7 @@ namespace RamosHermanos.Capas.Interfaz
             }
 
             //Para todos, actualizar total de la Venta.
-            dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value));
+            dgvRepartos.CurrentRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colComprobante"].Value), Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
 
         }
 
@@ -727,7 +728,7 @@ namespace RamosHermanos.Capas.Interfaz
                 foreach (DataGridViewRow dRow in dgvRepartos.Rows)
                 {
                     dRow.Cells["colSaldo"].Value = SaldoB.GenerarSaldo(Convert.ToInt32(dRow.Cells["colIDCliente"].Value));
-                    dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
+                    dRow.Cells["colVenta"].Value = itemsRepartoB.CalcularVenta(Convert.ToInt32(dRow.Cells["colComprobante"].Value), Convert.ToInt32(dgvRepartos.CurrentRow.Cells["colIDCliente"].Value));
                     dRow.Cells["colCobro"].Value = FacturaB.EstadoPago(Convert.ToInt32(dRow.Cells["colComprobante"].Value));
                 }
 

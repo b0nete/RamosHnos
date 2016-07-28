@@ -150,6 +150,12 @@ namespace RamosHermanos.Capas.Interfaz
             }
             else
             {
+                if (txtnumFactura.Text == string.Empty)
+                {
+                    MessageBox.Show("Ingrese el número de factura!");
+                    return;
+                }
+
                 //Encabezado
                 CargarCompras();
                 ComprasB.InsertCompras(compras, txtidCompras);

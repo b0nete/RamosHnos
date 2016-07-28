@@ -80,7 +80,7 @@
             this.groupBox1.Size = new System.Drawing.Size(600, 183);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tipo Cliente";
+            this.groupBox1.Text = "Categorizacion Cliente";
             // 
             // txtIDtipoCli
             // 
@@ -371,11 +371,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 22);
+            this.label1.Location = new System.Drawing.Point(32, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tipo Cliente";
+            this.label1.Text = "Categoria";
             // 
             // dgvtipoCliente
             // 
@@ -460,7 +460,7 @@
             this.Controls.Add(this.groupBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "formtipoCliente";
-            this.Text = "Tipo Cliente";
+            this.Text = "Registrar Categoria";
             this.Load += new System.EventHandler(this.formtCliente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -109,6 +109,8 @@ namespace RamosHermanos.Capas.Interfaz
                     StockProductoB.UpdateStockUpdate(stockProducto);
                     // DB
                     itemsFacturaB.UpdateItemFactura(itemFactura);
+
+                    MessageBox.Show("Factura actualizada!");
                 }
             }
             else
@@ -127,58 +129,68 @@ namespace RamosHermanos.Capas.Interfaz
                     string carga = dR.Cells["colCarga"].Value.ToString();
                     StockProductoB.UpdateStockInsert(stockProducto, carga);
                 }
+
+                MessageBox.Show("Factura guardada!");
             }
 
         }
 
         private void btnPrint_Click(object sender, EventArgs e)
         {
+            if (txtIDFactura.Text != string.Empty)
+            {
+                //string valor = "00000000";
+                string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
+                string rep = @"\Capas\Reportes\Comprobante\crComprobante.rpt";
+                string change;
+                dsComprobante ds = new dsComprobante();
 
-            //string valor = "00000000";
-            string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
-            string rep = @"\Capas\Reportes\Comprobante\crComprobante.rpt";
-            string change;
-            dsComprobante ds = new dsComprobante();
-
-            ////Factura
-            ds.Tables["factura"].Rows.Add
-            (
-                new object[]
+                ////Factura
+                ds.Tables["factura"].Rows.Add
+                (
+                    new object[]
                 { 
                     change = string.Format("{0,18:00000000}", Convert.ToInt32(txtIDFactura.Text)),
                     //Convert.ToString(valor + Convert.ToInt32(txtIDFactura.Text)),
                     dtpfechaFactura.Text,
                     txtNombre.Text,
                     cbDomicilio.Text,
-                    txtTotal.Text,
+                    txtTotalDescuento.Text,
                     txtIVA.Text,
-                    cbformaPago.Text
+                    cbformaPago.Text,
+                    tipoClienteB.BuscarCategoriaClientePorc(Convert.ToInt32(txtIDcliente.Text)),
                 }
-            );
+                );
 
-            //ItemsFactura
-            foreach (DataGridViewRow dRow in dgvFactura.Rows)
-            {
-                ds.Tables["itemsFactura"].Rows.Add
-                (
-                new object[]
+                //ItemsFactura
+                foreach (DataGridViewRow dRow in dgvFactura.Rows)
+                {
+                    ds.Tables["itemsFactura"].Rows.Add
+                    (
+                    new object[]
                 {
                     dRow.Cells["colCantidad"].Value,
                     dRow.Cells["colProducto"].Value,
                     dRow.Cells["colPrecio"].Value,
                     dRow.Cells["colSubTotal"].Value,   
                 }
-                );
-            };
+                    );
+                };
 
-            //Cargar Reporte
-            formReports frm = new formReports();
-            frm.Show();
-            ReportDocument rd = new ReportDocument();
-            rd.Load(ruta + rep);
-            //rd.Load("C:/Users/b0nete/Documents/GitHub/RamosHnos/RamosHermanos/Ramos Hermanos/Capas/Reportes/Recorridos/crFactura.rpt");
-            rd.SetDataSource(ds);
-            frm.crvReporte.ReportSource = rd;
+                //Cargar Reporte
+                formReports frm = new formReports();
+                frm.Show();
+                ReportDocument rd = new ReportDocument();
+                rd.Load(ruta + rep);
+                //rd.Load("C:/Users/b0nete/Documents/GitHub/RamosHnos/RamosHermanos/Ramos Hermanos/Capas/Reportes/Recorridos/crFactura.rpt");
+                rd.SetDataSource(ds);
+                frm.crvReporte.ReportSource = rd;
+            }
+            else
+            {
+                MessageBox.Show("Guarde la venta antes de generar el comprobante");
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -450,6 +462,12 @@ namespace RamosHermanos.Capas.Interfaz
                 }
 
                 txtTotal.Text = Convert.ToString(carga);
+
+                    double porcDesc = tipoClienteB.BuscarCategoriaClientePorc(Convert.ToInt32(txtIDcliente.Text));
+
+                    double porc = (Convert.ToDouble(txtTotal.Text) * porcDesc) / 100;
+
+                    txtTotalDescuento.Text = Convert.ToString(Convert.ToDouble(txtTotal.Text) - porc); 
             }
             
         }

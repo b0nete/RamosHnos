@@ -1286,6 +1286,7 @@ namespace RamosHermanos.Capas.Interfaz
             //frm.txtTel.Text = TelefonoB.CargarTXTString(txtIDcliente, 1);
             //frm.txtDomicilio.Text = DomicilioB.CargarTXTSTRING(txtIDcliente, 1);
             frm.txtIVA.Text = cliente.condicionIVA;
+            frm.txtDescuento.Text = tipoClienteB.BuscarCategoriaClienteTXT(Convert.ToInt32(txtIDcliente.Text));
 
             frm.cbEstado.SelectedIndex = 1;
 

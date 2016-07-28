@@ -189,7 +189,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Name = "formDescargaPedido";
-            this.Text = "Descarga";
+            this.Text = "Descarga Aguas";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formDescargaPedido_FormClosed);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
