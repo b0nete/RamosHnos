@@ -756,6 +756,101 @@ namespace RamosHermanos.Capas.Negocio
                 throw;
             }
         }
+
+        public static DataTable GenerarGraficoAnual(string fechaDesde, string fechaHasta)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+
+                MySQL.ConnectDB();
+
+                string query = @"SELECT SUM(total) as total, DATE_FORMAT(fechaFactura, '%Y') as año
+                                 FROM Facturas
+                                 WHERE YEAR(fechaFactura) >= @fechaDesde and YEAR(fechaFactura) <= @fechaHasta
+                                 GROUP BY YEAR(fechaFactura)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+                cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static DataTable GenerarGraficoMensual(string fechaDesde, string fechaHasta)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+
+                MySQL.ConnectDB();
+
+                string query = @"SELECT SUM(total) as total, DATE_FORMAT(fechaFactura, '%m/%Y') as año
+                                 FROM Facturas
+                                 WHERE MONTH(fechaFactura) >= 01 and MONTH(fechaFactura) <= 12
+                                 GROUP BY MONTH(fechaFactura)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+                cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static DataTable GenerarGraficoDiario(string fechaDesde, string fechaHasta)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+
+                MySQL.ConnectDB();
+
+                string query = @"SELECT SUM(total) as total, DATE_FORMAT(fechaFactura, '%Y') as año
+                                 FROM Facturas
+                                 WHERE YEAR(fechaFactura) >= @fechaDesde and YEAR(fechaFactura) <= @fechaHasta
+                                 GROUP BY YEAR(fechaFactura)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+                cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+
         
     }
 }

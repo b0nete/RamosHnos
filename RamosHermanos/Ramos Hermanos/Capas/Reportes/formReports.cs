@@ -19,6 +19,11 @@ namespace RamosHermanos.Capas.Reportes
 
         private void formReports_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        private void crvReporte_Load(object sender, EventArgs e)
+        {
 
         }
     }

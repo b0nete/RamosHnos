@@ -127,6 +127,12 @@
     <Compile Include="Capas\Entidades\UsuarioEntity.cs" />
     <Compile Include="Capas\Entidades\VehiculoEntity.cs" />
     <Compile Include="Capas\Entidades\VisitaEntity.cs" />
+    <Compile Include="Capas\Graficos\formGCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Graficos\formGCompras.Designer.cs">
+      <DependentUpon>formGCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capas\Graficos\formGInsumos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,12 @@
     </Compile>
     <Compile Include="Capas\Graficos\formGProductos.Designer.cs">
       <DependentUpon>formGProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Capas\Graficos\formGVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capas\Graficos\formGVentas.Designer.cs">
+      <DependentUpon>formGVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Capas\Interfaz\ABMs\formBackup.cs">
       <SubType>Form</SubType>
@@ -509,6 +521,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRecorridos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Capas\Reportes\Ventas\crVentas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crVentas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Capas\Reportes\Ventas\dsVentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsVentas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Libs\crHojaRuta.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -523,11 +546,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ramosdbDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Capas\Graficos\formGCompras.resx">
+      <DependentUpon>formGCompras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Capas\Graficos\formGInsumos.resx">
       <DependentUpon>formGInsumos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Graficos\formGProductos.resx">
       <DependentUpon>formGProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Graficos\formGVentas.resx">
+      <DependentUpon>formGVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capas\Interfaz\ABMs\formBackup.resx">
       <DependentUpon>formBackup.cs</DependentUpon>
@@ -682,6 +711,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crRecorridos.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Capas\Reportes\Ventas\crVentas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crVentas.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Libs\crHojaRuta.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>crHojaRuta.cs</LastGenOutput>
@@ -717,6 +750,17 @@
     </None>
     <None Include="Capas\Reportes\Recorridos\dsRecorridos.xss">
       <DependentUpon>dsRecorridos.xsd</DependentUpon>
+    </None>
+    <None Include="Capas\Reportes\Ventas\dsVentas.xsc">
+      <DependentUpon>dsVentas.xsd</DependentUpon>
+    </None>
+    <None Include="Capas\Reportes\Ventas\dsVentas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsVentas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Capas\Reportes\Ventas\dsVentas.xss">
+      <DependentUpon>dsVentas.xsd</DependentUpon>
     </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="ClassDiagram2.cd" />

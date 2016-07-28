@@ -73,5 +73,10 @@ namespace RamosHermanos.Capas.Graficos
         {
 
         }
+
+        private void rbAnual_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

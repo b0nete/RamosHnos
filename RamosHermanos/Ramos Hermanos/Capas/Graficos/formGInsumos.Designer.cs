@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabCompras = new System.Windows.Forms.TabPage();
             this.gbParametros = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.rbDiario = new System.Windows.Forms.RadioButton();
             this.rbAnual = new System.Windows.Forms.RadioButton();
             this.dtpDiariaDesde = new System.Windows.Forms.DateTimePicker();
@@ -44,7 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.chartCompras = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabCompras.SuspendLayout();
             this.gbParametros.SuspendLayout();
@@ -91,16 +91,12 @@
             this.gbParametros.TabStop = false;
             this.gbParametros.Text = "Parametros";
             // 
-            // button1
+            // txtID
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(679, 80);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Generar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtID.Location = new System.Drawing.Point(654, -3);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.TabIndex = 9;
             // 
             // rbDiario
             // 
@@ -125,6 +121,7 @@
             this.rbAnual.TabStop = true;
             this.rbAnual.Text = "Anual";
             this.rbAnual.UseVisualStyleBackColor = true;
+            this.rbAnual.CheckedChanged += new System.EventHandler(this.rbAnual_CheckedChanged);
             // 
             // dtpDiariaDesde
             // 
@@ -178,17 +175,17 @@
             // 
             // chartCompras
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartCompras.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartCompras.Legends.Add(legend1);
+            chartArea2.Name = "ChartArea1";
+            this.chartCompras.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartCompras.Legends.Add(legend2);
             this.chartCompras.Location = new System.Drawing.Point(8, 121);
             this.chartCompras.Name = "chartCompras";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartCompras.Series.Add(series1);
-            this.chartCompras.Size = new System.Drawing.Size(760, 406);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartCompras.Series.Add(series2);
+            this.chartCompras.Size = new System.Drawing.Size(760, 373);
             this.chartCompras.TabIndex = 0;
             this.chartCompras.Text = "chart1";
             // 
@@ -204,12 +201,16 @@
             this.lblTitle.TabIndex = 104;
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtID
+            // button1
             // 
-            this.txtID.Location = new System.Drawing.Point(654, -3);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(100, 20);
-            this.txtID.TabIndex = 9;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(679, 80);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Generar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // formGInsumos
             // 
@@ -243,8 +244,8 @@
         private System.Windows.Forms.DateTimePicker dtpDiariaHasta;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.TextBox txtID;
         public System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using RamosHermanos.Capas.Negocio;
 using RamosHermanos.Capas.Entidades;
+using RamosHermanos.Capas.Graficos;
 
 namespace RamosHermanos.Capas.Interfaz.Listados
 {
@@ -115,6 +116,12 @@ namespace RamosHermanos.Capas.Interfaz.Listados
         {
             if (rbNoPagas.Checked == true)
             FacturaB.ListFacturas(dgvVentas, "Pendiente");
+        }
+
+        private void btnEstadisticas_Click(object sender, EventArgs e)
+        {
+            formGVentas frm =  new formGVentas();
+            frm.Show();
         }
 
     }
