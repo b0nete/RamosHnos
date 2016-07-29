@@ -43,6 +43,7 @@
             this.rbPagas = new System.Windows.Forms.RadioButton();
             this.cbParametro = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompras)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -113,6 +114,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnEstadisticas);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.rbNoPagas);
             this.groupBox1.Controls.Add(this.txtParametro);
@@ -198,6 +200,18 @@
             this.btnSearch.TabIndex = 106;
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.BackgroundImage")));
+            this.btnEstadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas.Location = new System.Drawing.Point(726, 55);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(28, 28);
+            this.btnEstadisticas.TabIndex = 118;
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            // 
             // listCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,5 +246,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstado;
+        private System.Windows.Forms.Button btnEstadisticas;
     }
 }

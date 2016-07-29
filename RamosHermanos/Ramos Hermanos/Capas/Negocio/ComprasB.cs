@@ -89,43 +89,43 @@ namespace RamosHermanos.Capas.Negocio
                 MessageBox.Show("Error: " + ex);
                 throw;
             }
-                
-            }
+
+        }
 
         public static ComprasEntity InsertCompras(ComprasEntity compras, TextBox txtid)
         {
-             try 
-	            {
-                    MySQL.ConnectDB();
-                    string query = @"INSERT INTO compras (tipoFactura, numFactura, fecha, fechaEntrega, fechaVencimiento, proveedor, observaciones, total, estado, formaPago)
+            try
+            {
+                MySQL.ConnectDB();
+                string query = @"INSERT INTO compras (tipoFactura, numFactura, fecha, fechaEntrega, fechaVencimiento, proveedor, observaciones, total, estado, formaPago)
                                  VALUES (@tipoFactura, @numFactura, @fecha, @fechaEntrega, @fechaVencimiento, @proveedor, @observaciones, @total, @estado, @formaPago);
                                  SELECT LAST_INSERT_ID();";
 
-                    MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                    cmd.Parameters.AddWithValue("@tipoFactura", compras.tipoFactura);
-                    cmd.Parameters.AddWithValue("@numFactura", compras.numFactura);
-                    cmd.Parameters.AddWithValue("@fecha", compras.fecha);
-                    cmd.Parameters.AddWithValue("@fechaEntrega", compras.fechaEntrega);
-                    cmd.Parameters.AddWithValue("@fechaVencimiento", compras.fechaVencimiento);
-                    cmd.Parameters.AddWithValue("@proveedor", compras.proveedor);                 
-                    cmd.Parameters.AddWithValue("@observaciones", compras.observaciones);
-                    cmd.Parameters.AddWithValue("@total", compras.total);
-                    cmd.Parameters.AddWithValue("@estado", compras.estado);
-                    cmd.Parameters.AddWithValue("@formaPago", compras.formaPago);
-                                       
-                    txtid.Text = Convert.ToString(cmd.ExecuteScalar());
+                cmd.Parameters.AddWithValue("@tipoFactura", compras.tipoFactura);
+                cmd.Parameters.AddWithValue("@numFactura", compras.numFactura);
+                cmd.Parameters.AddWithValue("@fecha", compras.fecha);
+                cmd.Parameters.AddWithValue("@fechaEntrega", compras.fechaEntrega);
+                cmd.Parameters.AddWithValue("@fechaVencimiento", compras.fechaVencimiento);
+                cmd.Parameters.AddWithValue("@proveedor", compras.proveedor);
+                cmd.Parameters.AddWithValue("@observaciones", compras.observaciones);
+                cmd.Parameters.AddWithValue("@total", compras.total);
+                cmd.Parameters.AddWithValue("@estado", compras.estado);
+                cmd.Parameters.AddWithValue("@formaPago", compras.formaPago);
 
-                    MySQL.DisconnectDB();
+                txtid.Text = Convert.ToString(cmd.ExecuteScalar());
 
-                    return compras;
+                MySQL.DisconnectDB();
 
-                }
-	catch (Exception ex)
-	{
-        MessageBox.Show(ex + "ERROR");
-		throw;
-	}
+                return compras;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex + "ERROR");
+                throw;
+            }
         }
 
         public static void ListCompras(DataGridView dgvList, string WHERE)
@@ -250,5 +250,101 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
+        public static DataTable GenerarGraficoAnual(string fechaDesde, string fechaHasta)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+
+                MySQL.ConnectDB();
+
+                string query = @"SELECT SUM(total) as Total, DATE_FORMAT(fecha, '%Y') as año
+                                 FROM Compras
+                                 WHERE YEAR(fecha) >= @fechaDesde and YEAR(fecha) <= @fechaHasta
+                                 GROUP BY YEAR(fecha)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+                cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
         }
+
+        public static DataTable GenerarGraficoMensual(string fechaDesde, string fechaHasta)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+
+                MySQL.ConnectDB();
+
+                string query = @"SET lc_time_names = 'es_UY';
+SELECT SUM(total) as Total, CONCAT(UCASE(SUBSTRING(MONTHNAME(fecha), 1, 1)),LCASE(SUBSTRING(MONTHNAME(fecha), 2))) as mes
+                                 FROM Compras
+                                 WHERE MONTH(fecha) >= 1 and MONTH(fecha) <= 12
+                                 GROUP BY MONTH(fecha)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+                cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static DataTable GenerarGraficoDiario(string fechaDesde, string fechaHasta)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+
+                MySQL.ConnectDB();
+
+                string query = @"SET lc_time_names = 'es_UY';
+SELECT SUM(total) as Total, CONCAT(UCASE(SUBSTRING(DAYNAME(fecha), 1, 1)),LCASE(SUBSTRING(DAYNAME(fecha), 2))) as dia
+                                 FROM Compras
+                                 WHERE DAY(fecha) >= 1 and DAY(fecha) <= 31
+                                 GROUP BY dayofweek(fecha)";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
+                cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        //
+    }
 }

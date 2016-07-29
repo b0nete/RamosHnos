@@ -765,7 +765,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySQL.ConnectDB();
 
-                string query = @"SELECT SUM(total) as total, DATE_FORMAT(fechaFactura, '%Y') as año
+                string query = @"SELECT SUM(total) as Total, DATE_FORMAT(fechaFactura, '%Y') as año
                                  FROM Facturas
                                  WHERE YEAR(fechaFactura) >= @fechaDesde and YEAR(fechaFactura) <= @fechaHasta
                                  GROUP BY YEAR(fechaFactura)";
@@ -796,9 +796,10 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySQL.ConnectDB();
 
-                string query = @"SELECT SUM(total) as total, DATE_FORMAT(fechaFactura, '%m/%Y') as año
+                string query = @"SET lc_time_names = 'es_UY';
+SELECT SUM(total) as Total, CONCAT(UCASE(SUBSTRING(MONTHNAME(fechaFactura), 1, 1)),LCASE(SUBSTRING(MONTHNAME(fechaFactura), 2))) as mes
                                  FROM Facturas
-                                 WHERE MONTH(fechaFactura) >= 01 and MONTH(fechaFactura) <= 12
+                                 WHERE MONTH(fechaFactura) >= @fechaDesde and MONTH(fechaFactura) <= @fechaHasta
                                  GROUP BY MONTH(fechaFactura)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -827,10 +828,11 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySQL.ConnectDB();
 
-                string query = @"SELECT SUM(total) as total, DATE_FORMAT(fechaFactura, '%Y') as año
+                string query = @"SET lc_time_names = 'es_UY';
+SELECT SUM(total) as Total, CONCAT(UCASE(SUBSTRING(DAYNAME(fechaFactura), 1, 1)),LCASE(SUBSTRING(DAYNAME(fechaFactura), 2))) as dia
                                  FROM Facturas
-                                 WHERE YEAR(fechaFactura) >= @fechaDesde and YEAR(fechaFactura) <= @fechaHasta
-                                 GROUP BY YEAR(fechaFactura)";
+                                 WHERE DAY(fechaFactura) >= 1 and DAY(fechaFactura) <= 31
+                                 GROUP BY dayofweek(fechaFactura)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
