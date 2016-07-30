@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formGVentas));
             this.chartCompras = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.cbTipoChart = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -50,25 +49,25 @@
             this.rbAnual = new System.Windows.Forms.RadioButton();
             this.dtpHastaAño = new System.Windows.Forms.DateTimePicker();
             this.gbParametros = new System.Windows.Forms.GroupBox();
-            this.dtpDesdeDia = new System.Windows.Forms.DateTimePicker();
-            this.dtpHastaDia = new System.Windows.Forms.DateTimePicker();
             this.rbDiario = new System.Windows.Forms.RadioButton();
+            this.dtpHastaDia = new System.Windows.Forms.DateTimePicker();
+            this.dtpDesdeDia = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.chartCompras)).BeginInit();
             this.gbParametros.SuspendLayout();
             this.SuspendLayout();
             // 
             // chartCompras
             // 
-            chartArea10.Name = "ChartArea1";
-            this.chartCompras.ChartAreas.Add(chartArea10);
-            legend10.Name = "Legend1";
-            this.chartCompras.Legends.Add(legend10);
+            chartArea2.Name = "ChartArea1";
+            this.chartCompras.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartCompras.Legends.Add(legend2);
             this.chartCompras.Location = new System.Drawing.Point(12, 127);
             this.chartCompras.Name = "chartCompras";
-            series10.ChartArea = "ChartArea1";
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.chartCompras.Series.Add(series10);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartCompras.Series.Add(series2);
             this.chartCompras.Size = new System.Drawing.Size(760, 388);
             this.chartCompras.TabIndex = 10;
             this.chartCompras.Text = "chart1";
@@ -83,18 +82,7 @@
             this.button5.Size = new System.Drawing.Size(28, 28);
             this.button5.TabIndex = 100;
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::RamosHermanos.Properties.Resources.print;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(710, 521);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 101;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // txtID
             // 
@@ -273,25 +261,6 @@
             this.gbParametros.TabStop = false;
             this.gbParametros.Text = "Parametros";
             // 
-            // dtpDesdeDia
-            // 
-            this.dtpDesdeDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDesdeDia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDesdeDia.Location = new System.Drawing.Point(102, 46);
-            this.dtpDesdeDia.Name = "dtpDesdeDia";
-            this.dtpDesdeDia.Size = new System.Drawing.Size(96, 20);
-            this.dtpDesdeDia.TabIndex = 106;
-            this.dtpDesdeDia.Value = new System.DateTime(2015, 1, 1, 11, 59, 0, 0);
-            // 
-            // dtpHastaDia
-            // 
-            this.dtpHastaDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpHastaDia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHastaDia.Location = new System.Drawing.Point(102, 72);
-            this.dtpHastaDia.Name = "dtpHastaDia";
-            this.dtpHastaDia.Size = new System.Drawing.Size(96, 20);
-            this.dtpHastaDia.TabIndex = 107;
-            // 
             // rbDiario
             // 
             this.rbDiario.AutoSize = true;
@@ -306,12 +275,30 @@
             this.rbDiario.UseVisualStyleBackColor = true;
             this.rbDiario.CheckedChanged += new System.EventHandler(this.rbDiario_CheckedChanged_1);
             // 
+            // dtpHastaDia
+            // 
+            this.dtpHastaDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpHastaDia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpHastaDia.Location = new System.Drawing.Point(102, 72);
+            this.dtpHastaDia.Name = "dtpHastaDia";
+            this.dtpHastaDia.Size = new System.Drawing.Size(96, 20);
+            this.dtpHastaDia.TabIndex = 107;
+            // 
+            // dtpDesdeDia
+            // 
+            this.dtpDesdeDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDesdeDia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpDesdeDia.Location = new System.Drawing.Point(102, 46);
+            this.dtpDesdeDia.Name = "dtpDesdeDia";
+            this.dtpDesdeDia.Size = new System.Drawing.Size(96, 20);
+            this.dtpDesdeDia.TabIndex = 106;
+            this.dtpDesdeDia.Value = new System.DateTime(2015, 1, 1, 11, 59, 0, 0);
+            // 
             // formGVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.chartCompras);
             this.Controls.Add(this.gbParametros);
@@ -329,7 +316,6 @@
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chartCompras;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button3;
         public System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.ComboBox cbTipoChart;
         private System.Windows.Forms.Label label2;

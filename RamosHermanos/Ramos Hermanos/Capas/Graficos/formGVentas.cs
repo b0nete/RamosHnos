@@ -46,16 +46,7 @@ namespace RamosHermanos.Capas.Graficos
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //formReports frm = new formReports();
-            //frm.Show();
-
-            //string desde = dtpAñoDesde.Value.Year.ToString();
-            //string hasta = dtpAñoHasta.Value.Year.ToString();
-
-            //dsVentas ds = new dsVentas();
-            //ds.Tables["dtGrafico"] = FacturaB.GenerarGraficoAnual(desde, hasta);
-
-            //frm.crvReporte.RefreshReport();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -196,6 +187,20 @@ namespace RamosHermanos.Capas.Graficos
                     break;
             }
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            formReports frm = new formReports();
+            frm.Show();
+
+            string desde = dtpDesdeAño.Value.Year.ToString();
+            string hasta = dtpDesdeAño.Value.Year.ToString();
+
+            dsVentas ds = new dsVentas();
+            //ds.Tables["dtGrafico"] = FacturaB.GenerarGraficoAnual(desde, hasta);
+
+            frm.crvReporte.RefreshReport();
         }
 
 

@@ -12,8 +12,11 @@
   <xs:element name="dsVentas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsVentas" msprop:Generator_UserDSName="dsVentas">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="dtGrafico" msprop:Generator_TableClassName="dtGraficoDataTable" msprop:Generator_TableVarName="tabledtGrafico" msprop:Generator_TablePropName="dtGrafico" msprop:Generator_RowDeletingName="dtGraficoRowDeleting" msprop:Generator_RowChangingName="dtGraficoRowChanging" msprop:Generator_RowEvHandlerName="dtGraficoRowChangeEventHandler" msprop:Generator_RowDeletedName="dtGraficoRowDeleted" msprop:Generator_UserTableName="dtGrafico" msprop:Generator_RowChangedName="dtGraficoRowChanged" msprop:Generator_RowEvArgName="dtGraficoRowChangeEvent" msprop:Generator_RowClassName="dtGraficoRow">
+        <xs:element name="dtGrafico" msprop:Generator_TableClassName="dtGraficoDataTable" msprop:Generator_TableVarName="tabledtGrafico" msprop:Generator_RowChangedName="dtGraficoRowChanged" msprop:Generator_TablePropName="dtGrafico" msprop:Generator_RowDeletingName="dtGraficoRowDeleting" msprop:Generator_RowChangingName="dtGraficoRowChanging" msprop:Generator_RowEvHandlerName="dtGraficoRowChangeEventHandler" msprop:Generator_RowDeletedName="dtGraficoRowDeleted" msprop:Generator_RowClassName="dtGraficoRow" msprop:Generator_UserTableName="dtGrafico" msprop:Generator_RowEvArgName="dtGraficoRowChangeEvent">
           <xs:complexType>
+            <xs:sequence>
+              <xs:element name="as" msprop:Generator_ColumnVarNameInTable="columnas" msprop:Generator_ColumnPropNameInRow="_as" msprop:Generator_ColumnPropNameInTable="asColumn" msprop:Generator_UserColumnName="as" type="xs:string" minOccurs="0" />
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>

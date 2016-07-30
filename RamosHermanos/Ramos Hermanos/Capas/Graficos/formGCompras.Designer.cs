@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formGCompras));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.button3 = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button5 = new System.Windows.Forms.Button();
             this.chartCompras = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gbParametros = new System.Windows.Forms.GroupBox();
@@ -57,17 +56,6 @@
             this.gbParametros.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::RamosHermanos.Properties.Resources.print;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(710, 521);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(28, 28);
-            this.button3.TabIndex = 105;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // button5
             // 
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
@@ -78,19 +66,20 @@
             this.button5.Size = new System.Drawing.Size(28, 28);
             this.button5.TabIndex = 104;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // chartCompras
             // 
-            chartArea5.Name = "ChartArea1";
-            this.chartCompras.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartCompras.Legends.Add(legend5);
+            chartArea3.Name = "ChartArea1";
+            this.chartCompras.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.chartCompras.Legends.Add(legend3);
             this.chartCompras.Location = new System.Drawing.Point(12, 127);
             this.chartCompras.Name = "chartCompras";
-            series5.ChartArea = "ChartArea1";
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartCompras.Series.Add(series5);
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chartCompras.Series.Add(series3);
             this.chartCompras.Size = new System.Drawing.Size(760, 388);
             this.chartCompras.TabIndex = 103;
             this.chartCompras.Text = "chart1";
@@ -309,7 +298,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.chartCompras);
             this.Controls.Add(this.gbParametros);
@@ -325,7 +313,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartCompras;
         private System.Windows.Forms.GroupBox gbParametros;

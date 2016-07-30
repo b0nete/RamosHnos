@@ -83,5 +83,15 @@ namespace RamosHermanos.Capas.Graficos
                 chartCompras.Series["Total"].Points[i].Label = "$" + Convert.ToDouble(dtGrafico.Rows[i]["Total"].ToString());
             }
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

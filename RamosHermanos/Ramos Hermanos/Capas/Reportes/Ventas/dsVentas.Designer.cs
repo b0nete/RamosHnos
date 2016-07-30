@@ -279,6 +279,8 @@ namespace RamosHermanos.Capas.Reportes.Ventas {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class dtGraficoDataTable : global::System.Data.TypedTableBase<dtGraficoRow> {
             
+            private global::System.Data.DataColumn columnas;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public dtGraficoDataTable() {
@@ -310,6 +312,14 @@ namespace RamosHermanos.Capas.Reportes.Ventas {
             protected dtGraficoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn asColumn {
+                get {
+                    return this.columnas;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -349,9 +359,10 @@ namespace RamosHermanos.Capas.Reportes.Ventas {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public dtGraficoRow AdddtGraficoRow() {
+            public dtGraficoRow AdddtGraficoRow(string _as) {
                 dtGraficoRow rowdtGraficoRow = ((dtGraficoRow)(this.NewRow()));
-                object[] columnValuesArray = new object[0];
+                object[] columnValuesArray = new object[] {
+                        _as};
                 rowdtGraficoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtGraficoRow);
                 return rowdtGraficoRow;
@@ -374,11 +385,17 @@ namespace RamosHermanos.Capas.Reportes.Ventas {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnas = base.Columns["as"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnas = new global::System.Data.DataColumn("as", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnas.ExtendedProperties.Add("Generator_ColumnPropNameInTable", "asColumn");
+                this.columnas.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "columnas");
+                this.columnas.ExtendedProperties.Add("Generator_UserColumnName", "as");
+                base.Columns.Add(this.columnas);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -517,6 +534,34 @@ namespace RamosHermanos.Capas.Reportes.Ventas {
             internal dtGraficoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tabledtGrafico = ((dtGraficoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string _as {
+                get {
+                    try {
+                        return ((string)(this[this.tabledtGrafico.asColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'as\' de la tabla \'dtGrafico\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtGrafico.asColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Is_asNull() {
+                return this.IsNull(this.tabledtGrafico.asColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Set_asNull() {
+                this[this.tabledtGrafico.asColumn] = global::System.Convert.DBNull;
             }
         }
         
