@@ -852,6 +852,143 @@ SELECT SUM(total) as Total, CONCAT(UCASE(SUBSTRING(DAYNAME(fechaFactura), 1, 1))
             }
         }
 
+        public static string totalVentas()
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT SUM(total)
+                                 FROM Facturas";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                string retorno = Convert.ToString(cmd.ExecuteScalar());
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static string cantidadVentas()
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT COUNT(idFactura)
+                                FROM Facturas
+                                WHERE total <> 0";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                string retorno = Convert.ToString(cmd.ExecuteScalar());
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static string cantidadPagas()
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT COUNT(idFactura)
+                                FROM Facturas
+                                WHERE total <> 0 and estado = 'Pagado'";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                string retorno = Convert.ToString(cmd.ExecuteScalar());
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static string cantidadCobrado()
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT IFNULL(SUM(total), 0)
+                                FROM Facturas
+                                WHERE total <> 0 and estado = 'Pagado'";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                string retorno = Convert.ToString(cmd.ExecuteScalar());
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static string cantidadNoPagas()
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT COUNT(idFactura)
+                                FROM Facturas
+                                WHERE total <> 0 and estado = 'Pendiente'";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                string retorno = Convert.ToString(cmd.ExecuteScalar());
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static string cantidadDeuda()
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT IFNULL(SUM(total), 0)
+                                FROM Facturas
+                                WHERE total <> 0 and estado = 'Pendiente'";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                string retorno = Convert.ToString(cmd.ExecuteScalar());
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
 
         
     }

@@ -250,7 +250,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static DataTable GenerarGraficoAnual(string fechaDesde, string fechaHasta)
+        public static DataTable GenerarGraficoAnual()
         {
             try
             {
@@ -260,13 +260,10 @@ namespace RamosHermanos.Capas.Negocio
 
                 string query = @"SELECT SUM(total) as Total, DATE_FORMAT(fecha, '%Y') as año
                                  FROM Compras
-                                 WHERE YEAR(fecha) >= @fechaDesde and YEAR(fecha) <= @fechaHasta
+                                 WHERE YEAR(fecha) >= 2000 and YEAR(fecha) <= 3000
                                  GROUP BY YEAR(fecha)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-
-                cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
-                cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
@@ -281,7 +278,7 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static DataTable GenerarGraficoMensual(string fechaDesde, string fechaHasta)
+        public static DataTable GenerarGraficoMensual()
         {
             try
             {
@@ -297,9 +294,6 @@ SELECT SUM(total) as Total, CONCAT(UCASE(SUBSTRING(MONTHNAME(fecha), 1, 1)),LCAS
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
-                cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
-
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
                 da.Fill(dt);
@@ -313,7 +307,7 @@ SELECT SUM(total) as Total, CONCAT(UCASE(SUBSTRING(MONTHNAME(fecha), 1, 1)),LCAS
             }
         }
 
-        public static DataTable GenerarGraficoDiario(string fechaDesde, string fechaHasta)
+        public static DataTable GenerarGraficoDiario()
         {
             try
             {
@@ -329,9 +323,6 @@ SELECT SUM(total) as Total, CONCAT(UCASE(SUBSTRING(DAYNAME(fecha), 1, 1)),LCASE(
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
-                cmd.Parameters.AddWithValue("@fechaDesde", fechaDesde);
-                cmd.Parameters.AddWithValue("@fechaHasta", fechaHasta);
-
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
                 da.Fill(dt);
@@ -345,6 +336,142 @@ SELECT SUM(total) as Total, CONCAT(UCASE(SUBSTRING(DAYNAME(fecha), 1, 1)),LCASE(
             }
         }
 
+        public static string totalCompras()
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT SUM(total)
+                                 FROM Compras";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                string retorno = Convert.ToString(cmd.ExecuteScalar());
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static string cantidadCompras()
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT COUNT(idCompras)
+                                FROM Compras
+                                WHERE total <> 0";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                string retorno = Convert.ToString(cmd.ExecuteScalar());
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static string cantidadPagas()
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT COUNT(idCompras)
+                                FROM Compras
+                                WHERE total <> 0 and estado = 'Pagado'";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                string retorno = Convert.ToString(cmd.ExecuteScalar());
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static string totalPagado()
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT IFNULL(SUM(total), 0)
+                                FROM Compras
+                                WHERE total <> 0 and estado = 'Pagado'";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                string retorno = Convert.ToString(cmd.ExecuteScalar());
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static string cantidadNoPagas()
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT COUNT(idCompras)
+                                FROM Compras
+                                WHERE total <> 0 and estado = 'Pendiente'";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                string retorno = Convert.ToString(cmd.ExecuteScalar());
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+        public static string totalDeuda()
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query = @"SELECT IFNULL(SUM(total), 0)
+                                FROM Compras
+                                WHERE total <> 0 and estado = 'Pendiente'";
+
+                MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
+
+                string retorno = Convert.ToString(cmd.ExecuteScalar());
+
+                return retorno;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
         //
     }
 }

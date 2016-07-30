@@ -19,23 +19,27 @@ namespace RamosHermanos.Capas.Graficos
 
         private void formGCompras_Load(object sender, EventArgs e)
         {
-            //Dia
-            dtpDesdeDia.CustomFormat = "dd/MM/yyyy";
-            dtpHastaDia.CustomFormat = "dd/MM/yyyy";
-            //Mes
-            dtpDesdeMensual.CustomFormat = "MM/yyyy";
-            dtpHastaMensual.CustomFormat = "MM/yyyy";
-            //Año
-            dtpDesdeAño.CustomFormat = "yyyy";
-            dtpHastaAño.CustomFormat = "yyyy";
+
+            //Historico
+            double total = Convert.ToDouble(ComprasB.totalCompras()) ;
+            lblTotal.Text = "$" + total.ToString("N2");
+            lblCantidadCompras.Text = ComprasB.cantidadCompras();
+
+            lblPagas.Text = ComprasB.cantidadPagas();
+            double pagado = Convert.ToDouble(ComprasB.totalPagado());
+            lblPagado.Text = "$" + pagado.ToString("N2");
+
+            lblNoPagas.Text = ComprasB.cantidadNoPagas();
+            double adeudado = Convert.ToDouble(ComprasB.totalDeuda());
+            lblDeuda.Text = "$" + adeudado.ToString("N2");
         }
 
         private void rbDiario_CheckedChanged(object sender, EventArgs e)
         {
-            string desde = dtpDesdeDia.Value.DayOfWeek.ToString();
-            string hasta = dtpHastaDia.Value.DayOfWeek.ToString();
+            //string desde = dtpDesdeDia.Value.DayOfWeek.ToString();
+            //string hasta = dtpHastaDia.Value.DayOfWeek.ToString();
 
-            DataTable dtGrafico = ComprasB.GenerarGraficoDiario(desde, hasta);
+            DataTable dtGrafico = ComprasB.GenerarGraficoDiario();
 
             chartCompras.Series.Clear();
             chartCompras.DataBindTable(dtGrafico.AsDataView(), "dia");
@@ -50,10 +54,10 @@ namespace RamosHermanos.Capas.Graficos
 
         private void rbMensual_CheckedChanged(object sender, EventArgs e)
         {
-            string desde = dtpDesdeMensual.Value.Month.ToString();
-            string hasta = dtpHastaMensual.Value.Month.ToString();
+            //string desde = dtpDesdeMensual.Value.Month.ToString();
+            //string hasta = dtpHastaMensual.Value.Month.ToString();
 
-            DataTable dtGrafico = ComprasB.GenerarGraficoMensual(desde, hasta);
+            DataTable dtGrafico = ComprasB.GenerarGraficoMensual();
 
             chartCompras.Series.Clear();
             chartCompras.DataBindTable(dtGrafico.AsDataView(), "mes");
@@ -68,10 +72,10 @@ namespace RamosHermanos.Capas.Graficos
 
         private void rbAnual_CheckedChanged(object sender, EventArgs e)
         {
-            string desde = dtpDesdeAño.Value.Year.ToString();
-            string hasta = dtpHastaAño.Value.Year.ToString();
+            //string desde = dtpDesdeAño.Value.Year.ToString();
+            //string hasta = dtpHastaAño.Value.Year.ToString();
 
-            DataTable dtGrafico = ComprasB.GenerarGraficoAnual(desde, hasta);
+            DataTable dtGrafico = ComprasB.GenerarGraficoAnual();
 
             chartCompras.Series.Clear();
             chartCompras.DataBindTable(dtGrafico.AsDataView(), "año");

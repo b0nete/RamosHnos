@@ -29,29 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formGCompras));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button5 = new System.Windows.Forms.Button();
             this.chartCompras = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gbParametros = new System.Windows.Forms.GroupBox();
-            this.dtpHastaAño = new System.Windows.Forms.DateTimePicker();
             this.rbAnual = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dtpDesdeAño = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtpHastaMensual = new System.Windows.Forms.DateTimePicker();
-            this.dtpDesdeMensual = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.rbMensual = new System.Windows.Forms.RadioButton();
             this.rbDiario = new System.Windows.Forms.RadioButton();
-            this.dtpHastaDia = new System.Windows.Forms.DateTimePicker();
-            this.dtpDesdeDia = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.cbTipoChart = new System.Windows.Forms.ComboBox();
             this.txtID = new System.Windows.Forms.TextBox();
+            this.lblDeuda = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblPagado = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.lblNoPagas = new System.Windows.Forms.Label();
+            this.lblPagas = new System.Windows.Forms.Label();
+            this.lblCantidadCompras = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartCompras)).BeginInit();
             this.gbParametros.SuspendLayout();
             this.SuspendLayout();
@@ -66,65 +67,45 @@
             this.button5.Size = new System.Drawing.Size(28, 28);
             this.button5.TabIndex = 104;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // chartCompras
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chartCompras.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartCompras.Legends.Add(legend3);
-            this.chartCompras.Location = new System.Drawing.Point(12, 127);
+            chartArea1.Name = "ChartArea1";
+            this.chartCompras.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartCompras.Legends.Add(legend1);
+            this.chartCompras.Location = new System.Drawing.Point(12, 67);
             this.chartCompras.Name = "chartCompras";
-            series3.ChartArea = "ChartArea1";
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartCompras.Series.Add(series3);
-            this.chartCompras.Size = new System.Drawing.Size(760, 388);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartCompras.Series.Add(series1);
+            this.chartCompras.Size = new System.Drawing.Size(526, 482);
             this.chartCompras.TabIndex = 103;
             this.chartCompras.Text = "chart1";
             // 
             // gbParametros
             // 
-            this.gbParametros.Controls.Add(this.dtpHastaAño);
             this.gbParametros.Controls.Add(this.rbAnual);
-            this.gbParametros.Controls.Add(this.label3);
-            this.gbParametros.Controls.Add(this.dtpDesdeAño);
-            this.gbParametros.Controls.Add(this.label4);
-            this.gbParametros.Controls.Add(this.dtpHastaMensual);
-            this.gbParametros.Controls.Add(this.dtpDesdeMensual);
-            this.gbParametros.Controls.Add(this.label5);
-            this.gbParametros.Controls.Add(this.label6);
             this.gbParametros.Controls.Add(this.rbMensual);
             this.gbParametros.Controls.Add(this.rbDiario);
-            this.gbParametros.Controls.Add(this.dtpHastaDia);
-            this.gbParametros.Controls.Add(this.dtpDesdeDia);
-            this.gbParametros.Controls.Add(this.label1);
-            this.gbParametros.Controls.Add(this.label2);
             this.gbParametros.Controls.Add(this.cbTipoChart);
             this.gbParametros.Controls.Add(this.txtID);
             this.gbParametros.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbParametros.Location = new System.Drawing.Point(12, 12);
             this.gbParametros.Name = "gbParametros";
-            this.gbParametros.Size = new System.Drawing.Size(760, 109);
+            this.gbParametros.Size = new System.Drawing.Size(760, 49);
             this.gbParametros.TabIndex = 102;
             this.gbParametros.TabStop = false;
             this.gbParametros.Text = "Parametros";
-            // 
-            // dtpHastaAño
-            // 
-            this.dtpHastaAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpHastaAño.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHastaAño.Location = new System.Drawing.Point(407, 73);
-            this.dtpHastaAño.Name = "dtpHastaAño";
-            this.dtpHastaAño.Size = new System.Drawing.Size(96, 20);
-            this.dtpHastaAño.TabIndex = 119;
             // 
             // rbAnual
             // 
             this.rbAnual.AutoSize = true;
             this.rbAnual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbAnual.Location = new System.Drawing.Point(451, 22);
+            this.rbAnual.Location = new System.Drawing.Point(405, 19);
             this.rbAnual.Name = "rbAnual";
             this.rbAnual.Size = new System.Drawing.Size(52, 17);
             this.rbAnual.TabIndex = 116;
@@ -132,80 +113,11 @@
             this.rbAnual.UseVisualStyleBackColor = true;
             this.rbAnual.CheckedChanged += new System.EventHandler(this.rbAnual_CheckedChanged);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(363, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
-            this.label3.TabIndex = 118;
-            this.label3.Text = "Desde";
-            // 
-            // dtpDesdeAño
-            // 
-            this.dtpDesdeAño.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDesdeAño.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDesdeAño.Location = new System.Drawing.Point(407, 46);
-            this.dtpDesdeAño.Name = "dtpDesdeAño";
-            this.dtpDesdeAño.Size = new System.Drawing.Size(96, 20);
-            this.dtpDesdeAño.TabIndex = 117;
-            this.dtpDesdeAño.Value = new System.DateTime(2015, 1, 1, 11, 59, 0, 0);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(366, 79);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 120;
-            this.label4.Text = "Hasta";
-            // 
-            // dtpHastaMensual
-            // 
-            this.dtpHastaMensual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpHastaMensual.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHastaMensual.Location = new System.Drawing.Point(251, 72);
-            this.dtpHastaMensual.Name = "dtpHastaMensual";
-            this.dtpHastaMensual.Size = new System.Drawing.Size(96, 20);
-            this.dtpHastaMensual.TabIndex = 113;
-            // 
-            // dtpDesdeMensual
-            // 
-            this.dtpDesdeMensual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDesdeMensual.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDesdeMensual.Location = new System.Drawing.Point(251, 46);
-            this.dtpDesdeMensual.Name = "dtpDesdeMensual";
-            this.dtpDesdeMensual.Size = new System.Drawing.Size(96, 20);
-            this.dtpDesdeMensual.TabIndex = 112;
-            this.dtpDesdeMensual.Value = new System.DateTime(2015, 1, 1, 11, 59, 0, 0);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(207, 52);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 13);
-            this.label5.TabIndex = 114;
-            this.label5.Text = "Desde";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(210, 78);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 115;
-            this.label6.Text = "Hasta";
-            // 
             // rbMensual
             // 
             this.rbMensual.AutoSize = true;
             this.rbMensual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMensual.Location = new System.Drawing.Point(282, 21);
+            this.rbMensual.Location = new System.Drawing.Point(238, 19);
             this.rbMensual.Name = "rbMensual";
             this.rbMensual.Size = new System.Drawing.Size(65, 17);
             this.rbMensual.TabIndex = 111;
@@ -218,7 +130,7 @@
             this.rbDiario.AutoSize = true;
             this.rbDiario.Checked = true;
             this.rbDiario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbDiario.Location = new System.Drawing.Point(146, 21);
+            this.rbDiario.Location = new System.Drawing.Point(102, 19);
             this.rbDiario.Name = "rbDiario";
             this.rbDiario.Size = new System.Drawing.Size(52, 17);
             this.rbDiario.TabIndex = 110;
@@ -226,45 +138,6 @@
             this.rbDiario.Text = "Diario";
             this.rbDiario.UseVisualStyleBackColor = true;
             this.rbDiario.CheckedChanged += new System.EventHandler(this.rbDiario_CheckedChanged);
-            // 
-            // dtpHastaDia
-            // 
-            this.dtpHastaDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpHastaDia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpHastaDia.Location = new System.Drawing.Point(102, 72);
-            this.dtpHastaDia.Name = "dtpHastaDia";
-            this.dtpHastaDia.Size = new System.Drawing.Size(96, 20);
-            this.dtpHastaDia.TabIndex = 107;
-            // 
-            // dtpDesdeDia
-            // 
-            this.dtpDesdeDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDesdeDia.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDesdeDia.Location = new System.Drawing.Point(102, 46);
-            this.dtpDesdeDia.Name = "dtpDesdeDia";
-            this.dtpDesdeDia.Size = new System.Drawing.Size(96, 20);
-            this.dtpDesdeDia.TabIndex = 106;
-            this.dtpDesdeDia.Value = new System.DateTime(2015, 1, 1, 11, 59, 0, 0);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(58, 52);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 108;
-            this.label1.Text = "Desde";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(61, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 109;
-            this.label2.Text = "Hasta";
             // 
             // cbTipoChart
             // 
@@ -280,7 +153,7 @@
             "Area",
             "Stock",
             "Embudo"});
-            this.cbTipoChart.Location = new System.Drawing.Point(532, 72);
+            this.cbTipoChart.Location = new System.Drawing.Point(532, 18);
             this.cbTipoChart.Name = "cbTipoChart";
             this.cbTipoChart.Size = new System.Drawing.Size(194, 21);
             this.cbTipoChart.TabIndex = 102;
@@ -293,11 +166,150 @@
             this.txtID.TabIndex = 9;
             this.txtID.Visible = false;
             // 
+            // lblDeuda
+            // 
+            this.lblDeuda.AutoSize = true;
+            this.lblDeuda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeuda.Location = new System.Drawing.Point(664, 331);
+            this.lblDeuda.Name = "lblDeuda";
+            this.lblDeuda.Size = new System.Drawing.Size(48, 13);
+            this.lblDeuda.TabIndex = 138;
+            this.lblDeuda.Text = "label15";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(575, 331);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(82, 13);
+            this.label16.TabIndex = 137;
+            this.label16.Text = "Total En Deuda";
+            // 
+            // lblPagado
+            // 
+            this.lblPagado.AutoSize = true;
+            this.lblPagado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPagado.Location = new System.Drawing.Point(664, 268);
+            this.lblPagado.Name = "lblPagado";
+            this.lblPagado.Size = new System.Drawing.Size(48, 13);
+            this.lblPagado.TabIndex = 136;
+            this.lblPagado.Text = "label13";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(586, 268);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(71, 13);
+            this.label14.TabIndex = 135;
+            this.label14.Text = "Total Pagado";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(544, 91);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(228, 40);
+            this.lblTitle.TabIndex = 134;
+            this.lblTitle.Text = "Histórico";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblNoPagas
+            // 
+            this.lblNoPagas.AutoSize = true;
+            this.lblNoPagas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoPagas.Location = new System.Drawing.Point(663, 309);
+            this.lblNoPagas.Name = "lblNoPagas";
+            this.lblNoPagas.Size = new System.Drawing.Size(48, 13);
+            this.lblNoPagas.TabIndex = 133;
+            this.lblNoPagas.Text = "label13";
+            // 
+            // lblPagas
+            // 
+            this.lblPagas.AutoSize = true;
+            this.lblPagas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPagas.Location = new System.Drawing.Point(663, 244);
+            this.lblPagas.Name = "lblPagas";
+            this.lblPagas.Size = new System.Drawing.Size(48, 13);
+            this.lblPagas.TabIndex = 132;
+            this.lblPagas.Text = "label13";
+            // 
+            // lblCantidadCompras
+            // 
+            this.lblCantidadCompras.AutoSize = true;
+            this.lblCantidadCompras.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantidadCompras.Location = new System.Drawing.Point(663, 186);
+            this.lblCantidadCompras.Name = "lblCantidadCompras";
+            this.lblCantidadCompras.Size = new System.Drawing.Size(48, 13);
+            this.lblCantidadCompras.TabIndex = 131;
+            this.lblCantidadCompras.Text = "label13";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(664, 164);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(48, 13);
+            this.lblTotal.TabIndex = 130;
+            this.lblTotal.Text = "label13";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(600, 309);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(57, 13);
+            this.label10.TabIndex = 129;
+            this.label10.Text = "No Pagas:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(617, 244);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.TabIndex = 128;
+            this.label9.Text = "Pagas:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(561, 186);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 13);
+            this.label8.TabIndex = 127;
+            this.label8.Text = "Cantidad Compras:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(623, 164);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(34, 13);
+            this.label7.TabIndex = 126;
+            this.label7.Text = "Total:";
+            // 
             // formGCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.lblDeuda);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.lblPagado);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.lblTitle);
+            this.Controls.Add(this.lblNoPagas);
+            this.Controls.Add(this.lblPagas);
+            this.Controls.Add(this.lblCantidadCompras);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.chartCompras);
             this.Controls.Add(this.gbParametros);
@@ -308,6 +320,7 @@
             this.gbParametros.ResumeLayout(false);
             this.gbParametros.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -316,22 +329,23 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartCompras;
         private System.Windows.Forms.GroupBox gbParametros;
-        private System.Windows.Forms.DateTimePicker dtpHastaAño;
         private System.Windows.Forms.RadioButton rbAnual;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dtpDesdeAño;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dtpHastaMensual;
-        private System.Windows.Forms.DateTimePicker dtpDesdeMensual;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton rbMensual;
         private System.Windows.Forms.RadioButton rbDiario;
-        private System.Windows.Forms.DateTimePicker dtpHastaDia;
-        private System.Windows.Forms.DateTimePicker dtpDesdeDia;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbTipoChart;
         public System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label lblDeuda;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblPagado;
+        private System.Windows.Forms.Label label14;
+        public System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label lblNoPagas;
+        private System.Windows.Forms.Label lblPagas;
+        private System.Windows.Forms.Label lblCantidadCompras;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
     }
 }

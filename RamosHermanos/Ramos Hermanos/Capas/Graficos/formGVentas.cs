@@ -33,6 +33,8 @@ namespace RamosHermanos.Capas.Graficos
 
         private void formGVentas_Load(object sender, EventArgs e)
         {
+            cbTipoChart.SelectedIndex = 0;
+
             //Dia
             dtpDesdeDia.CustomFormat = "dd/MM/yyyy";
             dtpHastaDia.CustomFormat = "dd/MM/yyyy";
@@ -42,6 +44,19 @@ namespace RamosHermanos.Capas.Graficos
             //Año
             dtpDesdeAño.CustomFormat = "yyyy";
             dtpHastaAño.CustomFormat = "yyyy";
+
+            //Historico
+            double total = Convert.ToDouble(FacturaB.totalVentas());
+            lblTotal.Text = "$" + total.ToString("N2");
+            lblCantidadVentas.Text = FacturaB.cantidadVentas();
+
+            lblPagas.Text = FacturaB.cantidadPagas();
+            double cobrado = Convert.ToDouble(FacturaB.cantidadCobrado());
+            lblCobrado.Text = "$" + cobrado.ToString("N2");
+            
+            lblNoPagas.Text = FacturaB.cantidadNoPagas();
+            double sincobrar = Convert.ToDouble(FacturaB.cantidadDeuda());
+            lblSinCobrar.Text = "$" + sincobrar.ToString("N2");
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -201,6 +216,11 @@ namespace RamosHermanos.Capas.Graficos
             //ds.Tables["dtGrafico"] = FacturaB.GenerarGraficoAnual(desde, hasta);
 
             frm.crvReporte.RefreshReport();
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
         }
 
 
