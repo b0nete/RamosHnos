@@ -542,7 +542,9 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 cargarItemsProducto(dr);
                 itemsProductoB.InsertItemProducto(itemProducto);
+                
             }
+            MessageBox.Show("Guardado");
         }
 
         //Entidades
