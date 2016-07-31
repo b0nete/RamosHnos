@@ -48,7 +48,7 @@ namespace RamosHermanos.Capas.Interfaz
 
              if (newORupdate == 1)
              {
-                 cbTipoFactura.Text = "C";
+                 cbTipoFactura.Text = "X";
                  cbformaPago.Text = "Contado";
              }             
         }
@@ -132,7 +132,7 @@ namespace RamosHermanos.Capas.Interfaz
                     StockProductoB.UpdateStockInsert(stockProducto, carga);
                 }
 
-                MessageBox.Show("Factura guardada!");
+                MessageBox.Show("Comprobante guardada!");
             }
 
         }
