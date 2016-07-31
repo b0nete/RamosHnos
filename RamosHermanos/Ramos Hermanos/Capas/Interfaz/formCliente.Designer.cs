@@ -1163,6 +1163,7 @@
             this.txtSaldo.TabIndex = 1;
             this.txtSaldo.Text = "00,00";
             this.txtSaldo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtSaldo.TextChanged += new System.EventHandler(this.txtSaldo_TextChanged);
             // 
             // txtCreditoMax
             // 
@@ -1173,6 +1174,7 @@
             this.txtCreditoMax.TabIndex = 0;
             this.txtCreditoMax.Text = "50,00";
             this.txtCreditoMax.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCreditoMax.TextAlignChanged += new System.EventHandler(this.txtCreditoMax_TextAlignChanged);
             this.txtCreditoMax.TextChanged += new System.EventHandler(this.txtCreditoMax_TextChanged_1);
             this.txtCreditoMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCreditoMax_KeyPress_1);
             this.txtCreditoMax.Leave += new System.EventHandler(this.txtCreditoMax_Leave);
