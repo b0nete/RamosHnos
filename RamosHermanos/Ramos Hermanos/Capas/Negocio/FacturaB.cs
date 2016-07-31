@@ -708,9 +708,10 @@ namespace RamosHermanos.Capas.Negocio
             try
             {
                 MySQL.ConnectDB();
+                dgv.DataSource = null;
                 dgv.Rows.Clear();
                 
-                string query = @"SELECT F.idfactura, F.fechaFactura, F.total, C.cliente, F.estado
+                string query = @"SELECT F.idfactura, F.fechaFactura, F.total, C.idCliente, F.estado, C.apellido
                                  FROM facturas F
                                  INNER JOIN clientes C on F.cliente = C.idCliente
                                  WHERE";
@@ -744,7 +745,6 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["fechaFactura"]),
                     Convert.ToString(dr["apellido"]),
                     Convert.ToString(dr["estado"]));
-                                              
                 }
                 dr.Close();
                 MySQL.DisconnectDB();

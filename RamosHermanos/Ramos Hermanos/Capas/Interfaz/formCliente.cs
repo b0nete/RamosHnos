@@ -1710,13 +1710,16 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void estadoSaldo()
         {
-            if (Convert.ToDouble(txtSaldo.Text) < Convert.ToDouble(txtCreditoMax.Text))
+            double saldo = Convert.ToDouble(txtSaldo.Text);
+            double credito = (Convert.ToDouble((txtCreditoMax.Text)));
+
+            if (Math.Abs(saldo) < credito)
             {
                 txtSaldo.BackColor = Color.LightGreen;
             }
             else
             {
-                txtSaldo.BackColor = Color.Red;
+                txtSaldo.BackColor = Color.LightCoral;
             }
         }
 
