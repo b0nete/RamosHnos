@@ -177,7 +177,9 @@ namespace RamosHermanos.Capas.Interfaz
                     //stockProducto.valorNuevo = Convert.ToInt32(dR.Cells["colCantidad"].Value);
                     //string carga = dR.Cells["colCarga"].Value.ToString();
                     //StockProductoB.UpdateStockInsert(stockProducto, carga);
+                    
                 }
+                MessageBox.Show("Factura Guardada");
             }
         }
 
