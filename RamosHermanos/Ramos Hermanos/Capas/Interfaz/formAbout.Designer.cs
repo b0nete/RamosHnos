@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formAbout));
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDelCalle = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -45,8 +48,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.btnDelCalle = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -86,6 +88,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.btnDelCalle);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.label14);
@@ -104,6 +107,28 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información";
+            // 
+            // btnDelCalle
+            // 
+            this.btnDelCalle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelCalle.BackgroundImage")));
+            this.btnDelCalle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDelCalle.Location = new System.Drawing.Point(509, 17);
+            this.btnDelCalle.Name = "btnDelCalle";
+            this.btnDelCalle.Size = new System.Drawing.Size(36, 36);
+            this.btnDelCalle.TabIndex = 104;
+            this.btnDelCalle.UseVisualStyleBackColor = true;
+            this.btnDelCalle.Click += new System.EventHandler(this.btnDelCalle_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label15.Location = new System.Drawing.Point(368, 25);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(99, 13);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Manual de Usuario:";
             // 
             // label14
             // 
@@ -159,11 +184,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label9.Location = new System.Drawing.Point(33, 25);
+            this.label9.Location = new System.Drawing.Point(13, 25);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 13);
+            this.label9.Size = new System.Drawing.Size(83, 13);
             this.label9.TabIndex = 7;
-            this.label9.Text = "Integrantes:";
+            this.label9.Text = "Desarrolladores:";
             // 
             // label2
             // 
@@ -236,27 +261,17 @@
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // label15
+            // button2
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label15.Location = new System.Drawing.Point(368, 25);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(99, 13);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "Manual de Usuario:";
-            // 
-            // btnDelCalle
-            // 
-            this.btnDelCalle.BackgroundImage = global::RamosHermanos.Properties.Resources.Book_icon;
-            this.btnDelCalle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDelCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnDelCalle.Location = new System.Drawing.Point(467, 17);
-            this.btnDelCalle.Name = "btnDelCalle";
-            this.btnDelCalle.Size = new System.Drawing.Size(28, 28);
-            this.btnDelCalle.TabIndex = 104;
-            this.btnDelCalle.UseVisualStyleBackColor = true;
-            this.btnDelCalle.Click += new System.EventHandler(this.btnDelCalle_Click);
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.button2.Location = new System.Drawing.Point(467, 17);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(36, 36);
+            this.button2.TabIndex = 105;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // formAbout
             // 
@@ -300,5 +315,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnDelCalle;
+        private System.Windows.Forms.Button button2;
     }
 }

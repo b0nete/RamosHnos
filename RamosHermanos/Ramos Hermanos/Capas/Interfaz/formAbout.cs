@@ -45,5 +45,19 @@ namespace RamosHermanos.Capas.Interfaz
             prohelp.Start();
             prohelp.Close();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string ruta = Application.StartupPath.Replace(@"\bin\Debug", "");
+
+            //this.Application.Documents.Open(ruta + "ManualDeUsuario.docx", ReadOnly: true);
+
+            System.Diagnostics.Process prohelp = new System.Diagnostics.Process();
+            //MessageBox.Show(ruta + @"\ManualDeUsuario.docx");
+            prohelp.StartInfo.FileName = ruta + @"\ManualDeUsuario.pdf"; //ruta de donde se encuentre el archivo
+
+            prohelp.Start();
+            prohelp.Close();
+        }
     }
 }

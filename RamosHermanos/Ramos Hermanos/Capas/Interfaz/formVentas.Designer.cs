@@ -336,9 +336,9 @@
             this.cbTipoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoFactura.FormattingEnabled = true;
             this.cbTipoFactura.Items.AddRange(new object[] {
+            "X",
             "C",
-            "E",
-            "X"});
+            "E"});
             this.cbTipoFactura.Location = new System.Drawing.Point(116, 17);
             this.cbTipoFactura.Name = "cbTipoFactura";
             this.cbTipoFactura.Size = new System.Drawing.Size(60, 21);

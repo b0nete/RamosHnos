@@ -44,6 +44,8 @@ namespace RamosHermanos.Capas.Interfaz
         {
              dgvFactura.AutoGenerateColumns = false;
 
+             cbTipoFactura.Text = "X";
+
              if (newORupdate == 1)
              {
                  cbTipoFactura.Text = "C";
