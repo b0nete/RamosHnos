@@ -41,7 +41,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 string query = @"SET @@sql_safe_updates = 0; 
                                  UPDATE Clientes
-                                 SET fechaalta = @fechaAlta, tipodoc = @tipoDoc, numdoc = @numDoc, sexo = @sexo, cuil =  @cuil, nombre = @nombre, apellido = @apellido, estadoCivil = @estadoCivil, condicionIVA = @condicionIVA, tipoCliente = @tipoCliente, estado = @estado
+                                 SET fechaalta = @fechaAlta, tipodoc = @tipoDoc, numdoc = @numDoc, sexo = @sexo, cuil =  @cuil, nombre = @nombre, apellido = @apellido, estadoCivil = @estadoCivil, condicionIVA = @condicionIVA, tipoCliente = @tipoCliente, creditoMax = @creditoMax, estado = @estado
                                  WHERE numDoc = @numDoc;
                                  SET @@sql_safe_updates = 1";
 
@@ -57,6 +57,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@estadoCivil", cliente.estadoCivil);
                 cmd.Parameters.AddWithValue("@condicionIVA", cliente.condicionIVA);
                 cmd.Parameters.AddWithValue("@tipoCliente", cliente.tipoCliente);
+                cmd.Parameters.AddWithValue("@creditoMax", cliente.creditoMax);
                 cmd.Parameters.AddWithValue("@estado", cliente.estado);
 
                 cmd.ExecuteNonQuery();
@@ -80,8 +81,8 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
 
-                string query = @"INSERT INTO Clientes (rol, tipoPersona, fechaAlta,  tipoDoc, numDoc, sexo, cuil, apellido, nombre, estadoCivil, condicionIVA, tipoCliente, estado) 
-                                 VALUES ('1', @tipoPersona, @fechaAlta, @tipoDoc, @numdoc, @sexo, @cuil, @apellido, @nombre, @estadoCivil, @condicionIVA, @tipoCliente, @estado);
+                string query = @"INSERT INTO Clientes (rol, tipoPersona, fechaAlta,  tipoDoc, numDoc, sexo, cuil, apellido, nombre, estadoCivil, condicionIVA, tipoCliente, creditoMax, estado) 
+                                 VALUES ('1', @tipoPersona, @fechaAlta, @tipoDoc, @numdoc, @sexo, @cuil, @apellido, @nombre, @estadoCivil, @condicionIVA, @tipoCliente, @creditoMax, @estado);
                                  SELECT LAST_INSERT_ID();";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -97,6 +98,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@estadoCivil", cliente.estadoCivil);
                 cmd.Parameters.AddWithValue("@condicionIVA", cliente.condicionIVA);
                 cmd.Parameters.AddWithValue("@tipoCliente", cliente.tipoCliente);
+                cmd.Parameters.AddWithValue("@creditoMax", cliente.creditoMax);
                 cmd.Parameters.AddWithValue("@estado", cliente.estado);
 
                 cliente.idCliente = Convert.ToInt32(cmd.ExecuteScalar());

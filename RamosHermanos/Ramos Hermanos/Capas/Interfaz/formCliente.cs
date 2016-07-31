@@ -1645,7 +1645,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void txtCreditoMax_TextChanged_1(object sender, EventArgs e)
         {
-            //txtCreditoMax.Text = "$" + txtCreditoMax.Text;
+            estadoSaldo();
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -1706,6 +1706,28 @@ namespace RamosHermanos.Capas.Interfaz
             txtDispenser.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 11));
             //Salgo Envase Soda
             txtRetornable.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 7));
+        }
+
+        private void estadoSaldo()
+        {
+            if (Convert.ToDouble(txtSaldo.Text) < Convert.ToDouble(txtCreditoMax.Text))
+            {
+                txtSaldo.BackColor = Color.LightGreen;
+            }
+            else
+            {
+                txtSaldo.BackColor = Color.Red;
+            }
+        }
+
+        private void txtCreditoMax_TextAlignChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSaldo_TextChanged(object sender, EventArgs e)
+        {
+            estadoSaldo();
         }
     }      
 }

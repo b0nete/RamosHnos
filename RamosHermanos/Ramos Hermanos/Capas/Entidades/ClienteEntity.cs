@@ -21,6 +21,7 @@ namespace RamosHermanos.Capas.Entidades
         public string estadoCivil { get; set; }
         public string condicionIVA { get; set; }
         public int tipoCliente { get; set; }
+        public double creditoMax { get; set; }
         public bool estado { get; set; }
     }
 }

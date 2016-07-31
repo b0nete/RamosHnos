@@ -29,14 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listVentas));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
-            this.colFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTipoFac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnEstadisticas = new System.Windows.Forms.Button();
             this.rbAnuladas = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.rbNoPagas = new System.Windows.Forms.RadioButton();
@@ -44,7 +40,12 @@
             this.rbPagas = new System.Windows.Forms.RadioButton();
             this.cbParametro = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnEstadisticas = new System.Windows.Forms.Button();
+            this.colFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTipoFac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -68,52 +69,6 @@
             this.dgvVentas.TabIndex = 0;
             this.dgvVentas.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvVentas_MouseDoubleClick);
             // 
-            // colFactura
-            // 
-            this.colFactura.DataPropertyName = "colFactura";
-            this.colFactura.HeaderText = "Nº Comprobante";
-            this.colFactura.Name = "colFactura";
-            this.colFactura.ReadOnly = true;
-            // 
-            // colTipoFac
-            // 
-            this.colTipoFac.HeaderText = "Tipo Factura";
-            this.colTipoFac.Name = "colTipoFac";
-            this.colTipoFac.ReadOnly = true;
-            this.colTipoFac.Visible = false;
-            // 
-            // colFecha
-            // 
-            this.colFecha.DataPropertyName = "colFecha";
-            this.colFecha.HeaderText = "Fecha Factura";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.ReadOnly = true;
-            this.colFecha.Width = 220;
-            // 
-            // colTotal
-            // 
-            this.colTotal.DataPropertyName = "colTotal";
-            this.colTotal.HeaderText = "Total";
-            this.colTotal.Name = "colTotal";
-            this.colTotal.ReadOnly = true;
-            // 
-            // colNombre
-            // 
-            this.colNombre.DataPropertyName = "colNombre";
-            this.colNombre.HeaderText = "Cliente";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.ReadOnly = true;
-            this.colNombre.Width = 250;
-            // 
-            // colEstado
-            // 
-            this.colEstado.DataPropertyName = "colEstado";
-            this.colEstado.HeaderText = "Estado";
-            this.colEstado.Name = "colEstado";
-            this.colEstado.ReadOnly = true;
-            this.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.colEstado.Visible = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnEstadisticas);
@@ -131,6 +86,18 @@
             this.groupBox1.TabIndex = 55;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda Parametrizada";
+            // 
+            // btnEstadisticas
+            // 
+            this.btnEstadisticas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.BackgroundImage")));
+            this.btnEstadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstadisticas.Location = new System.Drawing.Point(726, 55);
+            this.btnEstadisticas.Name = "btnEstadisticas";
+            this.btnEstadisticas.Size = new System.Drawing.Size(28, 28);
+            this.btnEstadisticas.TabIndex = 117;
+            this.btnEstadisticas.UseVisualStyleBackColor = true;
+            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
             // 
             // rbAnuladas
             // 
@@ -214,17 +181,54 @@
             this.btnSearch.TabIndex = 106;
             this.btnSearch.UseVisualStyleBackColor = true;
             // 
-            // btnEstadisticas
+            // colFactura
             // 
-            this.btnEstadisticas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEstadisticas.BackgroundImage")));
-            this.btnEstadisticas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEstadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadisticas.Location = new System.Drawing.Point(726, 55);
-            this.btnEstadisticas.Name = "btnEstadisticas";
-            this.btnEstadisticas.Size = new System.Drawing.Size(28, 28);
-            this.btnEstadisticas.TabIndex = 117;
-            this.btnEstadisticas.UseVisualStyleBackColor = true;
-            this.btnEstadisticas.Click += new System.EventHandler(this.btnEstadisticas_Click);
+            this.colFactura.DataPropertyName = "colFactura";
+            this.colFactura.HeaderText = "Nº Comprobante";
+            this.colFactura.Name = "colFactura";
+            this.colFactura.ReadOnly = true;
+            // 
+            // colTipoFac
+            // 
+            this.colTipoFac.HeaderText = "Tipo Factura";
+            this.colTipoFac.Name = "colTipoFac";
+            this.colTipoFac.ReadOnly = true;
+            this.colTipoFac.Visible = false;
+            // 
+            // colFecha
+            // 
+            this.colFecha.DataPropertyName = "colFecha";
+            this.colFecha.HeaderText = "Fecha Factura";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            this.colFecha.Width = 220;
+            // 
+            // colTotal
+            // 
+            this.colTotal.DataPropertyName = "colTotal";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            this.colTotal.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colTotal.HeaderText = "Total";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.DataPropertyName = "colNombre";
+            this.colNombre.HeaderText = "Cliente";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            this.colNombre.Width = 250;
+            // 
+            // colEstado
+            // 
+            this.colEstado.DataPropertyName = "colEstado";
+            this.colEstado.HeaderText = "Estado";
+            this.colEstado.Name = "colEstado";
+            this.colEstado.ReadOnly = true;
+            this.colEstado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.colEstado.Visible = false;
             // 
             // listVentas
             // 
@@ -256,12 +260,12 @@
         public System.Windows.Forms.RadioButton rbNoPagas;
         public System.Windows.Forms.RadioButton rbPagas;
         public System.Windows.Forms.RadioButton rbAnuladas;
+        private System.Windows.Forms.Button btnEstadisticas;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipoFac;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEstado;
-        private System.Windows.Forms.Button btnEstadisticas;
     }
 }

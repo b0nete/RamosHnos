@@ -449,7 +449,7 @@ namespace RamosHermanos.Capas.Interfaz
             return bul;
         }
 
-        private void calcularTotal()
+        public void calcularTotal()
         {
             // Se recorre cada fila del DGV.
             double carga = 0;
