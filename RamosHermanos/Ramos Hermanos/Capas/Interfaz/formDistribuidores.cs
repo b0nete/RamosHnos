@@ -24,6 +24,7 @@ namespace RamosHermanos.Capas.Interfaz
     {
         public int tabVar;
         public int addItemVar;
+        public int dia;
 
         public formDistribuidores()
         {
@@ -66,6 +67,9 @@ namespace RamosHermanos.Capas.Interfaz
             //tabVehiculos
             VehiculoB.CargarDGV(dgvVehiculos);
             CheckColor(cbEstadoVeh, lblEstadoVeh);
+
+            //Dia actual
+            dia = Convert.ToInt32((DateTime.Now).DayOfWeek);
         }
         
         //Tabs Cases
@@ -771,6 +775,16 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void button5_Click(object sender, EventArgs e)
         {
+            DateTime asd = DateTime.Now;
+            string nombreDia = asd.ToString("dddd", new CultureInfo("es-ES"));
+            string numDia = asd.ToString("d");
+
+            if (dia != 1)
+            {
+                MessageBox.Show("Solo se puede generar el reparto de hoy " + nombreDia + " " + numDia);
+                return;
+            }
+
             if (dgvRecorridoLu.Rows.Count == 0)
             {
                 MessageBox.Show("No existe ningun recorrido, no se puede generar reparto!");
@@ -857,7 +871,7 @@ namespace RamosHermanos.Capas.Interfaz
             int numReparto = RepartoB.InsertReparto(reparto);
             
             //dtItemsRecorrido
-            DataTable dtItemsRecorridoTest = itemsRecorridoB.GetItemsRecorrido(dgvRecorridoDia, txtIDRecorridoDia, colDiaSentidoo, colDiaIDCallee);
+            DataTable dtItemsRecorridoTest = itemsRecorridoB.GetItemsRecorrido(dgvRecorridoDia, txtIDRecorridoDia, colDiaSentidoo, colDiaIDCallee, diaNombre);
 
             int rows = dtItemsRecorridoTest.Rows.Count;
 
@@ -965,10 +979,10 @@ namespace RamosHermanos.Capas.Interfaz
         private void GuardarRecorrido(TextBox txtIDRecorridodia, string dia, DataGridView dgvRecorridoDia)
         {
             //Validacion.
-            if (txtIDRecorridodia.Text == string.Empty)
-            {
-                MessageBox.Show("Ingrese un distribuidor!");
-            }
+            //if (txtIDRecorridodia.Text == string.Empty)
+            //{
+            //    MessageBox.Show("Ingrese un distribuidor!");
+            //}
 
             //Borramos Recorrido e itemsRecorrido anteriores.
             if (txtIDRecorridodia.Text != string.Empty)
@@ -1144,6 +1158,16 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSaveRecorridoMa_Click(object sender, EventArgs e)
         {
+            DateTime asd = DateTime.Now;
+            string nombreDia = asd.ToString("dddd", new CultureInfo("es-ES"));
+            string numDia = asd.ToString("d");
+
+            if (dia != 2)
+            {
+                MessageBox.Show("Solo se puede generar el reparto de hoy " + nombreDia + " " + numDia);
+                return;
+            }
+
             if (dgvRecorridoMa.Rows.Count == 0)
             {
                 MessageBox.Show("No existe ningun recorrido, no se puede generar reparto!");
@@ -1204,6 +1228,16 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSaveRecorridoMi_Click(object sender, EventArgs e)
         {
+            DateTime asd = DateTime.Now;
+            string nombreDia = asd.ToString("dddd", new CultureInfo("es-ES"));
+            string numDia = asd.ToString("d");
+
+            if (dia != 3)
+            {
+                MessageBox.Show("Solo se puede generar el reparto de hoy " + nombreDia + " " + numDia);
+                return;
+            }
+
             if (dgvRecorridoMi.Rows.Count == 0)
             {
                 MessageBox.Show("No existe ningun recorrido, no se puede generar reparto!");
@@ -1264,6 +1298,16 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSaveRecorridoJu_Click(object sender, EventArgs e)
         {
+            DateTime asd = DateTime.Now;
+            string nombreDia = asd.ToString("dddd", new CultureInfo("es-ES"));
+            string numDia = asd.ToString("d");
+
+            if (dia != 4)
+            {
+                MessageBox.Show("Solo se puede generar el reparto de hoy " + nombreDia + " " + numDia);
+                return;
+            }
+
             if (dgvRecorridoJu.Rows.Count == 0)
             {
                 MessageBox.Show("No existe ningun recorrido, no se puede generar reparto!");
@@ -1341,6 +1385,16 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSaveRecorridoVi_Click(object sender, EventArgs e)
         {
+            DateTime asd = DateTime.Now;
+            string nombreDia = asd.ToString("dddd", new CultureInfo("es-ES"));
+            string numDia = asd.ToString("d");
+
+            if (dia != 5)
+            {
+                MessageBox.Show("Solo se puede generar el reparto de hoy " + nombreDia + " " + numDia);
+                return;
+            }
+
             if (dgvRecorridoVi.Rows.Count == 0)
             {
                 MessageBox.Show("No existe ningun recorrido, no se puede generar reparto!");
@@ -1401,6 +1455,16 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSaveRecorridoSa_Click(object sender, EventArgs e)
         {
+            DateTime asd = DateTime.Now;
+            string nombreDia = asd.ToString("dddd", new CultureInfo("es-ES"));
+            string numDia = asd.ToString("d");
+
+            if (dia != 6)
+            {
+                MessageBox.Show("Solo se puede generar el reparto de hoy " + nombreDia + " " + numDia);
+                return;
+            }
+
             if (dgvRecorridoSa.Rows.Count == 0)
             {
                 MessageBox.Show("No existe ningun recorrido, no se puede generar reparto!");

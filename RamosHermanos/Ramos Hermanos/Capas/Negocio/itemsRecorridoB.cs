@@ -112,20 +112,99 @@ namespace RamosHermanos.Capas.Negocio
             }
         }
 
-        public static DataTable GetItemsRecorrido(DataGridView dgv, TextBox txt, string colDiaSentidoo, string colDiaIDCallee)
+        public static DataTable GetItemsRecorrido(DataGridView dgv, TextBox txt, string colDiaSentidoo, string colDiaIDCallee, string dia)
         {
             try
             {
                 MySQL.ConnectDB();
 
-                string query = @"SELECT C.idCliente, CONCAT(C.nombre, ' ', C.apellido) as nombreCompleto, D.idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' ', 'PISO:', ' ',IFNULL(D.Piso, '-'),' ', 'DPTO:',' ', IFNULL(D.Dpto, '-')) domicilioCompleto
+                string query = "";
+
+                if (dia == "Lu")
+                {
+                    query = @"SELECT C.idCliente, CONCAT(C.nombre, ' ', C.apellido) as nombreCompleto, D.idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' ', 'PISO:', ' ',IFNULL(D.Piso, '-'),' ', 'DPTO:',' ', IFNULL(D.Dpto, '-')) domicilioCompleto
                                 FROM itemsRecorrido IR
                                 INNER JOIN Domicilios D ON D.calle = IR.calle
                                 INNER JOIN Clientes C ON C.idCliente = D.idPersona
                                 INNER JOIN Recorridos R ON R.idRecorrido = IR.recorrido
                                 INNER JOIN Calles CC ON D.Calle = CC.idCalle
-                                WHERE idRecorrido = @idRecorrido and D.calle = @calle
+                                INNER JOIN Visitas V ON C.idCliente = V.cliente
+                                WHERE idRecorrido = @idRecorrido and D.calle = @calle and V.lunes = 1
                                 ORDER BY D.numero";
+                }
+                else if (dia == "Ma")
+                {
+                    query = @"SELECT C.idCliente, CONCAT(C.nombre, ' ', C.apellido) as nombreCompleto, D.idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' ', 'PISO:', ' ',IFNULL(D.Piso, '-'),' ', 'DPTO:',' ', IFNULL(D.Dpto, '-')) domicilioCompleto
+                                FROM itemsRecorrido IR
+                                INNER JOIN Domicilios D ON D.calle = IR.calle
+                                INNER JOIN Clientes C ON C.idCliente = D.idPersona
+                                INNER JOIN Recorridos R ON R.idRecorrido = IR.recorrido
+                                INNER JOIN Calles CC ON D.Calle = CC.idCalle
+                                INNER JOIN Visitas V ON C.idCliente = V.cliente
+                                WHERE idRecorrido = @idRecorrido and D.calle = @calle and V.martes = 1
+                                ORDER BY D.numero";
+                }
+                else if (dia == "Mi")
+                {
+                    query = @"SELECT C.idCliente, CONCAT(C.nombre, ' ', C.apellido) as nombreCompleto, D.idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' ', 'PISO:', ' ',IFNULL(D.Piso, '-'),' ', 'DPTO:',' ', IFNULL(D.Dpto, '-')) domicilioCompleto
+                                FROM itemsRecorrido IR
+                                INNER JOIN Domicilios D ON D.calle = IR.calle
+                                INNER JOIN Clientes C ON C.idCliente = D.idPersona
+                                INNER JOIN Recorridos R ON R.idRecorrido = IR.recorrido
+                                INNER JOIN Calles CC ON D.Calle = CC.idCalle
+                                INNER JOIN Visitas V ON C.idCliente = V.cliente
+                                WHERE idRecorrido = @idRecorrido and D.calle = @calle and V.miercoles = 1
+                                ORDER BY D.numero";
+                }
+                else if (dia == "Ju")
+                {
+                    query = @"SELECT C.idCliente, CONCAT(C.nombre, ' ', C.apellido) as nombreCompleto, D.idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' ', 'PISO:', ' ',IFNULL(D.Piso, '-'),' ', 'DPTO:',' ', IFNULL(D.Dpto, '-')) domicilioCompleto
+                                FROM itemsRecorrido IR
+                                INNER JOIN Domicilios D ON D.calle = IR.calle
+                                INNER JOIN Clientes C ON C.idCliente = D.idPersona
+                                INNER JOIN Recorridos R ON R.idRecorrido = IR.recorrido
+                                INNER JOIN Calles CC ON D.Calle = CC.idCalle
+                                INNER JOIN Visitas V ON C.idCliente = V.cliente
+                                WHERE idRecorrido = @idRecorrido and D.calle = @calle and V.jueves = 1
+                                ORDER BY D.numero";
+                }
+                else if (dia == "Vi")
+                {
+                    query = @"SELECT C.idCliente, CONCAT(C.nombre, ' ', C.apellido) as nombreCompleto, D.idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' ', 'PISO:', ' ',IFNULL(D.Piso, '-'),' ', 'DPTO:',' ', IFNULL(D.Dpto, '-')) domicilioCompleto
+                                FROM itemsRecorrido IR
+                                INNER JOIN Domicilios D ON D.calle = IR.calle
+                                INNER JOIN Clientes C ON C.idCliente = D.idPersona
+                                INNER JOIN Recorridos R ON R.idRecorrido = IR.recorrido
+                                INNER JOIN Calles CC ON D.Calle = CC.idCalle
+                                INNER JOIN Visitas V ON C.idCliente = V.cliente
+                                WHERE idRecorrido = @idRecorrido and D.calle = @calle and V.viernes = 1
+                                ORDER BY D.numero";
+                }
+                else if (dia == "Sa")
+                {
+                    query = @"SELECT C.idCliente, CONCAT(C.nombre, ' ', C.apellido) as nombreCompleto, D.idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' ', 'PISO:', ' ',IFNULL(D.Piso, '-'),' ', 'DPTO:',' ', IFNULL(D.Dpto, '-')) domicilioCompleto
+                                FROM itemsRecorrido IR
+                                INNER JOIN Domicilios D ON D.calle = IR.calle
+                                INNER JOIN Clientes C ON C.idCliente = D.idPersona
+                                INNER JOIN Recorridos R ON R.idRecorrido = IR.recorrido
+                                INNER JOIN Calles CC ON D.Calle = CC.idCalle
+                                INNER JOIN Visitas V ON C.idCliente = V.cliente
+                                WHERE idRecorrido = @idRecorrido and D.calle = @calle and V.sabado = 1
+                                ORDER BY D.numero";
+                }
+                else if (dia == "Do")
+                {
+                    query = @"SELECT C.idCliente, CONCAT(C.nombre, ' ', C.apellido) as nombreCompleto, D.idDomicilio, CONCAT(CC.Calle,' ',D.Numero,' ', 'PISO:', ' ',IFNULL(D.Piso, '-'),' ', 'DPTO:',' ', IFNULL(D.Dpto, '-')) domicilioCompleto
+                                FROM itemsRecorrido IR
+                                INNER JOIN Domicilios D ON D.calle = IR.calle
+                                INNER JOIN Clientes C ON C.idCliente = D.idPersona
+                                INNER JOIN Recorridos R ON R.idRecorrido = IR.recorrido
+                                INNER JOIN Calles CC ON D.Calle = CC.idCalle
+                                INNER JOIN Visitas V ON C.idCliente = V.cliente
+                                WHERE idRecorrido = @idRecorrido and D.calle = @calle and V.domingo = 1
+                                ORDER BY D.numero";
+                }
+                
 
                 //MySqlCommand cmd = new MySqlCommand(queryM, MySQL.sqlcnx); 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);  
