@@ -1645,6 +1645,13 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void txtCreditoMax_TextChanged_1(object sender, EventArgs e)
         {
+            double asd = Convert.ToDouble(txtCreditoMax.Text);
+            txtCreditoMax.Text = asd.ToString("N2");
+
+            double asd1 = Convert.ToDouble(txtSaldo.Text);
+            txtSaldo.Text = asd1.ToString("N2");
+
+
             estadoSaldo();
         }
 
@@ -1731,6 +1738,12 @@ namespace RamosHermanos.Capas.Interfaz
         private void txtSaldo_TextChanged(object sender, EventArgs e)
         {
             estadoSaldo();
+
+            double asd = Convert.ToDouble(txtCreditoMax.Text);
+            txtCreditoMax.Text = asd.ToString("N2");
+
+            double asd1 = Convert.ToDouble(txtSaldo.Text);
+            txtSaldo.Text = asd1.ToString("N2");
         }
     }      
 }

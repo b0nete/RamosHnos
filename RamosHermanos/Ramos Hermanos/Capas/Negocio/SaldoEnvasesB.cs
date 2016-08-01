@@ -18,6 +18,8 @@ namespace RamosHermanos.Capas.Negocio
         {
             try
             {
+                MySQL.ConnectDB(); 
+
                 int total = 0;
                 DataTable dtFacturas = new DataTable();
 
