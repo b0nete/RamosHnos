@@ -57,6 +57,23 @@ namespace RamosHermanos.Capas.Graficos
             lblNoPagas.Text = FacturaB.cantidadNoPagas();
             double sincobrar = Convert.ToDouble(FacturaB.cantidadDeuda());
             lblSinCobrar.Text = "$" + sincobrar.ToString("N2");
+
+            //
+
+            string desde = dtpDesdeDia.Value.DayOfWeek.ToString();
+            string hasta = dtpHastaDia.Value.DayOfWeek.ToString();
+
+            DataTable dtGrafico = FacturaB.GenerarGraficoDiario(desde, hasta);
+
+            chartCompras.Series.Clear();
+            chartCompras.DataBindTable(dtGrafico.AsDataView(), "dia");
+
+            //chartCompras.Series["año"].Enabled = false;
+
+            for (int i = 0; i < chartCompras.Series["Total"].Points.Count(); i++)
+            {
+                chartCompras.Series["Total"].Points[i].Label = "$" + Convert.ToDouble(dtGrafico.Rows[i]["Total"].ToString());
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

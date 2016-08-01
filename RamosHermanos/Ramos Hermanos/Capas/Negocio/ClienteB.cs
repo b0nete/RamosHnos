@@ -301,6 +301,7 @@ namespace RamosHermanos.Capas.Negocio
                     cliente.estadoCivil = Convert.ToString(row["estadoCivil"]);
                     cliente.condicionIVA = Convert.ToString(row["condicionIVA"]);
                     cliente.tipoCliente = Convert.ToInt32(row["tipoCliente"]);
+                    cliente.creditoMax = Convert.ToDouble(row["creditoMax"]);
                     cliente.estado = Convert.ToBoolean(row["estado"]);
 
                     MySQL.DisconnectDB();

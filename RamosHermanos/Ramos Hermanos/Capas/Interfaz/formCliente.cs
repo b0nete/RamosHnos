@@ -1063,6 +1063,7 @@ namespace RamosHermanos.Capas.Interfaz
             cliente.estadoCivil = cbEstadoCivil.Text;
             cliente.condicionIVA = cbIVA.Text;
             cliente.tipoCliente = Convert.ToInt32(cbTipoCliente.SelectedValue);
+            cliente.creditoMax = Convert.ToDouble(txtCreditoMax.Text);
             cliente.estado = cbEstado.Checked;
         }
 

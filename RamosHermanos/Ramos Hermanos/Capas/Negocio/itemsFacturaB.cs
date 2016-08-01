@@ -19,12 +19,12 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"(SELECT FI.idItemFactura, FI.factura, FI.producto as codProducto, FI.cantidad, FI.precioUnitario, FI.subTotal, P.producto, FI.carga
+                string query = @"(SELECT FI.idItemFactura, FI.factura, FI.producto as codProducto, FI.cantidad, REPLACE(FI.precioUnitario, '.', ',') as precioUnitario, FI.subTotal, P.producto, FI.carga
                                  FROM itemsFactura FI
                                  INNER JOIN Productos P ON P.idProducto = FI.producto
                                  WHERE FI.factura = @factura and FI.carga = 'C')
                                  UNION
-                                 (SELECT FI.idItemFactura, FI.factura, FI.producto as codProducto, FI.cantidad, -(FI.precioUnitario), FI.subTotal, P.producto, FI.carga
+                                 (SELECT FI.idItemFactura, FI.factura, FI.producto as codProducto, FI.cantidad, -(FI.precioUnitario) as precioUnitario, FI.subTotal, P.producto, FI.carga
                                  FROM itemsFactura FI
                                  INNER JOIN Productos P ON P.idProducto = FI.producto
                                  WHERE FI.factura = @factura and FI.carga = 'D')";

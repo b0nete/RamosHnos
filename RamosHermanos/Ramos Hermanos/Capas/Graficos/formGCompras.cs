@@ -32,6 +32,20 @@ namespace RamosHermanos.Capas.Graficos
             lblNoPagas.Text = ComprasB.cantidadNoPagas();
             double adeudado = Convert.ToDouble(ComprasB.totalDeuda());
             lblDeuda.Text = "$" + adeudado.ToString("N2");
+
+            //
+
+            DataTable dtGrafico = ComprasB.GenerarGraficoDiario();
+
+            chartCompras.Series.Clear();
+            chartCompras.DataBindTable(dtGrafico.AsDataView(), "dia");
+
+            //chartCompras.Series["año"].Enabled = false;
+
+            for (int i = 0; i < chartCompras.Series["Total"].Points.Count(); i++)
+            {
+                chartCompras.Series["Total"].Points[i].Label = "$" + Convert.ToDouble(dtGrafico.Rows[i]["Total"].ToString());
+            }
         }
 
         private void rbDiario_CheckedChanged(object sender, EventArgs e)
