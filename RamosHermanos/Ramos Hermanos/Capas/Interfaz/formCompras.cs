@@ -23,6 +23,7 @@ namespace RamosHermanos.Capas.Interfaz
         public int switchCase = 1;
         //Case para saber si la factura es a generar o se está buscando de una ya generada.
         public int caseNueva = 1;
+        public int newORupdate = 1;
 
         public formCompras()
         {
@@ -416,6 +417,16 @@ namespace RamosHermanos.Capas.Interfaz
                 }
 
                 
+            }
+        }
+
+        private void cbEstado_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (newORupdate != 1)
+            {
+                compras.estado = cbEstado.Text;
+                compras.idCompras = Convert.ToInt32(txtidCompras.Text);
+                ComprasB.UpdateCompraEstado(compras);
             }
         }
               

@@ -472,6 +472,36 @@ SELECT SUM(total) as Total, CONCAT(UCASE(SUBSTRING(DAYNAME(fecha), 1, 1)),LCASE(
                 throw;
             }
         }
+
+        public static ComprasEntity UpdateCompraEstado(ComprasEntity compra)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+                string query1 = @"UPDATE Compras 
+                                 SET estado = @estado
+                                 WHERE idCompras = @idCompras";
+
+                MySqlCommand cmd1 = new MySqlCommand(query1, MySQL.sqlcnx);
+
+                cmd1.Parameters.AddWithValue("@idCompras", compra.idCompras);
+                cmd1.Parameters.AddWithValue("@estado", compra.estado);
+
+                cmd1.ExecuteNonQuery();
+
+                //MessageBox.Show("Guardado!");
+                MySQL.DisconnectDB();
+
+                return compra;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
         //
     }
 }

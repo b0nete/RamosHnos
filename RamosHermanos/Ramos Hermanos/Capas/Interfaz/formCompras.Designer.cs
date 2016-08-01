@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCompras));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtidCompras = new System.Windows.Forms.TextBox();
             this.dtpfechaFactura = new System.Windows.Forms.DateTimePicker();
@@ -367,9 +367,9 @@
             // colPrecioUnitario
             // 
             this.colPrecioUnitario.DataPropertyName = "precio";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            this.colPrecioUnitario.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "C2";
+            this.colPrecioUnitario.DefaultCellStyle = dataGridViewCellStyle3;
             this.colPrecioUnitario.HeaderText = "Precio Unitario";
             this.colPrecioUnitario.Name = "colPrecioUnitario";
             // 
@@ -382,9 +382,9 @@
             // colSubTotal
             // 
             this.colSubTotal.DataPropertyName = "subTotal";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "C2";
-            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            this.colSubTotal.DefaultCellStyle = dataGridViewCellStyle4;
             this.colSubTotal.HeaderText = "SubTotal";
             this.colSubTotal.Name = "colSubTotal";
             // 
@@ -517,6 +517,7 @@
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(129, 21);
             this.cbEstado.TabIndex = 146;
+            this.cbEstado.SelectionChangeCommitted += new System.EventHandler(this.cbEstado_SelectionChangeCommitted);
             // 
             // dtpEntrega
             // 
@@ -650,7 +651,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.ComboBox cbformaPago;
-        private System.Windows.Forms.TextBox txtidCompras;
         public System.Windows.Forms.DateTimePicker dtpfechaFactura;
         public System.Windows.Forms.ComboBox cbEstado;
         public System.Windows.Forms.TextBox txtnumFactura;
@@ -662,5 +662,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colPrecioUnitario;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubTotal;
+        public System.Windows.Forms.TextBox txtidCompras;
     }
 }

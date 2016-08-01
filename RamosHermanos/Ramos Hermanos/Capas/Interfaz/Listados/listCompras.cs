@@ -48,6 +48,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
                 DataRow dr = ComprasB.BuscarCompraID(compras.idCompras);
 
+                frm.txtidCompras.Text = Convert.ToString(compras.idCompras);
                 frm.txtIDproveedor.Text = Convert.ToString(dr["proveedor"]);
                 frm.cbTipoFactura.Text = Convert.ToString(dr["tipoFactura"]);
                 frm.dtpfechaFactura.Value = Convert.ToDateTime(dr["fecha"]);
@@ -73,6 +74,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 //frmP.txtIVA.Text = cliente.condicionIVA;
                 //frmP.cbformaPago.Text = "Contado";
                 frm.caseNueva = 2;
+                frm.newORupdate = 2;
                 frm.Show();
             }
         }

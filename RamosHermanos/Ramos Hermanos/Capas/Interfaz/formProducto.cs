@@ -687,6 +687,7 @@ namespace RamosHermanos.Capas.Interfaz
             }
 
             calcularSubTotales();
+            calcularAfterSearch();
         }
 
         private void btnDelInsumo_Click(object sender, EventArgs e)

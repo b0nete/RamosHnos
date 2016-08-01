@@ -62,6 +62,7 @@ namespace RamosHermanos.Capas.Interfaz
 
                 DataTable DTitemsProducto = itemsProductoB.BuscarItemsProducto(Convert.ToInt32(rowA.Cells["colIDProducto"].Value));
 
+                //Insumos
                 foreach (DataRow dr in DTitemsProducto.Rows)
                 {
                     stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
@@ -73,6 +74,14 @@ namespace RamosHermanos.Capas.Interfaz
 
                     StockInsumoB.UpdateStockInsert(stockInsumo, "D");
                 }
+            }
+
+            //Productos
+            foreach (DataGridViewRow dRow in dgvProduccion.Rows)
+            {
+                stockProducto.idProducto = Convert.ToInt32(dRow.Cells["colIDProducto"].Value);
+                stockProducto.valorAnterior = Convert.ToInt32(dRow.Cells["colCantidad"].Value);
+                StockProductoB.UpdateStockInsert(stockProducto, "C");
             }
         }
 

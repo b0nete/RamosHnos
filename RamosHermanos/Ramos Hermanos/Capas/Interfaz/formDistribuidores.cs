@@ -990,7 +990,7 @@ namespace RamosHermanos.Capas.Interfaz
                 itemRecorrido.recorrido = Convert.ToInt32(txtIDRecorridodia.Text);
                 itemsRecorridoB.DeleteItemRecorrido(itemRecorrido);
                 recorrido.distribuidor = Convert.ToInt32(txtIDdistribuidor.Text);
-                RecorridoB.DeleteRecorrido(recorrido);
+                //RecorridoB.DeleteRecorrido(recorrido);
             }
 
             //Cargamos encabezado del recorrido.
