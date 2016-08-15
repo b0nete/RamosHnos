@@ -59,8 +59,10 @@ namespace RamosHermanos.Capas.Interfaz
             {
                 factura.estado = cbEstado.Text;
                 factura.idFactura = Convert.ToInt32(txtIDFactura.Text);
-                FacturaB.UpdateFactura(factura);
+                FacturaB.UpdateFacturaEstado(factura);
             }
+
+            
         }
 
         // Entidades        
@@ -129,12 +131,46 @@ namespace RamosHermanos.Capas.Interfaz
                     stockProducto.idProducto = Convert.ToInt32(dR.Cells["colCodigo"].Value.ToString());
                     stockProducto.valorNuevo = Convert.ToInt32(dR.Cells["colCantidad"].Value);
                     string carga = dR.Cells["colCarga"].Value.ToString();
-                    StockProductoB.UpdateStockInsert(stockProducto, carga);
+                    //StockProductoB.UpdateStockInsert(stockProducto, carga);
+
+                    if (carga == "C")
+                    {
+                        StockProductoB.UpdateStockInsert(stockProducto, carga);
+                    }
+                    else if (carga == "D")
+                    {
+                        DataTable DTitemsProducto = itemsProductoB.BuscarItemsProducto(stockProducto.idProducto);
+
+                        foreach (DataRow dr in DTitemsProducto.Rows)
+                        {
+                            if (dr["tipoStock"].ToString() != "C")
+                            {
+                                stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
+                                stockInsumo.tipoStock = Convert.ToString(dr["tipoStock"].ToString());
+                                stockInsumo.valorAnterior = 0;
+                                stockInsumo.valorNuevo = stockProducto.valorNuevo * Convert.ToInt32(dr["cantidad"].ToString());
+                                DateTime fechaActual = DateTime.Now;
+                                stockInsumo.mesAño = Convert.ToDateTime(fechaActual.ToString("MM-yyyy"));
+                            }
+
+                            if (stockInsumo.tipoStock == "R")
+                            {
+                                stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
+                                stockInsumo.tipoStock = Convert.ToString(dr["tipoStock"].ToString());
+                                stockInsumo.valorAnterior = 0;
+                                stockInsumo.valorNuevo = stockProducto.valorNuevo;
+                                DateTime fechaActual = DateTime.Now;
+                                stockInsumo.mesAño = Convert.ToDateTime(fechaActual.ToString("MM-yyyy"));
+
+                                StockInsumoB.UpdateStockInsertReparto(stockInsumo);
+                            }
+                        }
+                    }
                 }
 
-                MessageBox.Show("Comprobante guardada!");
-            }
 
+                MessageBox.Show("Comprobante guardado!");
+            }
         }
 
         private void btnPrint_Click(object sender, EventArgs e)

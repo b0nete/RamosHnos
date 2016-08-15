@@ -700,7 +700,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label13;
@@ -742,5 +741,6 @@
         private System.Windows.Forms.Label label15;
         public System.Windows.Forms.TextBox txtTotalDescuento;
         private System.Windows.Forms.Label label16;
+        public System.Windows.Forms.Button btnSave;
     }
 }

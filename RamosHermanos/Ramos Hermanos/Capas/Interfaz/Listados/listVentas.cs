@@ -76,7 +76,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
                 frmP.dtpfechaFactura.Value = factura.fechaFactura;
                 frmP.dtpEntrega.Value = factura.fechaEntrega;
-                frmP.cbEstado.SelectedItem = factura.estado;
+                frmP.cbEstado.Text = factura.estado;
                 frmP.txtObservaciones.Text = Convert.ToString(factura.observaciones);
                 frmP.txtNombre.Text = Convert.ToString(factura.nombreCompleto);
                 frmP.txtTotal.Text = Convert.ToString(factura.total);
@@ -85,7 +85,6 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 TelefonoB.CargarCB(frmP.cbTelefono, frmP.txtIDcliente, 1);
 
                 frmP.txtDescuento.Text = tipoClienteB.BuscarCategoriaClienteTXT(Convert.ToInt32(factura.cliente));
-                frmP.cbEstado.SelectedIndex = 1;
 
                 itemFactura.factura = dgvVentas.CurrentRow.Cells["colFactura"].Value.ToString();
                 itemsFacturaB.BuscarItemFacturaDGV(itemFactura, frmP.dgvFactura, frmP.txtTotal);
@@ -95,6 +94,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 cliente = ClienteB.BuscarClienteCIVAyCP(factura.cliente);
                 frmP.txtIVA.Text = cliente.condicionIVA;
                 frmP.Show();
+                frmP.btnSave.Visible = false;
 
                 frmP.calcularTotal();
             }
