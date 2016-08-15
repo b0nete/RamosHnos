@@ -1743,8 +1743,17 @@ namespace RamosHermanos.Capas.Interfaz
             double asd = Convert.ToDouble(txtCreditoMax.Text);
             txtCreditoMax.Text = asd.ToString("N2");
 
-            double asd1 = Convert.ToDouble(txtSaldo.Text);
-            txtSaldo.Text = asd1.ToString("N2");
+            double asd1 = (Convert.ToDouble(txtSaldo.Text));
+            txtSaldo.Text = asd1.ToString("N2");            
+        }
+
+        public void calc()
+        {
+            double asd1 = Math.Abs(Convert.ToDouble(txtSaldo.Text));
+            double porc = Convert.ToDouble(tipoClienteB.BuscarCategoriaClientePorc(Convert.ToInt32(txtIDcliente.Text)));
+
+            double asd2 = (asd1 * porc) / 100;
+            txtSaldo.Text = (asd1 - asd2).ToString("N2");
         }
     }      
 }

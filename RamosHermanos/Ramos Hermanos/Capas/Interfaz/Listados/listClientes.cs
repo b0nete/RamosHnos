@@ -227,6 +227,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     //Saldo $
                     frm.txtCreditoMax.Text = Convert.ToString(cliente.creditoMax);
                     frm.txtSaldo.Text = SaldoB.GenerarSaldo(Convert.ToInt32(frm.txtIDcliente.Text));
+                    frm.calc();
                     //Saldo Envases Aguas
                     frm.txt4LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 1));
                     frm.txt10LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 3));

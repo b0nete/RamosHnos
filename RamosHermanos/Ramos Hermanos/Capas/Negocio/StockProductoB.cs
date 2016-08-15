@@ -266,7 +266,7 @@ namespace RamosHermanos.Capas.Negocio
                 string query = @"(SELECT 'PRODUCCION' as operacion, IP.Produccion as numOperacion, IP.cantidad, P.fechaProduccion as fecha
                                 FROM itemsProduccion IP
                                 INNER JOIN Produccion P ON P.idProduccion = IP.produccion
-                                WHERE IP.producto = @idProducto
+                                WHERE IP.producto = @idProducto and Produccion > 1
                                 ORDER BY P.fechaProduccion DESC)
 
                                 UNION
@@ -274,7 +274,7 @@ namespace RamosHermanos.Capas.Negocio
                                 (SELECT 'VENTA' as operacion, F.idFactura as numOperacion, -(FI.cantidad), F.fechaFactura as fecha
                                 FROM itemsFactura FI
                                 INNER JOIN Facturas F ON FI.factura = F.idFactura
-                                WHERE FI.producto = @idProducto and FI.carga = 'C'
+                                WHERE FI.producto = @idProducto and FI.carga = 'C' 
                                 ORDER BY F.fechaFactura DESC)";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);

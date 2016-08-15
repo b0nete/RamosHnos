@@ -81,15 +81,22 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"(SELECT 'PRODUCCION' as operacion, P.idproduccion as numOperacion, -(IP.cantidad * IIP.cantidad) as cantidad, P.fechaProduccion as fecha
-                                FROM itemsProducto IP
-                                INNER JOIN Produccion P ON P.idProduccion = IP.insumo
-                                INNER JOIN itemsProduccion IIP ON IIP.produccion = P.idProduccion  
-                                WHERE IP.Insumo = @idInsumo
-                                ORDER BY P.fechaProduccion DESC)
+//                string query = @"(SELECT 'PRODUCCION' as operacion, P.idproduccion as numOperacion, -(IP.cantidad * IIP.cantidad) as cantidad, P.fechaProduccion as fecha
+//                                FROM itemsProducto IP
+//                                INNER JOIN Produccion P ON P.idProduccion = IP.insumo
+//                                INNER JOIN itemsProduccion IIP ON IIP.produccion = P.idProduccion  > 1
+//                                WHERE IP.Insumo = @idInsumo
+//                                ORDER BY P.fechaProduccion DESC)
+//
+//                                UNION
+//
+//                                (SELECT 'COMPRA' as operacion, C.idCompras as numOperacion, PI.cantidad, C.fecha as fecha
+//                                FROM itemsCompra PI
+//                                INNER JOIN Compras C ON PI.compra = C.idCompras
+//                                WHERE PI.idInsumo = @idInsumo
+//                                ORDER BY C.fecha DESC);";
 
-                                UNION
-
+                string query = @"
                                 (SELECT 'COMPRA' as operacion, C.idCompras as numOperacion, PI.cantidad, C.fecha as fecha
                                 FROM itemsCompra PI
                                 INNER JOIN Compras C ON PI.compra = C.idCompras

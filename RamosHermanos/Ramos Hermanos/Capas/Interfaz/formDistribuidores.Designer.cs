@@ -1877,7 +1877,6 @@
             this.button7.Size = new System.Drawing.Size(28, 28);
             this.button7.TabIndex = 107;
             this.button7.UseVisualStyleBackColor = true;
-            this.button7.Visible = false;
             // 
             // btnUpMa
             // 
@@ -2042,7 +2041,6 @@
             this.button14.Size = new System.Drawing.Size(28, 28);
             this.button14.TabIndex = 107;
             this.button14.UseVisualStyleBackColor = true;
-            this.button14.Visible = false;
             // 
             // btnUpMi
             // 
@@ -2207,7 +2205,6 @@
             this.button21.Size = new System.Drawing.Size(28, 28);
             this.button21.TabIndex = 107;
             this.button21.UseVisualStyleBackColor = true;
-            this.button21.Visible = false;
             // 
             // btnUpJu
             // 
@@ -2360,7 +2357,6 @@
             this.button28.Size = new System.Drawing.Size(28, 28);
             this.button28.TabIndex = 107;
             this.button28.UseVisualStyleBackColor = true;
-            this.button28.Visible = false;
             // 
             // btnUpVi
             // 
@@ -2526,7 +2522,6 @@
             this.button35.Size = new System.Drawing.Size(28, 28);
             this.button35.TabIndex = 107;
             this.button35.UseVisualStyleBackColor = true;
-            this.button35.Visible = false;
             // 
             // btnUpSa
             // 
@@ -2692,7 +2687,6 @@
             this.button42.Size = new System.Drawing.Size(28, 28);
             this.button42.TabIndex = 107;
             this.button42.UseVisualStyleBackColor = true;
-            this.button42.Visible = false;
             this.button42.Click += new System.EventHandler(this.button42_Click);
             // 
             // txtIDRecorridoDo

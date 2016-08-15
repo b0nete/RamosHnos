@@ -142,7 +142,7 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySqlCommand cmdPagado = new MySqlCommand(queryPagado, MySQL.sqlcnx);
                 cmdPagado.Parameters.AddWithValue("@cliente", cliente);
-                int totalPagado = Convert.ToInt32(cmdPagado.ExecuteScalar());
+                double totalPagado = Convert.ToDouble(cmdPagado.ExecuteScalar());
 
                 string queryPendiente = @"SELECT IFNULL((SELECT SUM(-total) as total2
                                         FROM Facturas
@@ -150,11 +150,20 @@ namespace RamosHermanos.Capas.Negocio
 
                 MySqlCommand cmdPendiente = new MySqlCommand(queryPendiente, MySQL.sqlcnx);
                 cmdPendiente.Parameters.AddWithValue("@cliente", cliente);
-                int totalPendiente = Convert.ToInt32(cmdPendiente.ExecuteScalar());
+                double totalPendiente = Convert.ToDouble(cmdPendiente.ExecuteScalar());
 
-                string totalDeuda = Convert.ToString(totalPendiente);
+                double porcDescuento = tipoClienteB.BuscarCategoriaClientePorc1(cliente);
+                
+                string casiTotal = Convert.ToString(((totalPendiente) * porcDescuento) / 100);
+                string total = Convert.ToString((totalPendiente) - Convert.ToDouble(casiTotal));
 
-                return totalDeuda;
+                //MySQL.DisconnectDB();
+
+                //return total;
+
+                //string totalDeuda = Convert.ToString(totalPendiente);
+
+                return total;
             }
             catch (Exception ex)
             {

@@ -83,6 +83,8 @@ namespace RamosHermanos.Capas.Interfaz
                 stockProducto.valorAnterior = Convert.ToInt32(dRow.Cells["colCantidad"].Value);
                 StockProductoB.UpdateStockInsert(stockProducto, "C");
             }
+
+            MessageBox.Show("Produccion guardada");
         }
 
         //Entidades
