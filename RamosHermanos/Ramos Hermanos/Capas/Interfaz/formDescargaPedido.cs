@@ -75,6 +75,33 @@ namespace RamosHermanos.Capas.Interfaz
                 itemFactura.carga = "D";
 
                 itemsFacturaB.InsertItemFactura(itemFactura);
+
+                DataTable DTitemsProducto = itemsProductoB.BuscarItemsProducto(itemFactura.producto);
+
+                foreach (DataRow dr in DTitemsProducto.Rows)
+                {
+                    if (dr["tipoStock"].ToString() != "C")
+                    {
+                        stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
+                        stockInsumo.tipoStock = Convert.ToString(dr["tipoStock"].ToString());
+                        stockInsumo.valorAnterior = 0;
+                        stockInsumo.valorNuevo = stockProducto.valorNuevo * Convert.ToInt32(dr["cantidad"].ToString());
+                        DateTime fechaActual = DateTime.Now;
+                        stockInsumo.mesAño = Convert.ToDateTime(fechaActual.ToString("MM-yyyy"));
+                    }
+
+                    if (stockInsumo.tipoStock == "R")
+                    {
+                        stockInsumo.idInsumo = Convert.ToInt32(dr["insumo"].ToString());
+                        stockInsumo.tipoStock = Convert.ToString(dr["tipoStock"].ToString());
+                        stockInsumo.valorAnterior = 0;
+                        stockInsumo.valorNuevo = itemFactura.cantidad;
+                        DateTime fechaActual = DateTime.Now;
+                        stockInsumo.mesAño = Convert.ToDateTime(fechaActual.ToString("MM-yyyy"));
+
+                        StockInsumoB.UpdateStockInsertReparto(stockInsumo);
+                    }
+                }
             }
         }
 
@@ -82,6 +109,8 @@ namespace RamosHermanos.Capas.Interfaz
         itemFacturaEntity itemFactura = new itemFacturaEntity();
 
         StockProductoEntity stockProducto = new StockProductoEntity();
+
+        StockInsumoEntity stockInsumo = new StockInsumoEntity();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -158,32 +187,62 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void txt25_Validated(object sender, EventArgs e)
         {
-            CargaTXT(txt25, 6);
+            DescargaTXT(txt25, 6);
         }
 
         private void txt20_Validated(object sender, EventArgs e)
         {
-            CargaTXT(txt20, 5);
+            DescargaTXT(txt20, 5);
         }
 
         private void txt12_Validated(object sender, EventArgs e)
         {
-            CargaTXT(txt12, 4);
+            DescargaTXT(txt12, 4);
         }
 
         private void txt10_Validated(object sender, EventArgs e)
         {
-            CargaTXT(txt10, 3);
+            DescargaTXT(txt10, 3);
         }
 
         private void txt4_Validated(object sender, EventArgs e)
         {
-            CargaTXT(txt4, 1);
+            DescargaTXT(txt4, 1);
         }
 
         private void formDescargaPedido_FormClosed(object sender, FormClosedEventArgs e)
         {
 
+        }
+
+        private void formDescargaPedido_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt20_TextChanged(object sender, EventArgs e)
+        {
+            //DescargaTXT(txt20, 5);
+        }
+
+        private void txt25_TextChanged(object sender, EventArgs e)
+        {
+            //DescargaTXT(txt25, 6);
+        }
+
+        private void txt12_TextChanged(object sender, EventArgs e)
+        {
+            //DescargaTXT(txt12, 4);
+        }
+
+        private void txt10_TextChanged(object sender, EventArgs e)
+        {
+            //DescargaTXT(txt10, 3);
+        }
+
+        private void txt4_TextChanged(object sender, EventArgs e)
+        {
+            //DescargaTXT(txt4, 1);
         }
     }
 }

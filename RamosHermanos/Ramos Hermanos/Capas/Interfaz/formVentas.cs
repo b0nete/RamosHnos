@@ -113,9 +113,9 @@ namespace RamosHermanos.Capas.Interfaz
                     StockProductoB.UpdateStockUpdate(stockProducto);
                     // DB
                     itemsFacturaB.UpdateItemFactura(itemFactura);
-
-                    MessageBox.Show("Factura actualizada!");
                 }
+
+                MessageBox.Show("Comprobante actualizado");
             }
             else
             {
@@ -129,6 +129,7 @@ namespace RamosHermanos.Capas.Interfaz
                     cargarItemsFactura(dgvFactura, dR);
                     itemsFacturaB.InsertItemFactura(itemFactura);
                     stockProducto.idProducto = Convert.ToInt32(dR.Cells["colCodigo"].Value.ToString());
+                    stockProducto.valorAnterior = 0;
                     stockProducto.valorNuevo = Convert.ToInt32(dR.Cells["colCantidad"].Value);
                     string carga = dR.Cells["colCarga"].Value.ToString();
                     //StockProductoB.UpdateStockInsert(stockProducto, carga);
@@ -293,7 +294,7 @@ namespace RamosHermanos.Capas.Interfaz
                 stockProducto.idProducto = Convert.ToInt32(idProducto);
                 stockProducto.valorAnterior = cantidadValorAnterior;
                 stockProducto.valorNuevo = cantidadValorNuevo;
-                StockProductoB.UpdateStockInsert(stockProducto, carga);
+                //StockProductoB.UpdateStockInsert(stockProducto, carga);
             }
             else if (carga == "D")
             {
@@ -304,7 +305,7 @@ namespace RamosHermanos.Capas.Interfaz
                 stockInsumo.valorAnterior = cantidadValorAnterior * Convert.ToInt32(dr["cantidad"].ToString());
                 stockInsumo.valorNuevo = cantidadValorNuevo * Convert.ToInt32(dr["cantidad"].ToString());
 
-                StockInsumoB.UpdateStockInsert(stockInsumo, carga);
+                //StockInsumoB.UpdateStockInsert(stockInsumo, carga);
             }
 
             calcularTotal();

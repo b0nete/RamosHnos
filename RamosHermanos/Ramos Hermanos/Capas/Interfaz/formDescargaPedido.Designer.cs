@@ -98,6 +98,7 @@
             this.txt4.Size = new System.Drawing.Size(66, 20);
             this.txt4.TabIndex = 5;
             this.txt4.Text = "0";
+            this.txt4.TextChanged += new System.EventHandler(this.txt4_TextChanged);
             this.txt4.Validated += new System.EventHandler(this.txt4_Validated);
             // 
             // txt10
@@ -107,6 +108,7 @@
             this.txt10.Size = new System.Drawing.Size(66, 20);
             this.txt10.TabIndex = 4;
             this.txt10.Text = "0";
+            this.txt10.TextChanged += new System.EventHandler(this.txt10_TextChanged);
             this.txt10.Validated += new System.EventHandler(this.txt10_Validated);
             // 
             // txt12
@@ -116,6 +118,7 @@
             this.txt12.Size = new System.Drawing.Size(66, 20);
             this.txt12.TabIndex = 3;
             this.txt12.Text = "0";
+            this.txt12.TextChanged += new System.EventHandler(this.txt12_TextChanged);
             this.txt12.Validated += new System.EventHandler(this.txt12_Validated);
             // 
             // txt20
@@ -125,6 +128,7 @@
             this.txt20.Size = new System.Drawing.Size(66, 20);
             this.txt20.TabIndex = 2;
             this.txt20.Text = "0";
+            this.txt20.TextChanged += new System.EventHandler(this.txt20_TextChanged);
             this.txt20.Validated += new System.EventHandler(this.txt20_Validated);
             // 
             // txt25
@@ -134,6 +138,7 @@
             this.txt25.Size = new System.Drawing.Size(66, 20);
             this.txt25.TabIndex = 1;
             this.txt25.Text = "0";
+            this.txt25.TextChanged += new System.EventHandler(this.txt25_TextChanged);
             this.txt25.Validated += new System.EventHandler(this.txt25_Validated);
             // 
             // label5
@@ -191,6 +196,7 @@
             this.Name = "formDescargaPedido";
             this.Text = "Descarga Aguas";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formDescargaPedido_FormClosed);
+            this.Load += new System.EventHandler(this.formDescargaPedido_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

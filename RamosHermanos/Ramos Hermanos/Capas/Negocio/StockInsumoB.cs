@@ -94,7 +94,7 @@ namespace RamosHermanos.Capas.Negocio
                                 FROM itemsCompra PI
                                 INNER JOIN Compras C ON PI.compra = C.idCompras
                                 WHERE PI.idInsumo = @idInsumo
-                                ORDER BY C.fecha DESC)";
+                                ORDER BY C.fecha DESC);";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
 
