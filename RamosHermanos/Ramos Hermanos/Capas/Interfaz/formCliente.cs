@@ -1758,6 +1758,8 @@ namespace RamosHermanos.Capas.Interfaz
 
         private void btnSaveCalle_Click(object sender, EventArgs e)
         {
+            double asd = Convert.ToDouble(txtMonto.Text);
+            txtMonto.Text = asd.ToString("N2");
             cargarPago();
             PagoB.InsertPago(pago);
             PagoB.UpdateDGV(Convert.ToInt32(txtIDcliente.Text), dgvPagos);
@@ -1775,6 +1777,21 @@ namespace RamosHermanos.Capas.Interfaz
             pago.cliente = Convert.ToInt32(txtIDcliente.Text);
             pago.monto = Convert.ToDouble(txtMonto.Text);
             pago.fechaPago = System.DateTime.Now;
+        }
+
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+         if (e.KeyChar.ToString() == ".") 
+         {
+             e.Handled = true; 
+             this.txtMonto.Text += ","; 
+             SendKeys.Send("{END}"); 
+         } 
+        }
+
+        private void txtMonto_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     
     }      
