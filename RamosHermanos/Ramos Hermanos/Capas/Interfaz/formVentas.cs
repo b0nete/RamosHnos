@@ -75,6 +75,11 @@ namespace RamosHermanos.Capas.Interfaz
             factura.formaPago = cbformaPago.Text;
             factura.tipoFactura = cbTipoFactura.Text;
             factura.total = Convert.ToDouble(txtTotal.Text);
+            factura.porcDescuento = tipoClienteB.BuscarCategoriaClientePorc(factura.cliente);
+
+            double descuento = factura.porcDescuento * factura.total / 100;
+
+            factura.totalFinal = factura.total - descuento;
             factura.formaPago = cbformaPago.Text;
             factura.fechaVencimiento = dtpVencimiento.Value;
             factura.fechaEntrega = dtpEntrega.Value;

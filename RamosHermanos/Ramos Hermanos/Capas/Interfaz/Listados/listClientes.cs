@@ -226,8 +226,8 @@ namespace RamosHermanos.Capas.Interfaz.Listados
 
                     //Saldo $
                     frm.txtCreditoMax.Text = Convert.ToString(cliente.creditoMax);
-                    frm.txtSaldo.Text = SaldoB.GenerarSaldo(Convert.ToInt32(frm.txtIDcliente.Text));
-                    frm.calc();
+                    frm.txtSaldo.Text = SaldoB.GenerarSaldodesdeTotalFinal(Convert.ToInt32(frm.txtIDcliente.Text));
+                    //frm.calc();
                     //Saldo Envases Aguas
                     frm.txt4LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 1));
                     frm.txt10LT.Text = Convert.ToString(SaldoEnvasesB.GenerarSaldoEnvases(cliente.idCliente, 3));
@@ -250,6 +250,15 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                     frm.cbSabado.Checked = visita.sabado;
                     //Tabs
                     frm.CasePersona();
+                    //Pago
+                    PagoB.UpdateDGV(cliente.idCliente, frm.dgvPagos);
+                    frm.txtTotalPagado.Text = PagoB.totalPagado(cliente.idCliente);
+                    frm.txtTotalFacturado.Text = frm.txtSaldo.Text;
+
+                    if (frm.txtTotalFacturado.Text != string.Empty && frm.txtTotalPagado.Text != string.Empty)
+                    {
+                        frm.txtTotalResultante.Text = Convert.ToString(Convert.ToDouble(frm.txtTotalFacturado.Text) - Convert.ToDouble(frm.txtTotalPagado.Text));
+                    }
                 }
 
                 else if (cliente.tipoPersona == "PJ")

@@ -1755,6 +1755,28 @@ namespace RamosHermanos.Capas.Interfaz
             double asd2 = (asd1 * porc) / 100;
             txtSaldo.Text = (asd1 - asd2).ToString("N2");
         }
+
+        private void btnSaveCalle_Click(object sender, EventArgs e)
+        {
+            cargarPago();
+            PagoB.InsertPago(pago);
+            PagoB.UpdateDGV(Convert.ToInt32(txtIDcliente.Text), dgvPagos);
+
+            if (txtTotalFacturado.Text != string.Empty && txtTotalPagado.Text != string.Empty)
+            {
+                txtTotalResultante.Text = Convert.ToString(Convert.ToDouble(txtTotalFacturado.Text) - Convert.ToDouble(txtTotalPagado.Text));
+            }
+            
+        }
+
+        PagoEntity pago = new PagoEntity();
+        private void cargarPago()
+        {
+            pago.cliente = Convert.ToInt32(txtIDcliente.Text);
+            pago.monto = Convert.ToDouble(txtMonto.Text);
+            pago.fechaPago = System.DateTime.Now;
+        }
+    
     }      
 }
 

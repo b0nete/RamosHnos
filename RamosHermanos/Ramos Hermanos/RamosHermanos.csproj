@@ -120,6 +120,7 @@
     <Compile Include="Capas\Entidades\logEntity.cs" />
     <Compile Include="Capas\Entidades\MarcaEntity.cs" />
     <Compile Include="Capas\Entidades\MedidaEntity.cs" />
+    <Compile Include="Capas\Entidades\PagoEntity.cs" />
     <Compile Include="Capas\Entidades\PedidoEntity.cs" />
     <Compile Include="Capas\Entidades\PrecioInsumoEntity.cs" />
     <Compile Include="Capas\Entidades\PrecioProductoEntity.cs" />
@@ -459,6 +460,7 @@
     <Compile Include="Capas\Negocio\CalleB.cs" />
     <Compile Include="Capas\Negocio\ComprasB.cs" />
     <Compile Include="Capas\Negocio\LogB.cs" />
+    <Compile Include="Capas\Negocio\PagoB.cs" />
     <Compile Include="Capas\Negocio\PrecioInsumosB.cs" />
     <Compile Include="Capas\Negocio\itemsProductoB.cs" />
     <Compile Include="Capas\Entidades\LogStockInsumoEntity.cs" />

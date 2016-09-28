@@ -123,18 +123,18 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-//                string query = @"SELECT totalPagado.total1-totalPendiente.total2
-//                                FROM
-//                                (
-//                                SELECT SUM(total) as total1
-//                                FROM Facturas
-//                                WHERE estado = 'Pagado' and cliente = @cliente 
-//                                ) as TotalPagado,
-//                                (
-//                                SELECT SUM(total) as total2
-//                                FROM Facturas
-//                                WHERE estado = 'Pendiente' and cliente = @cliente
-//                                ) as TotalPendiente";
+                //                string query = @"SELECT totalPagado.total1-totalPendiente.total2
+                //                                FROM
+                //                                (
+                //                                SELECT SUM(total) as total1
+                //                                FROM Facturas
+                //                                WHERE estado = 'Pagado' and cliente = @cliente 
+                //                                ) as TotalPagado,
+                //                                (
+                //                                SELECT SUM(total) as total2
+                //                                FROM Facturas
+                //                                WHERE estado = 'Pendiente' and cliente = @cliente
+                //                                ) as TotalPendiente";
 
                 string queryPagado = @"SELECT IFNULL((SELECT SUM(total) as total1
                                     FROM Facturas
@@ -153,9 +153,61 @@ namespace RamosHermanos.Capas.Negocio
                 double totalPendiente = Convert.ToDouble(cmdPendiente.ExecuteScalar());
 
                 double porcDescuento = tipoClienteB.BuscarCategoriaClientePorc1(cliente);
-                
+
                 string casiTotal = Convert.ToString(((totalPendiente) * porcDescuento) / 100);
                 string total = Convert.ToString((totalPendiente) - Convert.ToDouble(casiTotal));
+
+                //MySQL.DisconnectDB();
+
+                //return total;
+
+                //string totalDeuda = Convert.ToString(totalPendiente);
+
+                return total;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex);
+                throw;
+            }
+        }
+
+            public static String GenerarSaldodesdeTotalFinal(int cliente)
+        {
+            try
+            {
+                MySQL.ConnectDB();
+
+//                string query = @"SELECT totalPagado.total1-totalPendiente.total2
+//                                FROM
+//                                (
+//                                SELECT SUM(total) as total1
+//                                FROM Facturas
+//                                WHERE estado = 'Pagado' and cliente = @cliente 
+//                                ) as TotalPagado,
+//                                (
+//                                SELECT SUM(total) as total2
+//                                FROM Facturas
+//                                WHERE estado = 'Pendiente' and cliente = @cliente
+//                                ) as TotalPendiente";
+
+                string queryPagado = @"SELECT IFNULL((SELECT SUM(totalDescuento) as total1
+                                    FROM Facturas
+                                    WHERE estado = 'Pagado' and cliente = @cliente), 0)";
+
+                MySqlCommand cmdPagado = new MySqlCommand(queryPagado, MySQL.sqlcnx);
+                cmdPagado.Parameters.AddWithValue("@cliente", cliente);
+                double totalPagado = Convert.ToDouble(cmdPagado.ExecuteScalar());
+
+                string queryPendiente = @"SELECT IFNULL((SELECT SUM(totalDescuento) as total2
+                                        FROM Facturas
+                                        WHERE estado = 'Pendiente' and cliente = @cliente), 0)";
+
+                MySqlCommand cmdPendiente = new MySqlCommand(queryPendiente, MySQL.sqlcnx);
+                cmdPendiente.Parameters.AddWithValue("@cliente", cliente);
+                double totalPendiente = Convert.ToDouble(cmdPendiente.ExecuteScalar());
+                
+                string total = Convert.ToString((totalPendiente));
 
                 //MySQL.DisconnectDB();
 

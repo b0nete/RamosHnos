@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCliente));
             this.tabMovimientos = new System.Windows.Forms.TabPage();
             this.rbAnuladas = new System.Windows.Forms.RadioButton();
@@ -244,6 +245,16 @@
             this.cbDomicilio = new System.Windows.Forms.ComboBox();
             this.btnSaveVisita = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.dgvPagos = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtTotalFacturado = new System.Windows.Forms.TextBox();
+            this.txtTotalPagado = new System.Windows.Forms.TextBox();
+            this.txtTotalResultante = new System.Windows.Forms.TextBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnSaveCalle = new System.Windows.Forms.Button();
+            this.txtMonto = new System.Windows.Forms.TextBox();
+            this.label68 = new System.Windows.Forms.Label();
             this.tabMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
             this.tabListado.SuspendLayout();
@@ -271,10 +282,18 @@
             this.groupBox15.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMovimientos
             // 
+            this.tabMovimientos.Controls.Add(this.label68);
+            this.tabMovimientos.Controls.Add(this.txtMonto);
+            this.tabMovimientos.Controls.Add(this.btnSaveCalle);
+            this.tabMovimientos.Controls.Add(this.txtTotalResultante);
+            this.tabMovimientos.Controls.Add(this.txtTotalPagado);
+            this.tabMovimientos.Controls.Add(this.txtTotalFacturado);
+            this.tabMovimientos.Controls.Add(this.dgvPagos);
             this.tabMovimientos.Controls.Add(this.rbAnuladas);
             this.tabMovimientos.Controls.Add(this.rbNoPagas);
             this.tabMovimientos.Controls.Add(this.rbPagas);
@@ -334,7 +353,7 @@
             this.dgvMovimientos.Name = "dgvMovimientos";
             this.dgvMovimientos.ReadOnly = true;
             this.dgvMovimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMovimientos.Size = new System.Drawing.Size(760, 493);
+            this.dgvMovimientos.Size = new System.Drawing.Size(370, 435);
             this.dgvMovimientos.TabIndex = 0;
             // 
             // colIDFactura
@@ -2716,6 +2735,91 @@
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
+            // dgvPagos
+            // 
+            this.dgvPagos.AllowUserToAddRows = false;
+            this.dgvPagos.AllowUserToDeleteRows = false;
+            this.dgvPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPagos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2});
+            this.dgvPagos.Location = new System.Drawing.Point(398, 35);
+            this.dgvPagos.Name = "dgvPagos";
+            this.dgvPagos.ReadOnly = true;
+            this.dgvPagos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPagos.Size = new System.Drawing.Size(370, 435);
+            this.dgvPagos.TabIndex = 9;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "monto";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Monto";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "fechaPago";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Fecha Pago";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // txtTotalFacturado
+            // 
+            this.txtTotalFacturado.Location = new System.Drawing.Point(278, 476);
+            this.txtTotalFacturado.Name = "txtTotalFacturado";
+            this.txtTotalFacturado.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalFacturado.TabIndex = 10;
+            // 
+            // txtTotalPagado
+            // 
+            this.txtTotalPagado.Location = new System.Drawing.Point(668, 476);
+            this.txtTotalPagado.Name = "txtTotalPagado";
+            this.txtTotalPagado.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalPagado.TabIndex = 11;
+            // 
+            // txtTotalResultante
+            // 
+            this.txtTotalResultante.Location = new System.Drawing.Point(668, 514);
+            this.txtTotalResultante.Name = "txtTotalResultante";
+            this.txtTotalResultante.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalResultante.TabIndex = 13;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // btnSaveCalle
+            // 
+            this.btnSaveCalle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSaveCalle.BackgroundImage")));
+            this.btnSaveCalle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSaveCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSaveCalle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveCalle.Location = new System.Drawing.Point(740, 6);
+            this.btnSaveCalle.Name = "btnSaveCalle";
+            this.btnSaveCalle.Size = new System.Drawing.Size(28, 28);
+            this.btnSaveCalle.TabIndex = 106;
+            this.btnSaveCalle.UseVisualStyleBackColor = true;
+            this.btnSaveCalle.Click += new System.EventHandler(this.btnSaveCalle_Click);
+            // 
+            // txtMonto
+            // 
+            this.txtMonto.Location = new System.Drawing.Point(634, 9);
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Size = new System.Drawing.Size(100, 20);
+            this.txtMonto.TabIndex = 107;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(551, 14);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(77, 13);
+            this.label68.TabIndex = 108;
+            this.label68.Text = "Monto a Pagar";
+            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2776,6 +2880,7 @@
             this.groupBox8.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2997,6 +3102,16 @@
         public System.Windows.Forms.CheckBox cbMiercoles;
         public System.Windows.Forms.CheckBox cbMartes;
         public System.Windows.Forms.CheckBox cbLunes;
+        public System.Windows.Forms.DataGridView dgvPagos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.TextBox txtMonto;
+        private System.Windows.Forms.Button btnSaveCalle;
+        public System.Windows.Forms.TextBox txtTotalResultante;
+        public System.Windows.Forms.TextBox txtTotalPagado;
+        public System.Windows.Forms.TextBox txtTotalFacturado;
 
     }
 }

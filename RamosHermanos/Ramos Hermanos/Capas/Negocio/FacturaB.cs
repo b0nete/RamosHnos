@@ -175,7 +175,7 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
 
                 string query1 = @"UPDATE Facturas 
-                                 SET estado = @estado, total = @total, formaPago = @formaPago
+                                 SET estado = @estado, total = @total, porcDescuento = @porcDescuento, totalDescuento = @totalDescuento, formaPago = @formaPago
                                  WHERE idFactura = @idFactura";
 
                 MySqlCommand cmd1 = new MySqlCommand(query1, MySQL.sqlcnx);
@@ -183,6 +183,8 @@ namespace RamosHermanos.Capas.Negocio
                 cmd1.Parameters.AddWithValue("@idFactura", factura.idFactura);
                 cmd1.Parameters.AddWithValue("@estado", factura.estado);
                 cmd1.Parameters.AddWithValue("@total", factura.total);
+                cmd1.Parameters.AddWithValue("@porcDescuento", factura.porcDescuento);
+                cmd1.Parameters.AddWithValue("@totalDescuento", factura.totalFinal);
                 cmd1.Parameters.AddWithValue("@formaPago", factura.formaPago);
 
                 cmd1.ExecuteNonQuery();
@@ -240,8 +242,8 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO Facturas (tipoFactura, numFactura, fechaFactura, fechaVencimiento, fechaEntrega, formaPago, cliente, domicilio, observaciones, total, estado) 
-                                 VALUES (@tipoFactura, @numFactura, @fechaFactura, @fechaVencimiento, @fechaEntrega, @formaPago, @cliente, @domicilio, @observaciones, @total, @estado);
+                string query = @"INSERT INTO Facturas (tipoFactura, numFactura, fechaFactura, fechaVencimiento, fechaEntrega, formaPago, cliente, domicilio, observaciones, total, porcDescuento, totalDescuento, estado) 
+                                 VALUES (@tipoFactura, @numFactura, @fechaFactura, @fechaVencimiento, @fechaEntrega, @formaPago, @cliente, @domicilio, @observaciones, @total, @porcDescuento, @totalDescuento, @estado);
                                  SELECT LAST_INSERT_ID();";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -256,6 +258,8 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@domicilio", factura.domicilio);
                 cmd.Parameters.AddWithValue("@observaciones", factura.observaciones);
                 cmd.Parameters.AddWithValue("@total", factura.total);
+                cmd.Parameters.AddWithValue("@porcDescuento", factura.porcDescuento);
+                cmd.Parameters.AddWithValue("@totalDescuento", factura.totalFinal);
                 cmd.Parameters.AddWithValue("@estado", factura.estado);
 
                 txtIDFactura.Text = Convert.ToString(cmd.ExecuteScalar());
@@ -307,8 +311,8 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = @"INSERT INTO Facturas (tipoFactura, numFactura, fechaFactura, fechaVencimiento, fechaEntrega, formaPago, cliente, domicilio, observaciones, total, estado) 
-                                 VALUES (@tipoFactura, @numFactura, @fechaFactura, @fechaVencimiento, @fechaEntrega, @formaPago, @cliente, @domicilio, @observaciones, @total, @estado);
+                string query = @"INSERT INTO Facturas (tipoFactura, numFactura, fechaFactura, fechaVencimiento, fechaEntrega, formaPago, cliente, domicilio, observaciones, total, porcDescuento, totalDescuento, estado) 
+                                 VALUES (@tipoFactura, @numFactura, @fechaFactura, @fechaVencimiento, @fechaEntrega, @formaPago, @cliente, @domicilio, @observaciones, @total, @porcDescuento, @totalDescuento, @estado);
                                  SELECT LAST_INSERT_ID();";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -323,6 +327,8 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@domicilio", factura.domicilio);
                 cmd.Parameters.AddWithValue("@observaciones", factura.observaciones);
                 cmd.Parameters.AddWithValue("@total", factura.total);
+                cmd.Parameters.AddWithValue("@porcDescuento", factura.porcDescuento);
+                cmd.Parameters.AddWithValue("@totalDescuento", factura.totalFinal);
                 cmd.Parameters.AddWithValue("@estado", factura.estado);
 
                 cmd.ExecuteNonQuery();
