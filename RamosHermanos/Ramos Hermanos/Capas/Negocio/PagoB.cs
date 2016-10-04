@@ -49,10 +49,11 @@ namespace RamosHermanos.Capas.Negocio
             {
                 MySQL.ConnectDB();
 
-                string query = "SELECT * FROM Pagos";
+                string query = @"SELECT * FROM Pagos
+                                 WHERE cliente=@cliente";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
-
+                cmd.Parameters.AddWithValue("@cliente", cliente);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
 

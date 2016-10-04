@@ -255,6 +255,9 @@
             this.btnSaveVisita = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
             this.tabMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
@@ -287,6 +290,9 @@
             // 
             // tabMovimientos
             // 
+            this.tabMovimientos.Controls.Add(this.label71);
+            this.tabMovimientos.Controls.Add(this.label70);
+            this.tabMovimientos.Controls.Add(this.label69);
             this.tabMovimientos.Controls.Add(this.label68);
             this.tabMovimientos.Controls.Add(this.txtMonto);
             this.tabMovimientos.Controls.Add(this.btnSaveCalle);
@@ -2822,6 +2828,36 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label69.Location = new System.Drawing.Point(186, 479);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(82, 13);
+            this.label69.TabIndex = 109;
+            this.label69.Text = "Total Facturado";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label70.Location = new System.Drawing.Point(576, 479);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(71, 13);
+            this.label70.TabIndex = 110;
+            this.label70.Text = "Total Pagado";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label71.Location = new System.Drawing.Point(576, 517);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(85, 13);
+            this.label71.TabIndex = 111;
+            this.label71.Text = "Total Resultante";
+            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3114,6 +3150,9 @@
         public System.Windows.Forms.TextBox txtTotalResultante;
         public System.Windows.Forms.TextBox txtTotalPagado;
         public System.Windows.Forms.TextBox txtTotalFacturado;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label69;
 
     }
 }
