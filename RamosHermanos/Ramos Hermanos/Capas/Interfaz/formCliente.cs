@@ -649,7 +649,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool ValidarCampos() //Verificar valores necesarios cargados.
         {
-            if (txtnumDoc.Text == string.Empty || txtNombre.Text == string.Empty || txtApellido.Text == string.Empty || txtCUIL.MaskFull == false)
+            if (txtnumDoc.Text == string.Empty || txtNombre.Text == string.Empty || txtApellido.Text == string.Empty)
             {
                 MessageBox.Show("Datos necesarios incompletos.");
                 return false;
@@ -659,7 +659,7 @@ namespace RamosHermanos.Capas.Interfaz
 
         private bool ValidarCamposPJ() //Verificar valores necesarios cargados.
         {
-            if (txtCUILPJ.Text == string.Empty || txtNombrePJ.Text == string.Empty || txtCreditoMaxPJ.Text == string.Empty)
+            if (txtNombrePJ.Text == string.Empty || txtCreditoMaxPJ.Text == string.Empty)
             {
                 MessageBox.Show("Datos necesarios incompletos.");
                 return false;
@@ -1081,6 +1081,7 @@ namespace RamosHermanos.Capas.Interfaz
             cliente.estado = cbEstadoPJ.Checked;
         }
 
+    
         SaldoEntity saldo = new SaldoEntity();
         public void CargarSaldo(TextBox txt)
         {

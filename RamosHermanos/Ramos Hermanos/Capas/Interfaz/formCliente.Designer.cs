@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formCliente));
             this.tabMovimientos = new System.Windows.Forms.TabPage();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
             this.txtMonto = new System.Windows.Forms.TextBox();
             this.btnSaveCalle = new System.Windows.Forms.Button();
@@ -101,11 +104,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtCUIL = new System.Windows.Forms.MaskedTextBox();
             this.txtIDcliente = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.cbTipoDoc = new System.Windows.Forms.ComboBox();
@@ -255,9 +256,6 @@
             this.btnSaveVisita = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.label69 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
             this.tabMovimientos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovimientos)).BeginInit();
@@ -310,6 +308,36 @@
             this.tabMovimientos.TabIndex = 4;
             this.tabMovimientos.Text = "Movimientos";
             this.tabMovimientos.UseVisualStyleBackColor = true;
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label71.Location = new System.Drawing.Point(576, 517);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(85, 13);
+            this.label71.TabIndex = 111;
+            this.label71.Text = "Total Resultante";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label70.Location = new System.Drawing.Point(576, 479);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(71, 13);
+            this.label70.TabIndex = 110;
+            this.label70.Text = "Total Pagado";
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label69.Location = new System.Drawing.Point(186, 479);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(82, 13);
+            this.label69.TabIndex = 109;
+            this.label69.Text = "Total Facturado";
             // 
             // label68
             // 
@@ -831,11 +859,9 @@
             this.groupBox6.Controls.Add(this.label8);
             this.groupBox6.Controls.Add(this.txtCUIL);
             this.groupBox6.Controls.Add(this.txtIDcliente);
-            this.groupBox6.Controls.Add(this.label13);
             this.groupBox6.Controls.Add(this.label10);
             this.groupBox6.Controls.Add(this.label9);
             this.groupBox6.Controls.Add(this.label17);
-            this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.label15);
             this.groupBox6.Controls.Add(this.label14);
             this.groupBox6.Controls.Add(this.cbTipoDoc);
@@ -1086,19 +1112,6 @@
             this.txtIDcliente.TabIndex = 5;
             this.txtIDcliente.TextChanged += new System.EventHandler(this.txtIDcliente_TextChanged);
             // 
-            // label13
-            // 
-            this.label13.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(57, 152);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(11, 13);
-            this.label13.TabIndex = 66;
-            this.label13.Text = "*";
-            // 
             // label10
             // 
             this.label10.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
@@ -1134,19 +1147,6 @@
             this.label17.Size = new System.Drawing.Size(12, 15);
             this.label17.TabIndex = 64;
             this.label17.Text = "*";
-            // 
-            // label16
-            // 
-            this.label16.AccessibleRole = System.Windows.Forms.AccessibleRole.Animation;
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(57, 179);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(11, 13);
-            this.label16.TabIndex = 68;
-            this.label16.Text = "*";
             // 
             // label15
             // 
@@ -1327,7 +1327,6 @@
             // 
             // txtDispenser
             // 
-            this.txtDispenser.Enabled = false;
             this.txtDispenser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtDispenser.Location = new System.Drawing.Point(64, 97);
             this.txtDispenser.Name = "txtDispenser";
@@ -1346,7 +1345,6 @@
             // 
             // txtPie
             // 
-            this.txtPie.Enabled = false;
             this.txtPie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtPie.Location = new System.Drawing.Point(64, 71);
             this.txtPie.Name = "txtPie";
@@ -1365,7 +1363,6 @@
             // 
             // txtCanasta
             // 
-            this.txtCanasta.Enabled = false;
             this.txtCanasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtCanasta.Location = new System.Drawing.Point(64, 45);
             this.txtCanasta.Name = "txtCanasta";
@@ -1384,7 +1381,6 @@
             // 
             // txtCajon
             // 
-            this.txtCajon.Enabled = false;
             this.txtCajon.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtCajon.Location = new System.Drawing.Point(64, 19);
             this.txtCajon.Name = "txtCajon";
@@ -1423,7 +1419,6 @@
             // 
             // txt25LT
             // 
-            this.txt25LT.Enabled = false;
             this.txt25LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txt25LT.Location = new System.Drawing.Point(64, 123);
             this.txt25LT.Name = "txt25LT";
@@ -1432,7 +1427,6 @@
             // 
             // txt20LT
             // 
-            this.txt20LT.Enabled = false;
             this.txt20LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txt20LT.Location = new System.Drawing.Point(64, 97);
             this.txt20LT.Name = "txt20LT";
@@ -1441,7 +1435,6 @@
             // 
             // txt12LT
             // 
-            this.txt12LT.Enabled = false;
             this.txt12LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txt12LT.Location = new System.Drawing.Point(64, 71);
             this.txt12LT.Name = "txt12LT";
@@ -1450,7 +1443,6 @@
             // 
             // txt10LT
             // 
-            this.txt10LT.Enabled = false;
             this.txt10LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txt10LT.Location = new System.Drawing.Point(64, 45);
             this.txt10LT.Name = "txt10LT";
@@ -1459,7 +1451,6 @@
             // 
             // txt4LT
             // 
-            this.txt4LT.Enabled = false;
             this.txt4LT.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txt4LT.Location = new System.Drawing.Point(64, 19);
             this.txt4LT.Name = "txt4LT";
@@ -1530,7 +1521,6 @@
             // 
             // txtRetornable
             // 
-            this.txtRetornable.Enabled = false;
             this.txtRetornable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txtRetornable.Location = new System.Drawing.Point(64, 19);
             this.txtRetornable.Name = "txtRetornable";
@@ -2828,36 +2818,6 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label69.Location = new System.Drawing.Point(186, 479);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(82, 13);
-            this.label69.TabIndex = 109;
-            this.label69.Text = "Total Facturado";
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label70.Location = new System.Drawing.Point(576, 479);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(71, 13);
-            this.label70.TabIndex = 110;
-            this.label70.Text = "Total Pagado";
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label71.Location = new System.Drawing.Point(576, 517);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(85, 13);
-            this.label71.TabIndex = 111;
-            this.label71.Text = "Total Resultante";
-            // 
             // formCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2942,11 +2902,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtIDcliente;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label1;

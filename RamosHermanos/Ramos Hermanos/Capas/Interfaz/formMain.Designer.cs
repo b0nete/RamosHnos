@@ -67,7 +67,6 @@
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.categorizaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.backUToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -363,7 +362,6 @@
             this.usuariosToolStripMenuItem1,
             this.categorizaciónToolStripMenuItem,
             this.toolStripSeparator1,
-            this.backUToolStripMenuItem,
             this.logsToolStripMenuItem});
             this.administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
             this.administraciónToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
@@ -389,13 +387,6 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(207, 6);
-            // 
-            // backUToolStripMenuItem
-            // 
-            this.backUToolStripMenuItem.Name = "backUToolStripMenuItem";
-            this.backUToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.backUToolStripMenuItem.Text = "BackUp";
-            this.backUToolStripMenuItem.Click += new System.EventHandler(this.backUToolStripMenuItem_Click);
             // 
             // logsToolStripMenuItem
             // 
@@ -635,7 +626,6 @@
         private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem compraToolStripMenuItem;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.ToolStripMenuItem backUToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logsToolStripMenuItem;
     }
 }

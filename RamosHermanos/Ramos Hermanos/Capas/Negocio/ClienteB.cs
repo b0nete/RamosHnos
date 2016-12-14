@@ -510,13 +510,19 @@ namespace RamosHermanos.Capas.Negocio
                                  INNER JOIN tipoCliente TC ON C.tipoDoc = TC.idTipoCliente
                                  WHERE C.tipoPersona = 'P'";
 
+                string query2 = @"SELECT D.idDomicilio, CONCAT(C.Calle,' ',D.Numero,' ',IFNULL(D.Piso, '-'),' ',IFNULL(D.Dpto, '-'),' - ',IFNULL(D.CP, '-'),', ') 
+                                 FROM Domicilios D 
+                                 INNER JOIN Calles C ON D.Calle = C.idCalle
+                                 WHERE idPersona = 2";
+
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
                 cmd.Parameters.AddWithValue("@idCliente", parametro);
                 cmd.Parameters.AddWithValue("@numDoc", parametro);
                 cmd.Parameters.AddWithValue("@cuil", parametro);
                 cmd.Parameters.AddWithValue("@apellido", parametro);
                 cmd.Parameters.AddWithValue("@nombre", parametro);
-
+                cmd.Parameters.AddWithValue("@domicilio", parametro);
+                                
                 if (cb.SelectedIndex == 0)
                 {
                     cmd.CommandText = query + " and C.idCliente LIKE @idCliente";
@@ -537,11 +543,15 @@ namespace RamosHermanos.Capas.Negocio
                 {
                     cmd.CommandText = query + " and C.nombre LIKE @nombre";
                 }
+                if (cb.SelectedIndex == 5)
+                {
+                    cmd.CommandText = query2 + " and D.calle LIKE @calle" ;
+                }
 
                 MySqlDataReader dr = cmd.ExecuteReader();
 
                 while (dr.Read())
-                {                    
+                {
                     dgv.Rows.Add(
                     Convert.ToString(dr["idCliente"]),
                     Convert.ToString(dr["apellido"]),
@@ -551,11 +561,11 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["numDoc"]),
                     Convert.ToString(dr["cuil"]),
                     Convert.ToDateTime(dr["fechaAlta"]).ToString("dd/MM/yyyy"),
-                    Convert.ToString(dr["sexo"]),                  
+                    Convert.ToString(dr["sexo"]),
                     Convert.ToString(dr["estadoCivil"]),
                     Convert.ToString(dr["condicionIVA"]),
                     Convert.ToString(dr["IDtipoCliente"]),
-                    Convert.ToString(dr["tipocliente"]));
+                    Convert.ToString(dr["tipocliente"]));                    
                 }
                 
                 dr.Close();

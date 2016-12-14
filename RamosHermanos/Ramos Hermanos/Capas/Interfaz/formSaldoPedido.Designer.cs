@@ -151,14 +151,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "5 (25LTs)";
             // 
-            // formSaldo
+            // formSaldoPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(201, 166);
             this.Controls.Add(this.groupBox1);
-            this.Name = "formSaldo";
+            this.Name = "formSaldoPedido";
             this.Text = "Saldo Aguas";
+            this.Load += new System.EventHandler(this.formSaldoPedido_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

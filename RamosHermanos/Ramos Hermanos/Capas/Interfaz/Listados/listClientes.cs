@@ -45,6 +45,7 @@ namespace RamosHermanos.Capas.Interfaz.Listados
                 cbParametro.Items.Add("CUIL/CUIT");
                 cbParametro.Items.Add("Apellido");
                 cbParametro.Items.Add("Nombre");
+                cbParametro.Items.Add("Domicilio");
                 //Establecemos valor por defecto
                 cbParametro.SelectedIndex = 3;
 

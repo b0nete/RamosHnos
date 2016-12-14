@@ -236,7 +236,8 @@
             "DNI",
             "CUIL/CUIT",
             "Apellido",
-            "Nombre"});
+            "Nombre",
+            "Domicilio"});
             this.cbParametro.Location = new System.Drawing.Point(290, 19);
             this.cbParametro.Name = "cbParametro";
             this.cbParametro.Size = new System.Drawing.Size(133, 21);

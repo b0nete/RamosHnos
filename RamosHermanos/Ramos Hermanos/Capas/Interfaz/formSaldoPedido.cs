@@ -16,5 +16,10 @@ namespace RamosHermanos.Capas.Interfaz
         {
             InitializeComponent();
         }
+
+        private void formSaldoPedido_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
