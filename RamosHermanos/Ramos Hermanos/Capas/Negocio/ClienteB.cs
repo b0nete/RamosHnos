@@ -458,10 +458,13 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT C.idCliente, C.fechaAlta, C.tipoDoc as IDtipoDoc, TP.tipoDoc, C.numDoc, C.sexo, C.cuil, C.apellido, C.nombre, c.estadoCivil, c.condicionIVA, C.tipoCliente as IDtipoCliente, TC.tipocliente
+                string query = @"SELECT C.idCliente, C.tipoDoc as IDtipoDoc, TP.tipoDoc, C.numDoc, C.cuil, C.apellido, C.nombre, C.tipoCliente as IDtipoCliente, TC.tipocliente,
+                                 DOM.idDomicilio, CA.Calle, DOM.numero
                                  FROM Clientes C
                                  INNER JOIN tipoDocumento TP ON C.tipoDoc = TP.idTipoDoc
                                  INNER JOIN tipoCliente TC ON C.tipoDoc = TC.idTipoCliente
+                                 INNER JOIN domicilios DOM ON c.idCliente = DOM.idPersona
+                                 INNER JOIN Calles Ca ON DOM.Calle = Ca.idCalle
                                  WHERE C.tipoPersona = 'P'";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
@@ -478,12 +481,10 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["tipoDoc"]),
                     Convert.ToString(dr["numDoc"]),
                     Convert.ToString(dr["cuil"]),
-                    Convert.ToDateTime(dr["fechaAlta"]).ToString("dd/MM/yyyy"),
-                    Convert.ToString(dr["sexo"]),                  
-                    Convert.ToString(dr["estadoCivil"]),
-                    Convert.ToString(dr["condicionIVA"]),
                     Convert.ToString(dr["IDtipoCliente"]),
-                    Convert.ToString(dr["tipocliente"]));
+                    Convert.ToString(dr["tipocliente"]),
+                    Convert.ToString(dr["calle"]),
+                    Convert.ToString(dr["numero"]));
                 }
 
                 dr.Close();
@@ -504,16 +505,26 @@ namespace RamosHermanos.Capas.Negocio
                 MySQL.ConnectDB();
                 dgv.Rows.Clear();
 
-                string query = @"SELECT C.idCliente, C.fechaAlta, C.tipoDoc as IDtipoDoc, TP.tipoDoc, C.numDoc, C.sexo, C.cuil, C.apellido, C.nombre, c.estadoCivil, c.condicionIVA, C.tipoCliente as IDtipoCliente, TC.tipocliente
+                string query = @"SELECT C.idCliente, C.tipoDoc as IDtipoDoc, TP.tipoDoc, C.numDoc, C.cuil, C.apellido, C.nombre, C.tipoCliente as IDtipoCliente, TC.tipocliente,
+                                 DOM.idDomicilio, CA.Calle,DOM.Numero
                                  FROM Clientes C
                                  INNER JOIN tipoDocumento TP ON C.tipoDoc = TP.idTipoDoc
                                  INNER JOIN tipoCliente TC ON C.tipoDoc = TC.idTipoCliente
+                                 INNER JOIN domicilios DOM ON c.idCliente = DOM.idPersona
+                                 INNER JOIN Calles Ca ON DOM.Calle = Ca.idCalle
                                  WHERE C.tipoPersona = 'P'";
 
-                string query2 = @"SELECT D.idDomicilio, CONCAT(C.Calle,' ',D.Numero,' ',IFNULL(D.Piso, '-'),' ',IFNULL(D.Dpto, '-'),' - ',IFNULL(D.CP, '-'),', ') 
-                                 FROM Domicilios D 
-                                 INNER JOIN Calles C ON D.Calle = C.idCalle
-                                 WHERE idPersona = 2";
+//                string query = @"SELECT C.idCliente, C.fechaAlta, C.tipoDoc as IDtipoDoc, TP.tipoDoc, C.numDoc, C.sexo, C.cuil, C.apellido, C.nombre, c.estadoCivil, c.condicionIVA, C.tipoCliente as IDtipoCliente, TC.tipocliente
+//                                 FROM Clientes C
+//                                 INNER JOIN tipoDocumento TP ON C.tipoDoc = TP.idTipoDoc
+//                                 INNER JOIN tipoCliente TC ON C.tipoDoc = TC.idTipoCliente
+//                                 WHERE C.tipoPersona = 'P'";
+
+//                string query2 = @"SELECT C.idCliente, C.apellido, C.nombre, D.idDomicilio, Ca.Calle
+//                                 FROM Clientes C
+//                                 INNER JOIN domicilios D ON C.idCliente = D.idPersona
+//                                 INNER JOIN Calles Ca ON D.Calle = Ca.idCalle
+//                                 WHERE Ca.Calle LIKE '27 de febrero'";
 
                 MySqlCommand cmd = new MySqlCommand(query, MySQL.sqlcnx);
                 cmd.Parameters.AddWithValue("@idCliente", parametro);
@@ -521,8 +532,8 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@cuil", parametro);
                 cmd.Parameters.AddWithValue("@apellido", parametro);
                 cmd.Parameters.AddWithValue("@nombre", parametro);
-                cmd.Parameters.AddWithValue("@domicilio", parametro);
-                                
+                cmd.Parameters.AddWithValue("@calle", parametro);
+                                                
                 if (cb.SelectedIndex == 0)
                 {
                     cmd.CommandText = query + " and C.idCliente LIKE @idCliente";
@@ -545,7 +556,7 @@ namespace RamosHermanos.Capas.Negocio
                 }
                 if (cb.SelectedIndex == 5)
                 {
-                    cmd.CommandText = query2 + " and D.calle LIKE @calle" ;
+                    cmd.CommandText = query + "and Ca.Calle LIKE @calle";
                 }
 
                 MySqlDataReader dr = cmd.ExecuteReader();
@@ -560,12 +571,10 @@ namespace RamosHermanos.Capas.Negocio
                     Convert.ToString(dr["tipoDoc"]),
                     Convert.ToString(dr["numDoc"]),
                     Convert.ToString(dr["cuil"]),
-                    Convert.ToDateTime(dr["fechaAlta"]).ToString("dd/MM/yyyy"),
-                    Convert.ToString(dr["sexo"]),
-                    Convert.ToString(dr["estadoCivil"]),
-                    Convert.ToString(dr["condicionIVA"]),
                     Convert.ToString(dr["IDtipoCliente"]),
-                    Convert.ToString(dr["tipocliente"]));                    
+                    Convert.ToString(dr["tipocliente"]),
+                    Convert.ToString(dr["calle"]),
+                    Convert.ToString(dr["numero"]));
                 }
                 
                 dr.Close();

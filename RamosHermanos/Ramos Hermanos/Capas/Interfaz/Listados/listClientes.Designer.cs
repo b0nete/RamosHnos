@@ -32,6 +32,11 @@
             this.rbDGVPJ = new System.Windows.Forms.RadioButton();
             this.rbDGV = new System.Windows.Forms.RadioButton();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtParametro = new System.Windows.Forms.MaskedTextBox();
+            this.cbParametro = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.colIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,16 +45,9 @@
             this.colNumDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colCUIL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstadoCivil = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCondicionIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colIDtipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.coltipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtParametro = new System.Windows.Forms.MaskedTextBox();
-            this.cbParametro = new System.Windows.Forms.ComboBox();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.colDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNumero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -92,11 +90,9 @@
             this.colNumDoc,
             this.colCUIL,
             this.colFechaAlta,
-            this.colSexo,
-            this.colEstadoCivil,
-            this.colCondicionIVA,
             this.colIDtipoCliente,
-            this.coltipoCliente});
+            this.colDomicilio,
+            this.ColNumero});
             this.dgvCliente.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvCliente.Location = new System.Drawing.Point(0, 62);
             this.dgvCliente.Name = "dgvCliente";
@@ -106,89 +102,6 @@
             this.dgvCliente.TabIndex = 4;
             this.dgvCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellContentClick);
             this.dgvCliente.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvCliente_MouseDoubleClick);
-            // 
-            // colIDCliente
-            // 
-            this.colIDCliente.HeaderText = "Nº Cliente";
-            this.colIDCliente.Name = "colIDCliente";
-            this.colIDCliente.ReadOnly = true;
-            // 
-            // colApellido
-            // 
-            this.colApellido.HeaderText = "Apellido";
-            this.colApellido.Name = "colApellido";
-            this.colApellido.ReadOnly = true;
-            // 
-            // colNombre
-            // 
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.ReadOnly = true;
-            // 
-            // colIDTipoDoc
-            // 
-            this.colIDTipoDoc.HeaderText = "ID Tipo Doc";
-            this.colIDTipoDoc.Name = "colIDTipoDoc";
-            this.colIDTipoDoc.ReadOnly = true;
-            this.colIDTipoDoc.Visible = false;
-            // 
-            // coltipoDoc
-            // 
-            this.coltipoDoc.HeaderText = "Tipo Documento";
-            this.coltipoDoc.Name = "coltipoDoc";
-            this.coltipoDoc.ReadOnly = true;
-            this.coltipoDoc.Visible = false;
-            // 
-            // colNumDoc
-            // 
-            this.colNumDoc.HeaderText = "Nº Documento";
-            this.colNumDoc.Name = "colNumDoc";
-            this.colNumDoc.ReadOnly = true;
-            // 
-            // colCUIL
-            // 
-            this.colCUIL.HeaderText = "CUIL";
-            this.colCUIL.Name = "colCUIL";
-            this.colCUIL.ReadOnly = true;
-            // 
-            // colFechaAlta
-            // 
-            this.colFechaAlta.HeaderText = "Fecha Alta";
-            this.colFechaAlta.Name = "colFechaAlta";
-            this.colFechaAlta.ReadOnly = true;
-            this.colFechaAlta.Visible = false;
-            // 
-            // colSexo
-            // 
-            this.colSexo.HeaderText = "Sexo";
-            this.colSexo.Name = "colSexo";
-            this.colSexo.ReadOnly = true;
-            this.colSexo.Visible = false;
-            // 
-            // colEstadoCivil
-            // 
-            this.colEstadoCivil.HeaderText = "Estado Civil";
-            this.colEstadoCivil.Name = "colEstadoCivil";
-            this.colEstadoCivil.ReadOnly = true;
-            // 
-            // colCondicionIVA
-            // 
-            this.colCondicionIVA.HeaderText = "Condicion IVA";
-            this.colCondicionIVA.Name = "colCondicionIVA";
-            this.colCondicionIVA.ReadOnly = true;
-            // 
-            // colIDtipoCliente
-            // 
-            this.colIDtipoCliente.HeaderText = "ID Tipo Cliente";
-            this.colIDtipoCliente.Name = "colIDtipoCliente";
-            this.colIDtipoCliente.ReadOnly = true;
-            this.colIDtipoCliente.Visible = false;
-            // 
-            // coltipoCliente
-            // 
-            this.coltipoCliente.HeaderText = "Categoria";
-            this.coltipoCliente.Name = "coltipoCliente";
-            this.coltipoCliente.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -256,6 +169,77 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // colIDCliente
+            // 
+            this.colIDCliente.HeaderText = "Nº Cliente";
+            this.colIDCliente.Name = "colIDCliente";
+            this.colIDCliente.ReadOnly = true;
+            // 
+            // colApellido
+            // 
+            this.colApellido.HeaderText = "Apellido";
+            this.colApellido.Name = "colApellido";
+            this.colApellido.ReadOnly = true;
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colIDTipoDoc
+            // 
+            this.colIDTipoDoc.HeaderText = "ID Tipo Doc";
+            this.colIDTipoDoc.Name = "colIDTipoDoc";
+            this.colIDTipoDoc.ReadOnly = true;
+            this.colIDTipoDoc.Visible = false;
+            // 
+            // coltipoDoc
+            // 
+            this.coltipoDoc.HeaderText = "Tipo Documento";
+            this.coltipoDoc.Name = "coltipoDoc";
+            this.coltipoDoc.ReadOnly = true;
+            this.coltipoDoc.Visible = false;
+            // 
+            // colNumDoc
+            // 
+            this.colNumDoc.HeaderText = "Nº Documento";
+            this.colNumDoc.Name = "colNumDoc";
+            this.colNumDoc.ReadOnly = true;
+            // 
+            // colCUIL
+            // 
+            this.colCUIL.HeaderText = "CUIL";
+            this.colCUIL.Name = "colCUIL";
+            this.colCUIL.ReadOnly = true;
+            this.colCUIL.Visible = false;
+            // 
+            // colFechaAlta
+            // 
+            this.colFechaAlta.HeaderText = "Fecha Alta";
+            this.colFechaAlta.Name = "colFechaAlta";
+            this.colFechaAlta.ReadOnly = true;
+            this.colFechaAlta.Visible = false;
+            // 
+            // colIDtipoCliente
+            // 
+            this.colIDtipoCliente.HeaderText = "ID Tipo Cliente";
+            this.colIDtipoCliente.Name = "colIDtipoCliente";
+            this.colIDtipoCliente.ReadOnly = true;
+            this.colIDtipoCliente.Visible = false;
+            // 
+            // colDomicilio
+            // 
+            this.colDomicilio.HeaderText = "Domicilio";
+            this.colDomicilio.Name = "colDomicilio";
+            this.colDomicilio.ReadOnly = true;
+            // 
+            // ColNumero
+            // 
+            this.ColNumero.HeaderText = "Numero";
+            this.ColNumero.Name = "ColNumero";
+            this.ColNumero.ReadOnly = true;
+            // 
             // listClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,10 +277,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colNumDoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCUIL;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFechaAlta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colEstadoCivil;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCondicionIVA;
         private System.Windows.Forms.DataGridViewTextBoxColumn colIDtipoCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn coltipoCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDomicilio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNumero;
     }
 }
