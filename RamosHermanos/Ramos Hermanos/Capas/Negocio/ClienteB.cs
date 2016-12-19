@@ -533,6 +533,7 @@ namespace RamosHermanos.Capas.Negocio
                 cmd.Parameters.AddWithValue("@apellido", parametro);
                 cmd.Parameters.AddWithValue("@nombre", parametro);
                 cmd.Parameters.AddWithValue("@calle", parametro);
+                cmd.Parameters.AddWithValue("@numero", parametro);
                                                 
                 if (cb.SelectedIndex == 0)
                 {
@@ -556,7 +557,7 @@ namespace RamosHermanos.Capas.Negocio
                 }
                 if (cb.SelectedIndex == 5)
                 {
-                    cmd.CommandText = query + "and Ca.Calle LIKE @calle";
+                    cmd.CommandText = query + "and Ca.Calle LIKE @calle OR DOM.numero LIKE @numero";
                 }
 
                 MySqlDataReader dr = cmd.ExecuteReader();
